@@ -8,20 +8,20 @@ subtitle: NoSQL DBMSs
 
 # Strengths of RDBMSs
 
-_ACID properties_
+*ACID properties*
 
 * Provides guarantees in terms of consistency and concurrent accesses
 
-_Data integration and normalization of schemas_
+*Data integration and normalization of schemas*
 
 * Several application can share and reuse the same information
 
-_Standard model and query language_
+*Standard model and query language*
 
 * The relational model and SQL are very well-known standards
 * The same theoretical background is shared by the different implementations
 
-_Robustness_
+*Robustness*
 
 * Have been used for over 40 years
 
@@ -29,23 +29,23 @@ _Robustness_
 
 # Weaknesses of RDBMS
 
-_Impedance mismatch_
+*Impedance mismatch*
 
 * Data are stored according to the relational model, but applications to modify them typically rely on the object-oriented model
 * Many solutions, no standard
   * E.g.: Object Oriented DBMS (OODBMS), Object-Relational DBMS (ORDBMS), Object-Relational Mapping (ORM) frameworks
 
-_Painful scaling-out_
+*Painful scaling-out*
 
 * Not suited for a cluster architecture
 * Distributing an RDBMS is neither easy nor cheap (e.g., Oracle RAC)
 
-_Consistency vs latency_
+*Consistency vs latency*
 
 * Consistency is a must – even at the expense of latency
 * Today's applications require high reading/writing throughput with low latency
 
-_Schema rigidity_
+*Schema rigidity*
 
 * Schema evolution is often expensive
 
@@ -60,27 +60,27 @@ In 2009 it was adopted by a meetup in San Francisco
 * Goal: discuss open-source projects related to the newest databases from Google and Amazon
 * Participants: Voldemort, Cassandra, Dynomite, HBase, Hypertable, CouchDB, MongoDB
 
-Today, _NoSQL_ indicates _DBMSs_ adopting a _different data model from the relational one_
+Today, *NoSQL* indicates *DBMSs* adopting a *different data model from the relational one*
 
 * **NoSQL = Not Only SQL**
 * According to Strozzi himself, NoREL would have been a more proper noun
 
 # The first NoSQL systems
 
-_LiveJournal, 2003_
+*LiveJournal, 2003*
 
 * Goal: reduce the number of queries on a DB from a pool of web servers
-* Solution: _Memcached_, designed to keep queries and results in RAM
+* Solution: *Memcached*, designed to keep queries and results in RAM
 
-_Google, 2005_
+*Google, 2005*
 
 * Goal: handle Big Data (web indexing, Maps, Gmail, etc.)
-* Solution: _BigTable_, designed for scalability and high performance on Petabytes of data
+* Solution: *BigTable*, designed for scalability and high performance on Petabytes of data
 
-_Amazon, 2007_
+*Amazon, 2007*
 
 * Goal: ensure availability and reliability of its e-commerce service 24/7
-* Solution: _DynamoDB_, characterized by strong simplicity for data storage and manipulation
+* Solution: *DynamoDB*, characterized by strong simplicity for data storage and manipulation
 
 # NoSQL common features
 
@@ -94,7 +94,7 @@ Freedom from joins
 
 Freedom from rigid schemas
 
-* Data can be stored or queried without pre-defining a schema (_schemaless_ _ or _soft-schema_)
+* Data can be stored or queried without pre-defining a schema (*schemaless* * or *soft-schema*)
 
 Distributed, shared-nothing architecture
 
@@ -107,11 +107,11 @@ SQL is dead, long live SQL!
 
 # NoSQL in the Big Data world
 
-_NoSQL_ systems are mainly used for operational workloads (_OLTP_)
+*NoSQL* systems are mainly used for operational workloads (*OLTP*)
 
 * Optimized for high read and write throughput on small amounts of data
 
-_Big Data _ technologies are mainly used for analytical workloads (_OLAP_)
+*Big Data * technologies are mainly used for analytical workloads (*OLAP*)
 
 * Optimized for high read throughput on large amounts of data
 
@@ -151,14 +151,14 @@ Based on tables and rows
 :::: {.columns}
 ::: {.column width=50%}
 
-Each DB contains one or more _graphs_
+Each DB contains one or more *graphs*
 
-* Each graph contains _vertices_ and _arcs_
+* Each graph contains *vertices* and *arcs*
 * Vertices: usually represent real-world entities
   * E.g.: people, organizations, web pages, workstations, cells, books, etc.
 * Arcs: represent directed relationships between the vertices
   * E.g.: friendship, work relationship, hyperlink, ethernet links, copyright, etc.
-* Vertices and arcs are described by _properties_
+* Vertices and arcs are described by *properties*
 * Arcs are stored as physical pointers
 
 Most known specializations:
@@ -216,9 +216,9 @@ The graph data model is intrinsically different from the others
 * **Limited scalability**: it is often impossible to shard a graph on several machines without "cutting" several arcs (i.e. having several cross-machine links)
   * Batch cross-machine queries: don’t follow relationships one by one, but "group them" to make less requests
   * Limit the depth of cross-machine node searches
-* _Data-driven modeling_
+* *Data-driven modeling*
 
-Key-value, document and wide-column are called _aggregate-oriented_
+Key-value, document and wide-column are called *aggregate-oriented*
 
 * Aggregate = key-value pair, document, row (respectively)
 * The aggregate is the atomic block (no guarantees for multi-aggregate operations)
@@ -227,23 +227,23 @@ Based on the concept of encapsulation
 
 * Avoid joins as much as possible and achieve **high scalability**
   * Con: data denormalization and **potential inconsistencies in the data**
-* _Query-driven modeling_
+* *Query-driven modeling*
 
 # Document: data model
 
 :::: {.columns}
 ::: {.column width=70%}
 
-Each DB contains one or more _collections_ (corresponding to tables)
+Each DB contains one or more *collections* (corresponding to tables)
 
-* Each collection contains a list of _documents_ (usually JSON)
+* Each collection contains a list of *documents* (usually JSON)
 * Documents are hierarchically structured
 
-Each document contains a set of _fields_
+Each document contains a set of *fields*
 
-* The _ID_ is mandatory
+* The *ID* is mandatory
 
-Each field corresponds to a _key-value pair_
+Each field corresponds to a *key-value pair*
 
 * Key: unique string in the document
 * Value: either simple (string, number, boolean) or complex (object, array, BLOB)
@@ -272,7 +272,7 @@ Different implementations, different functionalities
 * Some enable (possibly materialized) views
 * Some enable MapReduce queries
 * Some provide connectors to Big Data tools (e.g., Spark, Hive)
-* Some provide _full-text search _ capabilities
+* Some provide *full-text search * capabilities
 
 # Data modeling example: aggregate model (1)
 
@@ -309,9 +309,9 @@ Different implementations, different functionalities
 :::: {.columns}
 ::: {.column width=50%}
 
-Each DB contains one or more _collections_ (corresponding to tables)
+Each DB contains one or more *collections* (corresponding to tables)
 
-* Each collection contains a list of _key-value pairs_
+* Each collection contains a list of *key-value pairs*
 * Key: a unique string
   * E.g.: ids, hashes, paths, queries, REST calls
 * Value: a BLOB (binary large object)
@@ -319,8 +319,8 @@ Each DB contains one or more _collections_ (corresponding to tables)
 
 Looks like a simple dictionary
 
-* _The collection is indexed by key_
-* _The value may contain several information_
+* *The collection is indexed by key*
+* *The value may contain several information*
   * Definitions, synonyms and antonyms, images, etc.
 
 :::
@@ -338,15 +338,15 @@ Looks like a simple dictionary
 
 Three simple kinds of query:
 
-* _put($key as _ _xs:string_ _, $value as item())_
+* *put($key as * *xs:string* *, $value as item())*
   * Adds a key-value pair to the collection
   * If the key already exists, the value is replaced
-* _get($key as _ _xs:string_ _) as item()_
+* *get($key as * *xs:string* *) as item()*
   * Returns the value corresponding to the key (if it exists)
-* _delete($key as _ _xs:string_ _)_
+* *delete($key as * *xs:string* *)*
   * Deletes the key-value pair
 
-The value is a _ _black box_ _: it cannot be queried!
+The value is a * *black box* *: it cannot be queried!
 
 * No "where" clauses
 * No indexes on the values
@@ -397,20 +397,20 @@ Customer collection
 :::: {.columns}
 ::: {.column width=50%}
 
-Each DB contains one or more _column families_ (corresponding to tables)
+Each DB contains one or more *column families* (corresponding to tables)
 
-* Each column family contains a list of _row_ in the form of a key-value pair
+* Each column family contains a list of *row* in the form of a key-value pair
 * Key: unique string in the column family
-* Value: a set of _columns_
+* Value: a set of *columns*
 
 Each column is a key-value pair itself
 
 * Key: unique string in the row
-* Value: simple or complex (_supercolumn_)
+* Value: simple or complex (*supercolumn*)
 
 Essentially a 2-dimensional key-value store
 
-* _Rows specify only the columns _ _for which a value exists_
+* *Rows specify only the columns * *for which a value exists*
 * Particularly suited for sparse matrixes and many-to-many relationships
 
 :::
@@ -431,7 +431,7 @@ The query language expressiveness is in between key-value and document data mode
 * Can select which columns to project
 * Can update specific columns (not always)
 
-Given the similarity with the relational model, a _SQL-like _ language is often used
+Given the similarity with the relational model, a *SQL-like * language is often used
 
 # Wide column: ≠ columnar
 
@@ -470,22 +470,22 @@ Column-oriented
 
 # Aggregate modeling strategy
 
-The _aggregate_ term comes from Domain-Driven Design
+The *aggregate* term comes from Domain-Driven Design
 
 * An aggregate is a group of tightly coupled objects to be handled as a block
 * Aggregates are the basic unit for data manipulation and consistency management
 
 Advantages
 
-* _Can be distributed trivially_
+* *Can be distributed trivially*
   * Data that should be used together (e.g., orders and details) are stored together
-* _Facilitate the developer's job_
+* *Facilitate the developer's job*
   * By surpassing the impedance mismatch problem
 
 Disadvantages
 
 * **No design strategy exists for aggregates**
-  * _It only depends on how they are meant to be used_
+  * *It only depends on how they are meant to be used*
 * Can optimize only a limited set of queries
 * Data denormalization -> possible inconsistencies
 
@@ -497,26 +497,26 @@ A look behind the curtain
 
 # Sharding data
 
-One of the strengths of NoSQL systems is their _scale-out capability_
+One of the strengths of NoSQL systems is their *scale-out capability*
 
-* _Aggregate data modeling_: well suited for being distributed within a cluster
-* NoSQL systems can be used in a _single server environment_ too
+* *Aggregate data modeling*: well suited for being distributed within a cluster
+* NoSQL systems can be used in a *single server environment* too
   * Graph databases do not scale as well as the others
 
 Two aspects must be considered when deploying on a cluster
 
-* **Sharding**: _distributing the data across different nodes_
-* **Replication**: _creating copies of the data on several nodes_
+* **Sharding**: *distributing the data across different nodes*
+* **Replication**: *creating copies of the data on several nodes*
 
 # Sharding
 
-**Sharding**: _subdividing the data in _ _shards_ _ that are stored in different machines_
+**Sharding**: *subdividing the data in * *shards* * that are stored in different machines*
 
 * Intrinsic in a distributed DB
 * Improves the efficiency of the system
   * Read/write operations are distributed
 
-A good _sharding strategy_ is **fundamental ** to optimize performances
+A good *sharding strategy* is **fundamental ** to optimize performances
 
 * Usually based on one or more fields composing the sharding key
 
@@ -526,22 +526,22 @@ A good _sharding strategy_ is **fundamental ** to optimize performances
 
 Thumbs-up rules for a sharding strategy:
 
-_Data-locality_
+*Data-locality*
 
 * Store the data close to those that need to access them
 * E.g., store orders of Italian customers in the European data center
 
-_Keep a balanced distribution_
+*Keep a balanced distribution*
 
 * Each node should have the same percentage of data (more or less)
 
-_Keep together the data that must be accessed together_
+*Keep together the data that must be accessed together*
 
 * E.g., store each client’s orders in the same node
 
 # Sharding strategy
 
-_Hash strategy_: a hash function is used to allocate data to partitions
+*Hash strategy*: a hash function is used to allocate data to partitions
 
 * Adopted by DynamoDB and Cassandra
 * Pro: ensures even data distribution across nodes  massive scalability
@@ -571,7 +571,7 @@ Beware: redefining (or choosing later) the sharding strategy can be quite expens
 
 # Replication
 
-**Replication**: the data is _copied_ on several nodes
+**Replication**: the data is *copied* on several nodes
 
 * Improves the robustness of the system
   * In case of node failure, replicas prevent data loss
@@ -581,7 +581,7 @@ Beware: redefining (or choosing later) the sharding strategy can be quite expens
 
 How to distribute the replicas?
 
-* Random (possibly _topology-aware_) distribution of each record
+* Random (possibly *topology-aware*) distribution of each record
   * Similarly to HDFS blocks
 * Replication of entire instances
 
@@ -594,13 +594,13 @@ Main issue: each update must be pushed to every replica
 :::: {.columns}
 ::: {.column width=50%}
 
-_Master_
+*Master*
 
 * It’s the manager of the data
-* _Handles each and every write operation_
+* *Handles each and every write operation*
 * Can be chosen or drawn
 
-_Slaves_
+*Slaves*
 
 * Enable read operations
 * In sync with the master
@@ -625,12 +625,12 @@ _Slaves_
 
 **Cons**
 
-* _The master is a bottleneck_
+* *The master is a bottleneck*
   * **Only the master can handle writes**
   * In case of failure, a new master must be drawn
 * Delay in write propagation can be a source of inconsistency
   * Two users may read different values at the same time
-  * _Read inconsistency can be problematic, but are relatively limited in time_
+  * *Read inconsistency can be problematic, but are relatively limited in time*
 * Not ideal when the workload mainly consists of writes
 
 # Peer-to-Peer Replication
@@ -640,7 +640,7 @@ _Slaves_
 
 Each node has the same importance
 
-_Each node can handle write operations_
+*Each node can handle write operations*
 
 The loss of a node does not compromise reads nor writes
 
@@ -661,34 +661,34 @@ The loss of a node does not compromise reads nor writes
 
 **Cons**
 
-* _Conflicts! _
+* *Conflicts! *
 * Delay in write propagation can be a source of inconsistency
   * Same as with master-slave replication
 * Two users may update the same value from different replicas
-  * _Write inconsistencies are way worse_
+  * *Write inconsistencies are way worse*
 
 # Handling conflicts
 
 Read conflicts
 
-* _Tolerate conflicts_: the _inconsistency window_ is usually limited
-* _Read-your-writes_: read consistency is guaranteed for the data written by the same user
+* *Tolerate conflicts*: the *inconsistency window* is usually limited
+* *Read-your-writes*: read consistency is guaranteed for the data written by the same user
   * Applies only to reads that immediately follow a write operation
   * One way is to associate a user to a node (risk: unbalanced workloads)
   * Typically, versioning fields are used to ensure that the up-to-date version is read
 
 Write conflicts (P2P model)
 
-* _Last write wins_: in case of conflict, the latest update overrides the others
-* _Conflict prevention_: enforce writes on the most recent version by verifying that the value hasn’t changed since the last read
-* _Conflict detection_: preserve history, merge results, and let the user decide
+* *Last write wins*: in case of conflict, the latest update overrides the others
+* *Conflict prevention*: enforce writes on the most recent version by verifying that the value hasn’t changed since the last read
+* *Conflict detection*: preserve history, merge results, and let the user decide
 
 # The quorum mechanism
 
 :::: {.columns}
 ::: {.column width=50%}
 
-The _quorum mechanism_ ensures consistent IO under replication
+The *quorum mechanism* ensures consistent IO under replication
 
 * Based on contacting a majority of the nodes responsible for certain data
 * The quorum is the minimum number of nodes that a distributed operation has to obtain in order to be allowed to perform an operation on a replicated data item
@@ -753,34 +753,34 @@ What should never happen
 * A query on the database shows an intermediate state
   * E.g., A+B = 0€
 
-RDBMS adopt _transactions _ to avoid this kind of issue
+RDBMS adopt *transactions * to avoid this kind of issue
 
 # Consistency in RDBMSs: ACID
 
 Transactions guarantee four fundamental properties: ACID
 
-_A_tomicity_
+*A*tomicity*
 
 * The transaction is indivisible: either it fully completes, or it fails
 * It cannot be completed partially
 
-_C_onsistency_
+*C*onsistency*
 
 * The transaction leaves the DB in a consistent state
 * Integrity constraints can never be violated
 
-_I_solation_
+*I*solation*
 
 * The transaction is independent from the others
 * In case of concurrent transactions, the effect is the same of their sequential execution
 
-_D_urability_
+*D*urability*
 
 * The DBMS protects the DB from failures
 
 # Consistency in RDBMSs: ACID
 
-Implementation of ACID properties relies on _locking mechanisms and logs_
+Implementation of ACID properties relies on *locking mechanisms and logs*
 
 * Resources are locked, updates are logged
 * In case of problems, rollback to the original state
@@ -807,7 +807,7 @@ Several attempts have been made to describe NoSQL properties with respect to ACI
 
 They are not properties on which NoSQL systems rely
 
-* Rather, they simply _try _ to describe their behavior
+* Rather, they simply *try * to describe their behavior
 
 # Consistency in NoSQL: CAP
 
@@ -816,16 +816,16 @@ They are not properties on which NoSQL systems rely
 
 "Theorem": only two of the following three properties can be guaranteed
 
-_C_onsistency: the system is always consistent
+*C*onsistency: the system is always consistent
 
 * Every node returns the same, most recent, successful write
 * Every client has the same view of the data
 
-_A_vailability: the system is always available
+*A*vailability: the system is always available
 
 * Every non-failing node returns a response for all read and write requests in a reasonable amount of time
 
-_P_artition tolerance: the system continues to function and upholds its consistency guarantees in spite of network partitions
+*P*artition tolerance: the system continues to function and upholds its consistency guarantees in spite of network partitions
 
 * In distributed systems, network **partitioning is inevitably a possibility**
 
@@ -837,7 +837,7 @@ _P_artition tolerance: the system continues to function and upholds its consiste
 :::
 ::::
 
-See [CAP demonstration](https://dl.acm.org/doi/pdf/10.1145/564585.564601?casa_token=m69maazxkqIAAAAA:cBn5y1eKnJUh7Tl4GVsw9Hqv984qwQ3_b8XvSM_wM3U2zp_-363uPINWJADEmMt-8ZjPzA1yaoE)
+See [CAP demonstration](https://dl.acm.org/doi/pdf/10.1145/564585.564601?casa*token=m69maazxkqIAAAAA:cBn5y1eKnJUh7Tl4GVsw9Hqv984qwQ3*b8XvSM*wM3U2zp*-363uPINWJADEmMt-8ZjPzA1yaoE)
 
 # Consistency in NoSQL: CAP
 
@@ -856,11 +856,11 @@ Theorem interpretation is not trivial
 
 Consider two users that want to book the same room when a network partition happens
 
-**CP**: no one can book (_A is sacrificed_)
+**CP**: no one can book (*A is sacrificed*)
 
 * Not the best solution
 
-**AP**: both can book (_C is sacrificed_)
+**AP**: both can book (*C is sacrificed*)
 
 * Possible overbooking: writing conflict to handle
 
@@ -868,22 +868,22 @@ Consider two users that want to book the same room when a network partition happ
 
 * The other will se the room available but cannot book it
 
-_This is admissible only in certain scenarios_
+*This is admissible only in certain scenarios*
 
 * Finance? Blogs? E-commerce?
 
 It’s important to understand:
 
-* _What is the tolerance to obsolete reads_
-* _How large can the inconsistency window be_
+* *What is the tolerance to obsolete reads*
+* *How large can the inconsistency window be*
 
 
 # Consistency in NoSQL: PACELC
 
 Evolution of the CAP theorem (less known, but more precise)
 
-* if (_P_artition) then {  _A_vaialbility or _C_onsistency? }
-* Else  { _L_atency or _C_onsistency? }
+* if (*P*artition) then {  *A*vaialbility or *C*onsistency? }
+* Else  { *L*atency or *C*onsistency? }
 
 Different behavior in case or in absence of partitioning
 
@@ -903,13 +903,13 @@ Four situations:
 
 The CAP theorem is often cited as a justification for the use of weaker consistency models, for example **BASE**
 
-* _Basically Available Soft-state services with Eventual consistency_
+* *Basically Available Soft-state services with Eventual consistency*
 
-_B_asic _A_vailability: the system should always be available
+*B*asic *A*vailability: the system should always be available
 
-* _S_oft-state: _ it is acceptable for the system to be temporarily inconsistent
+* *S*oft-state: * it is acceptable for the system to be temporarily inconsistent
 
-_E_ventual consistency: eventually, the system becomes consistent
+*E*ventual consistency: eventually, the system becomes consistent
 
 ACID
 
@@ -958,9 +958,9 @@ Examples
   * Each web session is identified by its own sessionId: All related data can be stored with a PUT request and returned with a GET request
 * **User profiles, preferences**
   * Each user is uniquely identified (userId, username) and has her own preferences in terms of language, colors, timezone, products, etc.
-  * _data that fits well within an aggregate_
+  * *data that fits well within an aggregate*
 * **Shopping cart, chat services**
-  * Each e-commerce websites associates a shopping cart to a user; it can be stored as _an aggregate identified by the user ID_
+  * Each e-commerce websites associates a shopping cart to a user; it can be stored as *an aggregate identified by the user ID*
 
 # Key-Value: real use cases
 
@@ -1017,14 +1017,14 @@ Higher expressiveness
 Examples
 
 * **Event logs**
-  * _Central repo to store event logs from many applications; _ shard on app name or event type
+  * *Central repo to store event logs from many applications; * shard on app name or event type
 * **CMS, blogging platforms**
-  * _The absence of a predefined schema _fits well_ within content management systems (CMS) or website management applications, to handle comments, registrations and user profiles
+  * *The absence of a predefined schema *fits well* within content management systems (CMS) or website management applications, to handle comments, registrations and user profiles
 * **Web Analytics or Real-Time Analytics**
-  * _The ability to update only specific fields_ enables fast update of analytical metrics
-  * _Text indexing_ enables real-time sentiment analysis and social media monitoring
+  * *The ability to update only specific fields* enables fast update of analytical metrics
+  * *Text indexing* enables real-time sentiment analysis and social media monitoring
 * **E-commerce applications**
-  * _Schema flexibility is often required_ to store products and orders, as well as to enable schema evolution without incurring into refactoring or migration costs
+  * *Schema flexibility is often required* to store products and orders, as well as to enable schema evolution without incurring into refactoring or migration costs
 
 # Document: real use cases
 
@@ -1050,7 +1050,7 @@ Examples
 
 **Queries on high-variety data**
 
-* _If the aggregate structure continuously evolves, queries must be constantly updated _ (and normalization clashes with the concept of aggregate)
+* *If the aggregate structure continuously evolves, queries must be constantly updated * (and normalization clashes with the concept of aggregate)
 
 # Wide column: popular DBs
 
@@ -1070,11 +1070,11 @@ Compromise between expressiveness and simplicity
 Examples
 
 * **Event logs; CMS, blogging platforms**
-  * Similarly to document databases, _different applications may use different columns_
+  * Similarly to document databases, *different applications may use different columns*
 * **Sparse matrixes**
-  * While an RDBMS would store _null _ values, a wide column _stores only the columns for which a value is specified_
+  * While an RDBMS would store *null * values, a wide column *stores only the columns for which a value is specified*
 * **GIS applications**
-  * Pieces of a map (tiles) can be stored as _couples of latitude and longitude_
+  * Pieces of a map (tiles) can be stored as *couples of latitude and longitude*
 
 # Wide column: real use cases
 
@@ -1112,12 +1112,12 @@ Examples
 
 **Interlinked data**
 
-* _Social networks_ are one of the most typical use case of graph databases (e.g., to store friendships or work relationships); _every relationship-centric domain is a good one_
+* *Social networks* are one of the most typical use case of graph databases (e.g., to store friendships or work relationships); *every relationship-centric domain is a good one*
 
 **Routing and location-based services**
 
-* Applications working on the _TSP (Travelling Salesman Problem)_ problem
-* Location-based application that, for instance, recommend the best restaurant nearby; in this case, _relationships model the distance between node_
+* Applications working on the *TSP (Travelling Salesman Problem)* problem
+* Location-based application that, for instance, recommend the best restaurant nearby; in this case, *relationships model the distance between node*
 
 **Recommendation applications, fraud-detection**
 
@@ -1143,21 +1143,21 @@ Examples
 
 **Data-intensive applications**
 
-* Traversing the graph is trivial, but _analyzing the whole graph can be expensive_
+* Traversing the graph is trivial, but *analyzing the whole graph can be expensive*
 * There exist framework for distributed graph analysis (e.g., Apache Giraph), but they do not rely on a graph DB
 
 # Polyglot persistence
 
-_Different databases are designed to solve _ _differen_ _t problems_
+*Different databases are designed to solve * *differen* *t problems*
 
-* _Using a single DBMS to handle everything ..._
+* *Using a single DBMS to handle everything ...*
 * Operational data
 * Temporary session information
 * Graph traversing
 * OLAP analyses
 * ...
 
-_... usually lead to inefficient solutions_
+*... usually lead to inefficient solutions*
 
 * Each activity has its own requirements (availability, consistency, fault tolerance, etc.)
 
@@ -1165,15 +1165,15 @@ _... usually lead to inefficient solutions_
 
 # Traditional approach
 
-The _one-size-fits-all_ solution
+The *one-size-fits-all* solution
 
 ![](imgs/slides91.png)
 
 # Polyglot data management
 
-The _one-size-fits-all_ solution
+The *one-size-fits-all* solution
 
-Replaced by the _polyglot _ solution
+Replaced by the *polyglot * solution
 
 ![](imgs/slides92.png)
 
@@ -1233,7 +1233,7 @@ The big-data cube
 * Variety: structure to unstructured
 * Velocity: pull to push
 
-Meijer, Erik. "Your mouse is a database."  _Communications of the ACM_ 55.5 (2012): 66-73.
+Meijer, Erik. "Your mouse is a database."  *Communications of the ACM* 55.5 (2012): 66-73.
 
 **Variety**
 
@@ -1334,7 +1334,7 @@ Scenario 1
 * All data is fully cleansed.
 * The results from this time period must be made available to decision makers by 10 minutes after the hour in the form of financial dashboards.
 
-_Which Vs are involved?_
+*Which Vs are involved?*
 
 Scenario 1
 
@@ -1346,10 +1346,10 @@ Scenario 1
 
 Which Vs are involved?
 
-* _Volume_ This scenario describes huge JSON files to be combined with transactional data and marketing data.
-* _Velocity_ "Wait - now hurry up!" Wait to collect data for a full hour and then produce meaningful results in 10 minutes _(is it batch or stream processing?)_
-* _Variety_ three data source types: log files, transactional data, and recommendation information
-* _Value_ populate dashboards that are used by decision makers as soon as they are made available. The value is reached because it requires an understanding of what the organization is trying to accomplish
+* *Volume* This scenario describes huge JSON files to be combined with transactional data and marketing data.
+* *Velocity* "Wait - now hurry up!" Wait to collect data for a full hour and then produce meaningful results in 10 minutes *(is it batch or stream processing?)*
+* *Variety* three data source types: log files, transactional data, and recommendation information
+* *Value* populate dashboards that are used by decision makers as soon as they are made available. The value is reached because it requires an understanding of what the organization is trying to accomplish
 
 Scenario 2
 
@@ -1360,7 +1360,7 @@ Scenario 2
 * A large portion of the data gathered is irrelevant to our analysis, so this data must be eliminated.
 * The final requirement is that all data must be combined and loaded into our data warehouse, where it will be analyzed.
 
-_Which Vs are involved?_
+*Which Vs are involved?*
 
 Scenario 2
 
@@ -1373,13 +1373,13 @@ Scenario 2
 
 Which Vs are involved?
 
-* _Volume_ The data is delivered in very large files, transactional updates, and even in data streams
-* _Variety_ The business will need to combine the data from all three sources into a single data warehouse.
-* _Veracity_ The data is known to be suspect. The data must be cleansed and prepared to ensure that rogue inputs do not skew the results. Knowing the data source for each record is vital to the work we do.
+* *Volume* The data is delivered in very large files, transactional updates, and even in data streams
+* *Variety* The business will need to combine the data from all three sources into a single data warehouse.
+* *Veracity* The data is known to be suspect. The data must be cleansed and prepared to ensure that rogue inputs do not skew the results. Knowing the data source for each record is vital to the work we do.
 
 # Data-driven companies
 
-_Data-driven company _ refers to companies where decisions and processes are supported by data
+*Data-driven company * refers to companies where decisions and processes are supported by data
 
 * Decisions are based on quantitative rather than qualitative knowledge
 * Processes & Knowledge are an asset of the company and are not lost if managers change
@@ -1387,36 +1387,36 @@ _Data-driven company _ refers to companies where decisions and processes are sup
 
 Adopting a data-driven mindset goes far beyond adopting a business intelligence solution and entails:
 
-* _Create a data culture_
-* _Change the mindset of managers_
-* _Change processes_
-* _Improve the quality of all the data_
+* *Create a data culture*
+* *Change the mindset of managers*
+* *Change processes*
+* *Improve the quality of all the data*
 
 # Why going cloud?
 
-_Digitalization_ is a journey that involves three main dimensions
+*Digitalization* is a journey that involves three main dimensions
 
 * Moving from A to B is a multi-year process made of intermediate goals
-* Each of which must be _feasible_
+* Each of which must be *feasible*
   * Solves a company pain and brings value
   * Can be accomplished in a limited time range (typically less than one year)
   * Costs must be economically related to gains
 
 Are processes extensively digitalized and produces reliable data?
 
-_Technological_ _infrastructure_
+*Technological* *infrastructure*
 
 Do we have the right persons to drive the project and exploit the results?
 
-_Data quality _
+*Data quality *
 
-_& quantity_
+*& quantity*
 
 Is the technogical infrastructure appropriate to support data collection and analysis?
 
 **Cloud computing** (National Institute of Standards and Technology)
 
-* _“A model for enabling _ _ubiquitous, convenient, on-demand _ _network access to a _ _shared pool_ _ of configurable computing resources (e.g., networks, servers, storage, services) that can be rapidly provisioned and released with _ _minimal management effort _ _or service provider interaction.”_
+* *“A model for enabling * *ubiquitous, convenient, on-demand * *network access to a * *shared pool* * of configurable computing resources (e.g., networks, servers, storage, services) that can be rapidly provisioned and released with * *minimal management effort * *or service provider interaction.”*
 * On-demand self-service (consume services when you want)
 * Broad network access (consume services from anywhere)
 * Resource pooling (infrastructure, virtual platforms, and applications)
@@ -1453,9 +1453,9 @@ Grow storage from GBs to PBs
 
 **Resource pooling**
 
-* Enable _cost-sharing_, a resource to serve different consumers
+* Enable *cost-sharing*, a resource to serve different consumers
 * Resources are dynamically reassigned according to demands
-* Based on _virtualization_, _ _ running multiple virtual instances on top of a physical computer system
+* Based on *virtualization*, * * running multiple virtual instances on top of a physical computer system
 * Economy of scale for physical resources
 
 **Reliability**
@@ -1481,11 +1481,11 @@ Service **integration**
 * Abstract and automatically adapt the architecture to requirements
   * E.g., create (test) environments on demand
 
-_Integration_ and _abstraction_ are drivers of change
+*Integration* and *abstraction* are drivers of change
 
-* From _databases_ to _data platforms_
-* From _on-premises_ to _serverless_ architectures
-* From _custom_ to _standardized_ data pipelines
+* From *databases* to *data platforms*
+* From *on-premises* to *serverless* architectures
+* From *custom* to *standardized* data pipelines
 
 # Is cloud a silver bullet?
 
@@ -1506,7 +1506,7 @@ But wind and solar power don’t work in all places at all times. Though we buy 
 
 ![](imgs/slides106.png)
 
-Left: Mytton, David. "Data centre water consumption."  _npj_ _ Clean Water_ 4.1 (2021): 1-6.Right: [https://cloud.google.com/blog/topics/inside-google-cloud/announcing-round-the-clock-clean-energy-for-cloud](https://cloud.google.com/blog/topics/inside-google-cloud/announcing-round-the-clock-clean-energy-for-cloud) (accessed 2022-08-01)
+Left: Mytton, David. "Data centre water consumption."  *npj* * Clean Water* 4.1 (2021): 1-6.Right: [https://cloud.google.com/blog/topics/inside-google-cloud/announcing-round-the-clock-clean-energy-for-cloud](https://cloud.google.com/blog/topics/inside-google-cloud/announcing-round-the-clock-clean-energy-for-cloud) (accessed 2022-08-01)
 
 ---
 
@@ -1569,9 +1569,9 @@ Gartner Magic Quadrant
 
 # Cloud computing: deployment models
 
-On a cloud architecture, you can rely on _serverless_ or _managed _ services
+On a cloud architecture, you can rely on *serverless* or *managed * services
 
-* _Serverless_
+* *Serverless*
 * Standalone independent services built for a specific purpose and integrated by cloud service provider
 * No visibility into the machines
   * There are still servers in serverless, but they are abstracted away
@@ -1579,7 +1579,7 @@ On a cloud architecture, you can rely on _serverless_ or _managed _ services
   * E.g., when you run a query on [BigQuery](https://cloud.google.com/blog/products/bigquery/separation-of-storage-and-compute-in-bigquery) you do not know how many machines were used
 * Pay for what your application uses, usually per request or per usage
 
-_(Fully) Managed_
+*(Fully) Managed*
 
 * Visibility and control of machines
   * You can choose the number of machines that are being used to run your application
@@ -1632,15 +1632,15 @@ Containerization isolates an application with its own environment
 * Excellent solution when dependencies are in play
 * Housekeeping challenges and complexities
 
-_Containers_ and _virtual machines _ are packaged computing environments
+*Containers* and *virtual machines * are packaged computing environments
 
-* _Containers_
+* *Containers*
 * On top of physical server and its host OS
 * Share the host OS kernel
 * Shared components are read-only
 * “Light”, take seconds to start
 
-_Virtual machines_
+*Virtual machines*
 
 * Emulate a hardware/software system
 * On top of a hypervisor (VM monitor)
@@ -1697,10 +1697,10 @@ https://catalog.us-east-1.prod.workshops.aws/workshops/ea7ddf16-5e0a-4ec7-b54e-5
 Optimizing soil moisture is crucial for watering and crop performance [1]
 
 * **GOAL**: build an expert system to save water while improving fruit quality (i.e., provide a recommendation of the optimal amount of water)
-* _Soils_ have different water retention
-* _Watering systems_ have different behaviors (e.g., drippers and sprinklers)
-* _Plants_ have different water demand (e.g., Kiwi [2] vs Grapes)
-* _Sensors_ produce different measurements with different precisions
+* *Soils* have different water retention
+* *Watering systems* have different behaviors (e.g., drippers and sprinklers)
+* *Plants* have different water demand (e.g., Kiwi [2] vs Grapes)
+* *Sensors* produce different measurements with different precisions
 
 ![](imgs/slides115.jpg)
 
@@ -1750,9 +1750,9 @@ Artificial intelligence (AI) is intelligence demonstrated by machines. AI resear
 
 We need to understand how the soil behaves
 
-* _Simulate_ [1, 2] the soil behavior according to physical models [3]
-* However, a _fine tuning _ is required
-* We need to _know/parametrize everything_
+* *Simulate* [1, 2] the soil behavior according to physical models [3]
+* However, a *fine tuning * is required
+* We need to *know/parametrize everything*
   * Soil (e.g., retention curve, hysteresis [4])
   * Plant (e.g., roots, LAI)
   * Weather conditions (temperature, humidity, wind, precipitations)
@@ -1783,9 +1783,9 @@ But... we have sensors!                  [1]                                    
 
 We consider an orchard where
 
-* _Kiwi plants _ are aligned along _rows_
-* Each row has many _ drippers_ (e.g., 1 every meter)
-* Drippers can water a _limited soil volume_
+* *Kiwi plants * are aligned along *rows*
+* Each row has many * drippers* (e.g., 1 every meter)
+* Drippers can water a *limited soil volume*
 
 ![](imgs/slides124.jpg)
 
@@ -1793,9 +1793,9 @@ Francia, Matteo, et al. "Multi-sensor profiling for precision soil-moisture moni
 
 We consider an orchard where
 
-* _Kiwi plants _ are aligned along _rows_
-* Each row has many _ drippers_ (e.g., 1 every meter)
-* Drippers can water a _limited soil volume_
+* *Kiwi plants * are aligned along *rows*
+* Each row has many * drippers* (e.g., 1 every meter)
+* Drippers can water a *limited soil volume*
 
 ![](imgs/slides125.png)
 
@@ -1803,9 +1803,9 @@ Francia, Matteo, et al. "Multi-sensor profiling for precision soil-moisture moni
 
 # Sensor layouts and symmetry assumptions
 
-When the watered volume is symmetric along the row, a _2D grid of sensors _ (left) is sufficient to represent the entire soil volume
+When the watered volume is symmetric along the row, a *2D grid of sensors * (left) is sufficient to represent the entire soil volume
 
-* When relevant moisture variations take place along the row too, a _3D grid of sensors_ (right) is required
+* When relevant moisture variations take place along the row too, a *3D grid of sensors* (right) is required
 * E.g., too sparse drippers
 * E.g., non-homogeneous suction of the roots
 
@@ -1823,7 +1823,7 @@ Francia, Matteo, et al. "Multi-sensor profiling for precision soil-moisture moni
 
 * (b) Sensors return a discretized representation of soil moisture
 * The monitoring accuracy changes
-* depending on the _sensor_ _layout_
+* depending on the *sensor* *layout*
 
 ![](imgs/slides129.png)
 
@@ -1861,7 +1861,7 @@ Upload the Notebook to Sagemaker (not in COLAB!)
 
 AWS Simple Storage Service (S3)
 
-* A _serverless_ object storage service offering industry-leading scalability, data availability, security, and performance.
+* A *serverless* object storage service offering industry-leading scalability, data availability, security, and performance.
 * Customers of all sizes and industries can store and protect any amount of data for virtually any use case, such as data lakes
 
 ![](imgs/slides138.png)
@@ -1872,7 +1872,7 @@ Last access 2022-08
 
 Amazon SageMaker
 
-* Fully _managed_ service that provides machine learning (ML) capabilities for data scientists and developers to prepare, build, train, and deploy high-quality ML models efficiently
+* Fully *managed* service that provides machine learning (ML) capabilities for data scientists and developers to prepare, build, train, and deploy high-quality ML models efficiently
 
 ![](imgs/slides139.png)
 
@@ -1945,7 +1945,7 @@ Last access 2022-08
 
 ![](imgs/slides163.png)
 
-_select_ date_format(timestamp, 'yyyy-MM-dd HH') _as_ hour,        date_format(timestamp, 'yyyy') _as_ year,       date_format(timestamp, 'yyyy-MM') _as_ month,       date_format(timestamp, 'yyyy-MM-dd') _as_ date,       concat('(', xx, ', ', yy, ')') _as_ sensor,       xx _as_ dist, yy _as_ depth, value, timestamp _from_ (    _select_ from_unixtime(_int_ (timestamp / 3600) * 3600) _as_ timestamp,            xx, yy, _avg_ (value) _as_ value _from_ myDataSource _ group by _ xx, yy, _int_ (timestamp / 3600) * 3600)
+*select* date*format(timestamp, 'yyyy-MM-dd HH') *as* hour,        date*format(timestamp, 'yyyy') *as* year,       date*format(timestamp, 'yyyy-MM') *as* month,       date*format(timestamp, 'yyyy-MM-dd') *as* date,       concat('(', xx, ', ', yy, ')') *as* sensor,       xx *as* dist, yy *as* depth, value, timestamp *from* (    *select* from*unixtime(*int* (timestamp / 3600) * 3600) *as* timestamp,            xx, yy, *avg* (value) *as* value *from* myDataSource * group by * xx, yy, *int* (timestamp / 3600) * 3600)
 
 ![](imgs/slides164.png)
 
@@ -2007,13 +2007,13 @@ Last access 2022-08
 
 Data pipeline
 
-* _"A _ _sequence_ _ of operations to transform and consume raw data"_
+* *"A * *sequence* * of operations to transform and consume raw data"*
 
 ![](imgs/slides180.png)
 
 [https://xkcd.com/2054/](https://xkcd.com/2054/)
 
-Quemy, Alexandre. "Data Pipeline Selection and Optimization."  _DOLAP_ . 2019.
+Quemy, Alexandre. "Data Pipeline Selection and Optimization."  *DOLAP* . 2019.
 
 The pyramid abstracts tons of techniques, algorithms, etc.
 
@@ -2314,16 +2314,16 @@ Having consistent principles on how to organize your data is important
 
 Landing area (LA)
 
-* Save _raw data_ from ingestion
+* Save *raw data* from ingestion
 * Transient, data is not stored for long term
 
 Staging area (SA)
 
-* Raw data goes through a set of common transformations: ensuring _basic quality_ and making sure it _conforms to existing schemas_ for this data source and then data is saved into SA
+* Raw data goes through a set of common transformations: ensuring *basic quality* and making sure it *conforms to existing schemas* for this data source and then data is saved into SA
 
 Archive area (A)
 
-* After saving into SA, raw data from LA should be _copied into the archive_ to reprocess any given batch of data by simply copying it from AA into LA
+* After saving into SA, raw data from LA should be *copied into the archive* to reprocess any given batch of data by simply copying it from AA into LA
 * Useful for debugging and testing
 
 Production area (PA)
@@ -2351,22 +2351,22 @@ Cloud data warehouse (DWH)
 
 Use folders to organize data inside areas into a logical structure
 
-* _Namespace_
+* *Namespace*
   * Logically group multiple pipelines together.
-* _Pipeline name_
+* *Pipeline name*
   * Each data pipeline should have a name that reflects its purpose. For example
     * A pipeline that takes data from the LA, applies common processing steps, and saves data into SA
     * You will also have one for archiving data into AA
-* _Data source name_
+* *Data source name*
   * Ingestion layer will assign a name to each data source you bring into the platform
-* _BatchId_
+* *BatchId*
   * Unique identifier for any batch of data that is saved into LA
   * E.g., Since only ingestion can write to LA, it is its responsibility to generate this identifier
   * A common choice for this type of an identifier is a Universally Unique Identifier (UUID)
 
 Different areas will have slightly different folder structures
 
-* /landing/ETL/sales_oracle_ingest/customers/01DFTFX89YDFAXREPJTR94
+* /landing/ETL/sales*oracle*ingest/customers/01DFTFX89YDFAXREPJTR94
 
 However, alternative organizations are available
 
@@ -2398,13 +2398,13 @@ Key question: can we combine these benefits in an effective way?
 
 **1** **st** **generation systems**: data warehousing started with helping business leaders get analytical insights
 
-* Data in these warehouses would be written with _schema-on-write_, which ensured that the data model was optimized for downstream BI consumption
+* Data in these warehouses would be written with *schema-on-write*, which ensured that the data model was optimized for downstream BI consumption
 * Several challenges
   * They typically coupled compute and storage into an on-premises appliance
     * This forced enterprises to provision and pay for the peak of user load and data under management, very costly
   * More and more datasets were completely unstructured, which DWHs could not store and query at all
 
-Armbrust, Michael, et al. "Lakehouse: a new generation of open platforms that unify data warehousing and advanced analytics."  _CIDR_ . 2021.
+Armbrust, Michael, et al. "Lakehouse: a new generation of open platforms that unify data warehousing and advanced analytics."  *CIDR* . 2021.
 
 ---
 
@@ -2412,7 +2412,7 @@ https://dl.acm.org/doi/fullHtml/10.1145/3524284
 
 **2** **nd** **generation**: offloading all the raw data into data lakes
 
-* The data lake is _schema-on-read_ and stores any data at low cost, but on the other hand, punted the problem of data quality and governance
+* The data lake is *schema-on-read* and stores any data at low cost, but on the other hand, punted the problem of data quality and governance
 * In this architecture, a small subset of data in the lake would later be ETLed to a downstream data warehouse
 * The use of open formats also made data lake data directly accessible to a wide range of other analytics engines, such as machine learning systems
 * From 2015 onwards, cloud data lakes, such as S3, ADLS and GCS, started replacing HDFS
@@ -2470,7 +2470,7 @@ Armbrust, Michael, et al. "Delta lake: high-performance ACID table storage over 
 Delta Lake uses a **transaction log ** that is compacted **into Apache Parquet ** for significantly faster metadata operations for large tabular datasets
 
 * E.g., quickly search billions of table partitions for those relevant to a query
-* The log is stored in the **delta_log** subdirectory within the table
+* The log is stored in the **delta*log** subdirectory within the table
 * It contains
   * Sequence of JSON objects with increasing, zero-padded numerical IDs to store the log records
   * Occasional checkpoints for specific log objects that summarize the log up to that point
@@ -2487,7 +2487,7 @@ It is necessary to compress the log periodically into checkpoints
 
 * Checkpoints store all the non-redundant actions in the table’s log up to a certain log record ID, in Parquet format
 * Some sets of actions are redundant and can be removed
-* Read the _last_checkpoint object in the table’s log directory, if it exists, to obtain a recent checkpoint ID
+* Read the *last*checkpoint object in the table’s log directory, if it exists, to obtain a recent checkpoint ID
 
 Example of a write transaction
 
@@ -2596,7 +2596,7 @@ AWS uses public-key cryptography to secure the login
 * Choose `Create key pair`
 * For `Name`, enter a descriptive name for the key pair
 * For `File format`, choose the format in which to save the private key
-  * OpenSSH, choose `pem` (` chmod 400 _ _my-key-_ _ _pair_ _ .pe m `)
+  * OpenSSH, choose `pem` (` chmod 400 * *my-key-* * *pair* * .pe m `)
   * PuTTY, choose `ppk`
 * Choose `Create key pair`
 * The private key file is automatically downloaded by your browser
@@ -2861,7 +2861,7 @@ On-Demand Instance
 Spot Instance
 
 * Unused EC2 instance that is available for less than the on-demand price
-* Hourly price is called _spot price_
+* Hourly price is called *spot price*
   * Adjusted based on long-term supply and demand for spot instances
 * Run the instance when capacity is available and price is below threshold
   * When data-center resources are low, spot instances are dropped
@@ -2876,13 +2876,13 @@ https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#SpotInstan
 
 Spot Instance cost strategies
 
-* _Capacity-optimized strategy_
+* *Capacity-optimized strategy*
 * Allocated instances into the most available pools
 * Look at real-time capacity data, predict which are the most available
 * Works well for workloads such as big data and analytics
 * Works well when we have high cost of interruption
 
-_Lowest-price strategy_
+*Lowest-price strategy*
 
 * Allocates instances in pools with lowest price at time of fulfillment
 
@@ -2896,10 +2896,10 @@ Choose to launch **master**, **core**, or **task** on Spot Instances
 
 * The **master** node controls the cluster
   * When terminated, the cluster ends
-  * Use _spot instances_ if you are running a cluster where sudden termination is acceptable
+  * Use *spot instances* if you are running a cluster where sudden termination is acceptable
 * **Core ** nodes process data and store information using HDFS
   * When terminated, data is lost
-  * Use _spot instances_ when partial HDFS data loss is tolerable
+  * Use *spot instances* when partial HDFS data loss is tolerable
 * **Task ** nodes process data but do not hold persistent data in HDFS
   * When terminated, computational capacity is lost
   * The effect of spot instances on the cluster is "minimal"
@@ -2913,8 +2913,8 @@ Amazon EMR provides two main file systems
 * **HDFS** and **EMRFS**, specify which file system to use by the prefix
 * hdfs://path (or just `path`)
   * HDFS is used by the master and core nodes
-  * _AWS EBS volume storage is used for HDFS data_
-  * Is fast, best used for caching the results produced by intermediate job-flow steps, _why?_
+  * *AWS EBS volume storage is used for HDFS data*
+  * Is fast, best used for caching the results produced by intermediate job-flow steps, *why?*
   * It’s ephemeral storage which is reclaimed when the cluster ends
 * s3://DOC-EXAMPLE-BUCKET1/path (EMRFS)
   * An implementation of the Hadoop file system atop Amazon S3
@@ -2953,17 +2953,17 @@ Using CLI (command line interface)
 
 aws emr create-cluster \\
 
-* --name _ _"My First EMR Cluster" _ _ \\
-* --release-label _ _emr-5.32.0 _ _ \\
+* --name * *"My First EMR Cluster" * * \\
+* --release-label * *emr-5.32.0 * * \\
 * --applications Name=Spark \\
-* --ec2-attributes KeyName= _ _myEMRKeyPairName _ _ \\
+* --ec2-attributes KeyName= * *myEMRKeyPairName * * \\
 * --instance-type m5.xlarge \\
 * --instance-count 3 \\
 * --use-default-roles
 
 Using CLI (command line interface)
 
-aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole --termination-protected --applications Name=Hadoop Name=Hive Name=Hue Name=JupyterEnterpriseGateway Name=Spark --ebs-root-volume-size 10 --ec2-attributes '{"KeyName":"bigdata","InstanceProfile":"EMR_EC2_DefaultRole","SubnetId":"subnet-5fa2f912","EmrManagedSlaveSecurityGroup":"sg-07818b5690a50b3f1","EmrManagedMasterSecurityGroup":"sg-0e2f5550a2cb98f79"}' --service-role EMR_DefaultRole --enable-debugging --release-label emr-6.2.0 --log-uri 's3n://aws-logs-604905954159-us-east-1/elasticmapreduce/' --name 'BigData' --instance-groups '[{"InstanceCount":1,"BidPrice":"OnDemandPrice","EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"MASTER","InstanceType":"m4.xlarge","Name":"Master - 1"},{"InstanceCount":1,"BidPrice":"OnDemandPrice","EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"CORE","InstanceType":"m4.xlarge","Name":"Core - 2"}]' --scale-down-behavior TERMINATE_AT_TASK_COMPLETION --region us-east-1
+aws emr create-cluster --auto-scaling-role EMR*AutoScaling*DefaultRole --termination-protected --applications Name=Hadoop Name=Hive Name=Hue Name=JupyterEnterpriseGateway Name=Spark --ebs-root-volume-size 10 --ec2-attributes '{"KeyName":"bigdata","InstanceProfile":"EMR*EC2*DefaultRole","SubnetId":"subnet-5fa2f912","EmrManagedSlaveSecurityGroup":"sg-07818b5690a50b3f1","EmrManagedMasterSecurityGroup":"sg-0e2f5550a2cb98f79"}' --service-role EMR*DefaultRole --enable-debugging --release-label emr-6.2.0 --log-uri 's3n://aws-logs-604905954159-us-east-1/elasticmapreduce/' --name 'BigData' --instance-groups '[{"InstanceCount":1,"BidPrice":"OnDemandPrice","EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"MASTER","InstanceType":"m4.xlarge","Name":"Master - 1"},{"InstanceCount":1,"BidPrice":"OnDemandPrice","EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"CORE","InstanceType":"m4.xlarge","Name":"Core - 2"}]' --scale-down-behavior TERMINATE*AT*TASK*COMPLETION --region us-east-1
 
 # Cluster lifecycle
 
@@ -2990,7 +2990,7 @@ RUNNING: a step for the cluster is currently being run
 WAITING: after steps run successfully
 
 * TERMINATING: after manual shut down
-* _Any data stored on the cluster is deleted_
+* *Any data stored on the cluster is deleted*
 
 A **step** is a user-defined unit of processing
 
@@ -3125,7 +3125,7 @@ Enrichment processes
 
 Acquisition processes
 
-_External sources_
+*External sources*
 
 ![](imgs/slides311.png)
 
@@ -3234,9 +3234,9 @@ lshw -short -C disk
 | Hardware | 10602€/year |? |
 | Software |? |? |
 
-**Hardware cost**(up to Mar 05, 2021): _ 1767€ x 18 = 31806€
+**Hardware cost**(up to Mar 05, 2021): * 1767€ x 18 = 31806€
 
-* Amortization over 3 years (i.e., _10602€/year_)
+* Amortization over 3 years (i.e., *10602€/year*)
 
 ![](imgs/slides338.png)
 
@@ -3254,7 +3254,7 @@ lshw -short -C disk
 | Hardware | 10602€/year |? |
 | Software | 0€ |? |
 
-**Software cost** (up to 2020): 0€_
+**Software cost** (up to 2020): 0€*
 
 * Free Cloudera Management System
 * No software licensing (for research purpose)
@@ -3264,14 +3264,14 @@ lshw -short -C disk
 | Hardware | 10602€/year |? |
 | Software | 180000€/year |? |
 
-**Software cost**(up to Mar 05, 2021): 10000€/year x 18 = 180000€/year_
+**Software cost**(up to Mar 05, 2021): 10000€/year x 18 = 180000€/year*
 
 * Cloudera is no more free, 10K€ per node
 * [https://www.cloudera.com/products/pricing.html\#private-cloud-services](https://www.cloudera.com/products/pricing.html#private-cloud-services)
 * [https://www.cloudera.com/products/pricing/product-features.html](https://www.cloudera.com/products/pricing/product-features.html)
 * No license for research purpose
 
-_“Houston we’ve had a problem!”_
+*“Houston we’ve had a problem!”*
 
 * We cannot update/extend the cluster anymore
 * What about migrating to the cloud? (we only consider AWS)
@@ -3306,7 +3306,7 @@ Migrating the cluster as-is:?
 | Hardware | 10602€/year | 162000$/year |
 | Software | 180000€/year |? |
 
-SOLcloud1 migrating the cluster as-is: _13500$/month = 162000$/year_
+SOLcloud1 migrating the cluster as-is: *13500$/month = 162000$/year*
 
 * 18 EC2 instances (t4g.2xlarge) with 12TB EBS storage each machine
 * Still, we have no software configuration
@@ -3400,13 +3400,13 @@ Assuming 1 Executor = 1 Machine
 
 On-premises
 
-* 4 machines: 10602€/year / 18 machines x 4 machines = _2356€/year_
-* Cloudera requires at least 10 nodes: _100000€/year_
+* 4 machines: 10602€/year / 18 machines x 4 machines = *2356€/year*
+* Cloudera requires at least 10 nodes: *100000€/year*
 
 AWS
 
-* 4 EC2 instances: 162000$/year / 18 machines x 4 machines = _36000$/year_
-  * Plus the resources for master services = _2000$/year_
+* 4 EC2 instances: 162000$/year / 18 machines x 4 machines = *36000$/year*
+  * Plus the resources for master services = *2000$/year*
 * Problems
   * Still no software stack
   * A lot of storage cost
@@ -3436,7 +3436,7 @@ S3 Infrequent Access
 
 ![](imgs/slides345.png)
 
-_AWS Storage_
+*AWS Storage*
 
 * HDFS on EC2
 * Heavy price
@@ -3458,7 +3458,7 @@ S3
 | Hardware | 2356€/year |? |
 | Software | 100000€/year |? |
 
-Migrating cluster to EMR: _?_
+Migrating cluster to EMR: *?*
 
 * Given the software requirements, we need
 * 1 x Master Node (to manage the cluster)1 x Core node (with HDFS/EBS)
@@ -3487,14 +3487,14 @@ Driver (1 core and 1GB RAM)
 | Hardware | 2356€/year | 14710€/year |
 | Software | 100000€/year |? |
 
-Migrating cluster to EMR: _14710€/year_
+Migrating cluster to EMR: *14710€/year*
 
 * S3 Infrequent Access storage (50 TB per month): 640€
 * 1 x Master EMR nodes, EC2 (m4.xlarge), Utilization (75 h/month): 4.5€
   * 75 h/month = 15min/task x 10task/day x 30day/month / 60min/hour
 * 1 x Core EMR nodes, EC2 (m4.xlarge), Utilization (75 h/month): 4.5€
 * 4 x Task EMR nodes, EC2 (m4.4xlarge), Utilization (75 h/month): 72€
-* 4 x EC2 _on demand (task node): 174.83€_
+* 4 x EC2 *on demand (task node): 174.83€*
   * Storage amount (30 GB)
   * Workload (Daily, Duration of peak: 0 Hr 15 Min)
   * Instance type (m4.xlarge)
@@ -3507,14 +3507,14 @@ Migrating cluster to EMR: _14710€/year_
 | Hardware | 2356€/year | 13445€/year |
 | Software | 100000€/year |? |
 
-Migrating cluster to EMR: _13445€/year_
+Migrating cluster to EMR: *13445€/year*
 
 * S3 Infrequent Access storage (50 TB per month): 640€
 * 1 x Master EMR nodes, EC2 (m4.xlarge), Utilization (75 h/month): 4.5€
   * 75 h/month = 15min/task x 10task/day x 30day/month / 60min/hour
 * 1 x Core EMR nodes, EC2 (m4.xlarge), Utilization (75 h/month): 4.5€
 * 4 x Task EMR nodes, EC2 (m4.4xlarge), Utilization (75 h/month): 72€
-* 4 x EC2 _spot (task node): 69.55€_
+* 4 x EC2 *spot (task node): 69.55€*
   * Storage amount (30 GB)
   * Workload (Daily, Duration of peak: 0 Hr 15 Min)
   * Instance type (m4.xlarge)
@@ -3522,7 +3522,7 @@ Migrating cluster to EMR: _13445€/year_
   * Storage amount (30 GB)
   * Instance type (m4.xlarge)
 
- _[https://calculator.aws/\#/estimate?id=c3780b12bb43b593d05def5a1d5218d9764b8a65](https://calculator.aws/#/estimate?id=c3780b12bb43b593d05def5a1d5218d9764b8a65)_ 
+ *[https://calculator.aws/\#/estimate?id=c3780b12bb43b593d05def5a1d5218d9764b8a65](https://calculator.aws/#/estimate?id=c3780b12bb43b593d05def5a1d5218d9764b8a65)* 
 
 # Migration
 
@@ -3562,7 +3562,7 @@ WeLASER
 
 **Project description**
 
-* _The increased use of pesticides and _ _fertilisers_ _ damages the environment, destroys non-target plants and beneficial insects for the soil and harms human and animal health. Most seeds develop herbicide-resistant properties, rendering pesticides ineffective. Mechanical automatic systems that are studied as alternatives to pesticides deteriorate soil features, damage beneficial soil organisms and offer limited results for in-row weeding. The EU-funded WeLASER project will develop a non-chemical solution for weed management based on pioneering technology consisting of the application of lethal doses of energy on the weed meristems through a high-power laser source. An AI-vision system separates crops from weeds, identifying the weed meristems and pointing the laser at them. A smart controller based on IoT and cloud computing techniques coordinates the system, which is _ _transfered_ _ all over the field by an autonomous vehicle._
+* *The increased use of pesticides and * *fertilisers* * damages the environment, destroys non-target plants and beneficial insects for the soil and harms human and animal health. Most seeds develop herbicide-resistant properties, rendering pesticides ineffective. Mechanical automatic systems that are studied as alternatives to pesticides deteriorate soil features, damage beneficial soil organisms and offer limited results for in-row weeding. The EU-funded WeLASER project will develop a non-chemical solution for weed management based on pioneering technology consisting of the application of lethal doses of energy on the weed meristems through a high-power laser source. An AI-vision system separates crops from weeds, identifying the weed meristems and pointing the laser at them. A smart controller based on IoT and cloud computing techniques coordinates the system, which is * *transfered* * all over the field by an autonomous vehicle.*
 
 ![](imgs/slides348.png)
 
@@ -3605,7 +3605,7 @@ On-premises (HDFS cluster)
 On-premises
 
 * How many machines do we need?
-  * _4_: _1 master node_ + _3 HDFS data nodes_
+  * *4*: *1 master node* + *3 HDFS data nodes*
 * With which resources?
   * Assuming a HDFS replication factor of 3, we need at least 1TB of disk overall (not that much)
   * Think bigger: at least 8 cores, 64GB RAM, 500GB SSD + 4TB HDD, no GPU
@@ -3627,13 +3627,13 @@ On-premises
 Moving the Hadoop cluster as IAAS
 
 * EC2
-* Quantity (4), Pricing strategy (EC2 Instance Savings Plans 3 Year No Upfront), _Storage amount (4 TB), _ Instance type (r6g.2xlarge)
+* Quantity (4), Pricing strategy (EC2 Instance Savings Plans 3 Year No Upfront), *Storage amount (4 TB), * Instance type (r6g.2xlarge)
 
 EMR
 
-* Number of master EMR nodes (1), EC2 instance (r5.2xlarge), Utilization (100 %Utilized/Month) Number of core EMR nodes (3), EC2 instance (r5d.2xlarge), _Utilization (100 %Utilized/Month)_
+* Number of master EMR nodes (1), EC2 instance (r5.2xlarge), Utilization (100 %Utilized/Month) Number of core EMR nodes (3), EC2 instance (r5d.2xlarge), *Utilization (100 %Utilized/Month)*
 
-_MKS (KAFKA)_
+*MKS (KAFKA)*
 
 * Storage per Broker (10 GB), Number of Kafka broker nodes (3), Compute Family (m5.2xlarge)
 
@@ -3651,17 +3651,17 @@ _MKS (KAFKA)_
 Moving the Hadoop cluster as PAAS
 
 * EC2
-* Quantity (4), Pricing strategy (_On-Demand Instances_), Storage amount (30 GB), Instance type (r6g.2xlarge)
+* Quantity (4), Pricing strategy (*On-Demand Instances*), Storage amount (30 GB), Instance type (r6g.2xlarge)
 
 EMR
 
-* Number of master EMR nodes (1), EC2 instance (r5.2xlarge), Utilization (2 Hours/Day) Number of core EMR nodes (3), EC2 instance (r5d.2xlarge), _Utilization (2 Hours/Day)_
+* Number of master EMR nodes (1), EC2 instance (r5.2xlarge), Utilization (2 Hours/Day) Number of core EMR nodes (3), EC2 instance (r5d.2xlarge), *Utilization (2 Hours/Day)*
 
-_S3_
+*S3*
 
 * Standard storage (60 GB per month)
 
-_Kinesis_
+*Kinesis*
 
 * Days for data retention (1 days), Records (100 per second), Consumer Applications (3)
 
@@ -3673,14 +3673,14 @@ _Kinesis_
 
 How would you evaluate the cost and the price?
 
-_Price_ is the amount a customer is willing to pay for a product or service
+*Price* is the amount a customer is willing to pay for a product or service
 
-* _Cost_ is the expense incurred for creating a product or service
+* *Cost* is the expense incurred for creating a product or service
 * Hardware
 * Development
 * Maintenance
 
-_Profit_ is the difference between price paid and costs incurred is profit
+*Profit* is the difference between price paid and costs incurred is profit
 
 * If a customer pays $10 for a product that costs $6 to make and sell, the company earns $4
 
@@ -3732,7 +3732,7 @@ What is a streaming system?
 * An engine capable to handle processing on **unbounded** datasets
 * Streaming is a superset of batch processing
 
-Akidau, Tyler, Slava Chernyak, and Reuven Lax.  _Streaming systems: the what, where, when, and how of large-scale data processing_ . " O'Reilly Media, Inc.", 2018.
+Akidau, Tyler, Slava Chernyak, and Reuven Lax.  *Streaming systems: the what, where, when, and how of large-scale data processing* . " O'Reilly Media, Inc.", 2018.
 
 # Reference scenario: batch vs stream
 
@@ -3748,12 +3748,12 @@ Akidau, Tyler, Slava Chernyak, and Reuven Lax.  _Streaming systems: the what, wh
 **Goal**: moving data to the cloud
 
 * Moving data to the cloud
-* _80TB_ of data to move,
-* _1Gbps_ connection to the internet
+* *80TB* of data to move,
+* *1Gbps* connection to the internet
 
-How many _days_?
+How many *days*?
 
-* _80000GB_ / (_1Gbps / 8_) /  _60 / 60 / 24 _ ~= a week without internet
+* *80000GB* / (*1Gbps / 8*) /  *60 / 60 / 24 * ~= a week without internet
 
 Batch/Bulk: move data from on-premises storage
 
@@ -3813,7 +3813,7 @@ Value Metric
 
 ![](imgs/slides356.png)
 
-Kreps, Jay.  _I heart logs: Event data, stream processing, and data integration_ . " O'Reilly Media, Inc.", 2014.
+Kreps, Jay.  *I heart logs: Event data, stream processing, and data integration* . " O'Reilly Media, Inc.", 2014.
 
 **Stream**: real-time streaming data
 
@@ -3826,9 +3826,9 @@ Kreps, Jay.  _I heart logs: Event data, stream processing, and data integration_
 
 **Publish/subscribe (pub/sub)**: a way of communicating messages
 
-* _Senders_ publish messages associated with one or more **topics**
-* _Receivers_ subscribe to specific topics, receive all messages with that topic
-* _Messages_ are events
+* *Senders* publish messages associated with one or more **topics**
+* *Receivers* subscribe to specific topics, receive all messages with that topic
+* *Messages* are events
 
 ![](imgs/slides357.jpg)
 
@@ -3844,7 +3844,7 @@ The log acts as a messaging system with durability guarantees and ordering seman
 
 ![](imgs/slides358.png)
 
-Kreps, Jay.  _I heart logs: Event data, stream processing, and data integration_ . " O'Reilly Media, Inc.", 2014.
+Kreps, Jay.  *I heart logs: Event data, stream processing, and data integration* . " O'Reilly Media, Inc.", 2014.
 
 General idea:
 
@@ -3854,7 +3854,7 @@ General idea:
 
 **Unified log**
 
-* _Unified_, _append-only_, _ordered_, _distributed_ log that allows the centralization of event streams
+* *Unified*, *append-only*, *ordered*, *distributed* log that allows the centralization of event streams
 
 ![](imgs/slides359.jpg)
 
@@ -3890,7 +3890,7 @@ Distribution ensures
 
 ![](imgs/slides361.jpg)
 
-Lamport, Leslie. "Time, clocks, and the ordering of events in a distributed system."  _Concurrency: the Works of Leslie _ _Lamport_ . 2019. 179-196.
+Lamport, Leslie. "Time, clocks, and the ordering of events in a distributed system."  *Concurrency: the Works of Leslie * *Lamport* . 2019. 179-196.
 
 Two types of processing
 
@@ -4150,10 +4150,10 @@ Alice (i.e., an IAM user) is a firewoman
 * She is the same person with or without her turnout gear
 * As a firewoman (i.e., a role)
   * If she speeds to a house fire and passes a police officer, he isn't going to give her a ticket
-  * In her role as a _firewoman_, she is allowed to speed to the house fire
+  * In her role as a *firewoman*, she is allowed to speed to the house fire
 * As a private citizen (i.e., another role)
   * When she is off duty, if she speeds past that same police officer, he's going to give her a ticket
-  * In her role as a _private citizen_, she is not allowed to speed
+  * In her role as a *private citizen*, she is not allowed to speed
 
 # AWS
 
@@ -4283,9 +4283,9 @@ newgrp docker
 
 sudo chmod 666 /var/run/docker.sock
 
-wget [https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip)
+wget [https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86*64.zip](https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86*64.zip)
 
-unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
+unzip aws-sam-cli-linux-x86*64.zip -d sam-installation
 
 sudo ./sam-installation/install
 
