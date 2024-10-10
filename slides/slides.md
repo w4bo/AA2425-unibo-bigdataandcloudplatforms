@@ -1,1053 +1,8 @@
-# Hi!
-
-
-Matteo Francia, Ph.D.
-
-* Email: [m.francia@unibo.it](mailto:m.francia@unibo.it)
-* Assistant Professor (junior) @ DISI, UniBO
-* www: [https://www.unibo.it/sitoweb/m.francia/en](https://www.unibo.it/sitoweb/m.francia/en)
-
-Research topics
-
-* Big data / database
-* Precision agriculture and spatio-temporal analytics
-
-BIG (Business Intelligence Group)
-
-* [https://big.csr.unibo.it/](https://big.csr.unibo.it/teaching/)
-
-# Table of Contents and Exam
-
-
-Handling data pipelines in the Cloud
-
-* Introduction to __data platforms__: shifting from databases to well-integrated data ecosystems
-* Definition of __cloud computing__ and taxonomy of cloud services
-* Introduction to the most __relevant cloud platforms__
-* Introduction to the __billing models__ of cloud computing services
-* Cluster __migration__: on-premises vs on-cloud
-* Real __case studies + labs__
-
-Seminars by companies working with cloud and big data platforms
-
-* Connect the dots
-* Information systems, BI, data mining, big data, and machine learning
-
-... __all these points__ will be part of the oral examination!:)
-
-
-# Table of Contents and Exam
-
-
-Questions on all (__theoretical__ and __practical__) aspects of the course
-
-* A __single session __ with both teachers
-* Exam covers __both modules__
-* __Seminars and labs__ are included
-* __Interaction during the lectures/labs __ is considered in the final evaluation
-
-No scheduled dates, just come __when you are ready__
-
-* Send an email to [enrico.gallinucci@unibo.it](mailto:enrico.gallinucci@unibo.it) to book an appointment
-* At least one week in advance
-
-According to the University's regulation
-
-* Exams must be in presence
-* __Cannot refuse a grade more than once__
-
-Be prepared: you have to wait __1 month before trying again__ (in any case)
-
-
-# So far
-
-> Digital transformation
->
-> The process of using digital technologies to create new — or modify existing — business processes, culture, and customer experiences to meet changing business and market requirements
-
-
-
-You have acquainted/practiced with __on-premises__ solutions
-
-* You were given a working hardware cluster
-* ... to deploy software applications on Hadoop-based stack
-
-In the perspective of digital transformation, let us guess
-
-* How would you start from scratch?
-* How much time would it take?
-
-# So far
-
-
-No easy answers
-
-* Big-data (distributed) architectures require a lot of skills
-* __Configuration__: how do I set up dozens of new machines?
-* __Networking__: how do I cable dozens of machines?
-* __Management__: how do I replace a broken disk?
-* __Upgrade__: how do I extend the cluster with new services/machines?
-* (energy and cooling, software licenses, insurance...)
-
-[https://aws.amazon.com/compliance/data-center/data-centers/](https://aws.amazon.com/compliance/data-center/data-centers/)
-
-# So far
-
-
-Two sides of the same coin, and your profile is a perfect? fit
-
-* Technological perspective
-  * How do we configure a distributed environment?
-  * How do we set up/integrate/control independent services?
-  * How do we orchestrate data flows?
-* Business perspective
-  * Can we afford to spend resources on tasks that are not mission oriented?
-  * No free lunch, each choice has cost/benefit
-  * How much time does it take to master a technology?
-  * How many people do I need?
-
-... but first, which are our **data needs**?
-
-
-
-Can we afford to spend resources on tasks that are not mission oriented?
-
-* Mission: a statement used by a company to explain its purpose(s)
-
-# Teaching material
-
-:::: {.columns}
-::: {.column width=25%}
-
-![](imgs/slides0.png)
-
-:::
-::: {.column width=25%}
-
-![](imgs/slides1.jpg)
-
-:::
-::: {.column width=25%}
-
-![](imgs/slides2.jpg)
-
-:::
-::: {.column width=25%}
-
-![](imgs/slides5.png)
-
-:::
-::: {.column width=33%}
-
-![](imgs/slides3.png)
-
-:::
-::: {.column width=33%}
-
-![](imgs/slides4.png)
-
-:::
-::::
-
-# Teaching material
-
-
-You will find all you need in these slides
-
-* However, keeping up the pace with data platforms and cloud is hard
-* There is a rapid development of technologies, and not all of them will survive
-* Books are easily outdated with respect to cutting-edge services and technologies
-* Research papers (often) describe solutions that are not commercial yet
-* (IRL) You will need to deal with a lot of (bad) documentation, online articles, etc.
-
-Rule of thumb
-
-* Understand the general concepts
-* Do not be afraid of change
-* Connect the dots... and ask questions!
-
-# -- newsection --
-
-# From databases to data platforms
-
-# How did we get here?
-
-
-__Data-Driven Innovation__
-
-* Use of data and _analytics_ to foster new products, processes and markets
-* Drive discovery and execution of innovation, achieving new services with a business value
-
-__Analytics__
-
-* A catch-all term for different business intelligence (BI)- and application-related initiatives
-  * E.g., of analyzing information from a particular domain
-  * E.g., applying BI capabilities to a specific content area (e.g., sales, service, supply chain)
-
-__Advanced Analytics__
-
-* (Semi-)Autonomous examination of data to discover deeper insights, make predictions, or generate recommendations (e.g., through data/text mining and machine learning)
-
-__Augmented Analytics__
-
-* Use of technologies such as machine learning and AI to assist with data preparation, insight generation and insight explanation to augment how people explore and analyze data
-
-[https://www.gartner.com/en/information-technology/glossary](https://www.gartner.com/en/information-technology/glossary) (accessed 2022-08-01)
-
-# How did we get here?
-
-![](imgs/slides6.png)
-
-# Data platform
-
-
-Companies are collecting tons of data to enable advanced analytics
-
-* Raw data is difficult to obtain, interpret, and maintain
-* Data is more and more heterogeneous
-* There is need for curating data to make it _consumable_
-
-Where are we _collecting/processing_ data?
-
-* Getting _value_ from data _is not_ (only) a matter of _storage_
-* Need integrated and multilevel analytical skills and techniques
-
-
-Getting _value_ from data _is not_ (only) a matter of _storage_
-
-* Any example?
-
-> “It is a capital mistake to theorize before one has data. Insensibly, one begins to twist the facts to suit theories, instead of theories to suit facts.”
->
-> – Sherlock Holmes
-
-# Case study: photo gallery
-
-:::: {.columns}
-::: {.column width=50%}
-
-![](imgs/slides7.png)
-
-:::
-::: {.column width=50%}
-
-![](imgs/slides8.png)
-
-:::
-::::
-
-# Data platform
-
-:::: {.columns}
-::: {.column width=50%}
-
-> Database
->
-> "A database is a _structured and persistent collection_ of information about some aspect of the real world organized and stored in a way that facilitates efficient retrieval and modification. The structure of a database is determined by an _abstract data model_. Primarily, it is this structure that differentiates a database from a data file."
-
-:::
-::: {.column width=50%}
-
-![](imgs/20.svg)
-
-:::
-::::
-
-Özsu M.T. (2018) Database. In: Encyclopedia of Database Systems. Springer, New York, NY. [https://doi.org/10.1007/978-1-4614-8265-9_80734](https://doi.org/10.1007/978-1-4614-8265-9_80734)
-
-# Data platform
-
-:::: {.columns}
-::: {.column width=50%}
-
-> Data Warehouse
->
-> "A collection of data that supports decision-making processes. It provides the following features: subject-oriented, integrated and consistent, not volatile."
-
-:::
-::: {.column width=50%}
-
-![](imgs/21.svg)
-
-:::
-::::
-
-Matteo Golfarelli and Stefano Rizzi.  _Data warehouse design: Modern principles and methodologies_ . McGraw-Hill, Inc., 2009.
-
-# OLTP vs OLAP?
-
-# Data platform: OLTP vs OLAP
-
-| Characteristic | OLTP | OLAP |
-|:-: |:-: |:-: |
-| Nature | Constant transactions (queries/updates) | Periodic large updates, complex queries |
-| Examples | Accounting database, online retail transactions | Reporting, decision support |
-| Type | Operational data | Consolidated data |
-| Data retention | Short-term (2-6 months) | Long-term (2-5 years) |
-| Storage | Gigabytes (GB) | Terabytes (TB) / Petabytes (PB) |
-| Users | Many | Few |
-| Protection | Robust, constant data protection and fault tolerance | Periodic protection |
-
-# Data platform
-
-:::: {.columns}
-::: {.column width=50%}
-
-> Schemaless databases
->
-> There is no predefined schema the data must conform to before it's added to the database.
-> As a result, you don't need to know the structure of your data, enabling you to store all your data more easily and quickly.
-
-:::
-::: {.column width=50%}
-
-![](imgs/24.svg)
-
-:::
-::::
-
-# Data platform
-
-:::: {.columns}
-::: {.column width=50%}
-
-> Data lake
->
-> “A DL is a _central repository_ system for _storage, processing, and analysis of raw data_, in which the data is kept in its _original format and is processed to be queried only when needed_. It can _store a varied amount of formats_ in big data ecosystems, from unstructured, semi-structured, to structured data sources”
-
-:::
-::: {.column width=50%}
-
-![](imgs/slides9.jpg)
-
-:::
-::::
-
-Couto, Julia, et al. "A Mapping Study about Data Lakes: An Improved Definition and Possible Architectures."  _SEKE_ . 2019.
-
-[https://dunnsolutions.com/business-analytics/big-data-analytics/data-lake-consulting](https://dunnsolutions.com/business-analytics/big-data-analytics/data-lake-consulting)
-
-# Data platform
-
-![](imgs/26.svg)
-
-# DWH vs Data Lake?
-
-# Data platform: DWH vs Data Lake
-
-| Characteristics | Data warehouse | Data lake |
-|:-: |:-: |:-: |
-| Data | Relational | Non-relational and relational |
-| Schema | Designed prior to implementation (schema-on-write) | Written at the time of analysis (schema-on-read) |
-| Price/performance | Fastest query results using higher cost storage | Query results getting faster using low-cost storage |
-| Data quality | Highly curated data that serves as the central version of the truth | Any data, which may or may not be curated (e.g., raw data) |
-| Users | Business analysts | Data scientists, data developers, and business analysts (using curated data) |
-| Analytics | Batch reporting, BI, and visualizations | Machine learning, predictive analytics, data discovery, and profiling. |
-
-# Data platform
-
-
-Data lakes have increasingly taken the role of data hubs
-
-* Eliminate up-front costs of ingestion and ETL since data are stored in original format
-* Once in DL, data are available for analysis by everyone in the organization
-
-Drawing a sharp line been storage/computation/analysis is hard
-
-* Is a database just storage?
-* What about SQL/OLAP?
-
-Blurring of the architectural borderlines
-
-* DL is often replaced by “data platform” or “data ecosystem”
-* Encompass systems supporting data-intensive storage, computation, analysis
-
-# Data platform
-
-
-A data platform is a __centralized__ infrastructure that facilitates the ingestion, storage, management, and exploitation of large volumes of heterogeneous data. It provides a collection of __independent__ and __well-integrated__ services meeting __end-to-end__ data needs.
-
-* __Centralized__: is conceptually a single and unified component
-* __Independent__: a service is not coupled with any other
-* __Well-integrated__: services have interfaces that enable easy and frictionless composition
-* __End-to-end__: services cover the entire data life cycle
-
-Rationale: relieve users from complexity of administration and provision
-
-* Not only technological skills, but also privacy, access control, etc.
-* Users should only focus on functional aspects
-
-# Data platform
-
-
-Are we done? No!
-
-* Lacking smart support to govern the complexity of data and transformations
-* Data transformations must be governed to prevent DP turning into a swamp
-  * Amplified in data science, with data scientists prevailing data architects
-  * Leverage descriptive metadata and maintenance to keep control over data
-
-# Which functionalities for (automated) data management can you think about?
-
-# Managing data platforms
-
-* Data provenance
-* Compression
-* Data profiling
-* Entity resolution
-* Data versioning
-* ...
-
-# Data provenance
-
-
-Provenance (also referred to as lineage, pedigree, parentage, genealogy)
-
-* The description of the origins of data and the process by which it arrived at the database
-* Not only data products (e.g., tables, files), but also the processes that created them
-
-Examples of use cases
-
-* Business domain.  _Users traditionally work with an _ _organized data schema_ _, where the structure and _ _semantics of the data in use is shared_ _ across the corporation or even B2B. Yet, a large proportion of businesses deal with __bad quality data__. __Sources__ of bad data __need to be identified __and corrected to avoid costly errors in business forecasting._
-* Scientific/research domain. _Data_ used in the scientific field can be _ad hoc_ and driven by _individual researchers _or small communities. The scientific field is moving _towards more collaborative research_ and organizational boundaries are disappearing. _Sharing data and metadata across organizations is essential_, leading to a convergence on common schemes to ensure compatibility. Issues of _trust_, _quality_, and _copyright_ of data are significant when using third-party data in such a loosely connected network._
-
-Simmhan, Yogesh L., Beth Plale, and Dennis Gannon. "A survey of data provenance techniques."  _Computer Science Department, Indiana University, Bloomington IN_ 47405 (2005): 69.
-
-# Data provenance
-
-
-Astronomers are creating an international Virtual Observatory
-
-* A _federation_ of all the world significant astronomical _data resources_ coupled with _provision of the computational resources _ needed to exploit the data scientifically
-* Astronomy changed from being an individualistic to a _collective enterprise_
-* Telescope time is devoted/allocated to systematic sky surveys and analysis is performed using data from the archives
-* Astronomers are _increasingly relying on data that they did not take themselves_
-* Raw data bear _many instrumental signatures that must be removed _ in the process of generating data products
-
-![](imgs/slides14.jpg)
-
-Mann, Bob. "Some data derivation and provenance issues in astronomy."  _Workshop on Data Derivation and Provenance, Chicago_ . 2002.
-
-[https://www.esa.int/Science_Exploration/Space_Science/Webb/Webb_inspects_the_heart_of_the_Phantom_Galaxy](https://www.esa.int/Science_Exploration/Space_Science/Webb/Webb_inspects_the_heart_of_the_Phantom_Galaxy) (accessed 2022-08-01)
-
-# Data provenance
-
-![](imgs/slides15.png)
-
-Simmhan, Yogesh L., Beth Plale, and Dennis Gannon. "A survey of data provenance techniques."  _Computer Science Department, Indiana University, Bloomington IN_ 47405 (2005): 69.
-
-# Data provenance
-
-
-Granularity
-
-* _Fine-grained_ (instance level): tracking data items (e.g., a tuple in a dataset) transformations
-* _Coarse-grained_ (schema-level): tracking dataset transformations
-
-Queries
-
-* _Where_ provenance: given some output, which inputs did the output come from?
-* _How_ provenance: given some output, how were the inputs manipulated?
-* _Why_ provenance: given some output, why was data generated?
-  * E.g., in the form of a proof tree that locates source data items contributing to its creation
-
-Simmhan, Yogesh L., Beth Plale, and Dennis Gannon. "A survey of data provenance techniques."  _Computer Science Department, Indiana University, Bloomington IN_ 47405 (2005): 69.
-
-Ikeda, Robert, and Jennifer Widom.  _Data lineage: A survey_ . Stanford InfoLab, 2009.
-
-# Data provenance
-
-
-Data provenance, an example of data management
-
-* Metadata pertaining to the history of a data item
-* Pipeline including the origin of objects and operations they are subjected to
-* We have a standard: [https://www.w3.org/TR/prov-dm/](https://www.w3.org/TR/prov-dm/)
-
-![](imgs/slides16.png)
-
-[https://www.w3.org/TR/prov-dm/](https://www.w3.org/TR/prov-dm/)
-
-# Data provenance
-
-
-_Entity_
-
-* Physical/conceptual things
-_Activity_
-* Dynamic aspects of the world, such as actions
-* How entities come into existence, often making use of previously existing entities
-_Agent_
-* A person, a piece of software
-* Takes a role in an activity such that the agent can be assigned some degree of responsibility for the activity taking place
-
-![](imgs/slides17.png)
-
-[https://www.w3.org/TR/2013/NOTE-prov-primer-20130430/](https://www.w3.org/TR/2013/NOTE-prov-primer-20130430/)
-
-# Data provenance
-
-
-Use cases for data provenance
-
-* Accountability and auditing
-Data quality
-
-* Monitoring of the quality (e.g., accuracy) of the objects produced
-* Notify when a transformation pipeline is not behaving as expected
-Debugging
-
-* Inferring the cause of pipeline failures is challenging
-* Store inputs of each operation with versions and environmental settings (RAM, CPUs, etc.)
-
-And so on...
-
-
-# Compression
-
-
-Summarization / compression
-
-* Present a concise representation of a dataset in a comprehensible and informative manner
-
-![](imgs/slides18.png)
-
-Ahmed, Mohiuddin. "Data summarization: a survey."  _Knowledge and Information Systems_ 58.2 (2019): 249-273.
-
-# Data profiling
-
-
-Data profiling [@naumann2014data]
-
-* A broad range of methods to efficiently analyze a given data set
-* E.g., in a _relational_ scenario, _tables_ of a relational database are _scanned_ to derive _metadata_, such as _data types_, _completeness_ and _uniqueness_ of columns, _keys_ and  _foreign keys_, and occasionally _functional dependencies_ and _association rules_
-
-![](imgs/slides19.png)
-
-# Data profiling
-
-Use cases
-
-* _Query optimization_
-  * Performed by DBMS to support query optimization with statistics about tables and columns
-  * Profiling results can be used to estimate the selectivity of operators and the cost of a query plan
-* _Data cleansing _ (typical use case is profiling data)
-  * Prepare a cleansing process by revealing errors (e.g., in formatting), missing values or outliers
-* _Data integration and analytics_
-
-Challenges?
-
-
-# Data profiling
-
-:::: {.columns}
-::: {.column width=50%}
-
-Challenges
-
-* The results of data profiling are _computationally complex_ to discover
-  * E.g., discovering keys/dependencies usually involves some sorting step for each considered column
-* Verification of _complex constraints on column combinations _ in a database
-  * What is the complexity of this task?
-
-:::
-::: {.column width=50%}
-
-| a | b | c | d |
-|:-: |:-: |:-: |:-: |
-| 1 | 1 | 2 | 2 |
-| 1 | 2 | 1 | 4 |
-
-Given a table with columns $C = { a, b, c, d }$
-
-- To extract the (distinct) cardinality of each column, I will consider $|C|$ columns $\{(a), (b), (c), (d)\}$
-- To extract the correlations between pairs of columns, I will consider ($\binom{|C|}{n}$) groups $\{(a, b), (a, c), (a, d), (b, c), ...\}$
-- Extracting the relationships among all possible groups of columns generalizes to $\sum_{n=1}^{|C|}\binom{|C|}{n}=2^{|C|}−1$ groups
-
-:::
-::::
-
-# Entity resolution
-
-Entity resolution
-
-* (also known as entity matching, linking)
-* Find records that refer to the same entity across different data sources (e.g., data files, books, websites, and databases)
-
-![](imgs/slides20.png)
-
-Papadakis, George, et al. "Blocking and filtering techniques for entity resolution: A survey."  _ACM Computing Surveys (CSUR)_ 53.2 (2020): 1-42.
-
-# Data versioning
-
-Version control
-
-* A class of systems responsible for managing changes to computer programs, documents, or data collections
-* Changes are identified by a number/letter code, termed the revision/version number
-However, data pipelines are not only about code bult also about
-
-* Model Version control
-* Data Version Control
-* Model Parameter Tracking
-* Model Performance Comparison
-
-![](imgs/slides21.png)
-
-Support CRUD (Create, Read, Update, Delete) operations with versions
-
-E.g., on AWS (PUT, GET, DELETE), what about update?
-
-![](imgs/slides22.png)
-
-![](imgs/slides23.png)
-
-![](imgs/slides24.png)
-
-[https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html](https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html) (accessed 2022-08-01)
-
-# In action
-
-![](imgs/slides25.png)
-
-Lab: California housing prices
-
-# Data platform
-
-Are we done? No!
-
-* Metadata can become bigger than data themselves
-
-We need meta meta-data (or models)...
-
-* ... chasing our own tails
-
-Data management is still a (research) issue in data platforms
-
-
-# Data lakehouse
-
-
-__Data __ __lakehouse__
-
-* Data management architecture that combines the flexibility, cost-efficiency, and scale of data lakes with the data management and ACID transactions of data warehouses, enabling business intelligence (BI) and machine learning (ML) on all data
-* Vendor lock in
-
-![](imgs/slides26.png)
-
-[https://www.databricks.com/glossary/data-lakehouse](https://www.databricks.com/glossary/data-lakehouse)
-
-![](imgs/slides27.png)
-
-|  | Data warehouse | Data lake | Data lakehouse |
-|:-: |:-: |:-: |:-: |
-| Data format | Closed, proprietary format | Open format (e.g., Parquet) | Open format |
-| Types of data | Structured data, with limited support for semi-structured data | All types: Structured data, semi-structured data, textual data, unstructured (raw) data | All types: Structured data, semi-structured data, textual data, unstructured (raw) data |
-| Data access | SQL-only, no direct access to file | Open APIs for direct access to files with SQL, R, Python and other languages | Open APIs for direct access to files with SQL, R, Python and other languages |
-| Reliability | High quality, reliable data with ACID transactions | Low quality, data swamp | High quality, reliable data with ACID transactions |
-| Governance and security | Fine-grained security and governance for row/columnar level for tables | Poor governance as security needs to be applied to files | Fine-grained security and governance for row/columnar level for tables |
-| Performance | High | Low | High |
-| Scalability | Scaling becomes exponentially more expensive | Scales to hold any amount of data at low cost, regardless of type | Scales to hold any amount of data at low cost, regardless of type |
-| Use case support | Limited to BI, SQL applications and decision support | Limited to machine learning | One data architecture for BI, SQL and machine learning |
-
-
-Key technologies used to implement open source Data Lakehouses
-
-* Databricks’ Delta Lake
-* Apache Hudi
-* Apache Iceberg
-
-[https://databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html](https://databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html)
-
-# Data platform
-
-__Is it a Lakehouse with another name?__
-
-* A Lakehouse is a part of data platform, a layer that enables to query multiple data sources (with SQL/Spark) transparently by using some metadata (JSON) log
-* Still, you could get a data platform where such transparence is not mandatory or could be achieved by different techniques (e.g., multistore [1])
-
-[1] Forresi, C., Gallinucci, E., Golfarelli, M., & Hamadou, H. B. (2021). A dataspace-based framework for OLAP analyses in a high-variety multistore. The VLDB Journal, 30(6), 1017-1040.
-
-__Is it a new name for BI?__
-
-No, in a data platform you also need to manage (streams of) operational data and OLTP workloads
-
-![](imgs/slides28.png)
-
-# Data platform: related job positions
-
-
-_Data platform engineer_
-
-* Orchestrate the successful implementation of cloud technologies within the data infrastructure of their business
-* Solid understanding of impact database types and implementation
-* Responsible for purchasing decisions for cloud services and approval of data architectures
-
-_Data architect_
-
-* Team members who understand all aspects of a data platform's architecture
-* Work closely with the data platform engineers to create data workflows
-* Responsible for designing and testing new database architectures and planning both data and architecture migrations
-
-_Data pipeline engineer_
-
-* Responsible for planning, architecting, and building large-scale data processing systems
-
-_Data analyst_
-
-* Analyze data systems, creating automated systems for retrieving data from the data platform
-* Cloud data analysts are more commonly members of the business user population
-
-_Data scientist_
-
-* Analyze and interpret complex digital data
-* Work with new technologies (e.g., machine learning) to deepen the business' understanding and gain new insights
-
-# From DevOps...
-
-__DevOps__ combines development and operations to increase the efficiency, speed, and security of software development and delivery compared to traditional processes.
-
-DevOps practices enable software development (dev) and operations (ops) teams to accelerate delivery through automation, collaboration, fast feedback, and iterative improvement
-
-![](imgs/slides29.png)
-
-[https://about.gitlab.com/topics/devops/](https://about.gitlab.com/topics/devops/) (accessed 2023-06-03)
-
-![](imgs/slides30.png)
-
-# ... to DataOps
-
-__DataOps__ refers to a general process aimed to shorten the end-to-end data analytic life-cycle time by introducing automation in the data collection, validation, and verification process
-
-![](imgs/slides31.png)
-
-Munappy, A. R., Mattos, D. I., Bosch, J., Olsson, H. H., & Dakkak, A. (2020, June). From ad-hoc data analytics to dataops. In _Proceedings of the International Conference on Software and System Processes_  (pp. 165-174).
-
-# DataOps
-
-![](imgs/slides32.png)
-
-
-From DevOps to DataOps
-
-* _“A collaborative data management practice focused on improving the _ _communication, integration and automation of data flows between _ _data managers and data consumers across an organization”_
-* Data analytics improved in terms of velocity, quality, predictability and scale of software engineering and deployment
-
-Some key rules
-
-* Establish progress and performance measurements at every stage
-* Automate as many stages of the data flow as possible
-* Establish governance discipline (_governance-as-code_)
-* Design process for growth and extensibility
-
-![](imgs/slides33.png)
-
-Gartner, 2020 [https://www.gartner.com/smarterwithgartner/how-dataops-amplifies-data-and-analytics-business-value](https://www.gartner.com/smarterwithgartner/how-dataops-amplifies-data-and-analytics-business-value)Andy Palmer, 2015 [https://www.tamr.com/blog/from-devops-to-dataops-by-andy-palmer/](https://www.tamr.com/blog/from-devops-to-dataops-by-andy-palmer/) William Vorhies, 2017 [https://www.datasciencecentral.com/profiles/blogs/dataops-it-s-a-secret](https://www.datasciencecentral.com/profiles/blogs/dataops-it-s-a-secret)
-
-# Data fabric
-
-
-“vision for data management [...] that seamlessly connects different clouds, whether they are private, public, or hybrid environments.” (2016)
-
-
-Frictionless access and sharing of data in a distributed data environment
-
-* Enables a __single and consistent data management framework__ , which allows seamless data access and processing by design across otherwise siloed storage
-* Leverages __human and machine capabilities to access data __ in place or support its consolidation where appropriate
-* __Continuously identifies and connects data __ from disparate applications to discover unique, business-relevant relationships between the available data points
-
-It is a unified architecture with an integrated set of technologies and services
-
-* Designed to deliver integrated and enriched data – at the right time, in the right method, and to the right data consumer – in support of both operational and analytical workloads
-* Combines key data management technologies – such as __data catalog__ , __data governance__ , __data integration__ , __data pipelining__ , and __data orchestration__
-
-[https://cloud.netapp.com/hubfs/Data-Fabric/Data%20Fabric%20WP%20April%202017.pdf](https://cloud.netapp.com/hubfs/Data-Fabric/Data%20Fabric%20WP%20April%202017.pdf) (accessed 2023-06-23)Gartner, 2019 [https://www.gartner.com/en/newsroom/press-releases/2019-02-18-gartner-identifies-top-10-data-and-analytics-technolo](https://www.gartner.com/en/newsroom/press-releases/2019-02-18-gartner-identifies-top-10-data-and-analytics-technolo) Gartner, 2021 [https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration](https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration) K2View Whitepaper: What is a Data Fabric? The Complete Guide, 2021
-
-* __Catalog all your data__: including business glossary and design-time and runtime metadata
-* __Enable self-service capabilities__: data discovery, profiling, exploration, quality assessment, consumption of data-as-a-product
-* __Provide a knowledge graph__: Visualizing how data, people, processes, systems, etc. are interconnected, deriving additional actionable insight
-* __Provide intelligent (smart) information integration__: Supporting IT staff and business users alike in their data integration and transformation, data virtualization, and federation tasks
-* __Derive insight from metadata__: Orchestrating and automating tasks and jobs for data integration, data engineering, and data governance end to end
-* __Enforce local and global data rules/policies__: Including AI/ML-based automated generation, adjustments, and enforcement of rules and policies
-* __Manage an end-to-end unified lifecycle__: Implementing a coherent and consistent lifecycle end to end of all Data Fabric tasks across various platforms, personas, and organizations
-* __Enforce data and AI governance__: Broadening the scope of traditional data governance to include AI artefacts, for example, AI models, pipelines
-
-Is this brand new?
-
-
-__It is a design concept__
-
-* It optimizes data management by automating repetitive tasks
-* According to Gartner estimates, 25% of data management vendors will provide a complete framework for data fabric by 2024 – up from 5% today
-
-![](imgs/slides34.png)
-
-![](imgs/slides35.png)
-
-Gartner, 2021 [https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration](https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration)
-
-K2View, 2021 [https://www.k2view.com/top-data-fabric-vendors](https://www.k2view.com/top-data-fabric-vendors)
-
 ---
-
-Top Players 
-https://solutionsreview.com/data-management/the-best-data-fabric-tools-and-software/ 
-https://em360tech.com/top-10/data-modelling-fabric 
-Predictions
-https://live-datastaxd8.pantheonsite.io/sites/default/files/2021-02/Predicts_2021_Data__735776_ndx.pdf
-
-![](imgs/slides36.png)
-
-[https://www.irion-edm.com/data-management-insights/gartner-data-summit-irion-representative-vendor-for-data-fabric-technology/](https://www.irion-edm.com/data-management-insights/gartner-data-summit-irion-representative-vendor-for-data-fabric-technology/)
-
-![](imgs/slides37.png)
-
-Gartner, 2021 [https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration](https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration)
-
-# Data mesh
-
-
-Distributed data architecture, under centralized governance and standardization for interoperability, enabled by a shared and harmonized self-serve data infrastructure
-
-* Domain-oriented decentralized data ownership
-  * Decentralization and distribution of responsibility to people who are closest to the data, in order to support continuous change and scalability
-  * Each domain exposes its own op/analytical APIs
-* __Data as a product __ (_quantum_)
-  * Products must be discoverable, addressable, trustworthy, self-describing, secure
-* Self-serve data infrastructure as a platform
-  * High-level abstraction of infrastructure to provision and manage the lifecycle of data products
-* Federated computational governance
-  * A governance model that embraces decentralization and domain self-sovereignty, interoperability through global standardization, a dynamic topology, automated execution of decisions by the platform
-
-Zhamak Dehghani, 2019 [https://martinfowler.com/articles/data-monolith-to-mesh.html](https://martinfowler.com/articles/data-monolith-to-mesh.html)Zhamak Dehghani, 2020 [https://martinfowler.com/articles/data-mesh-principles.html](https://martinfowler.com/articles/data-mesh-principles.html)
-
+subtitle: Building data pipelines
 ---
-
-https://www.youtube.com/watch?v=_bmYXWCxF_Q
-
-
-Data Mesh organizes data around __business domain owners __ and transforms relevant data assets (data sources) to __data products__ that can be consumed by distributed business users from various business domains or functions
-
-* Data products are created, governed, and used in an __autonomous, decentralized__ , and self-service manner
-* __Self-service capabilities__ , which we have already referenced as a Data Fabric capability, enable business organizations to entertain a data marketplace with shopping-for-data characteristics
-
-![](imgs/slides38.png)
-
-# What makes data a product?
-
-
-A __data product __ is raw data transformed into a business context
-
-* Data products are registered in __knowledge catalog __ through specifications (XML, JSON, etc.)
-* Main features
-  * __Data product description__: The data product needs to be well described
-  * __Access methods__: for example, REST APIs, SQL, NoSQL, etc., and where to find the data asset
-  * __Policies and rules__: who is allowed to consume the data product for what purpose
-  * __SLAs__: agreements regarding the data product availability, performance characteristics, functions, cost of data product usage
-  * __Defined format__: A data product needs to be described using a defined format
-  * __Cataloged__: All data products need to be registered in the knowledge catalog. Data products need to be searchable and discoverable by potential data product consumers and business user
-* Data products themselves are not stored in the knowledge catalog
-
-# Data mesh vs data fabric
-
-
-They are design concepts, not things
-
-* They are not mutually exclusive
-* They are architectural frameworks, not architectures
-  * The frameworks must be adapted and customized to your needs, data, processes, and terminology
-  * Gartner estimates 25% of data management vendors will provide a complete data fabric solution by 2024 – up from 5% today
-
-Alex Woodie, 2021 [https://www.datanami.com/2021/10/25/data-mesh-vs-data-fabric-understanding-the-differences/](https://www.datanami.com/2021/10/25/data-mesh-vs-data-fabric-understanding-the-differences/) Dave Wells, 2021 [https://www.eckerson.com/articles/data-architecture-complex-vs-complicated](https://www.eckerson.com/articles/data-architecture-complex-vs-complicated)
-
-
-Both provide an architectural framework to access data across multiple technologies and platforms
-
-* __Data fabric__
-  * Attempts to centralize and coordinate data management
-  * Tackles the complexity of data and metadata in a smart way that works well together
-  * Focus on the architectural, technical capabilities, and intelligent analysis to produce active metadata supporting a smarter, AI-infused system to orchestrate various data integration styles
-* __Data mesh__
-  * Emphasis on decentralization and data domain autonomy
-  * Focuses on organizational change; it is more about people and process
-  * Data are primarily organized around domain owners who create business-focused data products, which can be aggregated and consumed across distributed consumers
-
-Alex Woodie, 2021 [https://www.datanami.com/2021/10/25/data-mesh-vs-data-fabric-understanding-the-differences/](https://www.datanami.com/2021/10/25/data-mesh-vs-data-fabric-understanding-the-differences/) Dave Wells, 2021 [https://www.eckerson.com/articles/data-architecture-complex-vs-complicated](https://www.eckerson.com/articles/data-architecture-complex-vs-complicated)
-
-![](imgs/slides39.png)
-
-
-Data Fabric and Mesh are the results from the data architecture evolution
-
-* __Many capabilities were in existence already long before__ the terms were coined
-
-Take away:
-
-* Abstract the “building blocks” of such platforms
-* Let them evolve according to scalability and flexibility requirements
-
-# (Some) References
-
-![](imgs/slides40.jpg)
-
-![](imgs/slides41.png)
-
-![](imgs/slides42.png)
-
-# «Example» of architecture
-
-![](imgs/slides43.jpg)
-
-[1] [https://xkcd.com/2347/](https://xkcd.com/2347/) (*)(*) «Ormai sta xkcd é una base troppo usata» Alessandro Tappi
-
-# Example of data platform: Hadoop-based
-
-
-A data platform on the Hadoop stack requires several tools
-
-
-How many levels of complexity are hidden here?
-
-
-How do you provision it?
-
-* Manual provisioning on-premises
-* Semi-automatic provisioning on-premises
-* Automatic provisioning in the cloud
-
-Storage   .
-
-Resources   .
-
-Application   .
-
-GUI   .
-
-Messaging   .
-
-Orchestration   .
-
-Map Reduce
-
-Batch
-
-Flink
-
-real-time
-
-# On-premises manual provisioning
-
-
-Hardly advisable, if not for small and local tests
-
-* __Technical challenges__
-  * Installation: how do I set up a new machine?
-  * Networking: how do I cable dozens of machines?
-  * Management: how do I replace a broken disk?
-  * Upgrade: how do I extend the cluster with new services/machines?
-  * (energy and cooling, software licenses, insurance...)
-* __Technological challenges__
-  * How do we configure a distributed environment?
-  * How do we set up/integrate/control independent services?
-  * How do we orchestrate data flows?
-* __Business challenges__
-  * Can we afford to spend resources on tasks that are not mission oriented?
-  * No free lunch, each choice has cost/benefit
-  * How much time does it take to master a technology?
-  * How many people do I need?
-
-# Example of data platform: MOSES
-
-![](imgs/slides44.png)
-
-
-Example of a data platform (MOSES)
-
-
-Functional architecture
-
-* Components of MOSES are in orange
-* Others are standard components in charge of producing/consuming, processing, storing, and visualizing data
-* The orchestrator (e.g., Oozie) manages (e.g., schedules) the data transformation processes
-
-Metadata Extractor
-
-![](imgs/slides45.png)
-
-![](imgs/slides46.png)
-
-Metadata Search
-
-Engine
-
-![](imgs/slides47.png)
-
-![](imgs/slides48.png)
-
-![](imgs/slides49.png)
-
-![](imgs/slides50.png)
-
-Provenance Manager
-
-![](imgs/slides51.png)
-
-![](imgs/slides52.png)
-
-![](imgs/slides53.png)
-
-![](imgs/slides54.png)
-
-Custom components
-
-![](imgs/slides55.png)
-
-![](imgs/slides56.png)
-
-![](imgs/slides57.png)
-
-![](imgs/slides58.png)
-
-![](imgs/slides59.png)
-
-![](imgs/slides60.png)
-
-![](imgs/slides61.png)
-
-Process Interfaces
-
-MOSES Interfaces
-
-Other Interfaces
-
-Workflow Administration
-
-Francia, M., Gallinucci, E., Golfarelli, M., Rizzi, S. et al. (2021). Making data platforms smarter with MOSES. Future Generation Computer Systems, 125, 299-313.
-
-# Summing up
-
-* Storage should be flexible enough to support heterogenous data models and raw data
-  * From operational databases to DWHs __(why?)__
-  * From relational data models to NoSQL __(why?)__
-  * Data lake to (directly) ingest raw data
-* Storage,  _per se_ , is insufficient to get value from the data __(examples?)__
-  * We also need data processing and fruition
-  * Data lakes are blurring into data platforms
-* Data platforms support end-to-end data needs __(which ones?)__
-  * Building data platforms is hard __(why?)__
-  * Managing data platforms is hard, exploit meta-data to ease this task
-    * Data lineage, compression, profiling, resolution, etc.
-* __Open question__: how do we deploy working data platforms?
-
-# -- newsection --
-
-# Building data pipelines
-
----
-
-https://catalog.us-east-1.prod.workshops.aws/workshops/ea7ddf16-5e0a-4ec7-b54e-5cadf3028b78/en-US
 
 # A necessary introduction
-
 
 Computational thinking: solving problems using concepts and ideas from computer science.
 
@@ -1067,34 +22,30 @@ Pillars to computational thinking:
 
 # Computational thinking
 
-
-__Decomposition__
+**Decomposition**
 
 * Taking a complex problem and breaking it into more manageable sub-problems.
 * The solution to each sub-problem may be much simpler by putting together the solutions to the sub-problems (any example?)
 
-__Pattern recognition__
+**Pattern recognition**
 
 * Find patterns among the sub-problems
 * Identify problems sharing similarities or characteristics
 * Discovering these patterns make the complex problem easier to solve since we can use the same solution for each occurrence of the pattern (any example?)
 
-
-Data __representation__ and __abstraction__
+Data **representation** and **abstraction**
 
 * Determining the important characteristics of the problem and filtering out those that are not
 * Can create a representation of what we're trying to solve
 
-__Algorithm__
+**Algorithm**
 
 * A set of step-by-step instructions of how to solve a problem.
 * It identifies what is to be done (the instructions), and the order in which they should be done
 
 ... there is no magic in programming computers
 
-
 # Integrated analytics lab
-
 
 Requirements:
 
@@ -1106,8 +57,7 @@ The labs will be mainly guided...
 * ... but the notebooks contain all the details
 * ... no time for a complete (coding) discussion during the lectures
 
-Focus on the problem __understanding__ , __definition__ , and __solution__ !
-
+Focus on the problem **understanding**, **definition**, and **solution** !
 
 
 Building data pipelines
@@ -1123,7 +73,6 @@ Building data pipelines
 
 ![](imgs/slides63.png)
 
-
 Building data pipelines
 
 * _Frame the problem_ and look at the big picture
@@ -1135,7 +84,6 @@ Building data pipelines
 
 ![](imgs/slides66.png)
 
-
 Building data pipelines
 
 * Frame the problem and look at the big picture
@@ -1143,7 +91,6 @@ Building data pipelines
   * _"Your boss answers that your model’s output (a prediction of a district’s median housing price) will be fed to another Machine Learning system, along with many other signals. This downstream system will determine whether it is worth investing in a given area or not. Getting this right is critical, as it directly affects revenue."_
 
 ![](imgs/slides67.png)
-
 
 Building data pipelines
 
@@ -1176,7 +123,6 @@ Where does it come from, and why
 
 # Strengths of RDBMSs
 
-
 _ACID properties_
 
 * Provides guarantees in terms of consistency and concurrent accesses
@@ -1195,7 +141,6 @@ _Robustness_
 * Have been used for over 40 years
 
 # Weaknesses of RDBMS
-
 
 Impedance mismatch
 
@@ -1219,7 +164,6 @@ _Schema rigidity_
 
 # What NoSQL means
 
-
 The term has been first used in '98 by Carlo Strozzi
 
 * It referred to an open-source RDBMS that used a query language different from SQL
@@ -1236,28 +180,26 @@ Today, _NoSQL_ indicates _DBMSs_ adopting a _different data model from the relat
 
 # The first NoSQL systems
 
-
 _LiveJournal, 2003_
 
 * Goal: reduce the number of queries on a DB from a pool of web servers
-* Solution: _Memcached_ , designed to keep queries and results in RAM
+* Solution: _Memcached_, designed to keep queries and results in RAM
 
 _Google, 2005_
 
 * Goal: handle Big Data (web indexing, Maps, Gmail, etc.)
-* Solution: _BigTable_ , designed for scalability and high performance on Petabytes of data
+* Solution: _BigTable_, designed for scalability and high performance on Petabytes of data
 
 _Amazon, 2007_
 
 * Goal: ensure availability and reliability of its e-commerce service 24/7
-* Solution: _DynamoDB_ , characterized by strong simplicity for data storage and manipulation
+* Solution: _DynamoDB_, characterized by strong simplicity for data storage and manipulation
 
 ---
 
 https://en.wikipedia.org/wiki/LiveJournal LiveJournal è una sorta di MSN russo
 
 # NoSQL common features
-
 
 Not just rows and tables
 
@@ -1281,7 +223,6 @@ SQL is dead, long live SQL!
 * Some systems do adopt SQL (or a SQL-like language)
 
 # NoSQL in the Big Data world
-
 
 _NoSQL_ systems are mainly used for operational workloads (_OLTP_)
 
@@ -1330,7 +271,6 @@ Based on tables and rows
 
 # Graph: data model
 
-
 Each DB contains one or more _graphs_
 
 * Each graph contains _vertices _ and _arcs_
@@ -1356,13 +296,12 @@ https://stackoverflow.com/questions/5040617/what-is-the-difference-between-a-gra
 
 # Graph: querying
 
-
 Graph databases usually model relationships-rich scenarios
 
 * The query language simplifies the navigation of these relationships
 * Support for transactions
 * Support for indexes, selections and projections
-* __Query language based on detecting patterns__
+* **Query language based on detecting patterns**
 
 | Query | Pattern |
 |:-: |:-: |
@@ -1398,11 +337,10 @@ code:10001
 
 # Graph vs Aggregate modeling
 
-
 The graph data model is intrinsically different from the others
 
 * Focused on the relationships rather than on the entities per-se
-* __Limited scalability__: it is often impossible to shard a graph on several machines without "cutting" several arcs (i.e. having several cross-machine links)
+* **Limited scalability**: it is often impossible to shard a graph on several machines without "cutting" several arcs (i.e. having several cross-machine links)
   * Batch cross-machine queries: don’t follow relationships one by one, but "group them" to make less requests
   * Limit the depth of cross-machine node searches
 * _Data-driven modeling_
@@ -1414,8 +352,8 @@ Key-value, document and wide-column are called _aggregate-oriented_
 
 Based on the concept of encapsulation
 
-* Avoid joins as much as possible  achieve __high scalability__
-  * Con: data denormalization  __potential inconsistencies in the data__
+* Avoid joins as much as possible  achieve **high scalability**
+  * Con: data denormalization  **potential inconsistencies in the data**
 * _Query-driven modeling_
 
 ---
@@ -1424,7 +362,6 @@ https://stackoverflow.com/questions/21558589/neo4j-sharding-aspect
 https://ayende.com/blog/4490/that-no-sql-thing-scaling-graph-databases
 
 # Document: data model
-
 
 Each DB contains one or more _collections_ (corresponding to tables)
 
@@ -1466,7 +403,6 @@ Each field corresponds to a _key-value pair_
 }
 
 # Document: querying
-
 
 The query language is quite expressive
 
@@ -1571,7 +507,6 @@ Customer
 
 collection
 
-
 {
 
 * "_id": 1,
@@ -1592,7 +527,6 @@ collection
 
 }
 
-
 Product
 
 collection
@@ -1602,7 +536,6 @@ Order
 collection
 
 # Key-value: data model
-
 
 Each DB contains one or more _collections_ (corresponding to tables)
 
@@ -1621,7 +554,6 @@ Looks like a simple dictionary
 ![](imgs/slides76.png)
 
 # Key-value: querying
-
 
 Three simple kinds of query:
 
@@ -1666,7 +598,6 @@ Customer collection
 
 # Wide column: data model
 
-
 Each DB contains one or more _column families _ (corresponding to tables)
 
 * Each column family contains a list of _row_ in the form of a key-value pair
@@ -1687,7 +618,6 @@ Essentially a 2-dimensional key-value store
 
 # Wide column: querying
 
-
 The query language expressiveness is in between key-value and document data models
 
 * Column indexes are discouraged
@@ -1698,9 +628,7 @@ The query language expressiveness is in between key-value and document data mode
 
 Given the similarity with the relational model, a _SQL-like _ language is often used
 
-
 # Wide column: ≠ columnar
-
 
 Do not mistake the wide column data model with the columnar storage used for OLAP applications
 
@@ -1742,7 +670,6 @@ Order payments column family
 
 # Aggregate modeling strategy
 
-
 The _aggregate _ term comes from Domain-Driven Design
 
 * An aggregate is a group of tightly coupled objects to be handled as a block
@@ -1757,18 +684,16 @@ Advantages
 
 Disadvantages
 
-* __No design strategy exists for aggregates__
+* **No design strategy exists for aggregates**
   * _It only depends on how they are meant to be used_
 * Can optimize only a limited set of queries
 * Data denormalization  possible inconsistencies
 
 RDBMSs are agnostic from this point of view
 
-
 # Sharding data
 
 A look behind the curtain
-
 
 One of the strengths of NoSQL systems is their _scale-out capability_
 
@@ -1778,8 +703,8 @@ One of the strengths of NoSQL systems is their _scale-out capability_
 
 Two aspects must be considered when deploying on a cluster
 
-* __Sharding__: _distributing the data across different nodes_
-* __Replication__: _creating copies of the data on several nodes_
+* **Sharding**: _distributing the data across different nodes_
+* **Replication**: _creating copies of the data on several nodes_
 
 ---
 
@@ -1793,17 +718,15 @@ Mole di dati non è enorme
 Si vogliono sfruttare le caratteristiche dei database NoSQL (e.g., schemaless, modello dati)
 Un sistema distribuito è inevitabilmente più complesso; non è detto che ne valga sempre la pena
 
-
 # Sharding
 
-
-__Sharding__: _subdividing the data in _ _shards_ _ that are stored in different machines_
+**Sharding**: _subdividing the data in _ _shards_ _ that are stored in different machines_
 
 * Intrinsic in a distributed DB
 * Improves the efficiency of the system
   * Read/write operations are distributed
 
-A good _sharding_ _ strategy _ is __fundamental __ to optimize performances
+A good _sharding_ _ strategy _ is **fundamental ** to optimize performances
 
 * Usually based on one or more fields composing the sharding key
 
@@ -1813,9 +736,7 @@ A good _sharding_ _ strategy _ is __fundamental __ to optimize performances
 
 Rimosso: Non dimenticarsi che, nei cluster,si usano macchine meno affidabili – diminuisce la resistenza ai guasti
 
-
 # Sharding strategy
-
 
 Thumbs-up rules for a sharding strategy:
 
@@ -1830,7 +751,6 @@ _ Keep together the data that must be accessed together_
 
 * E.g., store each client’s orders in the same node
 
-
 Hash strategy: a hash function is used to allocate data to partitions
 
 * Adopted by DynamoDB and Cassandra
@@ -1843,7 +763,6 @@ Hash strategy: a hash function is used to allocate data to partitions
 ---
 
 https://blog.yugabyte.com/four-data-sharding-strategies-we-analyzed-in-building-a-distributed-sql-database/
-
 
 Range strategy: each partition contains a range of sorted data
 
@@ -1866,8 +785,7 @@ Beware: redefining (or choosing later) the sharding strategy can be quite expens
 
 # Replication
 
-
-__Replication__: the data is _copied _ on several nodes
+**Replication**: the data is _copied _ on several nodes
 
 * Improves the robustness of the system
   * In case of node failure, replicas prevent data loss
@@ -1891,7 +809,6 @@ Parliamo di replica completa, per ora
 
 # Master-Slave Replication
 
-
 _Master_
 
 * It’s the manager of the data
@@ -1910,18 +827,17 @@ _Slaves _
 
 Parliamo di replica completa, per ora
 
-
-__Pros__
+**Pros**
 
 * Easily handles many read requests
   * Slaves do not need the master to perform reads
 * Useful when the workload mainly consists of reads
 * Useful to avoid write conflicts
 
-__Cons__
+**Cons**
 
 * _The master is a bottleneck_
-  * __Only the master can handle writes__
+  * **Only the master can handle writes**
   * In case of failure, a new master must be drawn
 * Delay in write propagation can be a source of inconsistency
   * Two users may read different values at the same time
@@ -1938,13 +854,12 @@ The loss of a node does not compromise reads nor writes
 
 ![](imgs/slides86.png)
 
-
-__Pro__
+**Pro**
 
 * The failure of a node does not interrupt read nor write requests
 * Write performances easily scale by adding new nodes
 
-__Cons__
+**Cons**
 
 * _Conflicts! _
 * Delay in write propagation can be a source of inconsistency
@@ -1957,7 +872,6 @@ __Cons__
 TODO: come gestire conflitti in scrittura? Quorum, l‘ultimo vince o segnalazione.
 
 # Handling conflicts
-
 
 Read conflicts
 
@@ -1981,7 +895,6 @@ Prevention: verify that the value hasn’tchanges since the last read
 
 # The quorum mechanism
 
-
 The _quorum mechanism _ ensures consistent IO under replication
 
 * Based on contacting a majority of the nodes responsible for certain data
@@ -1996,7 +909,7 @@ Each data item has N replicas
   * The read operation is allowed only if R replicas can be read
   * Ensures that (at least) one copy with the up-to-date value is read
 
-writes _w_ _1_ ,  _w_ _2_ , w 3
+writes _w_ _1_,  _w_ _2_, w 3
 
 |  |
 |:-: |
@@ -2032,7 +945,6 @@ A look behind the curtain
 
 # RDBMS vs NoSQL: different philosophies
 
-
 RDBMS come from decades of widespread usage
 
 * Strong focus on data consistency
@@ -2049,7 +961,6 @@ NoSQL systems are designed to succeed where RDBMSs fail
 
 # Consistency: an example
 
-
 Consider 1000€ to be transferred from bank account A to B; the transfer is made by:
 
 * Removing 1000€ from A
@@ -2064,9 +975,7 @@ What should never happen
 
 RDBMS adopt _transactions _ to avoid this kind of issue
 
-
 # Consistency in RDBMSs: ACID
-
 
 Transactions guarantee four fundamental properties: ACID
 
@@ -2088,7 +997,6 @@ _D_ _urability_
 
 * The DBMS protects the DB from failures
 
-
 Implementation of ACID properties relies on _locking mechanisms and logs_
 
 * Resources are locked, updates are logged
@@ -2108,7 +1016,6 @@ But, sometimes, consistency is not that important
 
 # Consistency in NoSQL
 
-
 Several attempts have been made to describe NoSQL properties with respect to ACID properties
 
 * CAP theorem
@@ -2120,7 +1027,6 @@ They are not properties on which NoSQL systems rely
 * Rather, they simply _try _ to describe their behavior
 
 # Consistency in NoSQL: CAP
-
 
 "Theorem": only two of the following three properties can be guaranteed
 
@@ -2142,7 +1048,6 @@ _P_ _artition tolerance: _ the system continues to function and upholds its cons
 
 CAP demonstration: https://dl.acm.org/doi/pdf/10.1145/564585.564601?casa_token=m69maazxkqIAAAAA:cBn5y1eKnJUh7Tl4GVsw9Hqv984qwQ3_b8XvSM_wM3U2zp_-363uPINWJADEmMt-8ZjPzA1yaoE
 
-
 Three situations
 
 * CA: the system cannot suffer from network partitioning (single server)
@@ -2156,17 +1061,16 @@ Theorem interpretation is not trivial
 
 # Consistency in NoSQL: relaxing CAP
 
-
 Consider two users that want to book the same room when a network partition happens
 
-* __CP__: no one can book (_A is sacrificed_)
+* **CP**: no one can book (_A is sacrificed_)
 * Not the best solution
 
-__AP__: both can book (_C is sacrificed_)
+**AP**: both can book (_C is sacrificed_)
 
 * Possible overbooking: writing conflict to handle
 
-_ __caP__ _: only one can book
+_ **caP** _: only one can book
 
 * The other will se the room available but cannot book it
 
@@ -2187,7 +1091,6 @@ Segnalazione all’utente del conflitto
 Quorum
 
 # Consistency in NoSQL: PACELC
-
 
 Evolution of the CAP theorem (less known, but more precise)
 
@@ -2214,8 +1117,7 @@ http://dbmsmusings.blogspot.com/2010/04/problems-with-cap-and-yahoos-little.html
 
 # Consistency in NoSQL: BASE
 
-
-The CAP theorem is often cited as a justification for the use of weaker consistency models, for example _ __BASE__ _
+The CAP theorem is often cited as a justification for the use of weaker consistency models, for example _ **BASE** _
 
 * _Basically Available Soft-state services with Eventual consistency_
 
@@ -2249,17 +1151,15 @@ To each application its own data model
 
 # Key-Value: popular DBs
 
-
-__Redis__ (Data Structure server): [http://redis.io/](http://redis.io/)
+**Redis** (Data Structure server): [http://redis.io/](http://redis.io/)
 
 * Supports complex fields (list, set, ...) and operations on values (range, diff, ...)
 
-__Memcached DB: __ [http://memcached.org/](http://memcached.org/)
+**Memcached DB: ** [http://memcached.org/](http://memcached.org/)
 
-* __Riak__: [http://basho.com/riak/](http://basho.com/riak/)
+* **Riak**: [http://basho.com/riak/](http://basho.com/riak/)
 
 # Key-Value: when to use
-
 
 Very simple use cases
 
@@ -2269,30 +1169,28 @@ Very simple use cases
 
 Examples
 
-* __Session information__
+* **Session information**
   * Each web session is identified by its own sessionId: All related data can be stored with a PUT request and returned with a GET request
-* __User profiles, preferences__
+* **User profiles, preferences**
   * Each user is uniquely identified (userId, username) and has her own preferences in terms of language, colors, timezone, products, etc. – _data that fits well within an aggregate_
-* __Shopping cart, chat services__
+* **Shopping cart, chat services**
   * Each e-commerce websites associates a shopping cart to a user; it can be stored as _an aggregate identified by the user ID_
 
 ---
 
 1 RDBMS would be overkill
 
-
 # Key-Value: real use cases
 
-
-__Crawling of web pages__
+**Crawling of web pages**
 
 * The URL is the key, the whole page content (HTML, CSS, JS, images, ..)is the value
 
-__Twitter timeline__
+**Twitter timeline**
 
 * The user ID is the key, the list of mostrecent tweets to be shown is the value
 
-__Amazon S3 (Simple Storage Service)__
+**Amazon S3 (Simple Storage Service)**
 
 * A cloud-based file system service
 * Useful for personal backups, file sharing, website or apps publication
@@ -2312,31 +1210,29 @@ https://www.quora.com/Why-is-Twitter-not-using-NoSQL
 
 # Key-Value: when to avoid
 
-
-__Data with many relationships__
+**Data with many relationships**
 
 * When relationships between data (in the same or in different collections) must be followed
 * Some systems offer limited link-walking mechanisms
 
-__Multi-record operations__
+**Multi-record operations**
 
 * Because operations (mostly) involve one record at a time
 
-__Querying the data__
+**Querying the data**
 
 * If it is necessary to query the values, not just the key
 * Few systems offer limited functionalities (e.g., Riak Search)
 
 # Document: popular DBs
 
-__MongoDB__: [http://www.mongodb.org](http://www.mongodb.org/)
+**MongoDB**: [http://www.mongodb.org](http://www.mongodb.org/)
 
-__Couchbase: __ [http://www.couchbase.com](http://www.couchbase.com/)
+**Couchbase: ** [http://www.couchbase.com](http://www.couchbase.com/)
 
-__CouchDB__: [http://couchdb.apache.org](http://couchdb.apache.org/)
+**CouchDB**: [http://couchdb.apache.org](http://couchdb.apache.org/)
 
 # Document: when to use
-
 
 Higher expressiveness
 
@@ -2345,27 +1241,26 @@ Higher expressiveness
 
 Examples
 
-* __Event logs__
+* **Event logs**
   * _Central repo to store event logs from many applications; _ shard on app name or event type
-* __CMS, blogging platforms__
+* **CMS, blogging platforms**
   * _The absence of a predefined schema _ _fits well_ _ within content management systems (CMS) or website management applications, to handle comments, registrations and user profiles
-* __Web Analytics or Real-Time Analytics__
+* **Web Analytics or Real-Time Analytics**
   * _The ability to update only specific fields _ enables fast update of analytical metrics
   * _Text indexing_ enables real-time sentiment analysis and social media monitoring
-* __E-commerce applications__
+* **E-commerce applications**
   * _Schema flexibility is often required _ to store products and orders, as well as to enable schema evolution without incurring into refactoring or migration costs
 
 # Document: real use cases
 
-
-__Adversting__ __ services__
+**Adversting** ** services**
 
 * MongoDB was born as a system for banner ads
   * 24/7 availability and high performance
   * Complex rules to find the right banner based on user’s interests
   * Handle several kinds of ads and show detailed analytics
 
-__Internet of Things__
+**Internet of Things**
 
 * Real-time management of sensor-based data
 * Bosch uses MongoDB to capture data from cars (breaks, ABS, windscreen wiper, etc.) and aircrafts maintenance tools
@@ -2374,25 +1269,23 @@ __Internet of Things__
 
 # Document: when to avoid
 
-
-__ACID transactions requirement__
+**ACID transactions requirement**
 
 * If not for a few exceptions (e.g., RavenDB), document databases are not suited for cross-document atomicity
 
-__Queries on high-variety data__
+**Queries on high-variety data**
 
 * _If the aggregate structure continuously evolves, queries must be constantly updated _ (and normalization clashes with the concept of aggregate)
 
 # Wide column: popular DBs
 
-__Cassandra__: [http://cassandra.apache.org](http://cassandra.apache.org/)
+**Cassandra**: [http://cassandra.apache.org](http://cassandra.apache.org/)
 
-__HBase__: [https://hbase.apache.org](https://hbase.apache.org/)
+**HBase**: [https://hbase.apache.org](https://hbase.apache.org/)
 
-__Google __ __BigTable__:  [https://cloud.google.com/bigtable](https://cloud.google.com/bigtable/)
+**Google ** **BigTable**:  [https://cloud.google.com/bigtable](https://cloud.google.com/bigtable/)
 
 # Wide column: when to use
-
 
 Compromise between expressiveness and simplicity
 
@@ -2401,25 +1294,24 @@ Compromise between expressiveness and simplicity
 
 Examples
 
-* __Event logs; CMS, blogging platforms__
+* **Event logs; CMS, blogging platforms**
   * Similarly to document databases, _different applications may use different columns_
-* __Sparse matrixes__
+* **Sparse matrixes**
   * While an RDBMS would store _null _ values, a wide column _stores only the columns for which a value is specified_
-* __GIS applications__
+* **GIS applications**
   * Pieces of a map (tiles) can be stored as _couples of latitude and longitude_
 
 # Wide column: real use cases
 
-
-__Google applications__
+**Google applications**
 
 * BigTable is the DB used by Google for most of its applications, including Search, Analytics, Maps and Gmail
 
-__User profiles and preferences__
+**User profiles and preferences**
 
 * Spotify uses Cassandra to store metadata about users, artists, songs, playlists, etc.
 
-__Manhattan__
+**Manhattan**
 
 * After using Cassandra, Twitter ha developed its own proprietary NoSQL system to support most of its services
 
@@ -2431,16 +1323,14 @@ https://labs.spotify.com/2015/01/09/personalization-at-spotify-using-cassandra/
 
 https://academy.datastax.com/resources/ds220-data-modeling?unit=use-cases-use-case-introduction
 
-
 # Wide column: when to avoid
 
-
-__Same as for document model__
+**Same as for document model**
 
 * ACID transactions requirement
 * Queries on high-variety data
 
-__Need for full query expressiveness__
+**Need for full query expressiveness**
 
 * Joins are highly discouraged
 * Limited support for filters and group bys
@@ -2449,34 +1339,31 @@ __Need for full query expressiveness__
 
 Prototipazioni: nelle prima fasi di progetto, i pattern delle query possono cambiare frequentemente, con la conseguenza di dover riprogettare le famiglie di colonne. In Cassandra, the cost may be higher for query change as compared to schema change.
 
-
 # Graph: popular DBs
 
-__Neo4J__: [http://neo4j.com](http://neo4j.com/)
+**Neo4J**: [http://neo4j.com](http://neo4j.com/)
 
-__TigerGraph__: [https://www.tigergraph.com/](https://www.tigergraph.com/)
+**TigerGraph**: [https://www.tigergraph.com/](https://www.tigergraph.com/)
 
 # Graph: when to use
 
-
-__Interlinked data__
+**Interlinked data**
 
 * _Social networks_ are one of the most typical use case of graph databases (e.g., to store friendships or work relationships); _every relationship-centric domain is a good one_
 
-__Routing and location-based services__
+**Routing and location-based services**
 
 * Applications working on the _TSP (Travelling Salesman Problem)_ problem
 * Location-based application that, for instance, recommend the best restaurant nearby; in this case, _relationships model the distance between node_
 
-__Recommendation applications, fraud-detection__
+**Recommendation applications, fraud-detection**
 
 * Systems recommending «the products bought by your friends», or «the products bought by those who bought your same products»
 * When relationships model behaviors, outlier detection may be useful to identify frauds
 
 # Graph: real use cases
 
-
-__Relationships analysis__
+**Relationships analysis**
 
 * Finding common friends (e.g., friend-of-a-friend) in a social network
 * Identifying clusters of phone calls that identify a criminal network
@@ -2485,7 +1372,7 @@ __Relationships analysis__
   * [https://neo4j.com/use-cases/fraud-detection/](https://neo4j.com/use-cases/fraud-detection/)
 * Useful for text analysis as well (Natural Language Processing)
 
-__Inference__
+**Inference**
 
 * Creating rules that define new knowledge based on existing patterns (e.g., transitive relationships, trust mechanisms)
 
@@ -2495,14 +1382,12 @@ https://developer.ibm.com/dwblog/2017/detecting-complex-fraud-real-time-graph-da
 
 # Graph: when to avoid
 
-
-__Data-intensive applications__
+**Data-intensive applications**
 
 * Traversing the graph is trivial, but _analyzing the whole graph can be expensive_
 * There exist framework for distributed graph analysis (e.g., Apache Giraph), but they do not rely on a graph DB
 
 # Polyglot persistence
-
 
 _Different databases are designed to solve _ _differen_ _t problems_
 
@@ -2535,7 +1420,6 @@ The session, shopping cart, or order data do not need the same properties of ava
 
 In 2006, Neal Ford coined the term polyglot programming, to express the idea that applications should be written in a mix of languages to take advantage of the fact that different languages are suitable for tackling different problems. Complex applications combine different types of problems, so picking the right language for each job may be more productive than trying to fit all aspects into a single language.
 
-
 # Polyglot data management
 
 The _one-size-fits-all_ solution
@@ -2551,9 +1435,7 @@ A key-value data store could be used to store the shopping cart data before the 
 Even using specialized relational databases for different purposes, such as data warehousing appliances or analytics appliances within the same application, can be viewed as polyglot persistence
 
 
-
 # Service-oriented polyglot data management
-
 
 Each DB should be "embedded" within services, which offer API services to enable data access and manipulation
 
@@ -2573,23 +1455,22 @@ While doing this, we need to update the indexed data as the data in the applicat
 
 # Beyond NoSQL
 
-
 NewSQL systems
 
 * Combine the benefits from both relational and NoSQL worlds
-* Ensure scalability without compromising consistency, but by __compromising some availability__
+* Ensure scalability without compromising consistency, but by **compromising some availability**
 
 Extended RDBMSs
 
 * KV implementable as a table with two fields: a string key, and a blob value
 * Cypher query language on top of a relational implementation of a graph
 * Hstore data type in PostgreSQL for wide-column-like implementation
-* __Scalabilty__ __ issue remains__
+* **Scalabilty** ** issue remains**
 
 Multi-model NoSQL DBMSs
 
 * ArangoDB, OrientDB
-* __Support all NoSQL data models, but not the relational one__
+* **Support all NoSQL data models, but not the relational one**
 
 Database-as-a-service
 
@@ -2607,7 +1488,6 @@ Database-as-a-service
 
 # Reference scenario
 
-
 The big-data cube
 
 * Volume: small to big
@@ -2616,12 +1496,11 @@ The big-data cube
 
 Meijer, Erik. "Your mouse is a database."  _Communications of the ACM_ 55.5 (2012): 66-73.
 
+**Variety**
 
-__Variety__
-
-* __Structured__
+* **Structured**
   * Relational tuples with FK/PK relationships
-* __Unstructured__
+* **Unstructured**
   * Key-value
   * Columnar
   * Document-based
@@ -2634,21 +1513,19 @@ __Variety__
 
 [https://www.datamation.com/big-data/structured-vs-unstructured-data/](https://www.datamation.com/big-data/structured-vs-unstructured-data/) (accessed 2022-08-01)
 
+**Velocity** (latency)
 
-__Velocity__ (latency)
+* **High**: clients synchronously pulling data from sources
+* **Low**: sources asynchronously pushing data to clients
 
-* __High__: clients synchronously pulling data from sources
-* __Low__: sources asynchronously pushing data to clients
+**Velocity** (speed; dual to latency)
 
-__Velocity__ (speed; dual to latency)
-
-* __High__: processing in real-time (milliseconds) or near-real time (minutes)
-* __Low__: processing can take hours
+* **High**: processing in real-time (milliseconds) or near-real time (minutes)
+* **Low**: processing can take hours
 
 ![](imgs/slides98.png)
 
-
-__Acceleration__
+**Acceleration**
 
 * Velocity is not constant, data comes in bursts
 * Take Twitter as an example
@@ -2674,32 +1551,31 @@ Collecting data
 
 Processing data
 
-* _ __Scheduled Batch__ _
+* _ **Scheduled Batch** _
   * Large volume of data processed on a regular scheduled basis
   * Velocity is very predictable
-* _ __Periodic__ _:
+* _ **Periodic** _:
   * Data processed at irregular times (e.g., after collecting a certain ---large--- amount of data)
   * Velocity is less predictable
-* _ __Near real-time__ _
+* _ **Near real-time** _
   * Streaming data processed in small individual batches collected and processed within minutes
   * Velocity is a huge concern
-* _ __Real-time__ _
+* _ **Real-time** _
   * Streaming data collected and processed in very small individual batches within milliseconds
   * Velocity is the paramount concern
 
-* _ __Batch and periodic__ _
+* _ **Batch and periodic** _
   * Once data has been collected, processing can be done in a controlled environment
   * There is time to plan for the appropriate resources
-* _ __Near real-time and real-time__ _
+* _ **Near real-time and real-time** _
   * Collection of the data leads to an immediate need for processing
   * Depending on the complexity of the processing (cleansing, scrubbing, curation), this can slow down the velocity of the solution significantly
   * Plan accordingly
 
-
 Plus other Vs
 
-* __Veracity__: __ __ data trustworthiness/quality
-* __Value__: ability to extract meaningful information
+* **Veracity**: ** ** data trustworthiness/quality
+* **Value**: ability to extract meaningful information
 * ...
 
 Our focus
@@ -2707,10 +1583,9 @@ Our focus
 * (Un)Structured big-data batch
 * (Un)Structured big-data streams
 
-__Goal__: keep in mind the cube to
+**Goal**: keep in mind the cube to
 
 * categorize the services
-
 
 Scenario 1
 
@@ -2722,7 +1597,6 @@ Scenario 1
 
 _Which Vs are involved?_
 
-
 Scenario 1
 
 * My business has a set of 15 JSON data files that are each about 2.5 GB in size.
@@ -2730,7 +1604,6 @@ Scenario 1
 * Data must be combined with all transactions from financial dashboard for this same period, then compared to the recommendations from marketing engine
 * All data is fully cleansed.
 * The results from this time period must be made available to decision makers by 10 minutes after the hour in the form of financial dashboards.
-
 
 Which Vs are involved?
 
@@ -2739,7 +1612,6 @@ Which Vs are involved?
 * _Variety_ three data source types: log files, transactional data, and recommendation information
 * _Value_ populate dashboards that are used by decision makers as soon as they are made available. The value is reached because it requires an understanding of what the organization is trying to accomplish
 
-
 Scenario 2
 
 * My business compiles data generated by hundreds of corporations.
@@ -2751,7 +1623,6 @@ Scenario 2
 
 _Which Vs are involved?_
 
-
 Scenario 2
 
 * My business compiles data generated by hundreds of corporations.
@@ -2761,7 +1632,6 @@ Scenario 2
 * A large portion of the data gathered is irrelevant to our analysis, so this data must be eliminated.
 * The final requirement is that all data must be combined and loaded into our data warehouse, where it will be analyzed.
 
-
 Which Vs are involved?
 
 * _Volume_ The data is delivered in very large files, transactional updates, and even in data streams
@@ -2769,7 +1639,6 @@ Which Vs are involved?
 * _Veracity_ The data is known to be suspect. The data must be cleansed and prepared to ensure that rogue inputs do not skew the results. Knowing the data source for each record is vital to the work we do.
 
 # Data-driven companies
-
 
 _Data-driven company _ refers to companies where decisions and processes are supported by data
 
@@ -2785,7 +1654,6 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 * _Improve the quality of all the data_
 
 # Why going cloud?
-
 
 _Digitalization_ is a journey that involves three main dimensions
 
@@ -2807,8 +1675,7 @@ _& quantity_
 
 Is the technogical infrastructure appropriate to support data collection and analysis?
 
-
-__Cloud computing__ (National Institute of Standards and Technology)
+**Cloud computing** (National Institute of Standards and Technology)
 
 * _“A model for enabling _ _ubiquitous, convenient, on-demand _ _network access to a _ _shared pool_ _ of configurable computing resources (e.g., networks, servers, storage, services) that can be rapidly provisioned and released with _ _minimal management effort _ _or service provider interaction.”_
 * On-demand self-service (consume services when you want)
@@ -2817,23 +1684,21 @@ __Cloud computing__ (National Institute of Standards and Technology)
 * Rapid elasticity (enable horizontal scalability)
 * Measured service (pay for the service you consume as you consume)
 
-__Digital transformation __ involves the __cloud__ to create/change business flows
+**Digital transformation ** involves the **cloud** to create/change business flows
 
 * Often involves changing the company culture to adapt to this new way of doing business
 * One of the end goal is to meet ever-changing business and market demand
 
-
 Goal: adjusts capacity to have predictable performance at the lowest cost
 
-* __Scalability__ that is not possible on premises
+* **Scalability** that is not possible on premises
 * Scale from one to thousands of servers
 
-__Elasticity__
+**Elasticity**
 
 * Automatically scale resources in response to run-time conditions
 * Adapt to changes in workload by turning on/off resources to match the necessary capacity
 * Core justification for the cloud adoption
-
 
 Hardware scalability
 
@@ -2847,33 +1712,30 @@ Grow storage from GBs to PBs
 
 [https://blog.seagate.com/business/linus-tech-tips-want-petabyte-system/](https://blog.seagate.com/business/linus-tech-tips-want-petabyte-system/)
 
+**Resource pooling**
 
-__Resource pooling__
-
-* Enable _cost-sharing_ , a resource to serve different consumers
+* Enable _cost-sharing_, a resource to serve different consumers
 * Resources are dynamically reassigned according to demands
-* Based on _virtualization_ , _ _ running multiple virtual instances on top of a physical computer system
+* Based on _virtualization_, _ _ running multiple virtual instances on top of a physical computer system
 * Economy of scale for physical resources
 
-__Reliability__
+**Reliability**
 
 * Built to handle failures
 * Fault-tolerant or highly available
 
-
-Worldwide __deployment__
+Worldwide **deployment**
 
 * Deploy applications as close to customers as possible
   * E.g., to reduce network latency
 * Improve data locality
 * Compliant to privacy regulations (e.g., GDPR)
 
-Measured __quality of service__
+Measured **quality of service**
 
 * Services leverage a quantitative qualitative metering capability making pay-as-you-go (or pay-per-use) billing and validation of the service quality available
 
-
-Service __integration__
+Service **integration**
 
 * Do not reinvent the wheel, eliminate repetitive tasks
   * Use services that solve common problems (e.g., load balancing, queuing)
@@ -2892,7 +1754,6 @@ _Integration_ and _abstraction_ are drivers of change
 
 [https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU](https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU)
 
-
 Cloud computing is the outsourcing of a company’s hardware and software architecture
 
 * Which are the risks and issues?
@@ -2901,7 +1762,6 @@ Cloud computing is the outsourcing of a company’s hardware and software archit
 
 Google has a long track record on clean energy: in 2007, Google became the first major company to become carbon neutral. And in 2017, Google became the first company of our size to match 100% of its electricity consumption with renewable energy. Today, Google Cloud is the only major cloud provider to purchase enough renewable energy to cover our entire operations, and over the years, we’ve purchased more wind and solar power than any other corporation in history. 
 But wind and solar power don’t work in all places at all times. Though we buy enough renewable energy on average to match our data centers’ electricity consumption, that average is an annual average. Thus, for a particular data center, at any given time we may have too much renewable power, or too little. When we have too much, we feed it into the local grid so someone else can consume it. When we have too little, we draw power from the local grid, and that power may not be renewable.
-
 
 ![](imgs/slides105.png)
 
@@ -2914,7 +1774,6 @@ Left: Mytton, David. "Data centre water consumption."  _npj_ _ Clean Water_ 4.1 
 Google has a long track record on clean energy: in 2007, Google became the first major company to become carbon neutral. And in 2017, Google became the first company of our size to match 100% of its electricity consumption with renewable energy. Today, Google Cloud is the only major cloud provider to purchase enough renewable energy to cover our entire operations, and over the years, we’ve purchased more wind and solar power than any other corporation in history. 
 But wind and solar power don’t work in all places at all times. Though we buy enough renewable energy on average to match our data centers’ electricity consumption, that average is an annual average. Thus, for a particular data center, at any given time we may have too much renewable power, or too little. When we have too much, we feed it into the local grid so someone else can consume it. When we have too little, we draw power from the local grid, and that power may not be renewable.
 
-
 # 
 
 ![](imgs/slides107.png)
@@ -2923,22 +1782,20 @@ But wind and solar power don’t work in all places at all times. Though we buy 
 
 # Cloud computing: types of cloud
 
-
 There are different types of cloud
 
-* __Public__: accessible to anyone willing to pay (e.g., Microsoft, AWS, Google)
-* __Private__: accessible by individuals within an institution
+* **Public**: accessible to anyone willing to pay (e.g., Microsoft, AWS, Google)
+* **Private**: accessible by individuals within an institution
   * In public cloud, any resources that you are not using can be used by other
   * Users share the costs
   * Cost-sharing disappears in private clouds
-* __Hybrid__: a mix of the previous
+* **Hybrid**: a mix of the previous
 
 ![](imgs/slides108.png)
 
-
 Cloud services are hosted in separate geographic areas
 
-* Locations are composed of __regions__ and __availability zones__
+* Locations are composed of **regions** and **availability zones**
 
 Region (e.g., us-east-1)
 
@@ -2959,21 +1816,19 @@ Availability zones in a region
 
 ![](imgs/slides110.png)
 
-
 Gartner Magic Quadrant
 
 * Understanding the technology providers to consider for an investment
-* __Leaders__ execute well and are well positioned for tomorrow
-* __Visionaries__ understand where the market is going but do not yet execute well
-* __Niche Players__ focus successfully on a small segment, or are unfocused and do not out-innovate or outperform others
-* __Challengers__ execute well but do not demonstrate an understanding of market direction
+* **Leaders** execute well and are well positioned for tomorrow
+* **Visionaries** understand where the market is going but do not yet execute well
+* **Niche Players** focus successfully on a small segment, or are unfocused and do not out-innovate or outperform others
+* **Challengers** execute well but do not demonstrate an understanding of market direction
 * Focusing on leaders isn’t always the best
   * A niche player may support needs better than a market leader. It depends on how the provider aligns with business goals
 
 [https://www.gartner.com/en/research/methodologies/magic-quadrants-research](https://www.gartner.com/en/research/methodologies/magic-quadrants-research)
 
 # Cloud computing: deployment models
-
 
 On a cloud architecture, you can rely on _serverless_ or _managed _ services
 
@@ -2994,44 +1849,39 @@ _(Fully) Managed_
 
 [https://cloud.google.com/blog/topics/developers-practitioners/serverless-vs-fully-managed-whats-difference](https://cloud.google.com/blog/topics/developers-practitioners/serverless-vs-fully-managed-whats-difference) (accessed 2020-08-01)
 
-
 Understanding architectures is paramount to successful systems
 
 * Good architectures help to scale
 * Poor architectures cause issues that necessitate a costly rewrite
 
-__XaaS__ __ (anything as a service)__
+**XaaS** ** (anything as a service)**
 
 * A collective term that refers to the delivery of anything as a service
 * It encompasses the products, tools and technologies that vendors deliver to users
 
 ![](imgs/slides111.png)
 
-
-__On-premises__
+**On-premises**
 
 * Provisioning servers is time-consuming
   * A non-trivial environment is hard to set up
 * Require dedicated operations people
 * Often a distraction from strategic tasks
 
-
-__Infrastructure as a service (IaaS)__
+**Infrastructure as a service (IaaS)**
 
 * A computing infrastructure provisioned and managed over the internet (e.g., AWS EC2)
 * Avoid expense/complexity of buying/managing physical servers/data-centers
 * IaaS overcomes issues on-premises
 * Possibly requires to manage many environments
 
-
-__Platform as a Service (PaaS)__
+**Platform as a Service (PaaS)**
 
 * A development and deployment environment in the cloud (e.g., AWS Elastic Beanstalk)
 * Support complete application life-cycle: building, testing, deploying, etc.
 * Avoid expense/complexity of managing licenses and application infrastructure
 
-
-__PaaS__ and __containers__ are potential solutions to inconsistent infrastructures
+**PaaS** and **containers** are potential solutions to inconsistent infrastructures
 
 * PaaS provides a platform for users to run their software
 * Developers write software targeting features/capabilities of the platform
@@ -3042,7 +1892,6 @@ Containerization isolates an application with its own environment
 * Containers are isolated but need to be deployed to (public/private) server
 * Excellent solution when dependencies are in play
 * Housekeeping challenges and complexities
-
 
 _Containers_ and _virtual machines _ are packaged computing environments
 
@@ -3059,12 +1908,10 @@ _Virtual machines_
 
 ![](imgs/slides112.jpg)
 
-
-__Function as a Service (__ __FaaS__ __)__
+**Function as a Service (** **FaaS** **)**
 
 * A coding environment, cloud provider provisions platform to run the code (e.g., AWS Lambda)
 * Infrastructure provisioning and management are invisible to the developer
-
 
 Principles of FaaS architectures
 
@@ -3085,8 +1932,7 @@ FaaS is not a silver bullet
 * Migration costs
 * Vendor lock-in can be an issue
 
-
-__Software as a service (SaaS)__
+**Software as a service (SaaS)**
 
 * An application environment
 * Access cloud-based apps over the Internet (e.g., email, Microsoft Office 365, Github)
@@ -3109,10 +1955,9 @@ https://catalog.us-east-1.prod.workshops.aws/workshops/ea7ddf16-5e0a-4ec7-b54e-5
 
 ![](imgs/slides114.jpg)
 
-
 Optimizing soil moisture is crucial for watering and crop performance [1]
 
-* _ __GOAL__ _: build an expert system to save water while improving fruit quality (i.e., provide a recommendation of the optimal amount of water)
+* _ **GOAL** _: build an expert system to save water while improving fruit quality (i.e., provide a recommendation of the optimal amount of water)
 * _Soils _ have different water retention
 * _Watering systems _ have different behaviors (e.g., drippers and sprinklers)
 * _Plants _ have different water demand (e.g., Kiwi [2] vs Grapes)
@@ -3127,7 +1972,6 @@ Optimizing soil moisture is crucial for watering and crop performance [1]
 ![](imgs/slides118.jpg)
 
 [1] Turkeltaub et al., Real-time monitoring of nitrate transport in the deep vadose zone under a crop field–implications for groundwater protection, Hydrology and Earth System Sciences 20 (8) (2016) 3099–3108.[2] M. Judd, et al., Water use by sheltered kiwifruit under advective conditions, New Zealand journal of agricultural research 29 (1) (1986) 83–92.
-
 
 (Example) Scenarios of digital transformation in agriculture
 
@@ -3145,7 +1989,6 @@ Scenario \#3
 * Sensor data feeds a decision support system that, knowing how to optimize KPIs, controls the watering system
 
 ![](imgs/slides119.png)
-
 
 (Example) Scenarios of digital transformation in agriculture
 
@@ -3166,7 +2009,6 @@ Scenario \#3
 
 Artificial intelligence (AI) is intelligence demonstrated by machines. AI research has been defined as the field of study of intelligent agents, which refers to any system that perceives its environment and takes actions that maximize its chance of achieving its goals.
 
-
 We need to understand how the soil behaves
 
 * _Simulate_ [1, 2] the soil behavior according to physical models [3]
@@ -3185,7 +2027,6 @@ Tuning can take months (of human interactions)!
 
 [1] Šimunek, J., et al. "HYDRUS: Model use, calibration, and validation." Transactions of the ASABE 55.4 (2012): 1263-1274.[2] Bittelli, Marco, et al. Soil physics with Python: transport in the soil-plant-atmosphere system. OUP Oxford, 2015.[3] Van Genuchten, M. Th. "A closed‐form equation for predicting the hydraulic conductivity of unsaturated soils." Soil science society of America journal 44.5 (1980): 892-898.[4] Pham, Hung Q., Delwyn G. Fredlund, and S. Lee Barbour. "A study of hysteresis models for soil-water characteristic curves." Canadian Geotechnical Journal 42.6 (2005): 1548-1568.
 
-
 But... we have sensors!                  [1]                                      [2]                                          [3]
 
 * These settings are too coarse to monitor soil moisture with precision
@@ -3201,7 +2042,6 @@ But... we have sensors!                  [1]                                    
 
 # Reference scenario
 
-
 We consider an orchard where
 
 * _Kiwi plants _ are aligned along _rows_
@@ -3211,7 +2051,6 @@ We consider an orchard where
 ![](imgs/slides124.jpg)
 
 Francia, Matteo, et al. "Multi-sensor profiling for precision soil-moisture monitoring." Computers and Electronics in Agriculture 197 (2022): 106924.
-
 
 We consider an orchard where
 
@@ -3224,7 +2063,6 @@ We consider an orchard where
 Francia, Matteo, et al. "Multi-sensor profiling for precision soil-moisture monitoring." Computers and Electronics in Agriculture 197 (2022): 106924.
 
 # Sensor layouts and symmetry assumptions
-
 
 When the watered volume is symmetric along the row, a _2D grid of sensors _ (left) is sufficient to represent the entire soil volume
 
@@ -3241,7 +2079,6 @@ Francia, Matteo, et al. "Multi-sensor profiling for precision soil-moisture moni
 # Reference scenario
 
 ![](imgs/slides128.png)
-
 
 (a) Soil moisture is a continuum
 
@@ -3283,7 +2120,6 @@ Upload the Notebook to Sagemaker (not in COLAB!)
 
 # Data lake: AWS S3
 
-
 AWS Simple Storage Service (S3)
 
 * A _serverless_ object storage service offering industry-leading scalability, data availability, security, and performance.
@@ -3295,7 +2131,6 @@ Last access 2022-08
 
 # Data exploration: AWS SageMaker
 
-
 Amazon SageMaker
 
 * Fully _managed_ service that provides machine learning (ML) capabilities for data scientists and developers to prepare, build, train, and deploy high-quality ML models efficiently
@@ -3305,7 +2140,6 @@ Amazon SageMaker
 Last access 2022-08
 
 # ETL: AWS Glue
-
 
 AWS Glue
 
@@ -3396,7 +2230,6 @@ Last access 2022-08
 
 # DWH: AWS RDS
 
-
 Amazon Relational Database Service (Amazon RDS)
 
 * A collection of managed services that makes it simple to set up, operate, and scale relational databases in the cloud
@@ -3433,7 +2266,6 @@ Last access 2022-08
 
 # Data pipeline
 
-
 Data pipeline
 
 * _"A _ _sequence_ _ of operations to transform and consume raw data"_
@@ -3443,7 +2275,6 @@ Data pipeline
 [https://xkcd.com/2054/](https://xkcd.com/2054/)
 
 Quemy, Alexandre. "Data Pipeline Selection and Optimization."  _DOLAP_ . 2019.
-
 
 The pyramid abstracts tons of techniques, algorithms, etc.
 
@@ -3455,9 +2286,7 @@ The pyramid abstracts tons of techniques, algorithms, etc.
 
 Let us look to data pipelines on different cloud services providers
 
-
 # Data pipeline - AWS
-
 
 Three main categories
 
@@ -3477,7 +2306,6 @@ Three main categories
 [https://console.aws.amazon.com/console](https://console.aws.amazon.com/console)
 
 # Data pipeline - Google cloud
-
 
 Three main categories
 
@@ -3505,7 +2333,6 @@ Batch processing and analytics
 Slow storage (data lake)
 
 ETL tools overlay
-
 
 We have services
 
@@ -3535,7 +2362,6 @@ Ingestion (acquiring/collect)
 
 # Data pipeline
 
-
 DIKW hierarchy
 
 * Layers representing structural relationships between data, information, knowledge, and wisdom
@@ -3547,7 +2373,6 @@ DIKW hierarchy
 Ackoff, Russell L. "From data to wisdom." Journal of applied systems analysis 16.1 (1989): 3-9.
 
 # A tentative organization
-
 
 This is not a sharp taxonomy
 
@@ -3568,7 +2393,6 @@ Networking, etc.
 Machine learning
 
 Ingestion (acquiring)
-
 
 This is not a sharp taxonomy
 
@@ -3609,16 +2433,15 @@ Ingestion (acquiring)
 
 # Storage
 
-
-__Goal__: persisting data
+**Goal**: persisting data
 
 * Which storage do we choose?
-* __Storage model __ (or data model) ~= variety
+* **Storage model ** (or data model) ~= variety
   * How data are organized/accessed in a storage system
     * Structured vs unstructured
     * Data access model (key-value, column, etc.)
-* Access __frequency__
-* __Analyses __ to be performed
+* Access **frequency**
+* **Analyses ** to be performed
 
 # Storage models
 
@@ -3628,14 +2451,13 @@ Mansouri, Yaser, Adel Nadjaran Toosi, and Rajkumar Buyya. "Data storage manageme
 
 # Storage models (AWS)
 
-
 Data structure: structured
 
 * Data abstraction: database
 
 Data access model: relational
 
-* __Relational__
+* **Relational**
 * Store data with predefined schemas and relationships between them
 * Support ACID transactions
 * Maintain referential integrity
@@ -3644,18 +2466,17 @@ Data access model: relational
 
 [https://aws.amazon.com/products/databases/](https://aws.amazon.com/products/databases/)
 
-
 Data structure: semi/unstructured
 
 * Data abstraction: database
 
 Data access model: *
 
-* __Key/value: __ store and retrieve large volumes of data
-* __Document: __ store semi-structured data as JSON-like documents
-* __Wide column:__ use tables but unlike a relational database, columns can vary from row to row in the same table
-* __Graph: __ navigate and query relationships between highly connected datasets
-* __... and more__
+* **Key/value: ** store and retrieve large volumes of data
+* **Document: ** store semi-structured data as JSON-like documents
+* **Wide column:** use tables but unlike a relational database, columns can vary from row to row in the same table
+* **Graph: ** navigate and query relationships between highly connected datasets
+* **... and more**
 
 ![](imgs/slides187.png)
 
@@ -3671,14 +2492,13 @@ Data access model: *
 
 # Storage models (AWS)
 
-
 Data structure: unstructured
 
 * Data abstraction: file (or database)
 
 Data access model: key-value
 
-* __File system__ (EFS), __object storage__ (S3) (or __DB K-V__ ; e.g., DynamoDB)
+* **File system** (EFS), **object storage** (S3) (or **DB K-V** ; e.g., DynamoDB)
 * Handle unstructured data
 * ... organized as files (or blob)
 * ... accessed using a key-value
@@ -3690,12 +2510,11 @@ Differ in the supported features
 
 # AWS S3
 
-
 Simple Storage Service (S3)
 
-* Serverless storage, save data as __objects__ within __buckets__ 
-* An __object__ is composed of a file and any metadata that describes that file (e.g.,  __object key__)
-*  __Buckets__ are logical containers for objects
+* Serverless storage, save data as **objects** within **buckets** 
+* An **object** is composed of a file and any metadata that describes that file (e.g.,  **object key**)
+*  **Buckets** are logical containers for objects
   * You can have one or more buckets in your account
   * Control access for each bucket individually
   * Choose the geographical region where Amazon S3 will store the bucket and its contents
@@ -3711,29 +2530,27 @@ Benefits
 
 # Storage: access frequency (AWS)
 
+24 storage (AWS S3) **classes**
 
-24 storage (AWS S3) __classes__
-
-* __Standard__: general purpose
-* __Infrequent__ (rapid) __access__
-* __One Zone-IA__: lower-cost option for infrequently accessed data that do not require high availability and resilience
-* __Glacier__: low-cost storage class for data archiving, three retrieval options that range from a few minutes to hours
-* __Deep Glacier__: long-term retention for data accessed once or twice in a year. E.g., retain data sets for 10 years or longer
-* __Intelligent-Tiering__: move objects between access tiers when access patterns change
+* **Standard**: general purpose
+* **Infrequent** (rapid) **access**
+* **One Zone-IA**: lower-cost option for infrequently accessed data that do not require high availability and resilience
+* **Glacier**: low-cost storage class for data archiving, three retrieval options that range from a few minutes to hours
+* **Deep Glacier**: long-term retention for data accessed once or twice in a year. E.g., retain data sets for 10 years or longer
+* **Intelligent-Tiering**: move objects between access tiers when access patterns change
 
 ![](imgs/slides190.png)
 
 [https://aws.amazon.com/s3/storage-classes/](https://aws.amazon.com/s3/storage-classes/)
 
-
-__Lifecycle__ configuration
+**Lifecycle** configuration
 
 * A set of rules that define actions that Amazon S3 applies to a group of objects
 
 Two types of actions:
 
-* __Transition: __ when objects transition to another storage class. E.g., archive objects to the S3 Glacier storage class one year after creating them
-* __Expiration__: when objects expire. Amazon S3 deletes expired objects on your behalf
+* **Transition: ** when objects transition to another storage class. E.g., archive objects to the S3 Glacier storage class one year after creating them
+* **Expiration**: when objects expire. Amazon S3 deletes expired objects on your behalf
 
 ![](imgs/slides191.png)
 
@@ -3749,14 +2566,12 @@ Two types of actions:
 
 # Organizing the data lake
 
-
 Having consistent principles on how to organize your data is important
 
 * To build standardized pipelines with the same design with regard to where read/write data
 * Standardization makes it easier to manage your pipelines at scale
 * Helps data users search for data in the storage and understand exactly to find what they need
 * Decoupling storage from processing
-
 
 Landing area (LA)
 
@@ -3771,7 +2586,6 @@ Archive area (A)
 
 * After saving into SA, raw data from LA should be _copied into the archive_ to reprocess any given batch of data by simply copying it from AA into LA
 * Useful for debugging and testing
-
 
 Production area (PA)
 
@@ -3796,7 +2610,6 @@ Cloud data warehouse (DWH)
 | Archive | Scheduled pipelines can writeDedicated data reprocessing pipelines can read  | Cold or archive |
 | Failed | Scheduled pipelines can writeDedicated data reprocessing pipelines can readData consumers don’t have access | Hot |
 
-
 Use folders to organize data inside areas into a logical structure
 
 * _Namespace_
@@ -3818,12 +2631,11 @@ Different areas will have slightly different folder structures
 
 However, alternative organizations are available
 
-> "A data lake is a central repository system for storage, processing, and analysis of raw data, in which the data is __kept in its original format __ and is processed to be queried only when needed. It can store a __varied amount of formats __ in big data ecosystems, from unstructured, semi-structured, to structured data sources."
+> "A data lake is a central repository system for storage, processing, and analysis of raw data, in which the data is **kept in its original format ** and is processed to be queried only when needed. It can store a **varied amount of formats ** in big data ecosystems, from unstructured, semi-structured, to structured data sources."
 >
 > Couto et al., 2019 ​
 
 # Data Lakehouse
-
 
 Combine the key benefits of data lakes and data warehouses
 
@@ -3833,8 +2645,8 @@ Combine the key benefits of data lakes and data warehouses
 
 Key question: can we combine these benefits in an effective way?
 
-* Direct access means that they __give up some aspects of data independence__ , which has been a cornerstone of relational DBMS design
-* __Lakehouses__ __ are an especially good fit for cloud environments with separate compute and storage__: different computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while directly accessing the same storage data
+* Direct access means that they **give up some aspects of data independence**, which has been a cornerstone of relational DBMS design
+* **Lakehouses** ** are an especially good fit for cloud environments with separate compute and storage**: different computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while directly accessing the same storage data
 
 # Data Independence
 
@@ -3845,10 +2657,9 @@ Key question: can we combine these benefits in an effective way?
 
 # Data Lakehouse
 
+**1** **st** **generation systems**: data warehousing started with helping business leaders get analytical insights
 
-__1__ __st__ __generation systems__: data warehousing started with helping business leaders get analytical insights
-
-* Data in these warehouses would be written with _schema-on-write_ , which ensured that the data model was optimized for downstream BI consumption
+* Data in these warehouses would be written with _schema-on-write_, which ensured that the data model was optimized for downstream BI consumption
 * Several challenges
   * They typically coupled compute and storage into an on-premises appliance
     * This forced enterprises to provision and pay for the peak of user load and data under management, very costly
@@ -3860,8 +2671,7 @@ Armbrust, Michael, et al. "Lakehouse: a new generation of open platforms that un
 
 https://dl.acm.org/doi/fullHtml/10.1145/3524284
 
-
-__2__ __nd__ __generation__: offloading all the raw data into data lakes
+**2** **nd** **generation**: offloading all the raw data into data lakes
 
 * The data lake is _schema-on-read_ and stores any data at low cost, but on the other hand, punted the problem of data quality and governance
 * In this architecture, a small subset of data in the lake would later be ETLed to a downstream data warehouse
@@ -3871,68 +2681,62 @@ __2__ __nd__ __generation__: offloading all the raw data into data lakes
 
 ![](imgs/slides195.png)
 
-
 While the cloud data lake and warehouse architecture is ostensibly cheap, a two-tier architecture is highly complex for users
 
 * Data is first ETLed into lakes, and then again ELTed into warehouses
 * Enterprise use cases now include advanced analytics such as machine learning, for which neither data lakes nor warehouses are ideal
 * (Some) main problems:
-  * __Reliability__ . Keeping the data lake and warehouse consistent is difficult and costly
-  * Data __staleness__ . The data in the warehouse is stale compared to that of the data lake, with new data frequently taking days to load
-  * __Limited support for advanced analytics__ . Businesses want to ask predictive questions using their warehousing data, e.g., “which customers should I offer discounts to?” None of the leading machine learning systems directly work well on top of warehouses
+  * **Reliability** . Keeping the data lake and warehouse consistent is difficult and costly
+  * Data **staleness** . The data in the warehouse is stale compared to that of the data lake, with new data frequently taking days to load
+  * **Limited support for advanced analytics** . Businesses want to ask predictive questions using their warehousing data, e.g., “which customers should I offer discounts to?” None of the leading machine learning systems directly work well on top of warehouses
     * Process large datasets using complex non-SQL code
 
 # Dataset Search for Data Discovery, Augmentation, and Explanation
-
 
 Is there a real need for many unstructured and integrated dataset?
 
 * Recent years have seen an explosion in our ability to collect and catalog immense amounts of data about our environment, society, and populace
 * Governments, and organizations are increasingly making structured data available on the Web and in various repositories and data lakes
-* __This opportunity is often missed due to a central technical barrier__: it is currently nearly impossible for domain experts to weed through the vast amount of available information to discover datasets that are needed for their specific application
+* **This opportunity is often missed due to a central technical barrier**: it is currently nearly impossible for domain experts to weed through the vast amount of available information to discover datasets that are needed for their specific application
 
 Juliana Freire, keynote @ EDBT 2023
 
 # Data Lakehouse
 
-
 Main features
 
-* __Store data in a low-cost object store__ using a standard file format such as Apache Parquet
-* __Implement a transactional metadata layer__ on top of the object store that defines which objects are part of a table version
-* __Implement management features __ within the metadata layer
+* **Store data in a low-cost object store** using a standard file format such as Apache Parquet
+* **Implement a transactional metadata layer** on top of the object store that defines which objects are part of a table version
+* **Implement management features ** within the metadata layer
 
 Challenges:
 
 * The metadata layer is insufficient to achieve good SQL performance
-  * __Data warehouses use several techniques to get state-of-the-art performance__
+  * **Data warehouses use several techniques to get state-of-the-art performance**
     * Storing hot data on fast devices such as SSDs, maintaining statistics, building efficient indexes, etc.
-  * __In a Lakehouse it is not possible to change the format__ , but it is possible to implement other optimizations that leave the data files unchanged
+  * **In a Lakehouse it is not possible to change the format**, but it is possible to implement other optimizations that leave the data files unchanged
 
 # Delta Lake
 
+**Challenges**:
 
-__Challenges__:
-
-* Most __cloud object stores are merely key-value stores__ , with no cross-key consistency
-* __Multi-object updates are not atomic__ , there is no isolation between queries
+* Most **cloud object stores are merely key-value stores**, with no cross-key consistency
+* **Multi-object updates are not atomic**, there is no isolation between queries
   * If a query needs to update multiple objects in the table readers will see partial updates as the query updates each object individually
-* For large tables with millions of objects, __metadata operations are expensive__
+* For large tables with millions of objects, **metadata operations are expensive**
   * The latency of cloud object stores is so much higher that these data skipping checks can take longer than the actual query
 
 Armbrust, Michael, et al. "Delta lake: high-performance ACID table storage over cloud object stores." Proceedings of the VLDB Endowment 13.12 (2020): 3411-3424.
 
-
-Delta Lake uses a __transaction log __ that is compacted __into Apache Parquet __ for significantly faster metadata operations for large tabular datasets
+Delta Lake uses a **transaction log ** that is compacted **into Apache Parquet ** for significantly faster metadata operations for large tabular datasets
 
 * E.g., quickly search billions of table partitions for those relevant to a query
-* The log is stored in the __delta_log__ subdirectory within the table
+* The log is stored in the **delta_log** subdirectory within the table
 * It contains
   * Sequence of JSON objects with increasing, zero-padded numerical IDs to store the log records
   * Occasional checkpoints for specific log objects that summarize the log up to that point
 
 ![](imgs/slides196.png)
-
 
 Each log record object (e.g., 000003.json) contains an array of actions to apply to the previous version of the table to generate the next one
 
@@ -3946,7 +2750,6 @@ It is necessary to compress the log periodically into checkpoints
 * Some sets of actions are redundant and can be removed
 * Read the _last_checkpoint object in the table’s log directory, if it exists, to obtain a recent checkpoint ID
 
-
 Example of a write transaction
 
 * Transaction will read the data at table version r (if needed) and attempt to write log record r+1
@@ -3955,7 +2758,7 @@ Example of a write transaction
   * This step can happen in parallel
   * At the end, these objects are ready to be referenced in a new log record.
 * Attempt to write the transaction’s log record into the r+1 .json log object, if no other client has written this object
-* __This step needs to be atomic__ . If the step fails, the transaction can be retried; depending on the query’s semantics (optimistic concurrency)
+* **This step needs to be atomic** . If the step fails, the transaction can be retried; depending on the query’s semantics (optimistic concurrency)
 * Optionally, write a new .parquet checkpoint for log record r+1
 
 Creating the r+1 .json record, needs to be atomic: only 1 client should succeed. Not all large-scale storage systems have an atomic put operation
@@ -3966,17 +2769,15 @@ Creating the r+1 .json record, needs to be atomic: only 1 client should succeed.
 
 # Lakehouse
 
-
 (SQL) Format-independent optimizations are
 
-* __Caching__: When using a transactional metadata layer such as Delta Lake, it is safe for a Lakehouse system to cache files from the cloud object store on faster storage devices such as SSDs and RAM on the processing nodes
-* __Auxiliary data__: maintain column min-max statistics for each data file in the table within the same Parquet file used to store the transaction log, which enables data skipping optimizations when the base data is clustered by particular columns
-* __Data layout__:
+* **Caching**: When using a transactional metadata layer such as Delta Lake, it is safe for a Lakehouse system to cache files from the cloud object store on faster storage devices such as SSDs and RAM on the processing nodes
+* **Auxiliary data**: maintain column min-max statistics for each data file in the table within the same Parquet file used to store the transaction log, which enables data skipping optimizations when the base data is clustered by particular columns
+* **Data layout**:
   * Record ordering: which records are clustered together and hence easiest to read together, e.g. ordering records using individual dimensions or space-filling curves such as Z-order
   * Compression strategies differently for various groups of records, or other strategies
 
 Offer a declarative version of the DataFrame APIs which maps data preparation computations into Spark SQL query plans and can benefit from logical optimizations
-
 
 # -- newsection --
 
@@ -4000,7 +2801,6 @@ Ingestion (acquiring)
 
 # Supporting data pipelines
 
-
 We can choose the XaaS configuration to build our pipelines
 
 * IaaS
@@ -4020,18 +2820,17 @@ PaaS
 
 # Single instance: AWS EC2
 
-
 Amazon Elastic Compute Cloud
 
 * A web service that provides resizable compute capacity
 * Complete control of computing resources
   * Processor, storage, networking, OS, and purchase model
 
-The _ __instance type __ _ determines the hardware
+The _ **instance type ** _ determines the hardware
 
 * Different compute and memory capabilities
 
-_ __Amazon Machine Image __ _ is a software template
+_ **Amazon Machine Image ** _ is a software template
 
 * The EC2 instance is used for creating the virtual server instance
 * The AMI is the EC2 virtual machines image
@@ -4050,7 +2849,6 @@ Interact with EC2 instance as with any computer
 
 [https://aws.amazon.com/ec2/instance-types/](https://aws.amazon.com/ec2/instance-types/)
 
-
 AWS uses public-key cryptography to secure the login
 
 * You can create one using the Amazon EC2 console
@@ -4065,7 +2863,6 @@ AWS uses public-key cryptography to secure the login
 * The private key file is automatically downloaded by your browser
 
 # Cluster: AWS EMR
-
 
 Amazon EMR is a data platform based on the Hadoop stack
 
@@ -4082,7 +2879,6 @@ Example of workload
 * Once the cluster is finished, EMR transfers output data to Amazon S3
 
 # Motivation
-
 
 Amazon EMR (Elastic Map Reduce)
 
@@ -4237,7 +3033,6 @@ Resize a Running Cluster
 
 ![](imgs/slides265.png)
 
-
 EMR cluster
 
 * Master group controls the cluster
@@ -4249,7 +3044,6 @@ Core groups
 * Core instances run Data Node daemons
 
 (Optional) Task instances
-
 
 ![](imgs/slides266.png)
 
@@ -4303,24 +3097,22 @@ Core Instance Group
 
 ![](imgs/slides287.png)
 
+The central component of Amazon EMR is the **cluster**
 
-The central component of Amazon EMR is the __cluster__
+* A collection of **Amazon Elastic Compute Cloud (Amazon EC2)** instances
+* Each instance is called a **node**
 
-* A collection of __Amazon Elastic Compute Cloud (Amazon EC2)__ instances
-* Each instance is called a __node__
+The **node type ** identifies the role within the cluster
 
-The __node type __ identifies the role within the cluster
-
-* __Master__ node coordinates the distribution of data and tasks among other nodes
+* **Master** node coordinates the distribution of data and tasks among other nodes
   * Every cluster has (at least) a master node
   * Always active
-* __Core__ node runs tasks and store data in the Hadoop Distributed File System (HDFS)
+* **Core** node runs tasks and store data in the Hadoop Distributed File System (HDFS)
   * Multi-node clusters have at least one core node
   * Always active, contains the data node daemon
-* __Task__ node only runs tasks
+* **Task** node only runs tasks
   * Task nodes are optional
   * Decoupling processing and storage, we lose data locality
-
 
 On-Demand Instance
 
@@ -4343,7 +3135,6 @@ Spot Instance
 https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#SpotInstances:
 
 
-
 Spot Instance cost strategies
 
 * _Capacity-optimized strategy_
@@ -4362,16 +3153,15 @@ _Lowest-price strategy_
 
 ![](imgs/slides289.png)
 
+Choose to launch **master**, **core**, or **task** on Spot Instances
 
-Choose to launch __master__ , __core__ , or __task__ on Spot Instances
-
-* The __master__ node controls the cluster
+* The **master** node controls the cluster
   * When terminated, the cluster ends
   * Use _spot instances_ if you are running a cluster where sudden termination is acceptable
-* __Core __ nodes process data and store information using HDFS
+* **Core ** nodes process data and store information using HDFS
   * When terminated, data is lost
   * Use _spot instances_ when partial HDFS data loss is tolerable
-* __Task __ nodes process data but do not hold persistent data in HDFS
+* **Task ** nodes process data but do not hold persistent data in HDFS
   * When terminated, computational capacity is lost
   * The effect of spot instances on the cluster is "minimal"
 
@@ -4379,10 +3169,9 @@ Choose to launch __master__ , __core__ , or __task__ on Spot Instances
 
 ![](imgs/slides290.png)
 
-
 Amazon EMR provides two main file systems
 
-* __HDFS__ and __EMRFS__ , specify which file system to use by the prefix
+* **HDFS** and **EMRFS**, specify which file system to use by the prefix
 * hdfs://path (or just `path`)
   * HDFS is used by the master and core nodes
   * _AWS EBS volume storage is used for HDFS data_
@@ -4393,7 +3182,6 @@ Amazon EMR provides two main file systems
   * We can avoid EBS storage
 
 [https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-storage.html](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-storage.html)
-
 
 Choose the frameworks and applications to install
 
@@ -4418,13 +3206,11 @@ Allows EMR to call other AWS Services such as EC2 on your behalf.
 
 Provides access to other AWS services such as S3, DynamoDB from EC2 instances that are launched by EMR.
 
-
 Using CLI (command line interface)
 
 * This is more pragmatic, but there are many options to explore
 * Let’s stick to AWS Console
 * [https://console.aws.amazon.com/elasticmapreduce/](https://console.aws.amazon.com/elasticmapreduce/)
-
 
 aws emr create-cluster \\
 
@@ -4442,14 +3228,12 @@ aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole --termina
 
 # Cluster lifecycle
 
-
 Creating a cluster (it takes ~10 minutes)
 
 * A cluster cannot be stopped
 * It can only be terminated
 
 ![](imgs/slides295.png)
-
 
 STARTING: EMR provisions EC2 instances for each required instance
 
@@ -4469,8 +3253,7 @@ WAITING: after steps run successfully
 * TERMINATING: after manual shut down
 * _Any data stored on the cluster is deleted_
 
-
-A __step__ is a user-defined unit of processing
+A **step** is a user-defined unit of processing
 
 * E.g., one algorithm that manipulates the data
 
@@ -4518,7 +3301,6 @@ spark-submit --class it.unibo.big.WordCount build/libs/WordCount-all.jar s3://aw
 
 # Other services: HUE
 
-
 Connecting to Hue
 
 * I.e., connecting to any HTTP interface hosted on the master node of a cluster
@@ -4564,7 +3346,6 @@ To view the Hue web user interface
 # Cluster migration - Based on a true story​
 
 # Migration
-
 
 Goals
 
@@ -4635,12 +3416,10 @@ Reference architecture
 
 ![](imgs/slides317.png)
 
-
 Hardware
 
 * Software
 * "Classic" Hadoop stack
-
 
 8 CPUs (144 total)
 
@@ -4705,8 +3484,7 @@ lshw -short -C disk
 | Hardware |? |? |
 | Software |? |? |
 
-
-__Hardware cost__:?
+**Hardware cost**:?
 
 * Refer to [https://www.rect.coreto-europe.com/en/search.html?clearsearch=1](https://www.rect.coreto-europe.com/en/search.html?clearsearch=1)
 
@@ -4717,8 +3495,7 @@ __Hardware cost__:?
 | Hardware | 10602€/year |? |
 | Software |? |? |
 
-
-__Hardware cost __ _(up to Mar 05, 2021): _ 1767€ x 18 = 31806€
+**Hardware cost ** _(up to Mar 05, 2021): _ 1767€ x 18 = 31806€
 
 * Amortization over 3 years (i.e., _10602€/year_)
 
@@ -4731,15 +3508,14 @@ __Hardware cost __ _(up to Mar 05, 2021): _ 1767€ x 18 = 31806€
 | Hardware | 10602€/year |? |
 | Software |? |? |
 
-__Software cost__:?
+**Software cost**:?
 
 | SOLonprem | On-premises | On cloud |
 |:-: |:-: |:-: |
 | Hardware | 10602€/year |? |
 | Software | 0€ |? |
 
-
-__Software cost__ _(up to 2020): 0€_
+**Software cost** _(up to 2020): 0€_
 
 * Free Cloudera Management System
 * No software licensing (for research purpose)
@@ -4749,8 +3525,7 @@ __Software cost__ _(up to 2020): 0€_
 | Hardware | 10602€/year |? |
 | Software | 180000€/year |? |
 
-
-__Software cost __ _(up to Mar 05, 2021): 10000€/year x 18 = 180000€/year_
+**Software cost ** _(up to Mar 05, 2021): 10000€/year x 18 = 180000€/year_
 
 * Cloudera is no more free, 10K€ per node
 * [https://www.cloudera.com/products/pricing.html\#private-cloud-services](https://www.cloudera.com/products/pricing.html#private-cloud-services)
@@ -4763,7 +3538,6 @@ _“Houston we’ve had a problem!”_
 * What about migrating to the cloud? (we only consider AWS)
 
 # Migration
-
 
 Moving a Hadoop cluster to the cloud (we only consider AWS)
 
@@ -4784,7 +3558,6 @@ How do we start?
 | Hardware | 10602€/year |? |
 | Software | 180000€/year |? |
 
-
 Migrating the cluster as-is:?
 
 * Hint: add 18 EC2 instances satisfying the hardware requirements
@@ -4793,7 +3566,6 @@ Migrating the cluster as-is:?
 |:-: |:-: |:-: |
 | Hardware | 10602€/year | 162000$/year |
 | Software | 180000€/year |? |
-
 
 SOLcloud1 migrating the cluster as-is: _13500$/month = 162000$/year_
 
@@ -4811,7 +3583,6 @@ Prices change over the year
 
 # Migration
 
-
 Pay attention to the region
 
 * Different regions, different prices
@@ -4819,7 +3590,6 @@ Pay attention to the region
 * Remember the GDPR and data locality
 
 ![](imgs/slides340.png)
-
 
 It makes no sense to move the cluster as-is
 
@@ -4834,8 +3604,7 @@ How do we proceed with the migration?
 * Identify a suitable budget, implement, refine later
   * Wrong refinements can do a lot of damage
 
-
-__HDFS__
+**HDFS**
 
 * How much durability do we need?
   * HP0: three replicas (we stick to this)
@@ -4843,15 +3612,13 @@ __HDFS__
   * HP2: move cold data to glacier or delete id
   * ...
 
-__HBase__ has marginal effects on the pricing (100GB << 50TB)
+**HBase** has marginal effects on the pricing (100GB << 50TB)
 
 * For simplicity, we can omit it
 
-__Overall__: 50TB storage/year
-
+**Overall**: 50TB storage/year
 
 ![](imgs/slides341.png)
-
 
 Processing takes place each time that ESA provides a satellite image
 
@@ -4859,12 +3626,11 @@ Processing takes place each time that ESA provides a satellite image
 * Some days up to 10 images are available
 * Spark jobs are always executed with the same parameters
 
-__Image processing__
+**Image processing**
 
 * 4 machines, 2 cores, 10GB RAM at least
 
-__Weather processing__ is negligible
-
+**Weather processing** is negligible
 
 Image processing
 
@@ -4889,7 +3655,6 @@ Driver (1 core and 1GB RAM)
 | Hardware | 2356€/year | 38000$/year |
 | Software | 100000€/year |? |
 
-
 Assuming 1 Executor = 1 Machine
 
 * Compare 4 machines on-premises vs on cloud
@@ -4908,12 +3673,10 @@ AWS
   * A lot of storage cost
   * Machines are up-and-running even when no computation is necessary (just to persist data)
 
-
 AWS
 
 * Still, we have no software stack configuration
 * Which is the major cost?
-
 
 AWS
 
@@ -4933,7 +3696,6 @@ S3 Infrequent Access
 ![](imgs/slides344.png)
 
 ![](imgs/slides345.png)
-
 
 _AWS Storage_
 
@@ -4956,7 +3718,6 @@ S3
 |:-: |:-: |:-: |
 | Hardware | 2356€/year |? |
 | Software | 100000€/year |? |
-
 
 Migrating cluster to EMR: _?_
 
@@ -4987,7 +3748,6 @@ Driver (1 core and 1GB RAM)
 | Hardware | 2356€/year | 14710€/year |
 | Software | 100000€/year |? |
 
-
 Migrating cluster to EMR: _14710€/year_
 
 * S3 Infrequent Access storage (50 TB per month): 640€
@@ -5007,7 +3767,6 @@ Migrating cluster to EMR: _14710€/year_
 |:-: |:-: |:-: |
 | Hardware | 2356€/year | 13445€/year |
 | Software | 100000€/year |? |
-
 
 Migrating cluster to EMR: _13445€/year_
 
@@ -5041,7 +3800,6 @@ Summing up (cloud options)
 | Pay-per-use | S3 | Manual | ISH: repetitive manual provisioning | - |
 | Pay-per-use | S3 | EMR | YES | ~14K€ |
 
-
 Summing up
 
 * We estimated the cluster costs
@@ -5063,15 +3821,13 @@ WeLASER
 
 # The WeLASER project
 
-
-__Project description__
+**Project description**
 
 * _The increased use of pesticides and _ _fertilisers_ _ damages the environment, destroys non-target plants and beneficial insects for the soil and harms human and animal health. Most seeds develop herbicide-resistant properties, rendering pesticides ineffective. Mechanical automatic systems that are studied as alternatives to pesticides deteriorate soil features, damage beneficial soil organisms and offer limited results for in-row weeding. The EU-funded WeLASER project will develop a non-chemical solution for weed management based on pioneering technology consisting of the application of lethal doses of energy on the weed meristems through a high-power laser source. An AI-vision system separates crops from weeds, identifying the weed meristems and pointing the laser at them. A smart controller based on IoT and cloud computing techniques coordinates the system, which is _ _transfered_ _ all over the field by an autonomous vehicle._
 
 ![](imgs/slides348.png)
 
 [https://cordis.europa.eu/project/id/101000256](https://cordis.europa.eu/project/id/101000256) (accessed 2020-08-01)
-
 
 Which requirements do you foresee?
 
@@ -5091,7 +3847,6 @@ Assumptions
 
 # Workload
 
-
 Nothing special
 
 * Every night compute aggregated indexes on the collected data (2h/day)
@@ -5107,7 +3862,6 @@ On-premises (HDFS cluster)
 |:-: |:-: |:-: |
 | Hardware | 2900€/year |? |
 | Software | 40000€/year |? |
-
 
 On-premises
 
@@ -5130,7 +3884,6 @@ On-premises
 |:-: |:-: |:-: |
 | Hardware | 2900€/year | ~40000$/year |
 | Software | 40000€/year |? |
-
 
 Moving the Hadoop cluster as IAAS
 
@@ -5156,7 +3909,6 @@ _MKS (KAFKA)_
 | Hardware | 2900€/year | ~4000$/year |
 | Software | 40000€/year |? |
 
-
 Moving the Hadoop cluster as PAAS
 
 * EC2
@@ -5181,7 +3933,6 @@ _Kinesis_
 # Cost vs price
 
 How would you evaluate the cost and the price?
-
 
 _Price_ is the amount a customer is willing to pay for a product or service
 
@@ -5218,14 +3969,12 @@ Ingestion (acquiring)
 
 # Batch vs. Streaming systems
 
-
 What is a bulk processing system?
 
 * High latency
 * Exact results
 * Process massive data at once
   * ... is this true?
-
 
 What is a streaming system?
 
@@ -5235,15 +3984,13 @@ What is a streaming system?
 * Process data item by data item
   * ... is this true?
 
-
 What is a bulk processing system?
 
-* An engine capable to handle processing on __bounded__ datasets
-
+* An engine capable to handle processing on **bounded** datasets
 
 What is a streaming system?
 
-* An engine capable to handle processing on __unbounded__ datasets
+* An engine capable to handle processing on **unbounded** datasets
 * Streaming is a superset of batch processing
 
 Akidau, Tyler, Slava Chernyak, and Reuven Lax.  _Streaming systems: the what, where, when, and how of large-scale data processing_ . " O'Reilly Media, Inc.", 2018.
@@ -5259,8 +4006,7 @@ Akidau, Tyler, Slava Chernyak, and Reuven Lax.  _Streaming systems: the what, wh
 
 # Ingestion: batch
 
-
-__Goal__: moving data to the cloud
+**Goal**: moving data to the cloud
 
 * Moving data to the cloud
 * _80TB_ of data to move,
@@ -5269,7 +4015,6 @@ __Goal__: moving data to the cloud
 How many _days_?
 
 * _80000GB_ / (_1Gbps / 8_) /  _60 / 60 / 24 _ ~= a week without internet
-
 
 Batch/Bulk: move data from on-premises storage
 
@@ -5280,7 +4025,6 @@ Batch/Bulk: move data from on-premises storage
 * Ship back (shipping carrier)
 
 # Ingestion: batch (AWS)
-
 
 AWS Snowball
 
@@ -5332,26 +4076,24 @@ Value Metric
 
 Kreps, Jay.  _I heart logs: Event data, stream processing, and data integration_ . " O'Reilly Media, Inc.", 2014.
 
+**Stream**: real-time streaming data
 
-__Stream__: real-time streaming data
+* **Event**: anything that we can observe occurring at a particular point in time
 
-* __Event__: anything that we can observe occurring at a particular point in time
-
-__Continuous streaming__
+**Continuous streaming**
 
 * Illimited succession of individual events
 * Ordered by the point in time at which each event occurred
 
-__Publish/subscribe (pub/sub)__: a way of communicating messages
+**Publish/subscribe (pub/sub)**: a way of communicating messages
 
-* _Senders_ publish messages associated with one or more __topics__
+* _Senders_ publish messages associated with one or more **topics**
 * _Receivers_ subscribe to specific topics, receive all messages with that topic
 * _Messages_ are events
 
 ![](imgs/slides357.jpg)
 
 [https://www.manning.com/books/event-streams-in-action](https://www.manning.com/books/event-streams-in-action)
-
 
 Log
 
@@ -5361,11 +4103,9 @@ Log
 
 The log acts as a messaging system with durability guarantees and ordering semantics
 
-
 ![](imgs/slides358.png)
 
 Kreps, Jay.  _I heart logs: Event data, stream processing, and data integration_ . " O'Reilly Media, Inc.", 2014.
-
 
 General idea:
 
@@ -5373,28 +4113,26 @@ General idea:
 * Store them in a unified log
 * Enable applications to operate on these event streams
 
-__Unified log__
+**Unified log**
 
-* _Unified_ , _append-only_ , _ordered_ , _distributed_ log that allows the centralization of event streams
+* _Unified_, _append-only_, _ordered_, _distributed_ log that allows the centralization of event streams
 
 ![](imgs/slides359.jpg)
 
-
-__Unified__: a single log in a company with applications sending/reading events
+**Unified**: a single log in a company with applications sending/reading events
 
 * Log serves as central data backbone
   * It can contain many distinct continuous streams of events
   * Not all events are sent to the same event stream
 
-__Append-only__: new events are appended to the unified log
+**Append-only**: new events are appended to the unified log
 
 * Existing events are never updated in place
   * If read the event \#10, never look at events 1 through 10 again
 * Events are automatically deleted from the unified log when they age
   * E.g., automatically remove events after 7 days
 
-
-__Distributed__: the unified log lives across a cluster of machines
+**Distributed**: the unified log lives across a cluster of machines
 
 * Optionally divide events into shards (i.e., partitions)Still, the log is unified since we have a single (conceptual) log
 
@@ -5406,8 +4144,7 @@ Distribution ensures
 
 ![](imgs/slides360.jpg)
 
-
-__Ordered__: events in a shard have a sequential IDs (unique in a shard)
+**Ordered**: events in a shard have a sequential IDs (unique in a shard)
 
 * Local ordering keeps things much simpler than global ordering
 * Applications maintain their own cursor for each shard
@@ -5416,20 +4153,18 @@ __Ordered__: events in a shard have a sequential IDs (unique in a shard)
 
 Lamport, Leslie. "Time, clocks, and the ordering of events in a distributed system."  _Concurrency: the Works of Leslie _ _Lamport_ . 2019. 179-196.
 
-
 Two types of processing
 
-* __Single-event:__ a single event produces zero or more events
+* **Single-event:** a single event produces zero or more events
   * Validating “Does this event contain all the required fields?”
   * Enriching “Where is this IP address located?”
   * Filtering “Is this error critical?”
-* __Multiple-event:__ multiple events collectively produce zero or more events
+* **Multiple-event:** multiple events collectively produce zero or more events
   * Aggregating, functions such as minimum, maximum, sum
   * Pattern matching, looking for patterns or co-occurrence
   * Reordering events based on a sort key
 
 ![](imgs/slides362.png)
-
 
 Why not communicating directly using messaging protocols?
 
@@ -5447,7 +4182,6 @@ Indeed, logs are common:
 
 # Ingestion: stream (AWS)
 
-
 Amazon Kinesis Data Streams
 
 * Created and provisioned by shard
@@ -5464,7 +4198,6 @@ Amazon Kinesis Data Streams
 ![](imgs/slides363.png)
 
 [https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html](https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html)
-
 
 Re-sharding (i.e., scaling)
 
@@ -5514,7 +4247,6 @@ Ingestion (acquiring)
 
 # Serverless computing/processing
 
-
 AWS Lambda: compose code functions in a loose orchestration
 
 * Build modular back-end systems
@@ -5530,7 +4262,6 @@ With Lambda, you are responsible only for your code (Lambda function)
 
 # Serverless computing (AWS Lambda)
 
-
 AWS Lambda
 
 * A Lambda function is a granular service
@@ -5545,7 +4276,6 @@ AWS Lambda
 
 # Serverless computing (FaaS)
 
-
 FaaS: write single-purpose stateless functions
 
 * Keep the single responsibility principle in mind
@@ -5558,7 +4288,6 @@ FaaS: write single-purpose stateless functions
   * E.g., pricing is based on \#requests, execution time, and allocated memory
 
 # Patterns for data pipelines
-
 
 Patterns are architectural solutions to problems in software design
 
@@ -5578,7 +4307,6 @@ Patterns for serverless data pipelines
 
 # Command pattern
 
-
 Command pattern
 
 * A behavioral design pattern in which an object is used to encapsulate the information needed to perform an action or trigger an event
@@ -5593,7 +4321,6 @@ Encapsulate a request as an object
 
 # Pipes and filters pattern
 
-
 Decompose a complex processing task into a sequence of manageable services
 
 * Components designed to transform data are referred to as filters
@@ -5602,7 +4329,6 @@ Decompose a complex processing task into a sequence of manageable services
 ![](imgs/slides368.png)
 
 # Messaging pattern
-
 
 Messaging pattern
 
@@ -5616,7 +4342,6 @@ Decouple services from direct dependence and allow storage of events in a queue
 ![](imgs/slides369.png)
 
 # Priority queue pattern
-
 
 Decouple and prioritize requests sent to services
 
@@ -5658,7 +4383,6 @@ Ingestion (acquiring)
 
 # Identity and Access Management
 
-
 Identity and Access Management (IAM)
 
 * Web service that controls fine-grained access to AWS resources
@@ -5668,7 +4392,6 @@ IAM user
 
 * Unique identity recognized by AWS services and applications
 * Similar to user in an operating system like Windows or UNIX
-
 
 IAM role
 
@@ -5683,19 +4406,17 @@ User vs role
 * Role does not have credentials and cannot make direct requests to AWS services
 * Roles are assumed by authorized entities, such as IAM users
 
-
 Alice (i.e., an IAM user) is a firewoman
 
 * She is the same person with or without her turnout gear
 * As a firewoman (i.e., a role)
   * If she speeds to a house fire and passes a police officer, he isn't going to give her a ticket
-  * In her role as a _firewoman_ , she is allowed to speed to the house fire
+  * In her role as a _firewoman_, she is allowed to speed to the house fire
 * As a private citizen (i.e., another role)
   * When she is off duty, if she speeds past that same police officer, he's going to give her a ticket
-  * In her role as a _private citizen_ , she is not allowed to speed
+  * In her role as a _private citizen_, she is not allowed to speed
 
 # AWS
-
 
 Amazon Web Services (AWS) is a public-cloud platform
 
@@ -5710,7 +4431,6 @@ Amazon Web Services (AWS) is a public-cloud platform
 
 # AWS Web console
 
-
 We use the AWS Educate program
 
 * Login with the provided account
@@ -5724,7 +4444,6 @@ We use the AWS Educate program
 ![](imgs/slides372.png)
 
 # AWS CLI
-
 
 CLI interface
 
@@ -5747,7 +4466,6 @@ A unified tool to manage your AWS services.
 
 ![](imgs/slides373.png)
 
-
 CLI needs credentials to work
 
 * Go back to AWS Educate
@@ -5757,7 +4475,6 @@ CLI needs credentials to work
 * Credentials expire after some time; you need a manually refresh
 
 ![](imgs/slides374.png)
-
 
 Run `aws configure`
 
@@ -5774,7 +4491,6 @@ It is also possible to configure an AWS profile
   * We stick to `default`
 
 # Object storage: S3
-
 
 Create S3 bucket, the following rules apply for naming buckets
 
@@ -5800,7 +4516,6 @@ $ aws s3api list-objects --bucket aws-bucket-bigdata2021
 
 # Requirements
 
-
 To start this lecture, you need to
 
 * Activate your AWS Educate account
@@ -5815,7 +4530,6 @@ To start this lecture, you need to
   * Be able to download and run the VM
 
 # AWS SAM CLI
-
 
 Serverless Application Model is a framework to build serverless applications
 
@@ -5841,7 +4555,6 @@ sam --version
 [https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 
 # AWS services
-
 
 AWS Educate (and AWS console)
 
@@ -5885,7 +4598,6 @@ Dataset sample
 
 { customerName: Charlie, products: [Pizza, Cola] } ]
 
-
 The pipeline involves a single transformation
 
 * A classic mining problem, which one?
@@ -5902,16 +4614,14 @@ Dataset sample
 
 [Pizza, Cola]]
 
-
 Find sets of items (i.e., itemsets) frequently appearing together
 
-* __Item__: a product
-* __Itemset__: a set of products
-* __Frequently__: support above threshold
-* __Support__: number of clients buying a set of products
+* **Item**: a product
+* **Itemset**: a set of products
+* **Frequently**: support above threshold
+* **Support**: number of clients buying a set of products
 
 Complexity: O(2|items|)
-
 
 {Pizza,Diaper,Beer}
 
@@ -5945,19 +4655,17 @@ Raw dataset sample
 
 # NOSQL storage: DynamoDB
 
-
 Basic DynamoDB components: tables and items
 
-* __Tables__ , collection of (data) items
+* **Tables**, collection of (data) items
 
-__Items__ , a group of attributes that is uniquely identifiable
+**Items**, a group of attributes that is uniquely identifiable
 
 * Each table contains zero or more items
   * No limit to the number of items you can store in a table
 * Each item in the table has a unique identifier, or primary key
 * E.g., in the table `people`, each item represents a `person`
   * The primary key consists of one attribute (`fiscalCode`)
-
 
 Attributes
 
@@ -5971,7 +4679,6 @@ Schemaless
 * Other than the primary key, a table is schemaless
   * Neither the attributes nor their data types need to be defined beforehand
   * Each item can have its own distinct attributes
-
 
 Primary Key
 
@@ -5993,7 +4700,6 @@ Two types of primary keys
 
 [https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-gsi-overloading.html](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-gsi-overloading.html)
 
-
 Secondary Indexes
 
 * One or more secondary indexes per table
@@ -6009,7 +4715,6 @@ Two types of indexes
 How do we shape the schema?
 
 * [https://cloud.google.com/bigtable/docs/schema-design](https://cloud.google.com/bigtable/docs/schema-design)
-
 
 Create a table `frequent-sales` with a composite key
 
@@ -6030,7 +4735,6 @@ $ aws dynamodb list-tables
 
 $ aws dynamodb delete-table --table-name frequent-sales
 
-
 Reading data from DynamoDB might not reflect the results of a recent write
 
 * Eventually Consistent Reads (default)
@@ -6045,7 +4749,6 @@ Strongly Consistent Reads
 * Strongly consistent reads may have higher latency than eventually consistent reads
 * Strongly consistent reads are not supported on global secondary indexes
 
-
 Provisioned mode: specify the \#reads and \#writes per second
 
 * You have predictable application traffic or traffic ramps gradually
@@ -6059,7 +4762,6 @@ One read capacity unit
   * 1 RCU if you choose eventually consistent reads
 
 One write capacity unit represents one write per second for an item up to 1 KB in size
-
 
 Put a new item and get it back
 
@@ -6091,7 +4793,6 @@ $ aws dynamodb query    --table-name frequent-sales    --key-condition-expressio
 
 [https://console.aws.amazon.com/lambda/home?region=us-east-1\#/functions](https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions)
 
-
 Manually creating the functions is cumbersome
 
 * We must copy and paste code
@@ -6100,7 +4801,6 @@ Manually creating the functions is cumbersome
 * No IDE support (and not all languages are supported)
 
 Switch to IntelliJ IDEA + AWS Toolkit
-
 
 # AWS Toolkit
 
@@ -6113,14 +4813,12 @@ Switch to IntelliJ IDEA + AWS Toolkit
 
 ![](imgs/slides385.png)
 
-
 Click on `AWS Explorer`
 
 * You can see the `helloworld` function
 * Plus `CloudWatch Logs` and `S3`
 
 ![](imgs/slides386.png)
-
 
 Test the existing code locally
 
@@ -6138,7 +4836,6 @@ Deploy a new Lambda function from the existing code
 
 [https://aws.amazon.com/lambda/pricing/](https://aws.amazon.com/lambda/pricing/)
 
-
 Check the log for errors and pricing
 
 * AWS Toolkit > CloudWatch Logs
@@ -6150,7 +4847,6 @@ Check the log for errors and pricing
 ![](imgs/slides389.png)
 
 # Data pipeline
-
 
 Deploy and execute the HelloWorld.java lambda function
 
