@@ -3,6 +3,8 @@
 ~*.twbr
 *.slides.html
 main.pdf 
+slides/.quarto
+slides/_site
 
 # Created by https://www.toptal.com/developers/gitignore/api/java,node,venv,linux,macos,scala,gradle,python,windows,virtualenv,microsoftoffice,latex
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,node,venv,linux,macos,scala,gradle,python,windows,virtualenv,microsoftoffice,latex
