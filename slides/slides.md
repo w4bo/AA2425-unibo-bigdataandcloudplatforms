@@ -4,11 +4,7 @@ subtitle: NoSQL DBMSs
 
 # Not only SQL
 
-# Introduction
-
-What is NoSQL
-
-Where does it come from, and why
+# Strengths of RDBMSs?
 
 # Strengths of RDBMSs
 
@@ -29,9 +25,11 @@ _Robustness_
 
 * Have been used for over 40 years
 
+# Weaknesses of RDBMS?
+
 # Weaknesses of RDBMS
 
-Impedance mismatch
+_Impedance mismatch_
 
 * Data are stored according to the relational model, but applications to modify them typically rely on the object-oriented model
 * Many solutions, no standard
@@ -53,7 +51,7 @@ _Schema rigidity_
 
 # What NoSQL means
 
-The term has been first used in '98 by Carlo Strozzi
+The term has been first used in 1998 by Carlo Strozzi
 
 * It referred to an open-source RDBMS that used a query language different from SQL
 
@@ -64,7 +62,7 @@ In 2009 it was adopted by a meetup in San Francisco
 
 Today, _NoSQL_ indicates _DBMSs_ adopting a _different data model from the relational one_
 
-* NoSQL = Not Only SQL
+* **NoSQL = Not Only SQL**
 * According to Strozzi himself, NoREL would have been a more proper noun
 
 # The first NoSQL systems
@@ -83,10 +81,6 @@ _Amazon, 2007_
 
 * Goal: ensure availability and reliability of its e-commerce service 24/7
 * Solution: _DynamoDB_, characterized by strong simplicity for data storage and manipulation
-
----
-
-https://en.wikipedia.org/wiki/LiveJournal LiveJournal è una sorta di MSN russo
 
 # NoSQL common features
 
@@ -125,28 +119,22 @@ Can NoSQL systems be used for OLAP?
 
 * Possibly, but through Big Data analytical tools (e.g., Spark)
 
----
-
-https://aws.amazon.com/it/nosql/
-
-# Data models
-
 # NoSQL: several data models
 
 One of the key challenges is to understand which one fits best with the required application
 
 | Model | Description | Use cases |
 |:-: |:-: |:-: |
-| Key-value | Associates any kind of value to a string | Dictionary, lookup table, cache, file and images storage |
-| Document | Stores hierarchical data in a tree-like structure | Documents, anything that fits into a hierarchical structure |
-| Wide-column | Stores sparse matrixes where a cell is identified by the row and column keys | Crawling, high-variability systems, sparse matrixes |
-| Graph | Stores vertices and arches | Social network queries, inference, pattern matching |
+| **Key-value** | Associates any kind of value to a string | Dictionary, lookup table, cache, file and images storage |
+| **Document** | Stores hierarchical data in a tree-like structure | Documents, anything that fits into a hierarchical structure |
+| **Wide-column** | Stores sparse matrixes where a cell is identified by the row and column keys | Crawling, high-variability systems, sparse matrixes |
+| **Graph** | Stores vertices and arches | Social network queries, inference, pattern matching |
 
 # Running example
 
 Typical use case: customers, orders and products
 
-![](imgs/slides69.png)
+![](imgs/99.svg)
 
 # Relational: data model
 
@@ -160,9 +148,12 @@ Based on tables and rows
 
 # Graph: data model
 
+:::: {.columns}
+::: {.column width=50%}
+
 Each DB contains one or more _graphs_
 
-* Each graph contains _vertices _ and _arcs_
+* Each graph contains _vertices_ and _arcs_
 * Vertices: usually represent real-world entities
   * E.g.: people, organizations, web pages, workstations, cells, books, etc.
 * Arcs: represent directed relationships between the vertices
@@ -177,11 +168,13 @@ Most known specializations:
 * Triplestore
   * Subject-predicate-object relationships (e.g., RDF)
 
+:::
+::: {.column width=50%}
+
 ![](imgs/slides72.png)
 
----
-
-https://stackoverflow.com/questions/5040617/what-is-the-difference-between-a-graph-database-and-a-network-database
+:::
+::::
 
 # Graph: querying
 
@@ -202,27 +195,18 @@ Graph databases usually model relationships-rich scenarios
 
 IDs are implicitly handled; different edge colors imply different edge types
 
-![](imgs/slides73.png)
+:::: {.columns}
+::: {.column width=50%}
 
-CardN: 457
+![](imgs/104a.svg)
 
-txnId:....
+:::
+::: {.column width=50%}
 
-CardN: 477
+![](imgs/104b.svg)
 
-txnId:....
-
-street:Adamcity:Chicago
-
-state:illinois
-
-code:60007
-
-street:9thcity:NewYork
-
-state:NewYork
-
-code:10001
+:::
+::::
 
 # Graph vs Aggregate modeling
 
@@ -241,16 +225,14 @@ Key-value, document and wide-column are called _aggregate-oriented_
 
 Based on the concept of encapsulation
 
-* Avoid joins as much as possible  achieve **high scalability**
-  * Con: data denormalization  **potential inconsistencies in the data**
+* Avoid joins as much as possible and achieve **high scalability**
+  * Con: data denormalization and **potential inconsistencies in the data**
 * _Query-driven modeling_
 
----
-
-https://stackoverflow.com/questions/21558589/neo4j-sharding-aspect 
-https://ayende.com/blog/4490/that-no-sql-thing-scaling-graph-databases
-
 # Document: data model
+
+:::: {.columns}
+::: {.column width=70%}
 
 Each DB contains one or more _collections_ (corresponding to tables)
 
@@ -266,30 +248,14 @@ Each field corresponds to a _key-value pair_
 * Key: unique string in the document
 * Value: either simple (string, number, boolean) or complex (object, array, BLOB)
   * A complex field can contain other field
+ 
+:::
+::: {.column width=30%}
 
-{
+![](imgs/106.svg)
 
-"_id": 1234,
-
-"name": "Enrico",
-
-"address": {
-
-"city": "Cesena",            "postalCode": 47522
-
-},
-
-"contacts": [ {
-
-"type": "office",            "contact": "0547-338835"
-
-}, {
-
-"type": "skype",            "contact": "egallinucci"
-
-} ]
-
-}
+:::
+::::
 
 # Document: querying
 
@@ -308,123 +274,40 @@ Different implementations, different functionalities
 * Some provide connectors to Big Data tools (e.g., Spark, Hive)
 * Some provide _full-text search _ capabilities
 
-# Data modeling example: aggregate model (2)
+# Data modeling example: aggregate model (1)
 
-![](imgs/slides74.png)
+:::: {.columns}
+::: {.column width=50%}
 
-![](imgs/slides75.png)
+![](imgs/109.svg)
 
-# Data modeling example: document model (1)
+:::
+::: {.column width=50%}
 
-Product collection
+![](imgs/111.svg)
 
-Customer collection
+:::
+::::
 
-{
+# Data modeling example: document model (2)
 
-"_id": 1,
+:::: {.columns}
+::: {.column width=50%}
 
-"name": "Martin",
+![](imgs/108.svg)
 
-"adrs": [
+:::
+::: {.column width=50%}
 
-{"street":"Adam", "city":"Chicago", "state":"illinois", "code":60007},       {"street":"9th", "city":"NewYork", "state":"NewYork", "code":10001}
+![](imgs/110.svg)
 
-],
-
-"orders": [ {
-
-"orderpayments":[
-
-{"card":477, "billadrs": {"street":"Adam", "city":"Chicago", "state":"illinois", "code":60007}},
-
-{"card":457, "billadrs": {"street":"9th", "city":"NewYork", "state":"NewYork", "code":10001}}
-
-],
-
-"products":[
-
-{"id":1, "name":"Cola", "price":12.4},
-
-{"id":2, "name":"Fanta", "price":14.4}
-
-],
-
-"shipAdrs": {"street":"9th", "city":"NewYork", "state":"NewYork", "code":10001}
-
-}]
-
-}
-
-* {
-* "_id":1,
-* "name":"Cola",
-* "price":12.4
-* },
-* {
-* "_id":2,
-* "name":"Fanta",
-* "price":14.4
-* }
-
-* {
-* "_id":1,
-* "name":"Cola",
-* "price":12.4
-* },
-* {
-* "_id":2,
-* "name":"Fanta",
-* "price":14.4
-* }
-
-{
-
-"_id": 1,
-
-"name": "Martin",
-
-"adrs": [
-
-{"street":"Adam", "city":"Chicago", "state":"illinois", "code":60007},       {"street":"9th", "city":"NewYork", "state":"NewYork", "code":10001}
-
-]
-
-}
-
-Customer
-
-collection
-
-{
-
-* "_id": 1,
-
-"customer":1,
-
-* "orderpayments":[
-
-{"card":477, "billadrs":{"street":"Adam", "city":"Chicago", "state":"illinois", "code":60007}},
-
-* {"card":457, "billadrs":{"street":"9th", "city":"NewYork", "state":"NewYork", "code":10001}}
-* ],
-* "products": [
-* {"id":1, "name":"Cola", "price":12.4},
-* {"id":2, "name":"Fanta", "price":14.4}
-* ],
-* "shipAdrs": {"street":"9th", "city":"NewYork", "state":"NewYork", "code":10001}
-
-}
-
-Product
-
-collection
-
-Order
-
-collection
+:::
+::::
 
 # Key-value: data model
+
+:::: {.columns}
+::: {.column width=50%}
 
 Each DB contains one or more _collections_ (corresponding to tables)
 
@@ -440,9 +323,18 @@ Looks like a simple dictionary
 * _The value may contain several information_
   * Definitions, synonyms and antonyms, images, etc.
 
-![](imgs/slides76.png)
+:::
+::: {.column width=50%}
+
+![Key-value](imgs/slides76.png)
+
+:::
+::::
 
 # Key-value: querying
+
+:::: {.columns}
+::: {.column width=50%}
 
 Three simple kinds of query:
 
@@ -460,6 +352,9 @@ The value is a _ _black box_ _: it cannot be queried!
 * No indexes on the values
 * Schema information is often indicated in the key
 
+:::
+::: {.column width=50%}
+
 | Key | Value |
 |:-: |:-: |
 | user:1234:name | Enrico |
@@ -468,26 +363,41 @@ The value is a _ _black box_ _: it cannot be queried!
 | post:9876:title | NoSQL Databases |
 | comment:5050:reply-to | post:9876 |
 
+:::
+::::
+
 # Data modeling example: key-value model
 
-Product collection
+:::: {.columns}
+::: {.column width=20%}
 
-Customer collection
+Product collection
 
 | key | value |
 |:-: |:-: |
 | p-1:name | Cola |
 | p-2:name | Fanta |
 
+:::
+::: {.column width=80%}
+
+Customer collection
+
 | key | value |
 |:-: |:-: |
 | cust-1:name | Martin |
-| cust-1:adrs | [ <br />  {"street":"Adam", "city":"Chicago", "state":"Illinois", "code":60007},    {"street":"9th", "city":"NewYork", "state":"NewYork", "code":10001}<br />] |
-| cust-1:ord-99 | { <br />  "orderpayments": [ <br />     {"card":477, "billadrs": <br />        {"street":"Adam", "city":"Chicago", "state":"illinois", "code":60007} }, <br />     {"card":457, "billadrs":<br />        {"street":"9th", "city":"NewYork", "state":"NewYork", "code":10001} <br />  ],<br /> "products": [ <br />     {"id":1, "name":"Cola", "price":12.4}, <br />     {"id":2, "name":"Fanta", "price":14.4} <br />  ],<br /> "shipAdrs": {"street":"9th", "city":"NewYork", "state":"NewYork", code":10001}<br />} |
+| cust-1:adrs | [   {"street":"Adam", "city":"Chicago", "state":"Illinois", "code":60007},    {"street":"9th", "city":"NewYork", "state":"NewYork", "code":10001}] |
+| cust-1:ord-99 | {   "orderpayments": [      {"card":477, "billadrs":         {"street":"Adam", "city":"Chicago", "state":"illinois", "code":60007} },      {"card":457, "billadrs":        {"street":"9th", "city":"NewYork", "state":"NewYork", "code":10001}   ], "products": [      {"id":1, "name":"Cola", "price":12.4},      {"id":2, "name":"Fanta", "price":14.4}   ], "shipAdrs": {"street":"9th", "city":"NewYork", "state":"NewYork", code":10001}} |
+
+:::
+::::
 
 # Wide column: data model
 
-Each DB contains one or more _column families _ (corresponding to tables)
+:::: {.columns}
+::: {.column width=50%}
+
+Each DB contains one or more _column families_ (corresponding to tables)
 
 * Each column family contains a list of _row_ in the form of a key-value pair
 * Key: unique string in the column family
@@ -503,7 +413,13 @@ Essentially a 2-dimensional key-value store
 * _Rows specify only the columns _ _for which a value exists_
 * Particularly suited for sparse matrixes and many-to-many relationships
 
+:::
+::: {.column width=50%}
+
 ![](imgs/slides77.png)
+
+:::
+::::
 
 # Wide column: querying
 
@@ -519,6 +435,24 @@ Given the similarity with the relational model, a _SQL-like _ language is often 
 
 # Wide column: ≠ columnar
 
+:::: {.columns}
+::: {.column width=33%}
+
+![Table](imgs/slides78.png)
+
+:::
+::: {.column width=33%}
+
+![Row-oriented](imgs/slides79.png)
+
+:::
+::: {.column width=33%}
+
+![Column-oriented](imgs/slides80.png)
+
+:::
+::::
+
 Do not mistake the wide column data model with the columnar storage used for OLAP applications
 
 * Row-oriented
@@ -530,36 +464,13 @@ Column-oriented
 * Pro: only the required values are accessed
 * Con: writing a record requires multiple accesses
 
-![](imgs/slides78.png)
-
-![](imgs/slides79.png)
-
-![](imgs/slides80.png)
-
 # Data modeling example: wide-column model
 
-Order details column family
-
-| Ord | CustName | Pepsi | Cola | Fanta | ... |
-|:-: |:-: |:-: |:-: |:-: |:-: |
-| 1 | Martin |  | 12.4 | 14.4 |  |
-| 2 | ... | ... |  |  | ... |
-
-| Ord | OrderPayments |
-|:-: |:-: |
-| 1 | <br /><br /><br /> |
-| 2 | ... |
-
-Order payments column family
-
-| Card | Steet | City | State | Code |
-|:-: |:-: |:-: |:-: |:-: |
-| 477 | 9th | NewYork | NewYork | 10001 |
-| 457 | Adam | Chicago | Illinois | 60007 |
+![](imgs/118.svg)
 
 # Aggregate modeling strategy
 
-The _aggregate _ term comes from Domain-Driven Design
+The _aggregate_ term comes from Domain-Driven Design
 
 * An aggregate is a group of tightly coupled objects to be handled as a block
 * Aggregates are the basic unit for data manipulation and consistency management
@@ -576,7 +487,7 @@ Disadvantages
 * **No design strategy exists for aggregates**
   * _It only depends on how they are meant to be used_
 * Can optimize only a limited set of queries
-* Data denormalization  possible inconsistencies
+* Data denormalization -> possible inconsistencies
 
 RDBMSs are agnostic from this point of view
 
@@ -584,28 +495,18 @@ RDBMSs are agnostic from this point of view
 
 A look behind the curtain
 
+# Sharding data
+
 One of the strengths of NoSQL systems is their _scale-out capability_
 
-* _ _Aggregate data modeling_ _: _ well suited for being distributed within a cluster
-* NoSQL systems can be used in a _single server environment _ too
+* _Aggregate data modeling_: well suited for being distributed within a cluster
+* NoSQL systems can be used in a _single server environment_ too
   * Graph databases do not scale as well as the others
 
 Two aspects must be considered when deploying on a cluster
 
 * **Sharding**: _distributing the data across different nodes_
 * **Replication**: _creating copies of the data on several nodes_
-
----
-
-As data volumes increase, it becomes more difficult and expensive to
-scale up—buy a bigger server to run the database on. A more appealing option is to
-scale out—run the database on a cluster of servers. Aggregate orientation fits well
-with scaling out because the aggregate is a natural unit to use for distribution.
-
-Quando ha senso l’approccio single-server?
-Mole di dati non è enorme 
-Si vogliono sfruttare le caratteristiche dei database NoSQL (e.g., schemaless, modello dati)
-Un sistema distribuito è inevitabilmente più complesso; non è detto che ne valga sempre la pena
 
 # Sharding
 
@@ -615,32 +516,32 @@ Un sistema distribuito è inevitabilmente più complesso; non è detto che ne va
 * Improves the efficiency of the system
   * Read/write operations are distributed
 
-A good _sharding_ _ strategy _ is **fundamental ** to optimize performances
+A good _sharding strategy_ is **fundamental ** to optimize performances
 
 * Usually based on one or more fields composing the sharding key
 
-![](imgs/slides81.png)
-
----
-
-Rimosso: Non dimenticarsi che, nei cluster,si usano macchine meno affidabili – diminuisce la resistenza ai guasti
+![Sharding](imgs/slides81.png)
 
 # Sharding strategy
 
 Thumbs-up rules for a sharding strategy:
 
-* _ Data-locality: stores the data close to those that need to access them_
+_Data-locality_
+
+* Store the data close to those that need to access them
 * E.g., store orders of Italian customers in the European data center
 
-_ Keep a balanced distribution_
+_Keep a balanced distribution_
 
 * Each node should have the same percentage of data (more or less)
 
-_ Keep together the data that must be accessed together_
+_Keep together the data that must be accessed together_
 
 * E.g., store each client’s orders in the same node
 
-Hash strategy: a hash function is used to allocate data to partitions
+# Sharding strategy
+
+_Hash strategy_: a hash function is used to allocate data to partitions
 
 * Adopted by DynamoDB and Cassandra
 * Pro: ensures even data distribution across nodes  massive scalability
@@ -649,22 +550,18 @@ Hash strategy: a hash function is used to allocate data to partitions
 
 ![](imgs/slides82.png)
 
----
-
-https://blog.yugabyte.com/four-data-sharding-strategies-we-analyzed-in-building-a-distributed-sql-database/
+# Sharding strategy
 
 Range strategy: each partition contains a range of sorted data
 
 * Adopted by HBase
 * Pro: efficiently run range queries that work on the sharding key values
-* Con: global ordering often generates hot spots  risk of bottlenecks
+* Con: global ordering often generates hot spots -> risk of bottlenecks
 * Con: ranges are defined a priori and this can determine heavy data redistribution
 
 ![](imgs/slides83.png)
 
----
-
-https://blog.yugabyte.com/four-data-sharding-strategies-we-analyzed-in-building-a-distributed-sql-database/
+# Sharding strategy
 
 Auto-sharding: the database distributes the data according to the workload
 
@@ -674,7 +571,7 @@ Beware: redefining (or choosing later) the sharding strategy can be quite expens
 
 # Replication
 
-**Replication**: the data is _copied _ on several nodes
+**Replication**: the data is _copied_ on several nodes
 
 * Improves the robustness of the system
   * In case of node failure, replicas prevent data loss
@@ -692,11 +589,10 @@ Main issue: each update must be pushed to every replica
 
 * Two techniques to handle updates: master-slave, peer to peer
 
----
-
-Parliamo di replica completa, per ora
-
 # Master-Slave Replication
+
+:::: {.columns}
+::: {.column width=50%}
 
 _Master_
 
@@ -704,17 +600,21 @@ _Master_
 * _Handles each and every write operation_
 * Can be chosen or drawn
 
-_Slaves _
+_Slaves_
 
 * Enable read operations
 * In sync with the master
 * Can become masterif the latter fails
 
+:::
+::: {.column width=50%}
+
 ![](imgs/slides85.png)
 
----
+:::
+::::
 
-Parliamo di replica completa, per ora
+# Master-Slave Replication
 
 **Pros**
 
@@ -735,13 +635,24 @@ Parliamo di replica completa, per ora
 
 # Peer-to-Peer Replication
 
+:::: {.columns}
+::: {.column width=50%}
+
 Each node has the same importance
 
 _Each node can handle write operations_
 
 The loss of a node does not compromise reads nor writes
 
+:::
+::: {.column width=50%}
+
 ![](imgs/slides86.png)
+
+:::
+::::
+
+# Peer-to-Peer Replication
 
 **Pro**
 
@@ -756,15 +667,11 @@ The loss of a node does not compromise reads nor writes
 * Two users may update the same value from different replicas
   * _Write inconsistencies are way worse_
 
----
-
-TODO: come gestire conflitti in scrittura? Quorum, l‘ultimo vince o segnalazione.
-
 # Handling conflicts
 
 Read conflicts
 
-* _Tolerate conflicts_: _ _ the _inconsistency window _ is usually limited
+* _Tolerate conflicts_: the _inconsistency window_ is usually limited
 * _Read-your-writes_: read consistency is guaranteed for the data written by the same user
   * Applies only to reads that immediately follow a write operation
   * One way is to associate a user to a node (risk: unbalanced workloads)
@@ -772,19 +679,16 @@ Read conflicts
 
 Write conflicts (P2P model)
 
-* _Last write wins: _ in case of conflict, the latest update overrides the others
+* _Last write wins_: in case of conflict, the latest update overrides the others
 * _Conflict prevention_: enforce writes on the most recent version by verifying that the value hasn’t changed since the last read
 * _Conflict detection_: preserve history, merge results, and let the user decide
 
----
-
-Read-your-writes: https://jepsen.io/consistency/models/read-your-writes
-https://highlyscalable.wordpress.com/2012/09/18/distributed-algorithms-in-nosql-databases/
-Prevention: verify that the value hasn’tchanges since the last read
-
 # The quorum mechanism
 
-The _quorum mechanism _ ensures consistent IO under replication
+:::: {.columns}
+::: {.column width=50%}
+
+The _quorum mechanism_ ensures consistent IO under replication
 
 * Based on contacting a majority of the nodes responsible for certain data
 * The quorum is the minimum number of nodes that a distributed operation has to obtain in order to be allowed to perform an operation on a replicated data item
@@ -798,41 +702,22 @@ Each data item has N replicas
   * The read operation is allowed only if R replicas can be read
   * Ensures that (at least) one copy with the up-to-date value is read
 
-writes _w_ _1_,  _w_ _2_, w 3
+:::
+::: {.column width=50%}
 
-|  |
-|:-: |
-|  |
-|  |
-|  |
-|  |
+![](imgs/133.svg)
 
-|  |
-|:-: |
-|  |
-|  |
-|  |
-|  |
-
-|  |
-|:-: |
-|  |
-|  |
-|  |
-|  |
-
-|  |
-|:-: |
-|  |
-|  |
-|  |
-|  |
+:::
+::::
 
 # Managing consistency
 
 A look behind the curtain
 
 # RDBMS vs NoSQL: different philosophies
+
+:::: {.columns}
+::: {.column width=50%}
 
 RDBMS come from decades of widespread usage
 
@@ -846,7 +731,13 @@ NoSQL systems are designed to succeed where RDBMSs fail
 * Quite simple systems (for now)
 * Speed and manageability rather than consistency at all costs
 
+:::
+::: {.column width=50%}
+
 ![](imgs/slides87.png)
+
+:::
+::::
 
 # Consistency: an example
 
@@ -868,23 +759,26 @@ RDBMS adopt _transactions _ to avoid this kind of issue
 
 Transactions guarantee four fundamental properties: ACID
 
-* _A_ _tomicity_
+_A_tomicity_
+
 * The transaction is indivisible: either it fully completes, or it fails
 * It cannot be completed partially
 
-_C_ _onsistency_
+_C_onsistency_
 
 * The transaction leaves the DB in a consistent state
 * Integrity constraints can never be violated
 
-_I_ _solation_
+_I_solation_
 
 * The transaction is independent from the others
 * In case of concurrent transactions, the effect is the same of their sequential execution
 
-_D_ _urability_
+_D_urability_
 
 * The DBMS protects the DB from failures
+
+# Consistency in RDBMSs: ACID
 
 Implementation of ACID properties relies on _locking mechanisms and logs_
 
@@ -917,49 +811,60 @@ They are not properties on which NoSQL systems rely
 
 # Consistency in NoSQL: CAP
 
+:::: {.columns}
+::: {.column width=50%}
+
 "Theorem": only two of the following three properties can be guaranteed
 
-* _C_ _onsistency: _ the system is always consistent
+_C_onsistency: the system is always consistent
+
 * Every node returns the same, most recent, successful write
 * Every client has the same view of the data
 
-_A_ _vailability: _ the system is always available
+_A_vailability: the system is always available
 
 * Every non-failing node returns a response for all read and write requests in a reasonable amount of time
 
-_P_ _artition tolerance: _ the system continues to function and upholds its consistency guarantees in spite of network partitions
+_P_artition tolerance: the system continues to function and upholds its consistency guarantees in spite of network partitions
 
-* _In distributed systems, network partitioning_ _is inevitably a possibility_
+* In distributed systems, network **partitioning is inevitably a possibility**
+
+:::
+::: {.column width=50%}
 
 ![](imgs/slides88.png)
 
----
+:::
+::::
 
-CAP demonstration: https://dl.acm.org/doi/pdf/10.1145/564585.564601?casa_token=m69maazxkqIAAAAA:cBn5y1eKnJUh7Tl4GVsw9Hqv984qwQ3_b8XvSM_wM3U2zp_-363uPINWJADEmMt-8ZjPzA1yaoE
+See [CAP demonstration](https://dl.acm.org/doi/pdf/10.1145/564585.564601?casa_token=m69maazxkqIAAAAA:cBn5y1eKnJUh7Tl4GVsw9Hqv984qwQ3_b8XvSM_wM3U2zp_-363uPINWJADEmMt-8ZjPzA1yaoE)
+
+# Consistency in NoSQL: CAP
 
 Three situations
 
-* CA: the system cannot suffer from network partitioning (single server)
-* AP: in case of partitioning, the system sacrifices consistency (overbooking)
-* CP: in case of partitioning, the system sacrifices availability (bookings prevented)
+* *CA*: the system cannot suffer from network partitioning (single server)
+* *AP*: in case of partitioning, the system sacrifices consistency (overbooking)
+* *CP*: in case of partitioning, the system sacrifices availability (bookings prevented)
 
 Theorem interpretation is not trivial
 
 * Asymmetric properties: consistency is sacrificed to favor speed at all times, not just when partitioning happens
-* Different application requirements  different algorithms handle these properties more strictly/loosely
+* Different application requirements -> different algorithms handle these properties more strictly/loosely
 
 # Consistency in NoSQL: relaxing CAP
 
 Consider two users that want to book the same room when a network partition happens
 
-* **CP**: no one can book (_A is sacrificed_)
+**CP**: no one can book (_A is sacrificed_)
+
 * Not the best solution
 
 **AP**: both can book (_C is sacrificed_)
 
 * Possible overbooking: writing conflict to handle
 
-_ **caP** _: only one can book
+**caP**: only one can book
 
 * The other will se the room available but cannot book it
 
@@ -972,19 +877,13 @@ It’s important to understand:
 * _What is the tolerance to obsolete reads_
 * _How large can the inconsistency window be_
 
----
-
-Gestione del conflitto in scrittura:
-Last one wins (vince l’ultimo che arriva)
-Segnalazione all’utente del conflitto
-Quorum
 
 # Consistency in NoSQL: PACELC
 
 Evolution of the CAP theorem (less known, but more precise)
 
-* if (_P_ _artition_) then {  _A_ _vaialbility_ _ or _C_ _onsistency_? }
-* _E_ _lse_  {  _L_ _atency _ or _C_ _onsistency_? }
+* if (_P_artition) then {  _A_vaialbility or _C_onsistency? }
+* Else  { _L_atency or _C_onsistency? }
 
 Different behavior in case or in absence of partitioning
 
@@ -1000,23 +899,20 @@ Four situations:
 * PC EL: consistency enforced only when partitioning happens (e.g., Yahoo Sherpa)
 * PC EC: system focused on consistency (RDBMS)
 
----
-
-http://dbmsmusings.blogspot.com/2010/04/problems-with-cap-and-yahoos-little.html
-
 # Consistency in NoSQL: BASE
 
-The CAP theorem is often cited as a justification for the use of weaker consistency models, for example _ **BASE** _
+The CAP theorem is often cited as a justification for the use of weaker consistency models, for example **BASE**
 
 * _Basically Available Soft-state services with Eventual consistency_
 
-_B_ _asic _ _A_ _vailability: _ the system should always be available
+_B_asic _A_vailability: the system should always be available
 
-* _S_ _oft-state: _ it is acceptable for the system to be temporarily inconsistent
+* _S_oft-state: _ it is acceptable for the system to be temporarily inconsistent
 
-_E_ _ventual consistency: _ eventually, the system becomes consistent
+_E_ventual consistency: eventually, the system becomes consistent
 
-* ACID
+ACID
+
 * Pessimistic approach (better safe than sorry)
 
 BASE
@@ -1061,23 +957,20 @@ Examples
 * **Session information**
   * Each web session is identified by its own sessionId: All related data can be stored with a PUT request and returned with a GET request
 * **User profiles, preferences**
-  * Each user is uniquely identified (userId, username) and has her own preferences in terms of language, colors, timezone, products, etc. – _data that fits well within an aggregate_
+  * Each user is uniquely identified (userId, username) and has her own preferences in terms of language, colors, timezone, products, etc.
+  * _data that fits well within an aggregate_
 * **Shopping cart, chat services**
   * Each e-commerce websites associates a shopping cart to a user; it can be stored as _an aggregate identified by the user ID_
-
----
-
-1 RDBMS would be overkill
 
 # Key-Value: real use cases
 
 **Crawling of web pages**
 
-* The URL is the key, the whole page content (HTML, CSS, JS, images, ..)is the value
+* The URL is the key, the whole page content (HTML, CSS, JS, images, ...) is the value
 
 **Twitter timeline**
 
-* The user ID is the key, the list of mostrecent tweets to be shown is the value
+* The user ID is the key, the list of most recent tweets to be shown is the value
 
 **Amazon S3 (Simple Storage Service)**
 
@@ -1089,13 +982,6 @@ Examples
   * Downloading files: approx. $0.004 per 10,000 files* PLUS $0.09 per GB (first GB free)
 
 ![](imgs/slides89.png)
-
----
-
-1 RDBMS would be overkill
-https://www.infoq.com/presentations/Real-Time-Delivery-Twitter
-http://highscalability.com/blog/2014/9/8/how-twitter-uses-redis-to-scale-105tb-ram-39mm-qps-10000-ins.html
-https://www.quora.com/Why-is-Twitter-not-using-NoSQL
 
 # Key-Value: when to avoid
 
@@ -1133,16 +1019,16 @@ Examples
 * **Event logs**
   * _Central repo to store event logs from many applications; _ shard on app name or event type
 * **CMS, blogging platforms**
-  * _The absence of a predefined schema _ _fits well_ _ within content management systems (CMS) or website management applications, to handle comments, registrations and user profiles
+  * _The absence of a predefined schema _fits well_ within content management systems (CMS) or website management applications, to handle comments, registrations and user profiles
 * **Web Analytics or Real-Time Analytics**
-  * _The ability to update only specific fields _ enables fast update of analytical metrics
+  * _The ability to update only specific fields_ enables fast update of analytical metrics
   * _Text indexing_ enables real-time sentiment analysis and social media monitoring
 * **E-commerce applications**
-  * _Schema flexibility is often required _ to store products and orders, as well as to enable schema evolution without incurring into refactoring or migration costs
+  * _Schema flexibility is often required_ to store products and orders, as well as to enable schema evolution without incurring into refactoring or migration costs
 
 # Document: real use cases
 
-**Adversting** ** services**
+**Advertising services**
 
 * MongoDB was born as a system for banner ads
   * 24/7 availability and high performance
@@ -1204,14 +1090,6 @@ Examples
 
 * After using Cassandra, Twitter ha developed its own proprietary NoSQL system to support most of its services
 
----
-
-Netflix: 12M trans/sec. Ebay, >100TB. IoT
-
-https://labs.spotify.com/2015/01/09/personalization-at-spotify-using-cassandra/
-
-https://academy.datastax.com/resources/ds220-data-modeling?unit=use-cases-use-case-introduction
-
 # Wide column: when to avoid
 
 **Same as for document model**
@@ -1223,10 +1101,6 @@ https://academy.datastax.com/resources/ds220-data-modeling?unit=use-cases-use-ca
 
 * Joins are highly discouraged
 * Limited support for filters and group bys
-
----
-
-Prototipazioni: nelle prima fasi di progetto, i pattern delle query possono cambiare frequentemente, con la conseguenza di dover riprogettare le famiglie di colonne. In Cassandra, the cost may be higher for query change as compared to schema change.
 
 # Graph: popular DBs
 
@@ -1265,10 +1139,6 @@ Prototipazioni: nelle prima fasi di progetto, i pattern delle query possono camb
 
 * Creating rules that define new knowledge based on existing patterns (e.g., transitive relationships, trust mechanisms)
 
----
-
-https://developer.ibm.com/dwblog/2017/detecting-complex-fraud-real-time-graph-databases/
-
 # Graph: when to avoid
 
 **Data-intensive applications**
@@ -1293,21 +1163,11 @@ _... usually lead to inefficient solutions_
 
 ![](imgs/slides90.jpg)
 
----
-
-Termine derivato da "programmazione poliglotta"
-
 # Traditional approach
 
 The _one-size-fits-all_ solution
 
 ![](imgs/slides91.png)
-
----
-
-The session, shopping cart, or order data do not need the same properties of availability, consistency, or backup requirements. Does session management storage need the same rigorous backup/recovery strategy as the e-commerce orders data? Does the session management storage need more availability of an instance of database engine to write/read session data?
-
-In 2006, Neal Ford coined the term polyglot programming, to express the idea that applications should be written in a mix of languages to take advantage of the fact that different languages are suitable for tackling different problems. Complex applications combine different types of problems, so picking the right language for each job may be more productive than trying to fit all aspects into a single language.
 
 # Polyglot data management
 
@@ -1316,12 +1176,6 @@ The _one-size-fits-all_ solution
 Replaced by the _polyglot _ solution
 
 ![](imgs/slides92.png)
-
----
-
-A key-value data store could be used to store the shopping cart data before the order is confirmed by the customer and also store the session data so that the RDBMS is not used for this transient data. Key-value stores make sense here since the shopping cart is usually accessed by user ID and, once confirmed and paid by the customer, can be saved in the RDBMS. Similarly, session data is keyed by the session ID. If we need to recommend products to customers when they place products into their shopping carts—for example, “ your friends also bought these products” or “ your friends bought these accessories for this product”—then introducing a graph data store in the mix becomes relevant.
-
-Even using specialized relational databases for different purposes, such as data warehousing appliances or analytics appliances within the same application, can be viewed as polyglot persistence
 
 
 # Service-oriented polyglot data management
@@ -1338,10 +1192,6 @@ If the current solution cannot be changed, NoSQL systems can still support the e
 
 ![](imgs/slides94.png)
 
----
-
-While doing this, we need to update the indexed data as the data in the application database changes. The process of updating the data can be real-time or batch, as long as we ensure that the application can deal with stale data in the index/search engine. The event sourcing (“ Event Sourcing,” p. 142) pattern can be used to update the index.
-
 # Beyond NoSQL
 
 NewSQL systems
@@ -1354,7 +1204,7 @@ Extended RDBMSs
 * KV implementable as a table with two fields: a string key, and a blob value
 * Cypher query language on top of a relational implementation of a graph
 * Hstore data type in PostgreSQL for wide-column-like implementation
-* **Scalabilty** ** issue remains**
+* **Scalabilty issue remains**
 
 Multi-model NoSQL DBMSs
 
@@ -1440,23 +1290,23 @@ Collecting data
 
 Processing data
 
-* _ **Scheduled Batch** _
+* **Scheduled Batch** 
   * Large volume of data processed on a regular scheduled basis
   * Velocity is very predictable
-* _ **Periodic** _:
+* **Periodic** :
   * Data processed at irregular times (e.g., after collecting a certain ---large--- amount of data)
   * Velocity is less predictable
-* _ **Near real-time** _
+* **Near real-time** 
   * Streaming data processed in small individual batches collected and processed within minutes
   * Velocity is a huge concern
-* _ **Real-time** _
+* **Real-time** 
   * Streaming data collected and processed in very small individual batches within milliseconds
   * Velocity is the paramount concern
 
-* _ **Batch and periodic** _
+* **Batch and periodic** 
   * Once data has been collected, processing can be done in a controlled environment
   * There is time to plan for the appropriate resources
-* _ **Near real-time and real-time** _
+* **Near real-time and real-time** 
   * Collection of the data leads to an immediate need for processing
   * Depending on the complexity of the processing (cleansing, scrubbing, curation), this can slow down the velocity of the solution significantly
   * Plan accordingly
@@ -1846,10 +1696,10 @@ https://catalog.us-east-1.prod.workshops.aws/workshops/ea7ddf16-5e0a-4ec7-b54e-5
 
 Optimizing soil moisture is crucial for watering and crop performance [1]
 
-* _ **GOAL** _: build an expert system to save water while improving fruit quality (i.e., provide a recommendation of the optimal amount of water)
-* _Soils _ have different water retention
-* _Watering systems _ have different behaviors (e.g., drippers and sprinklers)
-* _Plants _ have different water demand (e.g., Kiwi [2] vs Grapes)
+* **GOAL**: build an expert system to save water while improving fruit quality (i.e., provide a recommendation of the optimal amount of water)
+* _Soils_ have different water retention
+* _Watering systems_ have different behaviors (e.g., drippers and sprinklers)
+* _Plants_ have different water demand (e.g., Kiwi [2] vs Grapes)
 * _Sensors_ produce different measurements with different precisions
 
 ![](imgs/slides115.jpg)
@@ -2715,11 +2565,11 @@ Amazon Elastic Compute Cloud
 * Complete control of computing resources
   * Processor, storage, networking, OS, and purchase model
 
-The _ **instance type ** _ determines the hardware
+The **instance type** determines the hardware
 
 * Different compute and memory capabilities
 
-_ **Amazon Machine Image ** _ is a software template
+**Amazon Machine Image** is a software template
 
 * The EC2 instance is used for creating the virtual server instance
 * The AMI is the EC2 virtual machines image
@@ -3384,7 +3234,7 @@ lshw -short -C disk
 | Hardware | 10602€/year |? |
 | Software |? |? |
 
-**Hardware cost ** _(up to Mar 05, 2021): _ 1767€ x 18 = 31806€
+**Hardware cost**(up to Mar 05, 2021): _ 1767€ x 18 = 31806€
 
 * Amortization over 3 years (i.e., _10602€/year_)
 
@@ -3404,7 +3254,7 @@ lshw -short -C disk
 | Hardware | 10602€/year |? |
 | Software | 0€ |? |
 
-**Software cost** _(up to 2020): 0€_
+**Software cost** (up to 2020): 0€_
 
 * Free Cloudera Management System
 * No software licensing (for research purpose)
@@ -3414,7 +3264,7 @@ lshw -short -C disk
 | Hardware | 10602€/year |? |
 | Software | 180000€/year |? |
 
-**Software cost ** _(up to Mar 05, 2021): 10000€/year x 18 = 180000€/year_
+**Software cost**(up to Mar 05, 2021): 10000€/year x 18 = 180000€/year_
 
 * Cloudera is no more free, 10K€ per node
 * [https://www.cloudera.com/products/pricing.html\#private-cloud-services](https://www.cloudera.com/products/pricing.html#private-cloud-services)
