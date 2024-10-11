@@ -2,7 +2,7 @@ awswrangler==3.4.0
 matplotlib==3.7.3
 notebook==6.5.4
 numpy==1.26.0
-pandas==2.1.2
+pandas==2.1.4
 prov[dot]==2.0.0
 pydot==1.4.2
 rise==5.7.1
