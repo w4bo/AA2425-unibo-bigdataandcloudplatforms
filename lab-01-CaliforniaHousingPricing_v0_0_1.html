@@ -411,52 +411,38 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section>
 <section id="california-housing-pricing" class="title-slide slide level1 center">
 <h1>California housing pricing</h1>
-<p>This notebook runs on Google Colab. Colab provides a serverless Jupyter notebook environment for interactive development. (At the moment, 2022) Google Colab is free to use like other G Suite products.</p>
+<p>This notebook runs on Google Colab. Colab provides a serverless Jupyter notebook environment for interactive development.</p>
+<p>(At the moment, 2024) Google Colab is free to use like other G Suite products.</p>
 <p>In this laboratory we will build a simple data pipeline to get acquainted with the “main” steps necessary to transform your data.</p>
 <p>The data contains information from the 1990 California census. It does provide an accessible introductory dataset for teaching people about the basics of machine learning. For simplcity, we will import the data from a csv file. Check also: https://www.kaggle.com/camnugent/california-housing-prices</p>
 <p>From https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/</p>
 <pre><code>This data has metrics such as the population, median income, median housing price, and so on for each block group in California.
 Block groups are the smallest geographical unit for which the US Census Bureau publishes sample data (a block group typically has a population of 600 to 3,000 people). We will just call them “districts” for short
 The goal is to build a model to predict the median housing price in any district, given all the other metrics</code></pre>
-<p>In case you need help with preprocessing with Pandas, check:</p>
-<pre><code>https://github.com/w4bo/2022-bbs-dm/blob/main/notebooks/01-PandasFundaments.ipynb</code></pre>
 </section>
 <section class="slide level2">
 
 <p>First of all, we need to setup the Python environment by installing and importing the necessary Python dependencies.</p>
-<div id="cell-4" class="cell" data-outputid="416ee9e1-a4a0-489a-d606-1f688398b4b8" data-execution_count="2">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-2"><a href=""></a><span class="im">import</span> sklearn <span class="im">as</span> sk</span>
-<span id="cb3-3"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-4"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb3-5"><a href=""></a><span class="im">import</span> prov</span>
-<span id="cb3-6"><a href=""></a></span>
-<span id="cb3-7"><a href=""></a><span class="bu">print</span>(pd.__version__)</span>
-<span id="cb3-8"><a href=""></a><span class="bu">print</span>(sk.__version__)</span>
-<span id="cb3-9"><a href=""></a><span class="bu">print</span>(np.__version__)</span>
-<span id="cb3-10"><a href=""></a><span class="bu">print</span>(sns.__version__)</span>
-<span id="cb3-11"><a href=""></a><span class="bu">print</span>(prov.__version__)</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>2.2.3
-1.5.2
-1.26.4
-0.13.2
-2.0.0</code></pre>
-</div>
-</div>
 </section>
 <section class="slide level2">
 
-<h4 id="data-collection">Data collection</h4>
+</section></section>
+<section>
+<section id="setup" class="title-slide slide level1 center">
+<h1>Setup</h1>
+<p>First of all, we need to setup the Python environment by installing and importing the necessary Python dependencies.</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section id="data-collection" class="title-slide slide level1 center">
+<h1>Data collection</h1>
 <p>Import the dataset. In this case, there is no need for ETL/integration since the dataset is ready for elaboration.</p>
 <div id="cell-6" class="cell" data-outputid="1c196a4c-0755-46b7-c9b8-d1f61e7547da" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://w4bo.github.io/AA2324-unibo-bigdataandcloudplatforms/housing.csv"</span>)</span>
-<span id="cb5-2"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://w4bo.github.io/AA2324-unibo-bigdataandcloudplatforms/housing.csv"</span>)</span>
+<span id="cb2-2"><a href=""></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -642,9 +628,14 @@ The goal is to build a model to predict the median housing price in any district
 </div>
 </div>
 </section>
+
+<section>
+<section id="data-understanding-and-profiling" class="title-slide slide level1 center">
+<h1>Data understanding and profiling</h1>
+
+</section>
 <section class="slide level2">
 
-<h4 id="data-understanding">Data understanding</h4>
 <p>Dataset description</p>
 <ol type="1">
 <li><code>longitude</code>: A measure of how far west a house is; a higher value is farther west</li>
@@ -659,13 +650,18 @@ The goal is to build a model to predict the median housing price in any district
 <li><code>oceanProximity</code>: Location of the house w.r.t ocean/sea</li>
 </ol>
 <p>Let’s take a look at the data</p>
+</section></section>
+<section>
+<section id="schema" class="title-slide slide level1 center">
+<h1>Schema</h1>
+
 </section>
 <section class="slide level2">
 
-<div id="cell-8" class="cell" data-outputid="66673b53-1d02-4f1c-e308-e8f57409942a" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="4">
+<div id="cell-10" class="cell" data-outputid="66673b53-1d02-4f1c-e308-e8f57409942a" data-scrolled="true" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>df.info()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>df.info()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -687,155 +683,18 @@ dtypes: float64(9), object(1)
 memory usage: 1.6+ MB</code></pre>
 </div>
 </div>
+</section></section>
+<section>
+<section id="distribution-and-statistics" class="title-slide slide level1 center">
+<h1>Distribution and statistics</h1>
+
 </section>
 <section class="slide level2">
 
-<div id="cell-9" class="cell" data-outputid="f4da936c-20a4-4df0-8335-0e1f85adcc21" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="5">
+<div id="cell-12" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>df.describe()</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">longitude</th>
-<th data-quarto-table-cell-role="th">latitude</th>
-<th data-quarto-table-cell-role="th">housing_median_age</th>
-<th data-quarto-table-cell-role="th">total_rooms</th>
-<th data-quarto-table-cell-role="th">total_bedrooms</th>
-<th data-quarto-table-cell-role="th">population</th>
-<th data-quarto-table-cell-role="th">households</th>
-<th data-quarto-table-cell-role="th">median_income</th>
-<th data-quarto-table-cell-role="th">median_house_value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">count</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-<td>20433.000000</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-<td>20640.000000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">mean</td>
-<td>-119.569704</td>
-<td>35.631861</td>
-<td>28.639486</td>
-<td>2635.763081</td>
-<td>537.870553</td>
-<td>1425.476744</td>
-<td>499.539680</td>
-<td>3.870671</td>
-<td>206855.816909</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">std</td>
-<td>2.003532</td>
-<td>2.135952</td>
-<td>12.585558</td>
-<td>2181.615252</td>
-<td>421.385070</td>
-<td>1132.462122</td>
-<td>382.329753</td>
-<td>1.899822</td>
-<td>115395.615874</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">min</td>
-<td>-124.350000</td>
-<td>32.540000</td>
-<td>1.000000</td>
-<td>2.000000</td>
-<td>1.000000</td>
-<td>3.000000</td>
-<td>1.000000</td>
-<td>0.499900</td>
-<td>14999.000000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">25%</td>
-<td>-121.800000</td>
-<td>33.930000</td>
-<td>18.000000</td>
-<td>1447.750000</td>
-<td>296.000000</td>
-<td>787.000000</td>
-<td>280.000000</td>
-<td>2.563400</td>
-<td>119600.000000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">50%</td>
-<td>-118.490000</td>
-<td>34.260000</td>
-<td>29.000000</td>
-<td>2127.000000</td>
-<td>435.000000</td>
-<td>1166.000000</td>
-<td>409.000000</td>
-<td>3.534800</td>
-<td>179700.000000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">75%</td>
-<td>-118.010000</td>
-<td>37.710000</td>
-<td>37.000000</td>
-<td>3148.000000</td>
-<td>647.000000</td>
-<td>1725.000000</td>
-<td>605.000000</td>
-<td>4.743250</td>
-<td>264725.000000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">max</td>
-<td>-114.310000</td>
-<td>41.950000</td>
-<td>52.000000</td>
-<td>39320.000000</td>
-<td>6445.000000</td>
-<td>35682.000000</td>
-<td>6082.000000</td>
-<td>15.000100</td>
-<td>500001.000000</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<div id="cell-10" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="6">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
@@ -1022,16 +881,19 @@ memory usage: 1.6+ MB</code></pre>
 </section>
 <section class="slide level2">
 
-<h4 id="memory-usage">Memory usage</h4>
+</section></section>
+<section>
+<section id="memory-usage" class="title-slide slide level1 center">
+<h1>Memory usage</h1>
 <p>What if I change float64 to float32?</p>
-<div id="cell-12" class="cell" data-outputid="b1687fb1-c371-4c3a-ee5e-16f3758ba8a2" data-execution_count="7">
+<div id="cell-14" class="cell" data-outputid="b1687fb1-c371-4c3a-ee5e-16f3758ba8a2" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>dff <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>) <span class="co"># copy the dataframe</span></span>
-<span id="cb10-2"><a href=""></a><span class="cf">for</span> x <span class="kw">in</span> df.columns: <span class="co"># iterate over the columns</span></span>
-<span id="cb10-3"><a href=""></a>    <span class="cf">if</span> dff[x].dtype <span class="op">==</span> <span class="st">'float64'</span>: <span class="co"># if the column has type `float64`</span></span>
-<span id="cb10-4"><a href=""></a>        dff[x] <span class="op">=</span> dff[x].astype(<span class="st">'float32'</span>) <span class="co"># ... change it to `float32`</span></span>
-<span id="cb10-5"><a href=""></a>dff.info() <span class="co"># show some statistics on the dataframe</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>dff <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>) <span class="co"># copy the dataframe</span></span>
+<span id="cb6-2"><a href=""></a><span class="cf">for</span> x <span class="kw">in</span> df.columns: <span class="co"># iterate over the columns</span></span>
+<span id="cb6-3"><a href=""></a>    <span class="cf">if</span> dff[x].dtype <span class="op">==</span> <span class="st">'float64'</span>: <span class="co"># if the column has type `float64`</span></span>
+<span id="cb6-4"><a href=""></a>        dff[x] <span class="op">=</span> dff[x].astype(<span class="st">'float32'</span>) <span class="co"># ... change it to `float32`</span></span>
+<span id="cb6-5"><a href=""></a>dff.info() <span class="co"># show some statistics on the dataframe</span></span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -1056,245 +918,63 @@ memory usage: 887.0+ KB</code></pre>
 </section>
 <section class="slide level2">
 
+<div id="cell-16" class="cell" data-outputid="e2e75963-4847-4657-8505-7e122484a22e" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb8-2"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-3"><a href=""></a>df.hist(bins<span class="op">=</span><span class="dv">50</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">15</span>))</span>
+<span id="cb8-4"><a href=""></a>plt.show()</span></code></pre></div>
+</details>
+
+</div>
+<img data-src="lab-01-CaliforniaHousingPricing_v0_0_1_files/figure-revealjs/cell-6-output-1.png" class="r-stretch"></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="profiling-are-there-relationships-between-variables" class="title-slide slide level1 center">
+<h1>Profiling: are there relationships between variables?</h1>
+<p>Create a grid of Axes such that each numeric variable in data will by shared across the y-axes across a single row and the x-axes across a single column. The diagonal plots are treated differently: a univariate distribution plot is drawn to show the marginal distribution of the data in each column.</p>
+<div id="cell-18" class="cell" data-outputid="3b114615-d9d1-4b69-dac9-2aee8e6e8b00" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>tmp <span class="op">=</span> df[[<span class="st">"median_income"</span>, <span class="st">"housing_median_age"</span>, <span class="st">"median_house_value"</span>, <span class="st">"households"</span>, <span class="st">"population"</span>, <span class="st">"total_rooms"</span>]]</span>
+<span id="cb9-2"><a href=""></a><span class="co"># sns.pairplot(tmp.sample(n=1000, random_state=42), hue="median_house_value", markers='+')</span></span>
+<span id="cb9-3"><a href=""></a>sns.pairplot(tmp.sample(n<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">42</span>), markers<span class="op">=</span><span class="st">'+'</span>)</span>
+<span id="cb9-4"><a href=""></a>plt.show()</span></code></pre></div>
+</details>
+
+</div>
+<img data-src="lab-01-CaliforniaHousingPricing_v0_0_1_files/figure-revealjs/cell-7-output-1.png" class="r-stretch"></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="missing-values" class="title-slide slide level1 center">
+<h1>Missing values</h1>
 <p>There are some missing values in the column <code>total_bedorooms</code> what can we do?</p>
 <p>Most Machine Learning algorithms cannot work with missing features. We have three options:</p>
-<p>Get rid of the corresponding districts (i.e., drop the rows)</p>
-<pre><code>df.dropna(subset=["total_bedrooms"])</code></pre>
-<p>Get rid of the whole attribute (i.e., drop the columns)</p>
-<pre><code>df.drop("total_bedrooms", axis=1)</code></pre>
-<p>Set the values to some value (zero, the mean, the median, etc.)</p>
-<pre><code>df["total_bedrooms"].fillna(df["total_bedrooms"].median())</code></pre>
-</section>
-<section class="slide level2">
-
-<h4 id="non-numeric-attributes">Non-numeric attributes</h4>
-<p><code>ocean_proximity</code> is a text attribute so we cannot compute its median. Some options: - Get rid of the whole attribute. (<code>df.drop("ocean_proximity", axis=1</code>) - Change from categorical to ordinal (e.g., <code>NEAR BAY</code> = 0, <code>INLAND</code> = 1) - Can foresee any problem in this? - ML algorithms will assume that two nearby values are more similar than two distant values. This may be fine in some cases (e.g., for ordered categories such as “bad”, “average”, “good”, “excellent”), but it is obviously not the case for the ocean_proximity column (for example, categories 0 and 4 are clearly more similar than categories 0 and 1). - Change from categorical to one hot encoding - To fix this issue, a common solution is to create one binary attribute per category: one attribute equal to 1 when the category is “&lt;1H OCEAN” (and 0 otherwise), another attribute equal to 1 when the category is “INLAND” (and 0 otherwise), and so on. This is called one-hot encoding, because only one attribute will be equal to 1 (hot), while the others will be 0 (cold). The new attributes are sometimes called dummy attributes</p>
-</section>
-<section class="slide level2">
-
-<div id="cell-15" class="cell" data-outputid="2b536ee2-f753-4cc0-dd7d-75508c2be252" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="8">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].value_counts()</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>ocean_proximity
-&lt;1H OCEAN     9136
-INLAND        6551
-NEAR OCEAN    2658
-NEAR BAY      2290
-ISLAND           5
-Name: count, dtype: int64</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<div id="cell-16" class="cell" data-outputid="86bc6268-a3d1-40f8-ab3f-c067dcc61e6b" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="9">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>df[<span class="st">"ocean_proximity"</span>].hist()</span></code></pre></div>
-</details>
-
-</div>
-<img data-src="lab-01-CaliforniaHousingPricing_v0_0_1_files/figure-revealjs/cell-9-output-1.png" class="r-stretch"></section>
-<section class="slide level2">
-
-<p>Change from categorical to ordinal</p>
-<div id="cell-18" class="cell" data-outputid="f849bc1d-1cdb-43c4-bcbf-6b0effb02634" data-execution_count="10">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OrdinalEncoder</span>
-<span id="cb18-2"><a href=""></a>ordinal_encoder <span class="op">=</span> OrdinalEncoder()</span>
-<span id="cb18-3"><a href=""></a>y <span class="op">=</span> ordinal_encoder.fit_transform(df[[<span class="st">"ocean_proximity"</span>]])</span>
-<span id="cb18-4"><a href=""></a>y</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>array([[3.],
-       [3.],
-       [3.],
-       ...,
-       [1.],
-       [1.],
-       [1.]])</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<p>From categorical to one-hot encoding</p>
-<div id="cell-20" class="cell" data-outputid="7786175a-8308-4497-ef4e-ceddf5c8566b" data-execution_count="11">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>y <span class="op">=</span> pd.get_dummies(df[<span class="st">"ocean_proximity"</span>], prefix<span class="op">=</span><span class="st">'ocean_proximity'</span>)</span>
-<span id="cb20-2"><a href=""></a>y</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">ocean_proximity_&lt;1H OCEAN</th>
-<th data-quarto-table-cell-role="th">ocean_proximity_INLAND</th>
-<th data-quarto-table-cell-role="th">ocean_proximity_ISLAND</th>
-<th data-quarto-table-cell-role="th">ocean_proximity_NEAR BAY</th>
-<th data-quarto-table-cell-role="th">ocean_proximity_NEAR OCEAN</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20635</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">20636</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20637</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">20638</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20639</td>
-<td>False</td>
-<td>True</td>
-<td>False</td>
-<td>False</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-
-<p>20640 rows × 5 columns</p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h4 id="visualization">Visualization</h4>
-<div id="cell-22" class="cell" data-outputid="e2e75963-4847-4657-8505-7e122484a22e" data-execution_count="12">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="op">%</span>matplotlib inline</span>
-<span id="cb21-2"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb21-3"><a href=""></a>df.hist(bins<span class="op">=</span><span class="dv">50</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">15</span>))</span>
-<span id="cb21-4"><a href=""></a>plt.show()</span></code></pre></div>
-</details>
-
-</div>
-<img data-src="lab-01-CaliforniaHousingPricing_v0_0_1_files/figure-revealjs/cell-12-output-1.png" class="r-stretch"></section>
-<section class="slide level2">
-
-<p>Open questions:</p>
 <ul>
-<li><code>median_income</code> should be in dollars. However, it has a strange range. Why? “you are told that the data has been scaled and capped at 15 (actually 15.0001) for higher median incomes, and at 0.5 (actually 0.4999) for lower median incomes. The numbers represent roughly tens of thousands of dollars. The numbers represent roughly tens of thousands of dollars”</li>
-<li><code>housing_median_age</code> and <code>median_house_value</code> are capped. As to <code>median_house_value</code>, this is a serious problem since it is your target attribute (your labels). Your Machine Learning algorithms may learn that prices never go beyond that limit. You need to check with your client team (the team that will use your system’s output) to see if this is a problem or not. If they tell you that they need precise predictions even beyond 500,000USD, then you have mainly two options: (a) collect proper labels for the districts whose labels were capped, (b) remove those districts from the training set.”</li>
-<li>These attributes have very different scales. Should we scale them?</li>
-<li>Many histograms are tail heavy: they extend much farther to the right of the median than to the left. This may make it a bit harder for some Machine Learning algorithms to detect patterns</li>
+<li>Get rid of the corresponding districts (i.e., drop the rows)</li>
+<li>Get rid of the whole attribute (i.e., drop the columns)</li>
+<li>Set the values to some value (zero, the mean, the median, etc.)</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<h5 id="are-there-relationships-between-variables">Are there relationships between variables?</h5>
-<p>Create a grid of Axes such that each numeric variable in data will by shared across the y-axes across a single row and the x-axes across a single column. The diagonal plots are treated differently: a univariate distribution plot is drawn to show the marginal distribution of the data in each column.</p>
-<div id="cell-25" class="cell" data-outputid="3b114615-d9d1-4b69-dac9-2aee8e6e8b00" data-execution_count="13">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>tmp <span class="op">=</span> df[[<span class="st">"median_income"</span>, <span class="st">"housing_median_age"</span>, <span class="st">"median_house_value"</span>, <span class="st">"households"</span>, <span class="st">"population"</span>, <span class="st">"total_rooms"</span>]]</span>
-<span id="cb22-2"><a href=""></a><span class="co"># sns.pairplot(tmp.sample(n=1000, random_state=42), hue="median_house_value", markers='+')</span></span>
-<span id="cb22-3"><a href=""></a>sns.pairplot(tmp.sample(n<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">42</span>), markers<span class="op">=</span><span class="st">'+'</span>)</span>
-<span id="cb22-4"><a href=""></a>plt.show()</span></code></pre></div>
-</details>
-
-</div>
-<img data-src="lab-01-CaliforniaHousingPricing_v0_0_1_files/figure-revealjs/cell-13-output-1.png" class="r-stretch"></section>
+</section></section>
+<section>
+<section id="non-numeric-attributes" class="title-slide slide level1 center">
+<h1>Non-numeric attributes</h1>
+<p><code>ocean_proximity</code> is a text attribute so we cannot compute its median. Some options: - Get rid of the whole attribute. (<code>df.drop("ocean_proximity", axis=1</code>) - Change from categorical to ordinal (e.g., <code>NEAR BAY</code> = 0, <code>INLAND</code> = 1) - Change from categorical to one hot encoding</p>
+</section>
 <section class="slide level2">
 
-<h4 id="scaling-attributes">Scaling attributes</h4>
+</section></section>
+<section>
+<section id="scaling-attributes" class="title-slide slide level1 center">
+<h1>Scaling attributes</h1>
 <p>Attributes have very different scales. Should we scale them?</p>
 <ul>
 <li>Normalization is good to use when you know that the distribution of your data does not follow a Gaussian distribution. This can be useful in algorithms that do not assume any distribution of the data like K-Nearest Neighbors and Neural Networks.</li>
@@ -1303,524 +983,151 @@ Name: count, dtype: int64</code></pre>
 </section>
 <section class="slide level2">
 
-<h5 id="min-max-normalization">Min-max normalization</h5>
-<div id="cell-28" class="cell" data-outputid="26e2c5da-ffae-451e-eb0f-459e667db1c5" data-execution_count="14">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ocean_proximity'</span>, <span class="st">'median_house_value'</span>])</span>
-<span id="cb23-2"><a href=""></a>normalized_df <span class="op">=</span> (num_df <span class="op">-</span> num_df.<span class="bu">min</span>()) <span class="op">/</span> (num_df.<span class="bu">max</span>() <span class="op">-</span> num_df.<span class="bu">min</span>())</span>
-<span id="cb23-3"><a href=""></a>normalized_df</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">longitude</th>
-<th data-quarto-table-cell-role="th">latitude</th>
-<th data-quarto-table-cell-role="th">housing_median_age</th>
-<th data-quarto-table-cell-role="th">total_rooms</th>
-<th data-quarto-table-cell-role="th">total_bedrooms</th>
-<th data-quarto-table-cell-role="th">population</th>
-<th data-quarto-table-cell-role="th">households</th>
-<th data-quarto-table-cell-role="th">median_income</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>0.211155</td>
-<td>0.567481</td>
-<td>0.784314</td>
-<td>0.022331</td>
-<td>0.019863</td>
-<td>0.008941</td>
-<td>0.020556</td>
-<td>0.539668</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>0.212151</td>
-<td>0.565356</td>
-<td>0.392157</td>
-<td>0.180503</td>
-<td>0.171477</td>
-<td>0.067210</td>
-<td>0.186976</td>
-<td>0.538027</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>0.210159</td>
-<td>0.564293</td>
-<td>1.000000</td>
-<td>0.037260</td>
-<td>0.029330</td>
-<td>0.013818</td>
-<td>0.028943</td>
-<td>0.466028</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>0.209163</td>
-<td>0.564293</td>
-<td>1.000000</td>
-<td>0.032352</td>
-<td>0.036313</td>
-<td>0.015555</td>
-<td>0.035849</td>
-<td>0.354699</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>0.209163</td>
-<td>0.564293</td>
-<td>1.000000</td>
-<td>0.041330</td>
-<td>0.043296</td>
-<td>0.015752</td>
-<td>0.042427</td>
-<td>0.230776</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20635</td>
-<td>0.324701</td>
-<td>0.737513</td>
-<td>0.470588</td>
-<td>0.042296</td>
-<td>0.057883</td>
-<td>0.023599</td>
-<td>0.054103</td>
-<td>0.073130</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">20636</td>
-<td>0.312749</td>
-<td>0.738576</td>
-<td>0.333333</td>
-<td>0.017676</td>
-<td>0.023122</td>
-<td>0.009894</td>
-<td>0.018582</td>
-<td>0.141853</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20637</td>
-<td>0.311753</td>
-<td>0.732200</td>
-<td>0.313725</td>
-<td>0.057277</td>
-<td>0.075109</td>
-<td>0.028140</td>
-<td>0.071041</td>
-<td>0.082764</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">20638</td>
-<td>0.301793</td>
-<td>0.732200</td>
-<td>0.333333</td>
-<td>0.047256</td>
-<td>0.063315</td>
-<td>0.020684</td>
-<td>0.057227</td>
-<td>0.094295</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20639</td>
-<td>0.309761</td>
-<td>0.725824</td>
-<td>0.294118</td>
-<td>0.070782</td>
-<td>0.095438</td>
-<td>0.038790</td>
-<td>0.086992</td>
-<td>0.130253</td>
-</tr>
-</tbody>
-</table>
-
-<p>20640 rows × 8 columns</p>
-</div>
-</div>
-</div>
+</section></section>
+<section id="machine-learning" class="title-slide slide level1 center">
+<h1>Machine learning</h1>
+<p>Our machine learning pipeline can be composed by alternative solutions</p>
+<p>If we consider the default parameters for each algorithm, we have</p>
+<ul>
+<li>3 options for imputation x 3 options for encoding x 3 options for encoding x 2 algorithms = 18 alternatives!</li>
+</ul>
 </section>
-<section class="slide level2">
 
-<h5 id="standardization">Standardization</h5>
-<div id="cell-30" class="cell" data-outputid="dc311019-66ff-4d6c-9ac9-37727f241692" data-execution_count="15">
+<section id="alternative-pre-processing-pipelines" class="title-slide slide level1 center">
+<h1>Alternative pre-processing pipelines</h1>
+<div id="cell-24" class="cell" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>num_df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'ocean_proximity'</span>, <span class="st">'median_house_value'</span>])</span>
-<span id="cb24-2"><a href=""></a>normalized_df <span class="op">=</span> (num_df <span class="op">-</span> num_df.mean()) <span class="op">/</span> num_df.std()</span>
-<span id="cb24-3"><a href=""></a>normalized_df</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">longitude</th>
-<th data-quarto-table-cell-role="th">latitude</th>
-<th data-quarto-table-cell-role="th">housing_median_age</th>
-<th data-quarto-table-cell-role="th">total_rooms</th>
-<th data-quarto-table-cell-role="th">total_bedrooms</th>
-<th data-quarto-table-cell-role="th">population</th>
-<th data-quarto-table-cell-role="th">households</th>
-<th data-quarto-table-cell-role="th">median_income</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>-1.327803</td>
-<td>1.052523</td>
-<td>0.982119</td>
-<td>-0.804800</td>
-<td>-0.970301</td>
-<td>-0.974405</td>
-<td>-0.977009</td>
-<td>2.344709</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>-1.322812</td>
-<td>1.043159</td>
-<td>-0.607004</td>
-<td>2.045841</td>
-<td>1.348243</td>
-<td>0.861418</td>
-<td>1.669921</td>
-<td>2.332181</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>-1.332794</td>
-<td>1.038478</td>
-<td>1.856137</td>
-<td>-0.535733</td>
-<td>-0.825541</td>
-<td>-0.820757</td>
-<td>-0.843616</td>
-<td>1.782656</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>-1.337785</td>
-<td>1.038478</td>
-<td>1.856137</td>
-<td>-0.624199</td>
-<td>-0.718750</td>
-<td>-0.766010</td>
-<td>-0.733764</td>
-<td>0.932945</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>-1.337785</td>
-<td>1.038478</td>
-<td>1.856137</td>
-<td>-0.462393</td>
-<td>-0.611959</td>
-<td>-0.759828</td>
-<td>-0.629142</td>
-<td>-0.012881</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20635</td>
-<td>-0.758808</td>
-<td>1.801603</td>
-<td>-0.289180</td>
-<td>-0.444974</td>
-<td>-0.388886</td>
-<td>-0.512579</td>
-<td>-0.443438</td>
-<td>-1.216099</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">20636</td>
-<td>-0.818702</td>
-<td>1.806285</td>
-<td>-0.845373</td>
-<td>-0.888682</td>
-<td>-0.920466</td>
-<td>-0.944382</td>
-<td>-1.008396</td>
-<td>-0.691576</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20637</td>
-<td>-0.823693</td>
-<td>1.778194</td>
-<td>-0.924829</td>
-<td>-0.174991</td>
-<td>-0.125468</td>
-<td>-0.369528</td>
-<td>-0.174037</td>
-<td>-1.142566</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">20638</td>
-<td>-0.873605</td>
-<td>1.778194</td>
-<td>-0.845373</td>
-<td>-0.355591</td>
-<td>-0.305826</td>
-<td>-0.604415</td>
-<td>-0.393743</td>
-<td>-1.054557</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">20639</td>
-<td>-0.833676</td>
-<td>1.750104</td>
-<td>-1.004285</td>
-<td>0.068407</td>
-<td>0.185411</td>
-<td>-0.033976</td>
-<td>0.079670</td>
-<td>-0.780111</td>
-</tr>
-</tbody>
-</table>
-
-<p>20640 rows × 8 columns</p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h4 id="machine-learning">Machine learning</h4>
-<div id="cell-32" class="cell" data-execution_count="16">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a><span class="co"># For now we simply drop "ocean_proximity"</span></span>
-<span id="cb25-2"><a href=""></a><span class="cf">if</span> <span class="st">"ocean_proximity"</span> <span class="kw">in</span> df.columns:</span>
-<span id="cb25-3"><a href=""></a>  df <span class="op">=</span> df.drop(<span class="st">"ocean_proximity"</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb25-4"><a href=""></a></span>
-<span id="cb25-5"><a href=""></a><span class="co"># Let's create some dataset variation</span></span>
-<span id="cb25-6"><a href=""></a><span class="co"># dataset1: drop the rows containing the null values and the columns `latitude` and `longitude` </span></span>
-<span id="cb25-7"><a href=""></a>dataset_v1 <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>).dropna().drop([<span class="st">"longitude"</span>, <span class="st">"latitude"</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb25-8"><a href=""></a></span>
-<span id="cb25-9"><a href=""></a><span class="co"># dataset2: impute missing values with the average number of bedrooms </span></span>
-<span id="cb25-10"><a href=""></a>dataset_v2 <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb25-11"><a href=""></a>dataset_v2[<span class="st">"total_bedrooms"</span>] <span class="op">=</span> dataset_v2[<span class="st">"total_bedrooms"</span>].fillna(dataset_v2[<span class="st">"total_bedrooms"</span>].mean())</span>
-<span id="cb25-12"><a href=""></a></span>
-<span id="cb25-13"><a href=""></a><span class="co"># Create the list of datasets</span></span>
-<span id="cb25-14"><a href=""></a>datasets <span class="op">=</span> [(dataset_v1, <span class="st">"datasetv1"</span>), (dataset_v2, <span class="st">"datasetv2"</span>)]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="co"># For now we simply drop "ocean_proximity"</span></span>
+<span id="cb10-2"><a href=""></a><span class="cf">if</span> <span class="st">"ocean_proximity"</span> <span class="kw">in</span> df.columns:</span>
+<span id="cb10-3"><a href=""></a>  df <span class="op">=</span> df.drop(<span class="st">"ocean_proximity"</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb10-4"><a href=""></a></span>
+<span id="cb10-5"><a href=""></a><span class="co"># Let's create some dataset variation</span></span>
+<span id="cb10-6"><a href=""></a><span class="co"># dataset1: drop the rows containing the null values and the columns `latitude` and `longitude` </span></span>
+<span id="cb10-7"><a href=""></a>dataset_v1 <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>).dropna().drop([<span class="st">"longitude"</span>, <span class="st">"latitude"</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb10-8"><a href=""></a></span>
+<span id="cb10-9"><a href=""></a><span class="co"># dataset2: impute missing values with the average number of bedrooms </span></span>
+<span id="cb10-10"><a href=""></a>dataset_v2 <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-11"><a href=""></a>dataset_v2[<span class="st">"total_bedrooms"</span>] <span class="op">=</span> dataset_v2[<span class="st">"total_bedrooms"</span>].fillna(dataset_v2[<span class="st">"total_bedrooms"</span>].mean())</span>
+<span id="cb10-12"><a href=""></a></span>
+<span id="cb10-13"><a href=""></a><span class="co"># Create the list of datasets</span></span>
+<span id="cb10-14"><a href=""></a>datasets <span class="op">=</span> [(dataset_v1, <span class="st">"datasetv1"</span>), (dataset_v2, <span class="st">"datasetv2"</span>)]</span></code></pre></div>
 </details>
 </div>
 </section>
-<section class="slide level2">
 
-<div id="cell-33" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="17">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="co"># Let's import some machine learning models (here we are not addressing hyper-parameter tuning)</span></span>
-<span id="cb26-2"><a href=""></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeRegressor</span>
-<span id="cb26-3"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb26-4"><a href=""></a></span>
-<span id="cb26-5"><a href=""></a>dt <span class="op">=</span> DecisionTreeRegressor(random_state<span class="op">=</span><span class="dv">0</span>) <span class="co"># initialize decision tree regressor model</span></span>
-<span id="cb26-6"><a href=""></a>lr <span class="op">=</span> LinearRegression() <span class="co"># initialize a linear regressor model</span></span>
-<span id="cb26-7"><a href=""></a></span>
-<span id="cb26-8"><a href=""></a><span class="co"># Create the list of algorithms</span></span>
-<span id="cb26-9"><a href=""></a>ml_algorithms <span class="op">=</span> [(lr, <span class="st">"lr"</span>), (dt, <span class="st">"dt"</span>)]</span></code></pre></div>
-</details>
-</div>
+<section>
+<section id="alternative-machine-learning-algorithms" class="title-slide slide level1 center">
+<h1>Alternative machine learning algorithms</h1>
+
 </section>
 <section class="slide level2">
 
-<div id="cell-34" class="cell" data-outputid="6c26902b-1cc9-4af4-bfae-1057d9267ec6" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="18">
+<div id="cell-26" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> cross_val_score</span>
-<span id="cb27-2"><a href=""></a></span>
-<span id="cb27-3"><a href=""></a>instances <span class="op">=</span> []</span>
-<span id="cb27-4"><a href=""></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb27-5"><a href=""></a></span>
-<span id="cb27-6"><a href=""></a><span class="co"># For each dataset version...</span></span>
-<span id="cb27-7"><a href=""></a><span class="cf">for</span> dataset, dataset_version <span class="kw">in</span> datasets:</span>
-<span id="cb27-8"><a href=""></a>  <span class="co"># Get the feature matrix</span></span>
-<span id="cb27-9"><a href=""></a>  X <span class="op">=</span> dataset.drop(columns<span class="op">=</span>[<span class="st">"median_house_value"</span>]).to_numpy()</span>
-<span id="cb27-10"><a href=""></a>  <span class="co"># Get the train label array</span></span>
-<span id="cb27-11"><a href=""></a>  y <span class="op">=</span> dataset[<span class="st">"median_house_value"</span>].to_numpy() </span>
-<span id="cb27-12"><a href=""></a>  </span>
-<span id="cb27-13"><a href=""></a>  <span class="co"># For each machine learning algorithm...</span></span>
-<span id="cb27-14"><a href=""></a>  <span class="cf">for</span> ml_algorithm, ml_algorithm_version <span class="kw">in</span> ml_algorithms:</span>
-<span id="cb27-15"><a href=""></a>    <span class="co"># Run the machine learning algorithm on the given dataset</span></span>
-<span id="cb27-16"><a href=""></a>    <span class="co"># Each run is a pipeline instance that we shoul compare against the others</span></span>
-<span id="cb27-17"><a href=""></a>    instance <span class="op">=</span> {}</span>
-<span id="cb27-18"><a href=""></a>    instance[<span class="st">"id"</span>] <span class="op">=</span> i  <span class="co"># store the id of the instance </span></span>
-<span id="cb27-19"><a href=""></a>    instance[<span class="st">"dataset"</span>] <span class="op">=</span> dataset_version  <span class="co"># store the version of the dataset</span></span>
-<span id="cb27-20"><a href=""></a>    instance[<span class="st">"algorithm"</span>] <span class="op">=</span> ml_algorithm_version  <span class="co"># store the version of the ml algorithm</span></span>
-<span id="cb27-21"><a href=""></a>    instance[<span class="st">"score"</span>] <span class="op">=</span> cross_val_score(ml_algorithm, X, y, cv<span class="op">=</span><span class="dv">10</span>).mean()  <span class="co"># store the performance of the pipeline instance</span></span>
-<span id="cb27-22"><a href=""></a>    instances <span class="op">=</span> instances <span class="op">+</span> [instance]</span>
-<span id="cb27-23"><a href=""></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb27-24"><a href=""></a></span>
-<span id="cb27-25"><a href=""></a><span class="co"># Collect the results</span></span>
-<span id="cb27-26"><a href=""></a>result <span class="op">=</span> pd.DataFrame.from_dict(instances, orient<span class="op">=</span><span class="st">'columns'</span>)</span>
-<span id="cb27-27"><a href=""></a>sns.catplot(x <span class="op">=</span> <span class="st">"dataset"</span>, y <span class="op">=</span> <span class="st">"score"</span>, hue <span class="op">=</span> <span class="st">"algorithm"</span>, data <span class="op">=</span> result, kind <span class="op">=</span> <span class="st">"bar"</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="co"># Let's import some machine learning models (here we are not addressing hyper-parameter tuning)</span></span>
+<span id="cb11-2"><a href=""></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeRegressor</span>
+<span id="cb11-3"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb11-4"><a href=""></a></span>
+<span id="cb11-5"><a href=""></a>dt <span class="op">=</span> DecisionTreeRegressor(random_state<span class="op">=</span><span class="dv">0</span>) <span class="co"># initialize decision tree regressor model</span></span>
+<span id="cb11-6"><a href=""></a>lr <span class="op">=</span> LinearRegression() <span class="co"># initialize a linear regressor model</span></span>
+<span id="cb11-7"><a href=""></a></span>
+<span id="cb11-8"><a href=""></a><span class="co"># Create the list of algorithms</span></span>
+<span id="cb11-9"><a href=""></a>ml_algorithms <span class="op">=</span> [(lr, <span class="st">"lr"</span>), (dt, <span class="st">"dt"</span>)]</span></code></pre></div>
 </details>
-
 </div>
-<img data-src="lab-01-CaliforniaHousingPricing_v0_0_1_files/figure-revealjs/cell-18-output-1.png" class="r-stretch"></section>
-<section class="slide level2">
+</section></section>
+<section>
+<section id="train-the-models" class="title-slide slide level1 center">
+<h1>Train the models</h1>
 
-<p>And what about data provenance?</p>
-<div id="cell-37" class="cell" data-outputid="2aacb8f6-a3dd-4535-9ffb-90ce053a8488" data-execution_count="20">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="im">from</span> prov.model <span class="im">import</span> ProvDocument</span>
-<span id="cb28-2"><a href=""></a><span class="im">from</span> prov.dot <span class="im">import</span> prov_to_dot</span>
-<span id="cb28-3"><a href=""></a><span class="im">from</span> IPython.display <span class="im">import</span> Image</span>
-<span id="cb28-4"><a href=""></a></span>
-<span id="cb28-5"><a href=""></a><span class="co"># Create a new provenance document</span></span>
-<span id="cb28-6"><a href=""></a>d1 <span class="op">=</span> ProvDocument()  <span class="co"># d1 is now an empty provenance document</span></span>
-<span id="cb28-7"><a href=""></a>d1.add_namespace(<span class="st">'unibo'</span>, <span class="st">'https://www.unibo.it'</span>)  <span class="co"># add the namespace</span></span>
-<span id="cb28-8"><a href=""></a>d1.add_namespace(<span class="st">'sk'</span>, <span class="st">'https://scikit-learn.org/stable/'</span>)  <span class="co"># add the namespace</span></span>
-<span id="cb28-9"><a href=""></a>agent <span class="op">=</span> d1.agent(<span class="st">'unibo:mfrancia'</span>)  <span class="co"># add an agent</span></span>
-<span id="cb28-10"><a href=""></a></span>
-<span id="cb28-11"><a href=""></a><span class="co"># For each dataset version...</span></span>
-<span id="cb28-12"><a href=""></a><span class="cf">for</span> dataset, dataset_version <span class="kw">in</span> datasets:</span>
-<span id="cb28-13"><a href=""></a>  original_dataset <span class="op">=</span> d1.entity(<span class="st">'unibo:'</span> <span class="op">+</span> dataset_version)  <span class="co"># register the dataset</span></span>
-<span id="cb28-14"><a href=""></a>  d1.wasAttributedTo(original_dataset, agent)  <span class="co"># attribute the dataset to the agent who created it</span></span>
-<span id="cb28-15"><a href=""></a>  <span class="co"># For each machine learning algorithm...</span></span>
-<span id="cb28-16"><a href=""></a>  <span class="cf">for</span> ml_algorithm, ml_algorithm_version <span class="kw">in</span> ml_algorithms:</span>
-<span id="cb28-17"><a href=""></a>    algo <span class="op">=</span> d1.activity(<span class="st">'sk:'</span> <span class="op">+</span> ml_algorithm_version)  <span class="co"># register the algorithm as a (processing) activity</span></span>
-<span id="cb28-18"><a href=""></a>    processed_dataset <span class="op">=</span> d1.entity(<span class="st">'unibo:'</span> <span class="op">+</span> ml_algorithm_version <span class="op">+</span> <span class="st">"_"</span> <span class="op">+</span> dataset_version, {<span class="st">'sk:cv-score'</span>: <span class="st">'...'</span>})  <span class="co"># create an activity represented the processed dataset</span></span>
-<span id="cb28-19"><a href=""></a>    d1.used(algo, original_dataset)  <span class="co"># the activity used the dataset as input</span></span>
-<span id="cb28-20"><a href=""></a>    d1.wasGeneratedBy(processed_dataset, algo)  <span class="co"># the processed dataset has been created by the algorithm</span></span>
-<span id="cb28-21"><a href=""></a>    d1.wasDerivedFrom(processed_dataset, original_dataset)  <span class="co"># the processed dataset has been derived from the original one</span></span>
-<span id="cb28-22"><a href=""></a></span>
-<span id="cb28-23"><a href=""></a><span class="co"># visualize the graph</span></span>
-<span id="cb28-24"><a href=""></a>dot <span class="op">=</span> prov_to_dot(d1)</span>
-<span id="cb28-25"><a href=""></a>dot.write_png(<span class="st">'prov.png'</span>)</span>
-<span id="cb28-26"><a href=""></a>Image(<span class="st">'prov.png'</span>)</span></code></pre></div>
-</details>
-
-</div>
-<img data-src="lab-01-CaliforniaHousingPricing_v0_0_1_files/figure-revealjs/cell-19-output-1.png" class="r-stretch"></section>
-<section class="slide level2">
-
-<h4 id="hands-on">Hands on!</h4>
-<h5 id="data-pre-processing">Data pre-processing</h5>
-<div id="cell-40" class="cell" data-outputid="1c882211-ae4c-4b46-f12d-d40ec6e903dc" data-execution_count="21">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>num_df <span class="op">=</span> df.copy(deep<span class="op">=</span><span class="va">True</span>) <span class="co"># do not change this line</span></span>
-<span id="cb29-2"><a href=""></a></span>
-<span id="cb29-3"><a href=""></a><span class="co"># Filling in (i.e., impute) missing values with the median value </span></span>
-<span id="cb29-4"><a href=""></a>num_df[<span class="st">"total_bedrooms"</span>] <span class="op">=</span> <span class="dv">1</span> <span class="co"># change `1` with the proper solution </span></span>
-<span id="cb29-5"><a href=""></a></span>
-<span id="cb29-6"><a href=""></a><span class="co"># Add a new column: population_per_household = population / households</span></span>
-<span id="cb29-7"><a href=""></a>num_df[<span class="st">"population_per_household"</span>] <span class="op">=</span> <span class="dv">1</span> <span class="co"># change `1` with the proper solution </span></span>
-<span id="cb29-8"><a href=""></a></span>
-<span id="cb29-9"><a href=""></a><span class="co"># Add a new column: rooms_per_household = total_rooms / households</span></span>
-<span id="cb29-10"><a href=""></a>num_df[<span class="st">"rooms_per_household"</span>] <span class="op">=</span> <span class="dv">1</span> <span class="co"># change `1` with the proper solution </span></span>
-<span id="cb29-11"><a href=""></a></span>
-<span id="cb29-12"><a href=""></a><span class="co"># Add a new column: bedrooms_per_room = total_bedrooms / total_rooms</span></span>
-<span id="cb29-13"><a href=""></a>num_df[<span class="st">"bedrooms_per_room"</span>] <span class="op">=</span> <span class="dv">1</span> <span class="co"># change `1` with the proper solution </span></span>
-<span id="cb29-14"><a href=""></a></span>
-<span id="cb29-15"><a href=""></a><span class="co"># Apply standardization to all the numeric columns</span></span>
-<span id="cb29-16"><a href=""></a>num_df <span class="op">=</span> pd.DataFrame() <span class="co"># change `pd.DataFrame()` with the proper solution </span></span>
-<span id="cb29-17"><a href=""></a></span>
-<span id="cb29-18"><a href=""></a><span class="co"># One hot encode `ocean_proximity` since it is a categorical attribute </span></span>
-<span id="cb29-19"><a href=""></a>cat_df <span class="op">=</span> pd.DataFrame() <span class="co"># change `pd.DataFrame()` with the proper solution (hint: pd.get_dummies)</span></span>
-<span id="cb29-20"><a href=""></a></span>
-<span id="cb29-21"><a href=""></a>clean_df <span class="op">=</span> pd.concat([num_df, cat_df], axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># do not change this line</span></span>
-<span id="cb29-22"><a href=""></a>clean_df</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="21">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
 </section>
 <section class="slide level2">
 
-<h5 id="machine-learning-1">Machine learning</h5>
-<p>Can you build a better model?</p>
-<div id="cell-42" class="cell" data-execution_count="22">
+<div id="cell-28" class="cell" data-outputid="6c26902b-1cc9-4af4-bfae-1057d9267ec6" data-slideshow="{&quot;slide_type&quot;:&quot;slide&quot;}" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a><span class="co"># Try your sk-learn model here</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> cross_val_score</span>
+<span id="cb12-2"><a href=""></a></span>
+<span id="cb12-3"><a href=""></a>instances <span class="op">=</span> []</span>
+<span id="cb12-4"><a href=""></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb12-5"><a href=""></a></span>
+<span id="cb12-6"><a href=""></a><span class="co"># For each dataset version...</span></span>
+<span id="cb12-7"><a href=""></a><span class="cf">for</span> dataset, dataset_version <span class="kw">in</span> datasets:</span>
+<span id="cb12-8"><a href=""></a>  <span class="co"># Get the feature matrix</span></span>
+<span id="cb12-9"><a href=""></a>  X <span class="op">=</span> dataset.drop(columns<span class="op">=</span>[<span class="st">"median_house_value"</span>]).to_numpy()</span>
+<span id="cb12-10"><a href=""></a>  <span class="co"># Get the train label array</span></span>
+<span id="cb12-11"><a href=""></a>  y <span class="op">=</span> dataset[<span class="st">"median_house_value"</span>].to_numpy() </span>
+<span id="cb12-12"><a href=""></a>  </span>
+<span id="cb12-13"><a href=""></a>  <span class="co"># For each machine learning algorithm...</span></span>
+<span id="cb12-14"><a href=""></a>  <span class="cf">for</span> ml_algorithm, ml_algorithm_version <span class="kw">in</span> ml_algorithms:</span>
+<span id="cb12-15"><a href=""></a>    <span class="co"># Run the machine learning algorithm on the given dataset</span></span>
+<span id="cb12-16"><a href=""></a>    <span class="co"># Each run is a pipeline instance that we shoul compare against the others</span></span>
+<span id="cb12-17"><a href=""></a>    instance <span class="op">=</span> {}</span>
+<span id="cb12-18"><a href=""></a>    instance[<span class="st">"id"</span>] <span class="op">=</span> i  <span class="co"># store the id of the instance </span></span>
+<span id="cb12-19"><a href=""></a>    instance[<span class="st">"dataset"</span>] <span class="op">=</span> dataset_version  <span class="co"># store the version of the dataset</span></span>
+<span id="cb12-20"><a href=""></a>    instance[<span class="st">"algorithm"</span>] <span class="op">=</span> ml_algorithm_version  <span class="co"># store the version of the ml algorithm</span></span>
+<span id="cb12-21"><a href=""></a>    instance[<span class="st">"score"</span>] <span class="op">=</span> cross_val_score(ml_algorithm, X, y, cv<span class="op">=</span><span class="dv">10</span>).mean()  <span class="co"># store the performance of the pipeline instance</span></span>
+<span id="cb12-22"><a href=""></a>    instances <span class="op">=</span> instances <span class="op">+</span> [instance]</span>
+<span id="cb12-23"><a href=""></a>    i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb12-24"><a href=""></a></span>
+<span id="cb12-25"><a href=""></a><span class="co"># Collect the results</span></span>
+<span id="cb12-26"><a href=""></a>result <span class="op">=</span> pd.DataFrame.from_dict(instances, orient<span class="op">=</span><span class="st">'columns'</span>)</span>
+<span id="cb12-27"><a href=""></a>sns.catplot(x <span class="op">=</span> <span class="st">"dataset"</span>, y <span class="op">=</span> <span class="st">"score"</span>, hue <span class="op">=</span> <span class="st">"algorithm"</span>, data <span class="op">=</span> result, kind <span class="op">=</span> <span class="st">"bar"</span>)</span></code></pre></div>
+</details>
+
+</div>
+<img data-src="lab-01-CaliforniaHousingPricing_v0_0_1_files/figure-revealjs/cell-10-output-1.png" class="r-stretch"></section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="how-do-we-track-all-these-changes" class="title-slide slide level1 center">
+<h1>How do we track all these changes?</h1>
+<p>Plotting the provenance</p>
+<div id="cell-31" class="cell" data-outputid="2aacb8f6-a3dd-4535-9ffb-90ce053a8488" data-execution_count="20">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="im">from</span> prov.model <span class="im">import</span> ProvDocument</span>
+<span id="cb13-2"><a href=""></a><span class="im">from</span> prov.dot <span class="im">import</span> prov_to_dot</span>
+<span id="cb13-3"><a href=""></a><span class="im">from</span> IPython.display <span class="im">import</span> Image</span>
+<span id="cb13-4"><a href=""></a></span>
+<span id="cb13-5"><a href=""></a><span class="co"># Create a new provenance document</span></span>
+<span id="cb13-6"><a href=""></a>d1 <span class="op">=</span> ProvDocument()  <span class="co"># d1 is now an empty provenance document</span></span>
+<span id="cb13-7"><a href=""></a>d1.add_namespace(<span class="st">'unibo'</span>, <span class="st">'https://www.unibo.it'</span>)  <span class="co"># add the namespace</span></span>
+<span id="cb13-8"><a href=""></a>d1.add_namespace(<span class="st">'sk'</span>, <span class="st">'https://scikit-learn.org/stable/'</span>)  <span class="co"># add the namespace</span></span>
+<span id="cb13-9"><a href=""></a>agent <span class="op">=</span> d1.agent(<span class="st">'unibo:mfrancia'</span>)  <span class="co"># add an agent</span></span>
+<span id="cb13-10"><a href=""></a></span>
+<span id="cb13-11"><a href=""></a><span class="co"># For each dataset version...</span></span>
+<span id="cb13-12"><a href=""></a><span class="cf">for</span> dataset, dataset_version <span class="kw">in</span> datasets:</span>
+<span id="cb13-13"><a href=""></a>  original_dataset <span class="op">=</span> d1.entity(<span class="st">'unibo:'</span> <span class="op">+</span> dataset_version)  <span class="co"># register the dataset</span></span>
+<span id="cb13-14"><a href=""></a>  d1.wasAttributedTo(original_dataset, agent)  <span class="co"># attribute the dataset to the agent who created it</span></span>
+<span id="cb13-15"><a href=""></a>  <span class="co"># For each machine learning algorithm...</span></span>
+<span id="cb13-16"><a href=""></a>  <span class="cf">for</span> ml_algorithm, ml_algorithm_version <span class="kw">in</span> ml_algorithms:</span>
+<span id="cb13-17"><a href=""></a>    algo <span class="op">=</span> d1.activity(<span class="st">'sk:'</span> <span class="op">+</span> ml_algorithm_version)  <span class="co"># register the algorithm as a (processing) activity</span></span>
+<span id="cb13-18"><a href=""></a>    processed_dataset <span class="op">=</span> d1.entity(<span class="st">'unibo:'</span> <span class="op">+</span> ml_algorithm_version <span class="op">+</span> <span class="st">"_"</span> <span class="op">+</span> dataset_version, {<span class="st">'sk:cv-score'</span>: <span class="st">'...'</span>})  <span class="co"># create an activity represented the processed dataset</span></span>
+<span id="cb13-19"><a href=""></a>    d1.used(algo, original_dataset)  <span class="co"># the activity used the dataset as input</span></span>
+<span id="cb13-20"><a href=""></a>    d1.wasGeneratedBy(processed_dataset, algo)  <span class="co"># the processed dataset has been created by the algorithm</span></span>
+<span id="cb13-21"><a href=""></a>    d1.wasDerivedFrom(processed_dataset, original_dataset)  <span class="co"># the processed dataset has been derived from the original one</span></span>
+<span id="cb13-22"><a href=""></a></span>
+<span id="cb13-23"><a href=""></a><span class="co"># visualize the graph</span></span>
+<span id="cb13-24"><a href=""></a>dot <span class="op">=</span> prov_to_dot(d1)</span>
+<span id="cb13-25"><a href=""></a>dot.write_png(<span class="st">'prov.png'</span>)</span>
+<span id="cb13-26"><a href=""></a>Image(<span class="st">'prov.png'</span>)</span></code></pre></div>
+</details>
+
+</div>
+<img data-src="lab-01-CaliforniaHousingPricing_v0_0_1_files/figure-revealjs/cell-11-output-1.png" class="r-stretch"></section>
+<section class="slide level2">
+
+</section></section>
+<section id="can-you-build-and-track-a-better-model" class="title-slide slide level1 center">
+<h1>Can you build and track a better model?</h1>
+<div id="cell-33" class="cell" data-execution_count="22">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="co"># Try your sk-learn model here</span></span></code></pre></div>
 </details>
 </div>
 <div class="quarto-auto-generated-content">
@@ -1828,7 +1135,7 @@ Name: count, dtype: int64</code></pre>
 <p>Matteo Francia - Big Data and Cloud Platforms (Module 2) - A.Y. 2024/25</p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
