@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.0...1.0.1) (2024-10-11)
+
+### Bug Fixes
+
+* refactoring cloud storage ([539dfb0](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/539dfb00be4285a33356ff2874b56d662358dfe7))
+
 ## 1.0.0 (2024-10-11)
 
 ### Bug Fixes
