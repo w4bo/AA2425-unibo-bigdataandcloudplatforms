@@ -6,13 +6,13 @@ subtitle: Towards data platforms
 
 **Data-Driven Innovation**
 
-* Use of data and _analytics_ to foster new products, processes and markets
+* Use of data and _analytics_ to foster new products, processes, and markets
 * Drive discovery and execution of innovation, achieving new services with a business value
 
 **Analytics**
 
 * A catch-all term for different business intelligence (BI)- and application-related initiatives
-  * E.g., of analyzing information from a particular domain
+  * E.g., analyzing information from a particular domain
   * E.g., applying BI capabilities to a specific content area (e.g., sales, service, supply chain)
 
 **Advanced Analytics**
@@ -21,7 +21,7 @@ subtitle: Towards data platforms
 
 **Augmented Analytics**
 
-* Use of technologies such as machine learning and AI to assist with data preparation, insight generation and insight explanation to augment how people explore and analyze data
+* Use of technologies such as machine learning and AI to assist with data preparation, insight generation, and insight explanation to augment how people explore and analyze data
 
 [https://www.gartner.com/en/information-technology/glossary](https://www.gartner.com/en/information-technology/glossary) (accessed 2022-08-01)
 
@@ -35,20 +35,22 @@ Companies are collecting tons of data to enable advanced analytics
 
 * Raw data is difficult to obtain, interpret, and maintain
 * Data is more and more heterogeneous
-* There is need for curating data to make it _consumable_
+* There is a need for curating data to make it _consumable_
 
 Where are we _collecting/processing_ data?
 
 * Getting _value_ from data _is not_ (only) a matter of _storage_
 * Need integrated and multilevel analytical skills and techniques
 
+# Data platform
+
+> “It is a capital mistake to theorize before one has data. Insensibly, one begins to twist the facts to suit theories, instead of theories to suit facts.”
+>
+> – Sherlock Holmes
+
 Getting _value_ from data _is not_ (only) a matter of _storage_
 
 * Any example?
-
-> “It is a capital mistake to theorize before one has data. Insensibly, one begins to twist the facts to suit theories, instead of theories to suit facts.”
->
-> – Sherlock Holmes
 
 # Case study: photo gallery
 
@@ -167,8 +169,8 @@ Couto, Julia, et al. "A Mapping Study about Data Lakes: An Improved Definition a
 | Characteristics | Data warehouse | Data lake |
 |:-: |:-: |:-: |
 | Data | Relational | Non-relational and relational |
-| Schema | Designed prior to implementation (schema-on-write) | Written at the time of analysis (schema-on-read) |
-| Price/performance | Fastest query results using higher cost storage | Query results getting faster using low-cost storage |
+| Schema | Designed prior to implementation (schema-on-write) | Written at the time of analysis (schema-on-read) |
+| Price/performance | Fastest query results using higher cost storage | Query results getting faster using low-cost storage |
 | Data quality | Highly curated data that serves as the central version of the truth | Any data, which may or may not be curated (e.g., raw data) |
 | Users | Business analysts | Data scientists, data developers, and business analysts (using curated data) |
 | Analytics | Batch reporting, BI, and visualizations | Machine learning, predictive analytics, data discovery, and profiling. |
@@ -180,7 +182,7 @@ Data lakes have increasingly taken the role of data hubs
 * Eliminate up-front costs of ingestion and ETL since data are stored in original format
 * Once in DL, data are available for analysis by everyone in the organization
 
-Drawing a sharp line been storage/computation/analysis is hard
+Drawing a sharp line between storage/computation/analysis is hard
 
 * Is a database just storage?
 * What about SQL/OLAP?
@@ -199,9 +201,9 @@ A data platform is a **centralized** infrastructure that facilitates the ingesti
 * **Well-integrated**: services have interfaces that enable easy and frictionless composition
 * **End-to-end**: services cover the entire data life cycle
 
-Rationale: relieve users from complexity of administration and provision
+Rationale: relieve users from the complexity of administration and provision
 
-* Not only technological skills, but also privacy, access control, etc.
+* Not only technological skills but also privacy, access control, etc.
 * Users should only focus on functional aspects
 
 # Data platform
@@ -209,7 +211,7 @@ Rationale: relieve users from complexity of administration and provision
 Are we done? No!
 
 * Lacking smart support to govern the complexity of data and transformations
-* Data transformations must be governed to prevent DP turning into a swamp
+* Data transformations must be governed to prevent DP from turning into a swamp
   * Amplified in data science, with data scientists prevailing data architects
   * Leverage descriptive metadata and maintenance to keep control over data
 
@@ -233,8 +235,8 @@ Provenance (also referred to as lineage, pedigree, parentage, genealogy)
 
 Examples of use cases
 
-* Business domain.  _Users traditionally work with an _organized data schema_, where the structure and _semantics of the data in use is shared_ across the corporation or even B2B. Yet, a large proportion of businesses deal with _bad quality data_. _Sources_ of bad data _need to be identified_ and corrected to avoid costly errors in business forecasting.
-* Scientific/research domain. _Data_ used in the scientific field can be _ad hoc_ and driven by _individual researchers_ or small communities. The scientific field is moving _towards more collaborative research_ and organizational boundaries are disappearing. _Sharing data and metadata across organizations is essential_, leading to a convergence on common schemes to ensure compatibility. Issues of _trust_, _quality_, and _copyright_ of data are significant when using third-party data in such a loosely connected network.
+* Business domain.  _Users traditionally work with an _organized data schema_, where the structure and _semantics of the data in use are shared_ across the corporation or even B2B. Yet, a large proportion of businesses deal with _bad-quality data_. _Sources_ of bad data _need to be identified_ and corrected to avoid costly errors in business forecasting.
+* Scientific/research domain. _Data_ used in the scientific field can be _ad hoc_ and driven by _individual researchers_ or small communities. The scientific field is moving _towards more collaborative research_ and organizational boundaries are disappearing. _Sharing data and metadata across organizations is essential_, leading to convergence on common schemes to ensure compatibility. Issues of _trust_, _quality_, and _copyright_ of data are significant when using third-party data in such a loosely connected network.
 
 Simmhan, Yogesh L., Beth Plale, and Dennis Gannon. "A survey of data provenance techniques."  _Computer Science Department, Indiana University, Bloomington IN_ 47405 (2005): 69.
 
@@ -324,7 +326,7 @@ And so on...
 
 # Compression
 
-Summarization / compression
+Summarization/compression
 
 * Present a concise representation of a dataset in a comprehensible and informative manner
 
@@ -349,7 +351,7 @@ Use cases
   * Performed by DBMS to support query optimization with statistics about tables and columns
   * Profiling results can be used to estimate the selectivity of operators and the cost of a query plan
 * _Data cleansing _ (typical use case is profiling data)
-  * Prepare a cleansing process by revealing errors (e.g., in formatting), missing values or outliers
+  * Prepare a cleansing process by revealing errors (e.g., in formatting), missing values, or outliers
 * _Data integration and analytics_
 
 Challenges?
@@ -413,7 +415,7 @@ Version control
 * A class of systems responsible for managing changes to computer programs, documents, or data collections
 * Changes are identified by a number/letter code, termed the revision/version number
 
-However, data pipelines are not only about code bult also about
+However, data pipelines are not only about code but also about
 
 * Model Version control
 * Data Version Control
@@ -432,7 +434,7 @@ However, data pipelines are not only about code bult also about
 
 Support CRUD (Create, Read, Update, Delete) operations with versions
 
-E.g., on AWS (PUT, GET, DELETE), what about update?
+For example, on AWS (PUT, GET, DELETE), what about updating?
 
 :::: {.columns}
 ::: {.column width=33%}
@@ -474,7 +476,7 @@ Data management is still a (research) issue in data platforms
 ::: {.column width=50%}
 
 * Data management architecture that combines the flexibility, cost-efficiency, and scale of data lakes with the data management and ACID transactions of data warehouses, enabling business intelligence (BI) and machine learning (ML) on all data
-* Vendor lock in
+* Vendor lock-in
 
 Key technologies used to implement Data Lakehouses
 
@@ -503,7 +505,7 @@ Key technologies used to implement Data Lakehouses
 |:-: |:-: |:-: |:-: |
 | Data format | Closed, proprietary format | Open format (e.g., Parquet) | Open format |
 | Types of data | Structured data, with limited support for semi-structured data | All types: Structured data, semi-structured data, textual data, unstructured (raw) data | All types: Structured data, semi-structured data, textual data, unstructured (raw) data |
-| Data access | SQL-only, no direct access to file | Open APIs for direct access to files with SQL, R, Python and other languages | Open APIs for direct access to files with SQL, R, Python and other languages |
+| Data access | SQL-only, no direct access to file | Open APIs for direct access to files with SQL, R, Python, and other languages | Open APIs for direct access to files with SQL, R, Python, and other languages |
 | Reliability | High quality, reliable data with ACID transactions | Low quality, data swamp | High quality, reliable data with ACID transactions |
 | Governance and security | Fine-grained security and governance for row/columnar level for tables | Poor governance as security needs to be applied to files | Fine-grained security and governance for row/columnar level for tables |
 | Performance | High | Low | High |
@@ -522,16 +524,16 @@ Key technologies used to implement Data Lakehouses
 
 **Is it a Lakehouse with another name?**
 
-* A Lakehouse is a part of data platform, a layer that enables to query multiple data sources (with SQL/Spark) transparently by using some metadata (JSON) log
-* Still, you could get a data platform where such transparence is not mandatory or could be achieved by different techniques (e.g., multistore [1])
+* A Lakehouse is a part of the data platform, a layer that enables to query multiple data sources (with SQL/Spark) transparently by using some metadata (JSON) log
+* Still, you could get a data platform where such transparency is not mandatory or could be achieved by different techniques (e.g., multistore [1])
 
 [1] Forresi, C., Gallinucci, E., Golfarelli, M., & Hamadou, H. B. (2021). A dataspace-based framework for OLAP analyses in a high-variety multistore. The VLDB Journal, 30(6), 1017-1040.
 
 # Data platform
 
-**Is it a new name for BI?**
+**Is it a new name for BI?**
 
-No, in a data platform you also need to manage (streams of) operational data and OLTP workloads
+No, in a data platform, you also need to manage (streams of) operational data and OLTP workloads
 
 # Data platform: expertise and related job positions
 
@@ -593,7 +595,7 @@ DevOps practices enable software development (dev) and operations (ops) teams to
 :::
 ::::
 
-Munappy, A. R., Mattos, D. I., Bosch, J., Olsson, H. H., & Dakkak, A. (2020, June). From ad-hoc data analytics to dataops. In _Proceedings of the International Conference on Software and System Processes_  (pp. 165-174).
+Munappy, A. R., Mattos, D. I., Bosch, J., Olsson, H. H., & Dakkak, A. (2020, June). From ad-hoc data analytics to dataops. In _Proceedings of the International Conference on Software and System Processes_ (pp. 165-174).
 
 # DataOps
 
@@ -603,7 +605,7 @@ Munappy, A. R., Mattos, D. I., Bosch, J., Olsson, H. H., & Dakkak, A. (2020, Jun
 From DevOps to DataOps
 
 * “A collaborative data management practice focused on improving the _communication, integration and automation of data flows between data managers and data consumers across an organization_”
-* Data analytics improved in terms of velocity, quality, predictability and scale of software engineering and deployment
+* Data analytics improved in terms of velocity, quality, predictability, and scale of software engineering and deployment
 
 Some key rules
 
@@ -657,10 +659,10 @@ K2View Whitepaper: What is a Data Fabric? The Complete Guide, 2021
 * **Enable self-service capabilities**: data discovery, profiling, exploration, quality assessment, consumption of data-as-a-product
 * **Provide a knowledge graph**: Visualizing how data, people, processes, systems, etc. are interconnected, deriving additional actionable insight
 * **Provide intelligent (smart) information integration**: Supporting IT staff and business users alike in their data integration and transformation, data virtualization, and federation tasks
-* **Derive insight from metadata**: Orchestrating and automating tasks and jobs for data integration, data engineering, and data governance end to end
+* **Derive insight from metadata**: Orchestrating and automating tasks and jobs for data integration, data engineering, and data governance end-to-end
 * **Enforce local and global data rules/policies**: Including AI/ML-based automated generation, adjustments, and enforcement of rules and policies
 * **Manage an end-to-end unified lifecycle**: Implementing a coherent and consistent lifecycle end to end of all Data Fabric tasks across various platforms, personas, and organizations
-* **Enforce data and AI governance**: Broadening the scope of traditional data governance to include AI artefacts, for example, AI models, pipelines
+* **Enforce data and AI governance**: Broadening the scope of traditional data governance to include AI artifacts, for example, AI models, pipelines
 
 # Data fabric: is this brand new?
 
@@ -741,7 +743,7 @@ A **data product** is raw data transformed into a business context
 
 * Data products are registered in **knowledge catalog ** through specifications (XML, JSON, etc.)
 * Main features
-  * **Data product description**: The data product needs to be well described
+  * **Data product description**: The data product needs to be well-described
   * **Access methods**: for example, REST APIs, SQL, NoSQL, etc., and where to find the data asset
   * **Policies and rules**: who is allowed to consume the data product for what purpose
   * **SLAs**: agreements regarding the data product availability, performance characteristics, functions, cost of data product usage
@@ -785,7 +787,7 @@ Dave Wells, 2021 [https://www.eckerson.com/articles/data-architecture-complex-vs
 
 # Data mesh vs data fabric
 
-Data Fabric and Mesh are the results from the data architecture evolution
+Data Fabric and Mesh are the results of the data architecture evolution
 
 * **Many capabilities were in existence already long before** the terms were coined
 
@@ -836,7 +838,7 @@ How do you provision it?
 
 # On-premises manual provisioning
 
-Hardly advisable, if not for small and local tests
+It is hardly advisable, if not for small and local tests
 
 * **Technical challenges**
   * Installation: how do I set up a new machine?
@@ -849,8 +851,8 @@ Hardly advisable, if not for small and local tests
   * How do we set up/integrate/control independent services?
   * How do we orchestrate data flows?
 * **Business challenges**
-  * Can we afford to spend resources on tasks that are not mission oriented?
-  * No free lunch, each choice has cost/benefit
+  * Can we afford to spend resources on tasks that are not mission-oriented?
+  * No free lunch, each choice has a cost/benefit
   * How much time does it take to master a technology?
   * How many people do I need?
 

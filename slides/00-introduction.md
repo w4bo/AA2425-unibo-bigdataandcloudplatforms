@@ -55,7 +55,7 @@ Questions on all (**theoretical** and **practical**) aspects of the course
 No scheduled dates, just come **when you are ready**
 
 * At least one week in advance
-* Send an email to [enrico.gallinucci@unibo.it](mailto:enrico.gallinucci@unibo.it) to book an appointment
+* Link to the [Booking](https://outlook.office365.com/owa/calendar/BigDataandCloudPlatformsexams@live.unibo.it/bookings/) application
 
 According to the University's regulation
 
@@ -70,7 +70,7 @@ Be prepared: you have to wait **1 month before trying again** (in any case)
 - You can ask questions before/after each lecture
 - ... or send an email to book an appointment
 
-If you need help for coding and labs, *you can ask the tutor*!
+If you need help with coding and labs, *you can ask the tutor*!
 
 # So far
 
@@ -82,7 +82,7 @@ If you need help for coding and labs, *you can ask the tutor*!
 You have acquainted/practiced with **on-premises** solutions
 
 * You were given a working hardware cluster
-* ... to deploy software applications on Hadoop-based stack
+* ... to deploy software applications on a Hadoop-based stack
 
 In the perspective of digital transformation, let us guess
 
@@ -111,14 +111,14 @@ Two sides of the same coin, and your profile is a perfect? fit
   * How do we set up/integrate/control independent services?
   * How do we orchestrate data flows?
 * Business perspective
-  * Can we afford to spend resources on tasks that are not mission oriented?
-  * No free lunch, each choice has cost/benefit
+  * Can we afford to spend resources on tasks that are not mission-oriented?
+  * No free lunch, each choice has a cost/benefit
   * How much time does it take to master a technology?
   * How many people do I need?
 
-... but first, which are our **data needs**?
+... but first, what are our **data needs**?
 
-Can we afford to spend resources on tasks that are not mission oriented?
+Can we afford to spend resources on tasks that are not mission-oriented?
 
 * Mission: a statement used by a company to explain its purpose(s)
 
@@ -161,7 +161,7 @@ Can we afford to spend resources on tasks that are not mission oriented?
 
 You will find all you need in these slides
 
-* However, keeping up the pace with data platforms and cloud is hard
+* However, keeping up the pace with data platforms and the cloud is hard
 * There is a rapid development of technologies, and not all of them will survive
 * Books are easily outdated with respect to cutting-edge services and technologies
 * Research papers (often) describe solutions that are not commercial yet
