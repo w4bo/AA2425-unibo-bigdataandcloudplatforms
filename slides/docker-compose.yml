@@ -2,7 +2,6 @@ version: "3.9"
 services:
   build-quarto:
     init: true
-    # restart: always
     image: w4bo/quarto-slides:1.0.23
     hostname: build-quarto
     container_name: build-quarto
@@ -11,3 +10,13 @@ services:
     volumes:
       - ./:/data
     command: ["/bin/bash", "/data/build.sh"]
+
+  jupyter:
+    hostname: jupyter
+    container_name: jupyter
+    init: true
+    build: .
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/notebooks

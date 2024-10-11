@@ -19,7 +19,7 @@ jobs:
           cd slides 
           cp build.sh.example build.sh
           chmod +x build.sh
-          docker compose up
+          docker compose up build-quarto
       - name: Deploy
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         uses: JamesIves/github-pages-deploy-action@v4.6.8
