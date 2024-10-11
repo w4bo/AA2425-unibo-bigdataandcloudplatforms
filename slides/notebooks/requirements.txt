@@ -1,6 +1,6 @@
 awswrangler==3.4.0
 matplotlib==3.7.3
-notebook==6.5.4
+notebook==6.5.7
 numpy==1.26.0
 pandas==2.1.2
 prov[dot]==2.0.0
