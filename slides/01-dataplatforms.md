@@ -72,7 +72,7 @@ Getting _value_ from data _is not_ (only) a matter of _storage_
 :::: {.columns}
 ::: {.column width=50%}
 
-> Database
+> Database [@ozsu2018]
 >
 > "A database is a _structured and persistent collection_ of information about some aspect of the real world organized and stored in a way that facilitates efficient retrieval and modification. The structure of a database is determined by an _abstract data model_. Primarily, it is this structure that differentiates a database from a data file."
 
@@ -84,14 +84,12 @@ Getting _value_ from data _is not_ (only) a matter of _storage_
 :::
 ::::
 
-Özsu M.T. (2018) Database. In: Encyclopedia of Database Systems. Springer, New York, NY. [https://doi.org/10.1007/978-1-4614-8265-9_80734](https://doi.org/10.1007/978-1-4614-8265-9_80734)
-
 # Data platform
 
 :::: {.columns}
 ::: {.column width=50%}
 
-> Data Warehouse
+> Data Warehouse [@golfarelli2009data]
 >
 > "A collection of data that supports decision-making processes. It provides the following features: subject-oriented, integrated and consistent, not volatile."
 
@@ -102,8 +100,6 @@ Getting _value_ from data _is not_ (only) a matter of _storage_
 
 :::
 ::::
-
-Matteo Golfarelli and Stefano Rizzi.  _Data warehouse design: Modern principles and methodologies_ . McGraw-Hill, Inc., 2009.
 
 # OLTP vs OLAP?
 
@@ -142,7 +138,7 @@ Matteo Golfarelli and Stefano Rizzi.  _Data warehouse design: Modern principles 
 :::: {.columns}
 ::: {.column width=50%}
 
-> Data lake
+> Data lake [@couto2019mapping]
 >
 > “A DL is a _central repository_ system for _storage, processing, and analysis of raw data_, in which the data is kept in its _original format and is processed to be queried only when needed_. It can _store a varied amount of formats_ in big data ecosystems, from unstructured, semi-structured, to structured data sources”
 
@@ -153,10 +149,6 @@ Matteo Golfarelli and Stefano Rizzi.  _Data warehouse design: Modern principles 
 
 :::
 ::::
-
-Couto, Julia, et al. "A Mapping Study about Data Lakes: An Improved Definition and Possible Architectures."  _SEKE_ . 2019.
-
-[https://dunnsolutions.com/business-analytics/big-data-analytics/data-lake-consulting](https://dunnsolutions.com/business-analytics/big-data-analytics/data-lake-consulting)
 
 # Data platform
 
@@ -233,12 +225,10 @@ Provenance (also referred to as lineage, pedigree, parentage, genealogy)
 * The description of the origins of data and the process by which it arrived at the database
 * Not only data products (e.g., tables, files), but also the processes that created them
 
-Examples of use cases
+Examples of use cases [@simmhan2005survey]
 
 * Business domain. Users traditionally work with an _organized data schema_, where the structure and _semantics of the data in use are shared_ across the corporation or even B2B. Yet, a large proportion of businesses deal with _bad-quality data_. _Sources_ of bad data _need to be identified_ and corrected to avoid costly errors in business forecasting.
 * Scientific/research domain. _Data_ used in the scientific field can be _ad hoc_ and driven by _individual researchers_ or small communities. The scientific field is moving _towards more collaborative research_ and organizational boundaries are disappearing. _Sharing data and metadata across organizations is essential_, leading to convergence on common schemes to ensure compatibility. Issues of _trust_, _quality_, and _copyright_ of data are significant when using third-party data in such a loosely connected network.
-
-Simmhan, Yogesh L., Beth Plale, and Dennis Gannon. "A survey of data provenance techniques."  _Computer Science Department, Indiana University, Bloomington IN_ 47405 (2005): 69.
 
 # Data provenance
 
@@ -251,7 +241,7 @@ Astronomers are creating an international Virtual Observatory
 * Astronomy changed from being an individualistic to a _collective enterprise_
 * Telescope time is devoted/allocated to systematic sky surveys and analysis is performed using data from the archives
 * Astronomers are _increasingly relying on data that they did not take themselves_
-* Raw data bear _many instrumental signatures that must be removed_ in the process of generating data products
+* Raw data bear _many instrumental signatures that must be removed_ in the process of generating data products [@mann2002some]
 
 :::
 ::: {.column width=40%}
@@ -261,33 +251,25 @@ Astronomers are creating an international Virtual Observatory
 :::
 ::::
 
-Mann, Bob. "Some data derivation and provenance issues in astronomy." _Workshop on Data Derivation and Provenance, Chicago_ . 2002.
-
 [https://www.esa.int/Science_Exploration/Space_Science/Webb/Webb_inspects_the_heart_of_the_Phantom_Galaxy](https://www.esa.int/Science_Exploration/Space_Science/Webb/Webb_inspects_the_heart_of_the_Phantom_Galaxy) (accessed 2022-08-01)
 
 # Data provenance
 
-![Characteristics of data provenance](imgs/slides15.png)
-
-Simmhan, Yogesh L., Beth Plale, and Dennis Gannon. "A survey of data provenance techniques."  _Computer Science Department, Indiana University, Bloomington IN_ 47405 (2005): 69.
+![Characteristics of data provenance [@simmhan2005survey]](imgs/slides15.png)
 
 # Data provenance
 
-Granularity
+Granularity [@simmhan2005survey]
 
 * _Fine-grained_ (instance level): tracking data items (e.g., a tuple in a dataset) transformations
 * _Coarse-grained_ (schema-level): tracking dataset transformations
 
-Queries
+Queries [@ikeda2009data]
 
 * _Where_ provenance: given some output, which inputs did the output come from?
 * _How_ provenance: given some output, how were the inputs manipulated?
 * _Why_ provenance: given some output, why was data generated?
   * E.g., in the form of a proof tree that locates source data items contributing to its creation
-
-Simmhan, Yogesh L., Beth Plale, and Dennis Gannon. "A survey of data provenance techniques."  _Computer Science Department, Indiana University, Bloomington IN_ 47405 (2005): 69.
-
-Ikeda, Robert, and Jennifer Widom.  _Data lineage: A survey_ . Stanford InfoLab, 2009.
 
 # Data provenance
 
@@ -363,12 +345,10 @@ Summarization/compression
 :::
 ::: {.column width=40%}
 
-![Characteristics of data summarization](imgs/slides18.png)
+![Characteristics of data summarization [@ahmed2019data]](imgs/slides18.png)
 
 :::
 ::::
-
-Ahmed, Mohiuddin. "Data summarization: a survey."  _Knowledge and Information Systems_ 58.2 (2019): 249-273.
 
 # Data profiling
 
@@ -437,7 +417,7 @@ Given a table with columns $C = \{w, x, x, y, z\}$
 :::: {.columns}
 ::: {.column width=50%}
 
-Entity resolution
+Entity resolution [@papadakis2020blocking]
 
 * (also known as entity matching, linking)
 * Find records that refer to the same entity across different data sources (e.g., data files, books, websites, and databases)
@@ -565,9 +545,7 @@ Key technologies used to implement Data Lakehouses
 **Is it a Lakehouse with another name?**
 
 * A Lakehouse is a part of the data platform, a layer that enables to query multiple data sources (with SQL/Spark) transparently by using some metadata (JSON) log
-* Still, you could get a data platform where such transparency is not mandatory or could be achieved by different techniques (e.g., multistore [1])
-
-[1] Forresi, C., Gallinucci, E., Golfarelli, M., & Hamadou, H. B. (2021). A dataspace-based framework for OLAP analyses in a high-variety multistore. The VLDB Journal, 30(6), 1017-1040.
+* Still, you could get a data platform where such transparency is not mandatory or could be achieved by different techniques (e.g., multistore [@forresi2021dataspace])
 
 # Data platform
 
@@ -627,14 +605,12 @@ DevOps practices enable software development (dev) and operations (ops) teams to
 :::
 ::: {.column width=50%}
 
-![Evolution of DataOps](imgs/slides30.png)
+![Evolution of DataOps [@munappy2020ad]](imgs/slides30.png)
 
 ![Evolution of DataOps](imgs/slides31.png)
 
 :::
 ::::
-
-Munappy, A. R., Mattos, D. I., Bosch, J., Olsson, H. H., & Dakkak, A. (2020, June). From ad-hoc data analytics to dataops. In _Proceedings of the International Conference on Software and System Processes_ (pp. 165-174).
 
 # DataOps
 
@@ -902,7 +878,7 @@ It is hardly advisable, if not for small and local tests
 :::
 ::: {.column width=50%}
 
-Example of a data platform (MOSES)
+Example of a data platform: MOSES [@francia2021making]
 
 Functional architecture
 
@@ -912,8 +888,6 @@ Functional architecture
 
 :::
 ::::
-
-Francia, M., Gallinucci, E., Golfarelli, M., Rizzi, S. et al. (2021). Making data platforms smarter with MOSES. Future Generation Computer Systems, 125, 299-313.
 
 # Summing up
 
@@ -929,3 +903,5 @@ Francia, M., Gallinucci, E., Golfarelli, M., Rizzi, S. et al. (2021). Making dat
   * Managing data platforms is hard, exploit meta-data to ease this task
     * Data lineage, compression, profiling, resolution, etc.
 * **Open question**: how do we deploy working data platforms?
+
+# References
