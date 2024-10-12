@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.1...1.0.2) (2024-10-12)
+
+### Bug Fixes
+
+* refactoring migration ([f5df50c](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/f5df50ccfb85129d06b1567d4d527bf707493f4a))
+
 ## [1.0.1](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.0...1.0.1) (2024-10-11)
 
 ### Bug Fixes
