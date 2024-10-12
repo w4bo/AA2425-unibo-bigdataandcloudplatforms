@@ -539,8 +539,3 @@ Control how and when messages are dealt with
 ::::
 
 # That’s all, folks!
-
-![](imgs/slides390.png)
-
-![](imgs/slides391.png)
-

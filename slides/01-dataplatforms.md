@@ -235,12 +235,15 @@ Provenance (also referred to as lineage, pedigree, parentage, genealogy)
 
 Examples of use cases
 
-* Business domain.  _Users traditionally work with an _organized data schema_, where the structure and _semantics of the data in use are shared_ across the corporation or even B2B. Yet, a large proportion of businesses deal with _bad-quality data_. _Sources_ of bad data _need to be identified_ and corrected to avoid costly errors in business forecasting.
+* Business domain. Users traditionally work with an _organized data schema_, where the structure and _semantics of the data in use are shared_ across the corporation or even B2B. Yet, a large proportion of businesses deal with _bad-quality data_. _Sources_ of bad data _need to be identified_ and corrected to avoid costly errors in business forecasting.
 * Scientific/research domain. _Data_ used in the scientific field can be _ad hoc_ and driven by _individual researchers_ or small communities. The scientific field is moving _towards more collaborative research_ and organizational boundaries are disappearing. _Sharing data and metadata across organizations is essential_, leading to convergence on common schemes to ensure compatibility. Issues of _trust_, _quality_, and _copyright_ of data are significant when using third-party data in such a loosely connected network.
 
 Simmhan, Yogesh L., Beth Plale, and Dennis Gannon. "A survey of data provenance techniques."  _Computer Science Department, Indiana University, Bloomington IN_ 47405 (2005): 69.
 
 # Data provenance
+
+:::: {.columns}
+::: {.column width=60%}
 
 Astronomers are creating an international Virtual Observatory
 
@@ -250,7 +253,13 @@ Astronomers are creating an international Virtual Observatory
 * Astronomers are _increasingly relying on data that they did not take themselves_
 * Raw data bear _many instrumental signatures that must be removed_ in the process of generating data products
 
+:::
+::: {.column width=40%}
+
 ![](imgs/slides14.jpg)
+
+:::
+::::
 
 Mann, Bob. "Some data derivation and provenance issues in astronomy." _Workshop on Data Derivation and Provenance, Chicago_ . 2002.
 
@@ -282,17 +291,29 @@ Ikeda, Robert, and Jennifer Widom.  _Data lineage: A survey_ . Stanford InfoLab,
 
 # Data provenance
 
+:::: {.columns}
+::: {.column width=60%}
+
 Data provenance, an example of data management
 
 * Metadata pertaining to the history of a data item
 * Pipeline including the origin of objects and operations they are subjected to
 * We have a standard: [https://www.w3.org/TR/prov-dm/](https://www.w3.org/TR/prov-dm/)
 
+:::
+::: {.column width=40%}
+
 ![](imgs/slides16.png)
+
+:::
+::::
 
 [https://www.w3.org/TR/prov-dm/](https://www.w3.org/TR/prov-dm/)
 
 # Data provenance
+
+:::: {.columns}
+::: {.column width=60%}
 
 _Entity_
 
@@ -304,7 +325,13 @@ _Agent_
 * A person, a piece of software
 * Takes a role in an activity such that the agent can be assigned some degree of responsibility for the activity taking place
 
+:::
+::: {.column width=40%}
+
 ![](imgs/slides17.png)
+
+:::
+::::
 
 [https://www.w3.org/TR/2013/NOTE-prov-primer-20130430/](https://www.w3.org/TR/2013/NOTE-prov-primer-20130430/)
 
@@ -326,22 +353,40 @@ And so on...
 
 # Compression
 
+:::: {.columns}
+::: {.column width=60%}
+
 Summarization/compression
 
 * Present a concise representation of a dataset in a comprehensible and informative manner
 
+:::
+::: {.column width=40%}
+
 ![](imgs/slides18.png)
+
+:::
+::::
 
 Ahmed, Mohiuddin. "Data summarization: a survey."  _Knowledge and Information Systems_ 58.2 (2019): 249-273.
 
 # Data profiling
+
+:::: {.columns}
+::: {.column width=60%}
 
 Data profiling [@naumann2014data]
 
 * A broad range of methods to efficiently analyze a given data set
 * E.g., in a _relational_ scenario, _tables_ of a relational database are _scanned_ to derive _metadata_, such as _data types_, _completeness_ and _uniqueness_ of columns, _keys_ and  _foreign keys_, and occasionally _functional dependencies_ and _association rules_
 
+:::
+::: {.column width=40%}
+
 ![](imgs/slides19.png)
+
+:::
+::::
 
 # Data profiling
 
@@ -358,9 +403,6 @@ Challenges?
 
 # Data profiling
 
-:::: {.columns}
-::: {.column width=50%}
-
 Challenges
 
 * The results of data profiling are _computationally complex_ to discover
@@ -368,22 +410,27 @@ Challenges
 * Verification of _complex constraints on column combinations _ in a database
   * What is the complexity of this task?
 
-:::
-::: {.column width=50%}
+:::: {.columns}
+::: {.column width=60%}
 
-| a | b | c | d |
+Given a table with columns $C = \{w, x, x, y, z\}$
+
+| w | x | y | <> |
 |:-: |:-: |:-: |:-: |
 | 1 | 1 | 2 | 2 |
 | 1 | 2 | 1 | 4 |
 
-Given a table with columns $C = { a, b, c, d }$
+:::
+::: {.column width=40%}
 
-- To extract the (distinct) cardinality of each column, I will consider $|C|$ columns $\{(a), (b), (c), (d)\}$
-- To extract the correlations between pairs of columns, I will consider ($\binom{|C|}{n}$) groups $\{(a, b), (a, c), (a, d), (b, c), ...\}$
-- Extracting the relationships among all possible groups of columns generalizes to $\sum_{n=1}^{|C|}\binom{|C|}{n}=2^{|C|}−1$ groups
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Hasse_diagram_of_powerset_of_3.svg/1280px-Hasse_diagram_of_powerset_of_3.svg.png)
 
 :::
 ::::
+
+- To extract the (distinct) cardinality of each column, I will consider $|C|$ columns $\{(w), (x), (y), (z)\}$
+- To extract the correlations between pairs of columns, I will consider $\binom{|C|}{n}$ groups $\{(w, x), (w, y), (w, z), (x, y), ...\}$
+- Extracting the relationships among all possible groups of columns generalizes to $\sum_{n=1}^{|C|}\binom{|C|}{n}=2^{|C|}−1$ groups
 
 # Entity resolution
 
@@ -577,7 +624,6 @@ DevOps practices enable software development (dev) and operations (ops) teams to
 
 [https://about.gitlab.com/topics/devops/](https://about.gitlab.com/topics/devops/) (accessed 2023-06-03)
 
-
 # ... to DataOps
 
 :::: {.columns}
@@ -689,7 +735,6 @@ K2View Whitepaper: What is a Data Fabric? The Complete Guide, 2021
 Gartner, 2021 [https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration](https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration)
 
 K2View, 2021 [https://www.k2view.com/top-data-fabric-vendors](https://www.k2view.com/top-data-fabric-vendors)
-
 
 # Data fabric
 
