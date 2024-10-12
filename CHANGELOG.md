@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.2...1.0.3) (2024-10-12)
+
+### Bug Fixes
+
+* refactoring streaming ([d6fc98d](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/d6fc98d3654273f30dffd6f53f603a8615c5fc70))
+
 ## [1.0.2](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.1...1.0.2) (2024-10-12)
 
 ### Bug Fixes
