@@ -2,42 +2,54 @@
 subtitle: Data pipelines on cloud (Computing)
 ---
 
-# 
+#
 
-Supporting services
-
-Serve (deciding)
-
-BI tools (e.g., Tableau)
-
-Analytics (analyzing)
-
-Networking, etc.
-
-Machine learning
-
-Ingestion (acquiring)
+![](imgs/281.svg)
 
 # Supporting data pipelines
 
 We can choose the XaaS configuration to build our pipelines
 
-* IaaS
+:::: {.columns}
+::: {.column width=60%}
+
+IaaS
+
 * Outsource virtual machines to the cloud (AWS EC2)
 * (You) Manage technological and business challenges
+
+:::
+::: {.column width=60%}
+
+![](imgs/slides197.png)
+
+:::
+::::
+
+:::: {.columns}
+::: {.column width=60%}
 
 PaaS
 
 * Outsource the data ecosystem to the cloud (e.g., AWS EMR)
 * (You) Manage business challenges
 
-![](imgs/slides197.png)
+:::
+::: {.column width=40%}
 
 ![](imgs/slides198.png)
 
-[https://aws.amazon.com/ec2](https://aws.amazon.com/emr)[https://aws.amazon.com/emr](https://aws.amazon.com/emr)  (2022-11-15)
+:::
+::::
+
+[https://aws.amazon.com/ec2](https://aws.amazon.com/emr)
+
+[https://aws.amazon.com/emr](https://aws.amazon.com/emr)  (2022-11-15)
 
 # Single instance: AWS EC2
+
+:::: {.columns}
+::: {.column width=60%}
 
 Amazon Elastic Compute Cloud
 
@@ -58,28 +70,36 @@ Interact with EC2 instance as with any computer
 
 * You have complete control of your instances
 
+:::
+::: {.column width=40%}
+
 ![](imgs/slides199.png)
 
-[https://aws.amazon.com/ec2/instance-types](https://aws.amazon.com/ec2/instance-types) [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html) [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compute-optimized-instances.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compute-optimized-instances.html)
+:::
+::::
+
+[https://aws.amazon.com/ec2/instance-types](https://aws.amazon.com/ec2/instance-types)
+
+[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html) 
+
+[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compute-optimized-instances.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compute-optimized-instances.html)
+
+# Single instance: AWS EC2
+
+:::: {.columns}
+::: {.column width=50%}
 
 ![](imgs/slides200.png)
 
+:::
+::: {.column width=50%}
+
 ![](imgs/slides201.png)
 
+:::
+::::
+
 [https://aws.amazon.com/ec2/instance-types/](https://aws.amazon.com/ec2/instance-types/)
-
-AWS uses public-key cryptography to secure the login
-
-* You can create one using the Amazon EC2 console
-* Open the Amazon EC2 console at [https://console.aws.amazon.com/ec2/](https://console.aws.amazon.com/ec2/)
-* In the navigation pane, choose `Key Pairs`
-* Choose `Create key pair`
-* For `Name`, enter a descriptive name for the key pair
-* For `File format`, choose the format in which to save the private key
-  * OpenSSH, choose `pem` (` chmod 400 * *my-key-* * *pair* * .pe m `)
-  * PuTTY, choose `ppk`
-* Choose `Create key pair`
-* The private key file is automatically downloaded by your browser
 
 # Cluster: AWS EMR
 
@@ -97,160 +117,40 @@ Example of workload
 * EMR begins the execution while pulling the input data from S3 into the launched instances
 * Once the cluster is finished, EMR transfers output data to Amazon S3
 
-# Motivation
-
-Amazon EMR (Elastic Map Reduce)
-
-* Provides a managed Hadoop framework
-
-Some features
-
-* Service integration
-  * Automatically control EC2 instances
-  * Transparently use S3 storage
-* Pricing:
-  * Low Hourly Pricing
-  * Amazon EC2 Spot Integration
-
-[https://aws.amazon.com/emr](https://aws.amazon.com/emr)
-
 # AWS EMR
 
 Deploy Multiple Clusters
 
+:::: {.columns}
+::: {.column width=60%}
+
 Provision as much capacity as you need
+
+:::
+::: {.column width=40%}
+
+![](imgs/288a.svg)
+
+:::
+::::
+
+:::: {.columns}
+::: {.column width=60%}
 
 Add or remove capacity at any time
 
-![](imgs/slides202.png)
+:::
+::: {.column width=40%}
 
-![](imgs/slides203.png)
+![](imgs/288b.svg)
 
-![](imgs/slides204.png)
+:::
+::::
 
-![](imgs/slides205.png)
+# AWS EMR
 
-![](imgs/slides206.png)
-
-![](imgs/slides207.png)
-
-![](imgs/slides208.png)
-
-![](imgs/slides209.png)
-
-![](imgs/slides210.png)
-
-![](imgs/slides211.png)
-
-![](imgs/slides212.png)
-
-![](imgs/slides213.png)
-
-![](imgs/slides214.png)
-
-![](imgs/slides215.png)
-
-![](imgs/slides216.png)
-
-![](imgs/slides217.png)
-
-![](imgs/slides218.png)
-
-![](imgs/slides219.png)
-
-![](imgs/slides220.png)
-
-![](imgs/slides221.png)
-
-![](imgs/slides222.png)
-
-![](imgs/slides223.png)
-
-![](imgs/slides224.png)
-
-![](imgs/slides225.png)
-
-![](imgs/slides226.png)
-
-![](imgs/slides227.png)
-
-![](imgs/slides228.png)
-
-![](imgs/slides229.png)
-
-![](imgs/slides230.png)
-
-Resize a Running Cluster
-
-![](imgs/slides231.png)
-
-![](imgs/slides232.png)
-
-![](imgs/slides233.png)
-
-![](imgs/slides234.png)
-
-![](imgs/slides235.png)
-
-![](imgs/slides236.png)
-
-![](imgs/slides237.png)
-
-![](imgs/slides238.png)
-
-![](imgs/slides239.png)
-
-![](imgs/slides240.png)
-
-![](imgs/slides241.png)
-
-![](imgs/slides242.png)
-
-![](imgs/slides243.png)
-
-![](imgs/slides244.png)
-
-![](imgs/slides245.png)
-
-![](imgs/slides246.png)
-
-![](imgs/slides247.png)
-
-![](imgs/slides248.png)
-
-![](imgs/slides249.png)
-
-![](imgs/slides250.png)
-
-![](imgs/slides251.png)
-
-![](imgs/slides252.png)
-
-![](imgs/slides253.png)
-
-![](imgs/slides254.png)
-
-![](imgs/slides255.png)
-
-![](imgs/slides256.png)
-
-![](imgs/slides257.png)
-
-![](imgs/slides258.png)
-
-![](imgs/slides259.png)
-
-![](imgs/slides260.png)
-
-![](imgs/slides261.png)
-
-![](imgs/slides262.png)
-
-![](imgs/slides263.png)
-
-![](imgs/slides264.png)
-
-![](imgs/slides265.png)
+:::: {.columns}
+::: {.column width=60%}
 
 EMR cluster
 
@@ -264,57 +164,15 @@ Core groups
 
 (Optional) Task instances
 
-![](imgs/slides266.png)
+:::
+::: {.column width=40%}
 
-![](imgs/slides267.png)
+![](imgs/289.svg)
 
-![](imgs/slides268.png)
+:::
+::::
 
-![](imgs/slides269.png)
-
-Amazon EMR Cluster
-
-Master Instance Group
-
-![](imgs/slides270.png)
-
-![](imgs/slides271.png)
-
-![](imgs/slides272.png)
-
-![](imgs/slides273.png)
-
-![](imgs/slides274.png)
-
-![](imgs/slides275.png)
-
-![](imgs/slides276.png)
-
-![](imgs/slides277.png)
-
-![](imgs/slides278.png)
-
-![](imgs/slides279.png)
-
-Task Instance Group
-
-Core Instance Group
-
-![](imgs/slides280.png)
-
-![](imgs/slides281.png)
-
-![](imgs/slides282.png)
-
-![](imgs/slides283.png)
-
-![](imgs/slides284.png)
-
-![](imgs/slides285.png)
-
-![](imgs/slides286.png)
-
-![](imgs/slides287.png)
+# AWS EMR
 
 The central component of Amazon EMR is the **cluster**
 
@@ -333,6 +191,8 @@ The **node type ** identifies the role within the cluster
   * Task nodes are optional
   * Decoupling processing and storage, we lose data locality
 
+# AWS EMR
+
 On-Demand Instance
 
 * Pay for compute capacity by the hour (minimum of 60 seconds)
@@ -349,9 +209,7 @@ Spot Instance
 
 [https://aws.amazon.com/ec2/pricing/](https://aws.amazon.com/ec2/pricing/)
 
----
-
-https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#SpotInstances:
+# AWS EMR
 
 Spot Instance cost strategies
 
@@ -367,9 +225,20 @@ Spot Instance cost strategies
 
 # Creating the cluster
 
+:::: {.columns}
+::: {.column width=50%}
+
 ![](imgs/slides288.png)
 
+:::
+::: {.column width=50%}
+
 ![](imgs/slides289.png)
+
+:::
+::::
+
+# Creating the cluster
 
 Choose to launch **master**, **core**, or **task** on Spot Instances
 
@@ -385,7 +254,11 @@ Choose to launch **master**, **core**, or **task** on Spot Instances
 
 [https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances-guidelines.html](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances-guidelines.html)
 
+# Creating the cluster
+
 ![](imgs/slides290.png)
+
+# Creating the cluster
 
 Amazon EMR provides two main file systems
 
@@ -401,48 +274,29 @@ Amazon EMR provides two main file systems
 
 [https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-storage.html](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-storage.html)
 
-Choose the frameworks and applications to install
-
-* Data process
-* Submit jobs or queries directly to installed applications
-* Run steps in the cluster
-
-Submitting jobs
-
-* Connect to the master node over a secure connection
-* Access the interfaces and tools that are available on your cluster
+# Creating the cluster
 
 ![](imgs/slides291.png)
 
+# Creating the cluster
+
 ![](imgs/slides292.png)
+
+# Creating the cluster
 
 ![](imgs/slides293.png)
 
+# Creating the cluster
+
 ![](imgs/slides294.png)
 
-Allows EMR to call other AWS Services such as EC2 on your behalf.
-
-Provides access to other AWS services such as S3, DynamoDB from EC2 instances that are launched by EMR.
+# Creating the cluster
 
 Using CLI (command line interface)
 
-* This is more pragmatic, but there are many options to explore
-* Let’s stick to AWS Console
-* [https://console.aws.amazon.com/elasticmapreduce/](https://console.aws.amazon.com/elasticmapreduce/)
-
-aws emr create-cluster \\
-
-* --name * *"My First EMR Cluster" * * \\
-* --release-label * *emr-5.32.0 * * \\
-* --applications Name=Spark \\
-* --ec2-attributes KeyName= * *myEMRKeyPairName * * \\
-* --instance-type m5.xlarge \\
-* --instance-count 3 \\
-* --use-default-roles
-
-Using CLI (command line interface)
-
-aws emr create-cluster --auto-scaling-role EMR*AutoScaling*DefaultRole --termination-protected --applications Name=Hadoop Name=Hive Name=Hue Name=JupyterEnterpriseGateway Name=Spark --ebs-root-volume-size 10 --ec2-attributes '{"KeyName":"bigdata","InstanceProfile":"EMR*EC2*DefaultRole","SubnetId":"subnet-5fa2f912","EmrManagedSlaveSecurityGroup":"sg-07818b5690a50b3f1","EmrManagedMasterSecurityGroup":"sg-0e2f5550a2cb98f79"}' --service-role EMR*DefaultRole --enable-debugging --release-label emr-6.2.0 --log-uri 's3n://aws-logs-604905954159-us-east-1/elasticmapreduce/' --name 'BigData' --instance-groups '[{"InstanceCount":1,"BidPrice":"OnDemandPrice","EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"MASTER","InstanceType":"m4.xlarge","Name":"Master - 1"},{"InstanceCount":1,"BidPrice":"OnDemandPrice","EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"CORE","InstanceType":"m4.xlarge","Name":"Core - 2"}]' --scale-down-behavior TERMINATE*AT*TASK*COMPLETION --region us-east-1
+```bash
+aws emr create-cluster --auto-scaling-role EMR_AutoScaling_DefaultRole --termination-protected --applications Name=Hadoop Name=Hive Name=Hue Name=JupyterEnterpriseGateway Name=Spark --ebs-root-volume-size 10 --ec2-attributes '{"KeyName":"bigdata","InstanceProfile":"EMR_EC2_DefaultRole","SubnetId":"subnet-5fa2f912","EmrManagedSlaveSecurityGroup":"sg-07818b5690a50b3f1","EmrManagedMasterSecurityGroup":"sg-0e2f5550a2cb98f79"}' --service-role EMR_DefaultRole --enable-debugging --release-label emr-6.2.0 --log-uri 's3n://aws-logs-604905954159-us-east-1/elasticmapreduce/' --name 'BigData' --instance-groups '[{"InstanceCount":1,"BidPrice":"OnDemandPrice","EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"MASTER","InstanceType":"m4.xlarge","Name":"Master - 1"},{"InstanceCount":1,"BidPrice":"OnDemandPrice","EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"CORE","InstanceType":"m4.xlarge","Name":"Core - 2"}]' --scale-down-behavior TERMINATE_AT_TASK_COMPLETION --region us-east-1
+```
 
 # Cluster lifecycle
 
