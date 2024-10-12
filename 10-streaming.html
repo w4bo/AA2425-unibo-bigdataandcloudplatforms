@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="slides_files/libs/quarto-html/tabby.min.js"></script>
-<script src="slides_files/libs/quarto-html/popper.min.js"></script>
-<script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="10-streaming_files/libs/quarto-html/tabby.min.js"></script>
+<script src="10-streaming_files/libs/quarto-html/popper.min.js"></script>
+<script src="10-streaming_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="10-streaming_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="10-streaming_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="10-streaming_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="10-streaming_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
@@ -14,8 +14,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="10-streaming_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="10-streaming_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,11 +29,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="10-streaming_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="10-streaming_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="10-streaming_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="10-streaming_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="10-streaming_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -326,6 +326,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Big Data and Cloud Platforms (Module 2)</h1>
+  <p class="subtitle">Data pipelines on cloud (Streaming)</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -336,34 +337,15 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 
 </section>
-<section id="newsection" class="title-slide slide level1 center">
-<h1>– newsection –</h1>
-
-</section>
-
-<section id="data-pipelines-on-cloud-streaming" class="title-slide slide level1 center">
-<h1>Data pipelines on cloud (Streaming)</h1>
-
-</section>
-
 <section id="section" class="title-slide slide level1 center">
 <h1></h1>
-<p>Supporting services</p>
-<p>Serve (deciding)</p>
-<p>BI tools (e.g., Tableau)</p>
-<p>Analytics (analyzing)</p>
-<p>Networking, etc.</p>
-<p>Machine learning</p>
-<p>Ingestion (acquiring)</p>
-</section>
 
-<section id="reference-scenario-batch-vs-stream" class="title-slide slide level1 center">
-<h1>Reference scenario: batch vs stream</h1>
-
-</section>
+<img data-src="imgs/357.svg" class="r-stretch"></section>
 
 <section id="batch-vs.-streaming-systems" class="title-slide slide level1 center">
 <h1>Batch vs.&nbsp;Streaming systems</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p>What is a bulk processing system?</p>
 <ul>
 <li>High latency</li>
@@ -373,6 +355,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>… is this true?</li>
 </ul></li>
 </ul>
+</div><div class="column" style="width:50%;">
 <p>What is a streaming system?</p>
 <ul>
 <li>Low latency</li>
@@ -385,56 +368,27 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>… is this true?</li>
 </ul></li>
 </ul>
+</div>
+</div>
+</section>
+
+<section id="batch-vs.-streaming-systems-1" class="title-slide slide level1 center">
+<h1>Batch vs.&nbsp;Streaming systems</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p>What is a bulk processing system?</p>
 <ul>
 <li>An engine capable to handle processing on <strong>bounded</strong> datasets</li>
 </ul>
+</div><div class="column" style="width:50%;">
 <p>What is a streaming system?</p>
 <ul>
 <li>An engine capable to handle processing on <strong>unbounded</strong> datasets</li>
 <li>Streaming is a superset of batch processing</li>
 </ul>
+</div>
+</div>
 <p>Akidau, Tyler, Slava Chernyak, and Reuven Lax. <em>Streaming systems: the what, where, when, and how of large-scale data processing</em> . ” O’Reilly Media, Inc.”, 2018.</p>
-</section>
-
-<section id="reference-scenario-batch-vs-stream-1" class="title-slide slide level1 center">
-<h1>Reference scenario: batch vs stream</h1>
-<table>
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Batch data processing</th>
-<th style="text-align: center;">Stream data processing</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Data scope</td>
-<td style="text-align: center;">Queries or processing over all or most of the data in the dataset</td>
-<td style="text-align: center;">Queries or processing over data within a rolling time window, or on just the most recent data record</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Data size</td>
-<td style="text-align: center;">Large batches of data</td>
-<td style="text-align: center;">Individual records or micro batches consisting of a few records</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Latency</td>
-<td style="text-align: center;">Minutes to hours</td>
-<td style="text-align: center;">Seconds or milliseconds</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Analysis</td>
-<td style="text-align: center;">Complex analytics</td>
-<td style="text-align: center;">Simple response functions, aggregates, and rolling metrics</td>
-</tr>
-</tbody>
-</table>
 </section>
 
 <section id="ingestion-batch" class="title-slide slide level1 center">
@@ -449,6 +403,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li><em>80000GB</em> / (<em>1Gbps / 8</em>) / <em>60 / 60 / 24 </em> ~= a week without internet</li>
 </ul>
+</section>
+
+<section id="ingestion-batch-1" class="title-slide slide level1 center">
+<h1>Ingestion: batch</h1>
 <p>Batch/Bulk: move data from on-premises storage</p>
 <ul>
 <li>Workflow</li>
@@ -461,6 +419,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="ingestion-batch-aws" class="title-slide slide level1 center">
 <h1>Ingestion: batch (AWS)</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>AWS Snowball</p>
 <ul>
 <li>50TB (North America only) and 80TB versions</li>
@@ -471,37 +431,61 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>1 Gbps or 10 Gbps using an RJ-45 connection</li>
 <li>10 Gbps using a fiber optic connection</li>
 </ul>
+</div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides354.png"></p>
-<p><a href="https://aws.amazon.com/snowball/">https://aws.amazon.com/snowball/</a></p>
-<p><img data-src="imgs/slides355.png"></p>
+</div>
+</div>
+</section>
+
+<section id="ingestion-batch-aws-1" class="title-slide slide level1 center">
+<h1>Ingestion: batch (AWS)</h1>
+<p>What if we have exabyte of data?</p>
+<p>Value Metric</p>
+<ul>
+<li><span class="math inline">\(10^3\)</span> KB (kilobyte)</li>
+<li><span class="math inline">\(10^6\)</span> MB (megabyte)</li>
+<li><span class="math inline">\(10^9\)</span> GB (gigabyte)</li>
+<li><span class="math inline">\(10^12\)</span> TB (terabyte)</li>
+<li><span class="math inline">\(10^15\)</span> PB (petabyte)</li>
+<li><span class="math inline">\(10^18\)</span> EB (exabyte)</li>
+<li><span class="math inline">\(10^21\)</span> ZB (zettabyte)</li>
+<li><span class="math inline">\(10^24\)</span> YB (yottabyte)</li>
+</ul>
+</section>
+
+<section id="ingestion-batch-aws-2" class="title-slide slide level1 center">
+<h1>Ingestion: batch (AWS)</h1>
+
+<img data-src="imgs/slides355.png" class="r-stretch"><p><a href="https://aws.amazon.com/snowball/">https://aws.amazon.com/snowball/</a></p>
 </section>
 
 <section id="aws-snowmobile" class="title-slide slide level1 center">
 <h1>AWS Snowmobile</h1>
-<p>What if we have exabyte of data?</p>
-<p>Value Metric</p>
-<p>103 KB (kilobyte)</p>
-<p>106 MB (megabyte)</p>
-<p>109 GB (gigabyte)</p>
-<p>1012 TB (terabyte)</p>
-<p>1015 PB (petabyte)</p>
-<p>1018 EB (exabyte)</p>
-<p>1021 ZB (zettabyte)</p>
-<p>1024 YB (yottabyte)</p>
 <p><a href="https://youtu.be/8vQmTZTq7nw?t=45">https://youtu.be/8vQmTZTq7nw?t=45</a> (2022-11-14)</p>
 </section>
 
 <section id="ingestion-stream" class="title-slide slide level1 center">
 <h1>Ingestion: stream</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <ul>
 <li>Data (often) flows in both directions, storage systems are both sources and destinations for data transformations</li>
 <li>Two pipelines per application (data in/out)
 <ul>
-<li>Worst case (full connectivity): O(N2)</li>
+<li>Worst case (full connectivity): <span class="math inline">\(O(N^2)\)</span></li>
 </ul></li>
 </ul>
+</div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides356.png"></p>
+</div>
+</div>
 <p>Kreps, Jay. <em>I heart logs: Event data, stream processing, and data integration</em> . ” O’Reilly Media, Inc.”, 2014.</p>
+</section>
+
+<section id="ingestion-stream-1" class="title-slide slide level1 center">
+<h1>Ingestion: stream</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p><strong>Stream</strong>: real-time streaming data</p>
 <ul>
 <li><strong>Event</strong>: anything that we can observe occurring at a particular point in time</li>
@@ -517,8 +501,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><em>Receivers</em> subscribe to specific topics, receive all messages with that topic</li>
 <li><em>Messages</em> are events</li>
 </ul>
+</div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides357.jpg"></p>
+</div>
+</div>
 <p><a href="https://www.manning.com/books/event-streams-in-action">https://www.manning.com/books/event-streams-in-action</a></p>
+</section>
+
+<section id="ingestion-stream-2" class="title-slide slide level1 center">
+<h1>Ingestion: stream</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>Log</p>
 <ul>
 <li>Append-only data structure</li>
@@ -528,8 +521,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 </ul>
 <p>The log acts as a messaging system with durability guarantees and ordering semantics</p>
+</div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides358.png"></p>
+</div>
+</div>
 <p>Kreps, Jay. <em>I heart logs: Event data, stream processing, and data integration</em> . ” O’Reilly Media, Inc.”, 2014.</p>
+</section>
+
+<section id="ingestion-stream-3" class="title-slide slide level1 center">
+<h1>Ingestion: stream</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>General idea:</p>
 <ul>
 <li>Collect events from many source systems</li>
@@ -540,7 +542,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li><em>Unified</em>, <em>append-only</em>, <em>ordered</em>, <em>distributed</em> log that allows the centralization of event streams</li>
 </ul>
+</div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides359.jpg"></p>
+</div>
+</div>
+</section>
+
+<section id="ingestion-stream-4" class="title-slide slide level1 center">
+<h1>Ingestion: stream</h1>
 <p><strong>Unified</strong>: a single log in a company with applications sending/reading events</p>
 <ul>
 <li>Log serves as central data backbone
@@ -560,6 +569,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>E.g., automatically remove events after 7 days</li>
 </ul></li>
 </ul>
+</section>
+
+<section id="ingestion-stream-5" class="title-slide slide level1 center">
+<h1>Ingestion: stream</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p><strong>Distributed</strong>: the unified log lives across a cluster of machines</p>
 <ul>
 <li>Optionally divide events into shards (i.e., partitions)Still, the log is unified since we have a single (conceptual) log</li>
@@ -570,14 +585,32 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Durability: replicate all events within the cluster to overcome data loss</li>
 <li>Using a log as a universal integration mechanism is never going to be more than an elegant fantasy if we can’t build a log that is fast, cheap, and scalable</li>
 </ul>
+</div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides360.jpg"></p>
+</div>
+</div>
+</section>
+
+<section id="ingestion-stream-6" class="title-slide slide level1 center">
+<h1>Ingestion: stream</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p><strong>Ordered</strong>: events in a shard have a sequential IDs (unique in a shard)</p>
 <ul>
 <li>Local ordering keeps things much simpler than global ordering</li>
 <li>Applications maintain their own cursor for each shard</li>
 </ul>
+</div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides361.jpg"></p>
+</div>
+</div>
 <p>Lamport, Leslie. “Time, clocks, and the ordering of events in a distributed system.” <em>Concurrency: the Works of Leslie </em> <em>Lamport</em> . 2019. 179-196.</p>
+</section>
+
+<section id="ingestion-stream-7" class="title-slide slide level1 center">
+<h1>Ingestion: stream</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>Two types of processing</p>
 <ul>
 <li><strong>Single-event:</strong> a single event produces zero or more events
@@ -593,27 +626,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Reordering events based on a sort key</li>
 </ul></li>
 </ul>
+</div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides362.png"></p>
-<p>Why not communicating directly using messaging protocols?</p>
-<ul>
-<li>A log enables</li>
-<li>Multi-subscriber: each data item is available to any processor that wants it</li>
-<li>Order: maintained in the processing done by each consumer of data</li>
-<li>Buffering and isolation to the individual processes
-<ul>
-<li>E.g., a that processor produces faster than its downstream consumer can keep up</li>
-</ul></li>
-<li>Reprocessing, maintaining state, etc.</li>
-</ul>
-<p>Indeed, logs are common:</p>
-<ul>
-<li>MapReduce workflows use files to checkpoint and share their intermediate results</li>
-<li>SQL processing pipelines create intermediate or temporary tables</li>
-</ul>
+</div>
+</div>
 </section>
 
 <section id="ingestion-stream-aws" class="title-slide slide level1 center">
 <h1>Ingestion: stream (AWS)</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>Amazon Kinesis Data Streams</p>
 <ul>
 <li>Created and provisioned by shard
@@ -633,8 +655,15 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 <li>Records are retained for 7 days at maximum</li>
 </ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="imgs/slides363.png"></p>
+</div>
+</div>
+<p><a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html</a></p>
+</section>
 
-<img data-src="imgs/slides363.png" class="r-stretch"><p><a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html</a></p>
+<section id="ingestion-stream-aws-1" class="title-slide slide level1 center">
+<h1>Ingestion: stream (AWS)</h1>
 <p>Re-sharding (i.e., scaling)</p>
 <ul>
 <li>Split a shard into two, or merge two shards</li>
@@ -653,10 +682,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Priced by shard hour, data volume, and data retention period</li>
 <li>Pay for resources you provision (even if not used)</li>
 </ul>
-<p><a href="https://aws.amazon.com/cloudwatch/">https://aws.amazon.com/cloudwatch/</a><a href="https://aws.amazon.com/kinesis/data-firehose">https://aws.amazon.com/kinesis/data-firehose</a></p>
+<p><a href="https://aws.amazon.com/cloudwatch/">https://aws.amazon.com/cloudwatch/</a></p>
+<p><a href="https://aws.amazon.com/kinesis/data-firehose">https://aws.amazon.com/kinesis/data-firehose</a></p>
 </section>
 
-<section id="ingestion-stream-1" class="title-slide slide level1 center">
+<section id="ingestion-stream-8" class="title-slide slide level1 center">
 <h1>Ingestion: stream</h1>
 <table>
 <colgroup>
@@ -713,17 +743,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
-<p>Supporting services</p>
-<p>Serve (deciding)</p>
-<p>BI tools (e.g., Tableau)</p>
-<p>Analytics (analyzing)</p>
-<p>Networking, etc.</p>
-<p>Machine learning</p>
-<p>Ingestion (acquiring)</p>
-</section>
+
+<img data-src="imgs/379.svg" class="r-stretch"></section>
 
 <section id="serverless-computingprocessing" class="title-slide slide level1 center">
 <h1>Serverless computing/processing</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>AWS Lambda: compose code functions in a loose orchestration</p>
 <ul>
 <li>Build modular back-end systems</li>
@@ -737,11 +763,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Provisioning capacity, monitoring fleet health, applying security patches, etc.</li>
 </ul></li>
 </ul>
-
-<img data-src="imgs/slides364.png" class="r-stretch"></section>
+</div><div class="column" style="width:40%;">
+<p><img data-src="imgs/slides364.png"></p>
+</div>
+</div>
+</section>
 
 <section id="serverless-computing-aws-lambda" class="title-slide slide level1 center">
 <h1>Serverless computing (AWS Lambda)</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>AWS Lambda</p>
 <ul>
 <li>A Lambda function is a granular service</li>
@@ -756,8 +787,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 <li>Invocation supports push/pull events</li>
 </ul>
-
-<img data-src="imgs/slides365.png" class="r-stretch"></section>
+</div><div class="column" style="width:40%;">
+<p><img data-src="imgs/slides365.png"></p>
+</div>
+</div>
+</section>
 
 <section id="serverless-computing-faas" class="title-slide slide level1 center">
 <h1>Serverless computing (FaaS)</h1>
@@ -780,6 +814,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="patterns-for-data-pipelines" class="title-slide slide level1 center">
 <h1>Patterns for data pipelines</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>Patterns are architectural solutions to problems in software design</p>
 <ul>
 <li>A (design) pattern is a general, best-practice reusable solution to a commonly occurring problem within a given context in software design</li>
@@ -792,12 +828,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Priority queue pattern</li>
 <li>Pipes and filters pattern</li>
 </ul>
-
-<img data-src="imgs/slides366.jpg" class="r-stretch"><p><a href="https://www.manning.com/books/aws-lambda-in-action">https://www.manning.com/books/aws-lambda-in-action</a></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="imgs/slides366.jpg"></p>
+</div>
+</div>
+<p><a href="https://www.manning.com/books/aws-lambda-in-action">https://www.manning.com/books/aws-lambda-in-action</a></p>
 </section>
 
 <section id="command-pattern" class="title-slide slide level1 center">
 <h1>Command pattern</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>Command pattern</p>
 <ul>
 <li>A behavioral design pattern in which an object is used to encapsulate the information needed to perform an action or trigger an event</li>
@@ -805,23 +846,34 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Encapsulate a request as an object</p>
 <ul>
 <li>Issue requests to objects without knowing anything about the operation being requested or the receiver</li>
+<li></li>
 </ul>
-
-<img data-src="imgs/slides367.png" class="r-stretch"><p><a href="https://aws.amazon.com/api-gateway">https://aws.amazon.com/api-gateway</a></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="imgs/slides367.png"></p>
+</div>
+</div>
+<p><a href="https://aws.amazon.com/api-gateway">https://aws.amazon.com/api-gateway</a></p>
 </section>
 
 <section id="pipes-and-filters-pattern" class="title-slide slide level1 center">
 <h1>Pipes and filters pattern</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>Decompose a complex processing task into a sequence of manageable services</p>
 <ul>
 <li>Components designed to transform data are referred to as filters</li>
 <li>Connectors that pass data between components are referred to as pipes</li>
 </ul>
-
-<img data-src="imgs/slides368.png" class="r-stretch"></section>
+</div><div class="column" style="width:40%;">
+<p><img data-src="imgs/slides368.png"></p>
+</div>
+</div>
+</section>
 
 <section id="messaging-pattern" class="title-slide slide level1 center">
 <h1>Messaging pattern</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>Messaging pattern</p>
 <ul>
 <li>Describes how two different parts of a message passing system connect and communicate with each other</li>
@@ -831,11 +883,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Reliability: if the consuming service goes offline, messages are retained in the queue and can still be processed</li>
 <li>A message queue can have a single sender/receiver or multiple senders/receivers</li>
 </ul>
-
-<img data-src="imgs/slides369.png" class="r-stretch"></section>
+</div><div class="column" style="width:40%;">
+<p><img data-src="imgs/slides369.png"></p>
+</div>
+</div>
+</section>
 
 <section id="priority-queue-pattern" class="title-slide slide level1 center">
 <h1>Priority queue pattern</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p>Decouple and prioritize requests sent to services</p>
 <ul>
 <li>Requests with a higher priority are received and processed more quickly than those with a lower priority</li>
@@ -846,529 +903,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Different queues, topics, or streams to feed messages to your functions</li>
 <li>High-priority messages go through expensive services with more capacity</li>
 </ul>
-
-<img data-src="imgs/slides370.png" class="r-stretch"></section>
+</div><div class="column" style="width:40%;">
+<p><img data-src="imgs/slides370.png"></p>
+</div>
+</div>
+</section>
 
 <section id="thats-all-folks" class="title-slide slide level1 center">
 <h1>That’s all, folks!</h1>
-
-</section>
-
-<section id="feedbacks" class="title-slide slide level1 center">
-<h1>Feedbacks?</h1>
-
-</section>
-
-<section id="exams" class="title-slide slide level1 center">
-<h1>Exams</h1>
-
-</section>
-
-<section id="newsection-1" class="title-slide slide level1 center">
-<h1>– newsection –</h1>
-
-</section>
-
-<section id="hands-on-aws" class="title-slide slide level1 center">
-<h1>Hands on AWS</h1>
-
-</section>
-
-<section id="a-tentative-organization" class="title-slide slide level1 center">
-<h1>A tentative organization</h1>
-<p>Supporting services</p>
-<p>Serve (deciding)</p>
-<p>BI tools (e.g., Tableau)</p>
-<p>Analytics (analyzing)</p>
-<p>Networking, etc.</p>
-<p>Machine learning</p>
-<p>Ingestion (acquiring)</p>
-</section>
-
-<section id="identity-and-access-management" class="title-slide slide level1 center">
-<h1>Identity and Access Management</h1>
-<p>Identity and Access Management (IAM)</p>
-<ul>
-<li>Web service that controls fine-grained access to AWS resources</li>
-<li>IAM controls who is authenticated and authorized to use resources</li>
-</ul>
-<p>IAM user</p>
-<ul>
-<li>Unique identity recognized by AWS services and applications</li>
-<li>Similar to user in an operating system like Windows or UNIX</li>
-</ul>
-<p>IAM role</p>
-<ul>
-<li>Set of policies for making AWS service requests</li>
-<li>Trusted entities (e.g., such as IAM users) assume roles
-<ul>
-<li>Delegate access with defined permissions to trusted entities</li>
-<li>There is no limit to the number of IAM roles a user can assume</li>
-</ul></li>
-</ul>
-<p>User vs role</p>
-<ul>
-<li>User has permanent long-term credentials and is used to directly interact with AWS services</li>
-<li>Role does not have credentials and cannot make direct requests to AWS services</li>
-<li>Roles are assumed by authorized entities, such as IAM users</li>
-</ul>
-<p>Alice (i.e., an IAM user) is a firewoman</p>
-<ul>
-<li>She is the same person with or without her turnout gear</li>
-<li>As a firewoman (i.e., a role)
-<ul>
-<li>If she speeds to a house fire and passes a police officer, he isn’t going to give her a ticket</li>
-<li>In her role as a <em>firewoman</em>, she is allowed to speed to the house fire</li>
-</ul></li>
-<li>As a private citizen (i.e., another role)
-<ul>
-<li>When she is off duty, if she speeds past that same police officer, he’s going to give her a ticket</li>
-<li>In her role as a <em>private citizen</em>, she is not allowed to speed</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="aws" class="title-slide slide level1 center">
-<h1>AWS</h1>
-<p>Amazon Web Services (AWS) is a public-cloud platform</p>
-<ul>
-<li>Services can be accessed in multiple ways</li>
-<li>Web GUI: intuitive point and click access without any programming
-<ul>
-<li>Intuitive interfaces is part of the attraction of cloud services</li>
-<li>Tedious if the same actions must be performed repeatedly</li>
-</ul></li>
-<li>(REST) Application programming interface (API)
-<ul>
-<li>Permits requests to be transmitted via Hypertext Transfer Protocol (HTTPS)</li>
-</ul></li>
-<li>Software development kits (SDKs) that you install on your computer
-<ul>
-<li>Access from programming languages such as Python, Java, etc.</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="aws-web-console" class="title-slide slide level1 center">
-<h1>AWS Web console</h1>
-<p>We use the AWS Educate program</p>
-<ul>
-<li>Login with the provided account</li>
-<li>You got 150$ to work on AWS services</li>
-<li>Provisioned services charge even if not used</li>
-</ul>
-<p><img data-src="imgs/slides371.png"></p>
-<p><a href="https://www.awseducate.com/signin/SiteLogin">https://www.awseducate.com/signin/SiteLogin</a></p>
-<p><img data-src="imgs/slides372.png"></p>
-</section>
-
-<section>
-<section id="aws-cli" class="title-slide slide level1 center">
-<h1>AWS CLI</h1>
-<p>CLI interface</p>
-<ul>
-<li>Necessary to install the CLI (version 2)</li>
-<li>See <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html</a></li>
-</ul>
-<p>Synopsis</p>
-</section>
-<section class="slide level2">
-
-<p>aws [options] &lt;command&gt; &lt;subcommand&gt; [parameters]</p>
-<p>Description</p>
-</section>
-<section class="slide level2">
-
-<p>A unified tool to manage your AWS services.</p>
-<p><a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html">https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html</a></p>
-<p><img data-src="imgs/slides373.png"></p>
-<p>CLI needs credentials to work</p>
-<ul>
-<li>Go back to AWS Educate</li>
-<li>Click on “Account Details”</li>
-<li>Copy the content into the file ~/.aws/credentials</li>
-<li>Henceforth, we assume that you have set up the credentials file</li>
-<li>Credentials expire after some time; you need a manually refresh</li>
-</ul>
-<p><img data-src="imgs/slides374.png"></p>
-<p>Run <code>aws configure</code></p>
-<ul>
-<li>Confirm AWS Access Key ID (press enter)</li>
-<li>Confirm AWS Secret Access Key (press enter)</li>
-<li>Set Default region name to <code>us-east-1</code></li>
-<li>Set Default output format to <code>json</code></li>
-</ul>
-<p>It is also possible to configure an AWS profile</p>
-<ul>
-<li>A (named) profile is a collection of settings and credentials</li>
-<li>If profile is specified, its settings and credentials are used to run a command</li>
-<li>When no profile is explicitly referenced, use <code>default</code>
-<ul>
-<li>We stick to <code>default</code></li>
-</ul></li>
-</ul>
-</section></section>
-<section id="object-storage-s3" class="title-slide slide level1 center">
-<h1>Object storage: S3</h1>
-<p>Create S3 bucket, the following rules apply for naming buckets</p>
-<ul>
-<li>Must be between 3 and 63 characters long</li>
-<li>Can consist only of lowercase letters, numbers, dots (.), and hyphens (-)</li>
-<li>Must be unique within a partition (i.e., a group of regions)</li>
-</ul>
-<p>$ git clone <a href="https://github.com/w4bo/bigdata-aws/">https://github.com/w4bo/bigdata-aws/</a></p>
-<p>$ cd bigdata-aws/lab01-lambda</p>
-<p>$ aws s3api create-bucket –bucket aws-bucket-bigdata2021</p>
-<p>$ aws s3 cp datasets/inferno.txt s3://aws-bucket-bigdata2021/inferno.txt</p>
-<p>$ aws s3api list-objects –bucket aws-bucket-bigdata2021</p>
-<p><a href="https://s3.console.aws.amazon.com/s3/home?region=us-east-1">https://s3.console.aws.amazon.com/s3/home?region=us-east-1#</a></p>
-</section>
-
-<section id="newsection-2" class="title-slide slide level1 center">
-<h1>– newsection –</h1>
-
-</section>
-
-<section id="data-pipelines-on-aws-lambda" class="title-slide slide level1 center">
-<h1>Data pipelines on AWS Lambda</h1>
-
-</section>
-
-<section id="requirements" class="title-slide slide level1 center">
-<h1>Requirements</h1>
-<p>To start this lecture, you need to</p>
-<ul>
-<li>Activate your AWS Educate account</li>
-<li>Either
-<ul>
-<li>Install the necessary software
-<ul>
-<li>git</li>
-<li>IntelliJ IDEA (with AWS Toolkit and Scala plugins)</li>
-<li>python</li>
-<li>java 1.8</li>
-<li>Docker</li>
-<li>AWS CLI, AWS SAM CLI</li>
-</ul></li>
-<li>Be able to download and run the VM</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="aws-sam-cli" class="title-slide slide level1 center">
-<h1>AWS SAM CLI</h1>
-<p>Serverless Application Model is a framework to build serverless applications</p>
-<ul>
-<li>A serverless application is a combination of Lambda functions, event sources, etc.</li>
-<li>Install AWS SAM CLI (on Linux)</li>
-</ul>
-<p>sudo group add docker</p>
-<p>sudo usermod –aG docker $USER</p>
-<p>newgrp docker</p>
-<p>sudo chmod 666 /var/run/docker.sock</p>
-<p>wget <a href="https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86*64.zip">https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86*64.zip</a></p>
-<p>unzip aws-sam-cli-linux-x86*64.zip -d sam-installation</p>
-<p>sudo ./sam-installation/install</p>
-<p>sam –version</p>
-<p><a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html">https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html</a></p>
-</section>
-
-<section id="aws-services" class="title-slide slide level1 center">
-<h1>AWS services</h1>
-<p>AWS Educate (and AWS console)</p>
-<ul>
-<li><a href="https://aws.amazon.com/it/education/awseducate/">https://aws.amazon.com/it/education/awseducate/</a></li>
-<li><a href="https://console.aws.amazon.com/console/home?region=us-east-1">https://console.aws.amazon.com/console/home?region=us-east-1</a></li>
-</ul>
-<p>IAM (authentication)</p>
-<ul>
-<li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/iam-ug.pdf">https://docs.aws.amazon.com/IAM/latest/UserGuide/iam-ug.pdf</a></li>
-</ul>
-<p>SDK (software API)</p>
-<ul>
-<li><a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html">https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html</a></li>
-</ul>
-<p>Lambda (serverless computing and processing)</p>
-<ul>
-<li><a href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html">https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html</a></li>
-<li><a href="https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions">https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions</a></li>
-</ul>
-<p>DynamoDB (key-value database)</p>
-<ul>
-<li><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction</a></li>
-</ul>
-<p>S3 (object storage)</p>
-<ul>
-<li><a href="https://s3.console.aws.amazon.com/s3/home?region=us-east-1">https://s3.console.aws.amazon.com/s3/home?region=us-east-1</a></li>
-</ul>
-</section>
-
-<section id="case-study" class="title-slide slide level1 center">
-<h1>Case study</h1>
-<p>Given a dataset of sales per customer</p>
-<p>find the products frequently bought together</p>
-<p>Dataset sample</p>
-<p>%%%%%%%%%%%%%%</p>
-<p>[ { customerName: Alice, products: [Pizza, Beer, Diaper] },</p>
-<p>{ customerName: Bob, products: [Pizza, Beer, Diaper] },</p>
-<p>{ customerName: Charlie, products: [Pizza, Cola] } ]</p>
-<p>The pipeline involves a single transformation</p>
-<ul>
-<li>A classic mining problem, which one?</li>
-</ul>
-</section>
-
-<section id="frequent-itemset-mining" class="title-slide slide level1 center">
-<h1>Frequent itemset mining</h1>
-<p>Dataset sample</p>
-<p>%%%%%%%%%%%%%%</p>
-<p>[[Pizza, Beer, Diaper],</p>
-<p>[Pizza, Beer, Diaper],</p>
-<p>[Pizza, Cola]]</p>
-<p>Find sets of items (i.e., itemsets) frequently appearing together</p>
-<ul>
-<li><strong>Item</strong>: a product</li>
-<li><strong>Itemset</strong>: a set of products</li>
-<li><strong>Frequently</strong>: support above threshold</li>
-<li><strong>Support</strong>: number of clients buying a set of products</li>
-</ul>
-<p>Complexity: O(2|items|)</p>
-<p>{Pizza,Diaper,Beer}</p>
-</section>
-
-<section id="case-study-1" class="title-slide slide level1 center">
-<h1>Case study</h1>
-<p>Processed dataset sample</p>
-<p>%%%%%%%%%%%%%%</p>
-<p>[[Pizza, Beer, Diaper],</p>
-<p>[Pizza, Beer, Diaper],</p>
-<p>[Pizza, Cola]]</p>
-<p>Raw dataset sample</p>
-<p>%%%%%%%%%%%%%%</p>
-<p>[ { customerName: Alice, products: [Pizza, Beer, Diaper] },</p>
-<p>{ customerName: Bob, products: [Pizza, Beer, Diaper] },</p>
-<p>{ customerName: Charlie, products: [Pizza, Cola] } ]</p>
-</section>
-
-<section id="reference-pipeline" class="title-slide slide level1 center">
-<h1>Reference pipeline</h1>
-<p><img data-src="imgs/slides375.png"></p>
-<p><img data-src="imgs/slides376.png"></p>
-</section>
-
-<section id="nosql-storage-dynamodb" class="title-slide slide level1 center">
-<h1>NOSQL storage: DynamoDB</h1>
-<p>Basic DynamoDB components: tables and items</p>
-<ul>
-<li><strong>Tables</strong>, collection of (data) items</li>
-</ul>
-<p><strong>Items</strong>, a group of attributes that is uniquely identifiable</p>
-<ul>
-<li>Each table contains zero or more items
-<ul>
-<li>No limit to the number of items you can store in a table</li>
-</ul></li>
-<li>Each item in the table has a unique identifier, or primary key</li>
-<li>E.g., in the table <code>people</code>, each item represents a <code>person</code>
-<ul>
-<li>The primary key consists of one attribute (<code>fiscalCode</code>)</li>
-</ul></li>
-</ul>
-<p>Attributes</p>
-<ul>
-<li>A data element that is not broken down any further
-<ul>
-<li>E.g., an item in the <code>people</code> table contains attributes <code>fiscalCode</code> and <code>lastName</code></li>
-</ul></li>
-<li>Most of the attributes are scalar (have only one value)</li>
-<li>Some of the items have a nested attribute (<code>address</code>) up to 32 levels deep</li>
-</ul>
-<p>Schemaless</p>
-<ul>
-<li>Other than the primary key, a table is schemaless
-<ul>
-<li>Neither the attributes nor their data types need to be defined beforehand</li>
-<li>Each item can have its own distinct attributes</li>
-</ul></li>
-</ul>
-<p>Primary Key</p>
-<ul>
-<li>To create a table, you must specify the primary key of the table</li>
-<li>No two items can have the same key</li>
-</ul>
-<p>Two types of primary keys</p>
-<ul>
-<li>Partition key: a simple primary key composed of one attribute (partition key)
-<ul>
-<li>Keys are inputs to an internal hash function</li>
-<li>The hash function determines the physical partition in which the item will be stored</li>
-<li>E.g., access any item in the <code>people</code> table directly by providing the <code>fiscalCode</code></li>
-</ul></li>
-<li>Composite primary key: partition key and sort key (two attributes)
-<ul>
-<li>First attribute is the partition key</li>
-<li>Second attribute is the sort key</li>
-<li>Items in same partition key value are stored together and sorted by sort key</li>
-</ul></li>
-</ul>
-
-<img data-src="imgs/slides377.png" class="r-stretch"><p><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-gsi-overloading.html">https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-gsi-overloading.html</a></p>
-<p>Secondary Indexes</p>
-<ul>
-<li>One or more secondary indexes per table</li>
-<li>Indexes are automatically maintained on add, update, or delete</li>
-<li>Query data using an alternate key (additionally to queries against primary key)</li>
-</ul>
-<p>Two types of indexes</p>
-<ul>
-<li>Global secondary has partition and sort keys different from those on table</li>
-<li>Local secondary has the same partition key but a different sort key</li>
-<li>Each table has a limited quota of 20 global and 5 local indexes</li>
-</ul>
-<p>How do we shape the schema?</p>
-<ul>
-<li><a href="https://cloud.google.com/bigtable/docs/schema-design">https://cloud.google.com/bigtable/docs/schema-design</a></li>
-</ul>
-<p>Create a table <code>frequent-sales</code> with a composite key</p>
-<ul>
-<li><code>dataset</code>: String</li>
-<li><code>timestamp</code>: String</li>
-</ul>
-<p>$ aws dynamodb create-table \</p>
-<p>–table-name frequent-sales \</p>
-<p>–attribute-definitions AttributeName=dataset,AttributeType=S AttributeName=timestamp,AttributeType=S \</p>
-<p>–key-schema AttributeName=dataset,KeyType=HASH AttributeName=timestamp,KeyType=RANGE \</p>
-<p>–provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1</p>
-<p>$ aws dynamodb list-tables</p>
-<p>$ aws dynamodb delete-table –table-name frequent-sales</p>
-<p>Reading data from DynamoDB might not reflect the results of a recent write</p>
-<ul>
-<li>Eventually Consistent Reads (default)</li>
-<li>Response might include stale data</li>
-<li>After short time, the response should return the latest data</li>
-</ul>
-<p>Strongly Consistent Reads</p>
-<ul>
-<li>Response includes the most up-to-date data</li>
-<li>A strongly consistent read might not be available if there is a network delay or outage
-<ul>
-<li>In this case, DynamoDB may return a server error (HTTP 500)</li>
-</ul></li>
-<li>Strongly consistent reads may have higher latency than eventually consistent reads</li>
-<li>Strongly consistent reads are not supported on global secondary indexes</li>
-</ul>
-<p>Provisioned mode: specify the #reads and #writes per second</p>
-<ul>
-<li>You have predictable application traffic or traffic ramps gradually</li>
-<li>You can forecast capacity requirements to control costs</li>
-</ul>
-<p>One read capacity unit</p>
-<ul>
-<li>One strongly consistent read per second, two eventually consistent reads per second</li>
-<li>RCUs also depend on the item size (a read is up to 4 KB in size), if item size is 8 KB
-<ul>
-<li>2 RCUs to sustain one strongly consistent read per second</li>
-<li>1 RCU if you choose eventually consistent reads</li>
-</ul></li>
-</ul>
-<p>One write capacity unit represents one write per second for an item up to 1 KB in size</p>
-<p>Put a new item and get it back</p>
-<p>$ aws dynamodb put-item –table-name frequent-sales –item ‘{“dataset”: {“S”: “sales”}, “timestamp”: {“S”: “1611226870”}, “bar”: {“S”: “foobar”}}’</p>
-<p>$ aws dynamodb query –table-name frequent-sales –key-condition-expression “dataset =:n” –expression-attribute-values ‘{“:n”:{“S”:“sales”}}’</p>
-</section>
-
-<section id="lambda-create-a-function" class="title-slide slide level1 center">
-<h1>Lambda: create a function</h1>
-
-<img data-src="imgs/slides378.png" class="r-stretch"><p><a href="https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions">https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions</a></p>
-</section>
-
-<section id="lambda-attaching-a-role" class="title-slide slide level1 center">
-<h1>Lambda: attaching a role</h1>
-<p><img data-src="imgs/slides379.png"></p>
-<p><img data-src="imgs/slides380.png"></p>
-<p><img data-src="imgs/slides381.png"></p>
-<p><img data-src="imgs/slides382.png"></p>
-<p><img data-src="imgs/slides383.png"></p>
-</section>
-
-<section id="lambda-create-a-function-1" class="title-slide slide level1 center">
-<h1>Lambda: create a function</h1>
-
-<img data-src="imgs/slides384.png" class="r-stretch"><p><a href="https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions">https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions</a></p>
-<p>Manually creating the functions is cumbersome</p>
-<ul>
-<li>We must copy and paste code</li>
-<li>No automatic testing</li>
-<li>No debugging</li>
-<li>No IDE support (and not all languages are supported)</li>
-</ul>
-<p>Switch to IntelliJ IDEA + AWS Toolkit</p>
-</section>
-
-<section id="aws-toolkit" class="title-slide slide level1 center">
-<h1>AWS Toolkit</h1>
-<ul>
-<li>Get the latest IntelliJ IDEA</li>
-<li>Install the <code>AWS Toolkit</code></li>
-<li>Copy the credentialscp ~/.aws/credentials ~/.aws/config</li>
-<li>Clone the repo git clone <a href="https://github.com/w4bo/bigdata-aws/">https://github.com/w4bo/bigdata-aws/</a></li>
-<li>Import <code>lab01-lambda</code> as a Gradle project</li>
-<li>Verify that the project builds./gradlew</li>
-</ul>
-<p><img data-src="imgs/slides385.png"></p>
-<p>Click on <code>AWS Explorer</code></p>
-<ul>
-<li>You can see the <code>helloworld</code> function</li>
-<li>Plus <code>CloudWatch Logs</code> and <code>S3</code></li>
-</ul>
-<p><img data-src="imgs/slides386.png"></p>
-<p>Test the existing code locally</p>
-<ul>
-<li>With Gradle</li>
-<li>Or with local Lambda execution</li>
-</ul>
-<p>Deploy a new Lambda function from the existing code</p>
-<ul>
-<li>Right click on AWS Explorer &gt; Lambda</li>
-<li>Select <code>Create new AWS Lambda...</code></li>
-<li>Populate the settings</li>
-<li><code>Create the function</code></li>
-</ul>
-<p><img data-src="imgs/slides387.png"></p>
-<p><a href="https://aws.amazon.com/lambda/pricing/">https://aws.amazon.com/lambda/pricing/</a></p>
-<p>Check the log for errors and pricing</p>
-<ul>
-<li>AWS Toolkit &gt; CloudWatch Logs</li>
-<li>Double click on the function name</li>
-<li>Double click on the log entry</li>
-</ul>
-<p><img data-src="imgs/slides388.png"></p>
-<p><img data-src="imgs/slides389.png"></p>
-</section>
-
-<section id="data-pipeline" class="title-slide slide level1 center">
-<h1>Data pipeline</h1>
-<p>Deploy and execute the HelloWorld.java lambda function</p>
-<ul>
-<li>Given the created storage: S3 and DynamoDB</li>
-<li>Deploy the function <code>FIM</code></li>
-<li>Deploy the function <code>Preprocess</code></li>
-<li>Run <code>ReadDataset.java</code></li>
-<li>Check that the table <code>frequent-sales</code> has the FIs for the dataset <code>sales</code></li>
-</ul>
-<p>Some hints</p>
-<ul>
-<li>Function names are case sensitive</li>
-<li>Some function need more than 128MB of memory
-<ul>
-<li>Behold! The higher the RAM, the higher the costs</li>
-</ul></li>
-</ul>
-</section>
-
-<section id="section-2" class="title-slide slide level1 center">
-<h1></h1>
 <p><img data-src="imgs/slides390.png"></p>
 <p><img data-src="imgs/slides391.png"></p>
 <div class="quarto-auto-generated-content">
@@ -1381,19 +923,19 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="slides_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="10-streaming_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="10-streaming_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="10-streaming_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="10-streaming_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="10-streaming_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="10-streaming_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="slides_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="10-streaming_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="10-streaming_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="10-streaming_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="10-streaming_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
