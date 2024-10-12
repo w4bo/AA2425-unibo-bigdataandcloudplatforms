@@ -27,7 +27,7 @@ subtitle: Towards data platforms
 
 # How did we get here?
 
-![](imgs/slides6.png)
+![From descriptive to prescriptive analytics](imgs/slides6.png)
 
 # Data platform
 
@@ -57,12 +57,12 @@ Getting _value_ from data _is not_ (only) a matter of _storage_
 :::: {.columns}
 ::: {.column width=50%}
 
-![](imgs/slides7.png)
+![Google photos](imgs/slides7.png)
 
 :::
 ::: {.column width=50%}
 
-![](imgs/slides8.png)
+![Google photos](imgs/slides8.png)
 
 :::
 ::::
@@ -79,7 +79,7 @@ Getting _value_ from data _is not_ (only) a matter of _storage_
 :::
 ::: {.column width=50%}
 
-![](imgs/20.svg)
+![Relational database](imgs/20.svg)
 
 :::
 ::::
@@ -98,7 +98,7 @@ Getting _value_ from data _is not_ (only) a matter of _storage_
 :::
 ::: {.column width=50%}
 
-![](imgs/21.svg)
+![DWH](imgs/21.svg)
 
 :::
 ::::
@@ -132,7 +132,7 @@ Matteo Golfarelli and Stefano Rizzi.  _Data warehouse design: Modern principles 
 :::
 ::: {.column width=50%}
 
-![](imgs/24.svg)
+![NoSQL](imgs/24.svg)
 
 :::
 ::::
@@ -149,7 +149,7 @@ Matteo Golfarelli and Stefano Rizzi.  _Data warehouse design: Modern principles 
 :::
 ::: {.column width=50%}
 
-![](imgs/slides9.jpg)
+![Data lake](imgs/slides9.jpg)
 
 :::
 ::::
@@ -160,7 +160,7 @@ Couto, Julia, et al. "A Mapping Study about Data Lakes: An Improved Definition a
 
 # Data platform
 
-![](imgs/26.svg)
+![Data lake](imgs/26.svg)
 
 # DWH vs Data Lake?
 
@@ -256,7 +256,7 @@ Astronomers are creating an international Virtual Observatory
 :::
 ::: {.column width=40%}
 
-![](imgs/slides14.jpg)
+![James Webb Space Telescope (2021)](imgs/slides14.jpg)
 
 :::
 ::::
@@ -267,7 +267,7 @@ Mann, Bob. "Some data derivation and provenance issues in astronomy." _Workshop 
 
 # Data provenance
 
-![](imgs/slides15.png)
+![Characteristics of data provenance](imgs/slides15.png)
 
 Simmhan, Yogesh L., Beth Plale, and Dennis Gannon. "A survey of data provenance techniques."  _Computer Science Department, Indiana University, Bloomington IN_ 47405 (2005): 69.
 
@@ -303,7 +303,7 @@ Data provenance, an example of data management
 :::
 ::: {.column width=40%}
 
-![](imgs/slides16.png)
+![Example of PROV](imgs/slides16.png)
 
 :::
 ::::
@@ -328,7 +328,7 @@ _Agent_
 :::
 ::: {.column width=40%}
 
-![](imgs/slides17.png)
+![PROV standard](imgs/slides17.png)
 
 :::
 ::::
@@ -363,7 +363,7 @@ Summarization/compression
 :::
 ::: {.column width=40%}
 
-![](imgs/slides18.png)
+![Characteristics of data summarization](imgs/slides18.png)
 
 :::
 ::::
@@ -373,7 +373,7 @@ Ahmed, Mohiuddin. "Data summarization: a survey."  _Knowledge and Information Sy
 # Data profiling
 
 :::: {.columns}
-::: {.column width=60%}
+::: {.column width=50%}
 
 Data profiling [@naumann2014data]
 
@@ -381,9 +381,9 @@ Data profiling [@naumann2014data]
 * E.g., in a _relational_ scenario, _tables_ of a relational database are _scanned_ to derive _metadata_, such as _data types_, _completeness_ and _uniqueness_ of columns, _keys_ and  _foreign keys_, and occasionally _functional dependencies_ and _association rules_
 
 :::
-::: {.column width=40%}
+::: {.column width=50%}
 
-![](imgs/slides19.png)
+![Characteristics of data profiling](imgs/slides19.png)
 
 :::
 ::::
@@ -411,11 +411,11 @@ Challenges
   * What is the complexity of this task?
 
 :::: {.columns}
-::: {.column width=60%}
+::: {.column width=50%}
 
 Given a table with columns $C = \{w, x, x, y, z\}$
 
-| w | x | y | <> |
+| w | x | y | z |
 |:-: |:-: |:-: |:-: |
 | 1 | 1 | 2 | 2 |
 | 1 | 2 | 1 | 4 |
@@ -423,13 +423,13 @@ Given a table with columns $C = \{w, x, x, y, z\}$
 :::
 ::: {.column width=40%}
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Hasse_diagram_of_powerset_of_3.svg/1280px-Hasse_diagram_of_powerset_of_3.svg.png)
+![Powerset of three columns](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Hasse_diagram_of_powerset_of_3.svg/1280px-Hasse_diagram_of_powerset_of_3.svg.png)
 
 :::
 ::::
 
-- To extract the (distinct) cardinality of each column, I will consider $|C|$ columns $\{(w), (x), (y), (z)\}$
-- To extract the correlations between pairs of columns, I will consider $\binom{|C|}{n}$ groups $\{(w, x), (w, y), (w, z), (x, y), ...\}$
+- To extract the (distinct) cardinality of each column, I will consider $\binom{|C|}{1}=|C|$ columns $\{(w), (x), (y), (z)\}$
+- To extract the correlations between pairs of columns, I will consider $\binom{|C|}{2}$ groups $\{(w, x), (w, y), (w, z), (x, y), ...\}$
 - Extracting the relationships among all possible groups of columns generalizes to $\sum_{n=1}^{|C|}\binom{|C|}{n}=2^{|C|}−1$ groups
 
 # Entity resolution
@@ -445,7 +445,7 @@ Entity resolution
 :::
 ::: {.column width=50%}
 
-![](imgs/slides20.png)
+![Example of entity resolution](imgs/slides20.png)
 
 :::
 ::::
@@ -472,7 +472,7 @@ However, data pipelines are not only about code but also about
 :::
 ::: {.column width=50%}
 
-![](imgs/slides21.png)
+![CRISP-DM](imgs/slides21.png)
 
 :::
 ::::
@@ -486,17 +486,17 @@ For example, on AWS (PUT, GET, DELETE), what about updating?
 :::: {.columns}
 ::: {.column width=33%}
 
-![](imgs/slides22.png)
+![PUT](imgs/slides22.png)
 
 :::
 ::: {.column width=33%}
 
-![](imgs/slides23.png)
+![GET](imgs/slides23.png)
 
 :::
 ::: {.column width=33%}
 
-![](imgs/slides24.png)
+![DELETE](imgs/slides24.png)
 
 :::
 ::::
@@ -536,7 +536,7 @@ Key technologies used to implement Data Lakehouses
 :::
 ::: {.column width=50%}
 
-![](imgs/slides26.png)
+![Data lakehouse](imgs/slides27.png)
 
 :::
 ::::
@@ -545,8 +545,9 @@ Key technologies used to implement Data Lakehouses
 
 # Data lakehouse
 
-::::
-::: {.column width=50%}
+![Towards data lakehouse](imgs/slides26.png)
+
+# Data lakehouse
 
 |  | Data warehouse | Data lake | Data lakehouse |
 |:-: |:-: |:-: |:-: |
@@ -558,14 +559,6 @@ Key technologies used to implement Data Lakehouses
 | Performance | High | Low | High |
 | Scalability | Scaling becomes exponentially more expensive | Scales to hold any amount of data at low cost, regardless of type | Scales to hold any amount of data at low cost, regardless of type |
 | Use case support | Limited to BI, SQL applications and decision support | Limited to machine learning | One data architecture for BI, SQL and machine learning |
-
-:::
-::: {.column width=50%}
-
-![](imgs/slides27.png)
-
-:::
-::::
 
 # Data platform
 
@@ -584,7 +577,7 @@ No, in a data platform, you also need to manage (streams of) operational data an
 
 # Data platform: expertise and related job positions
 
-![](imgs/slides28.png)
+![(Big) data pipeline](imgs/slides28.png)
 
 # Data platform: related job positions
 
@@ -620,7 +613,7 @@ _Data scientist_
 
 DevOps practices enable software development (dev) and operations (ops) teams to accelerate delivery through automation, collaboration, fast feedback, and iterative improvement
 
-![](imgs/slides29.png)
+![DevOps](imgs/slides29.png)
 
 [https://about.gitlab.com/topics/devops/](https://about.gitlab.com/topics/devops/) (accessed 2023-06-03)
 
@@ -634,9 +627,9 @@ DevOps practices enable software development (dev) and operations (ops) teams to
 :::
 ::: {.column width=50%}
 
-![](imgs/slides30.png)
+![Evolution of DataOps](imgs/slides30.png)
 
-![](imgs/slides31.png)
+![Evolution of DataOps](imgs/slides31.png)
 
 :::
 ::::
@@ -663,9 +656,9 @@ Some key rules
 :::
 ::: {.column width=50%}
 
-![](imgs/slides32.png)
+![DevOps](imgs/slides32.png)
 
-![](imgs/slides33.png)
+![DataOps](imgs/slides33.png)
 
 :::
 ::::
@@ -722,12 +715,12 @@ K2View Whitepaper: What is a Data Fabric? The Complete Guide, 2021
 :::: {.columns}
 ::: {.column width=50%}
 
-![](imgs/slides34.png)
+![Providers](imgs/slides34.png)
 
 :::
 ::: {.column width=50%}
 
-![](imgs/slides35.png)
+![Providers](imgs/slides35.png)
 
 :::
 ::::
@@ -738,7 +731,7 @@ K2View, 2021 [https://www.k2view.com/top-data-fabric-vendors](https://www.k2view
 
 # Data fabric
 
-![](imgs/slides37.png)
+![Data fabric](imgs/slides37.png)
 
 Gartner, 2021 [https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration](https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration)
 
@@ -762,8 +755,6 @@ Zhamak Dehghani, 2020 [https://martinfowler.com/articles/data-mesh-principles.ht
 
 https://www.youtube.com/watch?v=_bmYXWCxF_Q
 
----
-
 # Data mesh
 
 :::: {.columns}
@@ -777,7 +768,7 @@ Data Mesh organizes data around **business domain owners** and transforms releva
 :::
 ::: {.column width=50%}
 
-![](imgs/slides38.png)
+![Data mesh](imgs/slides38.png)
 
 :::
 ::::
@@ -828,7 +819,7 @@ Dave Wells, 2021 [https://www.eckerson.com/articles/data-architecture-complex-vs
 
 # Data mesh vs data fabric
 
-![](imgs/slides39.png)
+![Data mesh vs data fabric](imgs/slides39.png)
 
 # Data mesh vs data fabric
 
@@ -846,17 +837,17 @@ Take away:
 :::: {.columns}
 ::: {.column width=33%}
 
-![](imgs/slides40.jpg)
+![Ref 1](imgs/slides40.jpg)
 
 :::
 ::: {.column width=33%}
 
-![](imgs/slides41.png)
+![Ref 2](imgs/slides41.png)
 
 :::
 ::: {.column width=33%}
 
-![](imgs/slides42.png)
+![Ref 3](imgs/slides42.png)
 
 :::
 ::::
@@ -871,7 +862,7 @@ Take away:
 
 A data platform on the Hadoop stack requires several tools
 
-![](imgs/74.svg)
+![Hadoop-based data platform](imgs/74.svg)
 
 How many levels of complexity are hidden here?
 
@@ -906,7 +897,7 @@ It is hardly advisable, if not for small and local tests
 :::: {.columns}
 ::: {.column width=50%}
 
-![](imgs/76.svg)
+![MOSES](imgs/76.svg)
 
 :::
 ::: {.column width=50%}
