@@ -523,11 +523,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Data abstraction: database</p>
 <p>Data access model: *</p>
 <ul>
-<li><strong>Key/value: </strong> store and retrieve large volumes of data</li>
-<li><strong>Document: </strong> store semi-structured data as JSON-like documents</li>
-<li><strong>Wide column:</strong> use tables but unlike a relational database, columns can vary from row to row in the same table</li>
-<li><strong>Graph: </strong> navigate and query relationships between highly connected datasets</li>
-<li><strong>… and more</strong></li>
+<li><strong>Key/value</strong>: store and retrieve large volumes of data</li>
+<li><strong>Document</strong>: store semi-structured data as JSON-like documents</li>
+<li><strong>Wide column</strong>: use tables but unlike a relational database, columns can vary from row to row in the same table</li>
+<li><strong>Graph</strong>: navigate and query relationships between highly connected datasets</li>
+<li>… and more</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/254.svg"></p>
@@ -572,10 +572,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Serverless storage, save data as <strong>objects</strong> within <strong>buckets</strong></li>
 <li>An <strong>object</strong> is composed of a file and any metadata that describes that file (e.g., <strong>object key</strong>)</li>
-<li><strong>Buckets</strong> are logical containers for objects</li>
+<li><strong>Buckets</strong> are logical containers for objects
+<ul>
 <li>You can have one or more buckets in your account</li>
 <li>Control access for each bucket individually</li>
 <li>Choose the geographical region where Amazon S3 will store the bucket and its contents</li>
+</ul></li>
 </ul>
 <p>Benefits</p>
 <ul>
@@ -596,7 +598,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Storage: access frequency (AWS)</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>24 storage (AWS S3) <strong>classes</strong></p>
+<p>Storage (AWS S3) <strong>classes</strong></p>
 <ul>
 <li><strong>Standard</strong>: general purpose</li>
 <li><strong>Infrequent</strong> (rapid) <strong>access</strong></li>
