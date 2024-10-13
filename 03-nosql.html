@@ -448,7 +448,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>Freedom from rigid schemas</p>
 <ul>
-<li>Data can be stored or queried without pre-defining a schema (<em>schemaless</em> * or <em>soft-schema</em>)</li>
+<li>Data can be stored or queried without pre-defining a schema (<em>schemaless</em> or <em>soft-schema</em>)</li>
 </ul>
 <p>Distributed, shared-nothing architecture</p>
 <ul>
@@ -522,18 +522,18 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Running example</h1>
 <p>Typical use case: customers, orders and products</p>
 
-<img data-src="imgs/99.svg" class="r-stretch"></section>
+<img data-src="imgs/99.svg" class="r-stretch quarto-figure-center"><p class="caption">Running example</p></section>
 
 <section id="relational-data-model" class="title-slide slide level1 center">
 <h1>Relational: data model</h1>
 <p>Based on tables and rows</p>
 
-<img data-src="imgs/slides70.png" class="r-stretch"></section>
+<img data-src="imgs/slides70.png" class="r-stretch quarto-figure-center"><p class="caption">Relational model</p></section>
 
 <section id="data-modeling-example-relational-model" class="title-slide slide level1 center">
 <h1>Data modeling example: relational model</h1>
 
-<img data-src="imgs/slides71.png" class="r-stretch"></section>
+<img data-src="imgs/slides71.png" class="r-stretch quarto-figure-center"><p class="caption">Relational implementation</p></section>
 
 <section id="graph-data-model" class="title-slide slide level1 center">
 <h1>Graph: data model</h1>
@@ -565,7 +565,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides72.png"></p>
+<figcaption>Property graph</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -612,9 +617,19 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>IDs are implicitly handled; different edge colors imply different edge types</p>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/104a.svg"></p>
+<figcaption>Graph implementation</figcaption>
+</figure>
+</div>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/104b.svg"></p>
+<figcaption>Running example</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -668,7 +683,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 </ul>
 </div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/106.svg"></p>
+<figcaption>Example of document</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -692,24 +712,44 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="data-modeling-example-aggregate-model-1" class="title-slide slide level1 center">
-<h1>Data modeling example: aggregate model (1)</h1>
+<section id="data-modeling-example-aggregate-model" class="title-slide slide level1 center">
+<h1>Data modeling example: aggregate model</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/109.svg"></p>
+<figcaption>Designing aggregates</figcaption>
+</figure>
+</div>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/111.svg"></p>
+<figcaption>Examples of documents</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
 
-<section id="data-modeling-example-document-model-2" class="title-slide slide level1 center">
-<h1>Data modeling example: document model (2)</h1>
+<section id="data-modeling-example-document-model" class="title-slide slide level1 center">
+<h1>Data modeling example: document model</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/108.svg"></p>
+<figcaption>Designing aggregates</figcaption>
+</figure>
+</div>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/110.svg"></p>
+<figcaption>Example of document</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -755,21 +795,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="column" style="width:50%;">
 <p>Three simple kinds of query:</p>
 <ul>
-<li><em>put($key as </em> <em>xs:string</em> <em>, $value as item())</em>
+<li><em>put($key as xs:string, $value as item())</em>
 <ul>
 <li>Adds a key-value pair to the collection</li>
 <li>If the key already exists, the value is replaced</li>
 </ul></li>
-<li><em>get($key as </em> <em>xs:string</em> <em>) as item()</em>
+<li><em>get($key as xs:string) as item()</em>
 <ul>
 <li>Returns the value corresponding to the key (if it exists)</li>
 </ul></li>
-<li><em>delete($key as </em> <em>xs:string</em> <em>)</em>
+<li><em>delete($key as xs:string)</em>
 <ul>
 <li>Deletes the key-value pair</li>
 </ul></li>
 </ul>
-<p>The value is a * <em>black box</em> *: it cannot be queried!</p>
+<p>The value is a <em>black box</em>: it cannot be queried!</p>
 <ul>
 <li>No “where” clauses</li>
 <li>No indexes on the values</li>
@@ -882,11 +922,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>Essentially a 2-dimensional key-value store</p>
 <ul>
-<li><em>Rows specify only the columns </em> <em>for which a value exists</em></li>
+<li><em>Rows specify only the columns </em>for which a value exists*</li>
 <li>Particularly suited for sparse matrixes and many-to-many relationships</li>
 </ul>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides77.png"></p>
+<figcaption>Wide column</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -946,7 +991,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="data-modeling-example-wide-column-model" class="title-slide slide level1 center">
 <h1>Data modeling example: wide-column model</h1>
 
-<img data-src="imgs/118.svg" class="r-stretch"></section>
+<img data-src="imgs/118.svg" class="r-stretch quarto-figure-center"><p class="caption">Examples of wide columns</p></section>
 
 <section id="aggregate-modeling-strategy" class="title-slide slide level1 center">
 <h1>Aggregate modeling strategy</h1>
@@ -1002,7 +1047,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="sharding" class="title-slide slide level1 center">
 <h1>Sharding</h1>
-<p><strong>Sharding</strong>: <em>subdividing the data in </em> <em>shards</em> * that are stored in different machines*</p>
+<p><strong>Sharding</strong>: <em>subdividing the data in </em>shards* that are stored in different machines*</p>
 <ul>
 <li>Intrinsic in a distributed DB</li>
 <li>Improves the efficiency of the system
@@ -1045,11 +1090,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Con: range queries become inefficient</li>
 </ul>
 
-<img data-src="imgs/slides82.png" class="r-stretch"></section>
+<img data-src="imgs/slides82.png" class="r-stretch quarto-figure-center"><p class="caption">Hash sharding</p></section>
 
 <section id="sharding-strategy-2" class="title-slide slide level1 center">
 <h1>Sharding strategy</h1>
-<p>Range strategy: each partition contains a range of sorted data</p>
+<p><em>Range strategy</em>: each partition contains a range of sorted data</p>
 <ul>
 <li>Adopted by HBase</li>
 <li>Pro: efficiently run range queries that work on the sharding key values</li>
@@ -1057,14 +1102,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Con: ranges are defined a priori and this can determine heavy data redistribution</li>
 </ul>
 
-<img data-src="imgs/slides83.png" class="r-stretch"></section>
+<img data-src="imgs/slides83.png" class="r-stretch quarto-figure-center"><p class="caption">Range strategy</p></section>
 
 <section id="sharding-strategy-3" class="title-slide slide level1 center">
 <h1>Sharding strategy</h1>
-<p>Auto-sharding: the database distributes the data according to the workload</p>
-<p>Beware: redefining (or choosing later) the sharding strategy can be quite expensive</p>
+<p><em>Auto-sharding</em>: the database distributes the data according to the workload</p>
+<ul>
+<li>Beware: redefining (or choosing later) the sharding strategy can be quite expensive</li>
+</ul>
 
-<img data-src="imgs/slides84.png" class="r-stretch"></section>
+<img data-src="imgs/slides84.png" class="r-stretch quarto-figure-center"><p class="caption">Auto-sharding</p></section>
 
 <section id="replication" class="title-slide slide level1 center">
 <h1>Replication</h1>
@@ -1095,7 +1142,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 
 <section id="master-slave-replication" class="title-slide slide level1 center">
-<h1>Master-Slave Replication</h1>
+<h1>Master-slave replication</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><em>Master</em></p>
@@ -1111,13 +1158,18 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Can become masterif the latter fails</li>
 </ul>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides85.png"></p>
+<figcaption>Master-slave replication</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
 
 <section id="master-slave-replication-1" class="title-slide slide level1 center">
-<h1>Master-Slave Replication</h1>
+<h1>Master-slave replication</h1>
 <p><strong>Pros</strong></p>
 <ul>
 <li>Easily handles many read requests
@@ -1144,20 +1196,25 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 
 <section id="peer-to-peer-replication" class="title-slide slide level1 center">
-<h1>Peer-to-Peer Replication</h1>
+<h1>Peer-to-peer replication</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Each node has the same importance</p>
 <p><em>Each node can handle write operations</em></p>
 <p>The loss of a node does not compromise reads nor writes</p>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides86.png"></p>
+<figcaption>P2P replicaion</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
 
 <section id="peer-to-peer-replication-1" class="title-slide slide level1 center">
-<h1>Peer-to-Peer Replication</h1>
+<h1>Peer-to-peer replication</h1>
 <p><strong>Pro</strong></p>
 <ul>
 <li>The failure of a node does not interrupt read nor write requests</li>
@@ -1200,27 +1257,32 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="the-quorum-mechanism" class="title-slide slide level1 center">
 <h1>The quorum mechanism</h1>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p>The <em>quorum mechanism</em> ensures consistent IO under replication</p>
 <ul>
 <li>Based on contacting a majority of the nodes responsible for certain data</li>
 <li>The quorum is the minimum number of nodes that a distributed operation has to obtain in order to be allowed to perform an operation on a replicated data item</li>
 </ul>
-<p>Each data item has N replicas</p>
+<p>Each data item has <span class="math inline">\(N\)</span> replicas</p>
 <ul>
-<li>Writing quorum: W &gt; N/2
+<li>Writing quorum: <span class="math inline">\(W &gt; \frac{N}{2}\)</span>
 <ul>
 <li>The write operation is allowed only if W replicas can be updated</li>
 <li>Ensures that two write operations cannot occur concurrently</li>
 </ul></li>
-<li>Reading quorum: R &gt; N-W
+<li>Reading quorum: <span class="math inline">\(R &gt; N-W\)</span>
 <ul>
 <li>The read operation is allowed only if R replicas can be read</li>
 <li>Ensures that (at least) one copy with the up-to-date value is read</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/133.svg"></p>
+<figcaption>Quorum</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1247,7 +1309,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Speed and manageability rather than consistency at all costs</li>
 </ul>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides87.png"></p>
+<figcaption>RDBMS vs NoSQL</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1333,7 +1400,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="consistency-in-nosql-cap" class="title-slide slide level1 center">
 <h1>Consistency in NoSQL: CAP</h1>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p>“Theorem”: only two of the following three properties can be guaranteed</p>
 <p><em>C</em>onsistency: the system is always consistent</p>
 <ul>
@@ -1348,8 +1415,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>In distributed systems, network <strong>partitioning is inevitably a possibility</strong></li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides88.png"></p>
+<figcaption>Network partitioning</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <p>See <a href="https://dl.acm.org/doi/pdf/10.1145/564585.564601?casa*token=m69maazxkqIAAAAA:cBn5y1eKnJUh7Tl4GVsw9Hqv984qwQ3*b8XvSM*wM3U2zp*-363uPINWJADEmMt-8ZjPzA1yaoE">CAP demonstration</a></p>
@@ -1558,7 +1630,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 </ul>
 
-<img data-src="imgs/slides89.png" class="r-stretch"></section>
+<img data-src="imgs/slides89.png" class="r-stretch quarto-figure-center"><p class="caption">Key-value</p></section>
 
 <section id="key-value-when-to-avoid" class="title-slide slide level1 center">
 <h1>Key-Value: when to avoid</h1>
@@ -1763,7 +1835,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="polyglot-persistence" class="title-slide slide level1 center">
 <h1>Polyglot persistence</h1>
-<p><em>Different databases are designed to solve </em> <em>differen</em> <em>t problems</em></p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><em>Different databases are designed to solve </em>differen<em>t problems</em></p>
 <ul>
 <li><em>Using a single DBMS to handle everything …</em></li>
 <li>Operational data</li>
@@ -1776,21 +1850,28 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Each activity has its own requirements (availability, consistency, fault tolerance, etc.)</li>
 </ul>
-
-<img data-src="imgs/slides90.jpg" class="r-stretch"></section>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides90.jpg"></p>
+<figcaption>Polyglot system</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
 
 <section id="traditional-approach" class="title-slide slide level1 center">
 <h1>Traditional approach</h1>
-<p>The <em>one-size-fits-all</em> solution</p>
+<p>The <em>one-size-fits-all</em> solution…</p>
 
-<img data-src="imgs/slides91.png" class="r-stretch"></section>
+<img data-src="imgs/slides91.png" class="r-stretch quarto-figure-center"><p class="caption">One-size-fits-all</p></section>
 
 <section id="polyglot-data-management" class="title-slide slide level1 center">
 <h1>Polyglot data management</h1>
-<p>The <em>one-size-fits-all</em> solution</p>
-<p>Replaced by the <em>polyglot </em> solution</p>
+<p>… replaced by the <em>polyglot</em> solution</p>
 
-<img data-src="imgs/slides92.png" class="r-stretch"></section>
+<img data-src="imgs/slides92.png" class="r-stretch quarto-figure-center"><p class="caption">Polyglot solution</p></section>
 
 <section id="service-oriented-polyglot-data-management" class="title-slide slide level1 center">
 <h1>Service-oriented polyglot data management</h1>
@@ -1799,13 +1880,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Several NoSQL systems (e.g., Riak, Neo4J) already provide REST APIs</li>
 </ul>
 
-<img data-src="imgs/slides93.png" class="r-stretch"></section>
+<img data-src="imgs/slides93.png" class="r-stretch quarto-figure-center"><p class="caption">Encapsulating DBs with API</p></section>
 
 <section id="supporting-existing-technologies" class="title-slide slide level1 center">
 <h1>Supporting existing technologies</h1>
 <p>If the current solution cannot be changed, NoSQL systems can still support the existing ones</p>
 
-<img data-src="imgs/slides94.png" class="r-stretch"></section>
+<img data-src="imgs/slides94.png" class="r-stretch quarto-figure-center"><p class="caption">Legacy solutions</p></section>
 
 <section id="beyond-nosql" class="title-slide slide level1 center">
 <h1>Beyond NoSQL</h1>
