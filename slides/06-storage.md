@@ -197,11 +197,11 @@ Data abstraction: database
 
 Data access model: *
 
-* **Key/value: ** store and retrieve large volumes of data
-* **Document: ** store semi-structured data as JSON-like documents
-* **Wide column:** use tables but unlike a relational database, columns can vary from row to row in the same table
-* **Graph: ** navigate and query relationships between highly connected datasets
-* **... and more**
+* **Key/value**: store and retrieve large volumes of data
+* **Document**: store semi-structured data as JSON-like documents
+* **Wide column**: use tables but unlike a relational database, columns can vary from row to row in the same table
+* **Graph**: navigate and query relationships between highly connected datasets
+* ... and more
 
 :::
 ::: {.column width=40%}
@@ -255,7 +255,7 @@ Simple Storage Service (S3)
 
 * Serverless storage, save data as **objects** within **buckets** 
 * An **object** is composed of a file and any metadata that describes that file (e.g.,  **object key**)
-*  **Buckets** are logical containers for objects
+* **Buckets** are logical containers for objects
   * You can have one or more buckets in your account
   * Control access for each bucket individually
   * Choose the geographical region where Amazon S3 will store the bucket and its contents
@@ -274,7 +274,7 @@ Benefits
 :::: {.columns}
 ::: {.column width=60%}
 
-24 storage (AWS S3) **classes**
+Storage (AWS S3) **classes**
 
 * **Standard**: general purpose
 * **Infrequent** (rapid) **access**

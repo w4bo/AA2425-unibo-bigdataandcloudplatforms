@@ -195,8 +195,8 @@ Francia, Matteo, et al. "Multi-sensor profiling for precision soil-moisture moni
 
 We consider an orchard where
 
-* *Kiwi plants * are aligned along *rows*
-* Each row has many * drippers* (e.g., 1 every meter)
+* *Kiwi plants* are aligned along *rows*
+* Each row has many *drippers* (e.g., 1 every meter)
 * Drippers can water a *limited soil volume*
 
 :::
