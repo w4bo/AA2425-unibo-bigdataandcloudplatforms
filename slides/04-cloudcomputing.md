@@ -101,7 +101,7 @@ The big-data cube [@meijer2012your]
 :::
 ::::
 
-![DNS 10: over the years](imgs/dns10b.png)
+![DNS 10.0: over the years](imgs/dns10b.png)
 
 #
 

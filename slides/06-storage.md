@@ -10,8 +10,6 @@ Data pipeline
 
 ![https://xkcd.com/2054/](imgs/slides180.png)
 
-[](https://xkcd.com/2054/)
-
 Quemy, Alexandre. "Data Pipeline Selection and Optimization."  *DOLAP* . 2019.
 
 # Data pipeline - AWS
