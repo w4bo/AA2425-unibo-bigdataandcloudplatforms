@@ -60,13 +60,13 @@ The big-data cube [@meijer2012your]
 
 **Velocity** (latency)
 
-* **High**: clients synchronously pulling data from sources
-* **Low**: sources asynchronously pushing data to clients
+* *High*: clients synchronously pulling data from sources
+* *Low*: sources asynchronously pushing data to clients
 
 **Velocity** (speed; dual to latency)
 
-* **High**: processing in real-time (milliseconds) or near-real time (minutes)
-* **Low**: processing can take hours
+* *High*: processing in real-time (milliseconds) or near-real time (minutes)
+* *Low*: processing can take hours
 
 :::
 ::: {.column width=40%}
@@ -100,6 +100,8 @@ The big-data cube [@meijer2012your]
 
 :::
 ::::
+
+# 
 
 ![DNS 10.0: over the years](imgs/dns10b.png)
 
@@ -437,7 +439,8 @@ Availability zones in a region
 
 On a cloud architecture, you can rely on *serverless* or *managed* services
 
-* *Serverless*
+*Serverless*
+
 * Standalone independent services built for a specific purpose and integrated by cloud service provider
 * No visibility into the machines
   * There are still servers in serverless, but they are abstracted away
