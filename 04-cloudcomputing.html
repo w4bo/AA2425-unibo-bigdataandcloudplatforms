@@ -28,7 +28,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="04-cloudcomputing_files/libs/revealjs/dist/theme/quarto.css">
   <link href="04-cloudcomputing_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="04-cloudcomputing_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -346,17 +366,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Reference scenario</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>The big-data cube</p>
+<p>The big-data cube <span class="citation" data-cites="meijer2012your">(<a href="#/references" role="doc-biblioref" onclick="">Meijer 2012</a>)</span></p>
 <ul>
-<li>Volume: small to big</li>
-<li>Variety: structure to unstructured</li>
-<li>Velocity: pull to push</li>
+<li><em>Volume</em>: small to big</li>
+<li><em>Variety</em>: structure to unstructured</li>
+<li><em>Velocity</em>: pull to push</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/173.svg"></p>
+<figcaption>Big data cube</figcaption>
+</figure>
 </div>
 </div>
-<p>Meijer, Erik. “Your mouse is a database.” <em>Communications of the ACM</em> 55.5 (2012): 66-73.</p>
+</div>
 </section>
 
 <section id="reference-scenario-1" class="title-slide slide level1 center">
@@ -379,8 +403,18 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides96.png"></p>
+<figcaption>Variety</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides97.png"></p>
+<figcaption>Amount of data types</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <p><a href="https://www.datamation.com/big-data/structured-vs-unstructured-data/">https://www.datamation.com/big-data/structured-vs-unstructured-data/</a> (accessed 2022-08-01)</p>
@@ -401,7 +435,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><strong>Low</strong>: processing can take hours</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides98.png"></p>
+<figcaption>Velocity</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -420,30 +459,75 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="reference-scenario-4" class="title-slide slide level1 center">
-<h1>Reference scenario</h1>
+<section id="data-never-sleeps" class="title-slide slide level1 center">
+<h1><a href="https://www.domo.com/learn/infographic/data-never-sleeps-11">Data never sleeps</a></h1>
 <div class="columns">
-<div class="column" style="width:25%;">
-<p><img data-src="imgs/slides99.png"></p>
-</div><div class="column" style="width:25%;">
-<p><img data-src="imgs/slides100.jpg"></p>
-</div><div class="column" style="width:25%;">
-<p><img data-src="imgs/slides101.jpg"></p>
-</div><div class="column" style="width:25%;">
-<p><img data-src="imgs/slides102.png"></p>
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/dns10.png"></p>
+<figcaption>2022</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/dns11.png"></p>
+<figcaption>2023</figcaption>
+</figure>
 </div>
 </div>
-<p><a href="https://www.domo.com/learn/data-never-sleeps-9">https://www.domo.com/learn/data-never-sleeps-9</a></p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/dns10b.png"></p>
+<figcaption>Over the years</figcaption>
+</figure>
+</div>
 </section>
 
-<section id="reference-scenario-5" class="title-slide slide level1 center">
-<h1>Reference scenario</h1>
+<section id="section-1" class="title-slide slide level1 center">
+<h1></h1>
+<div class="columns">
+<div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides99.png"></p>
+<figcaption>2018</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides100.jpg"></p>
+<figcaption>2019</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides101.jpg"></p>
+<figcaption>2020</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides102.png"></p>
+<figcaption>2021</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="netflix" class="title-slide slide level1 center">
+<h1>Netflix</h1>
 <p>The Netflix scenario</p>
-<p><a href="https://www.domo.com/learn/data-never-sleeps-9">https://www.domo.com/learn/data-never-sleeps-9</a></p>
 
-<img data-src="imgs/178.svg" class="r-stretch"></section>
+<img data-src="imgs/178.svg" class="r-stretch quarto-figure-center"><p class="caption">Streaming hours</p></section>
 
-<section id="reference-scenario-6" class="title-slide slide level1 center">
+<section id="reference-scenario-4" class="title-slide slide level1 center">
 <h1>Reference scenario</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -489,7 +573,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="reference-scenario-7" class="title-slide slide level1 center">
+<section id="reference-scenario-5" class="title-slide slide level1 center">
 <h1>Reference scenario</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -506,7 +590,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p><strong>Goal</strong>: keep in mind the cube to categorize the services</p>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/180.svg"></p>
+<figcaption>Big data cube</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -543,7 +632,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/186.svg"></p>
+<figcaption>Digitalization journey</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -596,7 +690,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>1PB: one hundred 10TB Enterprise Capacity 3.5 HDD hard drives</li>
 </ul>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides103.jpg"></p>
+<figcaption>Physical space</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <p><a href="https://blog.seagate.com/business/linus-tech-tips-want-petabyte-system/">https://blog.seagate.com/business/linus-tech-tips-want-petabyte-system/</a></p>
@@ -667,21 +766,31 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="is-cloud-a-silver-bullet-1" class="title-slide slide level1 center">
 <h1>Is cloud a silver bullet?</h1>
 
-<img data-src="imgs/slides104.png" class="r-stretch"><p><a href="https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU">https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU</a></p>
+<img data-src="imgs/slides104.png" class="r-stretch quarto-figure-center"><p class="caption">Resiliency</p><p><a href="https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU">https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU</a></p>
 </section>
 
 <section id="is-cloud-a-silver-bullet-2" class="title-slide slide level1 center">
 <h1>Is cloud a silver bullet?</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides105.png"></p>
+<figcaption>Energy consumption</figcaption>
+</figure>
+</div>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides106.png"></p>
+<figcaption>Energy consumption</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
 
-<section id="section-1" class="title-slide slide level1 center">
+<section id="section-2" class="title-slide slide level1 center">
 <h1></h1>
 
 <img data-src="imgs/slides107.png" class="r-stretch quarto-figure-center"><p class="caption">https://xkcd.com/908/</p></section>
@@ -702,7 +811,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><strong>Hybrid</strong>: a mix of the previous</li>
 </ul>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides108.png"></p>
+<figcaption>Types of cloud</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -727,7 +841,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Resources are usually replicated across zones but not regions</li>
 </ul>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides109.png"></p>
+<figcaption>Regions</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html</a></p>
@@ -737,9 +856,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Cloud computing: principal vendors</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides110.png"></p>
+<figcaption>Magic quadrant</figcaption>
+</figure>
+</div>
 </div><div class="column" style="width:50%;">
-<p>Gartner Magic Quadrant</p>
+<p><a href="https://www.gartner.com/en/research/methodologies/magic-quadrants-research">Gartner Magic Quadrant</a></p>
 <ul>
 <li>Understanding the technology providers to consider for an investment</li>
 <li><strong>Leaders</strong> execute well and are well positioned for tomorrow</li>
@@ -753,7 +877,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </div>
 </div>
-<p><a href="https://www.gartner.com/en/research/methodologies/magic-quadrants-research">https://www.gartner.com/en/research/methodologies/magic-quadrants-research</a></p>
 </section>
 
 <section id="cloud-computing-deployment-models" class="title-slide slide level1 center">
@@ -797,7 +920,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>It encompasses the products, tools and technologies that vendors deliver to users</li>
 </ul>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides111.png"></p>
+<figcaption>XaaS</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -816,7 +944,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Often a distraction from strategic tasks</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/202.svg"></p>
+<figcaption>On-premises</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -833,7 +966,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Possibly requires to manage many environments</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/203.svg"></p>
+<figcaption>IaaS</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -849,7 +987,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Avoid expense/complexity of managing licenses and application infrastructure</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/204.svg"></p>
+<figcaption>PaaS</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -864,7 +1007,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Infrastructure provisioning and management are invisible to the developer</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/207.svg"></p>
+<figcaption>FaaS</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -902,7 +1050,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Access cloud-based apps over the Internet (e.g., email, Microsoft Office 365, Github)</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/209.svg"></p>
+<figcaption>SaaS</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -926,7 +1079,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>On top of a hypervisor (VM monitor)</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides112.jpg"></p>
+<figcaption>Containers vs VMs</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <p>Containerization isolates an application with its own environment</p>
@@ -938,12 +1096,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="section-2" class="title-slide slide level1 center">
+<section id="section-3" class="title-slide slide level1 center">
 <h1></h1>
 
-<img data-src="imgs/slides113.png" class="r-stretch quarto-figure-center"><p class="caption">https://xkcd.com/1084/</p><div class="quarto-auto-generated-content">
+<img data-src="imgs/slides113.png" class="r-stretch quarto-figure-center"><p class="caption">https://xkcd.com/1084/</p></section>
+
+<section id="references" class="title-slide slide level1 smaller scrollable">
+<h1>References</h1>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Big Data and Cloud Platforms (Module 2) - A.Y. 2024/25</p>
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-meijer2012your" class="csl-entry" role="listitem">
+Meijer, Erik. 2012. <span>“Your Mouse Is a Database.”</span> <em>Communications of the ACM</em> 55 (5): 66–73.
 </div>
 </div>
 </section>
