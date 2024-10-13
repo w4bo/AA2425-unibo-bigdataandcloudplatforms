@@ -11,21 +11,19 @@ subtitle: Cloud computing
 :::: {.columns}
 ::: {.column width=60%}
 
-The big-data cube
+The big-data cube [@meijer2012your]
 
-* Volume: small to big
-* Variety: structure to unstructured
-* Velocity: pull to push
+* *Volume*: small to big
+* *Variety*: structure to unstructured
+* *Velocity*: pull to push
 
 :::
 ::: {.column width=40%}
 
-![](imgs/173.svg)
+![Big data cube](imgs/173.svg)
 
 :::
 ::::
-
-Meijer, Erik. "Your mouse is a database."  *Communications of the ACM* 55.5 (2012): 66-73.
 
 # Reference scenario
 
@@ -46,9 +44,9 @@ Meijer, Erik. "Your mouse is a database."  *Communications of the ACM* 55.5 (201
 :::
 ::: {.column width=40%}
 
-![](imgs/slides96.png)
+![Variety](imgs/slides96.png)
 
-![](imgs/slides97.png)
+![Amount of data types](imgs/slides97.png)
 
 :::
 ::::
@@ -73,7 +71,7 @@ Meijer, Erik. "Your mouse is a database."  *Communications of the ACM* 55.5 (201
 :::
 ::: {.column width=40%}
 
-![](imgs/slides98.png)
+![Velocity](imgs/slides98.png)
 
 :::
 ::::
@@ -88,40 +86,53 @@ Meijer, Erik. "Your mouse is a database."  *Communications of the ACM* 55.5 (201
   * ... or slow down to one tag an hour
 * Your system must be able to efficiently handle the peak as well as the lows
 
-# Reference scenario
+# [Data never sleeps](https://www.domo.com/learn/infographic/data-never-sleeps-11)
 
 :::: {.columns}
-::: {.column width=25%}
+::: {.column width=50%}
 
-![](imgs/slides99.png)
-
-:::
-::: {.column width=25%}
-
-![](imgs/slides100.jpg)
+![2022](imgs/dns10.png)
 
 :::
-::: {.column width=25%}
+::: {.column width=50%}
 
-![](imgs/slides101.jpg)
-
-:::
-::: {.column width=25%}
-
-![](imgs/slides102.png)
+![2023](imgs/dns11.png)
 
 :::
 ::::
 
-[https://www.domo.com/learn/data-never-sleeps-9](https://www.domo.com/learn/data-never-sleeps-9)
+![Over the years](imgs/dns10b.png)
 
-# Reference scenario
+#
+
+:::: {.columns}
+::: {.column width=25%}
+
+![2018](imgs/slides99.png)
+
+:::
+::: {.column width=25%}
+
+![2019](imgs/slides100.jpg)
+
+:::
+::: {.column width=25%}
+
+![2020](imgs/slides101.jpg)
+
+:::
+::: {.column width=25%}
+
+![2021](imgs/slides102.png)
+
+:::
+::::
+
+# Netflix
 
 The Netflix scenario
 
-[https://www.domo.com/learn/data-never-sleeps-9](https://www.domo.com/learn/data-never-sleeps-9)
-
-![](imgs/178.svg)
+![Streaming hours](imgs/178.svg)
 
 # Reference scenario
 
@@ -180,7 +191,7 @@ Our focus
 :::
 ::: {.column width=40%}
 
-![](imgs/180.svg)
+![Big data cube](imgs/180.svg)
 
 :::
 ::::
@@ -216,7 +227,7 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 :::
 ::: {.column width=50%}
 
-![](imgs/186.svg)
+![Digitalization journey](imgs/186.svg)
 
 :::
 ::::
@@ -267,7 +278,7 @@ Grow storage from GBs to PBs
 :::
 ::: {.column width=50%}
 
-![](imgs/slides103.jpg)
+![Physical space](imgs/slides103.jpg)
 
 :::
 ::::
@@ -324,7 +335,7 @@ Cloud computing is the outsourcing of a company’s hardware and software archit
 
 # Is cloud a silver bullet?
 
-![](imgs/slides104.png)
+![Resiliency](imgs/slides104.png)
 
 [https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU](https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU)
 
@@ -333,12 +344,12 @@ Cloud computing is the outsourcing of a company’s hardware and software archit
 :::: {.columns}
 ::: {.column width=50%}
 
-![](imgs/slides105.png)
+![Energy consumption](imgs/slides105.png)
 
 :::
 ::: {.column width=50%}
 
-![](imgs/slides106.png)
+![Energy consumption](imgs/slides106.png)
 
 :::
 ::::
@@ -364,7 +375,7 @@ There are different types of cloud
 :::
 ::: {.column width=50%}
 
-![](imgs/slides108.png)
+![Types of cloud](imgs/slides108.png)
 
 :::
 ::::
@@ -392,7 +403,7 @@ Availability zones in a region
 :::
 ::: {.column width=50%}
 
-![](imgs/slides109.png)
+![Regions](imgs/slides109.png)
 
 :::
 ::::
@@ -404,12 +415,12 @@ Availability zones in a region
 :::: {.columns}
 ::: {.column width=50%}
 
-![](imgs/slides110.png)
+![Magic quadrant](imgs/slides110.png)
 
 :::
 ::: {.column width=50%}
 
-Gartner Magic Quadrant
+[Gartner Magic Quadrant](https://www.gartner.com/en/research/methodologies/magic-quadrants-research)
 
 * Understanding the technology providers to consider for an investment
 * **Leaders** execute well and are well positioned for tomorrow
@@ -421,8 +432,6 @@ Gartner Magic Quadrant
 
 :::
 ::::
-
-[https://www.gartner.com/en/research/methodologies/magic-quadrants-research](https://www.gartner.com/en/research/methodologies/magic-quadrants-research)
 
 # Cloud computing: deployment models
 
@@ -463,7 +472,7 @@ Understanding architectures is paramount to successful systems
 :::
 ::: {.column width=50%}
 
-![](imgs/slides111.png)
+![XaaS](imgs/slides111.png)
 
 :::
 ::::
@@ -483,7 +492,7 @@ Understanding architectures is paramount to successful systems
 :::
 ::: {.column width=40%}
 
-![](imgs/202.svg)
+![On-premises](imgs/202.svg)
 
 :::
 ::::
@@ -503,7 +512,7 @@ Understanding architectures is paramount to successful systems
 :::
 ::: {.column width=40%}
 
-![](imgs/203.svg)
+![IaaS](imgs/203.svg)
 
 :::
 ::::
@@ -522,7 +531,7 @@ Understanding architectures is paramount to successful systems
 :::
 ::: {.column width=40%}
 
-![](imgs/204.svg)
+![PaaS](imgs/204.svg)
 
 :::
 ::::
@@ -540,7 +549,7 @@ Understanding architectures is paramount to successful systems
 :::
 ::: {.column width=40%}
 
-![](imgs/207.svg)
+![FaaS](imgs/207.svg)
 
 :::
 ::::
@@ -579,7 +588,7 @@ FaaS is not a silver bullet
 :::
 ::: {.column width=40%}
 
-![](imgs/209.svg)
+![SaaS](imgs/209.svg)
 
 :::
 ::::
@@ -608,7 +617,7 @@ How do provide computational resources?
 :::
 ::: {.column width=40%}
 
-![](imgs/slides112.jpg)
+![Containers vs VMs](imgs/slides112.jpg)
 
 :::
 ::::
@@ -623,3 +632,5 @@ Containerization isolates an application with its own environment
 # 
 
 ![https://xkcd.com/1084/](imgs/slides113.png)
+
+# References
