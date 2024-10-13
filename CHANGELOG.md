@@ -1,3 +1,11 @@
+## [1.0.5](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.4...1.0.5) (2024-10-12)
+
+### Bug Fixes
+
+* citation ([f987b86](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/f987b86ec53de4a546932fd3ddc18c0c5353628c))
+* citation ([2c27175](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/2c271757dd59a8fea24d0d22cc647fc687f38dba))
+* image captions ([1368be7](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/1368be73ae58fbd39a77f5d83edd50bbc8195a5a))
+
 ## [1.0.4](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.3...1.0.4) (2024-10-12)
 
 ### Bug Fixes
