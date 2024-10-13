@@ -94,7 +94,7 @@ Freedom from joins
 
 Freedom from rigid schemas
 
-* Data can be stored or queried without pre-defining a schema (*schemaless* * or *soft-schema*)
+* Data can be stored or queried without pre-defining a schema (*schemaless* or *soft-schema*)
 
 Distributed, shared-nothing architecture
 
@@ -134,17 +134,17 @@ One of the key challenges is to understand which one fits best with the required
 
 Typical use case: customers, orders and products
 
-![](imgs/99.svg)
+![Running example](imgs/99.svg)
 
 # Relational: data model
 
 Based on tables and rows
 
-![](imgs/slides70.png)
+![Relational model](imgs/slides70.png)
 
 # Data modeling example: relational model
 
-![](imgs/slides71.png)
+![Relational implementation](imgs/slides71.png)
 
 # Graph: data model
 
@@ -171,7 +171,7 @@ Most known specializations:
 :::
 ::: {.column width=50%}
 
-![](imgs/slides72.png)
+![Property graph](imgs/slides72.png)
 
 :::
 ::::
@@ -198,12 +198,12 @@ IDs are implicitly handled; different edge colors imply different edge types
 :::: {.columns}
 ::: {.column width=50%}
 
-![](imgs/104a.svg)
+![Graph implementation](imgs/104a.svg)
 
 :::
 ::: {.column width=50%}
 
-![](imgs/104b.svg)
+![Running example](imgs/104b.svg)
 
 :::
 ::::
@@ -252,7 +252,7 @@ Each field corresponds to a *key-value pair*
 :::
 ::: {.column width=30%}
 
-![](imgs/106.svg)
+![Example of document](imgs/106.svg)
 
 :::
 ::::
@@ -274,32 +274,32 @@ Different implementations, different functionalities
 * Some provide connectors to Big Data tools (e.g., Spark, Hive)
 * Some provide *full-text search * capabilities
 
-# Data modeling example: aggregate model (1)
+# Data modeling example: aggregate model
 
 :::: {.columns}
 ::: {.column width=50%}
 
-![](imgs/109.svg)
+![Designing aggregates](imgs/109.svg)
 
 :::
 ::: {.column width=50%}
 
-![](imgs/111.svg)
+![Examples of documents](imgs/111.svg)
 
 :::
 ::::
 
-# Data modeling example: document model (2)
+# Data modeling example: document model
 
 :::: {.columns}
 ::: {.column width=50%}
 
-![](imgs/108.svg)
+![Designing aggregates](imgs/108.svg)
 
 :::
 ::: {.column width=50%}
 
-![](imgs/110.svg)
+![Example of document](imgs/110.svg)
 
 :::
 ::::
@@ -338,15 +338,15 @@ Looks like a simple dictionary
 
 Three simple kinds of query:
 
-* *put($key as * *xs:string* *, $value as item())*
+* *put($key as xs:string, $value as item())*
   * Adds a key-value pair to the collection
   * If the key already exists, the value is replaced
-* *get($key as * *xs:string* *) as item()*
+* *get($key as xs:string) as item()*
   * Returns the value corresponding to the key (if it exists)
-* *delete($key as * *xs:string* *)*
+* *delete($key as xs:string)*
   * Deletes the key-value pair
 
-The value is a * *black box* *: it cannot be queried!
+The value is a *black box*: it cannot be queried!
 
 * No "where" clauses
 * No indexes on the values
@@ -410,13 +410,13 @@ Each column is a key-value pair itself
 
 Essentially a 2-dimensional key-value store
 
-* *Rows specify only the columns * *for which a value exists*
+* *Rows specify only the columns *for which a value exists*
 * Particularly suited for sparse matrixes and many-to-many relationships
 
 :::
 ::: {.column width=50%}
 
-![](imgs/slides77.png)
+![Wide column](imgs/slides77.png)
 
 :::
 ::::
@@ -466,7 +466,7 @@ Column-oriented
 
 # Data modeling example: wide-column model
 
-![](imgs/118.svg)
+![Examples of wide columns](imgs/118.svg)
 
 # Aggregate modeling strategy
 
@@ -510,7 +510,7 @@ Two aspects must be considered when deploying on a cluster
 
 # Sharding
 
-**Sharding**: *subdividing the data in * *shards* * that are stored in different machines*
+**Sharding**: *subdividing the data in *shards* that are stored in different machines*
 
 * Intrinsic in a distributed DB
 * Improves the efficiency of the system
@@ -548,26 +548,26 @@ Thumbs-up rules for a sharding strategy:
 * Pro: new nodes can be added without heavy data redistribution
 * Con: range queries become inefficient
 
-![](imgs/slides82.png)
+![Hash sharding](imgs/slides82.png)
 
 # Sharding strategy
 
-Range strategy: each partition contains a range of sorted data
+*Range strategy*: each partition contains a range of sorted data
 
 * Adopted by HBase
 * Pro: efficiently run range queries that work on the sharding key values
 * Con: global ordering often generates hot spots -> risk of bottlenecks
 * Con: ranges are defined a priori and this can determine heavy data redistribution
 
-![](imgs/slides83.png)
+![Range strategy](imgs/slides83.png)
 
 # Sharding strategy
 
-Auto-sharding: the database distributes the data according to the workload
+*Auto-sharding*: the database distributes the data according to the workload
 
-Beware: redefining (or choosing later) the sharding strategy can be quite expensive
+- Beware: redefining (or choosing later) the sharding strategy can be quite expensive
 
-![](imgs/slides84.png)
+![Auto-sharding](imgs/slides84.png)
 
 # Replication
 
@@ -589,7 +589,7 @@ Main issue: each update must be pushed to every replica
 
 * Two techniques to handle updates: master-slave, peer to peer
 
-# Master-Slave Replication
+# Master-slave replication
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -609,12 +609,12 @@ Main issue: each update must be pushed to every replica
 :::
 ::: {.column width=50%}
 
-![](imgs/slides85.png)
+![Master-slave replication](imgs/slides85.png)
 
 :::
 ::::
 
-# Master-Slave Replication
+# Master-slave replication
 
 **Pros**
 
@@ -633,7 +633,7 @@ Main issue: each update must be pushed to every replica
   * *Read inconsistency can be problematic, but are relatively limited in time*
 * Not ideal when the workload mainly consists of writes
 
-# Peer-to-Peer Replication
+# Peer-to-peer replication
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -647,12 +647,12 @@ The loss of a node does not compromise reads nor writes
 :::
 ::: {.column width=50%}
 
-![](imgs/slides86.png)
+![P2P replicaion](imgs/slides86.png)
 
 :::
 ::::
 
-# Peer-to-Peer Replication
+# Peer-to-peer replication
 
 **Pro**
 
@@ -686,26 +686,26 @@ Write conflicts (P2P model)
 # The quorum mechanism
 
 :::: {.columns}
-::: {.column width=50%}
+::: {.column width=60%}
 
 The *quorum mechanism* ensures consistent IO under replication
 
 * Based on contacting a majority of the nodes responsible for certain data
 * The quorum is the minimum number of nodes that a distributed operation has to obtain in order to be allowed to perform an operation on a replicated data item
 
-Each data item has N replicas
+Each data item has $N$ replicas
 
-* Writing quorum: W > N/2
+* Writing quorum: $W > \frac{N}{2}$
   * The write operation is allowed only if W replicas can be updated
   * Ensures that two write operations cannot occur concurrently
-* Reading quorum: R > N-W
+* Reading quorum: $R > N-W$
   * The read operation is allowed only if R replicas can be read
   * Ensures that (at least) one copy with the up-to-date value is read
 
 :::
-::: {.column width=50%}
+::: {.column width=40%}
 
-![](imgs/133.svg)
+![Quorum](imgs/133.svg)
 
 :::
 ::::
@@ -734,7 +734,7 @@ NoSQL systems are designed to succeed where RDBMSs fail
 :::
 ::: {.column width=50%}
 
-![](imgs/slides87.png)
+![RDBMS vs NoSQL](imgs/slides87.png)
 
 :::
 ::::
@@ -812,7 +812,7 @@ They are not properties on which NoSQL systems rely
 # Consistency in NoSQL: CAP
 
 :::: {.columns}
-::: {.column width=50%}
+::: {.column width=60%}
 
 "Theorem": only two of the following three properties can be guaranteed
 
@@ -830,9 +830,9 @@ They are not properties on which NoSQL systems rely
 * In distributed systems, network **partitioning is inevitably a possibility**
 
 :::
-::: {.column width=50%}
+::: {.column width=40%}
 
-![](imgs/slides88.png)
+![Network partitioning](imgs/slides88.png)
 
 :::
 ::::
@@ -981,7 +981,7 @@ Examples
   * Uploading files: approx. $0.005 per 1000 items
   * Downloading files: approx. $0.004 per 10,000 files* PLUS $0.09 per GB (first GB free)
 
-![](imgs/slides89.png)
+![Key-value](imgs/slides89.png)
 
 # Key-Value: when to avoid
 
@@ -1148,7 +1148,10 @@ Examples
 
 # Polyglot persistence
 
-*Different databases are designed to solve * *differen* *t problems*
+:::: {.columns}
+::: {.column width=60%}
+
+*Different databases are designed to solve *differen*t problems*
 
 * *Using a single DBMS to handle everything ...*
 * Operational data
@@ -1161,21 +1164,25 @@ Examples
 
 * Each activity has its own requirements (availability, consistency, fault tolerance, etc.)
 
-![](imgs/slides90.jpg)
+:::
+::: {.column width=40%}
+
+![Polyglot system](imgs/slides90.jpg)
+
+:::
+::::
 
 # Traditional approach
 
-The *one-size-fits-all* solution
+The *one-size-fits-all* solution...
 
-![](imgs/slides91.png)
+![One-size-fits-all](imgs/slides91.png)
 
 # Polyglot data management
 
-The *one-size-fits-all* solution
+... replaced by the *polyglot* solution
 
-Replaced by the *polyglot * solution
-
-![](imgs/slides92.png)
+![Polyglot solution](imgs/slides92.png)
 
 
 # Service-oriented polyglot data management
@@ -1184,13 +1191,13 @@ Each DB should be "embedded" within services, which offer API services to enable
 
 * Several NoSQL systems (e.g., Riak, Neo4J) already provide REST APIs
 
-![](imgs/slides93.png)
+![Encapsulating DBs with API](imgs/slides93.png)
 
 # Supporting existing technologies
 
 If the current solution cannot be changed, NoSQL systems can still support the existing ones
 
-![](imgs/slides94.png)
+![Legacy solutions](imgs/slides94.png)
 
 # Beyond NoSQL
 

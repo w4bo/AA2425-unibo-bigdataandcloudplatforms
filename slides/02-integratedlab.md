@@ -24,7 +24,7 @@ Pillars to computational thinking:
 :::
 ::: {.column width=50%}
 
-![](imgs/slides62.png)
+![Pillars to computational thinking](imgs/slides62.png)
 
 :::
 ::::
@@ -87,7 +87,7 @@ Building data pipelines
 :::
 ::: {.column width=50%}
 
-![](imgs/slides63.png)
+![CRISP-DM](imgs/slides63.png)
 
 :::
 ::::
@@ -102,12 +102,12 @@ Building data pipelines
 :::: {.columns}
 ::: {.column width=50%}
 
-![](imgs/slides65.png)
+![Raw data](imgs/slides65.png)
 
 :::
 ::: {.column width=50%}
 
-![](imgs/slides66.png)
+![Open (external) data](imgs/slides66.png)
 
 :::
 ::::
@@ -141,4 +141,4 @@ Building data pipelines
 
 # In action
 
-![](imgs/slides68.png)
+![Embedding the ML model into a business process](imgs/slides68.png)
