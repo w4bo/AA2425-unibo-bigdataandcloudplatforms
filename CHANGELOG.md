@@ -1,3 +1,11 @@
+## [1.0.10](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.9...1.0.10) (2024-10-14)
+
+### Bug Fixes
+
+* add catalog ([9e971af](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/9e971afaf3c59569ea0ac32d7a04b134ec84d3d4))
+* add catalog ([99a6007](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/99a6007739910228c8f0d6355d6f6d92d409731f))
+* add catalog ([6800e0a](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/6800e0a38fa0fc559b7f801fbbee58d7ed3c7fd2))
+
 ## [1.0.9](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.8...1.0.9) (2024-10-14)
 
 ### Bug Fixes
