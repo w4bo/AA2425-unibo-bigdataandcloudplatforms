@@ -29,12 +29,12 @@ Research topics
 
 Handling data pipelines in the Cloud
 
-* Introduction to **data platforms**: shifting from databases to well-integrated data ecosystems
-* Definition of **cloud computing** and taxonomy of cloud services
-* Introduction to the most **relevant cloud platforms**
-* Introduction to the **billing models** of cloud computing services
-* Cluster **migration**: on-premises vs on-cloud
-* Real **case studies + labs**
+* Introduction to *data platforms*: shifting from databases to well-integrated data ecosystems
+* Definition of *cloud computing* and taxonomy of cloud services
+* Introduction to the most *relevant cloud platforms*
+* Introduction to the *billing models* of cloud computing services
+* Cluster *migration*: on-premises vs on-cloud
+* Real *case studies + labs*
 
 Seminars by companies working with cloud and big data platforms
 
@@ -47,10 +47,14 @@ Seminars by companies working with cloud and big data platforms
 
 Questions on all (**theoretical** and **practical**) aspects of the course
 
-* A **single session ** with both teachers
-* Exam covers **both modules**
-* **Seminars and labs** are included
-* **Interaction during the lectures/labs ** is considered in the final evaluation
+* A *single session* with both teachers
+* Exam covers *both modules*
+* *Seminars and labs* are included
+* *Interaction during the lectures/labs* is considered in the final evaluation
+
+The exam is not technical
+
+- However, you must be capable to explain the concepts and connect the dots
 
 No scheduled dates, just come **when you are ready**
 
@@ -79,7 +83,7 @@ If you need help with coding and labs, *you can ask the tutor*!
 > The process of using digital technologies to create new — or modify existing — business processes, culture, and customer experiences to meet changing business and market requirements
 
 
-You have acquainted/practiced with **on-premises** solutions
+You have acquainted/practiced with *on-premises* solutions
 
 * You were given a working hardware cluster
 * ... to deploy software applications on a Hadoop-based stack
@@ -94,10 +98,10 @@ In the perspective of digital transformation, let us guess
 No easy answers
 
 * Big-data (distributed) architectures require a lot of skills
-* **Configuration**: how do I set up dozens of new machines?
-* **Networking**: how do I cable dozens of machines?
-* **Management**: how do I replace a broken disk?
-* **Upgrade**: how do I extend the cluster with new services/machines?
+* *Configuration*: how do I set up dozens of new machines?
+* *Networking*: how do I cable dozens of machines?
+* *Management*: how do I replace a broken disk?
+* *Upgrade*: how do I extend the cluster with new services/machines?
 * (energy and cooling, software licenses, insurance...)
 
 [https://aws.amazon.com/compliance/data-center/data-centers/](https://aws.amazon.com/compliance/data-center/data-centers/)
@@ -112,47 +116,44 @@ Two sides of the same coin, and your profile is a perfect? fit
   * How do we orchestrate data flows?
 * Business perspective
   * Can we afford to spend resources on tasks that are not mission-oriented?
+    * Mission: a statement used by a company to explain its purpose(s)
   * No free lunch, each choice has a cost/benefit
   * How much time does it take to master a technology?
   * How many people do I need?
 
 ... but first, what are our **data needs**?
 
-Can we afford to spend resources on tasks that are not mission-oriented?
-
-* Mission: a statement used by a company to explain its purpose(s)
-
 # Teaching material
 
 :::: {.columns}
 ::: {.column width=25%}
 
-![](imgs/slides0.png)
+![Designing Cloud Data Platforms](imgs/slides0.png)
 
 :::
 ::: {.column width=25%}
 
-![](imgs/slides1.jpg)
+![Cloud Computing for Science and Engineering](imgs/slides2.jpg)
 
 :::
 ::: {.column width=25%}
 
-![](imgs/slides2.jpg)
+![Amazon Web Services in Action](imgs/slides5.png)
 
 :::
 ::: {.column width=25%}
 
-![](imgs/slides5.png)
+![Programming AWS Lambda](imgs/slides1.jpg)
 
 :::
-::: {.column width=33%}
+::: {.column width=50%}
 
-![](imgs/slides3.png)
+![Coursera](imgs/slides3.png)
 
 :::
-::: {.column width=33%}
+::: {.column width=50%}
 
-![](imgs/slides4.png)
+![Twitch](imgs/slides4.png)
 
 :::
 ::::
