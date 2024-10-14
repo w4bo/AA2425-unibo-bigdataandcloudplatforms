@@ -969,6 +969,10 @@ Functional architecture
 :::
 ::::
 
+# Wooclap
+
+<iframe allowfullscreen frameborder="0" height="100%" mozallowfullscreen src="https://app.wooclap.com/QSKSKM/questionnaires/670d4f079fbe10d48eb44851" style="min-height: 550px; min-width: 300px" width="100%"></iframe>
+
 # Summing up
 
 * Storage should be flexible enough to support heterogenous data models and raw data
