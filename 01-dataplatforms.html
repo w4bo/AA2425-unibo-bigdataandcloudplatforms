@@ -632,9 +632,112 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </section>
 
+<section id="data-lakehouse" class="title-slide slide level1 center">
+<h1>Data lakehouse</h1>
+<p><strong>Data lakehouse</strong></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Data management architecture that combines the flexibility, cost-efficiency, and scale of data lakes with the data management and ACID transactions of data warehouses, enabling business intelligence (BI) and machine learning (ML) on all data</li>
+<li>Vendor lock-in</li>
+</ul>
+<p>Key technologies used to implement Data Lakehouses</p>
+<ul>
+<li>Databricks’ Delta Lake</li>
+<li>Apache Hudi</li>
+<li>Apache Iceberg</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides27.png"></p>
+<figcaption>Data lakehouse</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="https://databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html">https://databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html</a></p>
+<p><a href="https://www.databricks.com/glossary/data-lakehouse">https://www.databricks.com/glossary/data-lakehouse</a></p>
+</section>
+
+<section id="data-lakehouse-1" class="title-slide slide level1 center">
+<h1>Data lakehouse</h1>
+
+<img data-src="imgs/slides26.png" class="r-stretch quarto-figure-center"><p class="caption">Towards data lakehouse</p></section>
+
+<section id="data-lakehouse-2" class="title-slide slide level1 center">
+<h1>Data lakehouse</h1>
+<table>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Data warehouse</th>
+<th style="text-align: center;">Data lake</th>
+<th style="text-align: center;">Data lakehouse</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><em>Data format</em></td>
+<td style="text-align: center;">Closed, proprietary format</td>
+<td style="text-align: center;">Open format (e.g., Parquet)</td>
+<td style="text-align: center;">Open format</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><em>Types of data</em></td>
+<td style="text-align: center;">Structured data, with limited support for semi-structured data</td>
+<td style="text-align: center;">All types: Structured data, semi-structured data, textual data, unstructured (raw) data</td>
+<td style="text-align: center;">All types: Structured data, semi-structured data, textual data, unstructured (raw) data</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><em>Data access</em></td>
+<td style="text-align: center;">SQL-only, no direct access to file</td>
+<td style="text-align: center;">Open APIs for direct access to files with SQL, R, Python, and other languages</td>
+<td style="text-align: center;">Open APIs for direct access to files with SQL, R, Python, and other languages</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><em>Reliability</em></td>
+<td style="text-align: center;">High quality, reliable data with ACID transactions</td>
+<td style="text-align: center;">Low quality, data swamp</td>
+<td style="text-align: center;">High quality, reliable data with ACID transactions</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><em>Governance and security</em></td>
+<td style="text-align: center;">Fine-grained security and governance for row/columnar level for tables</td>
+<td style="text-align: center;">Poor governance as security needs to be applied to files</td>
+<td style="text-align: center;">Fine-grained security and governance for row/columnar level for tables</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><em>Performance</em></td>
+<td style="text-align: center;">High</td>
+<td style="text-align: center;">Low</td>
+<td style="text-align: center;">High</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><em>Scalability</em></td>
+<td style="text-align: center;">Scaling becomes exponentially more expensive</td>
+<td style="text-align: center;">Scales to hold any amount of data at low cost, regardless of type</td>
+<td style="text-align: center;">Scales to hold any amount of data at low cost, regardless of type</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><em>Use case support</em></td>
+<td style="text-align: center;">Limited to BI, SQL applications and decision support</td>
+<td style="text-align: center;">Limited to machine learning</td>
+<td style="text-align: center;">One data architecture for BI, SQL and machine learning</td>
+</tr>
+</tbody>
+</table>
+</section>
+
 <section id="data-platform-7" class="title-slide slide level1 center">
 <h1>Data platform</h1>
-<p>Data lakes have increasingly taken the role of data hubs</p>
+<p>Data lakes (or lakehouses) have increasingly taken the role of data hubs</p>
 <ul>
 <li>Eliminate up-front costs of ingestion and ETL since data are stored in original format</li>
 <li>Once in DL, data are available for analysis by everyone in the organization</li>
@@ -786,9 +889,15 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="column" style="width:60%;">
 <p><em>Entity</em></p>
 <ul>
-<li>Physical/conceptual things <em>Activity</em></li>
+<li>Physical/conceptual things</li>
+</ul>
+<p><em>Activity</em></p>
+<ul>
 <li>Dynamic aspects of the world, such as actions</li>
-<li>How entities come into existence, often making use of previously existing entities <em>Agent</em></li>
+<li>How entities come into existence, often making use of previously existing entities</li>
+</ul>
+<p><em>Agent</em></p>
+<ul>
 <li>A person, a piece of software</li>
 <li>Takes a role in an activity such that the agent can be assigned some degree of responsibility for the activity taking place</li>
 </ul>
@@ -808,11 +917,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Data provenance</h1>
 <p>Use cases for data provenance</p>
 <ul>
-<li><p>Accountability and auditing Data quality</p></li>
-<li><p>Monitoring of the quality (e.g., accuracy) of the objects produced</p></li>
-<li><p>Notify when a transformation pipeline is not behaving as expected Debugging</p></li>
-<li><p>Inferring the cause of pipeline failures is challenging</p></li>
-<li><p>Store inputs of each operation with versions and environmental settings (RAM, CPUs, etc.)</p></li>
+<li>Accountability and auditing</li>
+</ul>
+<p>Data quality</p>
+<ul>
+<li>Monitoring of the quality (e.g., accuracy) of the objects produced</li>
+<li>Notify when a transformation pipeline is not behaving as expected</li>
+</ul>
+<p>Debugging</p>
+<ul>
+<li>Inferring the cause of pipeline failures is challenging</li>
+<li>Store inputs of each operation with versions and environmental settings (RAM, CPUs, etc.)</li>
 </ul>
 <p>And so on…</p>
 </section>
@@ -839,13 +954,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="data-profiling" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p>Data profiling <span class="citation" data-cites="naumann2014data">(<a href="#/references" role="doc-biblioref" onclick="">Naumann 2014</a>)</span></p>
 <ul>
 <li>A broad range of methods to efficiently analyze a given data set</li>
 <li>E.g., in a <em>relational</em> scenario, <em>tables</em> of a relational database are <em>scanned</em> to derive <em>metadata</em>, such as <em>data types</em>, <em>completeness</em> and <em>uniqueness</em> of columns, <em>keys</em> and <em>foreign keys</em>, and occasionally <em>functional dependencies</em> and <em>association rules</em></li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="imgs/slides19.png"></p>
@@ -876,19 +991,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-profiling-2" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
-<p>Challenges</p>
-<ul>
-<li>The results of data profiling are <em>computationally complex</em> to discover
+<p>The results of data profiling are <em>computationally heavy</em> to discover</p>
 <ul>
 <li>E.g., discovering keys/dependencies usually involves some sorting step for each considered column</li>
-</ul></li>
-<li>Verification of <em>complex constraints on column combinations </em> in a database
-<ul>
-<li>What is the complexity of this task?</li>
-</ul></li>
 </ul>
+<p>Verification of <em>constraints on combinations of columns</em> in a database</p>
 <div class="columns">
 <div class="column" style="width:50%;">
+<p>Complexity: how many combinations (groups of columns)?</p>
 <p>Given a table with columns <span class="math inline">\(C = \{w, x, x, y, z\}\)</span></p>
 <table>
 <thead>
@@ -946,9 +1056,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <figcaption>Example of entity resolution</figcaption>
 </figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*MjJWP2uwkTMDRg0q0i76qA.png"></p>
+<figcaption>Example of entity resolution</figcaption>
+</figure>
 </div>
 </div>
-<p>Papadakis, George, et al.&nbsp;“Blocking and filtering techniques for entity resolution: A survey.” <em>ACM Computing Surveys (CSUR)</em> 53.2 (2020): 1-42.</p>
+</div>
 </section>
 
 <section id="data-versioning" class="title-slide slide level1 center">
@@ -1022,109 +1137,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Data management is still a (research) issue in data platforms</p>
 </section>
 
-<section id="data-lakehouse" class="title-slide slide level1 center">
-<h1>Data lakehouse</h1>
-<p><strong>Data lakehouse</strong></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>Data management architecture that combines the flexibility, cost-efficiency, and scale of data lakes with the data management and ACID transactions of data warehouses, enabling business intelligence (BI) and machine learning (ML) on all data</li>
-<li>Vendor lock-in</li>
-</ul>
-<p>Key technologies used to implement Data Lakehouses</p>
-<ul>
-<li>Databricks’ Delta Lake</li>
-<li>Apache Hudi</li>
-<li>Apache Iceberg</li>
-</ul>
-<p><a href="https://databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html">https://databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html</a></p>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides27.png"></p>
-<figcaption>Data lakehouse</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p><a href="https://www.databricks.com/glossary/data-lakehouse">https://www.databricks.com/glossary/data-lakehouse</a></p>
-</section>
-
-<section id="data-lakehouse-1" class="title-slide slide level1 center">
-<h1>Data lakehouse</h1>
-
-<img data-src="imgs/slides26.png" class="r-stretch quarto-figure-center"><p class="caption">Towards data lakehouse</p></section>
-
-<section id="data-lakehouse-2" class="title-slide slide level1 center">
-<h1>Data lakehouse</h1>
-<table>
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Data warehouse</th>
-<th style="text-align: center;">Data lake</th>
-<th style="text-align: center;">Data lakehouse</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Data format</td>
-<td style="text-align: center;">Closed, proprietary format</td>
-<td style="text-align: center;">Open format (e.g., Parquet)</td>
-<td style="text-align: center;">Open format</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Types of data</td>
-<td style="text-align: center;">Structured data, with limited support for semi-structured data</td>
-<td style="text-align: center;">All types: Structured data, semi-structured data, textual data, unstructured (raw) data</td>
-<td style="text-align: center;">All types: Structured data, semi-structured data, textual data, unstructured (raw) data</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Data access</td>
-<td style="text-align: center;">SQL-only, no direct access to file</td>
-<td style="text-align: center;">Open APIs for direct access to files with SQL, R, Python, and other languages</td>
-<td style="text-align: center;">Open APIs for direct access to files with SQL, R, Python, and other languages</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Reliability</td>
-<td style="text-align: center;">High quality, reliable data with ACID transactions</td>
-<td style="text-align: center;">Low quality, data swamp</td>
-<td style="text-align: center;">High quality, reliable data with ACID transactions</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Governance and security</td>
-<td style="text-align: center;">Fine-grained security and governance for row/columnar level for tables</td>
-<td style="text-align: center;">Poor governance as security needs to be applied to files</td>
-<td style="text-align: center;">Fine-grained security and governance for row/columnar level for tables</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Performance</td>
-<td style="text-align: center;">High</td>
-<td style="text-align: center;">Low</td>
-<td style="text-align: center;">High</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Scalability</td>
-<td style="text-align: center;">Scaling becomes exponentially more expensive</td>
-<td style="text-align: center;">Scales to hold any amount of data at low cost, regardless of type</td>
-<td style="text-align: center;">Scales to hold any amount of data at low cost, regardless of type</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Use case support</td>
-<td style="text-align: center;">Limited to BI, SQL applications and decision support</td>
-<td style="text-align: center;">Limited to machine learning</td>
-<td style="text-align: center;">One data architecture for BI, SQL and machine learning</td>
-</tr>
-</tbody>
-</table>
-</section>
-
 <section id="data-platform-11" class="title-slide slide level1 center">
 <h1>Data platform</h1>
 <p><strong>Is it a Lakehouse with another name?</strong></p>
@@ -1157,7 +1169,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Team members who understand all aspects of a data platform’s architecture</li>
 <li>Work closely with the data platform engineers to create data workflows</li>
-<li>Responsible for designing and testing new database architectures and planning both data and architecture migrations</li>
 </ul>
 <p><em>Data pipeline engineer</em></p>
 <ul>
@@ -1188,13 +1199,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>DataOps</strong> refers to a general process aimed to shorten the end-to-end data analytic life-cycle time by introducing automation in the data collection, validation, and verification process</p>
-</div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="imgs/slides30.png"></p>
 <figcaption>Evolution of DataOps <span class="citation" data-cites="munappy2020ad">(<a href="#/references" role="doc-biblioref" onclick="">Munappy et al. 2020</a>)</span></figcaption>
 </figure>
 </div>
+</div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="imgs/slides31.png"></p>
@@ -1208,7 +1219,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="dataops" class="title-slide slide level1 center">
 <h1>DataOps</h1>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p>From DevOps to DataOps</p>
 <ul>
 <li>“A collaborative data management practice focused on improving the <em>communication, integration and automation of data flows between data managers and data consumers across an organization</em>”</li>
@@ -1221,7 +1232,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Establish governance discipline (<em>governance-as-code</em>)</li>
 <li>Design process for growth and extensibility</li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="imgs/slides32.png"></p>
@@ -1368,12 +1379,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Data products are registered in <strong>knowledge catalog </strong> through specifications (XML, JSON, etc.)</li>
 <li>Main features
 <ul>
-<li><strong>Data product description</strong>: The data product needs to be well-described</li>
-<li><strong>Access methods</strong>: for example, REST APIs, SQL, NoSQL, etc., and where to find the data asset</li>
-<li><strong>Policies and rules</strong>: who is allowed to consume the data product for what purpose</li>
-<li><strong>SLAs</strong>: agreements regarding the data product availability, performance characteristics, functions, cost of data product usage</li>
-<li><strong>Defined format</strong>: A data product needs to be described using a defined format</li>
-<li><strong>Cataloged</strong>: All data products need to be registered in the knowledge catalog. Data products need to be searchable and discoverable by potential data product consumers and business user</li>
+<li><em>Data product description</em>: The data product needs to be well-described</li>
+<li><em>Access methods</em>: for example, REST APIs, SQL, NoSQL, etc., and where to find the data asset</li>
+<li><em>Policies and rules</em>: who is allowed to consume the data product for what purpose</li>
+<li><em>SLAs</em>: agreements regarding the data product availability, performance characteristics, functions, cost of data product usage</li>
+<li><em>Defined format</em>: A data product needs to be described using a defined format</li>
+<li><em>Cataloged</em>: All data products need to be registered in the knowledge catalog. Data products need to be searchable and discoverable by potential data product consumers and business user</li>
 </ul></li>
 <li>Data products themselves are not stored in the knowledge catalog</li>
 </ul>
