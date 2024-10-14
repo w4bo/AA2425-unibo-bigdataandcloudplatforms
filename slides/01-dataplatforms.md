@@ -721,21 +721,21 @@ Gartner, 2021 [https://www.gartner.com/smarterwithgartner/data-fabric-architectu
 
 Distributed data architecture, under centralized governance and standardization for interoperability, enabled by a shared and harmonized self-serve data infrastructure
 
-* Domain-oriented decentralized data ownership
+* *Domain-oriented decentralized data ownership*
   * Decentralization and distribution of responsibility to people who are closest to the data, in order to support continuous change and scalability
   * Each domain exposes its own op/analytical APIs
-* **Data as a product ** (_quantum_)
+* **Data as a product** (_quantum_)
   * Products must be discoverable, addressable, trustworthy, self-describing, secure
-* Self-serve data infrastructure as a platform
+* *Self-serve data infrastructure as a platform*
   * High-level abstraction of infrastructure to provision and manage the lifecycle of data products
-* Federated computational governance
+* *Federated computational governance*
   * A governance model that embraces decentralization and domain self-sovereignty, interoperability through global standardization, a dynamic topology, automated execution of decisions by the platform
 
-Zhamak Dehghani, 2019 [https://martinfowler.com/articles/data-monolith-to-mesh.html](https://martinfowler.com/articles/data-monolith-to-mesh.html)
+[Zhamak Dehghani (2019). Data monolith to mesh](https://martinfowler.com/articles/data-monolith-to-mesh.html)
 
-Zhamak Dehghani, 2020 [https://martinfowler.com/articles/data-mesh-principles.html](https://martinfowler.com/articles/data-mesh-principles.html)
+[Zhamak Dehghani (2020). Data mesh principles](https://martinfowler.com/articles/data-mesh-principles.html)
 
-https://www.youtube.com/watch?v=_bmYXWCxF_Q
+[Zhamak Dehghani (2021). Introduction to Data Mesh](https://www.youtube.com/watch?v=_bmYXWCxF_Q)
 
 # Data mesh
 
@@ -754,6 +754,23 @@ Data Mesh organizes data around **business domain owners** and transforms releva
 
 :::
 ::::
+
+# Data mesh
+
+:::: {.columns}
+::: {.column width=50%}
+
+![2023](imgs/hypecycle-dm-2023.png)
+
+:::
+::: {.column width=50%}
+
+![2024](imgs/hypecycle-dm-2024.png)
+
+:::
+::::
+
+As new technologies and solutions mature to support a centralized approach to data access, distributed approaches like Data Mesh are expected to fall increasingly out of favor in enterprise IT.
 
 # What makes data a product?
 
