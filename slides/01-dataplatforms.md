@@ -540,7 +540,7 @@ For example, on AWS (PUT, GET, DELETE), what about updating?
 :::: {.columns}
 ::: {.column width=60%}
 
-A **data catalog** is an organized inventory of the data in your company
+A **data catalog** is an organized inventory of the data in your company [@olesen2023enterprise]
 
 - The data catalog provides an overview at a metadata level only, and thus no actual data values are exposed.
 - You can let everyone see everything without fear of exposing confidential or sensitive data.
@@ -591,7 +591,6 @@ A **domain** is a group of entities sharing knowledge, goals, methods of operati
 
 :::
 ::::
-
 
 # Data platform
 
