@@ -167,9 +167,54 @@ Getting _value_ from data _is not_ (only) a matter of _storage_
 | Users | Business analysts | Data scientists, data developers, and business analysts (using curated data) |
 | Analytics | Batch reporting, BI, and visualizations | Machine learning, predictive analytics, data discovery, and profiling. |
 
+# Data lakehouse
+
+**Data lakehouse**
+
+:::: {.columns}
+::: {.column width=50%}
+
+* Data management architecture that combines the flexibility, cost-efficiency, and scale of data lakes with the data management and ACID transactions of data warehouses, enabling business intelligence (BI) and machine learning (ML) on all data
+* Vendor lock-in
+
+Key technologies used to implement Data Lakehouses
+
+* Databricks' Delta Lake
+* Apache Hudi
+* Apache Iceberg
+
+:::
+::: {.column width=50%}
+
+![Data lakehouse](imgs/slides27.png)
+
+:::
+::::
+
+[https://databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html](https://databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html)
+
+[https://www.databricks.com/glossary/data-lakehouse](https://www.databricks.com/glossary/data-lakehouse)
+
+# Data lakehouse
+
+![Towards data lakehouse](imgs/slides26.png)
+
+# Data lakehouse
+
+|  | Data warehouse | Data lake | Data lakehouse |
+|:-: |:-: |:-: |:-: |
+| *Data format*       | Closed, proprietary format | Open format (e.g., Parquet) | Open format |
+| *Types of data*     | Structured data, with limited support for semi-structured data | All types: Structured data, semi-structured data, textual data, unstructured (raw) data | All types: Structured data, semi-structured data, textual data, unstructured (raw) data |
+| *Data access*       | SQL-only, no direct access to file | Open APIs for direct access to files with SQL, R, Python, and other languages | Open APIs for direct access to files with SQL, R, Python, and other languages |
+| *Reliability*       | High quality, reliable data with ACID transactions | Low quality, data swamp | High quality, reliable data with ACID transactions |
+| *Governance and security* | Fine-grained security and governance for row/columnar level for tables | Poor governance as security needs to be applied to files | Fine-grained security and governance for row/columnar level for tables |
+| *Performance*       | High | Low | High |
+| *Scalability*       | Scaling becomes exponentially more expensive | Scales to hold any amount of data at low cost, regardless of type | Scales to hold any amount of data at low cost, regardless of type |
+| *Use case support*  | Limited to BI, SQL applications and decision support | Limited to machine learning | One data architecture for BI, SQL and machine learning |
+
 # Data platform
 
-Data lakes have increasingly taken the role of data hubs
+Data lakes (or lakehouses) have increasingly taken the role of data hubs
 
 * Eliminate up-front costs of ingestion and ETL since data are stored in original format
 * Once in DL, data are available for analysis by everyone in the organization
@@ -300,10 +345,14 @@ Data provenance, an example of data management
 _Entity_
 
 * Physical/conceptual things
+
 _Activity_
+
 * Dynamic aspects of the world, such as actions
 * How entities come into existence, often making use of previously existing entities
+
 _Agent_
+
 * A person, a piece of software
 * Takes a role in an activity such that the agent can be assigned some degree of responsibility for the activity taking place
 
@@ -322,10 +371,12 @@ _Agent_
 Use cases for data provenance
 
 * Accountability and auditing
+
 Data quality
 
 * Monitoring of the quality (e.g., accuracy) of the objects produced
 * Notify when a transformation pipeline is not behaving as expected
+
 Debugging
 
 * Inferring the cause of pipeline failures is challenging
@@ -353,7 +404,7 @@ Summarization/compression
 # Data profiling
 
 :::: {.columns}
-::: {.column width=50%}
+::: {.column width=60%}
 
 Data profiling [@naumann2014data]
 
@@ -361,7 +412,7 @@ Data profiling [@naumann2014data]
 * E.g., in a _relational_ scenario, _tables_ of a relational database are _scanned_ to derive _metadata_, such as _data types_, _completeness_ and _uniqueness_ of columns, _keys_ and  _foreign keys_, and occasionally _functional dependencies_ and _association rules_
 
 :::
-::: {.column width=50%}
+::: {.column width=40%}
 
 ![Characteristics of data profiling](imgs/slides19.png)
 
@@ -383,15 +434,16 @@ Challenges?
 
 # Data profiling
 
-Challenges
+The results of data profiling are _computationally heavy_ to discover
 
-* The results of data profiling are _computationally complex_ to discover
-  * E.g., discovering keys/dependencies usually involves some sorting step for each considered column
-* Verification of _complex constraints on column combinations _ in a database
-  * What is the complexity of this task?
+* E.g., discovering keys/dependencies usually involves some sorting step for each considered column
+
+Verification of _constraints on combinations of columns_ in a database
 
 :::: {.columns}
 ::: {.column width=50%}
+
+Complexity: how many combinations (groups of columns)?
 
 Given a table with columns $C = \{w, x, x, y, z\}$
 
@@ -427,10 +479,10 @@ Entity resolution [@papadakis2020blocking]
 
 ![Example of entity resolution](imgs/slides20.png)
 
+![Example of entity resolution](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MjJWP2uwkTMDRg0q0i76qA.png)
+
 :::
 ::::
-
-Papadakis, George, et al. "Blocking and filtering techniques for entity resolution: A survey."  _ACM Computing Surveys (CSUR)_ 53.2 (2020): 1-42.
 
 # Data versioning
 
@@ -495,51 +547,6 @@ We need meta meta-data (or models)...
 
 Data management is still a (research) issue in data platforms
 
-# Data lakehouse
-
-**Data lakehouse**
-
-:::: {.columns}
-::: {.column width=50%}
-
-* Data management architecture that combines the flexibility, cost-efficiency, and scale of data lakes with the data management and ACID transactions of data warehouses, enabling business intelligence (BI) and machine learning (ML) on all data
-* Vendor lock-in
-
-Key technologies used to implement Data Lakehouses
-
-* Databricks’ Delta Lake
-* Apache Hudi
-* Apache Iceberg
-
-[https://databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html](https://databricks.com/blog/2021/05/19/evolution-to-the-data-lakehouse.html)
-
-:::
-::: {.column width=50%}
-
-![Data lakehouse](imgs/slides27.png)
-
-:::
-::::
-
-[https://www.databricks.com/glossary/data-lakehouse](https://www.databricks.com/glossary/data-lakehouse)
-
-# Data lakehouse
-
-![Towards data lakehouse](imgs/slides26.png)
-
-# Data lakehouse
-
-|  | Data warehouse | Data lake | Data lakehouse |
-|:-: |:-: |:-: |:-: |
-| Data format | Closed, proprietary format | Open format (e.g., Parquet) | Open format |
-| Types of data | Structured data, with limited support for semi-structured data | All types: Structured data, semi-structured data, textual data, unstructured (raw) data | All types: Structured data, semi-structured data, textual data, unstructured (raw) data |
-| Data access | SQL-only, no direct access to file | Open APIs for direct access to files with SQL, R, Python, and other languages | Open APIs for direct access to files with SQL, R, Python, and other languages |
-| Reliability | High quality, reliable data with ACID transactions | Low quality, data swamp | High quality, reliable data with ACID transactions |
-| Governance and security | Fine-grained security and governance for row/columnar level for tables | Poor governance as security needs to be applied to files | Fine-grained security and governance for row/columnar level for tables |
-| Performance | High | Low | High |
-| Scalability | Scaling becomes exponentially more expensive | Scales to hold any amount of data at low cost, regardless of type | Scales to hold any amount of data at low cost, regardless of type |
-| Use case support | Limited to BI, SQL applications and decision support | Limited to machine learning | One data architecture for BI, SQL and machine learning |
-
 # Data platform
 
 **Is it a Lakehouse with another name?**
@@ -569,7 +576,6 @@ _Data architect_
 
 * Team members who understand all aspects of a data platform's architecture
 * Work closely with the data platform engineers to create data workflows
-* Responsible for designing and testing new database architectures and planning both data and architecture migrations
 
 _Data pipeline engineer_
 
@@ -602,10 +608,10 @@ DevOps practices enable software development (dev) and operations (ops) teams to
 
 **DataOps** refers to a general process aimed to shorten the end-to-end data analytic life-cycle time by introducing automation in the data collection, validation, and verification process
 
+![Evolution of DataOps [@munappy2020ad]](imgs/slides30.png)
+
 :::
 ::: {.column width=50%}
-
-![Evolution of DataOps [@munappy2020ad]](imgs/slides30.png)
 
 ![Evolution of DataOps](imgs/slides31.png)
 
@@ -615,7 +621,7 @@ DevOps practices enable software development (dev) and operations (ops) teams to
 # DataOps
 
 :::: {.columns}
-::: {.column width=50%}
+::: {.column width=60%}
 
 From DevOps to DataOps
 
@@ -630,7 +636,7 @@ Some key rules
 * Design process for growth and extensibility
 
 :::
-::: {.column width=50%}
+::: {.column width=40%}
 
 ![DevOps](imgs/slides32.png)
 
@@ -755,12 +761,12 @@ A **data product** is raw data transformed into a business context
 
 * Data products are registered in **knowledge catalog ** through specifications (XML, JSON, etc.)
 * Main features
-  * **Data product description**: The data product needs to be well-described
-  * **Access methods**: for example, REST APIs, SQL, NoSQL, etc., and where to find the data asset
-  * **Policies and rules**: who is allowed to consume the data product for what purpose
-  * **SLAs**: agreements regarding the data product availability, performance characteristics, functions, cost of data product usage
-  * **Defined format**: A data product needs to be described using a defined format
-  * **Cataloged**: All data products need to be registered in the knowledge catalog. Data products need to be searchable and discoverable by potential data product consumers and business user
+  * *Data product description*: The data product needs to be well-described
+  * *Access methods*: for example, REST APIs, SQL, NoSQL, etc., and where to find the data asset
+  * *Policies and rules*: who is allowed to consume the data product for what purpose
+  * *SLAs*: agreements regarding the data product availability, performance characteristics, functions, cost of data product usage
+  * *Defined format*: A data product needs to be described using a defined format
+  * *Cataloged*: All data products need to be registered in the knowledge catalog. Data products need to be searchable and discoverable by potential data product consumers and business user
 * Data products themselves are not stored in the knowledge catalog
 
 # Data mesh vs data fabric

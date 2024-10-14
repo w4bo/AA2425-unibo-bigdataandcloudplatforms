@@ -102,7 +102,7 @@ No easy answers
 * *Networking*: how do I cable dozens of machines?
 * *Management*: how do I replace a broken disk?
 * *Upgrade*: how do I extend the cluster with new services/machines?
-* (energy and cooling, software licenses, insurance...)
+* (energy and cooling, software licenses, insurance, ...)
 
 [https://aws.amazon.com/compliance/data-center/data-centers/](https://aws.amazon.com/compliance/data-center/data-centers/)
 
