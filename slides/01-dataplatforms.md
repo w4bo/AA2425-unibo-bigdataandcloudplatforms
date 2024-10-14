@@ -565,7 +565,7 @@ A **domain** is a group of entities sharing knowledge, goals, methods of operati
 :::
 ::: {.column width=40%}
 
-![Data catalog](imgs/datacatalog-domain.PNG)
+![Organization of domains](imgs/datacatalog-domain.PNG)
 
 :::
 ::::
