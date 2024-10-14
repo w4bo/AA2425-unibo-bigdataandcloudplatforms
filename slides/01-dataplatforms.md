@@ -438,14 +438,14 @@ The results of data profiling are _computationally heavy_ to discover
 
 * E.g., discovering keys/dependencies usually involves some sorting step for each considered column
 
-Verification of _constraints on combinations of columns_ in a database
+Verification of _constraints on combinations (groups) of columns_ in a database
 
 :::: {.columns}
 ::: {.column width=50%}
 
-Complexity: how many combinations (groups of columns)?
+**Complexity**: how many combinations (groups of columns)?
 
-Given a table with columns $C = \{w, x, x, y, z\}$
+Given a table with columns $C = \{w, x, y, z\}$
 
 | w | x | y | z |
 |:-: |:-: |:-: |:-: |
