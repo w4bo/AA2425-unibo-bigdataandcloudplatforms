@@ -535,6 +535,64 @@ For example, on AWS (PUT, GET, DELETE), what about updating?
 
 [https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html](https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html) (accessed 2022-08-01)
 
+# Data catalog
+
+:::: {.columns}
+::: {.column width=60%}
+
+A **data catalog** is an organized inventory of the data in your company
+
+- The data catalog provides an overview at a metadata level only, and thus no actual data values are exposed.
+- You can let everyone see everything without fear of exposing confidential or sensitive data.
+
+:::
+::: {.column width=40%}
+
+![Data catalog](imgs/datacatalog.PNG)
+
+:::
+::::
+
+# Data catalog
+
+:::: {.columns}
+::: {.column width=60%}
+
+Meta-data is organized into domains
+
+A **domain** is a group of entities sharing knowledge, goals, methods of operation, and communication
+
+:::
+::: {.column width=40%}
+
+![Data catalog](imgs/datacatalog-domain.PNG)
+
+:::
+::::
+
+# Data catalog: processes vs capabilities
+
+:::: {.columns}
+
+*Processes* describe how a company performs its tasks.
+
+*Capabilities*  describe what tasks a company performs.
+
+- Neither processes nor capabilities reflect the business units of your company 1:1.
+
+::: {.column width=50%}
+
+![Process oriented](imgs/datacatalog-domain1.PNG)
+
+:::
+::: {.column width=50%}
+
+![Capability oriented](imgs/datacatalog-domain2.PNG)
+
+:::
+::::
+
+
 # Data platform
 
 Are we done? No!
