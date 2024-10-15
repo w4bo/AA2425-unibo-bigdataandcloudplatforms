@@ -161,7 +161,7 @@ Getting _value_ from data _is not_ (only) a matter of _storage_
 | Characteristics | Data warehouse | Data lake |
 |:-: |:-: |:-: |
 | Data | Relational | Non-relational and relational |
-| Schema | Designed prior to implementation (schema-on-write) | Written at the time of analysis (schema-on-read) |
+| Schema | Designed prior to implementation (**schema-on-write**) | Written at the time of analysis <br /> (**schema-on-read**) |
 | Price/performance | Fastest query results using higher cost storage | Query results getting faster using low-cost storage |
 | Data quality | Highly curated data that serves as the central version of the truth | Any data, which may or may not be curated (e.g., raw data) |
 | Users | Business analysts | Data scientists, data developers, and business analysts (using curated data) |
@@ -175,11 +175,10 @@ Getting _value_ from data _is not_ (only) a matter of _storage_
 ::: {.column width=50%}
 
 * Data management architecture that combines the flexibility, cost-efficiency, and scale of data lakes with the data management and ACID transactions of data warehouses, enabling business intelligence (BI) and machine learning (ML) on all data
-* Vendor lock-in
 
 Key technologies used to implement Data Lakehouses
 
-* Databricks' Delta Lake
+* Databricks' Delta Tables
 * Apache Hudi
 * Apache Iceberg
 
