@@ -365,6 +365,65 @@ _Agent_
 
 [https://www.w3.org/TR/2013/NOTE-prov-primer-20130430/](https://www.w3.org/TR/2013/NOTE-prov-primer-20130430/)
 
+# Data provenance: fine grained vs coarse grained
+
+How would you represent this table update?
+
+:::: {.columns}
+::: {.column width=50%}
+
+Original data
+
+| `product_id` | `sales_v1` |
+|:-------------|--------:|
+| "p1"         |      10 |
+| "p2"         |      20 |
+| "p3"         |      30 |
+| "p4"         |      10 |
+| "p5"         |      20 |
+| "p6"         |      30 |
+
+:::
+::: {.column width=50%}
+
+```sales_v2 = sales_v1 + 1```
+
+| `product_id` | `sales_v2` |
+|:-------------|--------:|
+| "p1"         |      11 |
+| "p2"         |      21 |
+| "p3"         |      31 |
+| "p4"         |      11 |
+| "p5"         |      21 |
+| "p6"         |      31 |
+
+:::
+::::
+
+# Data provenance: fine grained vs coarse grained
+
+:::: {.columns}
+::: {.column width=20%}
+
+:::
+::: {.column width=60%}
+
+:::: {.columns}
+::: {.column width=100%}
+
+![Coarse grained](imgs/coarsegrained.svg)
+
+:::
+::: {.column width=100%}
+
+![Fine grained](imgs/finegrained.svg)
+
+:::
+::::
+
+:::
+::::
+
 # Data provenance
 
 Use cases for data provenance
@@ -513,7 +572,7 @@ Given a table with columns $C = \{w, x, y, z\}$
 | 1 | 2 | 1 | 4 |
 
 :::
-::: {.column width=40%}
+::: {.column width=30%}
 
 ![Powerset of three columns](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Hasse_diagram_of_powerset_of_3.svg/1280px-Hasse_diagram_of_powerset_of_3.svg.png)
 
