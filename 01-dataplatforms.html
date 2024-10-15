@@ -912,6 +912,113 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><a href="https://www.w3.org/TR/2013/NOTE-prov-primer-20130430/">https://www.w3.org/TR/2013/NOTE-prov-primer-20130430/</a></p>
 </section>
 
+<section id="data-provenance-fine-grained-vs-coarse-grained" class="title-slide slide level1 center">
+<h1>Data provenance: fine grained vs coarse grained</h1>
+<p>How would you represent this table update?</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Original data</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><code>product_id</code></th>
+<th style="text-align: right;"><code>sales_v1</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">“p1”</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“p2”</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">“p3”</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“p4”</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">“p5”</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“p6”</td>
+<td style="text-align: right;">30</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><code>sales_v2 = sales_v1 + 1</code></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><code>product_id</code></th>
+<th style="text-align: right;"><code>sales_v2</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">“p1”</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“p2”</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">“p3”</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“p4”</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">“p5”</td>
+<td style="text-align: right;">21</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“p6”</td>
+<td style="text-align: right;">31</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section id="data-provenance-fine-grained-vs-coarse-grained-1" class="title-slide slide level1 center">
+<h1>Data provenance: fine grained vs coarse grained</h1>
+<div class="columns">
+<div class="column" style="width:20%;">
+
+</div><div class="column" style="width:60%;">
+<div class="columns">
+<div class="column" style="width:100%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/coarsegrained.svg"></p>
+<figcaption>Coarse grained</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:100%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/finegrained.svg"></p>
+<figcaption>Fine grained</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <section id="data-provenance-6" class="title-slide slide level1 center">
 <h1>Data provenance</h1>
 <p>Use cases for data provenance</p>
@@ -1188,7 +1295,7 @@ memory usage: 6.0 KB</code></pre>
 </tr>
 </tbody>
 </table>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Hasse_diagram_of_powerset_of_3.svg/1280px-Hasse_diagram_of_powerset_of_3.svg.png"></p>
