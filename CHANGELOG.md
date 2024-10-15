@@ -1,3 +1,9 @@
+## [1.0.13](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.12...1.0.13) (2024-10-15)
+
+### Bug Fixes
+
+* provenance and profiling examples ([29e2a71](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/29e2a7158e753bee6dd0e92d5a9be8cf1ea6b3df))
+
 ## [1.0.12](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.11...1.0.12) (2024-10-15)
 
 ### Bug Fixes
