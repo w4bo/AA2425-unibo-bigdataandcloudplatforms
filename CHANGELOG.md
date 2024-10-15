@@ -1,3 +1,9 @@
+## [1.0.14](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.13...1.0.14) (2024-10-15)
+
+### Bug Fixes
+
+* wooclap ([b7cc269](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/b7cc269145c46e3e756e99801ffc822909731dcd))
+
 ## [1.0.13](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.12...1.0.13) (2024-10-15)
 
 ### Bug Fixes
