@@ -44,7 +44,7 @@ Where are we _collecting/processing_ data?
 
 # Data platform
 
-> “It is a capital mistake to theorize before one has data. Insensibly, one begins to twist the facts to suit theories, instead of theories to suit facts.”
+> "It is a capital mistake to theorize before one has data. Insensibly, one begins to twist the facts to suit theories, instead of theories to suit facts."
 >
 > – Sherlock Holmes
 
@@ -140,7 +140,7 @@ Getting _value_ from data _is not_ (only) a matter of _storage_
 
 > Data lake [@couto2019mapping]
 >
-> “A DL is a _central repository_ system for _storage, processing, and analysis of raw data_, in which the data is kept in its _original format and is processed to be queried only when needed_. It can _store a varied amount of formats_ in big data ecosystems, from unstructured, semi-structured, to structured data sources”
+> "A DL is a _central repository_ system for _storage, processing, and analysis of raw data_, in which the data is kept in its _original format and is processed to be queried only when needed_. It can _store a varied amount of formats_ in big data ecosystems, from unstructured, semi-structured, to structured data sources"
 
 :::
 ::: {.column width=50%}
@@ -225,7 +225,7 @@ Drawing a sharp line between storage/computation/analysis is hard
 
 Blurring of the architectural borderlines
 
-* DL is often replaced by “data platform” or “data ecosystem”
+* DL is often replaced by "data platform" or "data ecosystem"
 * Encompass systems supporting data-intensive storage, computation, analysis
 
 # Data platform
@@ -417,6 +417,67 @@ Data profiling [@naumann2014data]
 
 :::
 ::::
+
+# Data profiling: single column (Iris dataset)
+
+Schema and statistics
+
+```
+df.info()
+```
+
+> ```
+> <class 'pandas.core.frame.DataFrame'>
+> RangeIndex: 150 entries, 0 to 149
+> Data columns (total 5 columns):
+>  #   Column             Non-Null Count  Dtype  
+> ---  ------             --------------  -----  
+>  0   sepal length (cm)  150 non-null    float64
+>  1   sepal width (cm)   150 non-null    float64
+>  2   petal length (cm)  150 non-null    float64
+>  3   petal width (cm)   150 non-null    float64
+>  4   species            150 non-null    int64  
+> dtypes: float64(4), int64(1)
+> memory usage: 6.0 KB
+> ```
+
+# Data proiling: single columns (Iris dataset)
+
+Statistics
+
+```
+df.describe()
+```
+
+> |       |   sepal length (cm) |   sepal width (cm) |   petal length (cm) |   petal width (cm) |
+> |:------|--------------------:|-------------------:|--------------------:|-------------------:|
+> | count |          120        |         120        |           120       |         120        |
+> | mean  |            5.80917  |           3.06167  |             3.72667 |           1.18333  |
+> | std   |            0.823805 |           0.449123 |             1.75234 |           0.752289 |
+> | min   |            4.3      |           2        |             1       |           0.1      |
+> | 25%   |            5.1      |           2.8      |             1.5     |           0.3      |
+> | 50%   |            5.75     |           3        |             4.25    |           1.3      |
+> | 75%   |            6.4      |           3.4      |             5.1     |           1.8      |
+> | max   |            7.7      |           4.4      |             6.7     |           2.5      |
+
+# Data proiling: statistic query optimization
+
+![[@bruno2002exploiting]](imgs/executionplan.png)
+
+E.g., no need to access `R.a` if `min(R.a) > 10`
+
+# Data profiling: multiple columns (Iris dataset)
+
+```
+df.corr(method='pearson', numeric_only=True)
+```
+
+> |                   |   sepal length (cm) |   sepal width (cm) |   petal length (cm) |   petal width (cm) |
+> |:------------------|--------------------:|-------------------:|--------------------:|-------------------:|
+> | sepal length (cm) |            1        |          -0.106926 |            0.862175 |           0.80148  |
+> | sepal width (cm)  |           -0.106926 |           1        |           -0.432089 |          -0.369509 |
+> | petal length (cm) |            0.862175 |          -0.432089 |            1        |           0.962577 |
+> | petal width (cm)  |            0.80148  |          -0.369509 |            0.962577 |           1        |
 
 # Data profiling
 
@@ -681,7 +742,7 @@ DevOps practices enable software development (dev) and operations (ops) teams to
 
 From DevOps to DataOps
 
-* “A collaborative data management practice focused on improving the _communication, integration and automation of data flows between data managers and data consumers across an organization_”
+* "A collaborative data management practice focused on improving the _communication, integration and automation of data flows between data managers and data consumers across an organization_"
 * Data analytics improved in terms of velocity, quality, predictability, and scale of software engineering and deployment
 
 Some key rules
@@ -709,7 +770,7 @@ William Vorhies, 2017 [https://www.datasciencecentral.com/profiles/blogs/dataops
 
 # Data fabric
 
-“vision for data management [...] that seamlessly connects different clouds, whether they are private, public, or hybrid environments.” (2016)
+"vision for data management [...] that seamlessly connects different clouds, whether they are private, public, or hybrid environments." (2016)
 
 Frictionless access and sharing of data in a distributed data environment
 
@@ -884,7 +945,7 @@ Data Fabric and Mesh are the results of the data architecture evolution
 
 Take away:
 
-* Abstract the “building blocks” of such platforms
+* Abstract the "building blocks" of such platforms
 * Let them evolve according to scalability and flexibility requirements
 
 # (Some) References
