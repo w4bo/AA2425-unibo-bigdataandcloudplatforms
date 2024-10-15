@@ -970,6 +970,171 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
+<section id="data-profiling-single-column-iris-dataset" class="title-slide slide level1 center">
+<h1>Data profiling: single column (Iris dataset)</h1>
+<p>Schema and statistics</p>
+<pre><code>df.info()</code></pre>
+<blockquote>
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 150 entries, 0 to 149
+Data columns (total 5 columns):
+ #   Column             Non-Null Count  Dtype  
+---  ------             --------------  -----  
+ 0   sepal length (cm)  150 non-null    float64
+ 1   sepal width (cm)   150 non-null    float64
+ 2   petal length (cm)  150 non-null    float64
+ 3   petal width (cm)   150 non-null    float64
+ 4   species            150 non-null    int64  
+dtypes: float64(4), int64(1)
+memory usage: 6.0 KB</code></pre>
+</blockquote>
+</section>
+
+<section id="data-proiling-single-columns-iris-dataset" class="title-slide slide level1 center">
+<h1>Data proiling: single columns (Iris dataset)</h1>
+<p>Statistics</p>
+<pre><code>df.describe()</code></pre>
+<blockquote>
+<table>
+<colgroup>
+<col style="width: 7%">
+<col style="width: 23%">
+<col style="width: 22%">
+<col style="width: 23%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">sepal length (cm)</th>
+<th style="text-align: right;">sepal width (cm)</th>
+<th style="text-align: right;">petal length (cm)</th>
+<th style="text-align: right;">petal width (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">count</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">120</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mean</td>
+<td style="text-align: right;">5.80917</td>
+<td style="text-align: right;">3.06167</td>
+<td style="text-align: right;">3.72667</td>
+<td style="text-align: right;">1.18333</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">std</td>
+<td style="text-align: right;">0.823805</td>
+<td style="text-align: right;">0.449123</td>
+<td style="text-align: right;">1.75234</td>
+<td style="text-align: right;">0.752289</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">min</td>
+<td style="text-align: right;">4.3</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">25%</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">1.5</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">50%</td>
+<td style="text-align: right;">5.75</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4.25</td>
+<td style="text-align: right;">1.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">75%</td>
+<td style="text-align: right;">6.4</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">1.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">max</td>
+<td style="text-align: right;">7.7</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">6.7</td>
+<td style="text-align: right;">2.5</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</section>
+
+<section id="data-proiling-statistic-query-optimization" class="title-slide slide level1 center">
+<h1>Data proiling: statistic query optimization</h1>
+
+<img data-src="imgs/executionplan.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="bruno2002exploiting">(<a href="#/references" role="doc-biblioref" onclick="">Bruno and Chaudhuri 2002</a>)</span></p><p>E.g., no need to access <code>R.a</code> if <code>min(R.a) &gt; 10</code></p>
+</section>
+
+<section id="data-profiling-multiple-columns-iris-dataset" class="title-slide slide level1 center">
+<h1>Data profiling: multiple columns (Iris dataset)</h1>
+<pre><code>df.corr(method='pearson', numeric_only=True)</code></pre>
+<blockquote>
+<table>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 19%">
+<col style="width: 20%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">sepal length (cm)</th>
+<th style="text-align: right;">sepal width (cm)</th>
+<th style="text-align: right;">petal length (cm)</th>
+<th style="text-align: right;">petal width (cm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">sepal length (cm)</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-0.106926</td>
+<td style="text-align: right;">0.862175</td>
+<td style="text-align: right;">0.80148</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sepal width (cm)</td>
+<td style="text-align: right;">-0.106926</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-0.432089</td>
+<td style="text-align: right;">-0.369509</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">petal length (cm)</td>
+<td style="text-align: right;">0.862175</td>
+<td style="text-align: right;">-0.432089</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.962577</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">petal width (cm)</td>
+<td style="text-align: right;">0.80148</td>
+<td style="text-align: right;">-0.369509</td>
+<td style="text-align: right;">0.962577</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</section>
+
 <section id="data-profiling-1" class="title-slide slide level1 center">
 <h1>Data profiling</h1>
 <p>Use cases</p>
@@ -1664,6 +1829,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-ahmed2019data" class="csl-entry" role="listitem">
 Ahmed, Mohiuddin. 2019. <span>“Data Summarization: A Survey.”</span> <em>Knowledge and Information Systems</em> 58 (2): 249–73.
+</div>
+<div id="ref-bruno2002exploiting" class="csl-entry" role="listitem">
+Bruno, Nicolas, and Surajit Chaudhuri. 2002. <span>“Exploiting Statistics on Query Expressions for Optimization.”</span> In <em>Proceedings of the 2002 ACM SIGMOD International Conference on Management of Data</em>, 263–74.
 </div>
 <div id="ref-couto2019mapping" class="csl-entry" role="listitem">
 Couto, Julia, Olimar Teixeira Borges, Duncan D Ruiz, Sabrina Marczak, and Rafael Prikladnicki. 2019. <span>“A Mapping Study about Data Lakes: An Improved Definition and Possible Architectures.”</span> In <em>SEKE</em>, 453–578.
