@@ -13,4 +13,4 @@ scipy==1.14.1
 awswrangler==3.9.1
 prov[dot]==2.0.1
 pydot==1.4.2
-traitlets==5.9.0
+traitlets==5.14.3
