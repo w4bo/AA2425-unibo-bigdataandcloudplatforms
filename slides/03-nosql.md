@@ -510,7 +510,7 @@ Two aspects must be considered when deploying on a cluster
 
 # Sharding
 
-**Sharding**: *subdividing the data in *shards* that are stored in different machines*
+**Sharding**: subdividing data in *shards that are stored in different machines*
 
 * Intrinsic in a distributed DB
 * Improves the efficiency of the system
@@ -759,22 +759,22 @@ RDBMS adopt *transactions * to avoid this kind of issue
 
 Transactions guarantee four fundamental properties: ACID
 
-*A*tomicity*
+*A*tomicity
 
 * The transaction is indivisible: either it fully completes, or it fails
 * It cannot be completed partially
 
-*C*onsistency*
+*C*onsistency
 
 * The transaction leaves the DB in a consistent state
 * Integrity constraints can never be violated
 
-*I*solation*
+*I*solation
 
 * The transaction is independent from the others
 * In case of concurrent transactions, the effect is the same of their sequential execution
 
-*D*urability*
+*D*urability
 
 * The DBMS protects the DB from failures
 
