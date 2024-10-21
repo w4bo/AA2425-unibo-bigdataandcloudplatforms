@@ -279,7 +279,7 @@ A *data steward* is a role that ensures that data governance processes are follo
 :::
 ::: {.column width=40%}
 
-![Data governance](https://images.spiceworks.com/wp-content/uploads/2021/04/15124555/Info-1-2.png)
+![Data governance](imgs/datagovernance.png)
 
 :::
 ::::
