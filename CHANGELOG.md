@@ -1,3 +1,9 @@
+## [1.0.17](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.16...1.0.17) (2024-10-21)
+
+### Bug Fixes
+
+* data provenance ([fe7137c](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/fe7137cfc414bb8517043b68c25a74d1780adf25))
+
 ## [1.0.16](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.15...1.0.16) (2024-10-21)
 
 ### Bug Fixes
