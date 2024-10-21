@@ -436,6 +436,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
+<section id="from-databases-to-data-platforms" class="title-slide slide level1 center">
+<h1>From databases to data platforms</h1>
+
+</section>
+
 <section id="data-platform-2" class="title-slide slide level1 center">
 <h1>Data platform</h1>
 <div class="columns">
@@ -790,13 +795,34 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="managing-data-platforms" class="title-slide slide level1 center">
 <h1>Managing data platforms</h1>
 <ul>
-<li>Data provenance</li>
-<li>Compression</li>
-<li>Data profiling</li>
-<li>Entity resolution</li>
-<li>Data versioning</li>
+<li>Tracking data pipelines: Data provenance</li>
+<li>Tracking changes: Data versioning</li>
+<li>Saving storage: Compression</li>
+<li>Understanding the data: Data profiling</li>
+<li>Integrating data sources: Entity resolution</li>
 <li>…</li>
 </ul>
+</section>
+
+<section id="data-governance" class="title-slide slide level1 center">
+<h1>Data governance</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Data governance</strong> is everything you do to ensure data is secure, private, accurate, available, and usable</p>
+<ul>
+<li>It includes the actions people must take, the processes they must follow, and the technology that supports them throughout the data life cycle</li>
+<li>Every organization needs data governance since industries proceed on their digital-transformation journeys</li>
+</ul>
+<p>A <em>data steward</em> is a role that ensures that data governance processes are followed and that guidelines are enforced, and recommends improvements to data governance processes.</p>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://images.spiceworks.com/wp-content/uploads/2021/04/15124555/Info-1-2.png"></p>
+<figcaption>Data governance</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 <section id="data-provenance" class="title-slide slide level1 center">
@@ -808,8 +834,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>Examples of use cases <span class="citation" data-cites="simmhan2005survey">(<a href="#/references" role="doc-biblioref" onclick="">Simmhan et al. 2005</a>)</span></p>
 <ul>
-<li>Business domain. Users traditionally work with an <em>organized data schema</em>, where the structure and <em>semantics of the data in use are shared</em> across the corporation or even B2B. Yet, a large proportion of businesses deal with <em>bad-quality data</em>. <em>Sources</em> of bad data <em>need to be identified</em> and corrected to avoid costly errors in business forecasting.</li>
-<li>Scientific/research domain. <em>Data</em> used in the scientific field can be <em>ad hoc</em> and driven by <em>individual researchers</em> or small communities. The scientific field is moving <em>towards more collaborative research</em> and organizational boundaries are disappearing. <em>Sharing data and metadata across organizations is essential</em>, leading to convergence on common schemes to ensure compatibility. Issues of <em>trust</em>, <em>quality</em>, and <em>copyright</em> of data are significant when using third-party data in such a loosely connected network.</li>
+<li>Business domain.
+<ul>
+<li>Users traditionally work with an <em>organized data schema</em>, where the structure and <em>semantics of the data in use are shared</em> across the corporation or even B2B. Yet, a large proportion of businesses deal with <em>bad-quality data</em>. <em>Sources</em> of bad data <em>need to be identified</em> and corrected to avoid costly errors in business forecasting.</li>
+</ul></li>
+<li>Scientific/research domain.
+<ul>
+<li><em>Data</em> used in the scientific field can be <em>ad hoc</em> and driven by <em>individual researchers</em> or small communities. The scientific field is moving <em>towards more collaborative research</em> and organizational boundaries are disappearing. <em>Sharing data and metadata across organizations is essential</em>, leading to convergence on common schemes to ensure compatibility. Issues of <em>trust</em>, <em>quality</em>, and <em>copyright</em> of data are significant when using third-party data in such a loosely connected network.</li>
+</ul></li>
 </ul>
 </section>
 
@@ -867,8 +899,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Data provenance, an example of data management</p>
 <ul>
 <li>Metadata pertaining to the history of a data item</li>
-<li>Pipeline including the origin of objects and operations they are subjected to</li>
-<li>We have a standard: <a href="https://www.w3.org/TR/prov-dm/">https://www.w3.org/TR/prov-dm/</a></li>
+<li>Pipeline including the origin of objects &amp; operations they are subjected to</li>
+<li>We have a standard: <a href="https://www.w3.org/TR/prov-dm/">PROV-DM</a></li>
 </ul>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
@@ -879,7 +911,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
-<p><a href="https://www.w3.org/TR/prov-dm/">https://www.w3.org/TR/prov-dm/</a></p>
 </section>
 
 <section id="data-provenance-5" class="title-slide slide level1 center">
@@ -915,6 +946,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="data-provenance-fine-grained-vs-coarse-grained" class="title-slide slide level1 center">
 <h1>Data provenance: fine grained vs coarse grained</h1>
 <p>How would you represent this table update?</p>
+<blockquote>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Original data</p>
@@ -990,6 +1022,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </div>
 </div>
+</blockquote>
 </section>
 
 <section id="data-provenance-fine-grained-vs-coarse-grained-1" class="title-slide slide level1 center">
@@ -1038,14 +1071,119 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>And so on…</p>
 </section>
 
+<section id="data-versioning" class="title-slide slide level1 center">
+<h1>Data versioning</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Version control</p>
+<ul>
+<li>A class of systems responsible for managing changes to computer programs, documents, or data collections</li>
+<li>Changes are identified by a number/letter code, termed the revision/version number</li>
+</ul>
+<p>However, data pipelines are not only about code but also about</p>
+<ul>
+<li>Model Version control</li>
+<li>Data Version Control</li>
+<li>Model Parameter Tracking</li>
+<li>Model Performance Comparison</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides21.png"></p>
+<figcaption>CRISP-DM</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="data-versioning-1" class="title-slide slide level1 center">
+<h1>Data versioning</h1>
+<p>Support CRUD (Create, Read, Update, Delete) operations with versions</p>
+<p>For example, on <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">AWS (PUT, GET, DELETE)</a></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides23.png"></p>
+<figcaption>GET</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:24%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides22.png"></p>
+<figcaption>PUT</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides24.png"></p>
+<figcaption>DELETE</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>What about updating?</p>
+</section>
+
 <section id="compression" class="title-slide slide level1 center">
 <h1>Compression</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Summarization/compression</p>
+<p><strong>Data compression</strong> is the process of encoding information using fewer bits than the original representation</p>
 <ul>
-<li>Present a concise representation of a dataset in a comprehensible and informative manner</li>
+<li><em>Lossless</em>: reduces bits by identifying and eliminating redundancy
+<ul>
+<li>No information is lost in lossless compression</li>
+<li>Examples?</li>
+</ul></li>
+<li><em>Lossy</em>: reduces bits by removing less important information
+<ul>
+<li>Examples?</li>
+</ul></li>
 </ul>
+<p><strong>Summarization</strong>: find a concise representation of a dataset in a comprehensible informative manner</p>
+<blockquote>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Transaction dataset</p>
+<table>
+<thead>
+<tr class="header">
+<th>TID</th>
+<th>Products</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T1</td>
+<td>Beer, Diapers, Cola</td>
+</tr>
+<tr class="even">
+<td>T2</td>
+<td>Cola, Fanta</td>
+</tr>
+<tr class="odd">
+<td>T3</td>
+<td>Beer, Cola</td>
+</tr>
+<tr class="even">
+<td>T3</td>
+<td>Beer, Diapers</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p>Frequent itemset mining</p>
+<p>Itemset 1: {Cola}</p>
+<p>Itemset 2: {Beer}</p>
+<p>Itemset 3: {Beer, Diapers}</p>
+</div>
+</div>
+</blockquote>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1097,8 +1235,8 @@ memory usage: 6.0 KB</code></pre>
 </blockquote>
 </section>
 
-<section id="data-proiling-single-columns-iris-dataset" class="title-slide slide level1 center">
-<h1>Data proiling: single columns (Iris dataset)</h1>
+<section id="data-profiling-single-columns-iris-dataset" class="title-slide slide level1 center">
+<h1>Data profiling: single columns (Iris dataset)</h1>
 <p>Statistics</p>
 <pre><code>df.describe()</code></pre>
 <blockquote>
@@ -1181,10 +1319,47 @@ memory usage: 6.0 KB</code></pre>
 </blockquote>
 </section>
 
-<section id="data-proiling-statistic-query-optimization" class="title-slide slide level1 center">
-<h1>Data proiling: statistic query optimization</h1>
-
-<img data-src="imgs/executionplan.png" class="r-stretch quarto-figure-center"><p class="caption"><span class="citation" data-cites="bruno2002exploiting">(<a href="#/references" role="doc-biblioref" onclick="">Bruno and Chaudhuri 2002</a>)</span></p><p>E.g., no need to access <code>R.a</code> if <code>min(R.a) &gt; 10</code></p>
+<section id="data-profiling-statistic-query-optimization" class="title-slide slide level1 center">
+<h1>Data profiling: statistic query optimization</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<blockquote>
+<p>Table <code>R</code></p>
+<table>
+<thead>
+<tr class="header">
+<th><code>a</code></th>
+<th><code>b</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>30</td>
+</tr>
+<tr class="odd">
+<td>30</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<p><code>min(R.a) = 10</code></p>
+<p><code>max(R.a) = 30</code></p>
+</blockquote>
+<p>No need to access <code>R.a</code> because <code>min(R.a) &gt;= 10</code></p>
+</div><div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/executionplan.png"></p>
+<figcaption><span class="citation" data-cites="bruno2002exploiting">(<a href="#/references" role="doc-biblioref" onclick="">Bruno and Chaudhuri 2002</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 <section id="data-profiling-multiple-columns-iris-dataset" class="title-slide slide level1 center">
@@ -1337,64 +1512,6 @@ memory usage: 6.0 KB</code></pre>
 </div>
 </section>
 
-<section id="data-versioning" class="title-slide slide level1 center">
-<h1>Data versioning</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Version control</p>
-<ul>
-<li>A class of systems responsible for managing changes to computer programs, documents, or data collections</li>
-<li>Changes are identified by a number/letter code, termed the revision/version number</li>
-</ul>
-<p>However, data pipelines are not only about code but also about</p>
-<ul>
-<li>Model Version control</li>
-<li>Data Version Control</li>
-<li>Model Parameter Tracking</li>
-<li>Model Performance Comparison</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides21.png"></p>
-<figcaption>CRISP-DM</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-
-<section id="data-versioning-1" class="title-slide slide level1 center">
-<h1>Data versioning</h1>
-<p>Support CRUD (Create, Read, Update, Delete) operations with versions</p>
-<p>For example, on AWS (PUT, GET, DELETE), what about updating?</p>
-<div class="columns">
-<div class="column" style="width:33%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides22.png"></p>
-<figcaption>PUT</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:33%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides23.png"></p>
-<figcaption>GET</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:33%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides24.png"></p>
-<figcaption>DELETE</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html</a> (accessed 2022-08-01)</p>
-</section>
-
 <section id="data-catalog" class="title-slide slide level1 center">
 <h1>Data catalog</h1>
 <div class="columns">
@@ -1483,137 +1600,41 @@ memory usage: 6.0 KB</code></pre>
 <p>No, in a data platform, you also need to manage (streams of) operational data and OLTP workloads</p>
 </section>
 
-<section id="data-platform-expertise-and-related-job-positions" class="title-slide slide level1 center">
-<h1>Data platform: expertise and related job positions</h1>
+<section id="how-do-we-build-data-platforms" class="title-slide slide level1 center">
+<h1>How do we build data platforms?</h1>
 
-<img data-src="imgs/slides28.png" class="r-stretch quarto-figure-center"><p class="caption">(Big) data pipeline</p></section>
-
-<section id="data-platform-related-job-positions" class="title-slide slide level1 center">
-<h1>Data platform: related job positions</h1>
-<p><em>Data platform engineer</em></p>
-<ul>
-<li>Orchestrate the successful implementation of cloud technologies within the data infrastructure of their business</li>
-<li>Solid understanding of impact database types and implementation</li>
-<li>Responsible for purchasing decisions for cloud services and approval of data architectures</li>
-</ul>
-<p><em>Data architect</em></p>
-<ul>
-<li>Team members who understand all aspects of a data platform’s architecture</li>
-<li>Work closely with the data platform engineers to create data workflows</li>
-</ul>
-<p><em>Data pipeline engineer</em></p>
-<ul>
-<li>Responsible for planning, architecting, and building large-scale data processing systems</li>
-</ul>
-<p><em>Data analyst</em></p>
-<ul>
-<li>Analyze data systems, creating automated systems for retrieving data from the data platform</li>
-<li>Cloud data analysts are more commonly members of the business user population</li>
-</ul>
-<p><em>Data scientist</em></p>
-<ul>
-<li>Analyze and interpret complex digital data</li>
-<li>Work with new technologies (e.g., machine learning) to deepen the business’ understanding and gain new insights</li>
-</ul>
-</section>
-
-<section id="from-devops" class="title-slide slide level1 center">
-<h1>From DevOps…</h1>
-<p><strong>DevOps</strong> combines development and operations to increase the efficiency, speed, and security of software development and delivery compared to traditional processes.</p>
-<p>DevOps practices enable software development (dev) and operations (ops) teams to accelerate delivery through automation, collaboration, fast feedback, and iterative improvement</p>
-
-<img data-src="imgs/slides29.png" class="r-stretch quarto-figure-center"><p class="caption">DevOps</p><p><a href="https://about.gitlab.com/topics/devops/">https://about.gitlab.com/topics/devops/</a> (accessed 2023-06-03)</p>
-</section>
-
-<section id="to-dataops" class="title-slide slide level1 center">
-<h1>… to DataOps</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>DataOps</strong> refers to a general process aimed to shorten the end-to-end data analytic life-cycle time by introducing automation in the data collection, validation, and verification process</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides30.png"></p>
-<figcaption>Evolution of DataOps <span class="citation" data-cites="munappy2020ad">(<a href="#/references" role="doc-biblioref" onclick="">Munappy et al. 2020</a>)</span></figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides31.png"></p>
-<figcaption>Evolution of DataOps</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-
-<section id="dataops" class="title-slide slide level1 center">
-<h1>DataOps</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>From DevOps to DataOps</p>
-<ul>
-<li>“A collaborative data management practice focused on improving the <em>communication, integration and automation of data flows between data managers and data consumers across an organization</em>”</li>
-<li>Data analytics improved in terms of velocity, quality, predictability, and scale of software engineering and deployment</li>
-</ul>
-<p>Some key rules</p>
-<ul>
-<li>Establish progress and performance measurements at every stage</li>
-<li>Automate as many stages of the data flow as possible</li>
-<li>Establish governance discipline (<em>governance-as-code</em>)</li>
-<li>Design process for growth and extensibility</li>
-</ul>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides32.png"></p>
-<figcaption>DevOps</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides33.png"></p>
-<figcaption>DataOps</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Gartner, 2020 <a href="https://www.gartner.com/smarterwithgartner/how-dataops-amplifies-data-and-analytics-business-value">https://www.gartner.com/smarterwithgartner/how-dataops-amplifies-data-and-analytics-business-value</a></p>
-<p>Andy Palmer, 2015 <a href="https://www.tamr.com/blog/from-devops-to-dataops-by-andy-palmer/">https://www.tamr.com/blog/from-devops-to-dataops-by-andy-palmer/</a></p>
-<p>William Vorhies, 2017 <a href="https://www.datasciencecentral.com/profiles/blogs/dataops-it-s-a-secret">https://www.datasciencecentral.com/profiles/blogs/dataops-it-s-a-secret</a></p>
 </section>
 
 <section id="data-fabric" class="title-slide slide level1 center">
 <h1>Data fabric</h1>
-<p>“vision for data management […] that seamlessly connects different clouds, whether they are private, public, or hybrid environments.” (2016)</p>
+<p><strong>Data fabric</strong> is a “vision for data management […] that seamlessly connects different clouds, whether they are private, public, or hybrid environments.” (<a href="https://cloud.netapp.com/hubfs/Data-Fabric/Data%20Fabric%20WP%20April%202017.pdf">2016</a>)</p>
 <p>Frictionless access and sharing of data in a distributed data environment</p>
 <ul>
-<li>Enables a <strong>single and consistent data management framework</strong>, which allows seamless data access and processing by design across otherwise siloed storage</li>
-<li>Leverages <strong>human and machine capabilities to access data </strong> in place or support its consolidation where appropriate</li>
-<li><strong>Continuously identifies and connects data </strong> from disparate applications to discover unique, business-relevant relationships between the available data points</li>
+<li>Enables a <em>single and consistent data management framework</em></li>
+<li>… that allows <em>seamless data access and processing</em> by design across otherwise siloed storage</li>
+<li>Leverages <em>human and machine capabilities to access data</em> in place or support its consolidation where appropriate</li>
+<li><em>Continuously identifies and connects data</em> from disparate applications to discover unique business-relevant relationships</li>
 </ul>
 <p>It is a unified architecture with an integrated set of technologies and services</p>
 <ul>
-<li>Designed to deliver integrated and enriched data – at the right time, in the right method, and to the right data consumer – in support of both operational and analytical workloads</li>
-<li>Combines key data management technologies – such as <strong>data catalog</strong>, <strong>data governance</strong>, <strong>data integration</strong>, <strong>data pipelining</strong>, and <strong>data orchestration</strong></li>
+<li>Designed to deliver integrated and enriched data at the right time, in the right method, and to the right data consumer</li>
+<li>Combines key data management technologies such as <em>data governance</em>, <em>integration</em>, <em>pipelining</em>, and <em>orchestration</em></li>
 </ul>
-<p><a href="https://cloud.netapp.com/hubfs/Data-Fabric/Data%20Fabric%20WP%20April%202017.pdf">https://cloud.netapp.com/hubfs/Data-Fabric/Data%20Fabric%20WP%20April%202017.pdf</a> (accessed 2023-06-23)</p>
-<p>Gartner, 2019 <a href="https://www.gartner.com/en/newsroom/press-releases/2019-02-18-gartner-identifies-top-10-data-and-analytics-technolo">https://www.gartner.com/en/newsroom/press-releases/2019-02-18-gartner-identifies-top-10-data-and-analytics-technolo</a></p>
-<p>Gartner, 2021 <a href="https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration">https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration</a></p>
-<p>K2View Whitepaper: What is a Data Fabric? The Complete Guide, 2021</p>
+<p><a href="https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration">Gartner (2021). Data fabric architecture</a></p>
+<p><a href="https://www.k2view.com/what-is-data-fabric/">K2View Whitepaper (2021). What is a Data Fabric? The Complete Guide</a></p>
 </section>
 
 <section id="data-fabric-1" class="title-slide slide level1 center">
 <h1>Data fabric</h1>
 <ul>
-<li><strong>Catalog all your data</strong>: including business glossary and design-time and runtime metadata</li>
-<li><strong>Enable self-service capabilities</strong>: data discovery, profiling, exploration, quality assessment, consumption of data-as-a-product</li>
-<li><strong>Provide a knowledge graph</strong>: Visualizing how data, people, processes, systems, etc. are interconnected, deriving additional actionable insight</li>
-<li><strong>Provide intelligent (smart) information integration</strong>: Supporting IT staff and business users alike in their data integration and transformation, data virtualization, and federation tasks</li>
-<li><strong>Derive insight from metadata</strong>: Orchestrating and automating tasks and jobs for data integration, data engineering, and data governance end-to-end</li>
-<li><strong>Enforce local and global data rules/policies</strong>: Including AI/ML-based automated generation, adjustments, and enforcement of rules and policies</li>
-<li><strong>Manage an end-to-end unified lifecycle</strong>: Implementing a coherent and consistent lifecycle end to end of all Data Fabric tasks across various platforms, personas, and organizations</li>
-<li><strong>Enforce data and AI governance</strong>: Broadening the scope of traditional data governance to include AI artifacts, for example, AI models, pipelines</li>
+<li><em>Catalog all your data</em>: including business glossary and design-time and runtime metadata</li>
+<li><em>Enable self-service capabilities</em>: data discovery, profiling, exploration, quality assessment, consumption of data-as-a-product</li>
+<li><em>Provide a knowledge graph</em>: Visualizing how data, people, processes, systems, etc. are interconnected, deriving additional actionable insight</li>
+<li><em>Provide intelligent (smart) information integration</em>: Supporting IT staff and business users alike in their data integration and transformation, data virtualization, and federation tasks</li>
+<li><em>Derive insight from metadata</em>: Orchestrating and automating tasks and jobs for data integration, data engineering, and data governance end-to-end</li>
+<li><em>Enforce local and global data rules/policies</em>: Including AI/ML-based automated generation, adjustments, and enforcement of rules and policies</li>
+<li><em>Manage an end-to-end unified lifecycle</em>: Implementing a coherent and consistent lifecycle end to end of all Data Fabric tasks across various platforms, personas, and organizations</li>
+<li><em>Enforce data and AI governance</em>: Broadening the scope of traditional data governance to include AI artifacts, for example, AI models, pipelines</li>
 </ul>
 </section>
 
@@ -1646,14 +1667,13 @@ memory usage: 6.0 KB</code></pre>
 </div>
 </div>
 </div>
-<p>Gartner, 2021 <a href="https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration">https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration</a></p>
-<p>K2View, 2021 <a href="https://www.k2view.com/top-data-fabric-vendors">https://www.k2view.com/top-data-fabric-vendors</a></p>
+<p><a href="https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration">Gartner (2021). Data fabric is key to modernizing data management</a></p>
 </section>
 
 <section id="data-fabric-3" class="title-slide slide level1 center">
 <h1>Data fabric</h1>
 
-<img data-src="imgs/slides37.png" class="r-stretch quarto-figure-center"><p class="caption">Data fabric</p><p>Gartner, 2021 <a href="https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration">https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration</a></p>
+<img data-src="imgs/slides37.png" class="r-stretch quarto-figure-center"><p class="caption">Data fabric</p><p><a href="https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration">Gartner (2021). Data fabric is key to modernizing data management</a></p>
 </section>
 
 <section id="data-mesh" class="title-slide slide level1 center">
@@ -1898,6 +1918,106 @@ memory usage: 6.0 KB</code></pre>
 <h1>Wooclap</h1>
 <iframe allowfullscreen="" frameborder="0" height="100%" mozallowfullscreen="" src="https://app.wooclap.com/LKDKIY/questionnaires/670e89be981e282b0b69ee7c" style="min-height: 550px; min-width: 300px" width="100%">
 </iframe>
+</section>
+
+<section id="data-platform-expertise-and-related-job-positions" class="title-slide slide level1 center">
+<h1>Data platform: expertise and related job positions</h1>
+
+<img data-src="imgs/slides28.png" class="r-stretch quarto-figure-center"><p class="caption">(Big) data pipeline</p></section>
+
+<section id="data-platform-related-job-positions" class="title-slide slide level1 center">
+<h1>Data platform: related job positions</h1>
+<p><em>Data platform engineer</em></p>
+<ul>
+<li>Orchestrate the successful implementation of cloud technologies within the data infrastructure of their business</li>
+<li>Solid understanding of impact database types and implementation</li>
+<li>Responsible for purchasing decisions for cloud services and approval of data architectures</li>
+</ul>
+<p><em>Data architect</em></p>
+<ul>
+<li>Team members who understand all aspects of a data platform’s architecture</li>
+<li>Work closely with the data platform engineers to create data workflows</li>
+</ul>
+<p><em>Data pipeline engineer</em></p>
+<ul>
+<li>Responsible for planning, architecting, and building large-scale data processing systems</li>
+</ul>
+<p><em>Data analyst</em></p>
+<ul>
+<li>Analyze data systems, creating automated systems for retrieving data from the data platform</li>
+<li>Cloud data analysts are more commonly members of the business user population</li>
+</ul>
+<p><em>Data scientist</em></p>
+<ul>
+<li>Analyze and interpret complex digital data</li>
+<li>Work with new technologies (e.g., machine learning) to deepen the business’ understanding and gain new insights</li>
+</ul>
+</section>
+
+<section id="from-devops" class="title-slide slide level1 center">
+<h1>From DevOps…</h1>
+<p><strong>DevOps</strong> combines development and operations to increase the efficiency, speed, and security of software development and delivery compared to traditional processes.</p>
+<p>DevOps practices enable software development (dev) and operations (ops) teams to accelerate delivery through automation, collaboration, fast feedback, and iterative improvement</p>
+
+<img data-src="imgs/slides29.png" class="r-stretch quarto-figure-center"><p class="caption">DevOps</p><p><a href="https://about.gitlab.com/topics/devops/">https://about.gitlab.com/topics/devops/</a> (accessed 2023-06-03)</p>
+</section>
+
+<section id="to-dataops" class="title-slide slide level1 center">
+<h1>… to DataOps</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>DataOps</strong> refers to a general process aimed to shorten the end-to-end data analytic life-cycle time by introducing automation in the data collection, validation, and verification process</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides30.png"></p>
+<figcaption>Evolution of DataOps <span class="citation" data-cites="munappy2020ad">(<a href="#/references" role="doc-biblioref" onclick="">Munappy et al. 2020</a>)</span></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides31.png"></p>
+<figcaption>Evolution of DataOps</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="dataops" class="title-slide slide level1 center">
+<h1>DataOps</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>From DevOps to DataOps</p>
+<ul>
+<li>“A collaborative data management practice focused on improving the <em>communication, integration and automation of data flows between data managers and data consumers across an organization</em>”</li>
+<li>Data analytics improved in terms of velocity, quality, predictability, and scale of software engineering and deployment</li>
+</ul>
+<p>Some key rules</p>
+<ul>
+<li>Establish progress and performance measurements at every stage</li>
+<li>Automate as many stages of the data flow as possible</li>
+<li>Establish governance discipline (<em>governance-as-code</em>)</li>
+<li>Design process for growth and extensibility</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides32.png"></p>
+<figcaption>DevOps</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides33.png"></p>
+<figcaption>DataOps</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Gartner, 2020 <a href="https://www.gartner.com/smarterwithgartner/how-dataops-amplifies-data-and-analytics-business-value">https://www.gartner.com/smarterwithgartner/how-dataops-amplifies-data-and-analytics-business-value</a></p>
+<p>Andy Palmer, 2015 <a href="https://www.tamr.com/blog/from-devops-to-dataops-by-andy-palmer/">https://www.tamr.com/blog/from-devops-to-dataops-by-andy-palmer/</a></p>
+<p>William Vorhies, 2017 <a href="https://www.datasciencecentral.com/profiles/blogs/dataops-it-s-a-secret">https://www.datasciencecentral.com/profiles/blogs/dataops-it-s-a-secret</a></p>
 </section>
 
 <section id="summing-up" class="title-slide slide level1 center">
