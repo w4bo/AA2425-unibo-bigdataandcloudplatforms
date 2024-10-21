@@ -1,3 +1,20 @@
+## [1.0.15](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.14...1.0.15) (2024-10-21)
+
+### Dependency updates
+
+* **deps:** update dependency awswrangler to v3.4.2 ([cea722b](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/cea722b3b63099c5246d72e55928bba2ad8ec109))
+* **deps:** update dependency awswrangler to v3.9.1 ([0395f76](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/0395f7695caad19b0b507537d9d03e758ca47331))
+* **deps:** update dependency prov to v2.0.1 ([fd6c747](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/fd6c747b5b3826225b2c3732a8ba5a8b0340e392))
+* **deps:** update dependency pydot to v2 ([46da798](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/46da7982cb92e32a2d14c2b36524b755d94590c1))
+* **deps:** update dependency pydot to v3 ([1ae3fcc](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/1ae3fccecf2aec72f9607e3413d4bc59974ea3ad))
+* **deps:** update dependency traitlets to v5.14.3 ([ec193b6](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/ec193b6ad8813503c8ed2964549cb0ce55863872))
+* **deps:** update python docker tag to v3.13 ([90a2ed3](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/90a2ed3006df7545d3886f2b487406a499949a35))
+
+### Bug Fixes
+
+* data platforms ([8c60f5b](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/8c60f5be2d27176708e86e506613966a62c616cf))
+* metadata ([d944af3](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/d944af3a7001b925d869ed1b6c792ab9a4242eda))
+
 ## [1.0.14](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.13...1.0.14) (2024-10-15)
 
 ### Bug Fixes
