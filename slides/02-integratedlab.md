@@ -126,19 +126,19 @@ Building data pipelines
 
 Building data pipelines
 
-* Frame the problem and look at the big picture
-  * ✔Define the objective in business terms
-  * ✖How should performance be measured? (postponed for later)
-* Get the data
-  * ✔ List the data you need and how much you need
+* ✔ Frame the problem and look at the big picture
+  * Define the objective in business terms
+  * How should performance be measured? (postponed for later)
+* ✔ Get the data
+  * List the data you need and how much you need
     * Data could be available in a relational database and/or spread across multiple tables/documents/files
     * In this project, however, things are much simpler
-* Explore the data to gain insights
-  * ✔ Create an environment to keep track of your data exploration
+* Explore the data to gain insights (_let's do this!_)
+  * Create an environment to keep track of your data exploration
     * You have been provided with notebook environments
-  * _✔ Study each attribute and its characteristics_
-    * _Let's do this!_
+  * Study each attribute and its characteristics
+* Apply machine learning models
 
 # In action
 
-![Embedding the ML model into a business process](imgs/slides68.png)
+![<a href="https://colab.research.google.com/github/w4bo/AA2425-unibo-bigdataandcloudplatforms/blob/main/slides/lab-01-Metadata.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>](imgs/slides68.png)
