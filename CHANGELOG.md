@@ -1,3 +1,11 @@
+## [1.0.16](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.15...1.0.16) (2024-10-21)
+
+### Bug Fixes
+
+* refine integrated lab ([05067aa](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/05067aa2caa88b743cdce96f7ccfa6d70abee191))
+* refine lab 01 ([b2ed353](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/b2ed35301a838bf1f95ddf9ca308b691212f397e))
+* typos ([9c7a96c](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/9c7a96cb13ec96ee912651f5e644ce17a342f266))
+
 ## [1.0.15](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.14...1.0.15) (2024-10-21)
 
 ### Dependency updates
