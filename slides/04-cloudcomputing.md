@@ -419,7 +419,9 @@ Availability zones in a region
 :::: {.columns}
 ::: {.column width=50%}
 
-![Magic quadrant](imgs/slides110.png)
+![Magic quadrant 2023](imgs/gartner_mq_2023.png)
+
+![Magic quadrant 2020](imgs/slides110.png)
 
 :::
 ::: {.column width=50%}
