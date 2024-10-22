@@ -875,7 +875,7 @@ It is a unified architecture with an integrated set of technologies and services
 # Data fabric
 
 :::: {.columns}
-::: {.column width=60%}
+::: {.column width=55%}
 
 **Active metadata** is a way of managing metadata that leverages open APIs to connect all services in your data platform and ferry metadata back and forth.
 
@@ -885,20 +885,19 @@ It is a unified architecture with an integrated set of technologies and services
 
 *Active metadata is "intelligent"*: 
 
-- Active metadata isn’t just about collecting metadata.
-- It's about constantly processing metadata to connect the dots and create intelligence from it.
-- E.g., you can auto-classify sensitive data, use automatic suggestions to document a data asset’s description, send alerts about critical issues, and more.
+- Constantly process metadata to connect the dots and create intelligence from it.
+- E.g., auto-classify sensitive data, automatic suggestions to document a data asset's description, send alerts about critical issues.
 
 *Active metadata is action-oriented*
 
-- Active metadata should drive action by: Curating recommendations, Generating alerts, Making it easier for people to make decisions
+- Active metadata should drive actions such as curating recommendations and generating alerts
 
 *Active metadata is open by default*
 
 - Active metadata use APIs to hook into every piece of the data platform.
 
 :::
-::: {.column width=40%}
+::: {.column width=45%}
 
 ![Data fabric](imgs/slides37.png)
 
