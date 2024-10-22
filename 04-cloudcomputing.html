@@ -528,51 +528,50 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="reference-scenario-4" class="title-slide slide level1 center">
 <h1>Reference scenario</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Collecting data</p>
+<p><strong>Collecting data</strong></p>
 <ul>
-<li><strong>Scheduled Batch</strong>
+<li><em>Scheduled Batch</em>
 <ul>
 <li>Large volume of data processed on a regular scheduled basis</li>
 <li>Velocity is very predictable</li>
 </ul></li>
-<li><strong>Periodic</strong>
+<li><em>Periodic</em>
 <ul>
 <li>Data processed at irregular times (e.g., after collecting a certain —large— amount of data)</li>
 <li>Velocity is less predictable</li>
 </ul></li>
-<li><strong>Near real-time</strong>
+<li><em>Near real-time</em>
 <ul>
 <li>Streaming data processed in small individual batches collected and processed within minutes</li>
 <li>Velocity is a huge concern</li>
 </ul></li>
-<li><strong>Real-time</strong>
+<li><em>Real-time</em>
 <ul>
 <li>Streaming data collected and processed in very small individual batches within milliseconds</li>
 <li>Velocity is the paramount concern</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:50%;">
-<p>Processing data</p>
+</section>
+
+<section id="reference-scenario-5" class="title-slide slide level1 center">
+<h1>Reference scenario</h1>
+<p><strong>Processing data</strong></p>
 <ul>
-<li><strong>Batch and periodic</strong>
+<li><em>Batch and periodic</em>
 <ul>
 <li>Once data has been collected, processing can be done in a controlled environment</li>
 <li>There is time to plan for the appropriate resources</li>
 </ul></li>
-<li><strong>Near real-time and real-time</strong>
+<li><em>Near real-time and real-time</em>
 <ul>
 <li>Collection of the data leads to an immediate need for processing</li>
 <li>Depending on the complexity of the processing (cleansing, scrubbing, curation), this can slow down the velocity of the solution significantly</li>
 <li>Plan accordingly</li>
 </ul></li>
 </ul>
-</div>
-</div>
 </section>
 
-<section id="reference-scenario-5" class="title-slide slide level1 center">
+<section id="reference-scenario-6" class="title-slide slide level1 center">
 <h1>Reference scenario</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -664,22 +663,34 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="why-going-cloud-2" class="title-slide slide level1 center">
 <h1>Why going cloud?</h1>
 <p>Goal: adjusts capacity to have predictable performance at the lowest cost</p>
+<p><strong>Scalability</strong> that is not possible on premises</p>
 <ul>
-<li><strong>Scalability</strong> that is not possible on premises</li>
-<li>Scale from one to thousands of servers</li>
+<li>Scale from one to thousands of computers</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/scalability.svg"></p>
+<figcaption>Scalability</figcaption>
+</figure>
+</div>
 <p><strong>Elasticity</strong></p>
 <ul>
 <li>Automatically scale resources in response to run-time conditions</li>
 <li>Adapt to changes in workload by turning on/off resources to match the necessary capacity</li>
 <li>Core justification for the cloud adoption</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/elasticity.svg"></p>
+<figcaption>Elasticity</figcaption>
+</figure>
+</div>
 </section>
 
 <section id="why-going-cloud-3" class="title-slide slide level1 center">
 <h1>Why going cloud?</h1>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p>Hardware scalability</p>
 <ul>
 <li>No longer think about rack space, switches, and power supplies, etc.</li>
@@ -688,7 +699,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>1PB: one hundred 10TB Enterprise Capacity 3.5 HDD hard drives</li>
 </ul>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="imgs/slides103.jpg"></p>
@@ -709,7 +720,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Based on <em>virtualization</em>, running multiple virtual instances on top of a physical computer system</li>
 <li>Economy of scale for physical resources</li>
 </ul>
-<p><strong>Reliability</strong></p>
+
+<img data-src="imgs/pooling.svg" class="r-stretch quarto-figure-center"><p class="caption">Pooling</p><p><strong>Reliability</strong></p>
 <ul>
 <li>Built to handle failures</li>
 <li>Fault-tolerant or highly available</li>
@@ -729,7 +741,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>Measured <strong>quality of service</strong></p>
 <ul>
-<li>Services leverage a quantitative qualitative metering capability making pay-as-you-go (or pay-per-use) billing and validation of the service quality available</li>
+<li>Services leverage a quantitative metering capability making <em>pay-as-you-go (or pay-per-use)</em> billing</li>
 </ul>
 </section>
 
@@ -906,33 +918,23 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="cloud-computing-deployment-models-1" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
 <p>Understanding architectures is paramount to successful systems</p>
 <ul>
 <li>Good architectures help to scale</li>
 <li>Poor architectures cause issues that necessitate a costly rewrite</li>
 </ul>
-<p><strong>Anything as a service (XaaS)</strong></p>
+
+<img data-src="imgs/slides111.png" class="r-stretch quarto-figure-center"><p class="caption">XaaS</p><p><strong>Anything as a service (XaaS)</strong></p>
 <ul>
 <li>A collective term that refers to the delivery of anything as a service</li>
 <li>It encompasses the products, tools and technologies that vendors deliver to users</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides111.png"></p>
-<figcaption>XaaS</figcaption>
-</figure>
-</div>
-</div>
-</div>
 </section>
 
 <section id="cloud-computing-deployment-models-2" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:70%;">
 <p><strong>On-premises</strong></p>
 <ul>
 <li>Provisioning servers is time-consuming
@@ -942,7 +944,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Require dedicated operations people</li>
 <li>Often a distraction from strategic tasks</li>
 </ul>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="imgs/202.svg"></p>
@@ -956,7 +958,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="cloud-computing-deployment-models-3" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:70%;">
 <p><strong>Infrastructure as a service (IaaS)</strong></p>
 <ul>
 <li>A computing infrastructure provisioned and managed over the internet (e.g., AWS EC2)</li>
@@ -964,7 +966,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>IaaS overcomes issues on-premises</li>
 <li>Possibly requires to manage many environments</li>
 </ul>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="imgs/203.svg"></p>
@@ -978,14 +980,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="cloud-computing-deployment-models-4" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:70%;">
 <p><strong>Platform as a Service (PaaS)</strong></p>
 <ul>
 <li>A development and deployment environment in the cloud (e.g., AWS Elastic Beanstalk)</li>
 <li>Support complete application life-cycle: building, testing, deploying, etc.</li>
 <li>Avoid expense/complexity of managing licenses and application infrastructure</li>
 </ul>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="imgs/204.svg"></p>
@@ -999,13 +1001,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="cloud-computing-deployment-models-5" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:70%;">
 <p><strong>Function as a Service (FaaS)</strong></p>
 <ul>
 <li>A coding environment, cloud provider provisions platform to run the code (e.g., AWS Lambda)</li>
 <li>Infrastructure provisioning and management are invisible to the developer</li>
 </ul>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="imgs/207.svg"></p>
@@ -1042,13 +1044,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="cloud-computing-deployment-models-7" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:70%;">
 <p><strong>Software as a service (SaaS)</strong></p>
 <ul>
 <li>An application environment</li>
 <li>Access cloud-based apps over the Internet (e.g., email, Microsoft Office 365, Github)</li>
 </ul>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:30%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="imgs/209.svg"></p>
