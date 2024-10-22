@@ -1,3 +1,19 @@
+## [1.0.18](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.17...1.0.18) (2024-10-22)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.112 ([a5a7b50](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/a5a7b5009370a85d3eaeea4a3d812a0d06db4882))
+
+### Bug Fixes
+
+* update data fabric/mesh ([3b693ad](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/3b693ad6cc0ff8c3884841895d20531927e55eee))
+
+## [1.0.17](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.16...1.0.17) (2024-10-21)
+
+### Bug Fixes
+
+* data provenance ([fe7137c](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/fe7137cfc414bb8517043b68c25a74d1780adf25))
+
 ## [1.0.16](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.15...1.0.16) (2024-10-21)
 
 ### Bug Fixes
