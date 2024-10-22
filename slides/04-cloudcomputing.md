@@ -252,9 +252,9 @@ Goal: adjusts capacity to have predictable performance at the lowest cost
 
 - Scale from one to thousands of computers
 
-# Why going cloud?
-
 ![Scalability](imgs/scalability.svg)
+
+# Why going cloud?
 
 **Elasticity**
 
@@ -419,9 +419,9 @@ Availability zones in a region
 :::: {.columns}
 ::: {.column width=50%}
 
-![Magic quadrant 2023](imgs/gartner_mq_2023.png)
+![Magic Quadrant 2023](imgs/gartner_mq_2023.png)
 
-![Magic quadrant 2020](imgs/slides110.png)
+![Magic Quadrant 2020](imgs/slides110.png)
 
 :::
 ::: {.column width=50%}
