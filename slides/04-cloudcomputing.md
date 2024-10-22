@@ -252,6 +252,8 @@ Goal: adjusts capacity to have predictable performance at the lowest cost
 
 - Scale from one to thousands of computers
 
+# Why going cloud?
+
 ![Scalability](imgs/scalability.svg)
 
 **Elasticity**
