@@ -1624,6 +1624,11 @@ memory usage: 6.0 KB</code></pre>
 <p><a href="https://www.k2view.com/what-is-data-fabric/">K2View Whitepaper (2021). What is a Data Fabric? The Complete Guide</a></p>
 </section>
 
+<section id="data-fabric-example-from-cloudera" class="title-slide slide level1 center">
+<h1>Data fabric: example from Cloudera</h1>
+
+<img data-src="imgs/CDP-diagram-sm.png" class="r-stretch quarto-figure-center"><p class="caption">Cloudera SDX</p></section>
+
 <section id="data-fabric-1" class="title-slide slide level1 center">
 <h1>Data fabric</h1>
 <ul>
@@ -1672,8 +1677,37 @@ memory usage: 6.0 KB</code></pre>
 
 <section id="data-fabric-3" class="title-slide slide level1 center">
 <h1>Data fabric</h1>
-
-<img data-src="imgs/slides37.png" class="r-stretch quarto-figure-center"><p class="caption">Data fabric</p><p><a href="https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration">Gartner (2021). Data fabric is key to modernizing data management</a></p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Active metadata</strong> is a way of managing metadata that leverages open APIs to connect all services in your data platform and ferry metadata back and forth.</p>
+<p><em>Active metadata is always on</em></p>
+<ul>
+<li>Automatically and continually collect metadata from various sources and steps of data flow — logs, query history, usage statistics.</li>
+</ul>
+<p><em>Active metadata is “intelligent”</em>:</p>
+<ul>
+<li>Active metadata isn’t just about collecting metadata.</li>
+<li>It’s about constantly processing metadata to connect the dots and create intelligence from it.</li>
+<li>E.g., you can auto-classify sensitive data, use automatic suggestions to document a data asset’s description, send alerts about critical issues, and more.</li>
+</ul>
+<p><em>Active metadata is action-oriented</em></p>
+<ul>
+<li>Active metadata should drive action by: Curating recommendations, Generating alerts, Making it easier for people to make decisions</li>
+</ul>
+<p><em>Active metadata is open by default</em></p>
+<ul>
+<li>Active metadata use APIs to hook into every piece of the data platform.</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides37.png"></p>
+<figcaption>Data fabric</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration">Gartner (2021). Data fabric is key to modernizing data management</a></p>
 </section>
 
 <section id="data-mesh" class="title-slide slide level1 center">
@@ -1721,28 +1755,6 @@ memory usage: 6.0 KB</code></pre>
 </div>
 </div>
 </div>
-</section>
-
-<section id="data-mesh-2" class="title-slide slide level1 center">
-<h1>Data mesh</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/hypecycle-dm-2023.png"></p>
-<figcaption>2023</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/hypecycle-dm-2024.png"></p>
-<figcaption>2024</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>As new technologies and solutions mature to support a centralized approach to data access, distributed approaches like Data Mesh are expected to fall increasingly out of favor in enterprise IT.</p>
 </section>
 
 <section id="what-makes-data-a-product" class="title-slide slide level1 center">
@@ -1815,6 +1827,28 @@ memory usage: 6.0 KB</code></pre>
 <li>Abstract the “building blocks” of such platforms</li>
 <li>Let them evolve according to scalability and flexibility requirements</li>
 </ul>
+</section>
+
+<section id="data-mesh-2" class="title-slide slide level1 center">
+<h1>Data mesh</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/hypecycle-dm-2023.png"></p>
+<figcaption>2023</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/hypecycle-dm-2024.png"></p>
+<figcaption>2024</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>As new technologies and solutions mature to support a centralized approach to data access, distributed approaches like Data Mesh are expected to fall increasingly out of favor in enterprise IT.</p>
 </section>
 
 <section id="some-references" class="title-slide slide level1 center">
