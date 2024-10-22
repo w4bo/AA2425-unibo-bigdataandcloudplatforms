@@ -426,9 +426,10 @@ Availability zones in a region
 :::
 ::: {.column width=50%}
 
+How do we choose the Cloud Service Providers?
+
 [Gartner Magic Quadrant](https://www.gartner.com/en/research/methodologies/magic-quadrants-research)
 
-- Understanding the technology providers to consider for an investment
 - **Leaders** execute well and are well positioned for tomorrow
 - **Visionaries** understand where the market is going but do not yet execute well
 - **Niche Players** focus successfully on a small segment, or are unfocused and do not out-innovate or outperform others
@@ -548,6 +549,21 @@ Understanding architectures is paramount to successful systems
 ::: {.column width=30%}
 
 ![FaaS](imgs/207.svg)
+
+:::
+::::
+
+# Cloud computing: deployment models
+
+:::: {.columns}
+::: {.column width=50%}
+
+![AWS Lambda](imgs/enowell_otel-python-lamda_f1_1000.png)
+
+:::
+::: {.column width=50%}
+
+![AWS Lambda](imgs/enowell_otel-python-lamda_f15.png)
 
 :::
 ::::
