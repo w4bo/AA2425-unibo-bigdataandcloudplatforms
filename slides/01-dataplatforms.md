@@ -833,6 +833,10 @@ It is a unified architecture with an integrated set of technologies and services
 
 [K2View Whitepaper (2021). What is a Data Fabric? The Complete Guide](https://www.k2view.com/what-is-data-fabric/)
 
+# Data fabric: example from Cloudera
+
+![Cloudera SDX](imgs/CDP-diagram-sm.png)
+
 # Data fabric
 
 - *Catalog all your data*: including business glossary and design-time and runtime metadata
@@ -870,7 +874,37 @@ It is a unified architecture with an integrated set of technologies and services
 
 # Data fabric
 
+:::: {.columns}
+::: {.column width=60%}
+
+**Active metadata** is a way of managing metadata that leverages open APIs to connect all services in your data platform and ferry metadata back and forth.
+
+*Active metadata is always on*
+
+- Automatically and continually collect metadata from various sources and steps of data flow — logs, query history, usage statistics.
+
+*Active metadata is "intelligent"*: 
+
+- Active metadata isn’t just about collecting metadata.
+- It's about constantly processing metadata to connect the dots and create intelligence from it.
+- E.g., you can auto-classify sensitive data, use automatic suggestions to document a data asset’s description, send alerts about critical issues, and more.
+
+*Active metadata is action-oriented*
+
+- Active metadata should drive action by: Curating recommendations, Generating alerts, Making it easier for people to make decisions
+
+*Active metadata is open by default*
+
+- Active metadata use APIs to hook into every piece of the data platform.
+
+:::
+::: {.column width=40%}
+
 ![Data fabric](imgs/slides37.png)
+
+:::
+::::
+
 
 [Gartner (2021). Data fabric is key to modernizing data management](https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration)
 
@@ -911,23 +945,6 @@ Data Mesh organizes data around **business domain owners** and transforms releva
 
 :::
 ::::
-
-# Data mesh
-
-:::: {.columns}
-::: {.column width=50%}
-
-![2023](imgs/hypecycle-dm-2023.png)
-
-:::
-::: {.column width=50%}
-
-![2024](imgs/hypecycle-dm-2024.png)
-
-:::
-::::
-
-As new technologies and solutions mature to support a centralized approach to data access, distributed approaches like Data Mesh are expected to fall increasingly out of favor in enterprise IT.
 
 # What makes data a product?
 
@@ -987,6 +1004,23 @@ Take away:
 
 - Abstract the "building blocks" of such platforms
 - Let them evolve according to scalability and flexibility requirements
+
+# Data mesh
+
+:::: {.columns}
+::: {.column width=50%}
+
+![2023](imgs/hypecycle-dm-2023.png)
+
+:::
+::: {.column width=50%}
+
+![2024](imgs/hypecycle-dm-2024.png)
+
+:::
+::::
+
+As new technologies and solutions mature to support a centralized approach to data access, distributed approaches like Data Mesh are expected to fall increasingly out of favor in enterprise IT.
 
 # (Some) References
 
