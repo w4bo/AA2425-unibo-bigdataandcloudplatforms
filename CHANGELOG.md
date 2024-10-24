@@ -1,3 +1,9 @@
+## [1.0.20](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.19...1.0.20) (2024-10-24)
+
+### Bug Fixes
+
+* move the SQL server ([5c96938](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/5c96938299b53eb738b7bc6474009ab946ad5149))
+
 ## [1.0.19](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.18...1.0.19) (2024-10-22)
 
 ### Bug Fixes
