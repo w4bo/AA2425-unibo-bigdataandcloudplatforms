@@ -1,3 +1,14 @@
+## [1.0.19](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.18...1.0.19) (2024-10-22)
+
+### Bug Fixes
+
+* cloud ([81ff2fb](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/81ff2fb80ec7cd06d5bb8d1b59f70931e0ec4c0f))
+* cloud ([57b2bac](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/57b2bac85385e475a3609cca411fa7988100e68d))
+* cloud ([7d78638](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/7d78638f6e0de9a7df5c27889ab13a62ad40d2c9))
+* cloud ([a0c5b22](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/a0c5b2209598ac278f0d3312ba4943d4382311f6))
+* cloud ([ae0d6ed](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/ae0d6ed2d9adcd32c86793a6dc9f7cf778f97827))
+* cloud ([4d00110](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/4d0011076b5c2da33eb035b51a5d3bbc2f9ae4ed))
+
 ## [1.0.18](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.17...1.0.18) (2024-10-22)
 
 ### Dependency updates
