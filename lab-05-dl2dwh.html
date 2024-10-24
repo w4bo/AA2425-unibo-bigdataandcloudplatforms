@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="lab-02-DataWrangling_files/libs/quarto-html/tabby.min.js"></script>
-<script src="lab-02-DataWrangling_files/libs/quarto-html/popper.min.js"></script>
-<script src="lab-02-DataWrangling_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="lab-02-DataWrangling_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="lab-02-DataWrangling_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-02-DataWrangling_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="lab-02-DataWrangling_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="lab-05-dl2dwh_files/libs/quarto-html/tabby.min.js"></script>
+<script src="lab-05-dl2dwh_files/libs/quarto-html/popper.min.js"></script>
+<script src="lab-05-dl2dwh_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="lab-05-dl2dwh_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lab-05-dl2dwh_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="lab-05-dl2dwh_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="lab-05-dl2dwh_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
@@ -14,8 +14,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="lab-02-DataWrangling_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="lab-02-DataWrangling_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="lab-05-dl2dwh_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="lab-05-dl2dwh_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -94,11 +94,11 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="lab-02-DataWrangling_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="lab-02-DataWrangling_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="lab-02-DataWrangling_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="lab-02-DataWrangling_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="lab-02-DataWrangling_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="lab-05-dl2dwh_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="lab-05-dl2dwh_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="lab-05-dl2dwh_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="lab-05-dl2dwh_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="lab-05-dl2dwh_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -404,157 +404,219 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 
 </section>
-<section class="slide level2">
-
-</section>
-<section>
 <section id="from-data-lake-to-data-warehouse" class="title-slide slide level1 center">
 <h1>From data lake to data warehouse</h1>
-<p>Disclaimer: - Link to the AWS academy login: https://awsacademy.instructure.com/login/canvas - At the end of the lab, remember to Stop/Destroy the created services. (Why?) - These slides are directly generated from the notebook (this notebook = slides) - Upload the Notebook to Sagemaker (not in COLAB!) - The second part of the lab requires <a href="https://www.tableau.com/products/desktop/download">Tableau Desktop</a> installed on your machine</p>
-<p>Known issues: - AWS classroom does not work on <em>Safari</em>. Solution: choose another browser - Tableau Desktop had problems on <em>macOS</em> when connecting to Postgres. Solution: use the lab’s computer</p>
+<p><strong>Disclaimer</strong>:</p>
+<ul>
+<li>Link to the <a href="https://awsacademy.instructure.com/login/canvas">AWS academy login</a>: <a href="https://awsacademy.instructure.com/login/canvas">https://awsacademy.instructure.com/login/canvas</a></li>
+<li>At the end of the lab, <em>remember to Stop/Destroy the created services</em>
+<ul>
+<li>Why?</li>
+</ul></li>
+<li><em>Upload the Notebook to Sagemaker</em> (not to COLAB!)</li>
+<li>The second part of the lab requires <a href="https://www.tableau.com/products/desktop/download">Tableau Desktop</a> installed on your machine</li>
+</ul>
+<p><strong>Known issues</strong>:</p>
+<ul>
+<li>AWS classroom <em>does not work with Safari</em>
+<ul>
+<li>Solution: use Google Chrome</li>
+</ul></li>
+<li>Tableau Desktop <em>had problems on macOS</em> when connecting to Postgres
+<ul>
+<li>Solution: use the lab’s computers</li>
+</ul></li>
+</ul>
 </section>
-<section class="slide level2">
 
-<p>A data warehouse and a data lake serve different needs and use cases.</p>
-<p>A data lake stores relational data from business applications, and non-relational data - The structure of the data or schema is not defined when data is captured - You can store all of your data without careful design or the need to know what questions you might need answers</p>
-<p>A data warehouse is a database optimized to analyze relational data coming from business applications - The data structure and schema are defined in advance to optimize for fast SQL queries - The results are typically used for operational reporting and analysis - Data is cleaned, enriched, and transformed so it can act as the single source of truth</p>
-<p>Organizations are evolving their warehouse to include data lakes, and enable diverse query capabilities</p>
+<section id="data-lake-vs-data-warehouse" class="title-slide slide level1 center">
+<h1>Data lake vs Data warehouse</h1>
+<p><strong>Data warehouse</strong> and <strong>data lake</strong> serve different needs and use cases.</p>
+<p>A <em>data lake</em> stores relational data from business applications, and non-relational data</p>
+<ul>
+<li>The structure of the data or schema is not defined when data is captured (<em>schema on read</em>)</li>
+<li>You can store all of your data without careful design or the need to know what questions you might need answers</li>
+</ul>
+<p>A <em>data warehouse</em> is a database optimized to analyze relational data coming from business applications</p>
+<ul>
+<li>The data structure and schema are defined in advance to optimize for fast SQL queries (<em>schema on write</em>)</li>
+<li>The results are typically used for operational reporting and analysis</li>
+<li>Data is cleaned, enriched, and transformed so it can act as the single source of truth</li>
+</ul>
 </section>
-<section class="slide level2">
 
-<p><strong>Goal</strong>: build a sub-module of the expert system, namely a DWH to monitor historical trends of soil moisture</p>
-<p>Necessary steps:</p>
+<section id="roadmap" class="title-slide slide level1 center">
+<h1>Roadmap</h1>
+<p><strong>Goal</strong>: build a sub-module of a decision support system, namely a DWH to monitor historical trends of soil moisture</p>
 <ol type="1">
 <li>Create a data lake (AWS S3)</li>
-<li>Collect and store the sensor data (manually)
+<li>Collect and store the sensor data (manually or with AWS SageMaker)
 <ul>
-<li>KISS: we start with a .csv with sensor data</li>
+<li><em>KISS</em>: we start with a .csv with sensor data</li>
 </ul></li>
-<li>Do ETL (AWS SageMaker and/or AWS Glue)</li>
+<li>Do ETL (AWS SageMaker)</li>
 <li>Build a (relational) data warehouse (AWS RDS)</li>
 <li>Query the data warehouse (Tableau)</li>
 </ol>
 </section>
-<section id="create-a-data-lake" class="slide level2">
-<h2>1. Create a data lake</h2>
-<p>See the AWS console - https://awsacademy.instructure.com/login/canvas</p>
+
+<section id="create-a-data-lake" class="title-slide slide level1 center">
+<h1>1. Create a data lake</h1>
+<p>Log in to the <a href="https://awsacademy.instructure.com/login/canvas">AWS console</a></p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://user-images.githubusercontent.com/18005592/200340672-756adacd-bad6-4aca-b7ca-8c03ff20d928.png"></p>
+<figcaption>Click on <code>Dashbord</code></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/aws-modules.png"></p>
+<figcaption>Click on <code>Modules</code></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/aws-launch.png"></p>
+<figcaption>Click on <code>Launch</code></figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section class="slide level2">
 
-
-<img data-src="https://user-images.githubusercontent.com/18005592/200340672-756adacd-bad6-4aca-b7ca-8c03ff20d928.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-
-<img data-src="https://user-images.githubusercontent.com/18005592/200342442-edaa7560-95a2-47d1-b6b2-ccc4ae9abe0c.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-<p>Start the lab</p>
+<section id="start-the-lab" class="title-slide slide level1 center">
+<h1>Start the lab</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://user-images.githubusercontent.com/18005592/200342733-326a05b7-9f6e-438f-9749-1322412d7321.png"></p>
-<figcaption>image</figcaption>
+<figcaption>Click on <code>Start Lab</code></figcaption>
 </figure>
 </div>
-<p>When AWS is green, click on it</p>
+<p>When AWS is green (it can take 5 minutes!), click on it</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://user-images.githubusercontent.com/18005592/200343321-444d3d2b-3e95-4296-baaa-29cf10616736.png"></p>
-<figcaption>image</figcaption>
+<p><img data-src="imgs/aws-green.png"></p>
+<figcaption>Click on <code>AWS</code></figcaption>
 </figure>
 </div>
 </section>
-<section class="slide level2">
 
+<section id="welcome-to-the-aws-console" class="title-slide slide level1 center">
+<h1>Welcome to the AWS Console!</h1>
 
-<img data-src="https://user-images.githubusercontent.com/18005592/200344531-88e92bbb-c0c0-456e-a532-a116d8d330f4.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
+<img data-src="imgs/aws-console.png" class="r-stretch quarto-figure-center"><p class="caption">AWS Console</p></section>
 
-<p>AWS Simple Storage Service (S3) - A serverless object storage service offering industry-leading scalability, data availability, security, and performance. - Customers of all sizes and industries can store and protect any amount of data for virtually any use case, such as data lakes</p>
-</section>
-<section class="slide level2">
-
-<p>Create two buckets:</p>
-<div id="b14f4310" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;-&quot;}" data-execution_count="1">
+<section id="data-lake" class="title-slide slide level1 center">
+<h1>Data Lake</h1>
+<p>AWS Simple Storage Service (S3)</p>
+<ul>
+<li>A serverless object storage service offering industry-leading scalability, data availability, security, and performance.</li>
+<li>Customers of all sizes and industries can store and protect any amount of data for virtually any use case, such as data lakes</li>
+</ul>
+<p>Create two buckets</p>
+<div id="58a9ade0" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>input_bucket <span class="op">=</span> <span class="st">"s3://landing-raw-wateringsensors-1234/"</span></span>
 <span id="cb1-2"><a href=""></a>output_bucket <span class="op">=</span> <span class="st">"s3://staging-clean-wateringsensors-12345/"</span></span></code></pre></div>
 </details>
 </div>
-
-<img data-src="https://user-images.githubusercontent.com/18005592/200345832-d3522fdb-92ee-4457-8a78-5c0449af6bc4.png" class="r-stretch quarto-figure-center"><p class="caption">image</p><div id="4856dcd5" class="cell" data-execution_count="2">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>input_bucket <span class="op">=</span> <span class="st">"s3://landing-raw-wateringsensors-1234/"</span></span>
-<span id="cb2-2"><a href=""></a>output_bucket <span class="op">=</span> <span class="st">"s3://staging-clean-wateringsensors-12345/"</span></span></code></pre></div>
-</details>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="https://user-images.githubusercontent.com/18005592/200345832-d3522fdb-92ee-4457-8a78-5c0449af6bc4.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://user-images.githubusercontent.com/18005592/200346937-410c49dc-6685-447c-9b18-4970f1954e6c.png"></p>
+</div>
 </div>
 </section>
-<section id="collect-and-store-the-sensor-data-manually" class="slide level2">
-<h2>2. Collect and store the sensor data (manually)</h2>
-<p>We need a working environment.</p>
-<p>Amazon SageMaker - Fully managed service that provides machine learning (ML) capabilities for data scientists and developers to prepare, build, train, and deploy high-quality ML models efficiently</p>
-<p>KISS: we start with a .csv with sensor data - http://big.csr.unibo.it/projects/nosql-datasets/watering-data-1661269649253.csv</p>
+
+<section id="collect-and-store-the-sensor-data-manually" class="title-slide slide level1 center">
+<h1>2. Collect and store the sensor data (manually)</h1>
+<p>KISS: we start with a .csv with sensor data</p>
+<ul>
+<li><a href="http://big.csr.unibo.it/projects/nosql-datasets/watering-data-1661269649253.csv">http://big.csr.unibo.it/projects/nosql-datasets/watering-data-1661269649253.csv</a></li>
+</ul>
+<p>Upload it to S3 in the landing bucket</p>
 </section>
-<section class="slide level2">
 
+<section id="do-etl" class="title-slide slide level1 center">
+<h1>3. Do ETL</h1>
+<p>We need a working environment: Amazon SageMaker</p>
+<ul>
+<li>Fully managed service that provides machine learning (ML) capabilities for data scientists and developers to prepare, build, train, and deploy high-quality ML models efficiently</li>
+</ul>
 
-<img data-src="https://user-images.githubusercontent.com/18005592/200364098-6390f3a4-e1cf-4041-9d88-ab425ed9933b.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
+<img data-src="imgs/aws-sagemaker.png" class="r-stretch quarto-figure-center"><p class="caption">SageMaker</p></section>
 
+<section id="creating-a-notebook-instance" class="title-slide slide level1 center">
+<h1>Creating a notebook instance</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/aws-sagemaker1.png"></p>
+<figcaption>Create a notebook instance</figcaption>
+</figure>
+</div>
+<p>Wait until it is ready (it can take 5 minutes!)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/aws-sagemaker2.png"></p>
+<figcaption>When ready, Open Jupyter</figcaption>
+</figure>
+</div>
+</section>
 
-<img data-src="https://user-images.githubusercontent.com/18005592/200364480-53d6fe54-aac6-431c-a664-87712f82d2cf.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-
-<img data-src="https://user-images.githubusercontent.com/18005592/200364714-37992354-a047-440e-bfe3-12df1e1264ad.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
+<section id="upload-the-notebook" class="title-slide slide level1 center">
+<h1>Upload the notebook</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="https://user-images.githubusercontent.com/18005592/200364905-e6b7f5b6-ee52-4e8e-9df3-b2e8b9b5afb0.png"></p>
-<figcaption>image</figcaption>
+<figcaption>Upload the notebook</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="https://user-images.githubusercontent.com/18005592/200365269-0b85f661-a0c8-4902-9c93-eb978b5226bd.png"></p>
-<figcaption>image</figcaption>
+<p><img data-src="imgs/aws-sagemaker3.png"></p>
+<figcaption>Set the kernel</figcaption>
 </figure>
 </div>
-<div id="bca0e463" class="cell" data-execution_count="4">
+</section>
+
+<section id="hands-on" class="title-slide slide level1 center">
+<h1>Hands on!</h1>
+<div id="bca0e463" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> awswrangler <span class="im">as</span> wr</span>
-<span id="cb3-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-3"><a href=""></a>file_name <span class="op">=</span> <span class="st">"watering-data-1661269649253.csv"</span>  <span class="co"># name of the dataset</span></span>
-<span id="cb3-4"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"http://big.csr.unibo.it/projects/nosql-datasets/"</span> <span class="op">+</span> file_name)  <span class="co"># import the dataset from unibo's server</span></span>
-<span id="cb3-5"><a href=""></a>wr.s3.to_csv(df, path<span class="op">=</span>input_bucket <span class="op">+</span> file_name)  <span class="co"># write it to the data lake</span></span></code></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> awswrangler <span class="im">as</span> wr</span>
+<span id="cb2-2"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href=""></a>file_name <span class="op">=</span> <span class="st">"watering-data-1661269649253.csv"</span>  <span class="co"># name of the dataset</span></span>
+<span id="cb2-4"><a href=""></a>df <span class="op">=</span> pd.read_csv(<span class="st">"http://big.csr.unibo.it/projects/nosql-datasets/"</span> <span class="op">+</span> file_name)  <span class="co"># import the dataset from unibo's server</span></span>
+<span id="cb2-5"><a href=""></a>wr.s3.to_csv(df, path<span class="op">=</span>input_bucket <span class="op">+</span> file_name)  <span class="co"># write it to the data lake</span></span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>{'paths': ['s3://landing-raw-wateringsensors-1234/watering-data-1661269649253.csv'],
  'partitions_values': {}}</code></pre>
 </div>
 </div>
 </section>
-<section id="do-etl-aws-sagemaker" class="slide level2">
-<h2>3. Do ETL (AWS SageMaker)</h2>
-</section>
-<section class="slide level2">
 
-<div id="f93b6dd2" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="5">
+<section id="do-etl-aws-sagemaker" class="title-slide slide level1 center">
+<h1>3. Do ETL (AWS SageMaker)</h1>
+<div id="682cf9f9" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="co"># import the data</span></span>
-<span id="cb5-2"><a href=""></a><span class="bu">print</span>(input_bucket <span class="op">+</span> file_name)</span>
-<span id="cb5-3"><a href=""></a>df <span class="op">=</span> wr.s3.read_csv(input_bucket <span class="op">+</span> file_name)</span>
-<span id="cb5-4"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="bu">print</span>(input_bucket <span class="op">+</span> file_name)</span>
+<span id="cb4-2"><a href=""></a>df <span class="op">=</span> wr.s3.read_csv(input_bucket <span class="op">+</span> file_name)  <span class="co"># import the data</span></span>
+<span id="cb4-3"><a href=""></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>s3://landing-raw-wateringsensors-1234/watering-data-1661269649253.csv</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -725,9 +787,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
-</section>
-<section class="slide level2">
-
 <p>Data understanding</p>
 <ul>
 <li><code>plantRow</code>: name of the field in which we have the sensors</li>
@@ -738,18 +797,15 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><code>timestamp</code>: when the measurement has been recorded</li>
 </ul>
 </section>
-<section class="slide level2">
 
-<p>Data profiling</p>
-</section>
-<section class="slide level2">
-
-<div id="51d9f907" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="6">
+<section id="data-profiling" class="title-slide slide level1 center">
+<h1>Data profiling</h1>
+<div id="c5537bc7" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>df.describe().transpose()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>df.describe().transpose()</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -852,11 +908,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
-<div class="fragment">
-<div id="f1782263" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;fragment&quot;}" data-execution_count="7">
+<div id="e4b514e0" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>df.info()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>df.info()</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -877,28 +932,300 @@ dtypes: float64(4), int64(2), object(3)
 memory usage: 2.0+ MB</code></pre>
 </div>
 </div>
-</div>
 </section>
-<section class="slide level2">
 
-<p>Data distribution</p>
-<div id="367d3f68" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;-&quot;}" data-execution_count="9">
+<section id="data-distribution" class="title-slide slide level1 center">
+<h1>Data distribution</h1>
+<div id="fe9731dd" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>plot(df)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="im">import</span> math</span>
+<span id="cb9-2"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href=""></a></span>
+<span id="cb9-4"><a href=""></a><span class="kw">def</span> plot(df, cols <span class="op">=</span> <span class="dv">5</span>):</span>
+<span id="cb9-5"><a href=""></a>    rows <span class="op">=</span> math.ceil(<span class="bu">len</span>(df.columns) <span class="op">/</span> cols)</span>
+<span id="cb9-6"><a href=""></a>    fig, axs <span class="op">=</span> fig, ax <span class="op">=</span> plt.subplots(rows, cols, figsize <span class="op">=</span> (<span class="dv">3</span> <span class="op">*</span> cols, <span class="dv">2</span> <span class="op">*</span> rows))</span>
+<span id="cb9-7"><a href=""></a>    <span class="cf">for</span> i, x <span class="kw">in</span> <span class="bu">enumerate</span>(df.columns):</span>
+<span id="cb9-8"><a href=""></a>        ax <span class="op">=</span> axs[<span class="bu">int</span>(i <span class="op">/</span> cols)][i <span class="op">%</span> cols]</span>
+<span id="cb9-9"><a href=""></a>        df[x].hist(ax<span class="op">=</span>ax)</span>
+<span id="cb9-10"><a href=""></a>        ax.set_title(x)</span>
+<span id="cb9-11"><a href=""></a>    fig.tight_layout()</span>
+<span id="cb9-12"><a href=""></a>plot(df)</span></code></pre></div>
 </details>
 
 </div>
-<img data-src="lab-02-DataWrangling_files/figure-revealjs/cell-8-output-1.png" class="r-stretch"></section>
-<section class="slide level2">
+<img data-src="lab-05-dl2dwh_files/figure-revealjs/cell-8-output-1.png" class="r-stretch"></section>
 
+<section id="section" class="title-slide slide level1 center">
+<h1></h1>
 <p>The <code>zz</code> column contains missing values and a single non-null value (<code>0</code>), what should we do?</p>
-<div id="8f143cd9" class="cell" data-execution_count="10">
+<div id="8f143cd9" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="cf">if</span> <span class="st">"zz"</span> <span class="kw">in</span> df.columns:</span>
-<span id="cb11-2"><a href=""></a>    df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">"zz"</span>])</span>
-<span id="cb11-3"><a href=""></a>df</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="cf">if</span> <span class="st">"zz"</span> <span class="kw">in</span> df.columns:</span>
+<span id="cb10-2"><a href=""></a>    df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">"zz"</span>])</span>
+<span id="cb10-3"><a href=""></a>df</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">plantRow</th>
+<th data-quarto-table-cell-role="th">detectedValueTypeId</th>
+<th data-quarto-table-cell-role="th">yy</th>
+<th data-quarto-table-cell-role="th">xx</th>
+<th data-quarto-table-cell-role="th">value</th>
+<th data-quarto-table-cell-role="th">unit</th>
+<th data-quarto-table-cell-role="th">timestamp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>T1 basso</td>
+<td>GRND_WATER_G</td>
+<td>-20.0</td>
+<td>25.0</td>
+<td>-21.616472</td>
+<td>cbar</td>
+<td>1628951453</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>T1 basso</td>
+<td>GRND_WATER_G</td>
+<td>-20.0</td>
+<td>50.0</td>
+<td>-113.354793</td>
+<td>cbar</td>
+<td>1628950550</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>T1 basso</td>
+<td>GRND_WATER_G</td>
+<td>-20.0</td>
+<td>0.0</td>
+<td>-21.041212</td>
+<td>cbar</td>
+<td>1628947848</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>3</td>
+<td>T1 basso</td>
+<td>GRND_WATER_G</td>
+<td>-20.0</td>
+<td>0.0</td>
+<td>-21.328847</td>
+<td>cbar</td>
+<td>1628948747</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>4</td>
+<td>T1 basso</td>
+<td>GRND_WATER_G</td>
+<td>-20.0</td>
+<td>25.0</td>
+<td>-130.458021</td>
+<td>cbar</td>
+<td>1628657108</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">29059</td>
+<td>29059</td>
+<td>T1 basso</td>
+<td>GRND_WATER_G</td>
+<td>-60.0</td>
+<td>0.0</td>
+<td>-74.186077</td>
+<td>cbar</td>
+<td>1627102804</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">29060</td>
+<td>29060</td>
+<td>T1 basso</td>
+<td>GRND_WATER_G</td>
+<td>-60.0</td>
+<td>25.0</td>
+<td>-209.033680</td>
+<td>cbar</td>
+<td>1627101007</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">29061</td>
+<td>29061</td>
+<td>T1 basso</td>
+<td>GRND_WATER_G</td>
+<td>-60.0</td>
+<td>50.0</td>
+<td>-352.458317</td>
+<td>cbar</td>
+<td>1627101905</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">29062</td>
+<td>29062</td>
+<td>T1 basso</td>
+<td>GRND_WATER_G</td>
+<td>-60.0</td>
+<td>50.0</td>
+<td>-352.458317</td>
+<td>cbar</td>
+<td>1627101007</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">29063</td>
+<td>29063</td>
+<td>T1 basso</td>
+<td>GRND_WATER_G</td>
+<td>-60.0</td>
+<td>25.0</td>
+<td>-208.705472</td>
+<td>cbar</td>
+<td>1627102804</td>
+</tr>
+</tbody>
+</table>
+
+<p>29064 rows × 8 columns</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="section-1" class="title-slide slide level1 center">
+<h1></h1>
+<ul>
+<li>Do we need to store the <code>plantRow</code>?</li>
+<li>Do the sensors from the same <code>detectedValueTypeId</code> share the same <code>unit</code>?</li>
+<li>Do we care about all the sensor types (i.e., <code>detectedValueTypeId</code>)?</li>
+</ul>
+<div id="ce01db2f" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>df.groupby([<span class="st">"detectedValueTypeId"</span>]).nunique()</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">plantRow</th>
+<th data-quarto-table-cell-role="th">yy</th>
+<th data-quarto-table-cell-role="th">xx</th>
+<th data-quarto-table-cell-role="th">value</th>
+<th data-quarto-table-cell-role="th">unit</th>
+<th data-quarto-table-cell-role="th">timestamp</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">detectedValueTypeId</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">BATTERY_TENS</td>
+<td>399</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>7</td>
+<td>1</td>
+<td>391</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">DRIPPER</td>
+<td>153</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>34</td>
+<td>1</td>
+<td>153</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">GRND_WATER_G</td>
+<td>28512</td>
+<td>1</td>
+<td>3</td>
+<td>4</td>
+<td>2362</td>
+<td>1</td>
+<td>6668</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+
+<section id="section-2" class="title-slide slide level1 center">
+<h1></h1>
+<p>Drop the “useless” columns</p>
+<div id="0b5a859a" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="co"># What should we drop?</span></span>
+<span id="cb12-2"><a href=""></a><span class="co"># df = df.drop(["plantRow", "unit"], axis=1)</span></span>
+<span id="cb12-3"><a href=""></a>df</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
@@ -1060,277 +1387,18 @@ memory usage: 2.0+ MB</code></pre>
 </div>
 </div>
 </section>
-<section class="slide level2">
 
-<p>What else can we do?</p>
-<ul>
-<li>Do we need to store the <code>plantRow</code>?</li>
-<li>Do the sensors from the same <code>detectedValueTypeId</code> share the same <code>unit</code>?</li>
-<li>Do we care about all the sensor types (i.e., <code>detectedValueTypeId</code>)?</li>
-</ul>
-<div id="ce01db2f" class="cell" data-execution_count="13">
+<section id="section-3" class="title-slide slide level1 center">
+<h1></h1>
+<p>Drop the useless rows</p>
+<div id="17325843" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>df.groupby([<span class="st">"detectedValueTypeId"</span>]).nunique()</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Unnamed: 0</th>
-<th data-quarto-table-cell-role="th">plantRow</th>
-<th data-quarto-table-cell-role="th">yy</th>
-<th data-quarto-table-cell-role="th">xx</th>
-<th data-quarto-table-cell-role="th">value</th>
-<th data-quarto-table-cell-role="th">unit</th>
-<th data-quarto-table-cell-role="th">timestamp</th>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">detectedValueTypeId</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">BATTERY_TENS</td>
-<td>399</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>7</td>
-<td>1</td>
-<td>391</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">DRIPPER</td>
-<td>153</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>34</td>
-<td>1</td>
-<td>153</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">GRND_WATER_G</td>
-<td>28512</td>
-<td>1</td>
-<td>3</td>
-<td>4</td>
-<td>2362</td>
-<td>1</td>
-<td>6668</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<p>Drop the “useless” columns</p>
-<div id="0b5a859a" class="cell" data-execution_count="14">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="co"># What should we drop?</span></span>
-<span id="cb13-2"><a href=""></a><span class="co"># df = df.drop(["plantRow", "unit"], axis=1)</span></span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>df <span class="op">=</span> df[df[<span class="st">"detectedValueTypeId"</span>] <span class="op">==</span> <span class="st">"GRND_WATER_G"</span>]</span>
+<span id="cb13-2"><a href=""></a>df <span class="op">=</span> df.drop([<span class="st">"detectedValueTypeId"</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb13-3"><a href=""></a>df</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Unnamed: 0</th>
-<th data-quarto-table-cell-role="th">plantRow</th>
-<th data-quarto-table-cell-role="th">detectedValueTypeId</th>
-<th data-quarto-table-cell-role="th">yy</th>
-<th data-quarto-table-cell-role="th">xx</th>
-<th data-quarto-table-cell-role="th">value</th>
-<th data-quarto-table-cell-role="th">unit</th>
-<th data-quarto-table-cell-role="th">timestamp</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>0</td>
-<td>T1 basso</td>
-<td>GRND_WATER_G</td>
-<td>-20.0</td>
-<td>25.0</td>
-<td>-21.616472</td>
-<td>cbar</td>
-<td>1628951453</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>1</td>
-<td>T1 basso</td>
-<td>GRND_WATER_G</td>
-<td>-20.0</td>
-<td>50.0</td>
-<td>-113.354793</td>
-<td>cbar</td>
-<td>1628950550</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>2</td>
-<td>T1 basso</td>
-<td>GRND_WATER_G</td>
-<td>-20.0</td>
-<td>0.0</td>
-<td>-21.041212</td>
-<td>cbar</td>
-<td>1628947848</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>3</td>
-<td>T1 basso</td>
-<td>GRND_WATER_G</td>
-<td>-20.0</td>
-<td>0.0</td>
-<td>-21.328847</td>
-<td>cbar</td>
-<td>1628948747</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>4</td>
-<td>T1 basso</td>
-<td>GRND_WATER_G</td>
-<td>-20.0</td>
-<td>25.0</td>
-<td>-130.458021</td>
-<td>cbar</td>
-<td>1628657108</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">29059</td>
-<td>29059</td>
-<td>T1 basso</td>
-<td>GRND_WATER_G</td>
-<td>-60.0</td>
-<td>0.0</td>
-<td>-74.186077</td>
-<td>cbar</td>
-<td>1627102804</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">29060</td>
-<td>29060</td>
-<td>T1 basso</td>
-<td>GRND_WATER_G</td>
-<td>-60.0</td>
-<td>25.0</td>
-<td>-209.033680</td>
-<td>cbar</td>
-<td>1627101007</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">29061</td>
-<td>29061</td>
-<td>T1 basso</td>
-<td>GRND_WATER_G</td>
-<td>-60.0</td>
-<td>50.0</td>
-<td>-352.458317</td>
-<td>cbar</td>
-<td>1627101905</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">29062</td>
-<td>29062</td>
-<td>T1 basso</td>
-<td>GRND_WATER_G</td>
-<td>-60.0</td>
-<td>50.0</td>
-<td>-352.458317</td>
-<td>cbar</td>
-<td>1627101007</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">29063</td>
-<td>29063</td>
-<td>T1 basso</td>
-<td>GRND_WATER_G</td>
-<td>-60.0</td>
-<td>25.0</td>
-<td>-208.705472</td>
-<td>cbar</td>
-<td>1627102804</td>
-</tr>
-</tbody>
-</table>
-
-<p>29064 rows × 8 columns</p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<p>Drop the useless rows</p>
-<div id="17325843" class="cell" data-execution_count="15">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>df <span class="op">=</span> df[df[<span class="st">"detectedValueTypeId"</span>] <span class="op">==</span> <span class="st">"GRND_WATER_G"</span>]</span>
-<span id="cb14-2"><a href=""></a>df <span class="op">=</span> df.drop([<span class="st">"detectedValueTypeId"</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb14-3"><a href=""></a>df</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -1478,38 +1546,434 @@ memory usage: 2.0+ MB</code></pre>
 </div>
 </div>
 </section>
-<section class="slide level2">
 
-<p>Snapshots of sensor data at different timestamps</p>
-<div id="1233bc97" class="cell" data-execution_count="19">
+<section id="sensor-data-over-time" class="title-slide slide level1 center">
+<h1>Sensor data over time</h1>
+<div id="e14700da" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>plot()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="kw">def</span> plot():</span>
+<span id="cb14-2"><a href=""></a>    fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">3</span>))</span>
+<span id="cb14-3"><a href=""></a>    <span class="cf">for</span> key, grp <span class="kw">in</span> df.sort_values(by<span class="op">=</span>[<span class="st">"timestamp"</span>]).groupby([<span class="st">'xx'</span>, <span class="st">'yy'</span>]):</span>
+<span id="cb14-4"><a href=""></a>        ax <span class="op">=</span> grp.plot(ax<span class="op">=</span>ax, kind<span class="op">=</span><span class="st">'line'</span>, x<span class="op">=</span><span class="st">'timestamp'</span>, y<span class="op">=</span><span class="st">'value'</span>, label<span class="op">=</span>key)</span>
+<span id="cb14-5"><a href=""></a>    ax.legend(loc<span class="op">=</span><span class="st">'center left'</span>, bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>, <span class="fl">0.5</span>))</span>
+<span id="cb14-6"><a href=""></a>    fig.tight_layout()</span>
+<span id="cb14-7"><a href=""></a>plot()</span></code></pre></div>
 </details>
 
 </div>
-<img data-src="lab-02-DataWrangling_files/figure-revealjs/cell-13-output-1.png" class="r-stretch"></section>
-<section class="slide level2">
+<img data-src="lab-05-dl2dwh_files/figure-revealjs/cell-13-output-1.png" class="r-stretch"></section>
 
-<p>What if we bin our data hourly?</p>
-<div id="6fe77bb6" class="cell" data-execution_count="21">
+<section id="sensor-data-at-different-timestamps" class="title-slide slide level1 center">
+<h1>Sensor data at different timestamps</h1>
+<div id="1233bc97" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>plot()</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="kw">def</span> plot():</span>
+<span id="cb15-2"><a href=""></a>    fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">3</span>), sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb15-3"><a href=""></a>    <span class="cf">for</span> i, timestamp <span class="kw">in</span> <span class="bu">enumerate</span>([<span class="dv">1628950550</span>, <span class="dv">1626309949</span>, <span class="dv">1627101007</span>]):</span>
+<span id="cb15-4"><a href=""></a>        df[df[<span class="st">"timestamp"</span>] <span class="op">==</span> timestamp].plot.scatter(ax<span class="op">=</span>ax[i], x<span class="op">=</span><span class="st">'xx'</span>, y<span class="op">=</span><span class="st">'yy'</span>, c<span class="op">=</span><span class="st">'value'</span>, cmap<span class="op">=</span><span class="st">'seismic_r'</span>, s<span class="op">=</span><span class="dv">100</span>, title<span class="op">=</span>pd.to_datetime(timestamp, unit<span class="op">=</span><span class="st">'s'</span>).strftime(<span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S'</span>))</span>
+<span id="cb15-5"><a href=""></a>    fig.tight_layout()</span>
+<span id="cb15-6"><a href=""></a>plot()</span></code></pre></div>
 </details>
 
 </div>
-<img data-src="lab-02-DataWrangling_files/figure-revealjs/cell-14-output-1.png" class="r-stretch"></section>
-<section class="slide level2">
+<img data-src="lab-05-dl2dwh_files/figure-revealjs/cell-14-output-1.png" class="r-stretch"></section>
 
-<p>Data preparation - Bin data hourly, average the soil moisture for each sensor - Create derived attributes (e.g., time/sensor hierarchy) useful for posterior analysis</p>
+<section id="what-if-we-bin-our-data-hourly" class="title-slide slide level1 center">
+<h1>What if we bin our data hourly?</h1>
+<div id="08e5fd2a" class="cell" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="kw">def</span> plot():</span>
+<span id="cb16-2"><a href=""></a>    fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">3</span>), sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-3"><a href=""></a>    <span class="cf">for</span> i, timestamp <span class="kw">in</span> <span class="bu">enumerate</span>([<span class="dv">1628950550</span>, <span class="dv">1626309949</span>, <span class="dv">1627101007</span>]):</span>
+<span id="cb16-4"><a href=""></a>        df[df[<span class="st">"timestamp"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">int</span>(x <span class="op">/</span> (<span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span>))) <span class="op">==</span> <span class="bu">int</span>(timestamp <span class="op">/</span> (<span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span>))].plot.scatter(ax<span class="op">=</span>ax[i], x<span class="op">=</span><span class="st">'xx'</span>, y<span class="op">=</span><span class="st">'yy'</span>, c<span class="op">=</span><span class="st">'value'</span>, cmap<span class="op">=</span><span class="st">'seismic_r'</span>, s<span class="op">=</span><span class="dv">100</span>, title<span class="op">=</span>pd.to_datetime(<span class="bu">int</span>(timestamp <span class="op">/</span> (<span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span>)) <span class="op">*</span> <span class="dv">60</span> <span class="op">*</span> <span class="dv">60</span>, unit<span class="op">=</span><span class="st">'s'</span>).strftime(<span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S'</span>))</span>
+<span id="cb16-5"><a href=""></a>    fig.tight_layout()</span>
+<span id="cb16-6"><a href=""></a>plot()</span></code></pre></div>
+</details>
+
+</div>
+<img data-src="lab-05-dl2dwh_files/figure-revealjs/cell-15-output-1.png" class="r-stretch"></section>
+
+<section id="data-preparation" class="title-slide slide level1 center">
+<h1>Data preparation</h1>
+<ul>
+<li>Bin data hourly, average the soil moisture for each sensor</li>
+<li>Create derived attributes (e.g., time/sensor hierarchy) useful for posterior analysis</li>
+</ul>
+<div id="e7162d3e" class="cell" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>df[<span class="st">"timestamp"</span>] <span class="op">=</span> df[<span class="st">"timestamp"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="bu">int</span>(x <span class="op">/</span> <span class="dv">3600</span>) <span class="op">*</span> <span class="dv">3600</span>)  <span class="co"># bin the time by hours</span></span>
+<span id="cb17-2"><a href=""></a>df1 <span class="op">=</span> df.groupby([<span class="st">"plantRow"</span>, <span class="st">"timestamp"</span>, <span class="st">"xx"</span>, <span class="st">"yy"</span>])[<span class="st">"value"</span>].mean().reset_index()  <span class="co"># compute the average humidity</span></span>
+<span id="cb17-3"><a href=""></a>df1[<span class="st">"hour"</span>] <span class="op">=</span> [pd.to_datetime(tm, unit<span class="op">=</span><span class="st">'s'</span>).strftime(<span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st"> %H'</span>) <span class="cf">for</span> tm <span class="kw">in</span> df1[<span class="st">"timestamp"</span>]]  <span class="co"># format the hour</span></span>
+<span id="cb17-4"><a href=""></a>df1[<span class="st">"date"</span>] <span class="op">=</span> [pd.to_datetime(tm, unit<span class="op">=</span><span class="st">'s'</span>).strftime(<span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st">'</span>) <span class="cf">for</span> tm <span class="kw">in</span> df1[<span class="st">"timestamp"</span>]]  <span class="co"># format the date</span></span>
+<span id="cb17-5"><a href=""></a>df1[<span class="st">"month"</span>] <span class="op">=</span> [pd.to_datetime(tm, unit<span class="op">=</span><span class="st">'s'</span>).strftime(<span class="st">'%Y-%m'</span>) <span class="cf">for</span> tm <span class="kw">in</span> df1[<span class="st">"timestamp"</span>]]  <span class="co"># format the month</span></span>
+<span id="cb17-6"><a href=""></a>df1[<span class="st">"year"</span>] <span class="op">=</span> [pd.to_datetime(tm, unit<span class="op">=</span><span class="st">'s'</span>).strftime(<span class="st">'%Y'</span>) <span class="cf">for</span> tm <span class="kw">in</span> df1[<span class="st">"timestamp"</span>]]  <span class="co"># format the year</span></span>
+<span id="cb17-7"><a href=""></a>df1[<span class="st">"timestamp"</span>] <span class="op">=</span> [pd.to_datetime(tm, unit<span class="op">=</span><span class="st">'s'</span>).strftime(<span class="st">'%Y-%m-</span><span class="sc">%d</span><span class="st"> %H:%M:%S'</span>) <span class="cf">for</span> tm <span class="kw">in</span> df1[<span class="st">"timestamp"</span>]]  <span class="co"># format the timestamp</span></span>
+<span id="cb17-8"><a href=""></a>df1[<span class="st">"sensor"</span>] <span class="op">=</span> df1.<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="st">"("</span> <span class="op">+</span> <span class="bu">str</span>(x[<span class="st">"xx"</span>]) <span class="op">+</span> <span class="st">", "</span> <span class="op">+</span> <span class="bu">str</span>(x[<span class="st">"yy"</span>]) <span class="op">+</span> <span class="st">")"</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb17-9"><a href=""></a>df2 <span class="op">=</span> df1.rename({<span class="st">"xx"</span>: <span class="st">"dist"</span>, <span class="st">"yy"</span>: <span class="st">"depth"</span>, <span class="st">"plantRow"</span>: <span class="st">"plant"</span>}, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb17-10"><a href=""></a>df2</span></code></pre></div>
+</details>
+</div>
 </section>
-<section class="slide level2">
 
-<div id="d54338cc" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="24">
+<section id="save-the-data-back-to-s3." class="title-slide slide level1 center">
+<h1>Save the data back to S3.</h1>
+<div id="ba51608f" class="cell" data-execution_count="19">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>df2</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>wr.s3.to_csv(df<span class="op">=</span>df2, path<span class="op">=</span>output_bucket <span class="op">+</span> <span class="st">"cleaned-v2-"</span> <span class="op">+</span> file_name, index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>{'paths': ['s3://staging-clean-wateringsensors-12345/cleaned-v2-watering-data-1661269649253.csv'],
+ 'partitions_values': {}}</code></pre>
+</div>
+</div>
+</section>
+
+<section id="checking-correlations" class="title-slide slide level1 center">
+<h1>Checking correlations</h1>
+<div id="7eabf9ef" class="cell" data-execution_count="20">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>pdf <span class="op">=</span> df2[[<span class="st">"sensor"</span>, <span class="st">"value"</span>, <span class="st">"timestamp"</span>]].pivot(index<span class="op">=</span><span class="st">'timestamp'</span>, columns<span class="op">=</span><span class="st">'sensor'</span>)</span>
+<span id="cb20-2"><a href=""></a>pdf.columns <span class="op">=</span> pdf.columns.droplevel(<span class="dv">0</span>)</span>
+<span id="cb20-3"><a href=""></a>pdf <span class="op">=</span> pdf.reset_index().rename_axis(<span class="va">None</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb20-4"><a href=""></a>pdf</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">timestamp</th>
+<th data-quarto-table-cell-role="th">(0.0, -20.0)</th>
+<th data-quarto-table-cell-role="th">(0.0, -40.0)</th>
+<th data-quarto-table-cell-role="th">(0.0, -60.0)</th>
+<th data-quarto-table-cell-role="th">(25.0, -20.0)</th>
+<th data-quarto-table-cell-role="th">(25.0, -40.0)</th>
+<th data-quarto-table-cell-role="th">(25.0, -60.0)</th>
+<th data-quarto-table-cell-role="th">(50.0, -20.0)</th>
+<th data-quarto-table-cell-role="th">(50.0, -40.0)</th>
+<th data-quarto-table-cell-role="th">(50.0, -60.0)</th>
+<th data-quarto-table-cell-role="th">(80.0, -20.0)</th>
+<th data-quarto-table-cell-role="th">(80.0, -40.0)</th>
+<th data-quarto-table-cell-role="th">(80.0, -60.0)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2021-07-15 00:00:00</td>
+<td>-21.041212</td>
+<td>-21.041212</td>
+<td>-27.366967</td>
+<td>-21.616472</td>
+<td>-23.102383</td>
+<td>-193.593787</td>
+<td>-52.528144</td>
+<td>-24.204667</td>
+<td>-304.915914</td>
+<td>-68.562192</td>
+<td>-22.095825</td>
+<td>-96.347607</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2021-07-15 01:00:00</td>
+<td>-21.041212</td>
+<td>-21.041212</td>
+<td>-27.534631</td>
+<td>-21.760280</td>
+<td>-23.102383</td>
+<td>-192.983111</td>
+<td>-52.026595</td>
+<td>-24.412328</td>
+<td>-304.637871</td>
+<td>-68.562192</td>
+<td>-21.904088</td>
+<td>-95.634768</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2021-07-15 02:00:00</td>
+<td>-21.041212</td>
+<td>-21.041212</td>
+<td>-27.702294</td>
+<td>-22.047891</td>
+<td>-23.102383</td>
+<td>-192.125734</td>
+<td>-51.692214</td>
+<td>-24.635959</td>
+<td>-303.989075</td>
+<td>-68.562192</td>
+<td>-21.904088</td>
+<td>-95.028808</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2021-07-15 03:00:00</td>
+<td>-21.041212</td>
+<td>-21.041212</td>
+<td>-27.702294</td>
+<td>-21.904088</td>
+<td>-23.102383</td>
+<td>-191.636330</td>
+<td>-51.190619</td>
+<td>-24.635959</td>
+<td>-303.649208</td>
+<td>-68.228455</td>
+<td>-21.904088</td>
+<td>-94.616890</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2021-07-15 04:00:00</td>
+<td>-21.041212</td>
+<td>-21.041212</td>
+<td>-27.989708</td>
+<td>-21.616472</td>
+<td>-23.102383</td>
+<td>-190.739660</td>
+<td>-50.903980</td>
+<td>-24.923474</td>
+<td>-303.154831</td>
+<td>-68.228455</td>
+<td>-21.904088</td>
+<td>-93.876178</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">739</td>
+<td>2021-08-14 19:00:00</td>
+<td>-20.753568</td>
+<td>-22.191694</td>
+<td>-256.039903</td>
+<td>-21.041212</td>
+<td>-23.725431</td>
+<td>-306.917177</td>
+<td>-125.565894</td>
+<td>-850.129532</td>
+<td>-695.245247</td>
+<td>-981.683056</td>
+<td>-800.636272</td>
+<td>-470.650216</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">740</td>
+<td>2021-08-14 20:00:00</td>
+<td>-20.753568</td>
+<td>-21.975989</td>
+<td>-232.675216</td>
+<td>-21.041212</td>
+<td>-23.557690</td>
+<td>-285.590873</td>
+<td>-126.599786</td>
+<td>-849.870933</td>
+<td>-693.901787</td>
+<td>-977.351484</td>
+<td>-799.489618</td>
+<td>-467.938392</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">741</td>
+<td>2021-08-14 21:00:00</td>
+<td>-20.753568</td>
+<td>-21.904088</td>
+<td>-214.867884</td>
+<td>-21.041212</td>
+<td>-23.389949</td>
+<td>-268.375038</td>
+<td>-127.830821</td>
+<td>-847.995784</td>
+<td>-692.062365</td>
+<td>-973.500444</td>
+<td>-797.590173</td>
+<td>-465.339106</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">742</td>
+<td>2021-08-14 22:00:00</td>
+<td>-20.753568</td>
+<td>-21.904088</td>
+<td>-201.340064</td>
+<td>-21.041212</td>
+<td>-23.389949</td>
+<td>-254.095873</td>
+<td>-129.053794</td>
+<td>-845.106682</td>
+<td>-690.134413</td>
+<td>-968.902449</td>
+<td>-795.092987</td>
+<td>-463.250007</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">743</td>
+<td>2021-08-14 23:00:00</td>
+<td>-20.753568</td>
+<td>-21.904088</td>
+<td>-191.166170</td>
+<td>-21.041212</td>
+<td>-23.389949</td>
+<td>-243.344935</td>
+<td>-129.913714</td>
+<td>-840.353649</td>
+<td>-688.580633</td>
+<td>-965.569411</td>
+<td>-791.964873</td>
+<td>-462.190096</td>
+</tr>
+</tbody>
+</table>
+
+<p>744 rows × 13 columns</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="section-4" class="title-slide slide level1 center">
+<h1></h1>
+<div id="cf21eee4" class="cell" data-execution_count="21">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb21-2"><a href=""></a>sns.pairplot(pdf.sample(<span class="dv">100</span>))</span></code></pre></div>
+</details>
+
+</div>
+<img data-src="lab-05-dl2dwh_files/figure-revealjs/cell-19-output-1.png" class="r-stretch"></section>
+
+<section id="build-a-relational-data-warehouse-aws-rds" class="title-slide slide level1 center">
+<h1>4. Build a (relational) data warehouse (AWS RDS)</h1>
+<p>Amazon Relational Database Service (Amazon RDS)</p>
+<ul>
+<li>A collection of managed services that makes it simple to set up, operate, and scale relational databases in the cloud</li>
+</ul>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/200369753-f6d9e73e-6d7f-4d4b-bad6-311528e51629.png" class="r-stretch quarto-figure-center"><p class="caption">RDS</p></section>
+
+<section id="create-a-database" class="title-slide slide level1 center">
+<h1>Create a database</h1>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/aws-rds.png"></p>
+<figcaption>Version of the database</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/aws-rds2.png"></p>
+<figcaption>Configuration</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/aws-rds3.png"></p>
+<figcaption>Public Access</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div id="1960e26c" class="cell" data-execution_count="22">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>pwd <span class="op">=</span> <span class="st">"bigdata2023"</span></span></code></pre></div>
+</details>
+</div>
+</section>
+
+<section id="create-a-database-1" class="title-slide slide level1 center">
+<h1>Create a database</h1>
+<p>By default, even if you have set “Public accessibility” to “Yes”, the “Security Group” is still not allowing external connections yet.</p>
+<ul>
+<li>Virtual private clouds (VPC): a VPC is a virtual network that closely resembles a traditional network that you’d operate in your own data center</li>
+<li>A security group acts as a virtual firewall for your AWS instances to control incoming/outgoing traffic
+<ul>
+<li>When you launch an instance, you can specify one or more security groups</li>
+<li>If you don’t specify a security group, Amazon EC2 uses the default security group</li>
+</ul></li>
+<li>Your AWS account automatically has a default security group for the default VPC in each Region</li>
+</ul>
+</section>
+
+<section id="create-a-database-2" class="title-slide slide level1 center">
+<h1>Create a database</h1>
+<p>From <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/default-custom-security-groups.html#default-security-group">Default security groups (2022-11-15)</a></p>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/201981163-0bd75761-be85-41ea-aaf9-6af66e3e41ac.png" class="r-stretch quarto-figure-center"><p class="caption">Inbound/Outbound rules</p></section>
+
+<section id="create-a-database-3" class="title-slide slide level1 center">
+<h1>Create a database</h1>
+<p>You can add or remove inbound and outbound rules for any default security group.</p>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/201690868-abdd53f7-c6b5-48d4-89ce-e9f6f374a8ce.png" class="r-stretch quarto-figure-center"><p class="caption">Changing the Security Group</p></section>
+
+<section id="create-a-database-4" class="title-slide slide level1 center">
+<h1>Create a database</h1>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/201691253-db130df8-c31a-4c6f-aa69-34cf4d89f0e2.png" class="r-stretch quarto-figure-center"><p class="caption">Edit the inbound rules</p></section>
+
+<section id="create-a-database-5" class="title-slide slide level1 center">
+<h1>Create a database</h1>
+
+<img data-src="https://user-images.githubusercontent.com/18005592/201691398-a16f467e-c6cd-4dd9-8fc3-f31b45740ec4.png" class="r-stretch quarto-figure-center"><p class="caption">Allow inbound address from anywhere</p></section>
+
+<section id="create-a-database-6" class="title-slide slide level1 center">
+<h1>Create a database</h1>
+<p>What is the schema of our dataset?</p>
+<div id="f47629a2" class="cell" data-execution_count="23">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>df2.columns</span></code></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>Index(['plant', 'timestamp', 'dist', 'depth', 'value', 'hour', 'date', 'month',
+       'year', 'sensor'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<div id="9a727234" class="cell" data-execution_count="24">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>raw_data <span class="op">=</span> wr.s3.read_csv(output_bucket <span class="op">+</span> <span class="st">"cleaned-v2-"</span> <span class="op">+</span> file_name)</span>
+<span id="cb25-2"><a href=""></a>raw_data</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <div>
@@ -1694,305 +2158,32 @@ memory usage: 2.0+ MB</code></pre>
 </div>
 </div>
 </div>
-</section>
-<section class="slide level2">
-
-<p>Finally, save the data back to S3.</p>
-<div id="ba51608f" class="cell" data-execution_count="26">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>wr.s3.to_csv(df<span class="op">=</span>df2, path<span class="op">=</span>output_bucket <span class="op">+</span> <span class="st">"cleaned-v2-"</span> <span class="op">+</span> file_name, index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="26">
-<pre><code>{'paths': ['s3://staging-clean-wateringsensors-12345/cleaned-v2-watering-data-1661269649253.csv'],
- 'partitions_values': {}}</code></pre>
-</div>
-</div>
-</section>
-<section id="build-a-relational-data-warehouse-aws-rds" class="slide level2">
-<h2>4. Build a (relational) data warehouse (AWS RDS)</h2>
-</section>
-<section class="slide level2">
-
-<p>Amazon Relational Database Service (Amazon RDS) - A collection of managed services that makes it simple to set up, operate, and scale relational databases in the cloud</p>
-
-<img data-src="https://user-images.githubusercontent.com/18005592/200369753-f6d9e73e-6d7f-4d4b-bad6-311528e51629.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-
-<img data-src="https://github.com/w4bo/welaser/assets/18005592/ec3cdca6-548f-4370-95ca-107fcbb215ed" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-<div id="1960e26c" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="32">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>pwd <span class="op">=</span> <span class="st">"bigdata2023"</span></span></code></pre></div>
-</details>
-</div>
-
-<img data-src="https://user-images.githubusercontent.com/18005592/200370529-ae695d6f-9629-49bb-ae13-a4f5caeb9a0d.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-
-<img data-src="https://user-images.githubusercontent.com/18005592/200373378-f257ef56-aea9-4eb3-a922-2a4a3b2a1d11.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-<p>By default, even if you have set “Public accessibility” to “Yes”, the “Security Group” is still not allowing external connections yet.</p>
-<ul>
-<li>Virtual private clouds (VPC): a VPC is a virtual network that closely resembles a traditional network that you’d operate in your own data center</li>
-<li>A security group acts as a virtual firewall for your AWS instances to control incoming/outgoing traffic
-<ul>
-<li>When you launch an instance, you can specify one or more security groups</li>
-<li>If you don’t specify a security group, Amazon EC2 uses the default security group</li>
-</ul></li>
-<li>Your AWS account automatically has a default security group for the default VPC in each Region</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<p>From <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/default-custom-security-groups.html#default-security-group">Default security groups (2022-11-15)</a></p>
-
-<img data-src="https://user-images.githubusercontent.com/18005592/201981163-0bd75761-be85-41ea-aaf9-6af66e3e41ac.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-<p>You can add or remove inbound and outbound rules for any default security group.</p>
-
-<img data-src="https://user-images.githubusercontent.com/18005592/201690868-abdd53f7-c6b5-48d4-89ce-e9f6f374a8ce.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-
-<img data-src="https://user-images.githubusercontent.com/18005592/201691253-db130df8-c31a-4c6f-aa69-34cf4d89f0e2.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-
-<img data-src="https://user-images.githubusercontent.com/18005592/201691398-a16f467e-c6cd-4dd9-8fc3-f31b45740ec4.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-<p>Which is the schema of our dataset?</p>
-</section>
-<section class="slide level2">
-
-<div id="f47629a2" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="33">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb21-1"><a href=""></a>df2.columns</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="33">
-<pre><code>Index(['plant', 'timestamp', 'dist', 'depth', 'value', 'hour', 'date', 'month',
-       'year', 'sensor'],
-      dtype='object')</code></pre>
-</div>
-</div>
-<div id="9a727234" class="cell" data-execution_count="34">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb23-1"><a href=""></a>raw_data <span class="op">=</span> wr.s3.read_csv(output_bucket <span class="op">+</span> <span class="st">"cleaned-v2-"</span> <span class="op">+</span> file_name)</span>
-<span id="cb23-2"><a href=""></a>raw_data</span></code></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="34">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">plant</th>
-<th data-quarto-table-cell-role="th">timestamp</th>
-<th data-quarto-table-cell-role="th">dist</th>
-<th data-quarto-table-cell-role="th">depth</th>
-<th data-quarto-table-cell-role="th">value</th>
-<th data-quarto-table-cell-role="th">hour</th>
-<th data-quarto-table-cell-role="th">date</th>
-<th data-quarto-table-cell-role="th">month</th>
-<th data-quarto-table-cell-role="th">year</th>
-<th data-quarto-table-cell-role="th">sensor</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>T1 basso</td>
-<td>2021-07-15 00:00:00</td>
-<td>0.0</td>
-<td>-60.0</td>
-<td>-27.366967</td>
-<td>2021-07-15 00</td>
-<td>2021-07-15</td>
-<td>2021-07</td>
-<td>2021</td>
-<td>(0.0, -60.0)</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>T1 basso</td>
-<td>2021-07-15 00:00:00</td>
-<td>0.0</td>
-<td>-40.0</td>
-<td>-21.041212</td>
-<td>2021-07-15 00</td>
-<td>2021-07-15</td>
-<td>2021-07</td>
-<td>2021</td>
-<td>(0.0, -40.0)</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>T1 basso</td>
-<td>2021-07-15 00:00:00</td>
-<td>0.0</td>
-<td>-20.0</td>
-<td>-21.041212</td>
-<td>2021-07-15 00</td>
-<td>2021-07-15</td>
-<td>2021-07</td>
-<td>2021</td>
-<td>(0.0, -20.0)</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>T1 basso</td>
-<td>2021-07-15 00:00:00</td>
-<td>25.0</td>
-<td>-60.0</td>
-<td>-193.593787</td>
-<td>2021-07-15 00</td>
-<td>2021-07-15</td>
-<td>2021-07</td>
-<td>2021</td>
-<td>(25.0, -60.0)</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>T1 basso</td>
-<td>2021-07-15 00:00:00</td>
-<td>25.0</td>
-<td>-40.0</td>
-<td>-23.102383</td>
-<td>2021-07-15 00</td>
-<td>2021-07-15</td>
-<td>2021-07</td>
-<td>2021</td>
-<td>(25.0, -40.0)</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8751</td>
-<td>T1 basso</td>
-<td>2021-08-14 23:00:00</td>
-<td>50.0</td>
-<td>-40.0</td>
-<td>-840.353649</td>
-<td>2021-08-14 23</td>
-<td>2021-08-14</td>
-<td>2021-08</td>
-<td>2021</td>
-<td>(50.0, -40.0)</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">8752</td>
-<td>T1 basso</td>
-<td>2021-08-14 23:00:00</td>
-<td>50.0</td>
-<td>-20.0</td>
-<td>-129.913714</td>
-<td>2021-08-14 23</td>
-<td>2021-08-14</td>
-<td>2021-08</td>
-<td>2021</td>
-<td>(50.0, -20.0)</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8753</td>
-<td>T1 basso</td>
-<td>2021-08-14 23:00:00</td>
-<td>80.0</td>
-<td>-60.0</td>
-<td>-462.190096</td>
-<td>2021-08-14 23</td>
-<td>2021-08-14</td>
-<td>2021-08</td>
-<td>2021</td>
-<td>(80.0, -60.0)</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">8754</td>
-<td>T1 basso</td>
-<td>2021-08-14 23:00:00</td>
-<td>80.0</td>
-<td>-40.0</td>
-<td>-791.964873</td>
-<td>2021-08-14 23</td>
-<td>2021-08-14</td>
-<td>2021-08</td>
-<td>2021</td>
-<td>(80.0, -40.0)</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8755</td>
-<td>T1 basso</td>
-<td>2021-08-14 23:00:00</td>
-<td>80.0</td>
-<td>-20.0</td>
-<td>-965.569411</td>
-<td>2021-08-14 23</td>
-<td>2021-08-14</td>
-<td>2021-08</td>
-<td>2021</td>
-<td>(80.0, -20.0)</td>
-</tr>
-</tbody>
-</table>
-
-<p>8756 rows × 10 columns</p>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
 <ul>
 <li>Is this schema normalized?</li>
 <li>Is this the schema you are used to when building DWH?</li>
 </ul>
 </section>
-<section class="slide level2">
 
-<p>We need to distinguish the fact and the dimension tables: - FT: Measurement - DT1: Time - DT2: Sensor</p>
+<section id="creating-the-dwh" class="title-slide slide level1 center">
+<h1>Creating the DWH</h1>
+<p>We need to distinguish the fact and the dimension tables:</p>
+<ul>
+<li>FT: Measurement</li>
+<li>DT1: Time</li>
+<li>DT2: Sensor</li>
+</ul>
+<p>How?</p>
 </section>
-<section class="slide level2">
 
-<div id="297a2de1" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="35">
+<section id="dt-time" class="title-slide slide level1 center">
+<h1>DT Time</h1>
+<div id="297a2de1" class="cell" data-execution_count="25">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>dt_time <span class="op">=</span> raw_data[[<span class="st">"timestamp"</span>, <span class="st">"date"</span>, <span class="st">"month"</span>, <span class="st">"year"</span>]].drop_duplicates()</span>
-<span id="cb24-2"><a href=""></a>dt_time</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>dt_time <span class="op">=</span> raw_data[[<span class="st">"timestamp"</span>, <span class="st">"date"</span>, <span class="st">"month"</span>, <span class="st">"year"</span>]].drop_duplicates()</span>
+<span id="cb26-2"><a href=""></a>dt_time</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="35">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -2104,15 +2295,16 @@ memory usage: 2.0+ MB</code></pre>
 </div>
 </div>
 </section>
-<section class="slide level2">
 
-<div id="42e210c8" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="36">
+<section id="dt-sensor" class="title-slide slide level1 center">
+<h1>DT Sensor</h1>
+<div id="42e210c8" class="cell" data-execution_count="26">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>dt_sensor <span class="op">=</span> raw_data[[<span class="st">"sensor"</span>, <span class="st">"dist"</span>, <span class="st">"depth"</span>, <span class="st">"plant"</span>]].drop_duplicates()</span>
-<span id="cb25-2"><a href=""></a>dt_sensor</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>dt_sensor <span class="op">=</span> raw_data[[<span class="st">"sensor"</span>, <span class="st">"dist"</span>, <span class="st">"depth"</span>, <span class="st">"plant"</span>]].drop_duplicates()</span>
+<span id="cb27-2"><a href=""></a>dt_sensor</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="36">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -2230,15 +2422,16 @@ memory usage: 2.0+ MB</code></pre>
 </div>
 </div>
 </section>
-<section class="slide level2">
 
-<div id="bafff377" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="37">
+<section id="ft-measurement" class="title-slide slide level1 center">
+<h1>FT measurement</h1>
+<div id="bafff377" class="cell" data-execution_count="27">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>ft_mea <span class="op">=</span> raw_data[[<span class="st">"sensor"</span>, <span class="st">"timestamp"</span>, <span class="st">"value"</span>]].drop_duplicates()</span>
-<span id="cb26-2"><a href=""></a>ft_mea</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>ft_mea <span class="op">=</span> raw_data[[<span class="st">"sensor"</span>, <span class="st">"timestamp"</span>, <span class="st">"value"</span>]].drop_duplicates()</span>
+<span id="cb28-2"><a href=""></a>ft_mea</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="37">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -2338,93 +2531,130 @@ memory usage: 2.0+ MB</code></pre>
 </div>
 </div>
 </section>
-<section class="slide level2">
 
+<section id="section-5" class="title-slide slide level1 center">
+<h1></h1>
 <p>We need to connect to the database…</p>
 
-<img data-src="https://user-images.githubusercontent.com/18005592/200372868-4881edde-4f7f-4024-8ffb-cc3836d1a367.png" class="r-stretch quarto-figure-center"><p class="caption">image</p><div id="fa271c6a" class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;-&quot;}" data-execution_count="38">
+<img data-src="https://user-images.githubusercontent.com/18005592/200372868-4881edde-4f7f-4024-8ffb-cc3836d1a367.png" class="r-stretch quarto-figure-center"><p class="caption">Check <code>Connectivity &amp; Security</code></p><div id="fa271c6a" class="cell" data-execution_count="29">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>host <span class="op">=</span> <span class="st">"sensor-dwh1.crxqb7bplkfq.us-east-1.rds.amazonaws.com"</span></span>
-<span id="cb27-2"><a href=""></a>port <span class="op">=</span> <span class="dv">5432</span></span>
-<span id="cb27-3"><a href=""></a>user <span class="op">=</span> <span class="st">"postgres"</span></span>
-<span id="cb27-4"><a href=""></a>db <span class="op">=</span> <span class="st">"postgres"</span></span>
-<span id="cb27-5"><a href=""></a></span>
-<span id="cb27-6"><a href=""></a><span class="im">from</span> sqlalchemy <span class="im">import</span> create_engine</span>
-<span id="cb27-7"><a href=""></a>s <span class="op">=</span> <span class="st">'postgresql://</span><span class="sc">{}</span><span class="st">:</span><span class="sc">{}</span><span class="st">@</span><span class="sc">{}</span><span class="st">:</span><span class="sc">{}</span><span class="st">/</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(user, pwd, host, <span class="bu">str</span>(port), db)</span>
-<span id="cb27-8"><a href=""></a>engine <span class="op">=</span> create_engine(s)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb29-1"><a href=""></a><span class="im">from</span> sqlalchemy <span class="im">import</span> create_engine, text</span>
+<span id="cb29-2"><a href=""></a>host, port <span class="op">=</span> <span class="st">"sensor-dwh2.cpqeoiowah7l.us-east-1.rds.amazonaws.com"</span>, <span class="dv">1433</span></span>
+<span id="cb29-3"><a href=""></a>user, db <span class="op">=</span> <span class="st">"admin"</span>, <span class="st">"master"</span></span>
+<span id="cb29-4"><a href=""></a>s <span class="op">=</span> <span class="st">'mssql+pymssql://</span><span class="sc">{}</span><span class="st">:</span><span class="sc">{}</span><span class="st">@</span><span class="sc">{}</span><span class="st">:</span><span class="sc">{}</span><span class="st">/</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(user, pwd, host, <span class="bu">str</span>(port), db)</span>
+<span id="cb29-5"><a href=""></a>engine <span class="op">=</span> create_engine(s, connect_args<span class="op">=</span>{<span class="st">'autocommit'</span>: <span class="va">True</span>})</span>
+<span id="cb29-6"><a href=""></a><span class="cf">try</span>:</span>
+<span id="cb29-7"><a href=""></a>    <span class="cf">with</span> engine.<span class="ex">connect</span>() <span class="im">as</span> conn:</span>
+<span id="cb29-8"><a href=""></a>        conn.execute(text(<span class="st">"CREATE DATABASE mydb"</span>))</span>
+<span id="cb29-9"><a href=""></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e: <span class="bu">print</span>(e)</span>
+<span id="cb29-10"><a href=""></a>db <span class="op">=</span> <span class="st">"mydb"</span></span>
+<span id="cb29-11"><a href=""></a>engine <span class="op">=</span> create_engine(<span class="st">'mssql+pymssql://</span><span class="sc">{}</span><span class="st">:</span><span class="sc">{}</span><span class="st">@</span><span class="sc">{}</span><span class="st">:</span><span class="sc">{}</span><span class="st">/</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(user, pwd, host, <span class="bu">str</span>(port), db), connect_args<span class="op">=</span>{<span class="st">'autocommit'</span>: <span class="va">True</span>})</span></code></pre></div>
 </details>
+<div class="cell-output cell-output-stdout">
+<pre><code>(pymssql.exceptions.OperationalError) (1801, b"Database 'mydb' already exists. Choose a different database name.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+[SQL: CREATE DATABASE mydb]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)</code></pre>
+</div>
 </div>
 </section>
-<section class="slide level2">
 
-<p>… and just write the tables</p>
-<div id="d5798247" class="cell" data-execution_count="39">
+<section>
+<section id="section-6" class="title-slide slide level1 center">
+<h1></h1>
+<p>… and create/fill the tables</p>
+<div id="d5798247" class="cell" data-execution_count="30">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb28-1"><a href=""></a>dt_sensor.to_sql(<span class="st">'sensor'</span>, engine, index<span class="op">=</span><span class="va">False</span>, if_exists<span class="op">=</span><span class="st">'replace'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb31-1"><a href=""></a>dt_sensor.to_sql(<span class="st">'sensor'</span>, engine, index<span class="op">=</span><span class="va">False</span>, if_exists<span class="op">=</span><span class="st">'replace'</span>)</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="39">
+<div class="cell-output cell-output-display" data-execution_count="30">
 <pre><code>12</code></pre>
 </div>
 </div>
-<div id="4ab5d16a" class="cell" data-execution_count="40">
+<div id="4ab5d16a" class="cell" data-execution_count="31">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>dt_time.to_sql(<span class="st">'date'</span>, engine, index<span class="op">=</span><span class="va">False</span>, if_exists<span class="op">=</span><span class="st">'replace'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>dt_time.to_sql(<span class="st">'date'</span>, engine, index<span class="op">=</span><span class="va">False</span>, if_exists<span class="op">=</span><span class="st">'replace'</span>)</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="40">
-<pre><code>744</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>220</code></pre>
 </div>
 </div>
-<div id="e2a8a014" class="cell" data-execution_count="41">
+<div id="e2a8a014" class="cell" data-execution_count="32">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>ft_mea.to_sql(<span class="st">'measurement'</span>, engine, index<span class="op">=</span><span class="va">False</span>, if_exists<span class="op">=</span><span class="st">'replace'</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb35-1"><a href=""></a>ft_mea.to_sql(<span class="st">'measurement'</span>, engine, index<span class="op">=</span><span class="va">False</span>, if_exists<span class="op">=</span><span class="st">'replace'</span>)</span></code></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="41">
-<pre><code>756</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<pre><code>368</code></pre>
 </div>
 </div>
 </section>
 <section id="query-the-data-warehouse-tableau" class="slide level2">
 <h2>5. Query the data warehouse (Tableau)</h2>
-</section>
-<section class="slide level2">
 
-
-<img data-src="https://user-images.githubusercontent.com/18005592/200375443-c023c9f7-6df4-4717-91a6-4d9ea230eaea.png" class="r-stretch quarto-figure-center"><p class="caption">image</p></section>
-<section class="slide level2">
-
-<p>Tasks</p>
+<img data-src="https://user-images.githubusercontent.com/18005592/200375443-c023c9f7-6df4-4717-91a6-4d9ea230eaea.png" class="r-stretch quarto-figure-center"><p class="caption">image</p><p>Tasks</p>
 <ol type="1">
 <li>Build the hierarchies by following the functional dependencies</li>
 <li>Plot the average soil moisture (<code>avg(value)</code>) by <code>sensor</code> and <code>date</code>. Is soil moisture behaving as expected for all sensors?</li>
 <li>Plot the standard deviation of the soil moisture for every sensor. What can you tell from this visualization?</li>
 </ol>
+</section></section>
+<section id="section-7" class="title-slide slide level1 center">
+<h1></h1>
+
+</section>
+
+<section id="create-a-database-postgresql" class="title-slide slide level1 center">
+<h1>Create a Database (PostgreSQL)</h1>
+<div class="columns">
+<div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://github.com/w4bo/welaser/assets/18005592/ec3cdca6-548f-4370-95ca-107fcbb215ed"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://user-images.githubusercontent.com/18005592/200370529-ae695d6f-9629-49bb-ae13-a4f5caeb9a0d.png"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://user-images.githubusercontent.com/18005592/200373378-f257ef56-aea9-4eb3-a922-2a4a3b2a1d11.png"></p>
+<figcaption>image</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Big Data and Cloud Platforms (Module 2) - A.Y. 2024/25</p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="lab-02-DataWrangling_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="lab-05-dl2dwh_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="lab-02-DataWrangling_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="lab-02-DataWrangling_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="lab-02-DataWrangling_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="lab-02-DataWrangling_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="lab-02-DataWrangling_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="lab-05-dl2dwh_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="lab-05-dl2dwh_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="lab-05-dl2dwh_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="lab-05-dl2dwh_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="lab-05-dl2dwh_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="lab-02-DataWrangling_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="lab-02-DataWrangling_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="lab-02-DataWrangling_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="lab-02-DataWrangling_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="lab-05-dl2dwh_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="lab-05-dl2dwh_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="lab-05-dl2dwh_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="lab-05-dl2dwh_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
