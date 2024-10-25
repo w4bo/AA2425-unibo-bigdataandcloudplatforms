@@ -298,6 +298,10 @@ Grow storage from GBs to PBs
 
 ![Pooling](imgs/pooling.svg)
 
+# Why going cloud?
+
+![Physical Server Pools](https://media.geeksforgeeks.org/wp-content/uploads/20230110160801/Physical-Node.png)
+
 **Reliability**
 
 - Built to handle failures
@@ -305,16 +309,22 @@ Grow storage from GBs to PBs
 
 # Why going cloud?
 
-Worldwide **deployment**
+**Worldwide deployment**
 
 - Deploy applications as close to customers as possible
   - E.g., to reduce network latency
 - Improve data locality
 - Compliant to privacy regulations (e.g., GDPR)
 
+![Google's [Worldwide deployment](https://cloud.google.com/about/locations)](https://cloud.google.com/static/images/locations/regions-maps-popup.jpg?hl=it)
+
+# Why going cloud?
+
 Measured **quality of service**
 
 - Services leverage a quantitative metering capability making *pay-as-you-go (or pay-per-use)* billing
+
+![[AWS billing](https://aws.amazon.com/it/blogs/aws/aws-cost-explorer-update-better-filtering-grouping-report-management-ri-reports/)](imgs/aws-billing.png)
 
 # Why going cloud?
 
@@ -339,21 +349,19 @@ Cloud computing is the outsourcing of a company’s hardware and software archit
 
 # Is cloud a silver bullet?
 
-![Resiliency](imgs/slides104.png)
-
-[https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU](https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU)
+![[Resiliency](https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU)](imgs/slides104.png)
 
 # Is cloud a silver bullet?
 
 :::: {.columns}
 ::: {.column width=50%}
 
-![Energy consumption](imgs/slides105.png)
+![[Google Energy](https://sustainability.google/progress/energy/)](imgs/google-energy1.jpg)
 
 :::
 ::: {.column width=50%}
 
-![Energy consumption](imgs/slides106.png)
+![[Google Energy](https://sustainability.google/progress/energy/)](imgs/google-energy2.jpg)
 
 :::
 ::::
@@ -421,8 +429,6 @@ Availability zones in a region
 
 ![Magic Quadrant 2023](imgs/gartner_mq_2023.png)
 
-![Magic Quadrant 2020](imgs/slides110.png)
-
 :::
 ::: {.column width=50%}
 
@@ -440,9 +446,28 @@ How do we choose the Cloud Service Providers?
 :::
 ::::
 
+# Cloud computing: principal vendors
+
+:::: {.columns}
+::: {.column width=50%}
+
+![Magic Quadrant 2020](imgs/slides110.png)
+
+:::
+::: {.column width=50%}
+
+![Magic Quadrant 2023](imgs/gartner_mq_2023.png)
+
+:::
+::::
+
 # Cloud computing: deployment models
 
-On a cloud architecture, you can rely on *serverless* or *managed* services
+On a cloud architecture, you can rely on [*serverless* or *managed* services](https://cloud.google.com/blog/topics/developers-practitioners/serverless-vs-fully-managed-whats-difference) (accessed 2020-08-01)
+
+![serverless vs managed](https://storage.googleapis.com/gweb-cloudblog-publish/images/Banner_WPaJnYu.max-1800x1800.png)
+
+# Cloud computing: deployment models
 
 *Serverless*
 
@@ -459,8 +484,6 @@ On a cloud architecture, you can rely on *serverless* or *managed* services
   - You can choose the number of machines that are being used to run your application
 - Do not have to set up any machines, the management and backup are taken care for you
 - Pay for machine runtime, however long you run the machines and resources that your application uses
-
-[https://cloud.google.com/blog/topics/developers-practitioners/serverless-vs-fully-managed-whats-difference](https://cloud.google.com/blog/topics/developers-practitioners/serverless-vs-fully-managed-whats-difference) (accessed 2020-08-01)
 
 # Cloud computing: deployment models
 
