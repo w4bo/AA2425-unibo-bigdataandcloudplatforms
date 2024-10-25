@@ -208,6 +208,8 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 
 # Why going cloud?
 
+# Why going cloud?
+
 :::: {.columns}
 ::: {.column width=50%}
 
@@ -232,12 +234,12 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 > **Cloud computing** (National Institute of Standards and Technology)
 >
 > A model for enabling *ubiquitous, convenient, on-demand network access* to a *shared pool* of configurable computing resources (e.g., networks, servers, storage, services) that can be rapidly provisioned and released with *minimal management effort* or *service provider interaction*
-
-- On-demand self-service (consume services when you want)
-- Broad network access (consume services from anywhere)
-- Resource pooling (infrastructure, virtual platforms, and applications)
-- Rapid elasticity (enable horizontal scalability)
-- Measured service (pay for the service you consume as you consume)
+> 
+> - On-demand self-service (consume services when you want)
+> - Broad network access (consume services from anywhere)
+> - Resource pooling (infrastructure, virtual platforms, and applications)
+> - Rapid elasticity (enable horizontal scalability)
+> - Measured service (pay for the service you consume as you consume)
 
 **Digital transformation ** involves the **cloud** to create/change business flows
 
@@ -309,6 +311,9 @@ Grow storage from GBs to PBs
 
 # Why going cloud?
 
+:::: {.columns}
+::: {.column width=40%}
+
 **Worldwide deployment**
 
 - Deploy applications as close to customers as possible
@@ -316,7 +321,13 @@ Grow storage from GBs to PBs
 - Improve data locality
 - Compliant to privacy regulations (e.g., GDPR)
 
-![Google's [Worldwide deployment](https://cloud.google.com/about/locations)](https://cloud.google.com/static/images/locations/regions-maps-popup.jpg?hl=it)
+:::
+::: {.column width=60%}
+
+![Google's [Worldwide deployment](https://cloud.google.com/about/locations)](imgs/google-worlwide.jpg)
+
+:::
+::::
 
 # Why going cloud?
 
@@ -331,7 +342,7 @@ Measured **quality of service**
 :::: {.columns}
 ::: {.column width=50%}
 
-![AWS Services](aws-services.jpg)
+![AWS Services](imgs/aws-services.jpg)
 
 :::
 ::: {.column width=50%}
@@ -352,11 +363,131 @@ Service **integration**
 :::
 ::::
 
+# Which services?
+
+# Data pipeline - AWS
+
+:::: {.columns}
+::: {.column width=30%}
+
+Three main steps
+
+- *Ingest*
+  - Gateway, DataSync (batch)
+  - Kinesis, SNS, SQS (stream)
+- *Transform and store*
+  - S3 and Glacier (storage)
+  - Glue (ETL)
+- *Serve and consume*
+  - EMR (Hadoop-like cluster)
+  - Athena (serverless query)
+  - Machine learning services
+
+:::
+::: {.column width=70%}
+
+![AWS](imgs/slides181.png)
+
+:::
+::::
+
+# Data pipeline - Google cloud
+
+:::: {.columns}
+::: {.column width=30%}
+
+Three main steps
+
+- *Ingest*
+  - Transfer service (batch)
+  - Pub/Sub (stream)
+- *Analyze*
+  - Dataproc (batch)
+  - Dataflow (stream)
+  - Cloud storage (storage)
+  - Machine learning services
+- *Serve*
+  - BigQuery (query service)
+
+:::
+::: {.column width=70%}
+
+![Google Cloud](imgs/slides182.png)
+
+:::
+::::
+
+# A tentative organization
+
+![Building blocks](imgs/245.svg)
+
+# A tentative organization
+
+:::: {.columns}
+::: {.column width=50%}
+
+We have services
+
+- To transform data
+- To support the transformation
+
+The (DIKW) pyramid abstracts many techniques and algorithms
+
+- Standardization
+- Integration
+- Orchestration
+- Accessibility through APIs
+
+:::
+::: {.column width=50%}
+
+![DIKW](imgs/246.svg)
+
+:::
+::::
+
+# A tentative organization
+
+:::: {.columns}
+::: {.column width=50%}
+
+This is not a sharp taxonomy
+
+*Ingestion* vs *Analytics*
+
+- Data streams are used for ingestion
+- ... and (event) processing
+
+:::
+::: {.column width=50%}
+
+![Ingestion vs Analytics](imgs/248.svg)
+
+:::
+::::
+
+# A tentative organization
+
+:::: {.columns}
+::: {.column width=50%}
+
+This is not a sharp taxonomy
+
+*Storage* vs *Serving*
+
+- Databases are storage
+- ... with processing capability
+- ... and with serving capability
+
+:::
+::: {.column width=50%}
+
+![Storage vs Serving](imgs/249.svg)
+
+:::
+::::
+
 # Is cloud a silver bullet?
-
-Cloud computing is the outsourcing of a company’s hardware and software architecture
-
-- Which are the risks and issues?
 
 # Is cloud a silver bullet?
 
@@ -389,9 +520,9 @@ Cloud computing is the outsourcing of a company’s hardware and software archit
 There are different types of cloud
 
 - **Public**: accessible to anyone willing to pay (e.g., Microsoft, AWS, Google)
-- **Private**: accessible by individuals within an institution
-  - In public cloud, any resources that you are not using can be used by other
+  - Any resources that you are not using can be used by other
   - Users share the costs
+- **Private**: accessible by individuals within an institution
   - Cost-sharing disappears in private clouds
 - **Hybrid**: a mix of the previous
 
@@ -476,7 +607,7 @@ How do we choose the Cloud Service Providers?
 
 On a cloud architecture, you can rely on [*serverless* or *managed* services](https://cloud.google.com/blog/topics/developers-practitioners/serverless-vs-fully-managed-whats-difference) (accessed 2020-08-01)
 
-![serverless vs managed](https://storage.googleapis.com/gweb-cloudblog-publish/images/Banner_WPaJnYu.max-1800x1800.png)
+![Serverless vs Managed](imgs/google-serverless.png)
 
 # Cloud computing: deployment models
 
