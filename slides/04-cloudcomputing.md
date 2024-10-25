@@ -328,6 +328,14 @@ Measured **quality of service**
 
 # Why going cloud?
 
+:::: {.columns}
+::: {.column width=50%}
+
+![AWS Services](aws-services.jpg)
+
+:::
+::: {.column width=50%}
+
 Service **integration**
 
 - Do not reinvent the wheel, eliminate repetitive tasks
@@ -340,6 +348,9 @@ Service **integration**
 - From *databases* to *data platforms*
 - From *on-premises* to *serverless* architectures
 - From *custom* to *standardized* data pipelines
+
+:::
+::::
 
 # Is cloud a silver bullet?
 
@@ -644,7 +655,7 @@ How do provide computational resources?
 - On top of physical server and its host OS
 - Share the host OS kernel
 - Shared components are read-only
-- “Light”, take seconds to start
+- "Light", take seconds to start
 
 *Virtual machines*
 
