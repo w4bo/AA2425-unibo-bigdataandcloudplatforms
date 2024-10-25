@@ -491,7 +491,11 @@ This is not a sharp taxonomy
 
 # Is cloud a silver bullet?
 
-![[Resiliency](https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU)](imgs/slides104.png)
+![[Millions of websites offline after fire at French cloud services firm (2021)](https://www.reuters.com/article/us-france-ovh-fire-idUSKBN2B20NU)](imgs/slides104.png)
+
+# Is cloud a silver bullet?
+
+![[Global cyber outage hits air travel (2024)](https://www.reuters.com/business/aerospace-defense/air-travel-hit-by-global-cyber-outage-2024-07-19/)](imgs/crowstrike.png)
 
 # Is cloud a silver bullet?
 
