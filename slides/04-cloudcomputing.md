@@ -65,7 +65,7 @@ The big-data cube [@meijer2012your]
 
 **Velocity** (speed; dual to latency)
 
-- *High*: processing in real-time (milliseconds) or near-real time (minutes)
+- *High*: processing in real-time (milliseconds) or near-real-time (minutes)
 - *Low*: processing can take hours
 
 :::
@@ -141,7 +141,7 @@ The Netflix scenario
 **Collecting data**
 
 - *Scheduled Batch* 
-  - Large volume of data processed on a regular scheduled basis
+  - Large volume of data processed on a regularly scheduled basis
   - Velocity is very predictable
 - *Periodic*
   - Data processed at irregular times (e.g., after collecting a certain ---large--- amount of data)
@@ -196,7 +196,7 @@ Our focus
 *Data-driven company* refers to companies where decisions and processes are supported by data
 
 - Decisions are based on quantitative rather than qualitative knowledge
-- Processes & Knowledge are an asset of the company and are not lost if managers change
+- Processes & Knowledge are asset of the company and are not lost if managers change
 - The gap between a data-driven decision and a good decision is a good manager
 
 Adopting a data-driven mindset goes far beyond adopting a business intelligence solution and entails:
@@ -206,9 +206,9 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 - *Change processes*
 - *Improve the quality of all the data*
 
-# Why going cloud?
+# Why moving to the cloud?
 
-# Why going cloud?
+# Why moving to the cloud?
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -217,7 +217,7 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 
 - Moving from A to B is a multi-year process made of intermediate goals
 - Each of which must be *feasible*
-  - Solves a company pain and brings value
+  - Solves a company's pain and brings value
   - Can be accomplished in a limited time range (typically less than one year)
   - Costs must be economically related to gains
 
@@ -229,7 +229,7 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 :::
 ::::
 
-# Why going cloud?
+# Why moving to the cloud?
 
 > **Cloud computing** (National Institute of Standards and Technology)
 >
@@ -241,12 +241,15 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 > - Rapid elasticity (enable horizontal scalability)
 > - Measured service (pay for the service you consume as you consume)
 
+
 **Digital transformation ** involves the **cloud** to create/change business flows
 
+- Cloud computing is the delivery of on-demand computing resources to businesses/individuals via a network (usually the Internet)
+- Cloud computing enables organizations to access and store information without managing their own physical devices or IT infrastructure 
 - Often involves changing the company culture to adapt to this new way of doing business
-- One of the end goal is to meet ever-changing business and market demand
+- One of the end goals is to meet ever-changing business and market demand
 
-# Why going cloud?
+# Why moving to the cloud?
 
 Goal: adjusts capacity to have predictable performance at the lowest cost
 
@@ -256,7 +259,7 @@ Goal: adjusts capacity to have predictable performance at the lowest cost
 
 ![Scalability](imgs/scalability.svg)
 
-# Why going cloud?
+# Why moving to the cloud?
 
 **Elasticity**
 
@@ -266,14 +269,14 @@ Goal: adjusts capacity to have predictable performance at the lowest cost
 
 ![Elasticity](imgs/elasticity.svg)
 
-# Why going cloud?
+# Why moving to the cloud?
 
 :::: {.columns}
 ::: {.column width=60%}
 
 Hardware scalability
 
-- No longer think about rack space, switches, and power supplies, etc.
+- No longer think about rack space, switches, power supplies, etc.
 
 Grow storage from GBs to PBs
 
@@ -289,7 +292,7 @@ Grow storage from GBs to PBs
 
 [https://blog.seagate.com/business/linus-tech-tips-want-petabyte-system/](https://blog.seagate.com/business/linus-tech-tips-want-petabyte-system/)
 
-# Why going cloud?
+# Why moving to the cloud?
 
 **Resource pooling**
 
@@ -300,7 +303,7 @@ Grow storage from GBs to PBs
 
 ![Pooling](imgs/pooling.svg)
 
-# Why going cloud?
+# Why moving to the cloud?
 
 ![Physical Server Pools](https://media.geeksforgeeks.org/wp-content/uploads/20230110160801/Physical-Node.png)
 
@@ -309,7 +312,7 @@ Grow storage from GBs to PBs
 - Built to handle failures
 - Fault-tolerant or highly available
 
-# Why going cloud?
+# Why moving to the cloud?
 
 :::: {.columns}
 ::: {.column width=40%}
@@ -329,7 +332,7 @@ Grow storage from GBs to PBs
 :::
 ::::
 
-# Why going cloud?
+# Why moving to the cloud?
 
 Measured **quality of service**
 
@@ -337,7 +340,7 @@ Measured **quality of service**
 
 ![[AWS billing](https://aws.amazon.com/it/blogs/aws/aws-cost-explorer-update-better-filtering-grouping-report-management-ri-reports/)](imgs/aws-billing.png)
 
-# Why going cloud?
+# Why moving to the cloud?
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -391,7 +394,7 @@ Three main steps
 :::
 ::::
 
-# Data pipeline - Google cloud
+# Data pipeline - Google Cloud
 
 :::: {.columns}
 ::: {.column width=30%}
@@ -582,10 +585,10 @@ How do we choose the Cloud Service Providers?
 
 [Gartner Magic Quadrant](https://www.gartner.com/en/research/methodologies/magic-quadrants-research)
 
-- **Leaders** execute well and are well positioned for tomorrow
+- **Leaders** execute well and are well-positioned for tomorrow
 - **Visionaries** understand where the market is going but do not yet execute well
 - **Niche Players** focus successfully on a small segment, or are unfocused and do not out-innovate or outperform others
-- **Challengers** execute well but do not demonstrate an understanding of market direction
+- **Challengers** execute well but do not demonstrate an understanding of the market direction
 - Focusing on leaders isn’t always the best
   - A niche player may support needs better than a market leader. It depends on how the provider aligns with business goals
 
@@ -617,12 +620,12 @@ On a cloud architecture, you can rely on [*serverless* or *managed* services](ht
 
 *Serverless*
 
-- Standalone independent services built for a specific purpose and integrated by cloud service provider
+- Standalone independent services built for a specific purpose and integrated by the cloud service provider
 - No visibility into the machines
   - There are still servers in serverless, but they are abstracted away
   - No server management, do not have to manage any servers or scale them
   - E.g., when you run a query on [BigQuery](https://cloud.google.com/blog/products/bigquery/separation-of-storage-and-compute-in-bigquery) you do not know how many machines were used
-- Pay for what your application uses, usually per request or per usage
+- Pay for what your application uses, usually per request or usage
 
 *(Fully) Managed*
 
@@ -643,7 +646,7 @@ Understanding architectures is paramount to successful systems
 **Anything as a service (XaaS)**
 
 - A collective term that refers to the delivery of anything as a service
-- It encompasses the products, tools and technologies that vendors deliver to users
+- It encompasses the products, tools, and technologies that vendors deliver to users
 
 # Cloud computing: deployment models
 
@@ -673,9 +676,9 @@ Understanding architectures is paramount to successful systems
 **Infrastructure as a service (IaaS)**
 
 - A computing infrastructure provisioned and managed over the internet (e.g., AWS EC2)
-- Avoid expense/complexity of buying/managing physical servers/data-centers
+- Avoid the expense/complexity of buying/managing physical servers/data centers
 - IaaS overcomes issues on-premises
-- Possibly requires to manage many environments
+- Possibly requires managing many environments
 
 :::
 ::: {.column width=30%}
@@ -694,7 +697,7 @@ Understanding architectures is paramount to successful systems
 
 - A development and deployment environment in the cloud (e.g., AWS Elastic Beanstalk)
 - Support complete application life-cycle: building, testing, deploying, etc.
-- Avoid expense/complexity of managing licenses and application infrastructure
+- Avoid the expense/complexity of managing licenses and application infrastructure
 
 :::
 ::: {.column width=30%}
@@ -741,7 +744,7 @@ Understanding architectures is paramount to successful systems
 
 Principles of FaaS architectures
 
-- FaaS is based on a serverless approach, use a compute service to execute code on demand
+- FaaS is based on a serverless approach, using a compute service to execute code on demand
 - Every function could be considered as a standalone service
 - Write single-purpose stateless functions
 
@@ -805,7 +808,7 @@ How do provide computational resources?
 :::
 ::::
 
-Containerization isolates an application with its own environment
+Containerization isolates an application with its environment
 
 - Lightweight alternative to full virtualization
 - Containers are isolated but need to be deployed to (public/private) server
