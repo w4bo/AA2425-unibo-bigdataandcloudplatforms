@@ -231,7 +231,7 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 
 # Why moving to the cloud?
 
-> **Cloud computing** (National Institute of Standards and Technology)
+> **Cloud Computing** (National Institute of Standards and Technology)
 >
 > A model for enabling *ubiquitous, convenient, on-demand network access* to a *shared pool* of configurable computing resources (e.g., networks, servers, storage, services) that can be rapidly provisioned and released with *minimal management effort* or *service provider interaction*
 > 
@@ -242,20 +242,43 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 > - Measured service (pay for the service you consume as you consume)
 
 
-**Digital transformation ** involves the **cloud** to create/change business flows
+**Digital transformation** involves the **cloud** to create/change business flows
 
-- Cloud computing is the delivery of on-demand computing resources to businesses/individuals via a network (usually the Internet)
-- Cloud computing enables organizations to access and store information without managing their own physical devices or IT infrastructure 
+- CC is the delivery of on-demand computing resources to businesses/individuals via a network (usually the Internet)
+- CC enables organizations to access and store information without managing their own physical devices or IT infrastructure 
 - Often involves changing the company culture to adapt to this new way of doing business
 - One of the end goals is to meet ever-changing business and market demand
 
+# Types of cloud
+
+:::: {.columns}
+::: {.column width=50%}
+
+There are different types of cloud
+
+- **Public**: accessible to anyone willing to pay
+  - Any resources that you are not using can be used by other
+  - Users share the costs
+  - E.g., Microsoft Azure, AWS, Google Cloud
+- **Private**: accessible by individuals within an institution
+  - Cost-sharing disappears in private clouds
+- **Hybrid**: a mix of the previous
+
+:::
+::: {.column width=50%}
+
+![Types of cloud](imgs/slides108.png)
+
+:::
+::::
+
 # Why moving to the cloud?
 
-Goal: adjusts capacity to have predictable performance at the lowest cost
+**Scalability**
 
-**Scalability** that is not possible on premises
-
+- Adjusts capacity to have predictable performance at the lowest cost
 - Scale from one to thousands of computers
+  - This is not possible on-premises
 
 ![Scalability](imgs/scalability.svg)
 
@@ -303,14 +326,50 @@ Grow storage from GBs to PBs
 
 ![Pooling](imgs/pooling.svg)
 
-# Why moving to the cloud?
+# Virtualization
 
-![Physical Server Pools](https://media.geeksforgeeks.org/wp-content/uploads/20230110160801/Physical-Node.png)
+How do provide computational resources?
+
+:::: {.columns}
+::: {.column width=60%}
+
+*Containers* and *virtual machines* are packaged computing environments
+
+*Containers*
+
+- On top of physical server and its host OS
+- Share the host OS kernel
+- Shared components are read-only
+- "Light", take seconds to start
+
+*Virtual machines*
+
+- Emulate a hardware/software system
+- On top of a hypervisor (VM monitor)
+
+:::
+::: {.column width=40%}
+
+![Containers vs VMs](imgs/slides112.jpg)
+
+:::
+::::
+
+Containerization isolates an application with its environment
+
+- Lightweight alternative to full virtualization
+- Containers are isolated but need to be deployed to (public/private) server
+- Excellent solution when dependencies are in play
+- Housekeeping challenges and complexities
+
+# Why moving to the cloud?
 
 **Reliability**
 
 - Built to handle failures
 - Fault-tolerant or highly available
+
+![Physical Server Pools](https://media.geeksforgeeks.org/wp-content/uploads/20230110160801/Physical-Node.png)
 
 # Why moving to the cloud?
 
@@ -332,6 +391,35 @@ Grow storage from GBs to PBs
 :::
 ::::
 
+# Worldwide deployment
+
+:::: {.columns}
+::: {.column width=50%}
+
+Cloud services are hosted in separate geographic areas
+
+- Locations are composed of **regions** and **availability zones**
+- [Using regions and availability zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html)
+
+Region (e.g., us-east-1)
+
+- Is an independent geographical area that groups data centers
+- Has availability zones
+
+Availability zones in a region
+
+- A data center
+- Connected through low-latency links
+- Resources are usually replicated across zones but not regions
+
+:::
+::: {.column width=50%}
+
+![Regions](imgs/slides109.png)
+
+:::
+::::
+
 # Why moving to the cloud?
 
 Measured **quality of service**
@@ -343,12 +431,12 @@ Measured **quality of service**
 # Why moving to the cloud?
 
 :::: {.columns}
-::: {.column width=50%}
+::: {.column width=40%}
 
 ![AWS Services](imgs/aws-services.jpg)
 
 :::
-::: {.column width=50%}
+::: {.column width=60%}
 
 Service **integration**
 
@@ -367,6 +455,45 @@ Service **integration**
 ::::
 
 # Which services?
+
+# Cloud computing: principal vendors
+
+:::: {.columns}
+::: {.column width=50%}
+
+![Magic Quadrant 2023](imgs/gartner_mq_2023.png)
+
+:::
+::: {.column width=50%}
+
+How do we choose the Cloud Service Providers?
+
+[Gartner Magic Quadrant](https://www.gartner.com/en/research/methodologies/magic-quadrants-research)
+
+- **Leaders** execute well and are well-positioned for tomorrow
+- **Visionaries** understand where the market is going but do not yet execute well
+- **Niche Players** focus successfully on a small segment, or are unfocused and do not out-innovate or outperform others
+- **Challengers** execute well but do not demonstrate an understanding of the market direction
+- Focusing on leaders isn’t always the best
+  - A niche player may support needs better than a market leader. It depends on how the provider aligns with business goals
+
+:::
+::::
+
+# Cloud computing: principal vendors
+
+:::: {.columns}
+::: {.column width=50%}
+
+![Magic Quadrant 2020](imgs/slides110.png)
+
+:::
+::: {.column width=50%}
+
+![Magic Quadrant 2023](imgs/gartner_mq_2023.png)
+
+:::
+::::
 
 # Data pipeline - AWS
 
@@ -519,121 +646,6 @@ This is not a sharp taxonomy
 
 ![https://xkcd.com/908/](imgs/slides107.png)
 
-# Cloud computing: types of cloud
-
-:::: {.columns}
-::: {.column width=50%}
-
-There are different types of cloud
-
-- **Public**: accessible to anyone willing to pay (e.g., Microsoft, AWS, Google)
-  - Any resources that you are not using can be used by other
-  - Users share the costs
-- **Private**: accessible by individuals within an institution
-  - Cost-sharing disappears in private clouds
-- **Hybrid**: a mix of the previous
-
-:::
-::: {.column width=50%}
-
-![Types of cloud](imgs/slides108.png)
-
-:::
-::::
-
-# Cloud computing: types of cloud
-
-:::: {.columns}
-::: {.column width=50%}
-
-Cloud services are hosted in separate geographic areas
-
-- Locations are composed of **regions** and **availability zones**
-
-Region (e.g., us-east-1)
-
-- Is an independent geographical area that groups data centers
-- Has availability zones
-
-Availability zones in a region
-
-- A data center
-- Connected through low-latency links
-- Resources are usually replicated across zones but not regions
-
-:::
-::: {.column width=50%}
-
-![Regions](imgs/slides109.png)
-
-:::
-::::
-
-[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html)
-
-# Cloud computing: principal vendors
-
-:::: {.columns}
-::: {.column width=50%}
-
-![Magic Quadrant 2023](imgs/gartner_mq_2023.png)
-
-:::
-::: {.column width=50%}
-
-How do we choose the Cloud Service Providers?
-
-[Gartner Magic Quadrant](https://www.gartner.com/en/research/methodologies/magic-quadrants-research)
-
-- **Leaders** execute well and are well-positioned for tomorrow
-- **Visionaries** understand where the market is going but do not yet execute well
-- **Niche Players** focus successfully on a small segment, or are unfocused and do not out-innovate or outperform others
-- **Challengers** execute well but do not demonstrate an understanding of the market direction
-- Focusing on leaders isn’t always the best
-  - A niche player may support needs better than a market leader. It depends on how the provider aligns with business goals
-
-:::
-::::
-
-# Cloud computing: principal vendors
-
-:::: {.columns}
-::: {.column width=50%}
-
-![Magic Quadrant 2020](imgs/slides110.png)
-
-:::
-::: {.column width=50%}
-
-![Magic Quadrant 2023](imgs/gartner_mq_2023.png)
-
-:::
-::::
-
-# Cloud computing: deployment models
-
-On a cloud architecture, you can rely on [*serverless* or *managed* services](https://cloud.google.com/blog/topics/developers-practitioners/serverless-vs-fully-managed-whats-difference) (accessed 2020-08-01)
-
-![Serverless vs Managed](imgs/google-serverless.png)
-
-# Cloud computing: deployment models
-
-*Serverless*
-
-- Standalone independent services built for a specific purpose and integrated by the cloud service provider
-- No visibility into the machines
-  - There are still servers in serverless, but they are abstracted away
-  - No server management, do not have to manage any servers or scale them
-  - E.g., when you run a query on [BigQuery](https://cloud.google.com/blog/products/bigquery/separation-of-storage-and-compute-in-bigquery) you do not know how many machines were used
-- Pay for what your application uses, usually per request or usage
-
-*(Fully) Managed*
-
-- Visibility and control of machines
-  - You can choose the number of machines that are being used to run your application
-- Do not have to set up any machines, the management and backup are taken care for you
-- Pay for machine runtime, however long you run the machines and resources that your application uses
-
 # Cloud computing: deployment models
 
 Understanding architectures is paramount to successful systems
@@ -744,11 +756,11 @@ Understanding architectures is paramount to successful systems
 
 Principles of FaaS architectures
 
-- FaaS is based on a serverless approach, using a compute service to execute code on demand
+- FaaS is based on a *serverless* approach, using a compute service to execute code on demand
 - Every function could be considered as a standalone service
 - Write single-purpose stateless functions
 
-Functions react to events
+Functions *react to events*
 
 - Design push-based, event-driven pipelines
 - Create thicker, more powerful front ends
@@ -756,10 +768,10 @@ Functions react to events
 
 FaaS is not a silver bullet
 
-- Not appropriate for latency-sensitive applications
+- *Not appropriate for latency-sensitive applications*
 - Strict specific service-level agreements
 - Migration costs
-- Vendor lock-in can be an issue
+  - Vendor lock-in can be an issue
 
 # Cloud computing: deployment models
 
@@ -779,41 +791,29 @@ FaaS is not a silver bullet
 :::
 ::::
 
-# Virtualization
+# Cloud computing: deployment models
 
-How do provide computational resources?
+On a cloud architecture, you can rely on [*serverless* or *managed* services](https://cloud.google.com/blog/topics/developers-practitioners/serverless-vs-fully-managed-whats-difference) (accessed 2020-08-01)
 
-:::: {.columns}
-::: {.column width=60%}
+![Serverless vs Managed](imgs/google-serverless.png)
 
-*Containers* and *virtual machines* are packaged computing environments
+# Cloud computing: deployment models
 
-*Containers*
+*Serverless*
 
-- On top of physical server and its host OS
-- Share the host OS kernel
-- Shared components are read-only
-- "Light", take seconds to start
+- Standalone independent services built for a specific purpose and integrated by the cloud service provider
+- No visibility into the machines
+  - There are still servers in serverless, but they are abstracted away
+  - No server management, do not have to manage any servers or scale them
+  - E.g., when you run a query on [BigQuery](https://cloud.google.com/blog/products/bigquery/separation-of-storage-and-compute-in-bigquery) you do not know how many machines were used
+- Pay for what your application uses, usually per request or usage
 
-*Virtual machines*
+*(Fully) Managed*
 
-- Emulate a hardware/software system
-- On top of a hypervisor (VM monitor)
-
-:::
-::: {.column width=40%}
-
-![Containers vs VMs](imgs/slides112.jpg)
-
-:::
-::::
-
-Containerization isolates an application with its environment
-
-- Lightweight alternative to full virtualization
-- Containers are isolated but need to be deployed to (public/private) server
-- Excellent solution when dependencies are in play
-- Housekeeping challenges and complexities
+- Visibility and control of machines
+  - You can choose the number of machines that are being used to run your application
+- Do not have to set up any machines, the management and backup are taken care for you
+- Pay for machine runtime, however long you run the machines and resources that your application uses
 
 # 
 
