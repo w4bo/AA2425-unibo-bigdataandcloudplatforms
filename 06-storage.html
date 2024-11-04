@@ -28,7 +28,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="06-storage_files/libs/revealjs/dist/theme/quarto.css">
   <link href="06-storage_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="06-storage_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -339,16 +359,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 <section id="section" class="title-slide slide level1 center">
 <h1></h1>
-<p><strong>Data pipeline</strong>: a <em>sequence</em> of operations to transform and consume raw data</p>
 
-<img data-src="imgs/slides180.png" class="r-stretch quarto-figure-center"><p class="caption">https://xkcd.com/2054/</p></section>
+<img data-src="imgs/249.svg" class="r-stretch quarto-figure-center"><p class="caption">Storage</p></section>
 
 <section id="storage" class="title-slide slide level1 center">
-<h1>Storage</h1>
-
-<img data-src="imgs/249.svg" class="r-stretch"></section>
-
-<section id="storage-1" class="title-slide slide level1 center">
 <h1>Storage</h1>
 <p><strong>Goal</strong>: persisting data</p>
 <ul>
@@ -362,23 +376,22 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 </ul></li>
 <li>Access <strong>frequency</strong></li>
-<li><strong>Analyses </strong> to be performed</li>
+<li><strong>Analyses</strong> to be performed</li>
 </ul>
 </section>
 
 <section id="storage-models" class="title-slide slide level1 center">
 <h1>Storage models</h1>
 
-<img data-src="imgs/252.svg" class="r-stretch"><p>Mansouri, Yaser, Adel Nadjaran Toosi, and Rajkumar Buyya. “Data storage management in cloud environments: Taxonomy, survey, and future directions.” ACM Computing Surveys (CSUR) 50.6 (2017): 1-51.</p>
-</section>
+<img data-src="imgs/252.svg" class="r-stretch quarto-figure-center"><p class="caption">Taxonomy of storage models <span class="citation" data-cites="mansouri2017data">(<a href="#/lakehouse" role="doc-biblioref" onclick="">Mansouri, Toosi, and Buyya 2017</a>)</span></p></section>
 
 <section id="storage-models-aws" class="title-slide slide level1 center">
 <h1>Storage models (AWS)</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Data structure: structured</p>
-<p>Data abstraction: database</p>
-<p>Data access model: relational</p>
+<p><em>Data structure</em>: structured</p>
+<p><em>Data abstraction</em>: database</p>
+<p><em>Data access model</em>: relational</p>
 <p><strong>Relational</strong></p>
 <ul>
 <li>Store data with predefined schemas and relationships between them</li>
@@ -386,19 +399,23 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Maintain referential integrity</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/253.svg"></p>
+<figcaption><a href="https://aws.amazon.com/products/databases/">AWS databases</a></figcaption>
+</figure>
 </div>
 </div>
-<p><a href="https://aws.amazon.com/products/databases/">https://aws.amazon.com/products/databases/</a></p>
+</div>
 </section>
 
 <section id="storage-models-aws-1" class="title-slide slide level1 center">
 <h1>Storage models (AWS)</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Data structure: semi/unstructured</p>
-<p>Data abstraction: database</p>
-<p>Data access model: *</p>
+<p><em>Data structure</em>: semi/unstructured</p>
+<p><em>Data abstraction</em>: database</p>
+<p><em>Data access model</em>: *</p>
 <ul>
 <li><strong>Key/value</strong>: store and retrieve large volumes of data</li>
 <li><strong>Document</strong>: store semi-structured data as JSON-like documents</li>
@@ -407,14 +424,18 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>… and more</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/254.svg"></p>
+<figcaption><a href="https://aws.amazon.com/products/databases/">AWS databases</a></figcaption>
+</figure>
 </div>
 </div>
-<p><a href="https://aws.amazon.com/products/databases/">https://aws.amazon.com/products/databases/</a></p>
+</div>
 </section>
 
 <section id="storage-models-google-cloud" class="title-slide slide level1 center">
-<h1>Storage models (Google Cloud)</h1>
+<h1>Storage models (<a href="https://cloud.google.com/products/databases">Google Cloud</a>)</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="imgs/slides188.png"></p>
@@ -422,21 +443,20 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><img data-src="imgs/slides189.png"></p>
 </div>
 </div>
-<p><a href="https://cloud.google.com/products/databases">https://cloud.google.com/products/databases</a></p>
 </section>
 
 <section id="storage-models-aws-2" class="title-slide slide level1 center">
 <h1>Storage models (AWS)</h1>
-<p>Data structure: unstructured</p>
-<p>Data abstraction: file (or database)</p>
-<p>Data access model: key-value</p>
+<p><em>Data structure</em>: unstructured</p>
+<p><em>Data abstraction</em>: file (or database)</p>
+<p><em>Data access model</em>: key-value</p>
 <p><strong>File system</strong> (EFS), <strong>object storage</strong> (S3) (or <strong>DB K-V</strong> ; e.g., DynamoDB)</p>
 <ul>
 <li>Handle unstructured data</li>
 <li>… organized as files (or blob)</li>
 <li>… accessed using a key-value</li>
 </ul>
-<p>Differ in the supported features</p>
+<p><em>Differ in the supported features</em></p>
 <ul>
 <li>E.g., maximum item size (DynamoDB: 400KB, S3: 5TB)</li>
 <li>E.g., indexes, querying mechanisms, latency, etc.</li>
@@ -445,7 +465,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="aws-s3" class="title-slide slide level1 center">
 <h1>AWS S3</h1>
-<p>Simple Storage Service (S3)</p>
+<p><em>Simple Storage Service (S3)</em></p>
 <ul>
 <li>Serverless storage, save data as <strong>objects</strong> within <strong>buckets</strong></li>
 <li>An <strong>object</strong> is composed of a file and any metadata that describes that file (e.g., <strong>object key</strong>)</li>
@@ -475,40 +495,47 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Storage: access frequency (AWS)</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Storage (AWS S3) <strong>classes</strong></p>
+<p>AWS S3: <a href="https://aws.amazon.com/s3/storage-classes/">storage classes</a></p>
 <ul>
-<li><strong>Standard</strong>: general purpose</li>
-<li><strong>Infrequent</strong> (rapid) <strong>access</strong></li>
-<li><strong>One Zone-IA</strong>: lower-cost option for infrequently accessed data that do not require high availability and resilience</li>
-<li><strong>Glacier</strong>: low-cost storage class for data archiving, three retrieval options that range from a few minutes to hours</li>
-<li><strong>Deep Glacier</strong>: long-term retention for data accessed once or twice in a year. E.g., retain data sets for 10 years or longer</li>
-<li><strong>Intelligent-Tiering</strong>: move objects between access tiers when access patterns change</li>
+<li><em>Standard</em>: general purpose</li>
+<li><em>Infrequent (rapid) access</em></li>
+<li><em>One Zone-IA</em>: lower-cost option for infrequently accessed data that do not require high availability and resilience</li>
+<li><em>Glacier</em>: low-cost storage class for data archiving, three retrieval options that range from a few minutes to hours</li>
+<li><em>Deep Glacier</em>: long-term retention for data accessed once/twice in a year.
+<ul>
+<li>E.g., retain data sets for 10 years or longer</li>
+</ul></li>
+<li><em>Intelligent-Tiering</em>: move objects between access tiers when access patterns change</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/258.svg"></p>
 </div>
 </div>
-<p><a href="https://aws.amazon.com/s3/storage-classes/">https://aws.amazon.com/s3/storage-classes/</a></p>
 </section>
 
 <section id="storage-access-frequency-aws-1" class="title-slide slide level1 center">
 <h1>Storage: access frequency (AWS)</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><strong>Lifecycle</strong> configuration</p>
+<p><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Object lifecycle management</a></p>
 <ul>
-<li>A set of rules that define actions that Amazon S3 applies to a group of objects</li>
+<li>Rules that define actions that Amazon S3 applies to a group of objects</li>
 </ul>
 <p>Two types of actions:</p>
 <ul>
-<li><strong>Transition: </strong> when objects transition to another storage class. E.g., archive objects to the S3 Glacier storage class one year after creating them</li>
-<li><strong>Expiration</strong>: when objects expire. Amazon S3 deletes expired objects on your behalf</li>
+<li><em>Transition</em>: when objects transition to another storage class.
+<ul>
+<li>E.g., archive objects to the S3 Glacier storage 1 year after creating them</li>
+</ul></li>
+<li><em>Expiration</em>: when objects expire.
+<ul>
+<li>Amazon S3 deletes expired objects on your behalf</li>
+</ul></li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/259.svg"></p>
 </div>
 </div>
-<p><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html</a></p>
 </section>
 
 <section id="storage-access-frequency-google-cloud" class="title-slide slide level1 center">
@@ -544,16 +571,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Organizing the data lake</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Landing area (LA)</p>
+<p><strong>Landing area (LA)</strong></p>
 <ul>
 <li>Save <em>raw data</em> from ingestion</li>
 <li>Transient, data is not stored for long term</li>
 </ul>
-<p>Staging area (SA)</p>
+<p><strong>Staging area (SA)</strong></p>
 <ul>
 <li>Raw data goes through a set of common transformations: ensuring <em>basic quality</em> and making sure it <em>conforms to existing schemas</em> for this data source and then data is saved into SA</li>
 </ul>
-<p>Archive area (A)</p>
+<p><strong>Archive area (AA)</strong></p>
 <ul>
 <li>After saving into SA, raw data from LA should be <em>copied into the archive</em> to reprocess any given batch of data by simply copying it from AA into LA</li>
 <li>Useful for debugging and testing</li>
@@ -568,18 +595,18 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Organizing the data lake</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Production area (PA)</p>
+<p><strong>Production area (PA)</strong></p>
 <ul>
 <li>Apply the business logic to data from SA</li>
 </ul>
-<p>Pass-through job</p>
+<p><strong>Pass-through job</strong></p>
 <ul>
 <li>Copy data from SA to PA and then into DWH without applying any business logic</li>
-<li>Optional, but having a data set in the data warehouse and PA that is an exact replica can be helpful when debugging any issues with the business logic</li>
+<li>Having a data set in the data warehouse and PA that is an exact replica can be helpful when debugging any issues with the business logic</li>
 </ul>
-<p>Cloud data warehouse (DWH)</p>
+<p><strong>Cloud data warehouse (DWH)</strong></p>
+<p><strong>Failed area (FA)</strong></p>
 <ul>
-<li>Failed area (FA)</li>
 <li>You need to be able to deal with all kinds of errors and failures</li>
 <li>There might be bugs in the pipeline code, cloud resources may fail</li>
 </ul>
@@ -608,27 +635,27 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <tr class="odd">
 <td style="text-align: center;">Landing</td>
 <td style="text-align: center;">Ingestion applications can write<br>Scheduled pipelines can readData consumers can’t access</td>
-<td style="text-align: center;">Hot</td>
+<td style="text-align: center;"><strong>Hot</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Staging</td>
 <td style="text-align: center;">Scheduled pipelines can read/write<br>Selected data consumers can read</td>
-<td style="text-align: center;">Hot</td>
+<td style="text-align: center;"><strong>Hot</strong></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Production</td>
 <td style="text-align: center;">Scheduled pipelines can read/writeSelected data consumers can read</td>
-<td style="text-align: center;">Hot</td>
+<td style="text-align: center;"><strong>Hot</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Archive</td>
 <td style="text-align: center;">Scheduled pipelines can writeDedicated data reprocessing pipelines can read</td>
-<td style="text-align: center;">Cold or archive</td>
+<td style="text-align: center;"><em>Cold</em>/<em>Archive</em></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Failed</td>
 <td style="text-align: center;">Scheduled pipelines can writeDedicated data reprocessing pipelines can readData consumers don’t have access</td>
-<td style="text-align: center;">Hot</td>
+<td style="text-align: center;"><strong>Hot</strong></td>
 </tr>
 </tbody>
 </table>
@@ -663,7 +690,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>Different areas will have slightly different folder structures</p>
 <ul>
-<li>/landing/ETL/sales<em>oracle</em>ingest/customers/01DFTFX89YDFAXREPJTR94</li>
+<li>/landing/ETL/sales_oracle_ingest/customers/01DFTFX89YDFAXREPJTR94</li>
 </ul>
 </section>
 
@@ -674,7 +701,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="column" style="width:60%;">
 <blockquote>
 <p>“A data lake is a central repository system for storage, processing, and analysis of raw data, in which the data is <strong>kept in its original format </strong> and is processed to be queried only when needed. It can store a <strong>varied amount of formats </strong> in big data ecosystems, from unstructured, semi-structured, to structured data sources.”</p>
-<p>Couto et al., 2019</p>
+<p><span class="citation" data-cites="couto2019mapping">(<a href="#/lakehouse" role="doc-biblioref" onclick="">Couto et al. 2019</a>)</span></p>
 </blockquote>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/266.svg"></p>
@@ -692,10 +719,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>ACID transactions, data versioning, auditing, indexing, caching, and query optimization.</li>
 </ul></li>
 </ul>
-<p>Key question: can we combine these benefits in an effective way?</p>
+<p><em>Key question: can we combine these benefits in an effective way?</em></p>
 <ul>
-<li>Direct access means that they <strong>give up some aspects of data independence</strong>, which has been a cornerstone of relational DBMS design</li>
-<li><strong>Lakehouses</strong> are an especially good fit for cloud environments with separate compute and storage**: different computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while directly accessing the same storage data</li>
+<li>Direct access means that they <strong>give up some aspects of data independence</strong>, a cornerstone of relational DBMS design</li>
+<li><strong>Lakehouses</strong> are a good fit for cloud environments with separate compute and storage
+<ul>
+<li>Computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while directly accessing the same storage data</li>
+</ul></li>
 </ul>
 </section>
 
@@ -875,7 +905,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="lakehouse" class="title-slide slide level1 center">
+<section id="lakehouse" class="title-slide slide level1 smaller scrollable">
 <h1>Lakehouse</h1>
 <p>(SQL) Format-independent optimizations are</p>
 <ul>
@@ -891,6 +921,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Big Data and Cloud Platforms (Module 2) - A.Y. 2024/25</p>
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-couto2019mapping" class="csl-entry" role="listitem">
+Couto, Julia, Olimar Teixeira Borges, Duncan D Ruiz, Sabrina Marczak, and Rafael Prikladnicki. 2019. <span>“A Mapping Study about Data Lakes: An Improved Definition and Possible Architectures.”</span> In <em>SEKE</em>, 453–578.
+</div>
+<div id="ref-mansouri2017data" class="csl-entry" role="listitem">
+Mansouri, Yaser, Adel Nadjaran Toosi, and Rajkumar Buyya. 2017. <span>“Data Storage Management in Cloud Environments: Taxonomy, Survey, and Future Directions.”</span> <em>ACM Computing Surveys (CSUR)</em> 50 (6): 1–51.
 </div>
 </div>
 </section>
