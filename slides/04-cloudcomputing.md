@@ -441,7 +441,7 @@ Measured **quality of service**
 Service **integration**
 
 - Do not reinvent the wheel, eliminate repetitive tasks
-  - Use services that solve common problems (e.g., load balancing, queuing)
+  - Use services that solve common problems (e.g., queuing)
 - Abstract and automatically adapt the architecture to requirements
   - E.g., create (test) environments on demand
 
