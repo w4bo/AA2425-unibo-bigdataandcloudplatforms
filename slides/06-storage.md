@@ -4,13 +4,7 @@ subtitle: Data pipelines on cloud (Storage)
 
 #
 
-**Data pipeline**: a *sequence* of operations to transform and consume raw data
-
-![https://xkcd.com/2054/](imgs/slides180.png)
-
-# Storage
-
-![](imgs/249.svg)
+![Storage](imgs/249.svg)
 
 # Storage
 
@@ -22,24 +16,22 @@ subtitle: Data pipelines on cloud (Storage)
     * Structured vs unstructured
     * Data access model (key-value, column, etc.)
 - Access **frequency**
-- **Analyses ** to be performed
+- **Analyses** to be performed
 
 # Storage models
 
-![](imgs/252.svg)
-
-Mansouri, Yaser, Adel Nadjaran Toosi, and Rajkumar Buyya. "Data storage management in cloud environments: Taxonomy, survey, and future directions." ACM Computing Surveys (CSUR) 50.6 (2017): 1-51.
+![Taxonomy of storage models [@mansouri2017data]](imgs/252.svg)
 
 # Storage models (AWS)
 
 :::: {.columns}
 ::: {.column width=60%}
 
-Data structure: structured
+*Data structure*: structured
 
-Data abstraction: database
+*Data abstraction*: database
 
-Data access model: relational
+*Data access model*: relational
 
 **Relational**
 
@@ -50,23 +42,21 @@ Data access model: relational
 :::
 ::: {.column width=40%}
 
-![](imgs/253.svg)
+![[AWS databases](https://aws.amazon.com/products/databases/)](imgs/253.svg)
 
 :::
 ::::
-
-[https://aws.amazon.com/products/databases/](https://aws.amazon.com/products/databases/)
 
 # Storage models (AWS)
 
 :::: {.columns}
 ::: {.column width=60%}
 
-Data structure: semi/unstructured
+*Data structure*: semi/unstructured
 
-Data abstraction: database
+*Data abstraction*: database
 
-Data access model: *
+*Data access model*: *
 
 - **Key/value**: store and retrieve large volumes of data
 - **Document**: store semi-structured data as JSON-like documents
@@ -77,14 +67,12 @@ Data access model: *
 :::
 ::: {.column width=40%}
 
-![](imgs/254.svg)
+![[AWS databases](https://aws.amazon.com/products/databases/)](imgs/254.svg)
 
 :::
 ::::
 
-[https://aws.amazon.com/products/databases/](https://aws.amazon.com/products/databases/)
-
-# Storage models (Google Cloud)
+# Storage models ([Google Cloud](https://cloud.google.com/products/databases))
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -99,15 +87,13 @@ Data access model: *
 :::
 ::::
 
-[https://cloud.google.com/products/databases](https://cloud.google.com/products/databases)
-
 # Storage models (AWS)
 
-Data structure: unstructured
+*Data structure*: unstructured
 
-Data abstraction: file (or database)
+*Data abstraction*: file (or database)
 
-Data access model: key-value
+*Data access model*: key-value
 
 **File system** (EFS), **object storage** (S3) (or **DB K-V** ; e.g., DynamoDB)
 
@@ -115,14 +101,14 @@ Data access model: key-value
 - ... organized as files (or blob)
 - ... accessed using a key-value
 
-Differ in the supported features
+*Differ in the supported features*
 
 - E.g., maximum item size (DynamoDB: 400KB, S3: 5TB)
 - E.g., indexes, querying mechanisms, latency, etc.
 
 # AWS S3
 
-Simple Storage Service (S3)
+*Simple Storage Service (S3)*
 
 - Serverless storage, save data as **objects** within **buckets** 
 - An **object** is composed of a file and any metadata that describes that file (e.g.,  **object key**)
@@ -145,14 +131,15 @@ Benefits
 :::: {.columns}
 ::: {.column width=60%}
 
-Storage (AWS S3) **classes**
+AWS S3: [storage classes](https://aws.amazon.com/s3/storage-classes/)
 
-- **Standard**: general purpose
-- **Infrequent** (rapid) **access**
-- **One Zone-IA**: lower-cost option for infrequently accessed data that do not require high availability and resilience
-- **Glacier**: low-cost storage class for data archiving, three retrieval options that range from a few minutes to hours
-- **Deep Glacier**: long-term retention for data accessed once or twice in a year. E.g., retain data sets for 10 years or longer
-- **Intelligent-Tiering**: move objects between access tiers when access patterns change
+- *Standard*: general purpose
+- *Infrequent (rapid) access*
+- *One Zone-IA*: lower-cost option for infrequently accessed data that do not require high availability and resilience
+- *Glacier*: low-cost storage class for data archiving, three retrieval options that range from a few minutes to hours
+- *Deep Glacier*: long-term retention for data accessed once/twice in a year. 
+  - E.g., retain data sets for 10 years or longer
+- *Intelligent-Tiering*: move objects between access tiers when access patterns change
 
 :::
 ::: {.column width=40%}
@@ -162,21 +149,21 @@ Storage (AWS S3) **classes**
 :::
 ::::
 
-[https://aws.amazon.com/s3/storage-classes/](https://aws.amazon.com/s3/storage-classes/)
-
 # Storage: access frequency (AWS)
 
 :::: {.columns}
 ::: {.column width=60%}
 
-**Lifecycle** configuration
+[Object lifecycle management](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html)
 
-- A set of rules that define actions that Amazon S3 applies to a group of objects
+- Rules that define actions that Amazon S3 applies to a group of objects
 
 Two types of actions:
 
-- **Transition: ** when objects transition to another storage class. E.g., archive objects to the S3 Glacier storage class one year after creating them
-- **Expiration**: when objects expire. Amazon S3 deletes expired objects on your behalf
+- *Transition*: when objects transition to another storage class.
+  - E.g., archive objects to the S3 Glacier storage 1 year after creating them
+- *Expiration*: when objects expire.
+  - Amazon S3 deletes expired objects on your behalf
 
 :::
 ::: {.column width=40%}
@@ -185,8 +172,6 @@ Two types of actions:
 
 :::
 ::::
-
-[https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html)
 
 # Storage: access frequency (Google Cloud)
 
@@ -230,16 +215,16 @@ Having consistent principles on how to organize your data is important
 :::: {.columns}
 ::: {.column width=60%}
 
-Landing area (LA)
+**Landing area (LA)**
 
 - Save *raw data* from ingestion
 - Transient, data is not stored for long term
 
-Staging area (SA)
+**Staging area (SA)**
 
 - Raw data goes through a set of common transformations: ensuring *basic quality* and making sure it *conforms to existing schemas* for this data source and then data is saved into SA
 
-Archive area (A)
+**Archive area (AA)**
 
 - After saving into SA, raw data from LA should be *copied into the archive* to reprocess any given batch of data by simply copying it from AA into LA
 - Useful for debugging and testing
@@ -257,18 +242,19 @@ Archive area (A)
 :::: {.columns}
 ::: {.column width=60%}
 
-Production area (PA)
+**Production area (PA)**
 
 - Apply the business logic to data from SA
 
-Pass-through job
+**Pass-through job**
 
 - Copy data from SA to PA and then into DWH without applying any business logic
-- Optional, but having a data set in the data warehouse and PA that is an exact replica can be helpful when debugging any issues with the business logic
+- Having a data set in the data warehouse and PA that is an exact replica can be helpful when debugging any issues with the business logic
 
-Cloud data warehouse (DWH)
+**Cloud data warehouse (DWH)**
 
-- Failed area (FA)
+**Failed area (FA)**
+
 - You need to be able to deal with all kinds of errors and failures
 - There might be bugs in the pipeline code, cloud resources may fail
 
@@ -284,11 +270,11 @@ Cloud data warehouse (DWH)
 
 | Area | Permissions | Tier |
 |:-: |:-: |:-: |
-| Landing | Ingestion applications can write<br />Scheduled pipelines can readData consumers can’t access | Hot |
-| Staging | Scheduled pipelines can read/write<br />Selected data consumers can read | Hot |
-| Production | Scheduled pipelines can read/writeSelected data consumers can read | Hot |
-| Archive | Scheduled pipelines can writeDedicated data reprocessing pipelines can read  | Cold or archive |
-| Failed | Scheduled pipelines can writeDedicated data reprocessing pipelines can readData consumers don’t have access | Hot |
+| Landing | Ingestion applications can write<br />Scheduled pipelines can readData consumers can’t access | **Hot** |
+| Staging | Scheduled pipelines can read/write<br />Selected data consumers can read | **Hot** |
+| Production | Scheduled pipelines can read/writeSelected data consumers can read | **Hot** |
+| Archive | Scheduled pipelines can writeDedicated data reprocessing pipelines can read  | *Cold*/*Archive* |
+| Failed | Scheduled pipelines can writeDedicated data reprocessing pipelines can readData consumers don’t have access | **Hot** |
 
 # Organizing the data lake
 
@@ -309,7 +295,7 @@ Use folders to organize data inside areas into a logical structure
 
 Different areas will have slightly different folder structures
 
-- /landing/ETL/sales*oracle*ingest/customers/01DFTFX89YDFAXREPJTR94
+- /landing/ETL/sales\_oracle\_ingest/customers/01DFTFX89YDFAXREPJTR94
 
 # Organizing the data lake
 
@@ -320,7 +306,7 @@ However, alternative organizations are available
 
 > "A data lake is a central repository system for storage, processing, and analysis of raw data, in which the data is **kept in its original format ** and is processed to be queried only when needed. It can store a **varied amount of formats ** in big data ecosystems, from unstructured, semi-structured, to structured data sources."
 >
-> Couto et al., 2019 
+> [@couto2019mapping]
 
 :::
 ::: {.column width=40%}
@@ -338,10 +324,11 @@ Combine the key benefits of data lakes and data warehouses
 - Powerful management and optimization features from the latter
   - ACID transactions, data versioning, auditing, indexing, caching, and query optimization.
 
-Key question: can we combine these benefits in an effective way?
+*Key question: can we combine these benefits in an effective way?*
 
-- Direct access means that they **give up some aspects of data independence**, which has been a cornerstone of relational DBMS design
-- **Lakehouses** are an especially good fit for cloud environments with separate compute and storage**: different computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while directly accessing the same storage data
+- Direct access means that they **give up some aspects of data independence**, a cornerstone of relational DBMS design
+- **Lakehouses** are a good fit for cloud environments with separate compute and storage
+  - Computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while directly accessing the same storage data
 
 # Data Independence
 

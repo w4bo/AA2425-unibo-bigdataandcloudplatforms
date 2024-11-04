@@ -162,7 +162,7 @@ The Netflix scenario
   - There is time to plan for the appropriate resources
 - *Near real-time and real-time* 
   - Collection of the data leads to an immediate need for processing
-  - Depending on the complexity of the processing (cleansing, scrubbing, curation), this can slow down the velocity of the solution significantly
+  - The complexity of the processing can slow down the velocity of the solution significantly
   - Plan accordingly
 
 # Reference scenario
@@ -494,6 +494,12 @@ How do we choose the Cloud Service Providers?
 
 :::
 ::::
+
+# Data pipeline
+
+![https://xkcd.com/2054/](imgs/slides180.png)
+
+**Data pipeline**: a *sequence* of operations to transform and consume raw data
 
 # Data pipeline - AWS
 
