@@ -648,7 +648,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="why-moving-to-the-cloud-2" class="title-slide slide level1 center">
 <h1>Why moving to the cloud?</h1>
 <blockquote>
-<p><strong>Cloud computing</strong> (National Institute of Standards and Technology)</p>
+<p><strong>Cloud Computing</strong> (National Institute of Standards and Technology)</p>
 <p>A model for enabling <em>ubiquitous, convenient, on-demand network access</em> to a <em>shared pool</em> of configurable computing resources (e.g., networks, servers, storage, services) that can be rapidly provisioned and released with <em>minimal management effort</em> or <em>service provider interaction</em></p>
 <ul>
 <li>On-demand self-service (consume services when you want)</li>
@@ -658,21 +658,53 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Measured service (pay for the service you consume as you consume)</li>
 </ul>
 </blockquote>
-<p><strong>Digital transformation </strong> involves the <strong>cloud</strong> to create/change business flows</p>
+<p><strong>Digital transformation</strong> involves the <strong>cloud</strong> to create/change business flows</p>
 <ul>
-<li>Cloud computing is the delivery of on-demand computing resources to businesses/individuals via a network (usually the Internet)</li>
-<li>Cloud computing enables organizations to access and store information without managing their own physical devices or IT infrastructure</li>
+<li>CC is the delivery of on-demand computing resources to businesses/individuals via a network (usually the Internet)</li>
+<li>CC enables organizations to access and store information without managing their own physical devices or IT infrastructure</li>
 <li>Often involves changing the company culture to adapt to this new way of doing business</li>
 <li>One of the end goals is to meet ever-changing business and market demand</li>
 </ul>
 </section>
 
+<section id="types-of-cloud" class="title-slide slide level1 center">
+<h1>Types of cloud</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>There are different types of cloud</p>
+<ul>
+<li><strong>Public</strong>: accessible to anyone willing to pay
+<ul>
+<li>Any resources that you are not using can be used by other</li>
+<li>Users share the costs</li>
+<li>E.g., Microsoft Azure, AWS, Google Cloud</li>
+</ul></li>
+<li><strong>Private</strong>: accessible by individuals within an institution
+<ul>
+<li>Cost-sharing disappears in private clouds</li>
+</ul></li>
+<li><strong>Hybrid</strong>: a mix of the previous</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides108.png"></p>
+<figcaption>Types of cloud</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
 <section id="why-moving-to-the-cloud-3" class="title-slide slide level1 center">
 <h1>Why moving to the cloud?</h1>
-<p>Goal: adjusts capacity to have predictable performance at the lowest cost</p>
-<p><strong>Scalability</strong> that is not possible on premises</p>
+<p><strong>Scalability</strong></p>
 <ul>
-<li>Scale from one to thousands of computers</li>
+<li>Adjusts capacity to have predictable performance at the lowest cost</li>
+<li>Scale from one to thousands of computers
+<ul>
+<li>This is not possible on-premises</li>
+</ul></li>
 </ul>
 
 <img data-src="imgs/scalability.svg" class="r-stretch quarto-figure-center"><p class="caption">Scalability</p></section>
@@ -724,15 +756,51 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <img data-src="imgs/pooling.svg" class="r-stretch quarto-figure-center"><p class="caption">Pooling</p></section>
 
+<section id="virtualization" class="title-slide slide level1 center">
+<h1>Virtualization</h1>
+<p>How do provide computational resources?</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><em>Containers</em> and <em>virtual machines</em> are packaged computing environments</p>
+<p><em>Containers</em></p>
+<ul>
+<li>On top of physical server and its host OS</li>
+<li>Share the host OS kernel</li>
+<li>Shared components are read-only</li>
+<li>“Light”, take seconds to start</li>
+</ul>
+<p><em>Virtual machines</em></p>
+<ul>
+<li>Emulate a hardware/software system</li>
+<li>On top of a hypervisor (VM monitor)</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides112.jpg"></p>
+<figcaption>Containers vs VMs</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Containerization isolates an application with its environment</p>
+<ul>
+<li>Lightweight alternative to full virtualization</li>
+<li>Containers are isolated but need to be deployed to (public/private) server</li>
+<li>Excellent solution when dependencies are in play</li>
+<li>Housekeeping challenges and complexities</li>
+</ul>
+</section>
+
 <section id="why-moving-to-the-cloud-7" class="title-slide slide level1 center">
 <h1>Why moving to the cloud?</h1>
-
-<img data-src="https://media.geeksforgeeks.org/wp-content/uploads/20230110160801/Physical-Node.png" class="r-stretch quarto-figure-center"><p class="caption">Physical Server Pools</p><p><strong>Reliability</strong></p>
+<p><strong>Reliability</strong></p>
 <ul>
 <li>Built to handle failures</li>
 <li>Fault-tolerant or highly available</li>
 </ul>
-</section>
+
+<img data-src="https://media.geeksforgeeks.org/wp-content/uploads/20230110160801/Physical-Node.png" class="r-stretch quarto-figure-center"><p class="caption">Physical Server Pools</p></section>
 
 <section id="why-moving-to-the-cloud-8" class="title-slide slide level1 center">
 <h1>Why moving to the cloud?</h1>
@@ -758,6 +826,37 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
+<section id="worldwide-deployment" class="title-slide slide level1 center">
+<h1>Worldwide deployment</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Cloud services are hosted in separate geographic areas</p>
+<ul>
+<li>Locations are composed of <strong>regions</strong> and <strong>availability zones</strong></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Using regions and availability zones</a></li>
+</ul>
+<p>Region (e.g., us-east-1)</p>
+<ul>
+<li>Is an independent geographical area that groups data centers</li>
+<li>Has availability zones</li>
+</ul>
+<p>Availability zones in a region</p>
+<ul>
+<li>A data center</li>
+<li>Connected through low-latency links</li>
+<li>Resources are usually replicated across zones but not regions</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides109.png"></p>
+<figcaption>Regions</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
 <section id="why-moving-to-the-cloud-9" class="title-slide slide level1 center">
 <h1>Why moving to the cloud?</h1>
 <p>Measured <strong>quality of service</strong></p>
@@ -770,14 +869,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="why-moving-to-the-cloud-10" class="title-slide slide level1 center">
 <h1>Why moving to the cloud?</h1>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="imgs/aws-services.jpg"></p>
 <figcaption>AWS Services</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:60%;">
 <p>Service <strong>integration</strong></p>
 <ul>
 <li>Do not reinvent the wheel, eliminate repetitive tasks
@@ -802,6 +901,54 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="which-services" class="title-slide slide level1 center">
 <h1>Which services?</h1>
 
+</section>
+
+<section id="cloud-computing-principal-vendors" class="title-slide slide level1 center">
+<h1>Cloud computing: principal vendors</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/gartner_mq_2023.png"></p>
+<figcaption>Magic Quadrant 2023</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>How do we choose the Cloud Service Providers?</p>
+<p><a href="https://www.gartner.com/en/research/methodologies/magic-quadrants-research">Gartner Magic Quadrant</a></p>
+<ul>
+<li><strong>Leaders</strong> execute well and are well-positioned for tomorrow</li>
+<li><strong>Visionaries</strong> understand where the market is going but do not yet execute well</li>
+<li><strong>Niche Players</strong> focus successfully on a small segment, or are unfocused and do not out-innovate or outperform others</li>
+<li><strong>Challengers</strong> execute well but do not demonstrate an understanding of the market direction</li>
+<li>Focusing on leaders isn’t always the best
+<ul>
+<li>A niche player may support needs better than a market leader. It depends on how the provider aligns with business goals</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="cloud-computing-principal-vendors-1" class="title-slide slide level1 center">
+<h1>Cloud computing: principal vendors</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides110.png"></p>
+<figcaption>Magic Quadrant 2020</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/gartner_mq_2023.png"></p>
+<figcaption>Magic Quadrant 2023</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 <section id="data-pipeline---aws" class="title-slide slide level1 center">
@@ -988,144 +1135,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <img data-src="imgs/slides107.png" class="r-stretch quarto-figure-center"><p class="caption">https://xkcd.com/908/</p></section>
 
-<section id="cloud-computing-types-of-cloud" class="title-slide slide level1 center">
-<h1>Cloud computing: types of cloud</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>There are different types of cloud</p>
-<ul>
-<li><strong>Public</strong>: accessible to anyone willing to pay (e.g., Microsoft, AWS, Google)
-<ul>
-<li>Any resources that you are not using can be used by other</li>
-<li>Users share the costs</li>
-</ul></li>
-<li><strong>Private</strong>: accessible by individuals within an institution
-<ul>
-<li>Cost-sharing disappears in private clouds</li>
-</ul></li>
-<li><strong>Hybrid</strong>: a mix of the previous</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides108.png"></p>
-<figcaption>Types of cloud</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-
-<section id="cloud-computing-types-of-cloud-1" class="title-slide slide level1 center">
-<h1>Cloud computing: types of cloud</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>Cloud services are hosted in separate geographic areas</p>
-<ul>
-<li>Locations are composed of <strong>regions</strong> and <strong>availability zones</strong></li>
-</ul>
-<p>Region (e.g., us-east-1)</p>
-<ul>
-<li>Is an independent geographical area that groups data centers</li>
-<li>Has availability zones</li>
-</ul>
-<p>Availability zones in a region</p>
-<ul>
-<li>A data center</li>
-<li>Connected through low-latency links</li>
-<li>Resources are usually replicated across zones but not regions</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides109.png"></p>
-<figcaption>Regions</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html</a></p>
-</section>
-
-<section id="cloud-computing-principal-vendors" class="title-slide slide level1 center">
-<h1>Cloud computing: principal vendors</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/gartner_mq_2023.png"></p>
-<figcaption>Magic Quadrant 2023</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<p>How do we choose the Cloud Service Providers?</p>
-<p><a href="https://www.gartner.com/en/research/methodologies/magic-quadrants-research">Gartner Magic Quadrant</a></p>
-<ul>
-<li><strong>Leaders</strong> execute well and are well-positioned for tomorrow</li>
-<li><strong>Visionaries</strong> understand where the market is going but do not yet execute well</li>
-<li><strong>Niche Players</strong> focus successfully on a small segment, or are unfocused and do not out-innovate or outperform others</li>
-<li><strong>Challengers</strong> execute well but do not demonstrate an understanding of the market direction</li>
-<li>Focusing on leaders isn’t always the best
-<ul>
-<li>A niche player may support needs better than a market leader. It depends on how the provider aligns with business goals</li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-
-<section id="cloud-computing-principal-vendors-1" class="title-slide slide level1 center">
-<h1>Cloud computing: principal vendors</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides110.png"></p>
-<figcaption>Magic Quadrant 2020</figcaption>
-</figure>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/gartner_mq_2023.png"></p>
-<figcaption>Magic Quadrant 2023</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-
 <section id="cloud-computing-deployment-models" class="title-slide slide level1 center">
-<h1>Cloud computing: deployment models</h1>
-<p>On a cloud architecture, you can rely on <a href="https://cloud.google.com/blog/topics/developers-practitioners/serverless-vs-fully-managed-whats-difference"><em>serverless</em> or <em>managed</em> services</a> (accessed 2020-08-01)</p>
-
-<img data-src="imgs/google-serverless.png" class="r-stretch quarto-figure-center"><p class="caption">Serverless vs Managed</p></section>
-
-<section id="cloud-computing-deployment-models-1" class="title-slide slide level1 center">
-<h1>Cloud computing: deployment models</h1>
-<p><em>Serverless</em></p>
-<ul>
-<li>Standalone independent services built for a specific purpose and integrated by the cloud service provider</li>
-<li>No visibility into the machines
-<ul>
-<li>There are still servers in serverless, but they are abstracted away</li>
-<li>No server management, do not have to manage any servers or scale them</li>
-<li>E.g., when you run a query on <a href="https://cloud.google.com/blog/products/bigquery/separation-of-storage-and-compute-in-bigquery">BigQuery</a> you do not know how many machines were used</li>
-</ul></li>
-<li>Pay for what your application uses, usually per request or usage</li>
-</ul>
-<p><em>(Fully) Managed</em></p>
-<ul>
-<li>Visibility and control of machines
-<ul>
-<li>You can choose the number of machines that are being used to run your application</li>
-</ul></li>
-<li>Do not have to set up any machines, the management and backup are taken care for you</li>
-<li>Pay for machine runtime, however long you run the machines and resources that your application uses</li>
-</ul>
-</section>
-
-<section id="cloud-computing-deployment-models-2" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <p>Understanding architectures is paramount to successful systems</p>
 <ul>
@@ -1140,7 +1150,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="cloud-computing-deployment-models-3" class="title-slide slide level1 center">
+<section id="cloud-computing-deployment-models-1" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -1164,7 +1174,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="cloud-computing-deployment-models-4" class="title-slide slide level1 center">
+<section id="cloud-computing-deployment-models-2" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -1186,7 +1196,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="cloud-computing-deployment-models-5" class="title-slide slide level1 center">
+<section id="cloud-computing-deployment-models-3" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -1207,7 +1217,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="cloud-computing-deployment-models-6" class="title-slide slide level1 center">
+<section id="cloud-computing-deployment-models-4" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -1227,7 +1237,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="cloud-computing-deployment-models-7" class="title-slide slide level1 center">
+<section id="cloud-computing-deployment-models-5" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -1248,15 +1258,15 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="cloud-computing-deployment-models-8" class="title-slide slide level1 center">
+<section id="cloud-computing-deployment-models-6" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <p>Principles of FaaS architectures</p>
 <ul>
-<li>FaaS is based on a serverless approach, using a compute service to execute code on demand</li>
+<li>FaaS is based on a <em>serverless</em> approach, using a compute service to execute code on demand</li>
 <li>Every function could be considered as a standalone service</li>
 <li>Write single-purpose stateless functions</li>
 </ul>
-<p>Functions react to events</p>
+<p>Functions <em>react to events</em></p>
 <ul>
 <li>Design push-based, event-driven pipelines</li>
 <li>Create thicker, more powerful front ends</li>
@@ -1264,14 +1274,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>FaaS is not a silver bullet</p>
 <ul>
-<li>Not appropriate for latency-sensitive applications</li>
+<li><em>Not appropriate for latency-sensitive applications</em></li>
 <li>Strict specific service-level agreements</li>
-<li>Migration costs</li>
+<li>Migration costs
+<ul>
 <li>Vendor lock-in can be an issue</li>
+</ul></li>
 </ul>
 </section>
 
-<section id="cloud-computing-deployment-models-9" class="title-slide slide level1 center">
+<section id="cloud-computing-deployment-models-7" class="title-slide slide level1 center">
 <h1>Cloud computing: deployment models</h1>
 <div class="columns">
 <div class="column" style="width:70%;">
@@ -1291,39 +1303,33 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="virtualization" class="title-slide slide level1 center">
-<h1>Virtualization</h1>
-<p>How do provide computational resources?</p>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p><em>Containers</em> and <em>virtual machines</em> are packaged computing environments</p>
-<p><em>Containers</em></p>
+<section id="cloud-computing-deployment-models-8" class="title-slide slide level1 center">
+<h1>Cloud computing: deployment models</h1>
+<p>On a cloud architecture, you can rely on <a href="https://cloud.google.com/blog/topics/developers-practitioners/serverless-vs-fully-managed-whats-difference"><em>serverless</em> or <em>managed</em> services</a> (accessed 2020-08-01)</p>
+
+<img data-src="imgs/google-serverless.png" class="r-stretch quarto-figure-center"><p class="caption">Serverless vs Managed</p></section>
+
+<section id="cloud-computing-deployment-models-9" class="title-slide slide level1 center">
+<h1>Cloud computing: deployment models</h1>
+<p><em>Serverless</em></p>
 <ul>
-<li>On top of physical server and its host OS</li>
-<li>Share the host OS kernel</li>
-<li>Shared components are read-only</li>
-<li>“Light”, take seconds to start</li>
+<li>Standalone independent services built for a specific purpose and integrated by the cloud service provider</li>
+<li>No visibility into the machines
+<ul>
+<li>There are still servers in serverless, but they are abstracted away</li>
+<li>No server management, do not have to manage any servers or scale them</li>
+<li>E.g., when you run a query on <a href="https://cloud.google.com/blog/products/bigquery/separation-of-storage-and-compute-in-bigquery">BigQuery</a> you do not know how many machines were used</li>
+</ul></li>
+<li>Pay for what your application uses, usually per request or usage</li>
 </ul>
-<p><em>Virtual machines</em></p>
+<p><em>(Fully) Managed</em></p>
 <ul>
-<li>Emulate a hardware/software system</li>
-<li>On top of a hypervisor (VM monitor)</li>
-</ul>
-</div><div class="column" style="width:40%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides112.jpg"></p>
-<figcaption>Containers vs VMs</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Containerization isolates an application with its environment</p>
+<li>Visibility and control of machines
 <ul>
-<li>Lightweight alternative to full virtualization</li>
-<li>Containers are isolated but need to be deployed to (public/private) server</li>
-<li>Excellent solution when dependencies are in play</li>
-<li>Housekeeping challenges and complexities</li>
+<li>You can choose the number of machines that are being used to run your application</li>
+</ul></li>
+<li>Do not have to set up any machines, the management and backup are taken care for you</li>
+<li>Pay for machine runtime, however long you run the machines and resources that your application uses</li>
 </ul>
 </section>
 
