@@ -1,3 +1,17 @@
+## [1.0.24](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.23...1.0.24) (2024-11-04)
+
+### Dependency updates
+
+* **deps:** update dependency awswrangler to v3.10.0 ([f73bf3b](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/f73bf3bb91ce08c4f9cd6c4948f77e83553dfc25))
+* **deps:** update dependency flaml to v2.3.2 ([edfb4a5](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/edfb4a583981c4e9122310cf4aff7364129e58e4))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.113 ([65b72f8](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/65b72f8df3e4f1788ea5f6b44ac832dc23ceae90))
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.114 ([cf53ec1](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/cf53ec1a3de5f3b020d5cfbb53cb4c86f76ad1aa))
+* **deps:** update node.js to v22 ([6c8d981](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/6c8d98131654abbff11f3cc1eddc7d44a3f6b92d))
+
+### Bug Fixes
+
+* cloud computing ([10ba32c](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/10ba32c92f930ff690874cb0136ff6fdf8a1629f))
+
 ## [1.0.23](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.22...1.0.23) (2024-10-25)
 
 ### Bug Fixes
