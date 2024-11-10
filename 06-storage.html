@@ -365,9 +365,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="storage" class="title-slide slide level1 center">
 <h1>Storage</h1>
 <p><strong>Goal</strong>: persisting data</p>
+<p>What storage do we choose?</p>
 <ul>
-<li>Which storage do we choose?</li>
-<li><strong>Storage model </strong> (or data model) ~= variety
+<li><strong>Storage model</strong> (or data model) ~= variety
 <ul>
 <li>How data are organized/accessed in a storage system
 <ul>
@@ -383,16 +383,30 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="storage-models" class="title-slide slide level1 center">
 <h1>Storage models</h1>
 
-<img data-src="imgs/252.svg" class="r-stretch quarto-figure-center"><p class="caption">Taxonomy of storage models <span class="citation" data-cites="mansouri2017data">(<a href="#/lakehouse" role="doc-biblioref" onclick="">Mansouri, Toosi, and Buyya 2017</a>)</span></p></section>
+<img data-src="imgs/252.svg" class="r-stretch quarto-figure-center"><p class="caption">Taxonomy of storage models <span class="citation" data-cites="mansouri2017data">(<a href="#/references" role="doc-biblioref" onclick="">Mansouri, Toosi, and Buyya 2017</a>)</span></p></section>
 
 <section id="storage-models-aws" class="title-slide slide level1 center">
 <h1>Storage models (AWS)</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><em>Data structure</em></th>
+<th style="text-align: center;"><em>Data structure</em></th>
+<th style="text-align: center;"><em>Data structure</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Structured</td>
+<td style="text-align: center;">Database</td>
+<td style="text-align: center;">Relational</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><em>Data structure</em>: structured</p>
-<p><em>Data abstraction</em>: database</p>
-<p><em>Data access model</em>: relational</p>
-<p><strong>Relational</strong></p>
+<p><strong>Relational database</strong></p>
 <ul>
 <li>Store data with predefined schemas and relationships between them</li>
 <li>Support ACID transactions</li>
@@ -411,11 +425,25 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="storage-models-aws-1" class="title-slide slide level1 center">
 <h1>Storage models (AWS)</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><em>Data structure</em></th>
+<th style="text-align: center;"><em>Data structure</em></th>
+<th style="text-align: center;"><em>Data structure</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Semi/unstructured</td>
+<td style="text-align: center;">Database</td>
+<td style="text-align: center;">*</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><em>Data structure</em>: semi/unstructured</p>
-<p><em>Data abstraction</em>: database</p>
-<p><em>Data access model</em>: *</p>
 <ul>
 <li><strong>Key/value</strong>: store and retrieve large volumes of data</li>
 <li><strong>Document</strong>: store semi-structured data as JSON-like documents</li>
@@ -447,9 +475,23 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="storage-models-aws-2" class="title-slide slide level1 center">
 <h1>Storage models (AWS)</h1>
-<p><em>Data structure</em>: unstructured</p>
-<p><em>Data abstraction</em>: file (or database)</p>
-<p><em>Data access model</em>: key-value</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><em>Data structure</em></th>
+<th style="text-align: center;"><em>Data structure</em></th>
+<th style="text-align: center;"><em>Data structure</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Unstructured</td>
+<td style="text-align: center;">File/Database</td>
+<td style="text-align: center;">Key-value</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
 <p><strong>File system</strong> (EFS), <strong>object storage</strong> (S3) (or <strong>DB K-V</strong> ; e.g., DynamoDB)</p>
 <ul>
 <li>Handle unstructured data</li>
@@ -463,11 +505,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="aws-s3" class="title-slide slide level1 center">
-<h1>AWS S3</h1>
-<p><em>Simple Storage Service (S3)</em></p>
+<section id="aws-simple-storage-service-s3" class="title-slide slide level1 center">
+<h1>AWS Simple Storage Service (S3)</h1>
+<p><strong>Simple Storage Service (S3)</strong></p>
 <ul>
-<li>Serverless storage, save data as <strong>objects</strong> within <strong>buckets</strong></li>
+<li><em>Serverless</em> storage, save data as <strong>objects</strong> within <strong>buckets</strong></li>
 <li>An <strong>object</strong> is composed of a file and any metadata that describes that file (e.g., <strong>object key</strong>)</li>
 <li><strong>Buckets</strong> are logical containers for objects
 <ul>
@@ -483,7 +525,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Build a multi-tenant environment, where many users can bring their own data</li>
 <li>Improve both cost and data governance over traditional solutions</li>
 </ul></li>
-<li>Decoupling of storage from compute and data processing
+<li><em>Decoupling of storage from compute and data processing</em>
 <ul>
 <li>You can cost-effectively store all data types in their native formats</li>
 <li>Then, launch transformations as you need</li>
@@ -539,7 +581,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 
 <section id="storage-access-frequency-google-cloud" class="title-slide slide level1 center">
-<h1>Storage: access frequency (Google Cloud)</h1>
+<h1>Storage: access frequency (<a href="https://cloud.google.com/blog/products/storage-data-transfer/archive-storage-class-for-coldest-data-now-available">Google Cloud</a>)</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="imgs/slides192.png"></p>
@@ -547,7 +589,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><img data-src="imgs/slides193.png"></p>
 </div>
 </div>
-<p><a href="https://cloud.google.com/blog/products/storage-data-transfer/archive-storage-class-for-coldest-data-now-available">https://cloud.google.com/blog/products/storage-data-transfer/archive-storage-class-for-coldest-data-now-available</a></p>
 </section>
 
 <section id="organizing-the-data-lake" class="title-slide slide level1 center">
@@ -634,7 +675,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">Landing</td>
-<td style="text-align: center;">Ingestion applications can write<br>Scheduled pipelines can readData consumers can’t access</td>
+<td style="text-align: center;">Ingestion applications can write<br>Scheduled pipelines can read<br>Data consumers can’t access</td>
 <td style="text-align: center;"><strong>Hot</strong></td>
 </tr>
 <tr class="even">
@@ -644,17 +685,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Production</td>
-<td style="text-align: center;">Scheduled pipelines can read/writeSelected data consumers can read</td>
+<td style="text-align: center;">Scheduled pipelines can read/write<br>Selected data consumers can read</td>
 <td style="text-align: center;"><strong>Hot</strong></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Archive</td>
-<td style="text-align: center;">Scheduled pipelines can writeDedicated data reprocessing pipelines can read</td>
+<td style="text-align: center;">Scheduled pipelines can write<br>Dedicated data reprocessing pipelines can read</td>
 <td style="text-align: center;"><em>Cold</em>/<em>Archive</em></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Failed</td>
-<td style="text-align: center;">Scheduled pipelines can writeDedicated data reprocessing pipelines can readData consumers don’t have access</td>
+<td style="text-align: center;">Scheduled pipelines can write<br>Dedicated data reprocessing pipelines can read<br>Data consumers don’t have access</td>
 <td style="text-align: center;"><strong>Hot</strong></td>
 </tr>
 </tbody>
@@ -662,6 +703,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 
 <section id="organizing-the-data-lake-4" class="title-slide slide level1 center">
+<h1>Organizing the data lake</h1>
+<p>Alternative organizations are available</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<blockquote>
+<p>“A data lake is a central repository system for storage, processing, and analysis of raw data, in which the data is <strong>kept in its original format </strong> and is processed to be queried only when needed. It can store a <strong>varied amount of formats </strong> in big data ecosystems, from unstructured, semi-structured, to structured data sources.”</p>
+<p><span class="citation" data-cites="couto2019mapping">(<a href="#/references" role="doc-biblioref" onclick="">Couto et al. 2019</a>)</span></p>
+</blockquote>
+</div><div class="column" style="width:40%;">
+<p><img data-src="imgs/266.svg"></p>
+</div>
+</div>
+</section>
+
+<section id="organizing-the-data-lake-5" class="title-slide slide level1 center">
 <h1>Organizing the data lake</h1>
 <p>Use folders to organize data inside areas into a logical structure</p>
 <ul>
@@ -694,21 +750,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="organizing-the-data-lake-5" class="title-slide slide level1 center">
-<h1>Organizing the data lake</h1>
-<p>However, alternative organizations are available</p>
-<div class="columns">
-<div class="column" style="width:60%;">
-<blockquote>
-<p>“A data lake is a central repository system for storage, processing, and analysis of raw data, in which the data is <strong>kept in its original format </strong> and is processed to be queried only when needed. It can store a <strong>varied amount of formats </strong> in big data ecosystems, from unstructured, semi-structured, to structured data sources.”</p>
-<p><span class="citation" data-cites="couto2019mapping">(<a href="#/lakehouse" role="doc-biblioref" onclick="">Couto et al. 2019</a>)</span></p>
-</blockquote>
-</div><div class="column" style="width:40%;">
-<p><img data-src="imgs/266.svg"></p>
-</div>
-</div>
-</section>
-
 <section id="data-lakehouse" class="title-slide slide level1 center">
 <h1>Data Lakehouse</h1>
 <p>Combine the key benefits of data lakes and data warehouses</p>
@@ -721,10 +762,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p><em>Key question: can we combine these benefits in an effective way?</em></p>
 <ul>
-<li>Direct access means that they <strong>give up some aspects of data independence</strong>, a cornerstone of relational DBMS design</li>
 <li><strong>Lakehouses</strong> are a good fit for cloud environments with separate compute and storage
 <ul>
-<li>Computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while directly accessing the same storage data</li>
+<li>Computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while accessing storage data</li>
 </ul></li>
 </ul>
 </section>
@@ -743,161 +783,234 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="data-lakehouse-1" class="title-slide slide level1 center">
-<h1>Data Lakehouse</h1>
-<p><strong>1st generation systems</strong>: data warehousing started with helping business leaders get analytical insights</p>
+<section id="data-lakehouse-armbrust2021lakehouse" class="title-slide slide level1 center">
+<h1>Data Lakehouse <span class="citation" data-cites="armbrust2021lakehouse">(<a href="#/references" role="doc-biblioref" onclick="">Armbrust et al. 2021</a>)</span></h1>
+
+<img data-src="imgs/slides195.png" class="r-stretch quarto-figure-center"><p class="caption">From DWH to Data Lakehouse</p></section>
+
+<section id="data-lakehouse-armbrust2021lakehouse-1" class="title-slide slide level1 center">
+<h1>Data Lakehouse <span class="citation" data-cites="armbrust2021lakehouse">(<a href="#/references" role="doc-biblioref" onclick="">Armbrust et al. 2021</a>)</span></h1>
+<p><strong>1st generation systems</strong>: data warehousing started with helping business decision makers get analytical insights</p>
 <ul>
-<li>Data in these warehouses would be written with <em>schema-on-write</em>, which ensured that the data model was optimized for downstream BI consumption</li>
+<li>Data in warehouses (DWH) would be written with <em>schema-on-write</em> to ensure that data is optimized for BI applications
+<ul>
+<li><em>Schema on write</em> is defined as creating a schema for data before writing into the database</li>
+</ul></li>
 <li>Several challenges
 <ul>
-<li>They typically coupled compute and storage into an on-premises appliance
+<li>DWH typically couple compute and storage into an on-premises appliance
 <ul>
 <li>This forced enterprises to provision and pay for the peak of user load and data under management, very costly</li>
 </ul></li>
 <li>More and more datasets were completely unstructured, which DWHs could not store and query at all</li>
 </ul></li>
 </ul>
-<p>Armbrust, Michael, et al.&nbsp;“Lakehouse: a new generation of open platforms that unify data warehousing and advanced analytics.” <em>CIDR</em> . 2021.</p>
 </section>
 
-<section id="data-lakehouse-2" class="title-slide slide level1 center">
-<h1>Data Lakehouse</h1>
+<section id="data-lakehouse-armbrust2021lakehouse-2" class="title-slide slide level1 center">
+<h1>Data Lakehouse <span class="citation" data-cites="armbrust2021lakehouse">(<a href="#/references" role="doc-biblioref" onclick="">Armbrust et al. 2021</a>)</span></h1>
 <p><strong>2nd generation</strong>: offloading all the raw data into data lakes</p>
 <ul>
-<li>The data lake is <em>schema-on-read</em> and stores any data at low cost, but on the other hand, punted the problem of data quality and governance</li>
-<li>In this architecture, a small subset of data in the lake would later be ETLed to a downstream data warehouse</li>
-<li>The use of open formats also made data lake data directly accessible to a wide range of other analytics engines, such as machine learning systems</li>
+<li>The data lake is <em>schema-on-read</em> and stores any data at low cost
+<ul>
+<li><em>Schema on read</em> postpones the structuring of data to the time of analysis or reading</li>
+</ul></li>
+<li>The use of <em>open formats</em> also made data lake data directly accessible to a wide range of other analytics engines, such as machine learning systems
+<ul>
+<li>An <em>open file format</em> is a file format for storing digital data,[1][2] defined by an openly published specification usually maintained by a standards organization, and which can be used and implemented by anyone.</li>
+</ul></li>
 <li>From 2015 onwards, cloud data lakes, such as S3, ADLS and GCS, started replacing HDFS
 <ul>
 <li>Superior durability (often &gt;10 nines), geo-replication, and most importantly, extremely low cost</li>
 </ul></li>
-</ul>
-</section>
-
-<section id="data-lakehouse-3" class="title-slide slide level1 center">
-<h1>Data Lakehouse</h1>
-
-<img data-src="imgs/slides195.png" class="r-stretch"></section>
-
-<section id="data-lakehouse-4" class="title-slide slide level1 center">
-<h1>Data Lakehouse</h1>
-<p>While the cloud data lake and warehouse architecture is ostensibly cheap, a two-tier architecture is highly complex for users</p>
+<li>A small subset of data in the lake would later be ETLed to a downstream data warehouse
 <ul>
-<li>Data is first ETLed into lakes, and then again ELTed into warehouses</li>
-<li>Enterprise use cases now include advanced analytics such as machine learning, for which neither data lakes nor warehouses are ideal</li>
-<li>(Some) main problems:
-<ul>
-<li><strong>Reliability</strong> . Keeping the data lake and warehouse consistent is difficult and costly</li>
-<li>Data <strong>staleness</strong> . The data in the warehouse is stale compared to that of the data lake, with new data frequently taking days to load</li>
-<li><strong>Limited support for advanced analytics</strong> . Businesses want to ask predictive questions using their warehousing data, e.g., “which customers should I offer discounts to?” None of the leading machine learning systems directly work well on top of warehouses
-<ul>
-<li>Process large datasets using complex non-SQL code</li>
-</ul></li>
+<li><em>Problems</em>?</li>
 </ul></li>
 </ul>
 </section>
 
 <section id="dataset-search-for-data-discovery-augmentation-and-explanation" class="title-slide slide level1 center">
 <h1>Dataset Search for Data Discovery, Augmentation, and Explanation</h1>
-<p>Is there a real need for many unstructured and integrated dataset?</p>
+<p><strong>Is there a real need for many unstructured and integrated dataset?</strong></p>
 <ul>
-<li>Recent years have seen an explosion in our ability to collect and catalog immense amounts of data about our environment, society, and populace</li>
-<li>Governments, and organizations are increasingly making structured data available on the Web and in various repositories and data lakes</li>
-<li><strong>This opportunity is often missed due to a central technical barrier</strong>: it is currently nearly impossible for domain experts to weed through the vast amount of available information to discover datasets that are needed for their specific application</li>
+<li>Recent years have seen an explosion in our ability to collect and catalog data about our environment and society</li>
+<li>Governments and organizations are increasingly making data available on the Web and in various repositories and data lakes</li>
+<li><em>This opportunity is often missed due to a central technical barrier</em>: it is currently nearly impossible for domain experts to weed through the vast amount of available information to discover datasets that are needed for their specific application</li>
 </ul>
 <p>Juliana Freire, keynote @ EDBT 2023</p>
 </section>
 
-<section id="data-lakehouse-5" class="title-slide slide level1 center">
+<section id="data-lakehouse-1" class="title-slide slide level1 center">
 <h1>Data Lakehouse</h1>
-<p>Main features</p>
+<p>A two-tier architecture is highly complex for users</p>
 <ul>
-<li><strong>Store data in a low-cost object store</strong> using a standard file format such as Apache Parquet</li>
-<li><strong>Implement a transactional metadata layer</strong> on top of the object store that defines which objects are part of a table version</li>
-<li><strong>Implement management features </strong> within the metadata layer</li>
+<li>(Optional) Data is first ETLed into lakes, …</li>
+<li>… and then ELTed into warehouses</li>
+<li>Enterprise use cases now include advanced analytics such as machine learning, for which warehouses are not ideal</li>
 </ul>
-<p>Challenges:</p>
+<p>(Some) main problems:</p>
 <ul>
-<li>The metadata layer is insufficient to achieve good SQL performance
+<li><em>Reliability</em>: keeping the data lake and warehouse consistent is difficult and costly</li>
+<li><em>Staleness</em>: the data in the warehouse is stale compared to that of the data lake, with new data frequently taking days to load</li>
+<li><em>Limited support for advanced analytics</em>: businesses want to ask predictive questions using their warehousing data
 <ul>
-<li><strong>Data warehouses use several techniques to get state-of-the-art performance</strong>
-<ul>
-<li>Storing hot data on fast devices such as SSDs, maintaining statistics, building efficient indexes, etc.</li>
-</ul></li>
-<li><strong>In a Lakehouse it is not possible to change the format</strong>, but it is possible to implement other optimizations that leave the data files unchanged</li>
+<li>E.g., “which customers should I offer discounts to?”</li>
+<li>E.g., process large datasets using complex non-SQL code</li>
 </ul></li>
 </ul>
 </section>
 
-<section id="delta-lake" class="title-slide slide level1 center">
-<h1>Delta Lake</h1>
-<p><strong>Challenges</strong>:</p>
+<section id="data-lakehouse-2" class="title-slide slide level1 center">
+<h1>Data Lakehouse</h1>
+<p>Idea</p>
 <ul>
-<li>Most <strong>cloud object stores are merely key-value stores</strong>, with no cross-key consistency</li>
-<li><strong>Multi-object updates are not atomic</strong>, there is no isolation between queries
+<li><em>Store data in a low-cost object store</em> using an open file format such as Apache Parquet</li>
+<li><em>Implement a transactional metadata layer</em> on top of the object store that defines which objects are part of a table version</li>
+<li><em>Implement management features</em> within the metadata layer</li>
+</ul>
+
+<img data-src="imgs/slides196.png" class="r-stretch quarto-figure-center"><p class="caption">Lakehouse</p></section>
+
+<section id="data-lakehouse-3" class="title-slide slide level1 center">
+<h1>Data Lakehouse</h1>
+<p>Metadata alone is insufficient to achieve good performance, challenges:</p>
 <ul>
-<li>If a query needs to update multiple objects in the table readers will see partial updates as the query updates each object individually</li>
+<li><em>Data warehouses use several techniques to get state-of-the-art performance</em>
+<ul>
+<li>Storing hot data on fast devices such as SSDs, maintaining statistics, building efficient indexes, etc.</li>
 </ul></li>
-<li>For large tables with millions of objects, <strong>metadata operations are expensive</strong>
+<li><em>In a datalake</em>, but it is possible to implement other optimizations that leave the data files unchanged</li>
+<li>Most <em>cloud object stores are merely key-value stores</em>, with no cross-key consistency</li>
+<li><em>Multi-object updates are not atomic</em>, there is no isolation between queries
+<ul>
+<li>If a query updates multiple objects in a table, readers will see partial updates as the query updates each object individually</li>
+</ul></li>
+<li>For large tables with millions of objects, <em>metadata operations are expensive</em>
 <ul>
 <li>The latency of cloud object stores is so much higher that these data skipping checks can take longer than the actual query</li>
 </ul></li>
 </ul>
-<p>Armbrust, Michael, et al.&nbsp;“Delta lake: high-performance ACID table storage over cloud object stores.” Proceedings of the VLDB Endowment 13.12 (2020): 3411-3424.</p>
+</section>
+
+<section id="delta-lake-armbrust2020delta" class="title-slide slide level1 center">
+<h1>Delta Lake <span class="citation" data-cites="armbrust2020delta">(<a href="#/references" role="doc-biblioref" onclick="">Armbrust et al. 2020</a>)</span></h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Delta Lake uses a <strong>transaction log</strong> and stores data into Apache Parquet for significantly faster metadata operations for large tabular datasets</p>
+<ul>
+<li>E.g., quickly search billions of table partitions</li>
+<li>The log is stored in the <code>_delta_log</code> subdirectory</li>
+<li>The delta log contains
+<ul>
+<li>Sequence of <em>commits</em> JSON objects with increasing, zero-padded numerical IDs to store the log records</li>
+<li>Occasional <em>checkpoints</em> for specific log objects that summarize the log up to that point</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/deltalake1.png"></p>
+<figcaption><a href="https://www.databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html">Delta Lake transaction log</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="delta-lake" class="title-slide slide level1 center">
+<h1>Delta Lake</h1>
+<p>Changes are recorded as ordered, atomic commits in the transaction log.</p>
+<ul>
+<li>Each commit is written out as a JSON file, starting with <code>000000.json</code>.</li>
+<li>Additional changes to the table generate subsequent JSON files in ascending numerical order</li>
+<li>Each log record object (e.g., <code>000003.json</code>) contains an array of actions to apply to the previous table version</li>
+</ul>
+<p>Whenever a user performs an operation to modify a table (such as an INSERT, UPDATE or DELETE), Delta Lake breaks that operation down into a series of discrete steps composed of one or more of the actions below.</p>
+<ul>
+<li>Add file - adds a data file.</li>
+<li>Remove file - removes a data file.</li>
+<li>Update metadata - Updates the table’s metadata (e.g., changing the table’s name, schema or partitioning).</li>
+<li>Set transaction - Records that a structured streaming job has committed a micro-batch with the given ID.</li>
+<li>Change protocol - enables new features by switching the Delta Lake transaction log to the newest software protocol.</li>
+<li>Commit info - Contains information around the commit, which operation was made, from where and at what time.</li>
+</ul>
 </section>
 
 <section id="delta-lake-1" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
 <div class="columns">
-<div class="column" style="width:60%;">
-<p>Delta Lake uses a <strong>transaction log </strong> that is compacted <strong>into Apache Parquet </strong> for significantly faster metadata operations for large tabular datasets</p>
+<div class="column" style="width:50%;">
+<p>Once we have made several commits to the transaction log, Delta Lake saves a <strong>checkpoint file</strong> in Parquet format in <code>_delta_log</code></p>
 <ul>
-<li>E.g., quickly search billions of table partitions for those relevant to a query</li>
-<li>The log is stored in the **delta*log** subdirectory within the table</li>
-<li>It contains
-<ul>
-<li>Sequence of JSON objects with increasing, zero-padded numerical IDs to store the log records</li>
-<li>Occasional checkpoints for specific log objects that summarize the log up to that point</li>
-</ul></li>
+<li>Delta Lake automatically generates checkpoint as needed to maintain good read performance.</li>
+<li>Checkpoints store all the non-redundant actions in the table’s log up to a certain log record ID, in Parquet format</li>
+<li>Some sets of actions are redundant and can be removed</li>
+<li>Read the <em>last checkpoint</em> object in the table’s log directory, if it exists, to obtain a recent checkpoint ID</li>
 </ul>
-</div><div class="column" style="width:40%;">
-<p><img data-src="imgs/slides196.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="imgs/deltalake2.png"></p>
 </div>
 </div>
 </section>
 
 <section id="delta-lake-2" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
-<p>Each log record object (e.g., 000003.json) contains an array of actions to apply to the previous version of the table to generate the next one</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Checkpoints save the entire state of the table at a point in time.</p>
+<p>A “shortcut” to reproducing a table’s state that allows Spark to avoid reprocessing what could be thousands of tiny, inefficient JSON files.</p>
+<p>Spark runs a <code>listFrom v</code> operation to view all files in the transaction log, starting from <code>v</code></p>
 <ul>
-<li>Examples of actions are:</li>
-<li>Change Metadata</li>
-<li>Add or Remove Files</li>
+<li>… quickly skips to the newest checkpoint file,</li>
+<li>… only processes JSON commits made since the most recent checkpoint file was saved.</li>
 </ul>
-<p>It is necessary to compress the log periodically into checkpoints</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="imgs/deltalake3.png"></p>
+</div>
+</div>
+<p>Imagine that we’ve created commits up to <code>000007.json</code> and that Spark has cached this version of the table in memory.</p>
 <ul>
-<li>Checkpoints store all the non-redundant actions in the table’s log up to a certain log record ID, in Parquet format</li>
-<li>Some sets of actions are redundant and can be removed</li>
-<li>Read the <em>last</em>checkpoint object in the table’s log directory, if it exists, to obtain a recent checkpoint ID</li>
+<li>In the meantime, other writers have written new data to the table, adding commits up to <code>0000012.json</code>.</li>
+<li>To incorporate these new transactions, Spark runs a <code>listFrom</code> version 7 operation to see the new changes to the table.</li>
+<li>Rather than processing all of the intermediate JSON files …</li>
+<li>… Spark skips ahead to the most recent checkpoint file, since it contains the entire state of the table at commit <code>#10</code>.</li>
 </ul>
 </section>
 
 <section id="delta-lake-3" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
-<p>Example of a write transaction</p>
+<p><strong>Time Travel</strong></p>
 <ul>
-<li>Transaction will read the data at table version r (if needed) and attempt to write log record r+1</li>
-<li>Read data at table version r, if required combine previous checkpoint and further log records</li>
-<li>Write any new data objects that the transaction aims to add to the table into new files in the correct data directories, generating the object names using GUIDs.
+<li>Every table is the result of the sum total of all of the commits recorded in the Delta Lake transaction log.</li>
+<li>The log provides a step-by-step instruction guide, detailing how to get from the table’s original state to its current state.</li>
+<li>Recreate the state of a table at any point in time by starting with an original table, and processing only commits made prior to that point.</li>
+</ul>
+<p><strong>Data Lineage and Debugging</strong></p>
+<ul>
+<li>The transaction log offers users a verifiable data lineage that is useful for governance, audit and compliance purposes.</li>
+<li>It can also be used to trace the origin of an inadvertent change or a bug in a pipeline back to the exact action that caused it.</li>
+</ul>
+</section>
+
+<section id="delta-lake-4" class="title-slide slide level1 center">
+<h1>Delta Lake</h1>
+<p>Example of a <em>write transaction</em>: read the data at table version <code>r</code> and attempt to write log record <code>r+1</code></p>
+<ul>
+<li>Read data at table version <code>r</code>, if required combine previous checkpoint and further log records</li>
+<li>Write any new data into new files in the correct data directories, generating the object names using GUIDs.
 <ul>
 <li>This step can happen in parallel</li>
 <li>At the end, these objects are ready to be referenced in a new log record.</li>
 </ul></li>
-<li>Attempt to write the transaction’s log record into the r+1 .json log object, if no other client has written this object</li>
-<li><strong>This step needs to be atomic</strong> . If the step fails, the transaction can be retried; depending on the query’s semantics (optimistic concurrency)</li>
-<li>Optionally, write a new .parquet checkpoint for log record r+1</li>
+<li>Attempt to write the transaction’s log record into the <code>r+1.json</code> log object, if no other client has written this object
+<ul>
+<li><em>This step needs to be atomic</em>: only 1 client should succeed.</li>
+<li>If the step fails, the transaction can be retried; depending on the query’s semantics (optimistic concurrency)</li>
+</ul></li>
+<li>Optionally, write a new <code>.parquet</code> checkpoint for log record <code>r+1</code></li>
 </ul>
-<p>Creating the r+1 .json record, needs to be atomic: only 1 client should succeed. Not all large-scale storage systems have an atomic put operation</p>
+<p>Not all large-scale storage systems have an atomic put operation</p>
 <ul>
 <li>Google Cloud Storage and Azure Blob Store support atomic put-if-absent operations</li>
 <li>HDFS, we use atomic renames to rename a temporary file to the target name</li>
@@ -905,25 +1018,34 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="lakehouse" class="title-slide slide level1 smaller scrollable">
+<section id="lakehouse" class="title-slide slide level1 center">
 <h1>Lakehouse</h1>
 <p>(SQL) Format-independent optimizations are</p>
 <ul>
-<li><strong>Caching</strong>: When using a transactional metadata layer such as Delta Lake, it is safe for a Lakehouse system to cache files from the cloud object store on faster storage devices such as SSDs and RAM on the processing nodes</li>
-<li><strong>Auxiliary data</strong>: maintain column min-max statistics for each data file in the table within the same Parquet file used to store the transaction log, which enables data skipping optimizations when the base data is clustered by particular columns</li>
-<li><strong>Data layout</strong>:
+<li><em>Caching</em>: when using a transactional metadata layer such as Delta Lake, it is safe for a Lakehouse system to cache files from the cloud object store on faster storage devices such as SSDs and RAM on the processing nodes</li>
+<li><em>Auxiliary data</em>: maintain column min-max statistics for each data file in the table within the same Parquet file used to store the transaction log, which enables data skipping optimizations when the base data is clustered by particular columns</li>
+<li><em>Data layout</em>:
 <ul>
-<li>Record ordering: which records are clustered together and hence easiest to read together, e.g.&nbsp;ordering records using individual dimensions or space-filling curves such as Z-order</li>
-<li>Compression strategies differently for various groups of records, or other strategies</li>
+<li><em>Record ordering</em>: which records are clustered together and hence easiest to read together, e.g.&nbsp;ordering records using individual dimensions or space-filling curves such as Z-order</li>
+<li><em>Compression strategies</em> differently for various groups of records, or other strategies</li>
 </ul></li>
 </ul>
-<p>Offer a declarative version of the DataFrame APIs which maps data preparation computations into Spark SQL query plans and can benefit from logical optimizations</p>
+</section>
+
+<section id="references" class="title-slide slide level1 smaller scrollable">
+<h1>References</h1>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Big Data and Cloud Platforms (Module 2) - A.Y. 2024/25</p>
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-armbrust2020delta" class="csl-entry" role="listitem">
+Armbrust, Michael, Tathagata Das, Liwen Sun, Burak Yavuz, Shixiong Zhu, Mukul Murthy, Joseph Torres, et al. 2020. <span>“Delta Lake: High-Performance ACID Table Storage over Cloud Object Stores.”</span> <em>Proceedings of the VLDB Endowment</em> 13 (12): 3411–24.
+</div>
+<div id="ref-armbrust2021lakehouse" class="csl-entry" role="listitem">
+Armbrust, Michael, Ali Ghodsi, Reynold Xin, and Matei Zaharia. 2021. <span>“Lakehouse: A New Generation of Open Platforms That Unify Data Warehousing and Advanced Analytics.”</span> In <em>Proceedings of CIDR</em>, 8:28.
+</div>
 <div id="ref-couto2019mapping" class="csl-entry" role="listitem">
 Couto, Julia, Olimar Teixeira Borges, Duncan D Ruiz, Sabrina Marczak, and Rafael Prikladnicki. 2019. <span>“A Mapping Study about Data Lakes: An Improved Definition and Possible Architectures.”</span> In <em>SEKE</em>, 453–578.
 </div>
