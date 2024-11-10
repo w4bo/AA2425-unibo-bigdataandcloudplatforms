@@ -42,9 +42,9 @@ PaaS
 :::
 ::::
 
-[https://aws.amazon.com/ec2](https://aws.amazon.com/emr)
+[AWS EC2](https://aws.amazon.com/ec2)
 
-[https://aws.amazon.com/emr](https://aws.amazon.com/emr)  (2022-11-15)
+[AWS EMR](https://aws.amazon.com/emr)
 
 # Single instance: AWS EC2
 

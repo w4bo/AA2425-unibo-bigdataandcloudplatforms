@@ -10,8 +10,9 @@ subtitle: Data pipelines on cloud (Storage)
 
 **Goal**: persisting data
 
-- Which storage do we choose?
-- **Storage model ** (or data model) ~= variety
+What storage do we choose?
+
+- **Storage model** (or data model) ~= variety
   - How data are organized/accessed in a storage system
     * Structured vs unstructured
     * Data access model (key-value, column, etc.)
@@ -24,16 +25,15 @@ subtitle: Data pipelines on cloud (Storage)
 
 # Storage models (AWS)
 
+|*Data structure*|*Data structure*|*Data structure*|
+|:-:|:-:|:-:|
+|Structured|Database|Relational|
+</br>
+
 :::: {.columns}
 ::: {.column width=60%}
 
-*Data structure*: structured
-
-*Data abstraction*: database
-
-*Data access model*: relational
-
-**Relational**
+**Relational database**
 
 - Store data with predefined schemas and relationships between them
 - Support ACID transactions
@@ -49,14 +49,14 @@ subtitle: Data pipelines on cloud (Storage)
 
 # Storage models (AWS)
 
+
+|*Data structure*|*Data structure*|*Data structure*|
+|:-:|:-:|:-:|
+|Semi/unstructured|Database|\*|
+</br>
+
 :::: {.columns}
 ::: {.column width=60%}
-
-*Data structure*: semi/unstructured
-
-*Data abstraction*: database
-
-*Data access model*: *
 
 - **Key/value**: store and retrieve large volumes of data
 - **Document**: store semi-structured data as JSON-like documents
@@ -89,11 +89,10 @@ subtitle: Data pipelines on cloud (Storage)
 
 # Storage models (AWS)
 
-*Data structure*: unstructured
-
-*Data abstraction*: file (or database)
-
-*Data access model*: key-value
+|*Data structure*|*Data structure*|*Data structure*|
+|:-:|:-:|:-:|
+|Unstructured|File/Database|Key-value|
+</br>
 
 **File system** (EFS), **object storage** (S3) (or **DB K-V** ; e.g., DynamoDB)
 
@@ -106,11 +105,11 @@ subtitle: Data pipelines on cloud (Storage)
 - E.g., maximum item size (DynamoDB: 400KB, S3: 5TB)
 - E.g., indexes, querying mechanisms, latency, etc.
 
-# AWS S3
+# AWS Simple Storage Service (S3)
 
-*Simple Storage Service (S3)*
+**Simple Storage Service (S3)**
 
-- Serverless storage, save data as **objects** within **buckets** 
+- *Serverless* storage, save data as **objects** within **buckets** 
 - An **object** is composed of a file and any metadata that describes that file (e.g.,  **object key**)
 - **Buckets** are logical containers for objects
   - You can have one or more buckets in your account
@@ -122,7 +121,7 @@ Benefits
 - Unified data architecture
   - Build a multi-tenant environment, where many users can bring their own data
   - Improve both cost and data governance over traditional solutions
-- Decoupling of storage from compute and data processing
+- *Decoupling of storage from compute and data processing*
   - You can cost-effectively store all data types in their native formats
   - Then, launch transformations as you need
 
@@ -173,7 +172,7 @@ Two types of actions:
 :::
 ::::
 
-# Storage: access frequency (Google Cloud)
+# Storage: access frequency ([Google Cloud](https://cloud.google.com/blog/products/storage-data-transfer/archive-storage-class-for-coldest-data-now-available))
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -187,8 +186,6 @@ Two types of actions:
 
 :::
 ::::
-
-[https://cloud.google.com/blog/products/storage-data-transfer/archive-storage-class-for-coldest-data-now-available](https://cloud.google.com/blog/products/storage-data-transfer/archive-storage-class-for-coldest-data-now-available)
 
 # Organizing the data lake
 
@@ -269,12 +266,31 @@ Having consistent principles on how to organize your data is important
 # Organizing the data lake
 
 | Area | Permissions | Tier |
-|:-: |:-: |:-: |
-| Landing | Ingestion applications can write<br />Scheduled pipelines can readData consumers can’t access | **Hot** |
+|:-:|:-:|:-:|
+| Landing | Ingestion applications can write<br />Scheduled pipelines can read<br />Data consumers can't access | **Hot** |
 | Staging | Scheduled pipelines can read/write<br />Selected data consumers can read | **Hot** |
-| Production | Scheduled pipelines can read/writeSelected data consumers can read | **Hot** |
-| Archive | Scheduled pipelines can writeDedicated data reprocessing pipelines can read  | *Cold*/*Archive* |
-| Failed | Scheduled pipelines can writeDedicated data reprocessing pipelines can readData consumers don’t have access | **Hot** |
+| Production | Scheduled pipelines can read/write<br />Selected data consumers can read | **Hot** |
+| Archive | Scheduled pipelines can write<br />Dedicated data reprocessing pipelines can read  | *Cold*/*Archive* |
+| Failed | Scheduled pipelines can write<br />Dedicated data reprocessing pipelines can read<br />Data consumers don't have access | **Hot** |
+
+# Organizing the data lake
+
+Alternative organizations are available
+
+:::: {.columns}
+::: {.column width=60%}
+
+> "A data lake is a central repository system for storage, processing, and analysis of raw data, in which the data is **kept in its original format ** and is processed to be queried only when needed. It can store a **varied amount of formats ** in big data ecosystems, from unstructured, semi-structured, to structured data sources."
+>
+> [@couto2019mapping]
+
+:::
+::: {.column width=40%}
+
+![](imgs/266.svg)
+
+:::
+::::
 
 # Organizing the data lake
 
@@ -297,25 +313,6 @@ Different areas will have slightly different folder structures
 
 - /landing/ETL/sales\_oracle\_ingest/customers/01DFTFX89YDFAXREPJTR94
 
-# Organizing the data lake
-
-However, alternative organizations are available
-
-:::: {.columns}
-::: {.column width=60%}
-
-> "A data lake is a central repository system for storage, processing, and analysis of raw data, in which the data is **kept in its original format ** and is processed to be queried only when needed. It can store a **varied amount of formats ** in big data ecosystems, from unstructured, semi-structured, to structured data sources."
->
-> [@couto2019mapping]
-
-:::
-::: {.column width=40%}
-
-![](imgs/266.svg)
-
-:::
-::::
-
 # Data Lakehouse
 
 Combine the key benefits of data lakes and data warehouses
@@ -326,9 +323,8 @@ Combine the key benefits of data lakes and data warehouses
 
 *Key question: can we combine these benefits in an effective way?*
 
-- Direct access means that they **give up some aspects of data independence**, a cornerstone of relational DBMS design
 - **Lakehouses** are a good fit for cloud environments with separate compute and storage
-  - Computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while directly accessing the same storage data
+  - Computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while accessing storage data
 
 # Data Independence
 
@@ -347,130 +343,196 @@ Data independence can be explained using the three-schema architecture
 :::
 ::::
 
-# Data Lakehouse
+# Data Lakehouse [@armbrust2021lakehouse]
 
-**1st generation systems**: data warehousing started with helping business leaders get analytical insights
+![From DWH to Data Lakehouse](imgs/slides195.png)
 
-- Data in these warehouses would be written with *schema-on-write*, which ensured that the data model was optimized for downstream BI consumption
+# Data Lakehouse [@armbrust2021lakehouse]
+
+**1st generation systems**: data warehousing started with helping business decision makers get analytical insights
+
+- Data in warehouses (DWH) would be written with *schema-on-write* to ensure that data is optimized for BI applications
+  - *Schema on write* is defined as creating a schema for data before writing into the database
 - Several challenges
-  - They typically coupled compute and storage into an on-premises appliance
-    * This forced enterprises to provision and pay for the peak of user load and data under management, very costly
+  - DWH typically couple compute and storage into an on-premises appliance
+    - This forced enterprises to provision and pay for the peak of user load and data under management, very costly
   - More and more datasets were completely unstructured, which DWHs could not store and query at all
 
-Armbrust, Michael, et al. "Lakehouse: a new generation of open platforms that unify data warehousing and advanced analytics."  *CIDR* . 2021.
-
-# Data Lakehouse
+# Data Lakehouse [@armbrust2021lakehouse]
 
 **2nd generation**: offloading all the raw data into data lakes
 
-- The data lake is *schema-on-read* and stores any data at low cost, but on the other hand, punted the problem of data quality and governance
-- In this architecture, a small subset of data in the lake would later be ETLed to a downstream data warehouse
-- The use of open formats also made data lake data directly accessible to a wide range of other analytics engines, such as machine learning systems
+- The data lake is *schema-on-read* and stores any data at low cost
+  - *Schema on read* postpones the structuring of data to the time of analysis or reading 
+- The use of *open formats* also made data lake data directly accessible to a wide range of other analytics engines, such as machine learning systems
+  - An *open file format* is a file format for storing digital data,[1][2] defined by an openly published specification usually maintained by a standards organization, and which can be used and implemented by anyone.
 - From 2015 onwards, cloud data lakes, such as S3, ADLS and GCS, started replacing HDFS
   - Superior durability (often >10 nines), geo-replication, and most importantly, extremely low cost
-
-# Data Lakehouse
-
-![](imgs/slides195.png)
-
-# Data Lakehouse
-
-While the cloud data lake and warehouse architecture is ostensibly cheap, a two-tier architecture is highly complex for users
-
-- Data is first ETLed into lakes, and then again ELTed into warehouses
-- Enterprise use cases now include advanced analytics such as machine learning, for which neither data lakes nor warehouses are ideal
-- (Some) main problems:
-  - **Reliability** . Keeping the data lake and warehouse consistent is difficult and costly
-  - Data **staleness** . The data in the warehouse is stale compared to that of the data lake, with new data frequently taking days to load
-  - **Limited support for advanced analytics** . Businesses want to ask predictive questions using their warehousing data, e.g., “which customers should I offer discounts to?” None of the leading machine learning systems directly work well on top of warehouses
-    * Process large datasets using complex non-SQL code
+- A small subset of data in the lake would later be ETLed to a downstream data warehouse
+  - *Problems*?
 
 # Dataset Search for Data Discovery, Augmentation, and Explanation
 
-Is there a real need for many unstructured and integrated dataset?
+**Is there a real need for many unstructured and integrated dataset?**
 
-- Recent years have seen an explosion in our ability to collect and catalog immense amounts of data about our environment, society, and populace
-- Governments, and organizations are increasingly making structured data available on the Web and in various repositories and data lakes
-- **This opportunity is often missed due to a central technical barrier**: it is currently nearly impossible for domain experts to weed through the vast amount of available information to discover datasets that are needed for their specific application
+- Recent years have seen an explosion in our ability to collect and catalog data about our environment and society
+- Governments and organizations are increasingly making data available on the Web and in various repositories and data lakes
+- *This opportunity is often missed due to a central technical barrier*: it is currently nearly impossible for domain experts to weed through the vast amount of available information to discover datasets that are needed for their specific application
 
 Juliana Freire, keynote @ EDBT 2023
 
 # Data Lakehouse
 
-Main features
+A two-tier architecture is highly complex for users
 
-- **Store data in a low-cost object store** using a standard file format such as Apache Parquet
-- **Implement a transactional metadata layer** on top of the object store that defines which objects are part of a table version
-- **Implement management features ** within the metadata layer
+- (Optional) Data is first ETLed into lakes, ...
+- ... and then ELTed into warehouses
+- Enterprise use cases now include advanced analytics such as machine learning, for which warehouses are not ideal
 
-Challenges:
+(Some) main problems:
 
-- The metadata layer is insufficient to achieve good SQL performance
-  - **Data warehouses use several techniques to get state-of-the-art performance**
-    * Storing hot data on fast devices such as SSDs, maintaining statistics, building efficient indexes, etc.
-  - **In a Lakehouse it is not possible to change the format**, but it is possible to implement other optimizations that leave the data files unchanged
+- *Reliability*: keeping the data lake and warehouse consistent is difficult and costly
+- *Staleness*: the data in the warehouse is stale compared to that of the data lake, with new data frequently taking days to load
+- *Limited support for advanced analytics*: businesses want to ask predictive questions using their warehousing data
+  - E.g., "which customers should I offer discounts to?" 
+  - E.g., process large datasets using complex non-SQL code
 
-# Delta Lake
+# Data Lakehouse
 
-**Challenges**:
+Idea
 
-- Most **cloud object stores are merely key-value stores**, with no cross-key consistency
-- **Multi-object updates are not atomic**, there is no isolation between queries
-  - If a query needs to update multiple objects in the table readers will see partial updates as the query updates each object individually
-- For large tables with millions of objects, **metadata operations are expensive**
+- *Store data in a low-cost object store* using an open file format such as Apache Parquet
+- *Implement a transactional metadata layer* on top of the object store that defines which objects are part of a table version
+- *Implement management features* within the metadata layer
+
+![Lakehouse](imgs/slides196.png)
+
+# Data Lakehouse
+
+Metadata alone is insufficient to achieve good performance, challenges:
+
+- *Data warehouses use several techniques to get state-of-the-art performance*
+  - Storing hot data on fast devices such as SSDs, maintaining statistics, building efficient indexes, etc.
+- *In a datalake*, but it is possible to implement other optimizations that leave the data files unchanged
+- Most *cloud object stores are merely key-value stores*, with no cross-key consistency
+- *Multi-object updates are not atomic*, there is no isolation between queries
+  - If a query updates multiple objects in a table, readers will see partial updates as the query updates each object individually
+- For large tables with millions of objects, *metadata operations are expensive*
   - The latency of cloud object stores is so much higher that these data skipping checks can take longer than the actual query
 
-Armbrust, Michael, et al. "Delta lake: high-performance ACID table storage over cloud object stores." Proceedings of the VLDB Endowment 13.12 (2020): 3411-3424.
-
-# Delta Lake
+# Delta Lake [@armbrust2020delta]
 
 :::: {.columns}
-::: {.column width=60%}
+::: {.column width=50%}
 
-Delta Lake uses a **transaction log ** that is compacted **into Apache Parquet ** for significantly faster metadata operations for large tabular datasets
+Delta Lake uses a **transaction log** and stores data into Apache Parquet for significantly faster metadata operations for large tabular datasets
 
-- E.g., quickly search billions of table partitions for those relevant to a query
-- The log is stored in the **delta*log** subdirectory within the table
-- It contains
-  - Sequence of JSON objects with increasing, zero-padded numerical IDs to store the log records
-  - Occasional checkpoints for specific log objects that summarize the log up to that point
+- E.g., quickly search billions of table partitions
+- The log is stored in the `_delta_log` subdirectory
+- The delta log contains
+  - Sequence of *commits* JSON objects with increasing, zero-padded numerical IDs to store the log records
+  - Occasional *checkpoints* for specific log objects that summarize the log up to that point
 
 :::
-::: {.column width=40%}
+::: {.column width=50%}
 
-![](imgs/slides196.png)
+![[Delta Lake transaction log](https://www.databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html)](imgs/deltalake1.png)
 
 :::
 ::::
 
 # Delta Lake
 
-Each log record object (e.g., 000003.json) contains an array of actions to apply to the previous version of the table to generate the next one
+Changes are recorded as ordered, atomic commits in the transaction log.
 
-- Examples of actions are:
-- Change Metadata
-- Add or Remove Files
+- Each commit is written out as a JSON file, starting with `000000.json`.
+- Additional changes to the table generate subsequent JSON files in ascending numerical order
+- Each log record object (e.g., `000003.json`) contains an array of actions to apply to the previous table version
 
-It is necessary to compress the log periodically into checkpoints
+Whenever a user performs an operation to modify a table (such as an INSERT, UPDATE or DELETE), Delta Lake breaks that operation down into a series of discrete steps composed of one or more of the actions below.
 
-- Checkpoints store all the non-redundant actions in the table’s log up to a certain log record ID, in Parquet format
-- Some sets of actions are redundant and can be removed
-- Read the *last*checkpoint object in the table’s log directory, if it exists, to obtain a recent checkpoint ID
+- Add file - adds a data file.
+- Remove file - removes a data file.
+- Update metadata - Updates the table’s metadata (e.g., changing the table’s name, schema or partitioning).
+- Set transaction - Records that a structured streaming job has committed a micro-batch with the given ID.
+- Change protocol - enables new features by switching the Delta Lake transaction log to the newest software protocol.
+- Commit info - Contains information around the commit, which operation was made, from where and at what time.
 
 # Delta Lake
 
-Example of a write transaction
+:::: {.columns}
+::: {.column width=50%}
 
-- Transaction will read the data at table version r (if needed) and attempt to write log record r+1
-- Read data at table version r, if required combine previous checkpoint and further log records
-- Write any new data objects that the transaction aims to add to the table into new files in the correct data directories, generating the object names using GUIDs.
+Once we have made several commits to the transaction log, Delta Lake saves a **checkpoint file** in Parquet format in `_delta_log`
+
+-  Delta Lake automatically generates checkpoint as needed to maintain good read performance.
+- Checkpoints store all the non-redundant actions in the table's log up to a certain log record ID, in Parquet format
+- Some sets of actions are redundant and can be removed
+- Read the *last checkpoint* object in the table's log directory, if it exists, to obtain a recent checkpoint ID
+
+
+:::
+::: {.column width=50%}
+
+![](imgs/deltalake2.png)
+:::
+::::
+
+# Delta Lake
+
+:::: {.columns}
+::: {.column width=50%}
+
+Checkpoints save the entire state of the table at a point in time.
+
+A "shortcut" to reproducing a table’s state that allows Spark to avoid reprocessing what could be thousands of tiny, inefficient JSON files.
+
+Spark runs a `listFrom v` operation to view all files in the transaction log, starting from `v`
+
+- ... quickly skips to the newest checkpoint file,
+- ... only processes JSON commits made since the most recent checkpoint file was saved.
+
+:::
+::: {.column width=50%}
+
+![](imgs/deltalake3.png)
+:::
+::::
+
+Imagine that we’ve created commits up to `000007.json` and that Spark has cached this version of the table in memory.
+
+- In the meantime, other writers have written new data to the table, adding commits up to `0000012.json`.
+- To incorporate these new transactions, Spark runs a `listFrom` version 7 operation to see the new changes to the table.
+- Rather than processing all of the intermediate JSON files ...
+- ... Spark skips ahead to the most recent checkpoint file, since it contains the entire state of the table at commit `#10`.
+
+# Delta Lake
+
+**Time Travel**
+
+- Every table is the result of the sum total of all of the commits recorded in the Delta Lake transaction log.
+- The log provides a step-by-step instruction guide, detailing how to get from the table’s original state to its current state.
+- Recreate the state of a table at any point in time by starting with an original table, and processing only commits made prior to that point. 
+
+**Data Lineage and Debugging**
+
+- The transaction log offers users a verifiable data lineage that is useful for governance, audit and compliance purposes. 
+- It can also be used to trace the origin of an inadvertent change or a bug in a pipeline back to the exact action that caused it.
+
+# Delta Lake
+
+Example of a *write transaction*: read the data at table version `r` and attempt to write log record `r+1`
+
+- Read data at table version `r`, if required combine previous checkpoint and further log records
+- Write any new data into new files in the correct data directories, generating the object names using GUIDs.
   - This step can happen in parallel
   - At the end, these objects are ready to be referenced in a new log record.
-- Attempt to write the transaction’s log record into the r+1 .json log object, if no other client has written this object
-- **This step needs to be atomic** . If the step fails, the transaction can be retried; depending on the query’s semantics (optimistic concurrency)
-- Optionally, write a new .parquet checkpoint for log record r+1
+- Attempt to write the transaction's log record into the `r+1.json` log object, if no other client has written this object
+  - *This step needs to be atomic*: only 1 client should succeed.
+  - If the step fails, the transaction can be retried; depending on the query's semantics (optimistic concurrency)
+- Optionally, write a new `.parquet` checkpoint for log record `r+1`
 
-Creating the r+1 .json record, needs to be atomic: only 1 client should succeed. Not all large-scale storage systems have an atomic put operation
+Not all large-scale storage systems have an atomic put operation
 
 - Google Cloud Storage and Azure Blob Store support atomic put-if-absent operations
 - HDFS, we use atomic renames to rename a temporary file to the target name
@@ -480,10 +542,10 @@ Creating the r+1 .json record, needs to be atomic: only 1 client should succeed.
 
 (SQL) Format-independent optimizations are
 
-- **Caching**: When using a transactional metadata layer such as Delta Lake, it is safe for a Lakehouse system to cache files from the cloud object store on faster storage devices such as SSDs and RAM on the processing nodes
-- **Auxiliary data**: maintain column min-max statistics for each data file in the table within the same Parquet file used to store the transaction log, which enables data skipping optimizations when the base data is clustered by particular columns
-- **Data layout**:
-  - Record ordering: which records are clustered together and hence easiest to read together, e.g. ordering records using individual dimensions or space-filling curves such as Z-order
-  - Compression strategies differently for various groups of records, or other strategies
+- *Caching*: when using a transactional metadata layer such as Delta Lake, it is safe for a Lakehouse system to cache files from the cloud object store on faster storage devices such as SSDs and RAM on the processing nodes
+- *Auxiliary data*: maintain column min-max statistics for each data file in the table within the same Parquet file used to store the transaction log, which enables data skipping optimizations when the base data is clustered by particular columns
+- *Data layout*:
+  - *Record ordering*: which records are clustered together and hence easiest to read together, e.g. ordering records using individual dimensions or space-filling curves such as Z-order
+  - *Compression strategies* differently for various groups of records, or other strategies
 
-Offer a declarative version of the DataFrame APIs which maps data preparation computations into Spark SQL query plans and can benefit from logical optimizations
+# References
