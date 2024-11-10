@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -593,6 +658,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="organizing-the-data-lake" class="title-slide slide level1 center">
 <h1>Organizing the data lake</h1>
+
+</section>
+
+<section id="organizing-the-data-lake-1" class="title-slide slide level1 center">
+<h1>Organizing the data lake</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>Having consistent principles on how to organize your data is important</p>
@@ -608,7 +678,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="organizing-the-data-lake-1" class="title-slide slide level1 center">
+<section id="organizing-the-data-lake-2" class="title-slide slide level1 center">
 <h1>Organizing the data lake</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -632,7 +702,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="organizing-the-data-lake-2" class="title-slide slide level1 center">
+<section id="organizing-the-data-lake-3" class="title-slide slide level1 center">
 <h1>Organizing the data lake</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -657,7 +727,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="organizing-the-data-lake-3" class="title-slide slide level1 center">
+<section id="organizing-the-data-lake-4" class="title-slide slide level1 center">
 <h1>Organizing the data lake</h1>
 <table>
 <colgroup>
@@ -702,7 +772,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </section>
 
-<section id="organizing-the-data-lake-4" class="title-slide slide level1 center">
+<section id="organizing-the-data-lake-5" class="title-slide slide level1 center">
 <h1>Organizing the data lake</h1>
 <p>Alternative organizations are available</p>
 <div class="columns">
@@ -717,7 +787,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="organizing-the-data-lake-5" class="title-slide slide level1 center">
+<section id="organizing-the-data-lake-6" class="title-slide slide level1 center">
 <h1>Organizing the data lake</h1>
 <p>Use folders to organize data inside areas into a logical structure</p>
 <ul>
@@ -752,6 +822,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-lakehouse" class="title-slide slide level1 center">
 <h1>Data Lakehouse</h1>
+
+</section>
+
+<section id="data-lakehouse-1" class="title-slide slide level1 center">
+<h1>Data Lakehouse</h1>
 <p>Combine the key benefits of data lakes and data warehouses</p>
 <ul>
 <li>Low-cost storage in an open format accessible by a variety of systems from the former</li>
@@ -762,10 +837,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p><em>Key question: can we combine these benefits in an effective way?</em></p>
 <ul>
-<li><strong>Lakehouses</strong> are a good fit for cloud environments with separate compute and storage
-<ul>
-<li>Computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while accessing storage data</li>
-</ul></li>
+<li><strong>Lakehouses</strong> are a good fit for cloud environments with separate compute and storage</li>
+<li>Applications can run on-demand on separate computing nodes while accessing data in storage nodes</li>
 </ul>
 </section>
 
@@ -773,9 +846,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Data Independence</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Data independence can be explained using the three-schema architecture</p>
+<p><strong>Data independence</strong>: modify the schema at one level of the database system without altering the schema at the next higher level</p>
 <ul>
-<li>Data independence: modify the schema at one level of the database system without altering the schema at the next higher level</li>
+<li><p>It can be explained using the three-schema architecture</p></li>
+<li><p>Data independence:</p></li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides194.png"></p>
@@ -815,13 +889,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li><em>Schema on read</em> postpones the structuring of data to the time of analysis or reading</li>
 </ul></li>
-<li>The use of <em>open formats</em> also made data lake data directly accessible to a wide range of other analytics engines, such as machine learning systems
-<ul>
-<li>An <em>open file format</em> is a file format for storing digital data,[1][2] defined by an openly published specification usually maintained by a standards organization, and which can be used and implemented by anyone.</li>
-</ul></li>
-<li>From 2015 onwards, cloud data lakes, such as S3, ADLS and GCS, started replacing HDFS
+<li>From 2015 onwards, cloud data lakes, such as S3 and GCS, started replacing HDFS
 <ul>
 <li>Superior durability (often &gt;10 nines), geo-replication, and most importantly, extremely low cost</li>
+</ul></li>
+<li>The use of <em>open formats</em> also made data lake data directly accessible to a wide range of other analytics engines, such as machine learning systems
+<ul>
+<li>An <em>open file format</em> is a file format for storing digital data, defined by an openly published specification usually maintained by a standards organization, and which can be used and implemented by anyone.</li>
 </ul></li>
 <li>A small subset of data in the lake would later be ETLed to a downstream data warehouse
 <ul>
@@ -841,12 +915,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Juliana Freire, keynote @ EDBT 2023</p>
 </section>
 
-<section id="data-lakehouse-1" class="title-slide slide level1 center">
+<section id="data-lakehouse-2" class="title-slide slide level1 center">
 <h1>Data Lakehouse</h1>
 <p>A two-tier architecture is highly complex for users</p>
 <ul>
-<li>(Optional) Data is first ETLed into lakes, …</li>
-<li>… and then ELTed into warehouses</li>
+<li>(Optional) Data is first <em>ETLed</em> into lakes, …</li>
+<li>… and then <em>ELTed</em> into warehouses</li>
 <li>Enterprise use cases now include advanced analytics such as machine learning, for which warehouses are not ideal</li>
 </ul>
 <p>(Some) main problems:</p>
@@ -861,7 +935,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="data-lakehouse-2" class="title-slide slide level1 center">
+<section id="data-lakehouse-3" class="title-slide slide level1 center">
 <h1>Data Lakehouse</h1>
 <p>Idea</p>
 <ul>
@@ -872,7 +946,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <img data-src="imgs/slides196.png" class="r-stretch quarto-figure-center"><p class="caption">Lakehouse</p></section>
 
-<section id="data-lakehouse-3" class="title-slide slide level1 center">
+<section id="data-lakehouse-4" class="title-slide slide level1 center">
 <h1>Data Lakehouse</h1>
 <p>Metadata alone is insufficient to achieve good performance, challenges:</p>
 <ul>
@@ -995,6 +1069,30 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="delta-lake-4" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
+<p><strong>Optimize</strong>: delta lake can improve the speed of read queries from a table by coalescing small files into larger ones.</p>
+<ul>
+<li><em>Bin-packing optimization</em> is idempotent, meaning that if it is run twice on the same dataset, the second run has no effect.</li>
+<li><em>Bin-packing</em> aims to produce evenly-balanced data files with respect to their size on disk, but not necessarily number of tuples.
+<ul>
+<li>However, the two measures are most often correlated.</li>
+</ul></li>
+<li>Python and Scala APIs for executing OPTIMIZE operation are available from Delta Lake 2.0 and above.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">from</span> delta.tables <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb1-2"><a href=""></a>deltaTable <span class="op">=</span> DeltaTable.forPath(spark, pathToTable)  <span class="co"># For path-based tables</span></span>
+<span id="cb1-3"><a href=""></a><span class="co"># For Hive metastore-based tables: deltaTable = DeltaTable.forName(spark, tableName)</span></span>
+<span id="cb1-4"><a href=""></a>deltaTable.optimize().executeCompaction()</span>
+<span id="cb1-5"><a href=""></a><span class="co"># If you have a large amount of data and only want to optimize a subset of it, you can specify an optional partition predicate using `where`</span></span>
+<span id="cb1-6"><a href=""></a>deltaTable.optimize().where(<span class="st">"date='2021-11-18'"</span>).executeCompaction()</span></code></pre></div>
+<p><em>Auto compaction</em> combines small files within Delta table partitions to automatically reduce small file problems.</p>
+<ul>
+<li>Occur after a write to a table has succeeded and runs synchronously on the cluster that has performed the write.</li>
+<li>Compact files that haven’t been compacted previously.</li>
+</ul>
+</section>
+
+<section id="delta-lake-5" class="title-slide slide level1 center">
+<h1>Delta Lake</h1>
 <p>Example of a <em>write transaction</em>: read the data at table version <code>r</code> and attempt to write log record <code>r+1</code></p>
 <ul>
 <li>Read data at table version <code>r</code>, if required combine previous checkpoint and further log records</li>
@@ -1017,6 +1115,22 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Amazon S3 need ad-hoc protocols</li>
 </ul>
 </section>
+
+<section id="delta-lake-6" class="title-slide slide level1 center">
+<h1>Delta Lake</h1>
+<p>Check the scalability with respect to the length of the log</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="cf">while</span> i<span class="op">++</span> <span class="op">&lt;</span> <span class="dv">20</span><span class="er">K</span>:</span>
+<span id="cb2-2"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-3"><a href=""></a>        spark.sql(<span class="st">"select sum(quantity) from lineitem"</span>)  <span class="co"># Read the whole fact</span></span>
+<span id="cb2-4"><a href=""></a>    spark.sql(<span class="st">"insert (500K tuple) into lineitem"</span>)  <span class="co"># Append new tuples</span></span>
+<span id="cb2-5"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>: OPTIMIZE</span></code></pre></div>
+
+<img data-src="imgs/deltalake4.png" class="r-stretch quarto-figure-center"><p class="caption">Scalability</p></section>
+
+<section id="delta-lake-7" class="title-slide slide level1 center">
+<h1>Delta Lake</h1>
+
+<img alt="Scaling out performance" src="imgs/deltalake5.png" class="center r-stretch"></section>
 
 <section id="lakehouse" class="title-slide slide level1 center">
 <h1>Lakehouse</h1>
