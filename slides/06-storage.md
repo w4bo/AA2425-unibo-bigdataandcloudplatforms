@@ -364,10 +364,10 @@ Data independence can be explained using the three-schema architecture
 
 - The data lake is *schema-on-read* and stores any data at low cost
   - *Schema on read* postpones the structuring of data to the time of analysis or reading 
-- The use of *open formats* also made data lake data directly accessible to a wide range of other analytics engines, such as machine learning systems
-  - An *open file format* is a file format for storing digital data,[1][2] defined by an openly published specification usually maintained by a standards organization, and which can be used and implemented by anyone.
-- From 2015 onwards, cloud data lakes, such as S3, ADLS and GCS, started replacing HDFS
+- From 2015 onwards, cloud data lakes, such as S3 and GCS, started replacing HDFS
   - Superior durability (often >10 nines), geo-replication, and most importantly, extremely low cost
+- The use of *open formats* also made data lake data directly accessible to a wide range of other analytics engines, such as machine learning systems
+  - An *open file format* is a file format for storing digital data, defined by an openly published specification usually maintained by a standards organization, and which can be used and implemented by anyone.
 - A small subset of data in the lake would later be ETLed to a downstream data warehouse
   - *Problems*?
 
@@ -385,8 +385,8 @@ Juliana Freire, keynote @ EDBT 2023
 
 A two-tier architecture is highly complex for users
 
-- (Optional) Data is first ETLed into lakes, ...
-- ... and then ELTed into warehouses
+- (Optional) Data is first *ETLed* into lakes, ...
+- ... and then *ELTed* into warehouses
 - Enterprise use cases now include advanced analytics such as machine learning, for which warehouses are not ideal
 
 (Some) main problems:
@@ -521,6 +521,29 @@ Imagine that we’ve created commits up to `000007.json` and that Spark has cach
 
 # Delta Lake
 
+**Optimize**: delta lake can improve the speed of read queries from a table by coalescing small files into larger ones.
+
+- *Bin-packing optimization* is idempotent, meaning that if it is run twice on the same dataset, the second run has no effect.
+- *Bin-packing* aims to produce evenly-balanced data files with respect to their size on disk, but not necessarily number of tuples.
+  - However, the two measures are most often correlated.
+- Python and Scala APIs for executing OPTIMIZE operation are available from Delta Lake 2.0 and above.
+
+```python
+from delta.tables import *
+deltaTable = DeltaTable.forPath(spark, pathToTable)  # For path-based tables
+# For Hive metastore-based tables: deltaTable = DeltaTable.forName(spark, tableName)
+deltaTable.optimize().executeCompaction()
+# If you have a large amount of data and only want to optimize a subset of it, you can specify an optional partition predicate using `where`
+deltaTable.optimize().where("date='2021-11-18'").executeCompaction()
+```
+
+*Auto compaction* combines small files within Delta table partitions to automatically reduce small file problems.
+
+- Occur after a write to a table has succeeded and runs synchronously on the cluster that has performed the write.
+- Compact files that haven’t been compacted previously.
+
+# Delta Lake
+
 Example of a *write transaction*: read the data at table version `r` and attempt to write log record `r+1`
 
 - Read data at table version `r`, if required combine previous checkpoint and further log records
@@ -537,6 +560,24 @@ Not all large-scale storage systems have an atomic put operation
 - Google Cloud Storage and Azure Blob Store support atomic put-if-absent operations
 - HDFS, we use atomic renames to rename a temporary file to the target name
 - Amazon S3 need ad-hoc protocols
+
+# Delta Lake
+
+Check the scalability with respect to the length of the log
+
+```python
+while i++ < 20K:
+    if i % 10 == 0:
+        spark.sql("select sum(quantity) from lineitem")  # Read the whole fact
+    spark.sql("insert (500K tuple) into lineitem")  # Append new tuples
+    if i % 100 == 0: OPTIMIZE
+```
+
+![Scalability](imgs/deltalake4.png)
+
+# Delta Lake
+
+<img alt="Scaling out performance" src="imgs/deltalake5.png" class="center" />
 
 # Lakehouse
 
