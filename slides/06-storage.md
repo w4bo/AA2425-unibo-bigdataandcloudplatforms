@@ -189,6 +189,8 @@ Two types of actions:
 
 # Organizing the data lake
 
+# Organizing the data lake
+
 :::: {.columns}
 ::: {.column width=60%}
 
@@ -315,6 +317,8 @@ Different areas will have slightly different folder structures
 
 # Data Lakehouse
 
+# Data Lakehouse
+
 Combine the key benefits of data lakes and data warehouses
 
 - Low-cost storage in an open format accessible by a variety of systems from the former
@@ -324,16 +328,18 @@ Combine the key benefits of data lakes and data warehouses
 *Key question: can we combine these benefits in an effective way?*
 
 - **Lakehouses** are a good fit for cloud environments with separate compute and storage
-  - Computing applications can run on-demand on separate computing nodes (e.g., a GPU cluster for ML) while accessing storage data
+- Applications can run on-demand on separate computing nodes while accessing data in storage nodes
 
 # Data Independence
 
 :::: {.columns}
 ::: {.column width=60%}
 
-Data independence can be explained using the three-schema architecture
+**Data independence**: modify the schema at one level of the database system without altering the schema at the next higher level
 
-- Data independence: modify the schema at one level of the database system without altering the schema at the next higher level
+- It can be explained using the three-schema architecture
+
+- Data independence: 
 
 :::
 ::: {.column width=40%}
