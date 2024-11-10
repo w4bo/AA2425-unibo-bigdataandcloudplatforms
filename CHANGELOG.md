@@ -1,3 +1,17 @@
+## [1.0.26](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.25...1.0.26) (2024-11-10)
+
+### Dependency updates
+
+* **deps:** update dependency semantic-release-preconfigured-conventional-commits to v1.1.115 ([#31](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/issues/31)) ([0bf258e](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/0bf258ef3f46e596f1c1fc49e60596149a2fdd18))
+
+### Bug Fixes
+
+* storage ([d39bf9b](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/d39bf9b741180f1b253a0c8c57cf7913a6add2cb))
+
+### Build and continuous integration
+
+* **deps:** update jamesives/github-pages-deploy-action action to v4.6.9 ([#32](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/issues/32)) ([8e49995](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/8e49995f0d27519ff5e507797243045899e49c50))
+
 ## [1.0.25](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.24...1.0.25) (2024-11-04)
 
 ### Bug Fixes
