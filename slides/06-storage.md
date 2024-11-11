@@ -679,12 +679,15 @@ Imagine that we’ve created commits up to `000007.json` and that Spark has cach
 
 # Delta Lake
 
+:::: {.columns}
+::: {.column width=60%}
+
 **Optimize**: Delta Lake can improve the speed of read queries from a table by coalescing small files into larger ones.
 
 - *Bin-packing optimization* is idempotent, meaning that if it is run twice on the same dataset, the second run has no effect.
-- *Bin-packing* aims to produce evenly-balanced data files with respect to their size on disk, but not necessarily a number of tuples.
+- *Bin-packing* aims to produce evenly-balanced data files with respect to their size on disk, but not necessarily balanced \#tuples.
   - However, the two measures are most often correlated.
-- Python and Scala APIs for executing OPTIMIZE operations are available from Delta Lake 2.0 and above.
+- Python and Scala APIs for executing OPTIMIZE operations are available.
 
 ```python
 from delta.tables import *
@@ -695,10 +698,18 @@ deltaTable.optimize().executeCompaction()
 deltaTable.optimize().where("date='2021-11-18'").executeCompaction()
 ```
 
-*Auto compaction* combines small files within Delta table partitions to automatically reduce small file problems.
+*Auto compaction* automatically reduce small file problems.
 
 - Occur after a write to a table has succeeded and runs synchronously on the cluster that has performed the write.
 - Compact files that haven’t been compacted previously.
+
+:::
+::: {.column width=40%}
+
+![Optimize](imgs/deltalake6.svg)
+
+:::
+::::
 
 # Delta Lake
 
@@ -739,7 +750,7 @@ while i < 20000:
 
 <img alt="Scaling out performance" src="imgs/deltalake5.png" class="center" />
 
-# Lakehouse
+# Delta Lake
 
 Format-independent optimizations are
 
@@ -749,5 +760,19 @@ Format-independent optimizations are
   - *Record ordering*: records clustered together are easiest to read together
     - E.g. ordering records using individual dimensions or space-filling curves such as Z-order
   - *Compression strategies* differently for various groups of records or other strategies
+
+See also [I spent 5 hours understanding more about the delta lake table format](https://blog.det.life/i-spent-5-hours-understanding-more-about-the-delta-lake-table-format-b8516c5091eb)
+
+# Lakehouse
+
+A **medallion architecture** is a data design pattern used to logically organize data in a lakehouse, with the goal of incrementally and progressively improving the structure and quality of data as it flows through each layer of the architecture 
+
+![Medallion architecture](imgs/building-data-pipelines-with-delta-lake-120823.png)
+
+# Lakehouse
+
+Example of usage
+
+<img src="imgs/deltalake7.svg" class="center" />
 
 # References
