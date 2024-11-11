@@ -375,16 +375,6 @@ Combine the key benefits of data lakes and data warehouses
 - A small subset of data in the lake would later be ETLed to a downstream data warehouse
   - *Problems*?
 
-# Dataset Search for Data Discovery, Augmentation, and Explanation
-
-**Is there a real need for many unstructured and integrated datasets?**
-
-- Recent years have seen an explosion in our ability to collect and catalog data about our environment and society
-- Governments and organizations are increasingly making data available on the Web and in various repositories and data lakes
-- *This opportunity is often missed due to a central technical barrier*: it is currently nearly impossible for domain experts to weed through the vast amount of available information to discover datasets that are needed for their specific application
-
-Juliana Freire, keynote @ EDBT 2023
-
 # Data Lakehouse
 
 A two-tier architecture is highly complex for users
@@ -400,6 +390,16 @@ A two-tier architecture is highly complex for users
 - *Limited support for advanced analytics*: businesses want to ask predictive questions using their warehousing data
   - E.g., "Which customers should I offer discounts to?" 
   - E.g., process large datasets using complex non-SQL code
+
+# Dataset Search for Data Discovery, Augmentation, and Explanation
+
+**Is there a real need for many unstructured and integrated datasets?**
+
+- Recent years have seen an explosion in our ability to collect and catalog data about our environment and society
+- Governments and organizations are increasingly making data available on the Web and in various repositories and data lakes
+- *This opportunity is often missed due to a central technical barrier*: it is currently nearly impossible for domain experts to weed through the vast amount of available information to discover datasets that are needed for their specific application
+
+Juliana Freire, keynote @ EDBT 2023
 
 # Data Lakehouse
 
