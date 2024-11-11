@@ -339,8 +339,6 @@ Combine the key benefits of data lakes and data warehouses
 
 - It can be explained using the three-schema architecture
 
-- Data independence: 
-
 :::
 ::: {.column width=40%}
 
@@ -466,7 +464,9 @@ Whenever a user modifies a table (such as an INSERT, UPDATE, or DELETE), Delta L
 
 # Delta Lake
 
-Content of `00000000000000000000.json`
+Create a table of `suppliers`
+
+- Content of `00000000000000000000.json`
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -476,7 +476,7 @@ Content of `00000000000000000000.json`
     "commitInfo": {
         "timestamp": 1709133408152,
         "userId": "8355321721036096",
-        "userName": "aws_club_data_lakehouse@iconsulting.biz",
+        "userName": "user1@foo.bar",
         "operation": "CREATE TABLE AS SELECT",
         "operationParameters": {
             "partitionBy": "[]",
@@ -547,7 +547,9 @@ Content of `00000000000000000000.json`
 
 # Delta Lake
 
-Content of `00000000000000000009.json`
+Add a new `supplier`
+
+- Content of `00000000000000000009.json`
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -557,7 +559,7 @@ Content of `00000000000000000009.json`
     "commitInfo": {
         "timestamp": 1709134798441,
         "userId": "8047431628735957",
-        "userName": "m.francia@unibo.it",
+        "userName": "user2@foo.bar",
         "operation": "WRITE",
         "operationParameters": {
             "mode": "Append",
