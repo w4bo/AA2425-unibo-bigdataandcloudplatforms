@@ -587,10 +587,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Unified data architecture
 <ul>
-<li>Build a multi-tenant environment, where many users can bring their own data</li>
+<li>Build a multi-tenant environment, where many users can bring their data</li>
 <li>Improve both cost and data governance over traditional solutions</li>
 </ul></li>
-<li><em>Decoupling of storage from compute and data processing</em>
+<li><em>Decoupling of storage from computing and data processing</em>
 <ul>
 <li>You can cost-effectively store all data types in their native formats</li>
 <li>Then, launch transformations as you need</li>
@@ -608,7 +608,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><em>Infrequent (rapid) access</em></li>
 <li><em>One Zone-IA</em>: lower-cost option for infrequently accessed data that do not require high availability and resilience</li>
 <li><em>Glacier</em>: low-cost storage class for data archiving, three retrieval options that range from a few minutes to hours</li>
-<li><em>Deep Glacier</em>: long-term retention for data accessed once/twice in a year.
+<li><em>Deep Glacier</em>: long-term retention for data accessed once/twice a year.
 <ul>
 <li>E.g., retain data sets for 10 years or longer</li>
 </ul></li>
@@ -669,11 +669,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>To build standardized pipelines with the same design with regard to where read/write data</li>
 <li>Standardization makes it easier to manage your pipelines at scale</li>
-<li>Helps data users search for data in the storage and understand exactly to find what they need</li>
+<li>Helps data users search for data in the storage and understand exactly what they need</li>
 <li>Decoupling storage from processing</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/261.svg"></p>
+<figcaption>Areas</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -697,7 +702,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Useful for debugging and testing</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/262.svg"></p>
+<figcaption>Areas</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -713,16 +723,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><strong>Pass-through job</strong></p>
 <ul>
 <li>Copy data from SA to PA and then into DWH without applying any business logic</li>
-<li>Having a data set in the data warehouse and PA that is an exact replica can be helpful when debugging any issues with the business logic</li>
+<li>Having a data set in the data warehouse and PA that is a replica can be helpful when debugging any issues with the business logic</li>
 </ul>
 <p><strong>Cloud data warehouse (DWH)</strong></p>
 <p><strong>Failed area (FA)</strong></p>
 <ul>
 <li>You need to be able to deal with all kinds of errors and failures</li>
-<li>There might be bugs in the pipeline code, cloud resources may fail</li>
+<li>There might be bugs in the pipeline code, and cloud resources may fail</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/263.svg"></p>
+<figcaption>Areas</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -799,19 +814,19 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Each data pipeline should have a name that reflects its purpose. For example
 <ul>
-<li>A pipeline that takes data from the LA, applies common processing steps, and saves data into SA</li>
+<li>A pipeline that takes data from the LA, applies common processing steps and saves data into SA</li>
 <li>You will also have one for archiving data into AA</li>
 </ul></li>
 </ul></li>
 <li><em>Data source name</em>
 <ul>
-<li>Ingestion layer will assign a name to each data source you bring into the platform</li>
+<li>The ingestion layer will assign a name to each data source you bring into the platform</li>
 </ul></li>
 <li><em>BatchId</em>
 <ul>
 <li>Unique identifier for any batch of data that is saved into LA</li>
 <li>E.g., Since only ingestion can write to LA, it is its responsibility to generate this identifier</li>
-<li>A common choice for this type of an identifier is a Universally Unique Identifier (UUID)</li>
+<li>A common choice for this type of identifier is a Universally Unique Identifier (UUID)</li>
 </ul></li>
 </ul>
 <p>Different areas will have slightly different folder structures</p>
@@ -835,9 +850,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>ACID transactions, data versioning, auditing, indexing, caching, and query optimization.</li>
 </ul></li>
 </ul>
-<p><em>Key question: can we combine these benefits in an effective way?</em></p>
+<p><em>Key question: can we effectively combine these benefits?</em></p>
 <ul>
-<li><strong>Lakehouses</strong> are a good fit for cloud environments with separate compute and storage</li>
+<li><strong>Lakehouses</strong> are a good fit for cloud environments with separate computing and storage</li>
 <li>Applications can run on-demand on separate computing nodes while accessing data in storage nodes</li>
 </ul>
 </section>
@@ -864,7 +879,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="data-lakehouse-armbrust2021lakehouse-1" class="title-slide slide level1 center">
 <h1>Data Lakehouse <span class="citation" data-cites="armbrust2021lakehouse">(<a href="#/references" role="doc-biblioref" onclick="">Armbrust et al. 2021</a>)</span></h1>
-<p><strong>1st generation systems</strong>: data warehousing started with helping business decision makers get analytical insights</p>
+<p><strong>1st generation systems</strong>: data warehousing started with helping business decision-makers get analytical insights</p>
 <ul>
 <li>Data in warehouses (DWH) would be written with <em>schema-on-write</em> to ensure that data is optimized for BI applications
 <ul>
@@ -872,7 +887,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 <li>Several challenges
 <ul>
-<li>DWH typically couple compute and storage into an on-premises appliance
+<li>DWH typically couples compute and storage into an on-premises appliance
 <ul>
 <li>This forced enterprises to provision and pay for the peak of user load and data under management, very costly</li>
 </ul></li>
@@ -906,7 +921,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="dataset-search-for-data-discovery-augmentation-and-explanation" class="title-slide slide level1 center">
 <h1>Dataset Search for Data Discovery, Augmentation, and Explanation</h1>
-<p><strong>Is there a real need for many unstructured and integrated dataset?</strong></p>
+<p><strong>Is there a real need for many unstructured and integrated datasets?</strong></p>
 <ul>
 <li>Recent years have seen an explosion in our ability to collect and catalog data about our environment and society</li>
 <li>Governments and organizations are increasingly making data available on the Web and in various repositories and data lakes</li>
@@ -929,7 +944,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><em>Staleness</em>: the data in the warehouse is stale compared to that of the data lake, with new data frequently taking days to load</li>
 <li><em>Limited support for advanced analytics</em>: businesses want to ask predictive questions using their warehousing data
 <ul>
-<li>E.g., “which customers should I offer discounts to?”</li>
+<li>E.g., “Which customers should I offer discounts to?”</li>
 <li>E.g., process large datasets using complex non-SQL code</li>
 </ul></li>
 </ul>
@@ -954,7 +969,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Storing hot data on fast devices such as SSDs, maintaining statistics, building efficient indexes, etc.</li>
 </ul></li>
-<li><em>In a datalake</em>, but it is possible to implement other optimizations that leave the data files unchanged</li>
+<li><em>In a data lake</em>, but it is possible to implement other optimizations that leave the data files unchanged</li>
 <li>Most <em>cloud object stores are merely key-value stores</em>, with no cross-key consistency</li>
 <li><em>Multi-object updates are not atomic</em>, there is no isolation between queries
 <ul>
@@ -962,7 +977,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul></li>
 <li>For large tables with millions of objects, <em>metadata operations are expensive</em>
 <ul>
-<li>The latency of cloud object stores is so much higher that these data skipping checks can take longer than the actual query</li>
+<li>The latency of cloud object stores is so much higher that these data-skipping checks can take longer than the actual query</li>
 </ul></li>
 </ul>
 </section>
@@ -996,18 +1011,18 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Delta Lake</h1>
 <p>Changes are recorded as ordered, atomic commits in the transaction log.</p>
 <ul>
-<li>Each commit is written out as a JSON file, starting with <code>000000.json</code>.</li>
+<li>Each commit is written as a JSON file, starting with <code>000000.json</code>.</li>
 <li>Additional changes to the table generate subsequent JSON files in ascending numerical order</li>
 <li>Each log record object (e.g., <code>000003.json</code>) contains an array of actions to apply to the previous table version</li>
 </ul>
-<p>Whenever a user performs an operation to modify a table (such as an INSERT, UPDATE or DELETE), Delta Lake breaks that operation down into a series of discrete steps composed of one or more of the actions below.</p>
+<p>Whenever a user modifies a table (such as an INSERT, UPDATE, or DELETE), Delta Lake breaks that operation down into a series of discrete steps composed of one or more of the actions below.</p>
 <ul>
 <li>Add file - adds a data file.</li>
 <li>Remove file - removes a data file.</li>
-<li>Update metadata - Updates the table’s metadata (e.g., changing the table’s name, schema or partitioning).</li>
+<li>Update metadata - Updates the table’s metadata (e.g., changing the table’s name, schema, or partitioning).</li>
 <li>Set transaction - Records that a structured streaming job has committed a micro-batch with the given ID.</li>
 <li>Change protocol - enables new features by switching the Delta Lake transaction log to the newest software protocol.</li>
-<li>Commit info - Contains information around the commit, which operation was made, from where and at what time.</li>
+<li>Commit info - Contains information around the commit, which operation was made, from where, and when.</li>
 </ul>
 </section>
 
@@ -1017,7 +1032,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="column" style="width:50%;">
 <p>Once we have made several commits to the transaction log, Delta Lake saves a <strong>checkpoint file</strong> in Parquet format in <code>_delta_log</code></p>
 <ul>
-<li>Delta Lake automatically generates checkpoint as needed to maintain good read performance.</li>
+<li>Delta Lake automatically generates checkpoints as needed to maintain good read performance.</li>
 <li>Checkpoints store all the non-redundant actions in the table’s log up to a certain log record ID, in Parquet format</li>
 <li>Some sets of actions are redundant and can be removed</li>
 <li>Read the <em>last checkpoint</em> object in the table’s log directory, if it exists, to obtain a recent checkpoint ID</li>
@@ -1048,7 +1063,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>In the meantime, other writers have written new data to the table, adding commits up to <code>0000012.json</code>.</li>
 <li>To incorporate these new transactions, Spark runs a <code>listFrom</code> version 7 operation to see the new changes to the table.</li>
 <li>Rather than processing all of the intermediate JSON files …</li>
-<li>… Spark skips ahead to the most recent checkpoint file, since it contains the entire state of the table at commit <code>#10</code>.</li>
+<li>… Spark skips ahead to the most recent checkpoint file since it contains the entire state of the table at commit <code>#10</code>.</li>
 </ul>
 </section>
 
@@ -1058,25 +1073,25 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Every table is the result of the sum total of all of the commits recorded in the Delta Lake transaction log.</li>
 <li>The log provides a step-by-step instruction guide, detailing how to get from the table’s original state to its current state.</li>
-<li>Recreate the state of a table at any point in time by starting with an original table, and processing only commits made prior to that point.</li>
+<li>Recreate the state of a table at any point in time by starting with an original table, and processing only commits made before that point.</li>
 </ul>
 <p><strong>Data Lineage and Debugging</strong></p>
 <ul>
-<li>The transaction log offers users a verifiable data lineage that is useful for governance, audit and compliance purposes.</li>
+<li>The transaction log offers users a verifiable data lineage that is useful for governance, audit, and compliance purposes.</li>
 <li>It can also be used to trace the origin of an inadvertent change or a bug in a pipeline back to the exact action that caused it.</li>
 </ul>
 </section>
 
 <section id="delta-lake-4" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
-<p><strong>Optimize</strong>: delta lake can improve the speed of read queries from a table by coalescing small files into larger ones.</p>
+<p><strong>Optimize</strong>: Delta Lake can improve the speed of read queries from a table by coalescing small files into larger ones.</p>
 <ul>
 <li><em>Bin-packing optimization</em> is idempotent, meaning that if it is run twice on the same dataset, the second run has no effect.</li>
-<li><em>Bin-packing</em> aims to produce evenly-balanced data files with respect to their size on disk, but not necessarily number of tuples.
+<li><em>Bin-packing</em> aims to produce evenly-balanced data files with respect to their size on disk, but not necessarily a number of tuples.
 <ul>
 <li>However, the two measures are most often correlated.</li>
 </ul></li>
-<li>Python and Scala APIs for executing OPTIMIZE operation are available from Delta Lake 2.0 and above.</li>
+<li>Python and Scala APIs for executing OPTIMIZE operations are available from Delta Lake 2.0 and above.</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">from</span> delta.tables <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb1-2"><a href=""></a>deltaTable <span class="op">=</span> DeltaTable.forPath(spark, pathToTable)  <span class="co"># For path-based tables</span></span>
@@ -1112,18 +1127,20 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Google Cloud Storage and Azure Blob Store support atomic put-if-absent operations</li>
 <li>HDFS, we use atomic renames to rename a temporary file to the target name</li>
-<li>Amazon S3 need ad-hoc protocols</li>
+<li>Amazon S3 needs ad-hoc protocols</li>
 </ul>
 </section>
 
 <section id="delta-lake-6" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
 <p>Check the scalability with respect to the length of the log</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="cf">while</span> i<span class="op">++</span> <span class="op">&lt;</span> <span class="dv">20</span><span class="er">K</span>:</span>
-<span id="cb2-2"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb2-3"><a href=""></a>        spark.sql(<span class="st">"select sum(quantity) from lineitem"</span>)  <span class="co"># Read the whole fact</span></span>
-<span id="cb2-4"><a href=""></a>    spark.sql(<span class="st">"insert (500K tuple) into lineitem"</span>)  <span class="co"># Append new tuples</span></span>
-<span id="cb2-5"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>: OPTIMIZE</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-2"><a href=""></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">20000</span>:</span>
+<span id="cb2-3"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-4"><a href=""></a>        spark.sql(<span class="st">"select sum(quantity) from lineitem"</span>)  <span class="co"># Read the whole fact</span></span>
+<span id="cb2-5"><a href=""></a>    spark.sql(<span class="st">"insert (500K tuple) into lineitem"</span>)  <span class="co"># Append new tuples</span></span>
+<span id="cb2-6"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>: OPTIMIZE</span>
+<span id="cb2-7"><a href=""></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
 
 <img data-src="imgs/deltalake4.png" class="r-stretch quarto-figure-center"><p class="caption">Scalability</p></section>
 
@@ -1141,7 +1158,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><em>Data layout</em>:
 <ul>
 <li><em>Record ordering</em>: which records are clustered together and hence easiest to read together, e.g.&nbsp;ordering records using individual dimensions or space-filling curves such as Z-order</li>
-<li><em>Compression strategies</em> differently for various groups of records, or other strategies</li>
+<li><em>Compression strategies</em> differently for various groups of records or other strategies</li>
 </ul></li>
 </ul>
 </section>
