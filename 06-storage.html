@@ -1219,14 +1219,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="delta-lake-7" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
+<div class="columns">
+<div class="column" style="width:60%;">
 <p><strong>Optimize</strong>: Delta Lake can improve the speed of read queries from a table by coalescing small files into larger ones.</p>
 <ul>
 <li><em>Bin-packing optimization</em> is idempotent, meaning that if it is run twice on the same dataset, the second run has no effect.</li>
-<li><em>Bin-packing</em> aims to produce evenly-balanced data files with respect to their size on disk, but not necessarily a number of tuples.
+<li><em>Bin-packing</em> aims to produce evenly-balanced data files with respect to their size on disk, but not necessarily balanced #tuples.
 <ul>
 <li>However, the two measures are most often correlated.</li>
 </ul></li>
-<li>Python and Scala APIs for executing OPTIMIZE operations are available from Delta Lake 2.0 and above.</li>
+<li>Python and Scala APIs for executing OPTIMIZE operations are available.</li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="im">from</span> delta.tables <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb5-2"><a href=""></a>deltaTable <span class="op">=</span> DeltaTable.forPath(spark, pathToTable)  <span class="co"># For path-based tables</span></span>
@@ -1234,11 +1236,20 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb5-4"><a href=""></a>deltaTable.optimize().executeCompaction()</span>
 <span id="cb5-5"><a href=""></a><span class="co"># If you have a large amount of data and only want to optimize a subset of it, you can specify an optional partition predicate using `where`</span></span>
 <span id="cb5-6"><a href=""></a>deltaTable.optimize().where(<span class="st">"date='2021-11-18'"</span>).executeCompaction()</span></code></pre></div>
-<p><em>Auto compaction</em> combines small files within Delta table partitions to automatically reduce small file problems.</p>
+<p><em>Auto compaction</em> automatically reduce small file problems.</p>
 <ul>
 <li>Occur after a write to a table has succeeded and runs synchronously on the cluster that has performed the write.</li>
 <li>Compact files that haven’t been compacted previously.</li>
 </ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/deltalake6.svg"></p>
+<figcaption>Optimize</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 <section id="delta-lake-8" class="title-slide slide level1 center">
@@ -1273,7 +1284,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb6-2"><a href=""></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">20000</span>:</span>
 <span id="cb6-3"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb6-4"><a href=""></a>        spark.sql(<span class="st">"select sum(quantity) from lineitem"</span>)  <span class="co"># Read the whole fact</span></span>
-<span id="cb6-5"><a href=""></a>    spark.sql(<span class="st">"insert (500K tuple) into lineitem"</span>)  <span class="co"># Append new tuples</span></span>
+<span id="cb6-5"><a href=""></a>    spark.sql(<span class="st">"insert (500K tuples) into lineitem"</span>)  <span class="co"># Append new tuples</span></span>
 <span id="cb6-6"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>: OPTIMIZE</span>
 <span id="cb6-7"><a href=""></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
 
@@ -1284,8 +1295,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <img alt="Scaling out performance" src="imgs/deltalake5.png" class="center r-stretch"></section>
 
-<section id="lakehouse" class="title-slide slide level1 center">
-<h1>Lakehouse</h1>
+<section id="delta-lake-11" class="title-slide slide level1 center">
+<h1>Delta Lake</h1>
 <p>Format-independent optimizations are</p>
 <ul>
 <li><em>Caching</em>: cache files from the cloud object store on faster storage devices such as SSDs and RAM on the processing nodes</li>
@@ -1299,7 +1310,20 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><em>Compression strategies</em> differently for various groups of records or other strategies</li>
 </ul></li>
 </ul>
+<p>See also <a href="https://blog.det.life/i-spent-5-hours-understanding-more-about-the-delta-lake-table-format-b8516c5091eb">I spent 5 hours understanding more about the delta lake table format</a></p>
 </section>
+
+<section id="lakehouse" class="title-slide slide level1 center">
+<h1>Lakehouse</h1>
+<p>A <strong>medallion architecture</strong> is a data design pattern used to logically organize data in a lakehouse, with the goal of incrementally and progressively improving the structure and quality of data as it flows through each layer of the architecture</p>
+
+<img data-src="imgs/building-data-pipelines-with-delta-lake-120823.png" class="r-stretch quarto-figure-center"><p class="caption">Medallion architecture</p></section>
+
+<section id="lakehouse-1" class="title-slide slide level1 center">
+<h1>Lakehouse</h1>
+<p>Example of usage</p>
+
+<img src="imgs/deltalake7.svg" class="center r-stretch"></section>
 
 <section id="references" class="title-slide slide level1 smaller scrollable">
 <h1>References</h1>
