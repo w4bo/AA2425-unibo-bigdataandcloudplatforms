@@ -466,6 +466,158 @@ Whenever a user modifies a table (such as an INSERT, UPDATE, or DELETE), Delta L
 
 # Delta Lake
 
+Content of `00000000000000000000.json`
+
+:::: {.columns}
+::: {.column width=50%}
+
+```json
+{
+    "commitInfo": {
+        "timestamp": 1709133408152,
+        "userId": "8355321721036096",
+        "userName": "aws_club_data_lakehouse@iconsulting.biz",
+        "operation": "CREATE TABLE AS SELECT",
+        "operationParameters": {
+            "partitionBy": "[]",
+            "description": null,
+            "isManaged": "false",
+            "properties": "{}",
+            "statsOnLoad": false
+        },
+        "notebook": {
+            "notebookId": "68312033830310"
+        },
+        "clusterId": "0112-095737-cgwksnoz",
+        "isolationLevel": "WriteSerializable",
+        "isBlindAppend": true,
+        "operationMetrics": {
+            "numFiles": "4",
+            "numOutputRows": "1000000",
+            "numOutputBytes": "79811576"
+        },
+        "tags": {
+            "restoresDeletedRows": "false"
+        },
+        "engineInfo": "Databricks-Runtime/13.3.x-scala2.12",
+        "txnId": "afc094e5-7096-40cb-b4f7-33e98c5d3a4b"
+    }
+}
+```
+
+:::
+::: {.column width=50%}
+
+```json
+{
+    "add": {
+        "path": "part-00000-d7654bfc-8169-41a7-a7fc-28586c8f73f9-c000.snappy.parquet",
+        "partitionValues": {},
+        "size": 20588082,
+        "modificationTime": 1709133407000,
+        "dataChange": true,
+        "stats": "{\"numRecords\":257994,\"minValues\":{\"s_suppkey\":1,\"s_name\":\"Supplier#000000001\",\"s_address\":\"  , Jd6qNPDAgz\",\"s_nationkey\":0,\"s_phone\":\"10-100-166-6237\",\"s_acctbal\":-999.94,\"s_comment\":\" Customer  blithely regular pint\"},\"maxValues\":{\"s_suppkey\":257994,\"s_name\":\"Supplier#000257994\",\"s_address\":\"zzyv9d9xGUF QcjHQG8gDjuLo pLBxBZ�\",\"s_nationkey\":24,\"s_phone\":\"34-999-987-5257\",\"s_acctbal\":9999.93,\"s_comment\":\"zzle. sometimes bold pinto beans�\"},\"nullCount\":{\"s_suppkey\":0,\"s_name\":0,\"s_address\":0,\"s_nationkey\":0,\"s_phone\":0,\"s_acctbal\":0,\"s_comment\":0}}",
+        "tags": {
+            "INSERTION_TIME": "1709133407000000",
+            "MIN_INSERTION_TIME": "1709133407000000",
+            "MAX_INSERTION_TIME": "1709133407000000",
+            "OPTIMIZE_TARGET_SIZE": "268435456"
+        }
+    }
+}
+{
+    "add": {
+        "path": "part-00001-758ed86b-1400-46b8-b73f-50c6ad4324f1-c000.snappy.parquet",
+        "partitionValues": {},
+        "size": 20516343,
+        "modificationTime": 1709133408000,
+        "dataChange": true,
+        "stats": "{\"numRecords\":257111,\"minValues\":{\"s_suppkey\":257995,\"s_name\":\"Supplier#000257995\",\"s_address\":\"   t2HGWJzQQcWUyx\",\"s_nationkey\":0,\"s_phone\":\"10-100-154-1322\",\"s_acctbal\":-999.96,\"s_comment\":\" Customer  blithe requesComplain\"},\"maxValues\":{\"s_suppkey\":515105,\"s_name\":\"Supplier#000515105\",\"s_address\":\"zzyvSACyGWpp5gCaZbUL7lKRUnhe7m6p�\",\"s_nationkey\":24,\"s_phone\":\"34-999-802-1817\",\"s_acctbal\":9999.95,\"s_comment\":\"zzle. regular foxes are ironic p�\"},\"nullCount\":{\"s_suppkey\":0,\"s_name\":0,\"s_address\":0,\"s_nationkey\":0,\"s_phone\":0,\"s_acctbal\":0,\"s_comment\":0}}",
+        "tags": {
+            "INSERTION_TIME": "1709133407000001",
+            "MIN_INSERTION_TIME": "1709133407000001",
+            "MAX_INSERTION_TIME": "1709133407000001",
+            "OPTIMIZE_TARGET_SIZE": "268435456"
+        }
+    }
+}
+```
+:::
+::::
+
+# Delta Lake
+
+Content of `00000000000000000009.json`
+
+:::: {.columns}
+::: {.column width=50%}
+
+```json
+{
+    "commitInfo": {
+        "timestamp": 1709134798441,
+        "userId": "8047431628735957",
+        "userName": "m.francia@unibo.it",
+        "operation": "WRITE",
+        "operationParameters": {
+            "mode": "Append",
+            "statsOnLoad": false,
+            "partitionBy": "[]"
+        },
+        "notebook": {
+            "notebookId": "4471242088384584"
+        },
+        "clusterId": "0112-095737-cgwksnoz",
+        "readVersion": 8,
+        "isolationLevel": "WriteSerializable",
+        "isBlindAppend": true,
+        "operationMetrics": {
+            "numFiles": "1",
+            "numOutputRows": "1",
+            "numOutputBytes": "2675"
+        },
+        "tags": {
+            "restoresDeletedRows": "false"
+        },
+        "engineInfo": "Databricks-Runtime/13.3.x-scala2.12",
+        "txnId": "45786330-12ee-4e73-85ff-38cdd2caffcf"
+    }
+}
+```
+
+:::
+::: {.column width=50%}
+
+```json
+{
+    "add": {
+        "path": "part-00000-7b0e114f-e86f-4952-a030-b877001f8074-c000.snappy.parquet",
+        "partitionValues": {},
+        "size": 2675,
+        "modificationTime": 1709134799000,
+        "dataChange": true,
+        "stats": "{\"numRecords\":1,\"minValues\":{\"s_suppkey\":1,\"s_name\":\"Supplier#000000001\",\"s_address\":\" N kD4on9OM Ipw3,gf0JBoQDd7tgrzr\",\"s_nationkey\":17,\"s_phone\":\"27-918-335-1736\",\"s_acctbal\":5755.94,\"s_comment\":\"each slyly above the careful\"},\"maxValues\":{\"s_suppkey\":1,\"s_name\":\"Supplier#000000001\",\"s_address\":\" N kD4on9OM Ipw3,gf0JBoQDd7tgrzr�\",\"s_nationkey\":17,\"s_phone\":\"27-918-335-1736\",\"s_acctbal\":5755.94,\"s_comment\":\"each slyly above the careful\"},\"nullCount\":{\"s_suppkey\":0,\"s_name\":0,\"s_address\":0,\"s_nationkey\":0,\"s_phone\":0,\"s_acctbal\":0,\"s_comment\":0}}",
+        "tags": {
+            "INSERTION_TIME": "1709134799000000",
+            "MIN_INSERTION_TIME": "1709134799000000",
+            "MAX_INSERTION_TIME": "1709134799000000",
+            "OPTIMIZE_TARGET_SIZE": "268435456"
+        }
+    }
+}
+```
+
+:::
+::::
+
+# Delta Lake
+
+Checkpoint `00000000000000000002.checkpoint.parquet`
+
+<img src="lakehouse/00000000000000000002.checkpoint.parquet.png" class="center" />
+
+# Delta Lake
+
 :::: {.columns}
 ::: {.column width=50%}
 
@@ -589,12 +741,13 @@ while i < 20000:
 
 # Lakehouse
 
-(SQL) Format-independent optimizations are
+Format-independent optimizations are
 
-- *Caching*: when using a transactional metadata layer such as Delta Lake, it is safe for a Lakehouse system to cache files from the cloud object store on faster storage devices such as SSDs and RAM on the processing nodes
-- *Auxiliary data*: maintain column min-max statistics for each data file in the table within the same Parquet file used to store the transaction log, which enables data skipping optimizations when the base data is clustered by particular columns
+- *Caching*: cache files from the cloud object store on faster storage devices such as SSDs and RAM on the processing nodes
+- *Auxiliary data*: maintain column min-max statistics for each data file in the table within the same Parquet file used to store the transaction log
 - *Data layout*:
-  - *Record ordering*: which records are clustered together and hence easiest to read together, e.g. ordering records using individual dimensions or space-filling curves such as Z-order
+  - *Record ordering*: records clustered together are easiest to read together
+    - E.g. ordering records using individual dimensions or space-filling curves such as Z-order
   - *Compression strategies* differently for various groups of records or other strategies
 
 # References
