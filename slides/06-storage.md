@@ -417,11 +417,11 @@ Metadata alone is insufficient to achieve good performance, challenges:
 
 - *Data warehouses use several techniques to get state-of-the-art performance*
   - Storing hot data on fast devices such as SSDs, maintaining statistics, building efficient indexes, etc.
-- *In a data lake*, but it is possible to implement other optimizations that leave the data files unchanged
-- Most *cloud object stores are merely key-value stores*, with no cross-key consistency
-- *Multi-object updates are not atomic*, there is no isolation between queries
-  - If a query updates multiple objects in a table, readers will see partial updates as the query updates each object individually
-- For large tables with millions of objects, *metadata operations are expensive*
+- Most *data lakes (cloud object stores) are merely key-value stores*, with no cross-key consistency
+  - *Multi-object updates are not atomic*, there is no isolation between queries
+    - If a query updates multiple objects in a table, readers will see partial updates as the query updates each object individually
+- In *data lakes* is possible to implement other optimizations that leave the data files unchanged
+  - For large tables with millions of objects, *metadata operations are expensive*
   - The latency of cloud object stores is so much higher that these data-skipping checks can take longer than the actual query
 
 # Delta Lake [@armbrust2020delta]
@@ -455,18 +455,16 @@ Changes are recorded as ordered, atomic commits in the transaction log.
 
 Whenever a user modifies a table (such as an INSERT, UPDATE, or DELETE), Delta Lake breaks that operation down into a series of discrete steps composed of one or more of the actions below.
 
-- Add file - adds a data file.
-- Remove file - removes a data file.
-- Update metadata - Updates the table’s metadata (e.g., changing the table’s name, schema, or partitioning).
-- Set transaction - Records that a structured streaming job has committed a micro-batch with the given ID.
-- Change protocol - enables new features by switching the Delta Lake transaction log to the newest software protocol.
-- Commit info - Contains information around the commit, which operation was made, from where, and when.
+- *Add file*: adds a data file.
+- *Remove file*: removes a data file.
+- *Update metadata*: Updates the table’s metadata (e.g., changing the table’s name, schema, or partitioning).
+- *Set transaction*: Records that a structured streaming job has committed a micro-batch with the given ID.
+- *Change protocol*: enables new features by switching the Delta Lake transaction log to the newest software protocol.
+- *Commit info*: Contains information around the commit, which operation was made, from where, and when.
 
 # Delta Lake
 
-Create a table of `suppliers`
-
-- Content of `00000000000000000000.json`
+Create a table of `suppliers`, content of `00000000000000000000.json`
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -547,9 +545,7 @@ Create a table of `suppliers`
 
 # Delta Lake
 
-Add a new `supplier`
-
-- Content of `00000000000000000009.json`
+Add a new `supplier`, content of `00000000000000000009.json`
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -645,7 +641,7 @@ Once we have made several commits to the transaction log, Delta Lake saves a **c
 
 Checkpoints save the entire state of the table at a point in time.
 
-A "shortcut" to reproducing a table’s state that allows Spark to avoid reprocessing what could be thousands of tiny, inefficient JSON files.
+A "shortcut" to reproducing a table’s state to avoid reprocessing what could be thousands of tiny, inefficient JSON files.
 
 Spark runs a `listFrom v` operation to view all files in the transaction log, starting from `v`
 
