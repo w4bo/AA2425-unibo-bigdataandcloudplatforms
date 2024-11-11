@@ -119,9 +119,9 @@ What storage do we choose?
 Benefits
 
 - Unified data architecture
-  - Build a multi-tenant environment, where many users can bring their own data
+  - Build a multi-tenant environment, where many users can bring their data
   - Improve both cost and data governance over traditional solutions
-- *Decoupling of storage from compute and data processing*
+- *Decoupling of storage from computing and data processing*
   - You can cost-effectively store all data types in their native formats
   - Then, launch transformations as you need
 
@@ -136,7 +136,7 @@ AWS S3: [storage classes](https://aws.amazon.com/s3/storage-classes/)
 - *Infrequent (rapid) access*
 - *One Zone-IA*: lower-cost option for infrequently accessed data that do not require high availability and resilience
 - *Glacier*: low-cost storage class for data archiving, three retrieval options that range from a few minutes to hours
-- *Deep Glacier*: long-term retention for data accessed once/twice in a year. 
+- *Deep Glacier*: long-term retention for data accessed once/twice a year. 
   - E.g., retain data sets for 10 years or longer
 - *Intelligent-Tiering*: move objects between access tiers when access patterns change
 
@@ -198,13 +198,13 @@ Having consistent principles on how to organize your data is important
 
 - To build standardized pipelines with the same design with regard to where read/write data
 - Standardization makes it easier to manage your pipelines at scale
-- Helps data users search for data in the storage and understand exactly to find what they need
+- Helps data users search for data in the storage and understand exactly what they need
 - Decoupling storage from processing
 
 :::
 ::: {.column width=40%}
 
-![](imgs/261.svg)
+![Areas](imgs/261.svg)
 
 :::
 ::::
@@ -231,7 +231,7 @@ Having consistent principles on how to organize your data is important
 :::
 ::: {.column width=40%}
 
-![](imgs/262.svg)
+![Areas](imgs/262.svg)
 
 :::
 ::::
@@ -248,19 +248,19 @@ Having consistent principles on how to organize your data is important
 **Pass-through job**
 
 - Copy data from SA to PA and then into DWH without applying any business logic
-- Having a data set in the data warehouse and PA that is an exact replica can be helpful when debugging any issues with the business logic
+- Having a data set in the data warehouse and PA that is a replica can be helpful when debugging any issues with the business logic
 
 **Cloud data warehouse (DWH)**
 
 **Failed area (FA)**
 
 - You need to be able to deal with all kinds of errors and failures
-- There might be bugs in the pipeline code, cloud resources may fail
+- There might be bugs in the pipeline code, and cloud resources may fail
 
 :::
 ::: {.column width=40%}
 
-![](imgs/263.svg)
+![Areas](imgs/263.svg)
 
 :::
 ::::
@@ -302,14 +302,14 @@ Use folders to organize data inside areas into a logical structure
   - Logically group multiple pipelines together.
 - *Pipeline name*
   - Each data pipeline should have a name that reflects its purpose. For example
-    * A pipeline that takes data from the LA, applies common processing steps, and saves data into SA
+    * A pipeline that takes data from the LA, applies common processing steps and saves data into SA
     * You will also have one for archiving data into AA
 - *Data source name*
-  - Ingestion layer will assign a name to each data source you bring into the platform
+  - The ingestion layer will assign a name to each data source you bring into the platform
 - *BatchId*
   - Unique identifier for any batch of data that is saved into LA
   - E.g., Since only ingestion can write to LA, it is its responsibility to generate this identifier
-  - A common choice for this type of an identifier is a Universally Unique Identifier (UUID)
+  - A common choice for this type of identifier is a Universally Unique Identifier (UUID)
 
 Different areas will have slightly different folder structures
 
@@ -325,9 +325,9 @@ Combine the key benefits of data lakes and data warehouses
 - Powerful management and optimization features from the latter
   - ACID transactions, data versioning, auditing, indexing, caching, and query optimization.
 
-*Key question: can we combine these benefits in an effective way?*
+*Key question: can we effectively combine these benefits?*
 
-- **Lakehouses** are a good fit for cloud environments with separate compute and storage
+- **Lakehouses** are a good fit for cloud environments with separate computing and storage
 - Applications can run on-demand on separate computing nodes while accessing data in storage nodes
 
 # Data Independence
@@ -355,12 +355,12 @@ Combine the key benefits of data lakes and data warehouses
 
 # Data Lakehouse [@armbrust2021lakehouse]
 
-**1st generation systems**: data warehousing started with helping business decision makers get analytical insights
+**1st generation systems**: data warehousing started with helping business decision-makers get analytical insights
 
 - Data in warehouses (DWH) would be written with *schema-on-write* to ensure that data is optimized for BI applications
   - *Schema on write* is defined as creating a schema for data before writing into the database
 - Several challenges
-  - DWH typically couple compute and storage into an on-premises appliance
+  - DWH typically couples compute and storage into an on-premises appliance
     - This forced enterprises to provision and pay for the peak of user load and data under management, very costly
   - More and more datasets were completely unstructured, which DWHs could not store and query at all
 
@@ -379,7 +379,7 @@ Combine the key benefits of data lakes and data warehouses
 
 # Dataset Search for Data Discovery, Augmentation, and Explanation
 
-**Is there a real need for many unstructured and integrated dataset?**
+**Is there a real need for many unstructured and integrated datasets?**
 
 - Recent years have seen an explosion in our ability to collect and catalog data about our environment and society
 - Governments and organizations are increasingly making data available on the Web and in various repositories and data lakes
@@ -400,7 +400,7 @@ A two-tier architecture is highly complex for users
 - *Reliability*: keeping the data lake and warehouse consistent is difficult and costly
 - *Staleness*: the data in the warehouse is stale compared to that of the data lake, with new data frequently taking days to load
 - *Limited support for advanced analytics*: businesses want to ask predictive questions using their warehousing data
-  - E.g., "which customers should I offer discounts to?" 
+  - E.g., "Which customers should I offer discounts to?" 
   - E.g., process large datasets using complex non-SQL code
 
 # Data Lakehouse
@@ -419,12 +419,12 @@ Metadata alone is insufficient to achieve good performance, challenges:
 
 - *Data warehouses use several techniques to get state-of-the-art performance*
   - Storing hot data on fast devices such as SSDs, maintaining statistics, building efficient indexes, etc.
-- *In a datalake*, but it is possible to implement other optimizations that leave the data files unchanged
+- *In a data lake*, but it is possible to implement other optimizations that leave the data files unchanged
 - Most *cloud object stores are merely key-value stores*, with no cross-key consistency
 - *Multi-object updates are not atomic*, there is no isolation between queries
   - If a query updates multiple objects in a table, readers will see partial updates as the query updates each object individually
 - For large tables with millions of objects, *metadata operations are expensive*
-  - The latency of cloud object stores is so much higher that these data skipping checks can take longer than the actual query
+  - The latency of cloud object stores is so much higher that these data-skipping checks can take longer than the actual query
 
 # Delta Lake [@armbrust2020delta]
 
@@ -451,18 +451,18 @@ Delta Lake uses a **transaction log** and stores data into Apache Parquet for si
 
 Changes are recorded as ordered, atomic commits in the transaction log.
 
-- Each commit is written out as a JSON file, starting with `000000.json`.
+- Each commit is written as a JSON file, starting with `000000.json`.
 - Additional changes to the table generate subsequent JSON files in ascending numerical order
 - Each log record object (e.g., `000003.json`) contains an array of actions to apply to the previous table version
 
-Whenever a user performs an operation to modify a table (such as an INSERT, UPDATE or DELETE), Delta Lake breaks that operation down into a series of discrete steps composed of one or more of the actions below.
+Whenever a user modifies a table (such as an INSERT, UPDATE, or DELETE), Delta Lake breaks that operation down into a series of discrete steps composed of one or more of the actions below.
 
 - Add file - adds a data file.
 - Remove file - removes a data file.
-- Update metadata - Updates the table’s metadata (e.g., changing the table’s name, schema or partitioning).
+- Update metadata - Updates the table’s metadata (e.g., changing the table’s name, schema, or partitioning).
 - Set transaction - Records that a structured streaming job has committed a micro-batch with the given ID.
 - Change protocol - enables new features by switching the Delta Lake transaction log to the newest software protocol.
-- Commit info - Contains information around the commit, which operation was made, from where and at what time.
+- Commit info - Contains information around the commit, which operation was made, from where, and when.
 
 # Delta Lake
 
@@ -471,7 +471,7 @@ Whenever a user performs an operation to modify a table (such as an INSERT, UPDA
 
 Once we have made several commits to the transaction log, Delta Lake saves a **checkpoint file** in Parquet format in `_delta_log`
 
--  Delta Lake automatically generates checkpoint as needed to maintain good read performance.
+- Delta Lake automatically generates checkpoints as needed to maintain good read performance.
 - Checkpoints store all the non-redundant actions in the table's log up to a certain log record ID, in Parquet format
 - Some sets of actions are redundant and can be removed
 - Read the *last checkpoint* object in the table's log directory, if it exists, to obtain a recent checkpoint ID
@@ -510,7 +510,7 @@ Imagine that we’ve created commits up to `000007.json` and that Spark has cach
 - In the meantime, other writers have written new data to the table, adding commits up to `0000012.json`.
 - To incorporate these new transactions, Spark runs a `listFrom` version 7 operation to see the new changes to the table.
 - Rather than processing all of the intermediate JSON files ...
-- ... Spark skips ahead to the most recent checkpoint file, since it contains the entire state of the table at commit `#10`.
+- ... Spark skips ahead to the most recent checkpoint file since it contains the entire state of the table at commit `#10`.
 
 # Delta Lake
 
@@ -518,21 +518,21 @@ Imagine that we’ve created commits up to `000007.json` and that Spark has cach
 
 - Every table is the result of the sum total of all of the commits recorded in the Delta Lake transaction log.
 - The log provides a step-by-step instruction guide, detailing how to get from the table’s original state to its current state.
-- Recreate the state of a table at any point in time by starting with an original table, and processing only commits made prior to that point. 
+- Recreate the state of a table at any point in time by starting with an original table, and processing only commits made before that point. 
 
 **Data Lineage and Debugging**
 
-- The transaction log offers users a verifiable data lineage that is useful for governance, audit and compliance purposes. 
+- The transaction log offers users a verifiable data lineage that is useful for governance, audit, and compliance purposes. 
 - It can also be used to trace the origin of an inadvertent change or a bug in a pipeline back to the exact action that caused it.
 
 # Delta Lake
 
-**Optimize**: delta lake can improve the speed of read queries from a table by coalescing small files into larger ones.
+**Optimize**: Delta Lake can improve the speed of read queries from a table by coalescing small files into larger ones.
 
 - *Bin-packing optimization* is idempotent, meaning that if it is run twice on the same dataset, the second run has no effect.
-- *Bin-packing* aims to produce evenly-balanced data files with respect to their size on disk, but not necessarily number of tuples.
+- *Bin-packing* aims to produce evenly-balanced data files with respect to their size on disk, but not necessarily a number of tuples.
   - However, the two measures are most often correlated.
-- Python and Scala APIs for executing OPTIMIZE operation are available from Delta Lake 2.0 and above.
+- Python and Scala APIs for executing OPTIMIZE operations are available from Delta Lake 2.0 and above.
 
 ```python
 from delta.tables import *
@@ -565,18 +565,20 @@ Not all large-scale storage systems have an atomic put operation
 
 - Google Cloud Storage and Azure Blob Store support atomic put-if-absent operations
 - HDFS, we use atomic renames to rename a temporary file to the target name
-- Amazon S3 need ad-hoc protocols
+- Amazon S3 needs ad-hoc protocols
 
 # Delta Lake
 
 Check the scalability with respect to the length of the log
 
 ```python
-while i++ < 20K:
+i = 0
+while i < 20000:
     if i % 10 == 0:
         spark.sql("select sum(quantity) from lineitem")  # Read the whole fact
     spark.sql("insert (500K tuple) into lineitem")  # Append new tuples
     if i % 100 == 0: OPTIMIZE
+    i += 1
 ```
 
 ![Scalability](imgs/deltalake4.png)
@@ -593,6 +595,6 @@ while i++ < 20K:
 - *Auxiliary data*: maintain column min-max statistics for each data file in the table within the same Parquet file used to store the transaction log, which enables data skipping optimizations when the base data is clustered by particular columns
 - *Data layout*:
   - *Record ordering*: which records are clustered together and hence easiest to read together, e.g. ordering records using individual dimensions or space-filling curves such as Z-order
-  - *Compression strategies* differently for various groups of records, or other strategies
+  - *Compression strategies* differently for various groups of records or other strategies
 
 # References
