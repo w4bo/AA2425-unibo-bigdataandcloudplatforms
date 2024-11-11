@@ -863,8 +863,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="column" style="width:60%;">
 <p><strong>Data independence</strong>: modify the schema at one level of the database system without altering the schema at the next higher level</p>
 <ul>
-<li><p>It can be explained using the three-schema architecture</p></li>
-<li><p>Data independence:</p></li>
+<li>It can be explained using the three-schema architecture</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides194.png"></p>
@@ -1028,14 +1027,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="delta-lake-1" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
-<p>Content of <code>00000000000000000000.json</code></p>
+<p>Create a table of <code>suppliers</code></p>
+<ul>
+<li>Content of <code>00000000000000000000.json</code></li>
+</ul>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource json number-lines"><code class="sourceCode json"><span id="cb1-1"><a href=""></a><span class="fu">{</span></span>
 <span id="cb1-2"><a href=""></a>    <span class="dt">"commitInfo"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb1-3"><a href=""></a>        <span class="dt">"timestamp"</span><span class="fu">:</span> <span class="dv">1709133408152</span><span class="fu">,</span></span>
 <span id="cb1-4"><a href=""></a>        <span class="dt">"userId"</span><span class="fu">:</span> <span class="st">"8355321721036096"</span><span class="fu">,</span></span>
-<span id="cb1-5"><a href=""></a>        <span class="dt">"userName"</span><span class="fu">:</span> <span class="st">"aws_club_data_lakehouse@iconsulting.biz"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href=""></a>        <span class="dt">"userName"</span><span class="fu">:</span> <span class="st">"user1@foo.bar"</span><span class="fu">,</span></span>
 <span id="cb1-6"><a href=""></a>        <span class="dt">"operation"</span><span class="fu">:</span> <span class="st">"CREATE TABLE AS SELECT"</span><span class="fu">,</span></span>
 <span id="cb1-7"><a href=""></a>        <span class="dt">"operationParameters"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb1-8"><a href=""></a>            <span class="dt">"partitionBy"</span><span class="fu">:</span> <span class="st">"[]"</span><span class="fu">,</span></span>
@@ -1101,14 +1103,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="delta-lake-2" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
-<p>Content of <code>00000000000000000009.json</code></p>
+<p>Add a new <code>supplier</code></p>
+<ul>
+<li>Content of <code>00000000000000000009.json</code></li>
+</ul>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource json number-lines"><code class="sourceCode json"><span id="cb3-1"><a href=""></a><span class="fu">{</span></span>
 <span id="cb3-2"><a href=""></a>    <span class="dt">"commitInfo"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb3-3"><a href=""></a>        <span class="dt">"timestamp"</span><span class="fu">:</span> <span class="dv">1709134798441</span><span class="fu">,</span></span>
 <span id="cb3-4"><a href=""></a>        <span class="dt">"userId"</span><span class="fu">:</span> <span class="st">"8047431628735957"</span><span class="fu">,</span></span>
-<span id="cb3-5"><a href=""></a>        <span class="dt">"userName"</span><span class="fu">:</span> <span class="st">"m.francia@unibo.it"</span><span class="fu">,</span></span>
+<span id="cb3-5"><a href=""></a>        <span class="dt">"userName"</span><span class="fu">:</span> <span class="st">"user2@foo.bar"</span><span class="fu">,</span></span>
 <span id="cb3-6"><a href=""></a>        <span class="dt">"operation"</span><span class="fu">:</span> <span class="st">"WRITE"</span><span class="fu">,</span></span>
 <span id="cb3-7"><a href=""></a>        <span class="dt">"operationParameters"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb3-8"><a href=""></a>            <span class="dt">"mode"</span><span class="fu">:</span> <span class="st">"Append"</span><span class="fu">,</span></span>
