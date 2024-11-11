@@ -1,3 +1,9 @@
+## [1.0.32](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.31...1.0.32) (2024-11-11)
+
+### Bug Fixes
+
+* lab ([7a6a55b](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/7a6a55b36affee1f5f6b132ed1186dfe9c1dd063))
+
 ## [1.0.31](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.30...1.0.31) (2024-11-11)
 
 ### Bug Fixes
