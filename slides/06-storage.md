@@ -728,7 +728,7 @@ i = 0
 while i < 20000:
     if i % 10 == 0:
         spark.sql("select sum(quantity) from lineitem")  # Read the whole fact
-    spark.sql("insert (500K tuple) into lineitem")  # Append new tuples
+    spark.sql("insert (500K tuples) into lineitem")  # Append new tuples
     if i % 100 == 0: OPTIMIZE
     i += 1
 ```
