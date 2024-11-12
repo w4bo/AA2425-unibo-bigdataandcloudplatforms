@@ -25,7 +25,7 @@ What storage do we choose?
 
 # Storage models (AWS)
 
-|*Data structure*|*Data structure*|*Data structure*|
+|*Data structure*|*Data abstraction*|*Data access*|
 |:-:|:-:|:-:|
 |Structured|Database|Relational|
 </br>
@@ -50,7 +50,7 @@ What storage do we choose?
 # Storage models (AWS)
 
 
-|*Data structure*|*Data structure*|*Data structure*|
+|*Data structure*|*Data abstraction*|*Data access*|
 |:-:|:-:|:-:|
 |Semi/unstructured|Database|\*|
 </br>
@@ -89,7 +89,7 @@ What storage do we choose?
 
 # Storage models (AWS)
 
-|*Data structure*|*Data structure*|*Data structure*|
+|*Data structure*|*Data abstraction*|*Data access*|
 |:-:|:-:|:-:|
 |Unstructured|File/Database|Key-value|
 </br>
