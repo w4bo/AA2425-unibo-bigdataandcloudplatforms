@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="03-nosql_files/libs/revealjs/dist/theme/quarto.css">
   <link href="03-nosql_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -326,7 +391,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Big Data and Cloud Platforms (Module 2)</h1>
-  <p class="subtitle">NoSQL DBMSs</p>
+  <p class="subtitle">NoSQL DBMS</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -438,24 +503,105 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="nosql-common-features" class="title-slide slide level1 center">
 <h1>NoSQL common features</h1>
-<p>Not just rows and tables</p>
+<p><em>Not just rows and tables</em>: several data models adopted to store and manipulate data</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Relational_database_terms.svg/2880px-Relational_database_terms.svg.png"></p>
+<figcaption>Relational data model</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/PageRanks-Example.svg/2560px-PageRanks-Example.svg.png"></p>
+<figcaption>Graph data model</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="nosql-common-features-1" class="title-slide slide level1 center">
+<h1>NoSQL common features</h1>
+<p><em>Freedom from joins</em>: joins are either not supported or discouraged</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Triangle-query-join-query-plan-r-st.svg/1920px-Triangle-query-join-query-plan-r-st.svg.png"></p>
+<figcaption>SQL Join</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://martinfowler.com/bliki/images/aggregateOrientedDatabase/aggregate-split.png"></p>
+<figcaption>Aggregate-oriented modeling</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="nosql-common-features-2" class="title-slide slide level1 center">
+<h1>NoSQL common features</h1>
+<p><em>Distributed, shared-nothing architecture</em></p>
 <ul>
-<li>Several data model adopted to store and manipulate data</li>
-</ul>
-<p>Freedom from joins</p>
+<li>A shared-nothing architecture is a distributed computing architecture in which each update request is satisfied by a single node in a computer cluster
 <ul>
-<li>Joins are either not supported or discouraged</li>
-</ul>
-<p>Freedom from rigid schemas</p>
-<ul>
-<li>Data can be stored or queried without pre-defining a schema (<em>schemaless</em> or <em>soft-schema</em>)</li>
-</ul>
-<p>Distributed, shared-nothing architecture</p>
-<ul>
+<li>Nodes do not share (independently access) the same memory or storage.</li>
+</ul></li>
 <li>Trivial scalability in a distributed environment with no performance decay</li>
-<li>Each workstation uses its own disks and RAM</li>
 </ul>
-<p>SQL is dead, long live SQL!</p>
+
+<img data-src="https://cloudian.com/wp-content/uploads/2024/02/Shared-Nothing-architecture.png" class="r-stretch quarto-figure-center"><p class="caption">Shared everything vs shared nothing</p></section>
+
+<section id="nosql-common-features-3" class="title-slide slide level1 center">
+<h1>NoSQL common features</h1>
+<p><em>Freedom from rigid schemas</em>: data can be stored or queried without pre-defining a schema (<em>schemaless</em> or <em>soft-schema</em>)</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Product</th>
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">P1</td>
+<td style="text-align: center;">Beer</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">P2</td>
+<td style="text-align: center;">Cola</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">P3</td>
+<td style="text-align: center;">Pizza</td>
+<td style="text-align: center;">6</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource json number-lines"><code class="sourceCode json"><span id="cb1-1"><a href=""></a><span class="ot">[</span></span>
+<span id="cb1-2"><a href=""></a>  <span class="fu">{</span> <span class="dt">"Product"</span><span class="fu">:</span> <span class="st">"P1"</span><span class="fu">,</span> <span class="dt">"Name"</span><span class="fu">:</span> <span class="st">"Beer"</span><span class="fu">,</span> <span class="dt">"Price"</span><span class="fu">:</span> <span class="dv">6</span><span class="fu">,</span> <span class="dt">"Quantity"</span><span class="fu">:</span> <span class="st">"0.4L"</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-3"><a href=""></a>  <span class="fu">{</span> <span class="dt">"Product"</span><span class="fu">:</span> <span class="st">"P2"</span><span class="fu">,</span> <span class="dt">"Name"</span><span class="fu">:</span> <span class="st">"Milk"</span><span class="fu">,</span> <span class="dt">"Price"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span> <span class="dt">"Expiration"</span><span class="fu">:</span> <span class="st">"2024-11-30"</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-4"><a href=""></a>  <span class="fu">{</span> <span class="dt">"Product"</span><span class="fu">:</span> <span class="st">"P3"</span><span class="fu">,</span> <span class="dt">"Name"</span><span class="fu">:</span> <span class="st">"Pizza"</span><span class="fu">,</span> <span class="dt">"Price"</span><span class="fu">:</span> <span class="dv">6</span><span class="fu">,</span> <span class="dt">"Ingredients"</span><span class="fu">:</span> <span class="ot">[</span><span class="er">...</span><span class="ot">]</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-5"><a href=""></a><span class="ot">]</span></span></code></pre></div>
+</div>
+</div>
+</section>
+
+<section id="nosql-common-features-4" class="title-slide slide level1 center">
+<h1>NoSQL common features</h1>
+<p><em>SQL is dead, long live SQL</em>!</p>
 <ul>
 <li>Some systems do adopt SQL (or a SQL-like language)</li>
 </ul>
@@ -467,7 +613,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Optimized for high read and write throughput on small amounts of data</li>
 </ul>
-<p><em>Big Data </em> technologies are mainly used for analytical workloads (<em>OLAP</em>)</p>
+<p><em>Big Data</em> technologies are mainly used for analytical workloads (<em>OLAP</em>)</p>
 <ul>
 <li>Optimized for high read throughput on large amounts of data</li>
 </ul>
@@ -537,16 +683,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="graph-data-model" class="title-slide slide level1 center">
 <h1>Graph: data model</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
 <p>Each DB contains one or more <em>graphs</em></p>
 <ul>
 <li>Each graph contains <em>vertices</em> and <em>arcs</em></li>
-<li>Vertices: usually represent real-world entities
+<li><em>Vertices</em>: usually represent real-world entities
 <ul>
 <li>E.g.: people, organizations, web pages, workstations, cells, books, etc.</li>
 </ul></li>
-<li>Arcs: represent directed relationships between the vertices
+<li><em>Arcs</em>: represent directed relationships between the vertices
 <ul>
 <li>E.g.: friendship, work relationship, hyperlink, ethernet links, copyright, etc.</li>
 </ul></li>
@@ -555,34 +699,20 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>Most known specializations:</p>
 <ul>
-<li>Reticular data model
-<ul>
-<li>Parent-child or owner-member relationships</li>
-</ul></li>
-<li>Triplestore
-<ul>
-<li>Subject-predicate-object relationships (e.g., RDF)</li>
-</ul></li>
+<li>Reticular data model: parent-child or owner-member relationships</li>
+<li>Triplestore: subject-predicate-object relationships (e.g., RDF)</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="imgs/slides72.png"></p>
-<figcaption>Property graph</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="imgs/slides72.png" class="r-stretch quarto-figure-center"><p class="caption">Property graph</p></section>
 
 <section id="graph-querying" class="title-slide slide level1 center">
 <h1>Graph: querying</h1>
 <p>Graph databases usually model relationships-rich scenarios</p>
 <ul>
 <li>The query language simplifies the navigation of these relationships</li>
+<li><strong>Query language based on detecting patterns</strong></li>
 <li>Support for transactions</li>
 <li>Support for indexes, selections and projections</li>
-<li><strong>Query language based on detecting patterns</strong></li>
 </ul>
 <table>
 <colgroup>
@@ -637,26 +767,25 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="graph-vs-aggregate-modeling" class="title-slide slide level1 center">
 <h1>Graph vs Aggregate modeling</h1>
 <p>The graph data model is intrinsically different from the others</p>
+<p><strong>Data-driven modeling</strong></p>
 <ul>
 <li>Focused on the relationships rather than on the entities per-se</li>
-<li><strong>Limited scalability</strong>: it is often impossible to shard a graph on several machines without “cutting” several arcs (i.e.&nbsp;having several cross-machine links)
+<li><em>Limited scalability</em>: it is often impossible to shard a graph on several machines without “cutting” several arcs
 <ul>
+<li>I.e. having several cross-machine links</li>
 <li>Batch cross-machine queries: don’t follow relationships one by one, but “group them” to make less requests</li>
 <li>Limit the depth of cross-machine node searches</li>
 </ul></li>
-<li><em>Data-driven modeling</em></li>
 </ul>
-<p>Key-value, document and wide-column are called <em>aggregate-oriented</em></p>
+<p><strong>Aggregate-oriented modeling</strong>: data queries together are stored together</p>
 <ul>
 <li>Aggregate = key-value pair, document, row (respectively)</li>
 <li>The aggregate is the atomic block (no guarantees for multi-aggregate operations)</li>
 </ul>
 <p>Based on the concept of encapsulation</p>
 <ul>
-<li>Avoid joins as much as possible and achieve <strong>high scalability</strong>
-<ul>
-<li>Con: data denormalization and <strong>potential inconsistencies in the data</strong></li>
-</ul></li>
+<li>Avoid joins as much as possible and achieve <em>high scalability</em></li>
+<li>Data denormalization and <em>potential inconsistencies in the data</em></li>
 <li><em>Query-driven modeling</em></li>
 </ul>
 </section>
@@ -922,7 +1051,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>Essentially a 2-dimensional key-value store</p>
 <ul>
-<li><em>Rows specify only the columns </em>for which a value exists*</li>
+<li>Rows specify only the columns <em>for which a value exists</em></li>
 <li>Particularly suited for sparse matrixes and many-to-many relationships</li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -976,12 +1105,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 <p>Do not mistake the wide column data model with the columnar storage used for OLAP applications</p>
+<p><em>Row-oriented</em></p>
 <ul>
-<li>Row-oriented</li>
 <li>Pro: inserting a record is easy</li>
 <li>Con: several unnecessary data may be accessed when reading a record</li>
 </ul>
-<p>Column-oriented</p>
+<p><em>Column-oriented</em></p>
 <ul>
 <li>Pro: only the required values are accessed</li>
 <li>Con: writing a record requires multiple accesses</li>
@@ -1085,7 +1214,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><em>Hash strategy</em>: a hash function is used to allocate data to partitions</p>
 <ul>
 <li>Adopted by DynamoDB and Cassandra</li>
-<li>Pro: ensures even data distribution across nodes  massive scalability</li>
+<li>Pro: ensures even data distribution across nodes and massive scalability</li>
 <li>Pro: new nodes can be added without heavy data redistribution</li>
 <li>Con: range queries become inefficient</li>
 </ul>
@@ -1498,9 +1627,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><em>Basically Available Soft-state services with Eventual consistency</em></li>
 </ul>
 <p><em>B</em>asic <em>A</em>vailability: the system should always be available</p>
-<ul>
-<li><em>S</em>oft-state: it is acceptable for the system to be temporarily inconsistent</li>
-</ul>
+<p><em>S</em>oft-state: it is acceptable for the system to be temporarily inconsistent</p>
 <p><em>E</em>ventual consistency: eventually, the system becomes consistent</p>
 <p>ACID</p>
 <ul>
@@ -1532,7 +1659,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">Replication(MS and P2P)</td>
+<td style="text-align: center;">Replication (MS and P2P)</td>
 <td style="text-align: center;">Write propagation delay between replicas is slow</td>
 <td style="text-align: center;">Read conflicts</td>
 <td style="text-align: center;">- Tolerate<br>- Read-your-writes<br>- Quorum</td>
