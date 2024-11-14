@@ -1,3 +1,9 @@
+## [1.0.34](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.33...1.0.34) (2024-11-14)
+
+### Bug Fixes
+
+* nosql ([53c8cba](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/53c8cba204a4a80078040cf3d64cbe7afe5bb5f1))
+
 ## [1.0.33](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.32...1.0.33) (2024-11-11)
 
 ### Bug Fixes
