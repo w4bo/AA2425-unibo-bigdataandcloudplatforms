@@ -405,42 +405,37 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="section" class="title-slide slide level1 center">
 <h1></h1>
 
-<img data-src="imgs/281.svg" class="r-stretch"></section>
+<img data-src="imgs/281.svg" class="r-stretch quarto-figure-center"><p class="caption">Computing</p></section>
 
 <section id="supporting-data-pipelines" class="title-slide slide level1 center">
 <h1>Supporting data pipelines</h1>
 <p>We can choose the XaaS configuration to build our pipelines</p>
+</section>
+
+<section id="supporting-data-pipelines-iaas" class="title-slide slide level1 center">
+<h1>Supporting data pipelines: <em>IaaS</em></h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>IaaS</p>
 <ul>
-<li>Outsource virtual machines to the cloud (AWS EC2)</li>
+<li>Outsource virtual machines to the cloud (<a href="https://aws.amazon.com/ec2">AWS EC2</a>)</li>
 <li>(You) Manage technological and business challenges</li>
 </ul>
-</div><div class="column" style="width:60%;">
-<p><img data-src="imgs/slides197.png"></p>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>PaaS</p>
-<ul>
-<li>Outsource the data ecosystem to the cloud (e.g., AWS EMR)</li>
-<li>(You) Manage business challenges</li>
-</ul>
 </div><div class="column" style="width:40%;">
-<p><img data-src="imgs/slides198.png"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides197.png"></p>
+<figcaption>EC2</figcaption>
+</figure>
 </div>
 </div>
-<p><a href="https://aws.amazon.com/ec2">AWS EC2</a></p>
-<p><a href="https://aws.amazon.com/emr">AWS EMR</a></p>
+</div>
 </section>
 
 <section id="single-instance-aws-ec2" class="title-slide slide level1 center">
 <h1>Single instance: AWS EC2</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Amazon Elastic Compute Cloud</p>
+<p>Amazon <strong>Elastic Compute Cloud</strong> (EC2)</p>
 <ul>
 <li>A web service that provides resizable compute capacity</li>
 <li>Complete control of computing resources
@@ -448,11 +443,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Processor, storage, networking, OS, and purchase model</li>
 </ul></li>
 </ul>
-<p>The <strong>instance type</strong> determines the hardware</p>
+<p>The <a href="https://aws.amazon.com/ec2/instance-types">instance type</a> determines the hardware</p>
 <ul>
-<li>Different compute and memory capabilities</li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compute-optimized-instances.html">Different</a> compute and memory capabilities</li>
 </ul>
-<p><strong>Amazon Machine Image</strong> is a software template</p>
+<p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html">Amazon Machine Image</a> is a software template</p>
 <ul>
 <li>The EC2 instance is used for creating the virtual server instance</li>
 <li>The AMI is the EC2 virtual machines image</li>
@@ -462,24 +457,54 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>You have complete control of your instances</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides199.png"></p>
+<figcaption>AMI Instance</figcaption>
+</figure>
 </div>
 </div>
-<p><a href="https://aws.amazon.com/ec2/instance-types">https://aws.amazon.com/ec2/instance-types</a></p>
-<p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html</a></p>
-<p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compute-optimized-instances.html">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compute-optimized-instances.html</a></p>
+</div>
 </section>
 
 <section id="single-instance-aws-ec2-1" class="title-slide slide level1 center">
 <h1>Single instance: AWS EC2</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="imgs/slides200.png"></p>
-</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides201.png"></p>
+<figcaption>General purpose</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides200.png"></p>
+<figcaption>Compute optimized</figcaption>
+</figure>
 </div>
 </div>
-<p><a href="https://aws.amazon.com/ec2/instance-types/">https://aws.amazon.com/ec2/instance-types/</a></p>
+</div>
+</section>
+
+<section id="supporting-data-pipelines-paas" class="title-slide slide level1 center">
+<h1>Supporting data pipelines: <em>PaaS</em></h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>Outsource the data ecosystem to the cloud (e.g., <a href="https://aws.amazon.com/emr">AWS EMR</a>)</li>
+<li>(You) Manage business challenges</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides198.png"></p>
+<figcaption>EMR</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 <section id="cluster-aws-emr" class="title-slide slide level1 center">
@@ -504,19 +529,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="aws-emr" class="title-slide slide level1 center">
 <h1>AWS EMR</h1>
-<p>Deploy Multiple Clusters</p>
 <div class="columns">
-<div class="column" style="width:60%;">
-<p>Provision as much capacity as you need</p>
-</div><div class="column" style="width:40%;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/288a.svg"></p>
+<figcaption>Deploy multiple clusters</figcaption>
+</figure>
 </div>
-</div>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Add or remove capacity at any time</p>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/288b.svg"></p>
+<figcaption>Add or remove capacity at any time</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -526,16 +553,20 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>EMR cluster</p>
+<p><em>Master group</em></p>
 <ul>
-<li>Master group controls the cluster</li>
+<li>Control the cluster</li>
 <li>Coordinate the work distribution</li>
 <li>Manage the cluster state</li>
 </ul>
-<p>Core groups</p>
+<p><em>Core groups</em></p>
 <ul>
-<li>Core instances run Data Node daemons</li>
+<li>Run Data Node (HDFS) daemons</li>
 </ul>
 <p>(Optional) Task instances</p>
+<ul>
+<li>Provide computational power</li>
+</ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/289.svg"></p>
 </div>
@@ -544,24 +575,24 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="aws-emr-2" class="title-slide slide level1 center">
 <h1>AWS EMR</h1>
-<p>The central component of Amazon EMR is the <strong>cluster</strong></p>
+<p>The central component of Amazon EMR is the <em>cluster</em></p>
 <ul>
-<li>A collection of <strong>Amazon Elastic Compute Cloud (Amazon EC2)</strong> instances</li>
-<li>Each instance is called a <strong>node</strong></li>
+<li>A collection of <em>Amazon Elastic Compute Cloud (Amazon EC2)</em> instances</li>
+<li>Each instance is called a <em>node</em></li>
 </ul>
-<p>The <strong>node type </strong> identifies the role within the cluster</p>
+<p>The <em>node type</em> identifies the role within the cluster</p>
 <ul>
-<li><strong>Master</strong> node coordinates the distribution of data and tasks among other nodes
+<li><em>Master</em> node coordinates the distribution of data and tasks among other nodes
 <ul>
 <li>Every cluster has (at least) a master node</li>
 <li>Always active</li>
 </ul></li>
-<li><strong>Core</strong> node runs tasks and store data in the Hadoop Distributed File System (HDFS)
+<li><em>Core</em> node runs tasks and store data in the Hadoop Distributed File System (HDFS)
 <ul>
 <li>Multi-node clusters have at least one core node</li>
 <li>Always active, contains the data node daemon</li>
 </ul></li>
-<li><strong>Task</strong> node only runs tasks
+<li><em>Task</em> node only runs tasks
 <ul>
 <li>Task nodes are optional</li>
 <li>Decoupling processing and storage, we lose data locality</li>
@@ -569,14 +600,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="aws-emr-3" class="title-slide slide level1 center">
-<h1>AWS EMR</h1>
-<p>On-Demand Instance</p>
+<section id="aws-emr-pricing" class="title-slide slide level1 center">
+<h1>AWS EMR: <a href="https://aws.amazon.com/ec2/pricing/">pricing</a></h1>
+<p><em>On-Demand Instance</em></p>
 <ul>
 <li>Pay for compute capacity by the hour (minimum of 60 seconds)</li>
 <li>No long-term commitments</li>
 </ul>
-<p>Spot Instance</p>
+<p><em>Spot Instance</em></p>
 <ul>
 <li>Unused EC2 instance that is available for less than the on-demand price</li>
 <li>Hourly price is called <em>spot price</em>
@@ -589,14 +620,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Mainly suitable for batch workloads</li>
 </ul></li>
 </ul>
-<p><a href="https://aws.amazon.com/ec2/pricing/">https://aws.amazon.com/ec2/pricing/</a></p>
 </section>
 
-<section id="aws-emr-4" class="title-slide slide level1 center">
+<section id="aws-emr-3" class="title-slide slide level1 center">
 <h1>AWS EMR</h1>
 <p>Spot Instance cost strategies</p>
+<p><em>Capacity-optimized strategy</em></p>
 <ul>
-<li><em>Capacity-optimized strategy</em></li>
 <li>Allocated instances into the most available pools</li>
 <li>Look at real-time capacity data, predict which are the most available</li>
 <li>Works well for workloads such as big data and analytics</li>
@@ -610,17 +640,6 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="creating-the-cluster" class="title-slide slide level1 center">
 <h1>Creating the cluster</h1>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="imgs/slides288.png"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="imgs/slides289.png"></p>
-</div>
-</div>
-</section>
-
-<section id="creating-the-cluster-1" class="title-slide slide level1 center">
-<h1>Creating the cluster</h1>
 <p>Choose to launch <strong>master</strong>, <strong>core</strong>, or <strong>task</strong> on Spot Instances</p>
 <ul>
 <li>The <strong>master</strong> node controls the cluster
@@ -628,12 +647,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>When terminated, the cluster ends</li>
 <li>Use <em>spot instances</em> if you are running a cluster where sudden termination is acceptable</li>
 </ul></li>
-<li><strong>Core </strong> nodes process data and store information using HDFS
+<li><strong>Core</strong> nodes process data and store information using HDFS
 <ul>
 <li>When terminated, data is lost</li>
 <li>Use <em>spot instances</em> when partial HDFS data loss is tolerable</li>
 </ul></li>
-<li><strong>Task </strong> nodes process data but do not hold persistent data in HDFS
+<li><strong>Task</strong> nodes process data but do not hold persistent data in HDFS
 <ul>
 <li>When terminated, computational capacity is lost</li>
 <li>The effect of spot instances on the cluster is “minimal”</li>
@@ -642,12 +661,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances-guidelines.html">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances-guidelines.html</a></p>
 </section>
 
-<section id="creating-the-cluster-2" class="title-slide slide level1 center">
+<section id="creating-the-cluster-1" class="title-slide slide level1 center">
 <h1>Creating the cluster</h1>
 
 <img data-src="imgs/slides290.png" class="r-stretch"></section>
 
-<section id="creating-the-cluster-3" class="title-slide slide level1 center">
+<section id="creating-the-cluster-2" class="title-slide slide level1 center">
 <h1>Creating the cluster</h1>
 <p>Amazon EMR provides two main file systems</p>
 <ul>
@@ -668,30 +687,64 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-storage.html">https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-storage.html</a></p>
 </section>
 
+<section id="creating-the-cluster-3" class="title-slide slide level1 center">
+<h1>Creating the cluster</h1>
+
+<img data-src="imgs/slides291.png" class="r-stretch quarto-figure-center"><p class="caption">Software and steps</p></section>
+
 <section id="creating-the-cluster-4" class="title-slide slide level1 center">
 <h1>Creating the cluster</h1>
 
-<img data-src="imgs/slides291.png" class="r-stretch"></section>
+<img data-src="imgs/slides288.png" class="r-stretch quarto-figure-center"><p class="caption">Hardware</p></section>
 
 <section id="creating-the-cluster-5" class="title-slide slide level1 center">
 <h1>Creating the cluster</h1>
 
-<img data-src="imgs/slides292.png" class="r-stretch"></section>
+<img data-src="imgs/slides293.png" class="r-stretch quarto-figure-center"><p class="caption">General cluster settings</p></section>
 
 <section id="creating-the-cluster-6" class="title-slide slide level1 center">
 <h1>Creating the cluster</h1>
 
-<img data-src="imgs/slides293.png" class="r-stretch"></section>
+<img data-src="imgs/slides294.png" class="r-stretch quarto-figure-center"><p class="caption">Security</p></section>
 
 <section id="creating-the-cluster-7" class="title-slide slide level1 center">
 <h1>Creating the cluster</h1>
-
-<img data-src="imgs/slides294.png" class="r-stretch"></section>
-
-<section id="creating-the-cluster-8" class="title-slide slide level1 center">
-<h1>Creating the cluster</h1>
-<p>Using CLI (command line interface)</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="ex">aws</span> emr create-cluster <span class="at">--auto-scaling-role</span> EMR_AutoScaling_DefaultRole <span class="at">--termination-protected</span> <span class="at">--applications</span> Name=Hadoop Name=Hive Name=Hue Name=JupyterEnterpriseGateway Name=Spark <span class="at">--ebs-root-volume-size</span> 10 <span class="at">--ec2-attributes</span> <span class="st">'{"KeyName":"bigdata","InstanceProfile":"EMR_EC2_DefaultRole","SubnetId":"subnet-5fa2f912","EmrManagedSlaveSecurityGroup":"sg-07818b5690a50b3f1","EmrManagedMasterSecurityGroup":"sg-0e2f5550a2cb98f79"}'</span> <span class="at">--service-role</span> EMR_DefaultRole <span class="at">--enable-debugging</span> <span class="at">--release-label</span> emr-6.2.0 <span class="at">--log-uri</span> <span class="st">'s3n://aws-logs-604905954159-us-east-1/elasticmapreduce/'</span> <span class="at">--name</span> <span class="st">'BigData'</span> <span class="at">--instance-groups</span> <span class="st">'[{"InstanceCount":1,"BidPrice":"OnDemandPrice","EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"MASTER","InstanceType":"m4.xlarge","Name":"Master - 1"},{"InstanceCount":1,"BidPrice":"OnDemandPrice","EbsConfiguration":{"EbsBlockDeviceConfigs":[{"VolumeSpecification":{"SizeInGB":32,"VolumeType":"gp2"},"VolumesPerInstance":2}]},"InstanceGroupType":"CORE","InstanceType":"m4.xlarge","Name":"Core - 2"}]'</span> <span class="at">--scale-down-behavior</span> TERMINATE_AT_TASK_COMPLETION <span class="at">--region</span> us-east-1</span></code></pre></div>
+<p><em>Infrastructure as code</em>: using CLI (command line interface)</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="ex">aws</span> emr create-cluster</span>
+<span id="cb1-2"><a href=""></a>  <span class="ex">--auto-scaling-role</span> EMR_AutoScaling_DefaultRole</span>
+<span id="cb1-3"><a href=""></a>  <span class="ex">--termination-protected</span></span>
+<span id="cb1-4"><a href=""></a>  <span class="ex">--applications</span> Name=Hadoop Name=Hive Name=Hue Name=JupyterEnterpriseGateway Name=Spark</span>
+<span id="cb1-5"><a href=""></a>  <span class="ex">--ebs-root-volume-size</span> 10</span>
+<span id="cb1-6"><a href=""></a>  <span class="ex">--ec2-attributes</span> <span class="st">'{"KeyName":"bigdata","InstanceProfile":"EMR_EC2_DefaultRole","SubnetId":"subnet-5fa2f912","EmrManagedSlaveSecurityGroup":"sg-07818b5690a50b3f1","EmrManagedMasterSecurityGroup":"sg-0e2f5550a2cb98f79"}'</span></span>
+<span id="cb1-7"><a href=""></a>  <span class="ex">--service-role</span> EMR_DefaultRole</span>
+<span id="cb1-8"><a href=""></a>  <span class="ex">--enable-debugging</span></span>
+<span id="cb1-9"><a href=""></a>  <span class="ex">--release-label</span> emr-6.2.0</span>
+<span id="cb1-10"><a href=""></a>  <span class="ex">--log-uri</span> <span class="st">'s3n://aws-logs-604905954159-us-east-1/elasticmapreduce/'</span></span>
+<span id="cb1-11"><a href=""></a>  <span class="ex">--name</span> <span class="st">'BigData'</span></span>
+<span id="cb1-12"><a href=""></a>  <span class="ex">--instance-groups</span> <span class="st">'</span></span>
+<span id="cb1-13"><a href=""></a><span class="st">    [{    "InstanceCount": 1,</span></span>
+<span id="cb1-14"><a href=""></a><span class="st">          "BidPrice": "OnDemandPrice",</span></span>
+<span id="cb1-15"><a href=""></a><span class="st">          "EbsConfiguration": {</span></span>
+<span id="cb1-16"><a href=""></a><span class="st">              "EbsBlockDeviceConfigs": [{</span></span>
+<span id="cb1-17"><a href=""></a><span class="st">                      "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },</span></span>
+<span id="cb1-18"><a href=""></a><span class="st">                      "VolumesPerInstance": 2</span></span>
+<span id="cb1-19"><a href=""></a><span class="st">                  }]},</span></span>
+<span id="cb1-20"><a href=""></a><span class="st">          "InstanceGroupType": "MASTER",</span></span>
+<span id="cb1-21"><a href=""></a><span class="st">          "InstanceType": "m4.xlarge",</span></span>
+<span id="cb1-22"><a href=""></a><span class="st">          "Name": "Master - 1"</span></span>
+<span id="cb1-23"><a href=""></a><span class="st">      }, {</span></span>
+<span id="cb1-24"><a href=""></a><span class="st">          "InstanceCount": 1,</span></span>
+<span id="cb1-25"><a href=""></a><span class="st">          "BidPrice": "OnDemandPrice",</span></span>
+<span id="cb1-26"><a href=""></a><span class="st">          "EbsConfiguration": {</span></span>
+<span id="cb1-27"><a href=""></a><span class="st">              "EbsBlockDeviceConfigs": [{</span></span>
+<span id="cb1-28"><a href=""></a><span class="st">                      "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },</span></span>
+<span id="cb1-29"><a href=""></a><span class="st">                      "VolumesPerInstance": 2</span></span>
+<span id="cb1-30"><a href=""></a><span class="st">                  }]},</span></span>
+<span id="cb1-31"><a href=""></a><span class="st">          "InstanceGroupType": "CORE",</span></span>
+<span id="cb1-32"><a href=""></a><span class="st">          "InstanceType": "m4.xlarge",</span></span>
+<span id="cb1-33"><a href=""></a><span class="st">          "Name": "Core - 2"}]'</span></span>
+<span id="cb1-34"><a href=""></a>  <span class="ex">--scale-down-behavior</span> TERMINATE_AT_TASK_COMPLETION</span>
+<span id="cb1-35"><a href=""></a>  <span class="ex">--region</span> us-east-1</span></code></pre></div>
 </section>
 
 <section id="cluster-lifecycle" class="title-slide slide level1 center">
@@ -704,29 +757,30 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>It can only be terminated</li>
 </ul>
 </div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides295.png"></p>
+<figcaption>Lifecycle</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
 
 <section id="cluster-lifecycle-1" class="title-slide slide level1 center">
 <h1>Cluster lifecycle</h1>
-<p>STARTING: EMR provisions EC2 instances for each required instance</p>
+<p><code>STARTING</code>: EMR provisions EC2 instances for each required instance</p>
+<p><code>BOOTSTRAPPING</code>: EMR runs actions that you specify on each instance</p>
 <ul>
-<li>BOOTSTRAPPING: EMR runs actions that you specify on each instance</li>
-<li>E.g., install custom applications and perform customizations</li>
+<li>E.g., install custom applications and perform customizations such as Hive, Hadoop, Spark, and so on</li>
 </ul>
-<p>Amazon EMR installs the native applications</p>
-<ul>
-<li>E.g., Hive, Hadoop, Spark, and so on</li>
-</ul>
-<p>RUNNING: a step for the cluster is currently being run</p>
+<p><code>RUNNING</code>: a step for the cluster is currently being run</p>
 <ul>
 <li>Cluster sequentially runs any steps that you specified when you created the cluster</li>
 </ul>
-<p>WAITING: after steps run successfully</p>
+<p><code>WAITING</code>: after steps run successfully</p>
+<p><code>TERMINATING</code>: after manual shut down</p>
 <ul>
-<li>TERMINATING: after manual shut down</li>
 <li><em>Any data stored on the cluster is deleted</em></li>
 </ul>
 </section>
@@ -739,11 +793,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>Step states</p>
 <ul>
-<li>PENDING: The step is waiting to be run</li>
-<li>RUNNING: The step is currently running</li>
-<li>COMPLETED: The step completed successfully</li>
-<li>CANCELLED: The step was cancelled before running because an earlier step failed</li>
-<li>FAILED: The step failed while running</li>
+<li><code>PENDING</code>: The step is waiting to be run</li>
+<li><code>RUNNING</code>: The step is currently running</li>
+<li><code>COMPLETED</code>: The step completed successfully</li>
+<li><code>CANCELLED</code>: The step was cancelled before running because an earlier step failed</li>
+<li><code>FAILED</code>: The step failed while running</li>
 </ul>
 </section>
 
