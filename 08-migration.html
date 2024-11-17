@@ -405,14 +405,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="migration" class="title-slide slide level1 center">
 <h1>Migration</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
-<p>Goals</p>
+<div class="column" style="width:60%;">
+<p>Evaluating the costs for a cloud/on-premises data platform</p>
 <ul>
-<li>Evaluating the costs for a cloud/on-premises data platform</li>
-<li>Real-world case study</li>
 <li>Fill in this table</li>
+<li>Real-world case study</li>
 </ul>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
@@ -447,9 +446,19 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Migration</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/322.svg"></p>
+<figcaption>Data platform for Agritech</figcaption>
+</figure>
+</div>
 </div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/322b.svg"></p>
+<figcaption>HW + SW stack</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -458,51 +467,52 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Migration</h1>
 <p>Hardware</p>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/324.svg"></p>
-</div><div class="column" style="width:40%;">
-<p>8 CPUs (144 total)</p>
+<figcaption>Hardware configuration</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="ex">lshw</span> <span class="at">-short</span> <span class="at">-C</span> cpu</span>
+<span id="cb1-2"><a href=""></a><span class="ex">lshw</span> <span class="at">-short</span> <span class="at">-C</span> memory</span>
+<span id="cb1-3"><a href=""></a><span class="ex">lshw</span> <span class="at">-short</span> <span class="at">-C</span> disk</span></code></pre></div>
 <ul>
-<li><ul>
+<li>8 CPUs (144 total)
+<ul>
 <li>Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz</li>
 </ul></li>
-</ul>
-<p>32GB RAM (576GB total)</p>
+<li>32GB RAM (576GB total)
 <ul>
-<li><ul>
 <li>2 x 16GB DIMM DDR4 2666 MHz</li>
 </ul></li>
-</ul>
-<p>12TB HDD Disk (216TB total)</p>
+<li>12TB HDD Disk (216TB total)
 <ul>
-<li><ul>
 <li>3 x 4TB ST4000DM004-2CV1</li>
 </ul></li>
 </ul>
 </div>
 </div>
+<p>Software</p>
 <ul>
-<li>Software</li>
 <li>“Classic” Hadoop stack</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="ex">lshw</span> <span class="at">-short</span> <span class="at">-C</span> cpu</span>
-<span id="cb1-2"><a href=""></a><span class="ex">lshw</span> <span class="at">-short</span> <span class="at">-C</span> memory</span>
-<span id="cb1-3"><a href=""></a><span class="ex">lshw</span> <span class="at">-short</span> <span class="at">-C</span> disk</span></code></pre></div>
 </section>
 
 <section id="migration-3" class="title-slide slide level1 center">
 <h1>Migration</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
-<p><strong>Hardware cost</strong>:?</p>
+<div class="column" style="width:60%;">
+<p><strong>Hardware cost</strong>: ?</p>
 <ul>
 <li>Refer to <a href="https://www.rect.coreto-europe.com/en/search.html?clearsearch=1">https://www.rect.coreto-europe.com/en/search.html?clearsearch=1</a></li>
 </ul>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">SOLonprem</th>
+<th style="text-align: center;"><span class="math inline">\(SOL_{on-prem}\)</span></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -527,17 +537,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="on-premises" class="title-slide slide level1 center">
 <h1>On-premises</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
-<p><strong>Hardware cost</strong>(up to Mar 05, 2021):</p>
+<div class="column" style="width:60%;">
+<p><strong>Hardware cost</strong> (up to Mar 05, 2021):</p>
 <ul>
 <li>1767€ x 18 = 31806€</li>
 <li>Amortization over 3 years (i.e., <em>10602€/year</em>)</li>
 </ul>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">SOLonprem</th>
+<th style="text-align: center;"><span class="math inline">\(SOL_{on-prem}\)</span></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -555,7 +565,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 </tbody>
 </table>
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides338.png"></p>
+<figcaption>Hardware configuration</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <p><a href="https://www.rect.coreto-europe.com/en">https://www.rect.coreto-europe.com/en</a> (Accessed 2021-08-01)</p>
@@ -564,13 +579,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="on-premises-1" class="title-slide slide level1 center">
 <h1>On-premises</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
-<p><strong>Software cost</strong>:?</p>
-</div><div class="column" style="width:10%;">
+<div class="column" style="width:60%;">
+<p><strong>Software cost</strong>: ?</p>
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">SOLonprem</th>
+<th style="text-align: center;"><span class="math inline">\(SOL_{on-prem}\)</span></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -595,17 +610,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="on-premises-2" class="title-slide slide level1 center">
 <h1>On-premises</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
-<p><strong>Software cost</strong> (up to 2020): 0€*</p>
+<div class="column" style="width:60%;">
+<p><strong>Software cost</strong> (up to 2020): 0€</p>
 <ul>
 <li>Free Cloudera Management System</li>
 <li>No software licensing (for research purpose)</li>
 </ul>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">SOLonprem</th>
+<th style="text-align: center;"><span class="math inline">\(SOL_{on-prem}\)</span></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -630,8 +645,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="on-premises-3" class="title-slide slide level1 center">
 <h1>On-premises</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
-<p><strong>Software cost</strong>(up to Mar 05, 2021): 10000€/year x 18 = 180000€/year*</p>
+<div class="column" style="width:60%;">
+<p><strong>Software cost</strong> (up to Mar 05, 2021): 10000€/year x 18 = 180000€/year</p>
 <ul>
 <li>Cloudera is no more free, 10K€ per node</li>
 <li><a href="https://www.cloudera.com/products/pricing.html#private-cloud-services">https://www.cloudera.com/products/pricing.html#private-cloud-services</a></li>
@@ -643,11 +658,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>We cannot update/extend the cluster anymore</li>
 <li>What about migrating to the cloud? (we only consider AWS)</li>
 </ul>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">SOLonprem</th>
+<th style="text-align: center;"><span class="math inline">\(SOL_{on-prem}\)</span></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -692,16 +707,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="on-cloud-v1" class="title-slide slide level1 center">
 <h1>On cloud v1</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
+<div class="column" style="width:60%;">
 <p>Migrating the cluster as-is: ?</p>
 <ul>
 <li>Hint: add 18 EC2 instances satisfying the hardware requirements</li>
 </ul>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">SOLcloud1</th>
+<th style="text-align: center;"><span class="math inline">\(SOL_{cloud 1}\)</span></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -726,8 +741,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="on-cloud-v1-1" class="title-slide slide level1 center">
 <h1>On cloud v1</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
-<p>SOLcloud1 migrating the cluster as-is: <em>13500<span class="math inline">\(/month = 162000\)</span>/year</em></p>
+<div class="column" style="width:60%;">
+<p><span class="math inline">\(SOL_{cloud 1}\)</span> migrating the cluster as-is: 13500$/month = 162000$/year</p>
 <ul>
 <li>18 EC2 instances (t4g.2xlarge) with 12TB EBS storage each machine</li>
 <li>Still, we have no software configuration</li>
@@ -738,11 +753,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>In 2023, 146000$/year</li>
 </ul>
 <p><img data-src="imgs/slides339.png"></p>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">SOLcloud1</th>
+<th style="text-align: center;"><span class="math inline">\(SOL_{cloud 1}\)</span></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -851,7 +866,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="on-cloud-v2" class="title-slide slide level1 center">
 <h1>On cloud v2</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
+<div class="column" style="width:60%;">
 <p>Assuming 1 Executor = 1 Machine</p>
 <ul>
 <li>Compare 4 machines on-premises vs on cloud</li>
@@ -863,7 +878,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>AWS</p>
 <ul>
-<li>4 EC2 instances: 162000<span class="math inline">\(/year / 18 machines x 4 machines = *36000\)</span>/year*
+<li>4 EC2 instances: 162000$/year / 18 machines x 4 machines = <em>36000$/year</em>
 <ul>
 <li>Plus the resources for master services = <em>2000$/year</em></li>
 </ul></li>
@@ -874,7 +889,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Machines are up-and-running even when no computation is necessary (just to persist data)</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
@@ -965,7 +980,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="migration-11" class="title-slide slide level1 center">
 <h1>Migration</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
+<div class="column" style="width:60%;">
 <p>Migrating cluster to EMR: <em>?</em></p>
 <ul>
 <li>Given the software requirements, we need</li>
@@ -973,7 +988,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>4 x Task Nodes (to compute)</li>
 </ul>
 <p><img data-src="imgs/342.svg"></p>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
@@ -1002,7 +1017,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="on-cloud-v3" class="title-slide slide level1 center">
 <h1>On cloud v3</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
+<div class="column" style="width:60%;">
 <p>Migrating cluster to EMR: <em>14710€/year</em></p>
 <ul>
 <li>S3 Infrequent Access storage (50 TB per month): 640€</li>
@@ -1024,7 +1039,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Instance type (m4.xlarge)</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
@@ -1053,7 +1068,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="on-cloud-v3-1" class="title-slide slide level1 center">
 <h1>On cloud v3</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
+<div class="column" style="width:60%;">
 <p>Migrating cluster to EMR: <em>13445€/year</em></p>
 <ul>
 <li>S3 Infrequent Access storage (50 TB per month): 640€</li>
@@ -1075,7 +1090,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Instance type (m4.xlarge)</li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
@@ -1104,7 +1119,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="migration-12" class="title-slide slide level1 center">
 <h1>Migration</h1>
-<p>Summing up (cloud options)</p>
+<p>Cloud options</p>
 <table>
 <colgroup>
 <col style="width: 20%">
@@ -1181,6 +1196,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 </tbody>
 </table>
+</section>
+
+<section id="migration-13" class="title-slide slide level1 center">
+<h1>Migration</h1>
 <p>Summing up</p>
 <ul>
 <li>We estimated the cluster costs
