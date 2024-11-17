@@ -1,3 +1,9 @@
+## [1.0.35](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.34...1.0.35) (2024-11-17)
+
+### Bug Fixes
+
+* computing ([92ef226](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/92ef226f45fdeb1e2001d45a86d4f9459d96f24e))
+
 ## [1.0.34](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.33...1.0.34) (2024-11-14)
 
 ### Bug Fixes
