@@ -648,9 +648,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="column" style="width:60%;">
 <p><strong>Software cost</strong> (up to Mar 05, 2021): 10000€/year x 18 = 180000€/year</p>
 <ul>
-<li>Cloudera is no more free, 10K€ per node</li>
+<li>Cloudera is no more free, 10K€ per node
+<ul>
 <li><a href="https://www.cloudera.com/products/pricing.html#private-cloud-services">https://www.cloudera.com/products/pricing.html#private-cloud-services</a></li>
 <li><a href="https://www.cloudera.com/products/pricing/product-features.html">https://www.cloudera.com/products/pricing/product-features.html</a></li>
+</ul></li>
 <li>No license for research purpose</li>
 </ul>
 <p><em>“Houston we’ve had a problem!”</em></p>
@@ -745,14 +747,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><span class="math inline">\(SOL_{cloud 1}\)</span> migrating the cluster as-is: 13500$/month = 162000$/year</p>
 <ul>
 <li>18 EC2 instances (t4g.2xlarge) with 12TB EBS storage each machine</li>
-<li>Still, we have no software configuration</li>
 </ul>
 <p>Prices change over the year</p>
 <ul>
 <li>In 2022, 162000$/year</li>
-<li>In 2023, 146000$/year</li>
+<li><a href="https://calculator.aws/#/estimate?id=7757afffccc3cafdcfdeb212b74623ef02ed5a36">In 2023</a>, 146000$/year</li>
+<li><a href="https://calculator.aws/#/estimate?id=591970b487aa80a6a7a43dff5770a181a519df9a">In 2024</a>, 146000$/year</li>
 </ul>
-<p><img data-src="imgs/slides339.png"></p>
+<p>Still, we have no software configuration</p>
 </div><div class="column" style="width:40%;">
 <table>
 <thead>
@@ -777,21 +779,25 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </div>
 </div>
-<p><a href="https://calculator.aws/#/estimate?id=7757afffccc3cafdcfdeb212b74623ef02ed5a36">https://calculator.aws/#/estimate?id=7757afffccc3cafdcfdeb212b74623ef02ed5a36</a></p>
 </section>
 
 <section id="migration-5" class="title-slide slide level1 center">
 <h1>Migration</h1>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:40%;">
 <p>Pay attention to the region</p>
 <ul>
 <li>Different regions, different prices</li>
 <li>Different regions, different services</li>
 <li>Remember the GDPR and data locality</li>
 </ul>
-</div><div class="column" style="width:40%;">
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides340.png"></p>
+<figcaption>Ireland vs Milan</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -867,9 +873,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>On cloud v2</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Assuming 1 Executor = 1 Machine</p>
+<p><span class="math inline">\(SOL_{cloud 2}\)</span>: compare 4 machines on-premises vs on cloud</p>
 <ul>
-<li>Compare 4 machines on-premises vs on cloud</li>
+<li>Assuming 1 Executor = 1 Machine</li>
 </ul>
 <p>On-premises</p>
 <ul>
@@ -878,22 +884,21 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>AWS</p>
 <ul>
-<li>4 EC2 instances: 162000$/year / 18 machines x 4 machines = <em>36000$/year</em>
-<ul>
-<li>Plus the resources for master services = <em>2000$/year</em></li>
-</ul></li>
+<li>4 EC2 instances: 162000$/year / 18 machines x 4 machines = <em>36000$/year</em></li>
 <li>Problems
 <ul>
-<li>Still no software stack</li>
-<li>A lot of storage cost</li>
-<li>Machines are up-and-running even when no computation is necessary (just to persist data)</li>
+<li>Machines are up-and-running even when no computation is necessary
+<ul>
+<li>This is necessary to persist data</li>
+</ul></li>
+<li>Still, no software stack</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(SOL_{cloud 2}\)</span></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -902,7 +907,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <tr class="odd">
 <td style="text-align: center;">Hardware</td>
 <td style="text-align: center;">2356€/year</td>
-<td style="text-align: center;">38000$/year</td>
+<td style="text-align: center;">36000$/year</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Software</td>
@@ -915,51 +920,33 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="on-cloud-v2-1" class="title-slide slide level1 center">
-<h1>On cloud v2</h1>
-<p>AWS</p>
-<ul>
-<li>Still, we have no software stack configuration</li>
-<li>Which is the major cost?</li>
-</ul>
+<section id="which-is-the-major-cost" class="title-slide slide level1 center">
+<h1>Which is the major cost?</h1>
+
 </section>
 
-<section id="on-cloud-v2-2" class="title-slide slide level1 center">
+<section id="on-cloud-v2-1" class="title-slide slide level1 center">
 <h1>On cloud v2</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>AWS</p>
-<ul>
-<li>Still, we have no software stack configuration</li>
-<li>Which is the major cost?</li>
-</ul>
-</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides342.png"></p>
-<p><img data-src="imgs/slides343.png"></p>
+<figcaption>Total cost of EC2</figcaption>
+</figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides343.png"></p>
+<figcaption>Cost breakdown</figcaption>
+</figure>
 </div>
 </section>
 
 <section id="migration-9" class="title-slide slide level1 center">
 <h1>Migration</h1>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p>S3 standard</p>
-<p><img data-src="imgs/slides344.png"></p>
-</div><div class="column" style="width:50%;">
-<p>S3 Infrequent Access</p>
-<p><img data-src="imgs/slides345.png"></p>
-</div>
-</div>
-</section>
-
-<section id="migration-10" class="title-slide slide level1 center">
-<h1>Migration</h1>
-<div class="columns">
 <div class="column" style="width:60%;">
-<p><em>AWS Storage</em></p>
+<p>HDFS on EC2</p>
 <ul>
-<li>HDFS on EC2</li>
 <li>Heavy price</li>
 <li>Machine must be always on to guarantee data persistency</li>
 <li>Data locality</li>
@@ -971,8 +958,39 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Data locality is lost</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides346.png"></p>
+<figcaption>Total cost of EC2</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides347.png"></p>
+<figcaption>Cost breakdown</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<section id="migration-10" class="title-slide slide level1 center">
+<h1>Migration</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides344.png"></p>
+<figcaption>S3 standard</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides345.png"></p>
+<figcaption>S3 Infrequent Access</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -982,10 +1000,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>Migrating cluster to EMR: <em>?</em></p>
+<p>Given the software requirements, we need</p>
 <ul>
-<li>Given the software requirements, we need</li>
-<li>1 x Master Node (to manage the cluster)1 x Core node (with HDFS/EBS)</li>
-<li>4 x Task Nodes (to compute)</li>
+<li>1 x <em>Master node</em> (to manage the cluster)</li>
+<li>1 x <em>Core node</em> (with HDFS/EBS)</li>
+<li>4 x <em>Task nodes</em> (to compute)</li>
 </ul>
 <p><img data-src="imgs/342.svg"></p>
 </div><div class="column" style="width:40%;">
@@ -1043,7 +1062,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(SOL_{cloud 3}\)</span></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -1065,11 +1084,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="on-cloud-v3-1" class="title-slide slide level1 center">
-<h1>On cloud v3</h1>
+<section id="on-cloud-v4" class="title-slide slide level1 center">
+<h1>On cloud v4</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Migrating cluster to EMR: <em>13445€/year</em></p>
+<p><a href="(https://calculator.aws/#/estimate?id=c3780b12bb43b593d05def5a1d5218d9764b8a65)">Migrating cluster to EMR</a>: <em>13445€/year</em></p>
 <ul>
 <li>S3 Infrequent Access storage (50 TB per month): 640€</li>
 <li>1 x Master EMR nodes, EC2 (m4.xlarge), Utilization (75 h/month): 4.5€
@@ -1094,7 +1113,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;"></th>
+<th style="text-align: center;"><span class="math inline">\(SOL_{cloud 4}\)</span></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -1114,12 +1133,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </div>
 </div>
-<p><a href="https://calculator.aws/#/estimate?id=c3780b12bb43b593d05def5a1d5218d9764b8a65">https://calculator.aws/#/estimate?id=c3780b12bb43b593d05def5a1d5218d9764b8a65</a></p>
 </section>
 
-<section id="migration-12" class="title-slide slide level1 center">
-<h1>Migration</h1>
-<p>Cloud options</p>
+<section id="summing-up" class="title-slide slide level1 center">
+<h1>Summing up</h1>
 <table>
 <colgroup>
 <col style="width: 20%">
@@ -1198,20 +1215,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </section>
 
-<section id="migration-13" class="title-slide slide level1 center">
-<h1>Migration</h1>
-<p>Summing up</p>
-<ul>
-<li>We estimated the cluster costs
+<section id="summing-up-1" class="title-slide slide level1 center">
+<h1>Summing up</h1>
+<p>We estimated the cluster costs</p>
 <ul>
 <li>On-premises solution with 18 machines: no go</li>
 <li>Cloud solution with 18 EC2 instances: no go</li>
-</ul></li>
-<li>We reduced the solution based on software requirements
+</ul>
+<p>We reduced the solution based on software requirements</p>
 <ul>
 <li>On-premises solution with 4 machines: no go</li>
 <li>Cloud solution with 4 EC2 instances: no go, we miss the software configuration</li>
-</ul></li>
 <li>We moved the cluster to AWS EMR + spot instances + S3 storage</li>
 </ul>
 <p>Can we do better?</p>
