@@ -167,8 +167,8 @@ Software
 **Software cost** (up to Mar 05, 2021): 10000€/year x 18 = 180000€/year
 
 - Cloudera is no more free, 10K€ per node
-- [https://www.cloudera.com/products/pricing.html\#private-cloud-services](https://www.cloudera.com/products/pricing.html#private-cloud-services)
-- [https://www.cloudera.com/products/pricing/product-features.html](https://www.cloudera.com/products/pricing/product-features.html)
+  - [https://www.cloudera.com/products/pricing.html\#private-cloud-services](https://www.cloudera.com/products/pricing.html#private-cloud-services)
+  - [https://www.cloudera.com/products/pricing/product-features.html](https://www.cloudera.com/products/pricing/product-features.html)
 - No license for research purpose
 
 *“Houston we’ve had a problem!”*
@@ -229,32 +229,30 @@ Migrating the cluster as-is: ?
 $SOL_{cloud 1}$ migrating the cluster as-is: 13500\$/month = 162000\$/year
 
 - 18 EC2 instances (t4g.2xlarge) with 12TB EBS storage each machine
-- Still, we have no software configuration
 
 Prices change over the year
 
 - In 2022, 162000\$/year
-- In 2023, 146000\$/year
+- [In 2023](https://calculator.aws/#/estimate?id=7757afffccc3cafdcfdeb212b74623ef02ed5a36), 146000\$/year
+- [In 2024](https://calculator.aws/#/estimate?id=591970b487aa80a6a7a43dff5770a181a519df9a), 146000\$/year
 
-![](imgs/slides339.png)
+Still, we have no software configuration
 
 :::
 ::: {.column width=40%}
 
 | $SOL_{cloud 1}$ | On-premises | On cloud |
 |:-: |:-: |:-: |
-| Hardware | 10602€/year | 162000$/year |
+| Hardware | 10602€/year | 162000\$/year |
 | Software | 180000€/year |? |
 
 :::
 ::::
 
-[https://calculator.aws/\#/estimate?id=7757afffccc3cafdcfdeb212b74623ef02ed5a36](https://calculator.aws/#/estimate?id=7757afffccc3cafdcfdeb212b74623ef02ed5a36)
-
 # Migration
 
 :::: {.columns}
-::: {.column width=60%}
+::: {.column width=40%}
 
 
 Pay attention to the region
@@ -264,9 +262,9 @@ Pay attention to the region
 - Remember the GDPR and data locality
 
 :::
-::: {.column width=40%}
+::: {.column width=60%}
 
-![](imgs/slides340.png)
+![Ireland vs Milan](imgs/slides340.png)
 
 :::
 ::::
@@ -343,9 +341,9 @@ Processing takes place each time that ESA provides a satellite image
 :::: {.columns}
 ::: {.column width=60%}
 
-Assuming 1 Executor = 1 Machine
+$SOL_{cloud 2}$: compare 4 machines on-premises vs on cloud
 
-- Compare 4 machines on-premises vs on cloud
+- Assuming 1 Executor = 1 Machine
 
 On-premises
 
@@ -355,78 +353,37 @@ On-premises
 AWS
 
 - 4 EC2 instances: 162000\$/year / 18 machines x 4 machines = *36000\$/year*
-  - Plus the resources for master services = *2000\$/year*
 - Problems
-  - Still no software stack
-  - A lot of storage cost
-  - Machines are up-and-running even when no computation is necessary (just to persist data)
+  - Machines are up-and-running even when no computation is necessary
+    - This is necessary to persist data
+  - Still, no software stack
 
 :::
 ::: {.column width=40%}
 
-|  | On-premises | On cloud |
+| $SOL_{cloud 2}$ | On-premises | On cloud |
 |:-: |:-: |:-: |
-| Hardware | 2356€/year | 38000\$/year |
+| Hardware | 2356€/year | 36000\$/year |
 | Software | 100000€/year |? |
 
 :::
 ::::
 
-# On cloud v2
-
-AWS
-
-- Still, we have no software stack configuration
-- Which is the major cost?
+# Which is the major cost?
 
 # On cloud v2
 
-:::: {.columns}
-::: {.column width=60%}
+![Total cost of EC2](imgs/slides342.png)
 
-AWS
-
-- Still, we have no software stack configuration
-- Which is the major cost?
-
-:::
-::: {.column width=40%}
-
-![](imgs/slides342.png)
-
-![](imgs/slides343.png)
-
-:::
-::::
-
-# Migration
-
-:::: {.columns}
-::: {.column width=50%}
-
-S3 standard
-
-![](imgs/slides344.png)
-
-:::
-::: {.column width=50%}
-
-S3 Infrequent Access
-
-![](imgs/slides345.png)
-
-
-:::
-::::
+![Cost breakdown](imgs/slides343.png)
 
 # Migration
 
 :::: {.columns}
 ::: {.column width=60%}
 
-*AWS Storage*
+HDFS on EC2
 
-- HDFS on EC2
 - Heavy price
 - Machine must be always on to guarantee data persistency
 - Data locality
@@ -440,9 +397,24 @@ S3
 :::
 ::: {.column width=40%}
 
-![](imgs/slides346.png)
+![Total cost of EC2](imgs/slides346.png)
 
-![](imgs/slides347.png)
+![Cost breakdown](imgs/slides347.png)
+
+:::
+::::
+
+# Migration
+
+:::: {.columns}
+::: {.column width=50%}
+
+![S3 standard](imgs/slides344.png)
+
+:::
+::: {.column width=50%}
+
+![S3 Infrequent Access](imgs/slides345.png)
 
 :::
 ::::
@@ -454,9 +426,11 @@ S3
 
 Migrating cluster to EMR: *?*
 
-- Given the software requirements, we need
-- 1 x Master Node (to manage the cluster)1 x Core node (with HDFS/EBS)
-- 4 x Task Nodes (to compute)
+Given the software requirements, we need
+
+- 1 x *Master node* (to manage the cluster)
+- 1 x *Core node* (with HDFS/EBS)
+- 4 x *Task nodes* (to compute)
 
 ![](imgs/342.svg)
 
@@ -494,7 +468,7 @@ Migrating cluster to EMR: *14710€/year*
 :::
 ::: {.column width=40%}
 
-|  | On-premises | On cloud |
+| $SOL_{cloud 3}$ | On-premises | On cloud |
 |:-: |:-: |:-: |
 | Hardware | 2356€/year | 14710€/year |
 | Software | 100000€/year |? |
@@ -502,12 +476,12 @@ Migrating cluster to EMR: *14710€/year*
 :::
 ::::
 
-# On cloud v3
+# On cloud v4
 
 :::: {.columns}
 ::: {.column width=60%}
 
-Migrating cluster to EMR: *13445€/year*
+[Migrating cluster to EMR]((https://calculator.aws/#/estimate?id=c3780b12bb43b593d05def5a1d5218d9764b8a65)): *13445€/year*
 
 - S3 Infrequent Access storage (50 TB per month): 640€
 - 1 x Master EMR nodes, EC2 (m4.xlarge), Utilization (75 h/month): 4.5€
@@ -525,7 +499,7 @@ Migrating cluster to EMR: *13445€/year*
 :::
 ::: {.column width=40%}
 
-|  | On-premises | On cloud |
+| $SOL_{cloud 4}$ | On-premises | On cloud |
 |:-: |:-: |:-: |
 | Hardware | 2356€/year | 13445€/year |
 | Software | 100000€/year |? |
@@ -533,11 +507,7 @@ Migrating cluster to EMR: *13445€/year*
 :::
 ::::
 
-[https://calculator.aws/\#/estimate?id=c3780b12bb43b593d05def5a1d5218d9764b8a65](https://calculator.aws/#/estimate?id=c3780b12bb43b593d05def5a1d5218d9764b8a65)
-
-# Migration
-
-Cloud options
+# Summing up
 
 | Machine uptime | Storage | Software | Feasible? | Cost per year |
 |:-: |:-: |:-: |:-: |:-: |
@@ -550,16 +520,17 @@ Cloud options
 | Pay-per-use | S3 | Manual | ISH: repetitive manual provisioning | - |
 | Pay-per-use | S3 | EMR | YES | ~14K€ |
 
-# Migration
+# Summing up
 
-Summing up
+We estimated the cluster costs
 
-- We estimated the cluster costs
-  - On-premises solution with 18 machines: no go
-  - Cloud solution with 18 EC2 instances: no go
-- We reduced the solution based on software requirements
-  - On-premises solution with 4 machines: no go
-  - Cloud solution with 4 EC2 instances: no go, we miss the software configuration
+- On-premises solution with 18 machines: no go
+- Cloud solution with 18 EC2 instances: no go
+
+We reduced the solution based on software requirements
+
+- On-premises solution with 4 machines: no go
+- Cloud solution with 4 EC2 instances: no go, we miss the software configuration
 - We moved the cluster to AWS EMR + spot instances + S3 storage
 
 Can we do better?
