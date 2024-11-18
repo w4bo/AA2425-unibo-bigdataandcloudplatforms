@@ -356,14 +356,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>The WeLASER project</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><strong>Project description</strong></p>
 <p>Which requirements do you foresee?</p>
 <ul>
 <li>Can we define a tentative (service) architecture for the WeLASER project?</li>
 </ul>
 <p>Assumptions</p>
 <ul>
-<li>Do not consider the collection of weed/crop images &amp; training/deploying of the CV algorithm</li>
+<li>Do not consider the collection of weed/crop images</li>
+<li>… and training/deploying of the CV algorithm</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides348.png"></p>
@@ -372,32 +372,30 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </section>
 
 <section id="data-sources" class="title-slide slide level1 center">
-<h1>Data sources</h1>
-<p>8 cameras on the field, average image size 3MB; two services:</p>
+<h1><a href="https://docs.google.com/spreadsheets/d/17zEr62CzyqeIy0vU-DcjEUoxf6bMd3ziLSSeIXvk4Lg/edit?usp=sharing">Data sources</a></h1>
+<p><em>8 cameras on the field</em>, average image size 3MB; two services:</p>
 <ul>
-<li>Alerting: a camera sends an image when smt enters the field (at most <span class="math inline">\(\frac{1 img}{5 min})\)</span>; assuming <span class="math inline">\(20 \frac{alerts}{day}\)</span>
+<li><em>Alerting</em>: a camera sends an image when smt enters the field (at most 1 img every 5 min); assuming <span class="math inline">\(20 \frac{alerts}{day}\)</span>
 <ul>
 <li><span class="math inline">\(20 \frac{𝑎𝑙𝑒𝑟𝑡}{𝑑𝑎𝑦}  \cdot 1 \frac{𝑖𝑚𝑎𝑔𝑒}{𝑎𝑙𝑒𝑟𝑡} \cdot 8 \frac{𝑐𝑎𝑚𝑒𝑟𝑎}{𝑓𝑖𝑒𝑙𝑑} = 160 \frac{𝑖𝑚𝑎𝑔𝑒}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
-<li><span class="math inline">\(160 \frac{𝑖𝑚𝑎𝑔𝑒}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑} \cdot 3 \frac{𝑀𝐵}{𝑖𝑚𝑎𝑔𝑒}=480 \frac{𝑀𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑} \~= 500 \frac{𝑀𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
+<li><span class="math inline">\(160 \frac{𝑖𝑚𝑎𝑔𝑒}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑} \cdot 3 \frac{𝑀𝐵}{𝑖𝑚𝑎𝑔𝑒}=480 \frac{𝑀𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}  ~= 500 \frac{𝑀𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
 </ul></li>
-<li>Monitoring the crop}{weed; assuming <span class="math inline">\(2 \frac{images}{day}\)</span>
+<li><em>Monitoring the crop/weed</em>; assuming <span class="math inline">\(2 \frac{images}{day}\)</span>
 <ul>
 <li><span class="math inline">\(2 \frac{𝑖𝑚𝑎𝑔𝑒}{𝑑𝑎𝑦} \cdot 8 \frac{𝑐𝑎𝑚𝑒𝑟𝑎}{𝑓𝑖𝑒𝑙𝑑}=16 \frac{𝑖𝑚𝑎𝑔𝑒}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
-<li>16 =48 ~ 50 </li>
+<li>1<span class="math inline">\(6 \frac{𝑖𝑚𝑎𝑔𝑒}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑} \cdot 3 \frac{𝑀𝐵}{𝑖𝑚𝑎𝑔𝑒}=48 \frac{𝑀𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span> ~= <span class="math inline">\(50 \frac{𝑀𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
 </ul></li>
 </ul>
-<p>Weather station: <span class="math inline">\(24 \frac{measurement}{day}\)</span> for humidity/solar radiation/temperature/wind; <span class="math inline">\(1 \frac{KB}{measurement}\)</span></p>
+<p><em>Weather station</em>: <span class="math inline">\(24 \frac{measurement}{day}\)</span> for humidity/solar radiation/temperature/wind; <span class="math inline">\(1 \frac{KB}{measurement}\)</span></p>
 <ul>
 <li><span class="math inline">\(24 \frac{𝑠𝑎𝑚𝑝𝑙𝑒}{𝑑𝑎𝑦} \cdot 4 \frac{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}{𝑠𝑎𝑚𝑝𝑙𝑒} \cdot 1 \frac{𝑤𝑒𝑎𝑡ℎ𝑒𝑟~𝑠𝑡𝑎𝑡𝑖𝑜𝑛}{𝑓𝑖𝑒𝑙𝑑}=96 \frac{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
-<li><span class="math inline">\(96 \frac{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑} \cdot 1 \frac{𝐾𝐵}{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}=96 \frac{𝐾𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑} \~= 0.1 \frac{𝑀𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
+<li><span class="math inline">\(96 \frac{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑} \cdot 1 \frac{𝐾𝐵}{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}=96 \frac{𝐾𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}  ~= 0.1 \frac{𝑀𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
 </ul>
-<p>Robot mission: lasts 4 hours, <span class="math inline">\(100 \frac{measurement}{s}\)</span> from sensor systems; <span class="math inline">\(1\frac{KB}{measurement}\)</span></p>
+<p><em>Robot mission</em>: lasts 4 hours, <span class="math inline">\(100 \frac{measurement}{s}\)</span> from sensor systems; <span class="math inline">\(1\frac{KB}{measurement}\)</span></p>
 <ul>
-<li><span class="math inline">\(3600 \frac{𝑠𝑒𝑐𝑜𝑛𝑑}{ℎ𝑜𝑢𝑟} \cdot 4 \frac{ℎ𝑜𝑢𝑟}{𝑚𝑖𝑠𝑠𝑖𝑜𝑛} \cdot 100 \frac{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}{𝑠𝑒𝑐𝑜𝑛𝑑} \cdot 1 \frac{𝑚𝑖𝑠𝑠𝑖𝑜𝑛}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}=1 440 000 \frac{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
-<li><span class="math inline">\(1 440 000 \frac{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑} \cdot 1 \frac{𝐾𝐵}{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}=1.44  \frac{𝐺𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑} \~= 2 \frac{𝐺𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
+<li><span class="math inline">\(3600 \frac{𝑠𝑒𝑐𝑜𝑛𝑑}{ℎ𝑜𝑢𝑟} \cdot 4 \frac{ℎ𝑜𝑢𝑟}{𝑚𝑖𝑠𝑠𝑖𝑜𝑛} \cdot 100 \frac{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}{𝑠𝑒𝑐𝑜𝑛𝑑} \cdot 1 \frac{𝑚𝑖𝑠𝑠𝑖𝑜𝑛}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑} \cdot 1 \frac{𝐾𝐵}{𝑚𝑒𝑎𝑠𝑢𝑟𝑒𝑚𝑒𝑛𝑡}=1.44  \frac{𝐺𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span> ~= <span class="math inline">\(2 \frac{𝐺𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
 </ul>
-<p>Historic data; worst case of $1: <span class="math inline">\(10^3\)</span> Json documents describing the farm ~= <span class="math inline">\(1 \frac{𝑀𝐵}{𝑓𝑎𝑟𝑚}\)</span></p>
-<p><a href="https://docs.google.com/spreadsheets/d/17zEr62CzyqeIy0vU-DcjEUoxf6bMd3ziLSSeIXvk4Lg/edit?usp=sharing">https://docs.google.com/spreadsheets/d/17zEr62CzyqeIy0vU-DcjEUoxf6bMd3ziLSSeIXvk4Lg/edit?usp=sharing</a></p>
+<p><em>Historic data</em>; worst case of $1: <span class="math inline">\(10^3\)</span> Json documents describing the farm ~= <span class="math inline">\(1 \frac{𝑀𝐵}{𝑓𝑎𝑟𝑚}\)</span></p>
 </section>
 
 <section id="workload" class="title-slide slide level1 center">
@@ -416,28 +414,18 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="on-premises" class="title-slide slide level1 center">
 <h1>On-premises</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
+<div class="column" style="width:60%;">
 <p>On-premises</p>
 <ul>
-<li>How many machines do we need?
-<ul>
-<li><em>4</em>: <em>1 master node</em> + <em>3 HDFS data nodes</em></li>
-</ul></li>
+<li>How many machines do we need? <em>4</em>: <em>1 master node</em> + <em>3 HDFS data nodes</em></li>
 <li>With which resources?
 <ul>
-<li>Assuming a HDFS replication factor of 3, we need at least 1TB of disk overall (not that much)</li>
-<li>Think bigger: at least 8 cores, 64GB RAM, 500GB SSD + 4TB HDD, no GPU</li>
-</ul></li>
+<li>Assuming a HDFS replication factor of 3, we need at least 1TB of disk</li>
+<li>Think bigger: at least 8 cores, 64GB RAM, 500GB SSD + 4TB HDD</li>
 <li>8700€ / 3 years = 2900€</li>
+</ul></li>
 </ul>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="imgs/slides350.png"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="imgs/slides351.png"></p>
-</div>
-</div>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
@@ -461,33 +449,50 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </table>
 </div>
 </div>
-<p><a href="https://www.rect.coreto-europe.com/en">https://www.rect.coreto-europe.com/en</a> (accessed 2022-09-01)</p>
-<p><a href="https://www.cloudera.com/products/pricing.html">https://www.cloudera.com/products/pricing.html</a> (accessed 2022-09-01)</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides350.png"></p>
+<figcaption><a href="https://www.rect.coreto-europe.com/en">Hardware</a> as of 2022-09-01</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides351.png"></p>
+<figcaption><a href="https://www.cloudera.com/products/pricing.html">Software</a> as of 2022-09-01</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 <section id="on-cloud-v1" class="title-slide slide level1 center">
 <h1>On cloud v1</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
-<p>Moving the Hadoop cluster as IAAS</p>
+<div class="column" style="width:60%;">
+<p>Moving the Hadoop cluster as IaaS</p>
+<p>EC2 (4)</p>
 <ul>
-<li>EC2</li>
-<li>Quantity (4), Pricing strategy (EC2 Instance Savings Plans 3 Year No Upfront), <em>Storage amount (4 TB), </em> Instance type (r6g.2xlarge)</li>
+<li>Pricing strategy (EC2 Instance Savings Plans 3 Year No Upfront)</li>
+<li>Storage amount (4 TB)</li>
+<li>Instance type (r6g.2xlarge)</li>
 </ul>
 <p>EMR</p>
 <ul>
-<li>Number of master EMR nodes (1), EC2 instance (r5.2xlarge), Utilization (100 %Utilized/Month) Number of core EMR nodes (3), EC2 instance (r5d.2xlarge), <em>Utilization (100 %Utilized/Month)</em></li>
+<li>Master (1): EC2 instance (r5.2xlarge), Utilization (100% Utilized/Month)</li>
+<li>Core (3): EC2 instance (r5d.2xlarge), Utilization (100% Utilized/Month)</li>
 </ul>
 <p><em>MKS (KAFKA)</em></p>
 <ul>
-<li>Storage per Broker (10 GB), Number of Kafka broker nodes (3), Compute Family (m5.2xlarge)</li>
+<li>Storage per Broker (10 GB), #broker nodes (3), Compute Family (m5.2xlarge)</li>
 </ul>
-<p><img data-src="imgs/slides352.png"></p>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;"></th>
+<th style="text-align: center;"><a href="https://calculator.aws/#/estimate?id=05965ca7de23fd9e7d2ab2cd0175fe8c01822c9c"><span class="math inline">\(SOL_{cloud 1}\)</span></a></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -505,23 +510,26 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 </tbody>
 </table>
+<p><img data-src="imgs/slides352.png"></p>
 </div>
 </div>
-<p><a href="https://calculator.aws/#/estimate?id=05965ca7de23fd9e7d2ab2cd0175fe8c01822c9c">https://calculator.aws/#/estimate?id=05965ca7de23fd9e7d2ab2cd0175fe8c01822c9c</a> (accessed 2022-09-01)</p>
 </section>
 
 <section id="on-cloud-v2" class="title-slide slide level1 center">
 <h1>On cloud v2</h1>
 <div class="columns">
-<div class="column" style="width:90%;">
-<p>Moving the Hadoop cluster as PAAS</p>
+<div class="column" style="width:60%;">
+<p>Moving the Hadoop cluster as PaaS</p>
+<p>EC2 (4)</p>
 <ul>
-<li>EC2</li>
-<li>Quantity (4), Pricing strategy (<em>On-Demand Instances</em>), Storage amount (30 GB), Instance type (r6g.2xlarge)</li>
+<li>Pricing strategy (<em>On-Demand Instances</em>)</li>
+<li>Storage amount (<em>30 GB</em>)</li>
+<li>Instance type (r6g.2xlarge)</li>
 </ul>
 <p>EMR</p>
 <ul>
-<li>Number of master EMR nodes (1), EC2 instance (r5.2xlarge), Utilization (2 Hours/Day) Number of core EMR nodes (3), EC2 instance (r5d.2xlarge), <em>Utilization (2 Hours/Day)</em></li>
+<li>Master (1): EC2 instance (r5.2xlarge), Utilization (<em>2 Hours/Day</em>)</li>
+<li>Core (3): EC2 instance (r5d.2xlarge), Utilization (<em>2 Hours/Day</em>)</li>
 </ul>
 <p><em>S3</em></p>
 <ul>
@@ -529,14 +537,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p><em>Kinesis</em></p>
 <ul>
-<li>Days for data retention (1 days), Records (100 per second), Consumer Applications (3)</li>
+<li>Days for data retention (1 days), Records (100/second), Consumers (3)</li>
 </ul>
-<p><img data-src="imgs/slides353.png"></p>
-</div><div class="column" style="width:10%;">
+</div><div class="column" style="width:40%;">
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;"></th>
+<th style="text-align: center;"><a href="https://calculator.aws/#/estimate?id=53f60ff0412a18877dc8e1274f7d9875aa3bf665"><span class="math inline">\(SOL_{cloud 2}\)</span></a></th>
 <th style="text-align: center;">On-premises</th>
 <th style="text-align: center;">On cloud</th>
 </tr>
@@ -554,17 +561,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tr>
 </tbody>
 </table>
+<p><img data-src="imgs/slides353.png"></p>
 </div>
 </div>
-<p><a href="https://calculator.aws/#/estimate?id=53f60ff0412a18877dc8e1274f7d9875aa3bf665">https://calculator.aws/#/estimate?id=53f60ff0412a18877dc8e1274f7d9875aa3bf665</a> (accessed 2022-09-01)</p>
 </section>
 
-<section id="cost-vs-price" class="title-slide slide level1 center">
-<h1>Cost vs price</h1>
-<p>How would you evaluate the cost and the price?</p>
+<section id="how-would-you-evaluate-the-cost-and-the-price" class="title-slide slide level1 center">
+<h1>How would you evaluate the cost and the price?</h1>
 <p><em>Price</em> is the amount a customer is willing to pay&nbsp;for a&nbsp;product or service</p>
+<p><em>Cost</em> is the expense incurred for&nbsp;creating a product or service</p>
 <ul>
-<li><em>Cost</em> is the expense incurred for&nbsp;creating a product or service</li>
 <li>Hardware</li>
 <li>Development</li>
 <li>Maintenance</li>

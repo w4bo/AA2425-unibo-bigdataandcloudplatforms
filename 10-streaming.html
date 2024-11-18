@@ -28,7 +28,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="10-streaming_files/libs/revealjs/dist/theme/quarto.css">
   <link href="10-streaming_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="10-streaming_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -340,40 +360,31 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="section" class="title-slide slide level1 center">
 <h1></h1>
 
-<img data-src="imgs/357.svg" class="r-stretch"></section>
+<img data-src="imgs/357.svg" class="r-stretch quarto-figure-center"><p class="caption">Streaming</p></section>
 
 <section id="batch-vs.-streaming-systems" class="title-slide slide level1 center">
 <h1>Batch vs.&nbsp;Streaming systems</h1>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>What is a bulk processing system?</p>
+<p>What is a <em>bulk processing</em> system?</p>
 <ul>
 <li>High latency</li>
 <li>Exact results</li>
-<li>Process massive data at once
-<ul>
-<li>… is this true?</li>
-</ul></li>
+<li>Process massive data at once (… is this true?)</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p>What is a streaming system?</p>
+<p>What is a <em>streaming</em> system?</p>
 <ul>
 <li>Low latency</li>
-<li>Approximate result
-<ul>
-<li>… is this true?</li>
-</ul></li>
-<li>Process data item by data item
-<ul>
-<li>… is this true?</li>
-</ul></li>
+<li>Approximate result (… is this true?)</li>
+<li>Process data item by data item (… is this true?)</li>
 </ul>
 </div>
 </div>
 </section>
 
-<section id="batch-vs.-streaming-systems-1" class="title-slide slide level1 center">
-<h1>Batch vs.&nbsp;Streaming systems</h1>
+<section id="batch-vs.-streaming-systems-akidau2018streaming" class="title-slide slide level1 center">
+<h1>Batch vs.&nbsp;Streaming systems <span class="citation" data-cites="akidau2018streaming">(<a href="#/references" role="doc-biblioref" onclick="">Akidau, Chernyak, and Lax 2018</a>)</span></h1>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>What is a bulk processing system?</p>
@@ -384,32 +395,56 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>What is a streaming system?</p>
 <ul>
 <li>An engine capable to handle processing on <strong>unbounded</strong> datasets</li>
-<li>Streaming is a superset of batch processing</li>
+<li>Streaming <em>is a superset</em> of batch processing</li>
 </ul>
 </div>
 </div>
-<p>Akidau, Tyler, Slava Chernyak, and Reuven Lax. <em>Streaming systems: the what, where, when, and how of large-scale data processing</em> . ” O’Reilly Media, Inc.”, 2018.</p>
 </section>
 
 <section id="ingestion-batch" class="title-slide slide level1 center">
 <h1>Ingestion: batch</h1>
 <p><strong>Goal</strong>: moving data to the cloud</p>
 <ul>
-<li>Moving data to the cloud</li>
-<li><em>80TB</em> of data to move,</li>
+<li><em>80TB</em> of data to move</li>
 <li><em>1Gbps</em> connection to the internet</li>
 </ul>
-<p>How many <em>days</em>?</p>
-<ul>
-<li><em>80000GB</em> / (<em>1Gbps / 8</em>) / <em>60 / 60 / 24 </em> ~= a week without internet</li>
-</ul>
+<p>How long does it take?</p>
 </section>
 
 <section id="ingestion-batch-1" class="title-slide slide level1 center">
 <h1>Ingestion: batch</h1>
-<p>Batch/Bulk: move data from on-premises storage</p>
+<p>How many <em>days</em>?</p>
 <ul>
-<li>Workflow</li>
+<li>80000GB / (1Gbps / 8) / 60 / 60 / 24 ~= a week without internet</li>
+</ul>
+</section>
+
+<section id="ingestion-batch-2" class="title-slide slide level1 center">
+<h1>Ingestion: batch</h1>
+<p>Batch/Bulk: move data from on-premises storage</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>AWS Snowball</p>
+<ul>
+<li>50TB (North America only) and 80TB versions</li>
+<li>Not rack-mountable</li>
+<li>Throughput
+<ul>
+<li>1 Gbps or 10 Gbps using an RJ-45 connection</li>
+<li>10 Gbps using a fiber optic connection</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides354.png"></p>
+<figcaption>AWS Snowball</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Workflow</p>
+<ul>
 <li>Receive shipment</li>
 <li>Set up</li>
 <li>Transfer data</li>
@@ -417,72 +452,42 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="ingestion-batch-aws" class="title-slide slide level1 center">
-<h1>Ingestion: batch (AWS)</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>AWS Snowball</p>
-<ul>
-<li>50TB (North America only) and 80TB versions</li>
-<li>Not rack-mountable</li>
-</ul>
-<p>Throughput</p>
-<ul>
-<li>1 Gbps or 10 Gbps using an RJ-45 connection</li>
-<li>10 Gbps using a fiber optic connection</li>
-</ul>
-</div><div class="column" style="width:40%;">
-<p><img data-src="imgs/slides354.png"></p>
-</div>
-</div>
-</section>
-
-<section id="ingestion-batch-aws-1" class="title-slide slide level1 center">
-<h1>Ingestion: batch (AWS)</h1>
+<section id="aws-snowmobile" class="title-slide slide level1 center" data-background-video="https://youtu.be/8vQmTZTq7nw?t=60&amp;autoplay=1">
+<h1><a href="https://youtu.be/8vQmTZTq7nw?t=60">AWS Snowmobile</a></h1>
 <p>What if we have exabyte of data?</p>
-<p>Value Metric</p>
 <ul>
 <li><span class="math inline">\(10^3\)</span> KB (kilobyte)</li>
 <li><span class="math inline">\(10^6\)</span> MB (megabyte)</li>
 <li><span class="math inline">\(10^9\)</span> GB (gigabyte)</li>
-<li><span class="math inline">\(10^12\)</span> TB (terabyte)</li>
-<li><span class="math inline">\(10^15\)</span> PB (petabyte)</li>
-<li><span class="math inline">\(10^18\)</span> EB (exabyte)</li>
-<li><span class="math inline">\(10^21\)</span> ZB (zettabyte)</li>
-<li><span class="math inline">\(10^24\)</span> YB (yottabyte)</li>
+<li><span class="math inline">\(10^{12}\)</span> TB (terabyte)</li>
+<li><span class="math inline">\(10^{15}\)</span> PB (petabyte)</li>
+<li><span class="math inline">\(10^{18}\)</span> EB (exabyte)</li>
+<li><span class="math inline">\(10^{21}\)</span> ZB (zettabyte)</li>
+<li><span class="math inline">\(10^{24}\)</span> YB (yottabyte)</li>
 </ul>
 </section>
 
-<section id="ingestion-batch-aws-2" class="title-slide slide level1 center">
-<h1>Ingestion: batch (AWS)</h1>
-
-<img data-src="imgs/slides355.png" class="r-stretch"><p><a href="https://aws.amazon.com/snowball/">https://aws.amazon.com/snowball/</a></p>
-</section>
-
-<section id="aws-snowmobile" class="title-slide slide level1 center">
-<h1>AWS Snowmobile</h1>
-<p><a href="https://youtu.be/8vQmTZTq7nw?t=45">https://youtu.be/8vQmTZTq7nw?t=45</a> (2022-11-14)</p>
+<section id="ingestion-stream-kreps2014heart" class="title-slide slide level1 center">
+<h1>Ingestion: stream <span class="citation" data-cites="kreps2014heart">(<a href="#/references" role="doc-biblioref" onclick="">Kreps 2014</a>)</span></h1>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Data (often) flows in both directions, storage systems are both sources and destinations for data transformations</p>
+<p>Two pipelines per application (data in/out)</p>
+<ul>
+<li>Worst case (full connectivity): <span class="math inline">\(O(N^2)\)</span></li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="imgs/slides356.png"></p>
+<figcaption>Connecting sources and consumers</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 <section id="ingestion-stream" class="title-slide slide level1 center">
-<h1>Ingestion: stream</h1>
-<div class="columns">
-<div class="column" style="width:60%;">
-<ul>
-<li>Data (often) flows in both directions, storage systems are both sources and destinations for data transformations</li>
-<li>Two pipelines per application (data in/out)
-<ul>
-<li>Worst case (full connectivity): <span class="math inline">\(O(N^2)\)</span></li>
-</ul></li>
-</ul>
-</div><div class="column" style="width:40%;">
-<p><img data-src="imgs/slides356.png"></p>
-</div>
-</div>
-<p>Kreps, Jay. <em>I heart logs: Event data, stream processing, and data integration</em> . ” O’Reilly Media, Inc.”, 2014.</p>
-</section>
-
-<section id="ingestion-stream-1" class="title-slide slide level1 center">
 <h1>Ingestion: stream</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -505,14 +510,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><img data-src="imgs/slides357.jpg"></p>
 </div>
 </div>
-<p><a href="https://www.manning.com/books/event-streams-in-action">https://www.manning.com/books/event-streams-in-action</a></p>
 </section>
 
-<section id="ingestion-stream-2" class="title-slide slide level1 center">
-<h1>Ingestion: stream</h1>
+<section id="ingestion-stream-kreps2014heart-1" class="title-slide slide level1 center">
+<h1>Ingestion: stream <span class="citation" data-cites="kreps2014heart">(<a href="#/references" role="doc-biblioref" onclick="">Kreps 2014</a>)</span></h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Log</p>
+<p><strong>Log</strong></p>
 <ul>
 <li>Append-only data structure</li>
 <li>Each application only knows about the log, it ignores the details of the source
@@ -525,10 +529,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><img data-src="imgs/slides358.png"></p>
 </div>
 </div>
-<p>Kreps, Jay. <em>I heart logs: Event data, stream processing, and data integration</em> . ” O’Reilly Media, Inc.”, 2014.</p>
 </section>
 
-<section id="ingestion-stream-3" class="title-slide slide level1 center">
+<section id="ingestion-stream-1" class="title-slide slide level1 center">
 <h1>Ingestion: stream</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -548,7 +551,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="ingestion-stream-4" class="title-slide slide level1 center">
+<section id="ingestion-stream-2" class="title-slide slide level1 center">
 <h1>Ingestion: stream</h1>
 <p><strong>Unified</strong>: a single log in a company with applications sending/reading events</p>
 <ul>
@@ -571,43 +574,43 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 </section>
 
-<section id="ingestion-stream-5" class="title-slide slide level1 center">
+<section id="ingestion-stream-3" class="title-slide slide level1 center">
 <h1>Ingestion: stream</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><strong>Distributed</strong>: the unified log lives across a cluster of machines</p>
 <ul>
-<li>Optionally divide events into shards (i.e., partitions)Still, the log is unified since we have a single (conceptual) log</li>
+<li>Optionally divide events into shards (i.e., partitions)</li>
+<li>Still, the log is unified since we have a single (conceptual) log</li>
 </ul>
 <p>Distribution ensures</p>
 <ul>
-<li>Scalability: work with streams larger than the capacity of single machines</li>
-<li>Durability: replicate all events within the cluster to overcome data loss</li>
-<li>Using a log as a universal integration mechanism is never going to be more than an elegant fantasy if we can’t build a log that is fast, cheap, and scalable</li>
+<li><em>Scalability</em>: work with streams larger than the capacity of single machines</li>
+<li><em>Durability</em>: replicate all events within the cluster to overcome data loss</li>
 </ul>
+<p>Using a log as a universal integration mechanism is never going to be more than an elegant fantasy if we can’t build a log that is fast, cheap, and scalable</p>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides360.jpg"></p>
 </div>
 </div>
 </section>
 
-<section id="ingestion-stream-6" class="title-slide slide level1 center">
+<section id="ingestion-stream-4" class="title-slide slide level1 center">
 <h1>Ingestion: stream</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><strong>Ordered</strong>: events in a shard have a sequential IDs (unique in a shard)</p>
 <ul>
-<li>Local ordering keeps things much simpler than global ordering</li>
+<li>Local ordering keeps things much simpler than global ordering <span class="citation" data-cites="lamport2019time">(<a href="#/references" role="doc-biblioref" onclick="">Lamport 2019</a>)</span></li>
 <li>Applications maintain their own cursor for each shard</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides361.jpg"></p>
 </div>
 </div>
-<p>Lamport, Leslie. “Time, clocks, and the ordering of events in a distributed system.” <em>Concurrency: the Works of Leslie </em> <em>Lamport</em> . 2019. 179-196.</p>
 </section>
 
-<section id="ingestion-stream-7" class="title-slide slide level1 center">
+<section id="ingestion-stream-5" class="title-slide slide level1 center">
 <h1>Ingestion: stream</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -636,7 +639,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Ingestion: stream (AWS)</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>Amazon Kinesis Data Streams</p>
+<p><a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams</a></p>
 <ul>
 <li>Created and provisioned by shard
 <ul>
@@ -656,10 +659,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Records are retained for 7 days at maximum</li>
 </ul>
 </div><div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
 <p><img data-src="imgs/slides363.png"></p>
+<figcaption>AWS Kinesis</figcaption>
+</figure>
 </div>
 </div>
-<p><a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html</a></p>
+</div>
 </section>
 
 <section id="ingestion-stream-aws-1" class="title-slide slide level1 center">
@@ -669,9 +676,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Split a shard into two, or merge two shards</li>
 <li>Users must scale shards up and down manually
 <ul>
-<li>Monitor usage with Amazon CloudWatch and modify scale as needed</li>
+<li>Monitor usage with <a href="https://aws.amazon.com/cloudwatch/">Amazon CloudWatch</a> and modify scale as needed</li>
 </ul></li>
-<li>Avoid shard management by using Kinesis Data Firehose</li>
+<li>Avoid shard management by using <a href="https://aws.amazon.com/kinesis/data-firehose">Kinesis Data Firehose</a></li>
 </ul>
 <p>Kinesis is a regional service, with streams scoped to specific regions</p>
 <ul>
@@ -682,11 +689,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Priced by shard hour, data volume, and data retention period</li>
 <li>Pay for resources you provision (even if not used)</li>
 </ul>
-<p><a href="https://aws.amazon.com/cloudwatch/">https://aws.amazon.com/cloudwatch/</a></p>
-<p><a href="https://aws.amazon.com/kinesis/data-firehose">https://aws.amazon.com/kinesis/data-firehose</a></p>
 </section>
 
-<section id="ingestion-stream-8" class="title-slide slide level1 center">
+<section id="ingestion-stream-6" class="title-slide slide level1 center">
 <h1>Ingestion: stream</h1>
 <table>
 <colgroup>
@@ -744,20 +749,20 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="section-1" class="title-slide slide level1 center">
 <h1></h1>
 
-<img data-src="imgs/379.svg" class="r-stretch"></section>
+<img data-src="imgs/379.svg" class="r-stretch quarto-figure-center"><p class="caption">Serverless computing</p></section>
 
 <section id="serverless-computingprocessing" class="title-slide slide level1 center">
 <h1>Serverless computing/processing</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p>AWS Lambda: compose code functions in a loose orchestration</p>
+<p><strong>AWS Lambda</strong>: compose code functions in a loose orchestration</p>
 <ul>
 <li>Build modular back-end systems</li>
 <li>Event-driven and push-based pipelines</li>
 </ul>
 <p>With Lambda, you are responsible only for your code (Lambda function)</p>
 <ul>
-<li>Lambda manages the compute fleet that offers a balance of memory and CPU</li>
+<li>Lambda manages the compute fleet that offers a balance of memory/CPU</li>
 <li>Lambda performs operational and administrative activities on your behalf
 <ul>
 <li>Provisioning capacity, monitoring fleet health, applying security patches, etc.</li>
@@ -777,7 +782,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>A Lambda function is a granular service</li>
 <li>The Lambda runtime invokes a lambda function multiple times in parallel</li>
-<li>Compute service that executes code written in JavaScript/Python/C#/Java
+<li>Compute service that executes code written in JavaScript/Python/Java
 <ul>
 <li>Elastic Compute Cloud (EC2) servers run the code (e.g., a Linux server)</li>
 </ul></li>
@@ -823,16 +828,15 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p>Patterns for serverless data pipelines</p>
 <ul>
-<li>Command pattern</li>
-<li>Messaging pattern</li>
-<li>Priority queue pattern</li>
-<li>Pipes and filters pattern</li>
+<li><em>Command</em> pattern</li>
+<li><em>Messaging</em> pattern</li>
+<li><em>Priority queue</em> pattern</li>
+<li><em>Pipes and filters</em> pattern</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides366.jpg"></p>
 </div>
 </div>
-<p><a href="https://www.manning.com/books/aws-lambda-in-action">https://www.manning.com/books/aws-lambda-in-action</a></p>
 </section>
 
 <section id="command-pattern" class="title-slide slide level1 center">
@@ -846,13 +850,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Encapsulate a request as an object</p>
 <ul>
 <li>Issue requests to objects without knowing anything about the operation being requested or the receiver</li>
-<li></li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides367.png"></p>
 </div>
 </div>
-<p><a href="https://aws.amazon.com/api-gateway">https://aws.amazon.com/api-gateway</a></p>
 </section>
 
 <section id="pipes-and-filters-pattern" class="title-slide slide level1 center">
@@ -909,11 +911,22 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </section>
 
-<section id="thats-all-folks" class="title-slide slide level1 center">
-<h1>That’s all, folks!</h1>
+<section id="references" class="title-slide slide level1 smaller scrollable">
+<h1>References</h1>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Matteo Francia - Big Data and Cloud Platforms (Module 2) - A.Y. 2024/25</p>
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-akidau2018streaming" class="csl-entry" role="listitem">
+Akidau, Tyler, Slava Chernyak, and Reuven Lax. 2018. <em>Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing</em>. " O’Reilly Media, Inc.".
+</div>
+<div id="ref-kreps2014heart" class="csl-entry" role="listitem">
+Kreps, Jay. 2014. <em>I Heart Logs</em>. " O’Reilly Media, Inc.".
+</div>
+<div id="ref-lamport2019time" class="csl-entry" role="listitem">
+Lamport, Leslie. 2019. <span>“Time, Clocks, and the Ordering of Events in a Distributed System.”</span> In <em>Concurrency: The Works of Leslie Lamport</em>, 179–96.
 </div>
 </div>
 </section>

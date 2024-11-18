@@ -437,7 +437,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="column" style="width:60%;">
 <p>Amazon <strong>Elastic Compute Cloud</strong> (EC2)</p>
 <ul>
-<li>A web service that provides resizable compute capacity</li>
+<li>A web service that provides resizable computing capacity</li>
 <li>Complete control of computing resources
 <ul>
 <li>Processor, storage, networking, OS, and purchase model</li>
@@ -450,7 +450,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html">Amazon Machine Image</a> is a software template</p>
 <ul>
 <li>The EC2 instance is used for creating the virtual server instance</li>
-<li>The AMI is the EC2 virtual machines image</li>
+<li>The AMI is the EC2 virtual machine image</li>
 </ul>
 <p>Interact with EC2 instance as with any computer</p>
 <ul>
@@ -515,7 +515,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>You can run workloads on
 <ul>
 <li>Amazon EC2 instances</li>
-<li>Amazon Elastic Kubernetes Service (EKS)&nbsp;clusters</li>
+<li>Amazon Elastic Kubernetes Service (EKS) clusters</li>
 </ul></li>
 </ul>
 <p>Example of workload</p>
@@ -604,17 +604,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>AWS EMR: <a href="https://aws.amazon.com/ec2/pricing/">pricing</a></h1>
 <p><em>On-Demand Instance</em></p>
 <ul>
-<li>Pay for compute capacity by the hour (minimum of 60 seconds)</li>
+<li>Pay for computing capacity by the hour (minimum of 60 seconds)</li>
 <li>No long-term commitments</li>
 </ul>
 <p><em>Spot Instance</em></p>
 <ul>
 <li>Unused EC2 instance that is available for less than the on-demand price</li>
-<li>Hourly price is called <em>spot price</em>
+<li>The hourly price is called <em>spot price</em>
 <ul>
 <li>Adjusted based on long-term supply and demand for spot instances</li>
 </ul></li>
-<li>Run the instance when capacity is available and price is below threshold
+<li>Run the instance when capacity is available and the price is below the threshold
 <ul>
 <li>When data-center resources are low, spot instances are dropped</li>
 <li>Mainly suitable for batch workloads</li>
@@ -628,13 +628,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><em>Capacity-optimized strategy</em></p>
 <ul>
 <li>Allocated instances into the most available pools</li>
-<li>Look at real-time capacity data, predict which are the most available</li>
+<li>Look at real-time capacity data, and predict which are the most available</li>
 <li>Works well for workloads such as big data and analytics</li>
-<li>Works well when we have high cost of interruption</li>
+<li>Works well when we have a high cost of interruption</li>
 </ul>
 <p><em>Lowest-price strategy</em></p>
 <ul>
-<li>Allocates instances in pools with lowest price at time of fulfillment</li>
+<li>Allocates instances in pools with the lowest price at the time of fulfillment</li>
 </ul>
 </section>
 
@@ -675,8 +675,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>HDFS is used by the master and core nodes</li>
 <li><em>AWS EBS volume storage is used for HDFS data</em></li>
-<li>Is fast, best used for caching the results produced by intermediate job-flow steps, <em>why?</em></li>
-<li>It’s ephemeral storage which is reclaimed when the cluster ends</li>
+<li>It is fast and best used for caching the results produced by intermediate job-flow steps. <em>Why?</em></li>
+<li>It’s temporary storage which is reclaimed when the cluster ends</li>
 </ul></li>
 <li>s3://DOC-EXAMPLE-BUCKET1/path (EMRFS)
 <ul>
@@ -722,27 +722,27 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb1-10"><a href=""></a>  <span class="ex">--log-uri</span> <span class="st">'s3n://aws-logs-604905954159-us-east-1/elasticmapreduce/'</span></span>
 <span id="cb1-11"><a href=""></a>  <span class="ex">--name</span> <span class="st">'BigData'</span></span>
 <span id="cb1-12"><a href=""></a>  <span class="ex">--instance-groups</span> <span class="st">'</span></span>
-<span id="cb1-13"><a href=""></a><span class="st">    [{    "InstanceCount": 1,</span></span>
-<span id="cb1-14"><a href=""></a><span class="st">          "BidPrice": "OnDemandPrice",</span></span>
-<span id="cb1-15"><a href=""></a><span class="st">          "EbsConfiguration": {</span></span>
-<span id="cb1-16"><a href=""></a><span class="st">              "EbsBlockDeviceConfigs": [{</span></span>
-<span id="cb1-17"><a href=""></a><span class="st">                      "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },</span></span>
-<span id="cb1-18"><a href=""></a><span class="st">                      "VolumesPerInstance": 2</span></span>
-<span id="cb1-19"><a href=""></a><span class="st">                  }]},</span></span>
-<span id="cb1-20"><a href=""></a><span class="st">          "InstanceGroupType": "MASTER",</span></span>
-<span id="cb1-21"><a href=""></a><span class="st">          "InstanceType": "m4.xlarge",</span></span>
-<span id="cb1-22"><a href=""></a><span class="st">          "Name": "Master - 1"</span></span>
-<span id="cb1-23"><a href=""></a><span class="st">      }, {</span></span>
-<span id="cb1-24"><a href=""></a><span class="st">          "InstanceCount": 1,</span></span>
-<span id="cb1-25"><a href=""></a><span class="st">          "BidPrice": "OnDemandPrice",</span></span>
-<span id="cb1-26"><a href=""></a><span class="st">          "EbsConfiguration": {</span></span>
-<span id="cb1-27"><a href=""></a><span class="st">              "EbsBlockDeviceConfigs": [{</span></span>
-<span id="cb1-28"><a href=""></a><span class="st">                      "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },</span></span>
-<span id="cb1-29"><a href=""></a><span class="st">                      "VolumesPerInstance": 2</span></span>
-<span id="cb1-30"><a href=""></a><span class="st">                  }]},</span></span>
-<span id="cb1-31"><a href=""></a><span class="st">          "InstanceGroupType": "CORE",</span></span>
-<span id="cb1-32"><a href=""></a><span class="st">          "InstanceType": "m4.xlarge",</span></span>
-<span id="cb1-33"><a href=""></a><span class="st">          "Name": "Core - 2"}]'</span></span>
+<span id="cb1-13"><a href=""></a><span class="st"> [{    "InstanceCount": 1,</span></span>
+<span id="cb1-14"><a href=""></a><span class="st"> "BidPrice": "OnDemandPrice",</span></span>
+<span id="cb1-15"><a href=""></a><span class="st"> "EbsConfiguration": {</span></span>
+<span id="cb1-16"><a href=""></a><span class="st"> "EbsBlockDeviceConfigs": [{</span></span>
+<span id="cb1-17"><a href=""></a><span class="st"> "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },</span></span>
+<span id="cb1-18"><a href=""></a><span class="st"> "VolumesPerInstance": 2</span></span>
+<span id="cb1-19"><a href=""></a><span class="st"> }]},</span></span>
+<span id="cb1-20"><a href=""></a><span class="st"> "InstanceGroupType": "MASTER",</span></span>
+<span id="cb1-21"><a href=""></a><span class="st"> "InstanceType": "m4.xlarge",</span></span>
+<span id="cb1-22"><a href=""></a><span class="st"> "Name": "Master - 1"</span></span>
+<span id="cb1-23"><a href=""></a><span class="st"> }, {</span></span>
+<span id="cb1-24"><a href=""></a><span class="st"> "InstanceCount": 1,</span></span>
+<span id="cb1-25"><a href=""></a><span class="st"> "BidPrice": "OnDemandPrice",</span></span>
+<span id="cb1-26"><a href=""></a><span class="st"> "EbsConfiguration": {</span></span>
+<span id="cb1-27"><a href=""></a><span class="st"> "EbsBlockDeviceConfigs": [{</span></span>
+<span id="cb1-28"><a href=""></a><span class="st"> "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },</span></span>
+<span id="cb1-29"><a href=""></a><span class="st"> "VolumesPerInstance": 2</span></span>
+<span id="cb1-30"><a href=""></a><span class="st"> }]},</span></span>
+<span id="cb1-31"><a href=""></a><span class="st"> "InstanceGroupType": "CORE",</span></span>
+<span id="cb1-32"><a href=""></a><span class="st"> "InstanceType": "m4.xlarge",</span></span>
+<span id="cb1-33"><a href=""></a><span class="st"> "Name": "Core - 2"}]'</span></span>
 <span id="cb1-34"><a href=""></a>  <span class="ex">--scale-down-behavior</span> TERMINATE_AT_TASK_COMPLETION</span>
 <span id="cb1-35"><a href=""></a>  <span class="ex">--region</span> us-east-1</span></code></pre></div>
 </section>
@@ -750,7 +750,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <section id="cluster-lifecycle" class="title-slide slide level1 center">
 <h1>Cluster lifecycle</h1>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:40%;">
 <p>Creating a cluster (it takes ~10 minutes)</p>
 <ul>
 <li>A cluster cannot be stopped</li>
@@ -779,7 +779,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Cluster sequentially runs any steps that you specified when you created the cluster</li>
 </ul>
 <p><code>WAITING</code>: after steps run successfully</p>
-<p><code>TERMINATING</code>: after manual shut down</p>
+<p><code>TERMINATING</code>: after manual shutdown</p>
 <ul>
 <li><em>Any data stored on the cluster is deleted</em></li>
 </ul>
@@ -796,7 +796,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li><code>PENDING</code>: The step is waiting to be run</li>
 <li><code>RUNNING</code>: The step is currently running</li>
 <li><code>COMPLETED</code>: The step completed successfully</li>
-<li><code>CANCELLED</code>: The step was cancelled before running because an earlier step failed</li>
+<li><code>CANCELLED</code>: The step was canceled before running because an earlier step failed</li>
 <li><code>FAILED</code>: The step failed while running</li>
 </ul>
 </section>

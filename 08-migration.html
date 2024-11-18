@@ -614,7 +614,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><strong>Software cost</strong> (up to 2020): 0€</p>
 <ul>
 <li>Free Cloudera Management System</li>
-<li>No software licensing (for research purpose)</li>
+<li>No software licensing (for research purposes)</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <table>
@@ -648,12 +648,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="column" style="width:60%;">
 <p><strong>Software cost</strong> (up to Mar 05, 2021): 10000€/year x 18 = 180000€/year</p>
 <ul>
-<li>Cloudera is no more free, 10K€ per node
+<li>Cloudera is no longer free, 10K€ per node
 <ul>
 <li><a href="https://www.cloudera.com/products/pricing.html#private-cloud-services">https://www.cloudera.com/products/pricing.html#private-cloud-services</a></li>
 <li><a href="https://www.cloudera.com/products/pricing/product-features.html">https://www.cloudera.com/products/pricing/product-features.html</a></li>
 </ul></li>
-<li>No license for research purpose</li>
+<li>No license for research purposes</li>
 </ul>
 <p><em>“Houston we’ve had a problem!”</em></p>
 <ul>
@@ -699,7 +699,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Is it computing, storage, or processing?</li>
 </ul></li>
-<li>Identify a suitable budget, implement, refine later
+<li>Identify a suitable budget, implement, and refine later
 <ul>
 <li>Wrong refinements can do a lot of damage</li>
 </ul></li>
@@ -816,7 +816,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>Find the most similar cloud-based solution to a Hadoop cluster</li>
 <li>Rethink applications (later) when you got the know-how</li>
 </ul></li>
-<li>Identify a suitable budget, implement, refine later
+<li>Identify a suitable budget and refine it later
 <ul>
 <li>Wrong refinements can do a lot of damage</li>
 </ul></li>
@@ -833,7 +833,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>HP0: three replicas (we stick to this)</li>
 <li>HP1: decrease replicas for cold data</li>
-<li>HP2: move cold data to glacier or delete id</li>
+<li>HP2: move cold data to the glacier or delete id</li>
 <li>…</li>
 </ul></li>
 </ul>
@@ -887,7 +887,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>4 EC2 instances: 162000$/year / 18 machines x 4 machines = <em>36000$/year</em></li>
 <li>Problems
 <ul>
-<li>Machines are up-and-running even when no computation is necessary
+<li>Machines are up and running even when no computation is necessary
 <ul>
 <li>This is necessary to persist data</li>
 </ul></li>
@@ -948,7 +948,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>HDFS on EC2</p>
 <ul>
 <li>Heavy price</li>
-<li>Machine must be always on to guarantee data persistency</li>
+<li>Machine must always be on to guarantee data persistence</li>
 <li>Data locality</li>
 </ul>
 <p>S3</p>
@@ -1219,12 +1219,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Summing up</h1>
 <p>We estimated the cluster costs</p>
 <ul>
-<li>On-premises solution with 18 machines: no go</li>
+<li>On-premises solution with 18 machines: no-go</li>
 <li>Cloud solution with 18 EC2 instances: no go</li>
 </ul>
 <p>We reduced the solution based on software requirements</p>
 <ul>
-<li>On-premises solution with 4 machines: no go</li>
+<li>On-premises solution with 4 machines: no-go</li>
 <li>Cloud solution with 4 EC2 instances: no go, we miss the software configuration</li>
 <li>We moved the cluster to AWS EMR + spot instances + S3 storage</li>
 </ul>
