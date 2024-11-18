@@ -33,7 +33,7 @@ We can choose the XaaS configuration to build our pipelines
 
 Amazon **Elastic Compute Cloud** (EC2)
 
-- A web service that provides resizable compute capacity
+- A web service that provides resizable computing capacity
 - Complete control of computing resources
   - Processor, storage, networking, OS, and purchase model
 
@@ -44,7 +44,7 @@ The [instance type](https://aws.amazon.com/ec2/instance-types) determines the ha
 [Amazon Machine Image](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instances-and-amis.html) is a software template
 
 - The EC2 instance is used for creating the virtual server instance
-- The AMI is the EC2 virtual machines image
+- The AMI is the EC2 virtual machine image
 
 Interact with EC2 instance as with any computer
 
@@ -96,7 +96,7 @@ Amazon EMR is a data platform based on the Hadoop stack
 - Apache Spark, Apache Hive, Apache HBase, etc.
 - You can run workloads on
   - Amazon EC2 instances
-  - Amazon Elastic Kubernetes Service (EKS) clusters
+  - Amazon Elastic Kubernetes Service (EKS) clusters
 
 Example of workload
 
@@ -172,15 +172,15 @@ The *node type* identifies the role within the cluster
 
 *On-Demand Instance*
 
-- Pay for compute capacity by the hour (minimum of 60 seconds)
+- Pay for computing capacity by the hour (minimum of 60 seconds)
 - No long-term commitments
 
 *Spot Instance*
 
 - Unused EC2 instance that is available for less than the on-demand price
-- Hourly price is called *spot price*
+- The hourly price is called *spot price*
   - Adjusted based on long-term supply and demand for spot instances
-- Run the instance when capacity is available and price is below threshold
+- Run the instance when capacity is available and the price is below the threshold
   - When data-center resources are low, spot instances are dropped
   - Mainly suitable for batch workloads
 
@@ -191,13 +191,13 @@ Spot Instance cost strategies
 *Capacity-optimized strategy*
 
 - Allocated instances into the most available pools
-- Look at real-time capacity data, predict which are the most available
+- Look at real-time capacity data, and predict which are the most available
 - Works well for workloads such as big data and analytics
-- Works well when we have high cost of interruption
+- Works well when we have a high cost of interruption
 
 *Lowest-price strategy*
 
-- Allocates instances in pools with lowest price at time of fulfillment
+- Allocates instances in pools with the lowest price at the time of fulfillment
 
 # Creating the cluster
 
@@ -227,8 +227,8 @@ Amazon EMR provides two main file systems
 - hdfs://path (or just `path`)
   - HDFS is used by the master and core nodes
   - *AWS EBS volume storage is used for HDFS data*
-  - Is fast, best used for caching the results produced by intermediate job-flow steps, *why?*
-  - It’s ephemeral storage which is reclaimed when the cluster ends
+  - It is fast and best used for caching the results produced by intermediate job-flow steps. *Why?*
+  - It’s temporary storage which is reclaimed when the cluster ends
 - s3://DOC-EXAMPLE-BUCKET1/path (EMRFS)
   - An implementation of the Hadoop file system atop Amazon S3
   - We can avoid EBS storage
@@ -268,27 +268,27 @@ aws emr create-cluster
   --log-uri 's3n://aws-logs-604905954159-us-east-1/elasticmapreduce/'
   --name 'BigData'
   --instance-groups '
-    [{    "InstanceCount": 1,
-          "BidPrice": "OnDemandPrice",
-          "EbsConfiguration": {
-              "EbsBlockDeviceConfigs": [{
-                      "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },
-                      "VolumesPerInstance": 2
-                  }]},
-          "InstanceGroupType": "MASTER",
-          "InstanceType": "m4.xlarge",
-          "Name": "Master - 1"
-      }, {
-          "InstanceCount": 1,
-          "BidPrice": "OnDemandPrice",
-          "EbsConfiguration": {
-              "EbsBlockDeviceConfigs": [{
-                      "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },
-                      "VolumesPerInstance": 2
-                  }]},
-          "InstanceGroupType": "CORE",
-          "InstanceType": "m4.xlarge",
-          "Name": "Core - 2"}]'
+ [{    "InstanceCount": 1,
+ "BidPrice": "OnDemandPrice",
+ "EbsConfiguration": {
+ "EbsBlockDeviceConfigs": [{
+ "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },
+ "VolumesPerInstance": 2
+ }]},
+ "InstanceGroupType": "MASTER",
+ "InstanceType": "m4.xlarge",
+ "Name": "Master - 1"
+ }, {
+ "InstanceCount": 1,
+ "BidPrice": "OnDemandPrice",
+ "EbsConfiguration": {
+ "EbsBlockDeviceConfigs": [{
+ "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },
+ "VolumesPerInstance": 2
+ }]},
+ "InstanceGroupType": "CORE",
+ "InstanceType": "m4.xlarge",
+ "Name": "Core - 2"}]'
   --scale-down-behavior TERMINATE_AT_TASK_COMPLETION
   --region us-east-1
 ```
@@ -296,7 +296,7 @@ aws emr create-cluster
 # Cluster lifecycle
 
 :::: {.columns}
-::: {.column width=60%}
+::: {.column width=40%}
 
 Creating a cluster (it takes ~10 minutes)
 
@@ -325,7 +325,7 @@ Creating a cluster (it takes ~10 minutes)
 
 `WAITING`: after steps run successfully
 
-`TERMINATING`: after manual shut down
+`TERMINATING`: after manual shutdown
 
 - *Any data stored on the cluster is deleted*
 
@@ -340,7 +340,7 @@ Step states
 - `PENDING`: The step is waiting to be run
 - `RUNNING`: The step is currently running
 - `COMPLETED`: The step completed successfully
-- `CANCELLED`: The step was cancelled before running because an earlier step failed
+- `CANCELLED`: The step was canceled before running because an earlier step failed
 - `FAILED`: The step failed while running
 
 # Running the cluster

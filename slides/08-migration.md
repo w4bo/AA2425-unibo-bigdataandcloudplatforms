@@ -146,7 +146,7 @@ Software
 **Software cost** (up to 2020): 0€
 
 - Free Cloudera Management System
-- No software licensing (for research purpose)
+- No software licensing (for research purposes)
 
 :::
 ::: {.column width=40%}
@@ -166,10 +166,10 @@ Software
 
 **Software cost** (up to Mar 05, 2021): 10000€/year x 18 = 180000€/year
 
-- Cloudera is no more free, 10K€ per node
+- Cloudera is no longer free, 10K€ per node
   - [https://www.cloudera.com/products/pricing.html\#private-cloud-services](https://www.cloudera.com/products/pricing.html#private-cloud-services)
   - [https://www.cloudera.com/products/pricing/product-features.html](https://www.cloudera.com/products/pricing/product-features.html)
-- No license for research purpose
+- No license for research purposes
 
 *“Houston we’ve had a problem!”*
 
@@ -198,7 +198,7 @@ How do we start?
 - We have already defined the hardware and the software stack
 - Start with coarse tuning, identify the dominating costs first
   - Is it computing, storage, or processing?
-- Identify a suitable budget, implement, refine later
+- Identify a suitable budget, implement, and refine later
   - Wrong refinements can do a lot of damage
 
 # On cloud v1
@@ -281,7 +281,7 @@ How do we proceed with the migration?
 - Try to achieve the smallest migration impact
   - Find the most similar cloud-based solution to a Hadoop cluster
   - Rethink applications (later) when you got the know-how
-- Identify a suitable budget, implement, refine later
+- Identify a suitable budget and refine it later
   - Wrong refinements can do a lot of damage
 
 # Migration
@@ -294,7 +294,7 @@ How do we proceed with the migration?
 - How much durability do we need?
   - HP0: three replicas (we stick to this)
   - HP1: decrease replicas for cold data
-  - HP2: move cold data to glacier or delete id
+  - HP2: move cold data to the glacier or delete id
   - ...
 
 **HBase** has marginal effects on the pricing (100GB << 50TB)
@@ -354,7 +354,7 @@ AWS
 
 - 4 EC2 instances: 162000\$/year / 18 machines x 4 machines = *36000\$/year*
 - Problems
-  - Machines are up-and-running even when no computation is necessary
+  - Machines are up and running even when no computation is necessary
     - This is necessary to persist data
   - Still, no software stack
 
@@ -385,7 +385,7 @@ AWS
 HDFS on EC2
 
 - Heavy price
-- Machine must be always on to guarantee data persistency
+- Machine must always be on to guarantee data persistence
 - Data locality
 
 S3
@@ -524,12 +524,12 @@ Migrating cluster to EMR: *14710€/year*
 
 We estimated the cluster costs
 
-- On-premises solution with 18 machines: no go
+- On-premises solution with 18 machines: no-go
 - Cloud solution with 18 EC2 instances: no go
 
 We reduced the solution based on software requirements
 
-- On-premises solution with 4 machines: no go
+- On-premises solution with 4 machines: no-go
 - Cloud solution with 4 EC2 instances: no go, we miss the software configuration
 - We moved the cluster to AWS EMR + spot instances + S3 storage
 
