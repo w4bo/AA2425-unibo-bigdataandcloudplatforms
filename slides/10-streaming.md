@@ -35,14 +35,14 @@ What is a *streaming* system?
 
 What is a bulk processing system?
 
-- An engine capable to handle processing on **bounded** datasets
+- An engine capable of handling processing on **bounded** datasets
 
 :::
 ::: {.column width=50%}
 
 What is a streaming system?
 
-- An engine capable to handle processing on **unbounded** datasets
+- An engine capable of handling processing on **unbounded** datasets
 - Streaming *is a superset* of batch processing
 
 :::
@@ -95,7 +95,7 @@ Workflow
 
 # [AWS Snowmobile](https://youtu.be/8vQmTZTq7nw?t=60) {background-video="https://youtu.be/8vQmTZTq7nw?t=60&autoplay=1"}
 
-What if we have exabyte of data?
+What if we have exabytes of data?
 
 - $10^3$ KB (kilobyte)
 - $10^6$ MB (megabyte)
@@ -142,7 +142,7 @@ Two pipelines per application (data in/out)
 **Publish/subscribe (pub/sub)**: a way of communicating messages
 
 - *Senders* publish messages associated with one or more **topics**
-- *Receivers* subscribe to specific topics, receive all messages with that topic
+- *Receivers* subscribe to specific topics, and receive all messages with that topic
 - *Messages* are events
 
 :::
@@ -201,14 +201,14 @@ General idea:
 
 **Unified**: a single log in a company with applications sending/reading events
 
-- Log serves as central data backbone
+- Log serves as the central data backbone
   - It can contain many distinct continuous streams of events
   - Not all events are sent to the same event stream
 
 **Append-only**: new events are appended to the unified log
 
 - Existing events are never updated in place
-  - If read the event \#10, never look at events 1 through 10 again
+  - If read event \#10, never look at events 1 through 10 again
 - Events are automatically deleted from the unified log when they age
   - E.g., automatically remove events after 7 days
 
@@ -242,10 +242,10 @@ Using a log as a universal integration mechanism is never going to be more than 
 :::: {.columns}
 ::: {.column width=60%}
 
-**Ordered**: events in a shard have a sequential IDs (unique in a shard)
+**Ordered**: events in a shard have sequential IDs (unique in a shard)
 
 - Local ordering keeps things much simpler than global ordering [@lamport2019time]
-- Applications maintain their own cursor for each shard
+- Applications maintain their cursor for each shard
 
 :::
 ::: {.column width=40%}
@@ -471,7 +471,7 @@ Decompose a complex processing task into a sequence of manageable services
 
 Messaging pattern
 
-- Describes how two different parts of a message passing system connect and communicate with each other
+- Describes how two different parts of a message-passing system connect and communicate with each other
 
 Decouple services from direct dependence and allow storage of events in a queue
 

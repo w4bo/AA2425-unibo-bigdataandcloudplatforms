@@ -224,12 +224,12 @@ Choose to launch **master**, **core**, or **task** on Spot Instances
 Amazon EMR provides two main file systems
 
 - **HDFS** and **EMRFS**, specify which file system to use by the prefix
-- hdfs://path (or just `path`)
+- `hdfs://path` (or just `path`)
   - HDFS is used by the master and core nodes
   - *AWS EBS volume storage is used for HDFS data*
   - It is fast and best used for caching the results produced by intermediate job-flow steps. *Why?*
   - It’s temporary storage which is reclaimed when the cluster ends
-- s3://DOC-EXAMPLE-BUCKET1/path (EMRFS)
+- `s3://DOC-EXAMPLE-BUCKET1/path` (EMRFS)
   - An implementation of the Hadoop file system atop Amazon S3
   - We can avoid EBS storage
 
@@ -268,27 +268,27 @@ aws emr create-cluster
   --log-uri 's3n://aws-logs-604905954159-us-east-1/elasticmapreduce/'
   --name 'BigData'
   --instance-groups '
- [{    "InstanceCount": 1,
- "BidPrice": "OnDemandPrice",
- "EbsConfiguration": {
- "EbsBlockDeviceConfigs": [{
- "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },
- "VolumesPerInstance": 2
- }]},
- "InstanceGroupType": "MASTER",
- "InstanceType": "m4.xlarge",
- "Name": "Master - 1"
- }, {
- "InstanceCount": 1,
- "BidPrice": "OnDemandPrice",
- "EbsConfiguration": {
- "EbsBlockDeviceConfigs": [{
- "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },
- "VolumesPerInstance": 2
- }]},
- "InstanceGroupType": "CORE",
- "InstanceType": "m4.xlarge",
- "Name": "Core - 2"}]'
+    [{  "InstanceCount": 1,
+        "BidPrice": "OnDemandPrice",
+        "EbsConfiguration": {
+          "EbsBlockDeviceConfigs": [{
+            "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },
+            "VolumesPerInstance": 2
+          }]},
+        "InstanceGroupType": "MASTER",
+        "InstanceType": "m4.xlarge",
+        "Name": "Master - 1"
+      }, {
+        "InstanceCount": 1,
+        "BidPrice": "OnDemandPrice",
+        "EbsConfiguration": {
+          "EbsBlockDeviceConfigs": [{
+            "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },
+            "VolumesPerInstance": 2
+      }]},
+      "InstanceGroupType": "CORE",
+      "InstanceType": "m4.xlarge",
+      "Name": "Core - 2"}]'
   --scale-down-behavior TERMINATE_AT_TASK_COMPLETION
   --region us-east-1
 ```
