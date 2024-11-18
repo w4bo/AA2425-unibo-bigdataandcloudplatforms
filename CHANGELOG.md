@@ -1,3 +1,9 @@
+## [1.0.37](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.36...1.0.37) (2024-11-18)
+
+### Bug Fixes
+
+* all slides ([e33678b](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/e33678b336bda1b0b623941d2fbd85e66535212b))
+
 ## [1.0.36](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.35...1.0.36) (2024-11-18)
 
 ### Bug Fixes
