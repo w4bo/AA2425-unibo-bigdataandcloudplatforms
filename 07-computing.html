@@ -671,14 +671,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Amazon EMR provides two main file systems</p>
 <ul>
 <li><strong>HDFS</strong> and <strong>EMRFS</strong>, specify which file system to use by the prefix</li>
-<li>hdfs://path (or just <code>path</code>)
+<li><code>hdfs://path</code> (or just <code>path</code>)
 <ul>
 <li>HDFS is used by the master and core nodes</li>
 <li><em>AWS EBS volume storage is used for HDFS data</em></li>
 <li>It is fast and best used for caching the results produced by intermediate job-flow steps. <em>Why?</em></li>
 <li>It’s temporary storage which is reclaimed when the cluster ends</li>
 </ul></li>
-<li>s3://DOC-EXAMPLE-BUCKET1/path (EMRFS)
+<li><code>s3://DOC-EXAMPLE-BUCKET1/path</code> (EMRFS)
 <ul>
 <li>An implementation of the Hadoop file system atop Amazon S3</li>
 <li>We can avoid EBS storage</li>
@@ -722,27 +722,27 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb1-10"><a href=""></a>  <span class="ex">--log-uri</span> <span class="st">'s3n://aws-logs-604905954159-us-east-1/elasticmapreduce/'</span></span>
 <span id="cb1-11"><a href=""></a>  <span class="ex">--name</span> <span class="st">'BigData'</span></span>
 <span id="cb1-12"><a href=""></a>  <span class="ex">--instance-groups</span> <span class="st">'</span></span>
-<span id="cb1-13"><a href=""></a><span class="st"> [{    "InstanceCount": 1,</span></span>
-<span id="cb1-14"><a href=""></a><span class="st"> "BidPrice": "OnDemandPrice",</span></span>
-<span id="cb1-15"><a href=""></a><span class="st"> "EbsConfiguration": {</span></span>
-<span id="cb1-16"><a href=""></a><span class="st"> "EbsBlockDeviceConfigs": [{</span></span>
-<span id="cb1-17"><a href=""></a><span class="st"> "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },</span></span>
-<span id="cb1-18"><a href=""></a><span class="st"> "VolumesPerInstance": 2</span></span>
-<span id="cb1-19"><a href=""></a><span class="st"> }]},</span></span>
-<span id="cb1-20"><a href=""></a><span class="st"> "InstanceGroupType": "MASTER",</span></span>
-<span id="cb1-21"><a href=""></a><span class="st"> "InstanceType": "m4.xlarge",</span></span>
-<span id="cb1-22"><a href=""></a><span class="st"> "Name": "Master - 1"</span></span>
-<span id="cb1-23"><a href=""></a><span class="st"> }, {</span></span>
-<span id="cb1-24"><a href=""></a><span class="st"> "InstanceCount": 1,</span></span>
-<span id="cb1-25"><a href=""></a><span class="st"> "BidPrice": "OnDemandPrice",</span></span>
-<span id="cb1-26"><a href=""></a><span class="st"> "EbsConfiguration": {</span></span>
-<span id="cb1-27"><a href=""></a><span class="st"> "EbsBlockDeviceConfigs": [{</span></span>
-<span id="cb1-28"><a href=""></a><span class="st"> "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },</span></span>
-<span id="cb1-29"><a href=""></a><span class="st"> "VolumesPerInstance": 2</span></span>
-<span id="cb1-30"><a href=""></a><span class="st"> }]},</span></span>
-<span id="cb1-31"><a href=""></a><span class="st"> "InstanceGroupType": "CORE",</span></span>
-<span id="cb1-32"><a href=""></a><span class="st"> "InstanceType": "m4.xlarge",</span></span>
-<span id="cb1-33"><a href=""></a><span class="st"> "Name": "Core - 2"}]'</span></span>
+<span id="cb1-13"><a href=""></a><span class="st">    [{  "InstanceCount": 1,</span></span>
+<span id="cb1-14"><a href=""></a><span class="st">        "BidPrice": "OnDemandPrice",</span></span>
+<span id="cb1-15"><a href=""></a><span class="st">        "EbsConfiguration": {</span></span>
+<span id="cb1-16"><a href=""></a><span class="st">          "EbsBlockDeviceConfigs": [{</span></span>
+<span id="cb1-17"><a href=""></a><span class="st">            "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },</span></span>
+<span id="cb1-18"><a href=""></a><span class="st">            "VolumesPerInstance": 2</span></span>
+<span id="cb1-19"><a href=""></a><span class="st">          }]},</span></span>
+<span id="cb1-20"><a href=""></a><span class="st">        "InstanceGroupType": "MASTER",</span></span>
+<span id="cb1-21"><a href=""></a><span class="st">        "InstanceType": "m4.xlarge",</span></span>
+<span id="cb1-22"><a href=""></a><span class="st">        "Name": "Master - 1"</span></span>
+<span id="cb1-23"><a href=""></a><span class="st">      }, {</span></span>
+<span id="cb1-24"><a href=""></a><span class="st">        "InstanceCount": 1,</span></span>
+<span id="cb1-25"><a href=""></a><span class="st">        "BidPrice": "OnDemandPrice",</span></span>
+<span id="cb1-26"><a href=""></a><span class="st">        "EbsConfiguration": {</span></span>
+<span id="cb1-27"><a href=""></a><span class="st">          "EbsBlockDeviceConfigs": [{</span></span>
+<span id="cb1-28"><a href=""></a><span class="st">            "VolumeSpecification": { "SizeInGB": 32, "VolumeType": "gp2" },</span></span>
+<span id="cb1-29"><a href=""></a><span class="st">            "VolumesPerInstance": 2</span></span>
+<span id="cb1-30"><a href=""></a><span class="st">      }]},</span></span>
+<span id="cb1-31"><a href=""></a><span class="st">      "InstanceGroupType": "CORE",</span></span>
+<span id="cb1-32"><a href=""></a><span class="st">      "InstanceType": "m4.xlarge",</span></span>
+<span id="cb1-33"><a href=""></a><span class="st">      "Name": "Core - 2"}]'</span></span>
 <span id="cb1-34"><a href=""></a>  <span class="ex">--scale-down-behavior</span> TERMINATE_AT_TASK_COMPLETION</span>
 <span id="cb1-35"><a href=""></a>  <span class="ex">--region</span> us-east-1</span></code></pre></div>
 </section>

@@ -389,12 +389,12 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="column" style="width:50%;">
 <p>What is a bulk processing system?</p>
 <ul>
-<li>An engine capable to handle processing on <strong>bounded</strong> datasets</li>
+<li>An engine capable of handling processing on <strong>bounded</strong> datasets</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p>What is a streaming system?</p>
 <ul>
-<li>An engine capable to handle processing on <strong>unbounded</strong> datasets</li>
+<li>An engine capable of handling processing on <strong>unbounded</strong> datasets</li>
 <li>Streaming <em>is a superset</em> of batch processing</li>
 </ul>
 </div>
@@ -454,7 +454,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="aws-snowmobile" class="title-slide slide level1 center" data-background-video="https://youtu.be/8vQmTZTq7nw?t=60&amp;autoplay=1">
 <h1><a href="https://youtu.be/8vQmTZTq7nw?t=60">AWS Snowmobile</a></h1>
-<p>What if we have exabyte of data?</p>
+<p>What if we have exabytes of data?</p>
 <ul>
 <li><span class="math inline">\(10^3\)</span> KB (kilobyte)</li>
 <li><span class="math inline">\(10^6\)</span> MB (megabyte)</li>
@@ -503,7 +503,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p><strong>Publish/subscribe (pub/sub)</strong>: a way of communicating messages</p>
 <ul>
 <li><em>Senders</em> publish messages associated with one or more <strong>topics</strong></li>
-<li><em>Receivers</em> subscribe to specific topics, receive all messages with that topic</li>
+<li><em>Receivers</em> subscribe to specific topics, and receive all messages with that topic</li>
 <li><em>Messages</em> are events</li>
 </ul>
 </div><div class="column" style="width:40%;">
@@ -555,7 +555,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Ingestion: stream</h1>
 <p><strong>Unified</strong>: a single log in a company with applications sending/reading events</p>
 <ul>
-<li>Log serves as central data backbone
+<li>Log serves as the central data backbone
 <ul>
 <li>It can contain many distinct continuous streams of events</li>
 <li>Not all events are sent to the same event stream</li>
@@ -565,7 +565,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Existing events are never updated in place
 <ul>
-<li>If read the event #10, never look at events 1 through 10 again</li>
+<li>If read event #10, never look at events 1 through 10 again</li>
 </ul></li>
 <li>Events are automatically deleted from the unified log when they age
 <ul>
@@ -599,10 +599,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Ingestion: stream</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><strong>Ordered</strong>: events in a shard have a sequential IDs (unique in a shard)</p>
+<p><strong>Ordered</strong>: events in a shard have sequential IDs (unique in a shard)</p>
 <ul>
 <li>Local ordering keeps things much simpler than global ordering <span class="citation" data-cites="lamport2019time">(<a href="#/references" role="doc-biblioref" onclick="">Lamport 2019</a>)</span></li>
-<li>Applications maintain their own cursor for each shard</li>
+<li>Applications maintain their cursor for each shard</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides361.jpg"></p>
@@ -878,7 +878,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="column" style="width:60%;">
 <p>Messaging pattern</p>
 <ul>
-<li>Describes how two different parts of a message passing system connect and communicate with each other</li>
+<li>Describes how two different parts of a message-passing system connect and communicate with each other</li>
 </ul>
 <p>Decouple services from direct dependence and allow storage of events in a queue</p>
 <ul>

@@ -343,7 +343,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="column" style="width:60%;">
 <p><strong>Project description</strong></p>
 <ul>
-<li>The increased use of pesticides and fertilisers damages the environment, destroys non-target plants and beneficial insects for the soil and harms human and animal health. Most seeds develop herbicide-resistant properties, rendering pesticides ineffective. Mechanical automatic systems that are studied as alternatives to pesticides deteriorate soil features, damage beneficial soil organisms and offer limited results for in-row weeding. The EU-funded WeLASER project will develop a non-chemical solution for weed management based on pioneering technology consisting of the application of lethal doses of energy on the weed meristems through a high-power laser source. An AI-vision system separates crops from weeds, identifying the weed meristems and pointing the laser at them. A smart controller based on IoT and cloud computing techniques coordinates the system, which is transfered all over the field by an autonomous vehicle.</li>
+<li>The increased use of pesticides and fertilizers damages the environment, destroys non-target plants and beneficial insects for the soil, and harms human and animal health. Most seeds develop herbicide-resistant properties, rendering pesticides ineffective. Mechanical automatic systems that are studied as alternatives to pesticides deteriorate soil features, damage beneficial soil organisms, and offer limited results for in-row weeding. The EU-funded WeLASER project will develop a non-chemical solution for weed management based on pioneering technology consisting of the application of lethal doses of energy on the weed meristems through a high-power laser source. An AI-vision system separates crops from weeds, identifying the weed meristems and pointing the laser at them. A smart controller based on IoT and cloud computing techniques coordinates the system, which is transferred all over the field by an autonomous vehicle.</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides348.png"></p>
@@ -363,7 +363,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <p>Assumptions</p>
 <ul>
 <li>Do not consider the collection of weed/crop images</li>
-<li>… and training/deploying of the CV algorithm</li>
+<li>… and training/deploying the CV algorithm</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <p><img data-src="imgs/slides348.png"></p>
@@ -375,7 +375,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1><a href="https://docs.google.com/spreadsheets/d/17zEr62CzyqeIy0vU-DcjEUoxf6bMd3ziLSSeIXvk4Lg/edit?usp=sharing">Data sources</a></h1>
 <p><em>8 cameras on the field</em>, average image size 3MB; two services:</p>
 <ul>
-<li><em>Alerting</em>: a camera sends an image when smt enters the field (at most 1 img every 5 min); assuming <span class="math inline">\(20 \frac{alerts}{day}\)</span>
+<li><em>Alerting</em>: a camera sends an image when smth enters the field (at most 1 img every 5 min); assuming <span class="math inline">\(20 \frac{alerts}{day}\)</span>
 <ul>
 <li><span class="math inline">\(20 \frac{𝑎𝑙𝑒𝑟𝑡}{𝑑𝑎𝑦}  \cdot 1 \frac{𝑖𝑚𝑎𝑔𝑒}{𝑎𝑙𝑒𝑟𝑡} \cdot 8 \frac{𝑐𝑎𝑚𝑒𝑟𝑎}{𝑓𝑖𝑒𝑙𝑑} = 160 \frac{𝑖𝑚𝑎𝑔𝑒}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
 <li><span class="math inline">\(160 \frac{𝑖𝑚𝑎𝑔𝑒}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑} \cdot 3 \frac{𝑀𝐵}{𝑖𝑚𝑎𝑔𝑒}=480 \frac{𝑀𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}  ~= 500 \frac{𝑀𝐵}{𝑑𝑎𝑦 \cdot 𝑓𝑖𝑒𝑙𝑑}\)</span></li>
@@ -420,7 +420,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>How many machines do we need? <em>4</em>: <em>1 master node</em> + <em>3 HDFS data nodes</em></li>
 <li>With which resources?
 <ul>
-<li>Assuming a HDFS replication factor of 3, we need at least 1TB of disk</li>
+<li>Assuming an HDFS replication factor of 3, we need at least 1TB of disk</li>
 <li>Think bigger: at least 8 cores, 64GB RAM, 500GB SSD + 4TB HDD</li>
 <li>8700€ / 3 years = 2900€</li>
 </ul></li>
@@ -537,7 +537,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </ul>
 <p><em>Kinesis</em></p>
 <ul>
-<li>Days for data retention (1 days), Records (100/second), Consumers (3)</li>
+<li>Days for data retention (1 day), Records (100/second), Consumers (3)</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <table>
@@ -568,16 +568,16 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="how-would-you-evaluate-the-cost-and-the-price" class="title-slide slide level1 center">
 <h1>How would you evaluate the cost and the price?</h1>
-<p><em>Price</em> is the amount a customer is willing to pay&nbsp;for a&nbsp;product or service</p>
-<p><em>Cost</em> is the expense incurred for&nbsp;creating a product or service</p>
+<p><em>Price</em> is the amount a customer is willing to pay for a product or service</p>
+<p><em>Cost</em> is the expense incurred for creating a product or service</p>
 <ul>
 <li>Hardware</li>
 <li>Development</li>
 <li>Maintenance</li>
 </ul>
-<p><em>Profit</em> is the difference between price&nbsp;paid and costs&nbsp;incurred is profit</p>
+<p><em>Profit</em> is the difference between the price paid and costs incurred is the profit</p>
 <ul>
-<li>If a customer pays&nbsp;$10 for a product that costs&nbsp;$6&nbsp;to make and sell, the company earns&nbsp;$4</li>
+<li>If a customer pays $10 for a product that costs $6 to make and sell, the company earns $4</li>
 </ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
