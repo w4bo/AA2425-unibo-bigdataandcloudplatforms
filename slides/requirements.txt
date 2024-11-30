@@ -12,5 +12,5 @@ pptx2md==2.0.5
 scipy==1.14.1
 awswrangler==3.10.0
 prov[dot]==2.0.1
-pydot==3.0.2
+pydot==3.0.3
 traitlets==5.14.3
