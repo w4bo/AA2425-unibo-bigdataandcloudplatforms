@@ -1331,19 +1331,31 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb9-2"><a href=""></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">20000</span>:</span>
 <span id="cb9-3"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb9-4"><a href=""></a> spark.sql(<span class="st">"select sum(quantity) from lineitem"</span>)  <span class="co"># Read the whole fact</span></span>
-<span id="cb9-5"><a href=""></a> spark.sql(<span class="st">"insert (500K tuples) into lineitem"</span>)  <span class="co"># Append new tuples</span></span>
-<span id="cb9-6"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>: OPTIMIZE</span>
-<span id="cb9-7"><a href=""></a> i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
+<span id="cb9-4"><a href=""></a>        spark.sql(<span class="st">"select sum(quantity) from lineitem"</span>)  <span class="co"># Read the whole fact</span></span>
+<span id="cb9-5"><a href=""></a>    spark.sql(<span class="st">"insert (500K tuples) into lineitem"</span>)  <span class="co"># Append new tuples</span></span>
+<span id="cb9-6"><a href=""></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
+
+<img data-src="imgs/deltalake8.png" class="r-stretch quarto-figure-center"><p class="caption">Scalability</p></section>
+
+<section id="delta-lake-11" class="title-slide slide level1 center">
+<h1>Delta Lake</h1>
+<p>Check the scalability with respect to the length of the log</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-2"><a href=""></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">20000</span>:</span>
+<span id="cb10-3"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb10-4"><a href=""></a>        spark.sql(<span class="st">"select sum(quantity) from lineitem"</span>)  <span class="co"># Read the whole fact</span></span>
+<span id="cb10-5"><a href=""></a>    spark.sql(<span class="st">"insert (500K tuples) into lineitem"</span>)  <span class="co"># Append new tuples</span></span>
+<span id="cb10-6"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>: OPTIMIZE  <span class="co"># Optimize</span></span>
+<span id="cb10-7"><a href=""></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
 
 <img data-src="imgs/deltalake4.png" class="r-stretch quarto-figure-center"><p class="caption">Scalability</p></section>
 
-<section id="delta-lake-11" class="title-slide slide level1 center">
+<section id="delta-lake-12" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
 
 <img alt="Scaling out performance" src="imgs/deltalake5.png" class="center r-stretch"></section>
 
-<section id="delta-lake-12" class="title-slide slide level1 center">
+<section id="delta-lake-13" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
 <p>Format-independent optimizations are</p>
 <ul>
