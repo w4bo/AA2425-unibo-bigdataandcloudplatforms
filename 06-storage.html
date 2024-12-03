@@ -814,7 +814,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>Each data pipeline should have a name that reflects its purpose. For example
 <ul>
-<li>A pipeline that takes data from the LA, applies common processing steps and saves data into SA</li>
+<li>A pipeline that takes data from the LA, applies common processing steps, and saves data into SA</li>
 <li>You will also have one for archiving data into AA</li>
 </ul></li>
 </ul></li>
@@ -888,7 +888,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <ul>
 <li>DWH typically couples compute and storage into an on-premises appliance
 <ul>
-<li>This forced enterprises to provision and pay for the peak of user load and data under management, very costly</li>
+<li>This forced enterprises to provision and pay for the peak of user load and data under management, which is very costly</li>
 </ul></li>
 <li>More and more datasets were completely unstructured, which DWHs could not store and query at all</li>
 </ul></li>
@@ -998,7 +998,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <li>If a query updates multiple objects in a table, readers will see partial updates as the query updates each object individually</li>
 </ul></li>
 </ul></li>
-<li>In <em>data lakes</em> is possible to implement other optimizations that leave the data files unchanged
+<li>In <em>data lakes</em> it is possible to implement other optimizations that leave the data files unchanged
 <ul>
 <li>For large tables with millions of objects, <em>metadata operations are expensive</em></li>
 <li>The latency of cloud object stores is so much higher that these data-skipping checks can take longer than the actual query</li>
@@ -1052,17 +1052,17 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="delta-lake-1" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
+<p><em>You own your data</em>: we are decoupling the data from database engines!</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource sql number-lines"><code class="sourceCode sql"><span id="cb1-1"><a href=""></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> suppliers(<span class="kw">id</span> <span class="dt">INT</span>, name STRING, age <span class="dt">INT</span>)</span>
-<span id="cb1-2"><a href=""></a>    TBLPROPERTIES (<span class="st">'foo'</span><span class="op">=</span><span class="st">'bar'</span>)</span>
-<span id="cb1-3"><a href=""></a>    <span class="kw">COMMENT</span> <span class="st">'this is a comment'</span></span>
+<span id="cb1-2"><a href=""></a> TBLPROPERTIES (<span class="st">'foo'</span><span class="op">=</span><span class="st">'bar'</span>)</span>
+<span id="cb1-3"><a href=""></a> <span class="kw">COMMENT</span> <span class="st">'this is a comment'</span></span>
 <span id="cb1-4"><a href=""></a>    LOCATION <span class="st">'s3://...'</span>;</span></code></pre></div>
-<p>You own your data: we are decoupling the data from the database engine!</p>
-<p>Delta tables are stored in S3 (simple files in a data lake), they can be read using different computes:</p>
+<p>Delta tables are stored in S3 (simple files in a data lake), and they can be read using <em>different computes</em>:</p>
 <ul>
 <li>Databricks, EMR, etc.</li>
-<li>Otherwise you are locked in with the vendor (e.g., Oracle database).</li>
+<li>Otherwise you are locked in with the vendor (e.g., Oracle).</li>
 </ul>
-<p>… and languages</p>
+<p>… and <em>languages</em></p>
 <ul>
 <li>Python, SQL, etc.</li>
 </ul>
@@ -1070,7 +1070,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 
 <section id="delta-lake-2" class="title-slide slide level1 center">
 <h1>Delta Lake</h1>
-<p>Create a table of <code>suppliers</code>, content of <code>00000000000000000000.json</code></p>
+<p>Create a table of <code>suppliers</code>, the content of <code>00000000000000000000.json</code></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource json number-lines"><code class="sourceCode json"><span id="cb2-1"><a href=""></a><span class="fu">{</span></span>
@@ -1085,10 +1085,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb2-10"><a href=""></a>            <span class="dt">"isManaged"</span><span class="fu">:</span> <span class="st">"false"</span><span class="fu">,</span></span>
 <span id="cb2-11"><a href=""></a>            <span class="dt">"properties"</span><span class="fu">:</span> <span class="st">"{}"</span><span class="fu">,</span></span>
 <span id="cb2-12"><a href=""></a>            <span class="dt">"statsOnLoad"</span><span class="fu">:</span> <span class="kw">false</span></span>
-<span id="cb2-13"><a href=""></a>        <span class="fu">},</span></span>
+<span id="cb2-13"><a href=""></a> <span class="fu">},</span></span>
 <span id="cb2-14"><a href=""></a>        <span class="dt">"notebook"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb2-15"><a href=""></a>            <span class="dt">"notebookId"</span><span class="fu">:</span> <span class="st">"68312033830310"</span></span>
-<span id="cb2-16"><a href=""></a>        <span class="fu">},</span></span>
+<span id="cb2-16"><a href=""></a> <span class="fu">},</span></span>
 <span id="cb2-17"><a href=""></a>        <span class="dt">"clusterId"</span><span class="fu">:</span> <span class="st">"0112-095737-cgwksnoz"</span><span class="fu">,</span></span>
 <span id="cb2-18"><a href=""></a>        <span class="dt">"isolationLevel"</span><span class="fu">:</span> <span class="st">"WriteSerializable"</span><span class="fu">,</span></span>
 <span id="cb2-19"><a href=""></a>        <span class="dt">"isBlindAppend"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
@@ -1096,13 +1096,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb2-21"><a href=""></a>            <span class="dt">"numFiles"</span><span class="fu">:</span> <span class="st">"4"</span><span class="fu">,</span></span>
 <span id="cb2-22"><a href=""></a>            <span class="dt">"numOutputRows"</span><span class="fu">:</span> <span class="st">"1000000"</span><span class="fu">,</span></span>
 <span id="cb2-23"><a href=""></a>            <span class="dt">"numOutputBytes"</span><span class="fu">:</span> <span class="st">"79811576"</span></span>
-<span id="cb2-24"><a href=""></a>        <span class="fu">},</span></span>
+<span id="cb2-24"><a href=""></a> <span class="fu">},</span></span>
 <span id="cb2-25"><a href=""></a>        <span class="dt">"tags"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb2-26"><a href=""></a>            <span class="dt">"restoresDeletedRows"</span><span class="fu">:</span> <span class="st">"false"</span></span>
-<span id="cb2-27"><a href=""></a>        <span class="fu">},</span></span>
+<span id="cb2-27"><a href=""></a> <span class="fu">},</span></span>
 <span id="cb2-28"><a href=""></a>        <span class="dt">"engineInfo"</span><span class="fu">:</span> <span class="st">"Databricks-Runtime/13.3.x-scala2.12"</span><span class="fu">,</span></span>
 <span id="cb2-29"><a href=""></a>        <span class="dt">"txnId"</span><span class="fu">:</span> <span class="st">"afc094e5-7096-40cb-b4f7-33e98c5d3a4b"</span></span>
-<span id="cb2-30"><a href=""></a>    <span class="fu">}</span></span>
+<span id="cb2-30"><a href=""></a> <span class="fu">}</span></span>
 <span id="cb2-31"><a href=""></a><span class="fu">}</span></span></code></pre></div>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource json number-lines"><code class="sourceCode json"><span id="cb3-1"><a href=""></a><span class="fu">{</span></span>
@@ -1112,14 +1112,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb3-5"><a href=""></a>        <span class="dt">"size"</span><span class="fu">:</span> <span class="dv">20588082</span><span class="fu">,</span></span>
 <span id="cb3-6"><a href=""></a>        <span class="dt">"modificationTime"</span><span class="fu">:</span> <span class="dv">1709133407000</span><span class="fu">,</span></span>
 <span id="cb3-7"><a href=""></a>        <span class="dt">"dataChange"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
-<span id="cb3-8"><a href=""></a>        <span class="dt">"stats"</span><span class="fu">:</span> <span class="st">"{</span><span class="ch">\"</span><span class="st">numRecords</span><span class="ch">\"</span><span class="st">:257994,</span><span class="ch">\"</span><span class="st">minValues</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:1,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">Supplier#000000001</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">  , Jd6qNPDAgz</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">10-100-166-6237</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:-999.94,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st"> Customer  blithely regular pint</span><span class="ch">\"</span><span class="st">},</span><span class="ch">\"</span><span class="st">maxValues</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:257994,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">Supplier#000257994</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">zzyv9d9xGUF QcjHQG8gDjuLo pLBxBZ�</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:24,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">34-999-987-5257</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:9999.93,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">zzle. sometimes bold pinto beans�</span><span class="ch">\"</span><span class="st">},</span><span class="ch">\"</span><span class="st">nullCount</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:0}}"</span><span class="fu">,</span></span>
+<span id="cb3-8"><a href=""></a>        <span class="dt">"stats"</span><span class="fu">:</span> <span class="st">"{</span><span class="ch">\"</span><span class="st">numRecords</span><span class="ch">\"</span><span class="st">:257994,</span><span class="ch">\"</span><span class="st">minValues</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:1,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">Supplier#000000001</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st"> , Jd6qNPDAgz</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">10-100-166-6237</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:-999.94,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st"> Customer  blithely regular pint</span><span class="ch">\"</span><span class="st">},</span><span class="ch">\"</span><span class="st">maxValues</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:257994,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">Supplier#000257994</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">zzyv9d9xGUF QcjHQG8gDjuLo pLBxBZ�</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:24,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">34-999-987-5257</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:9999.93,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">zzle. sometimes bold pinto beans�</span><span class="ch">\"</span><span class="st">},</span><span class="ch">\"</span><span class="st">nullCount</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:0}}"</span><span class="fu">,</span></span>
 <span id="cb3-9"><a href=""></a>        <span class="dt">"tags"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb3-10"><a href=""></a>            <span class="dt">"INSERTION_TIME"</span><span class="fu">:</span> <span class="st">"1709133407000000"</span><span class="fu">,</span></span>
 <span id="cb3-11"><a href=""></a>            <span class="dt">"MIN_INSERTION_TIME"</span><span class="fu">:</span> <span class="st">"1709133407000000"</span><span class="fu">,</span></span>
 <span id="cb3-12"><a href=""></a>            <span class="dt">"MAX_INSERTION_TIME"</span><span class="fu">:</span> <span class="st">"1709133407000000"</span><span class="fu">,</span></span>
 <span id="cb3-13"><a href=""></a>            <span class="dt">"OPTIMIZE_TARGET_SIZE"</span><span class="fu">:</span> <span class="st">"268435456"</span></span>
-<span id="cb3-14"><a href=""></a>        <span class="fu">}</span></span>
-<span id="cb3-15"><a href=""></a>    <span class="fu">}</span></span>
+<span id="cb3-14"><a href=""></a> <span class="fu">}</span></span>
+<span id="cb3-15"><a href=""></a> <span class="fu">}</span></span>
 <span id="cb3-16"><a href=""></a><span class="fu">}</span></span>
 <span id="cb3-17"><a href=""></a><span class="fu">{</span></span>
 <span id="cb3-18"><a href=""></a>    <span class="dt">"add"</span><span class="fu">:</span> <span class="fu">{</span></span>
@@ -1128,14 +1128,14 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb3-21"><a href=""></a>        <span class="dt">"size"</span><span class="fu">:</span> <span class="dv">20516343</span><span class="fu">,</span></span>
 <span id="cb3-22"><a href=""></a>        <span class="dt">"modificationTime"</span><span class="fu">:</span> <span class="dv">1709133408000</span><span class="fu">,</span></span>
 <span id="cb3-23"><a href=""></a>        <span class="dt">"dataChange"</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
-<span id="cb3-24"><a href=""></a>        <span class="dt">"stats"</span><span class="fu">:</span> <span class="st">"{</span><span class="ch">\"</span><span class="st">numRecords</span><span class="ch">\"</span><span class="st">:257111,</span><span class="ch">\"</span><span class="st">minValues</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:257995,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">Supplier#000257995</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">   t2HGWJzQQcWUyx</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">10-100-154-1322</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:-999.96,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st"> Customer  blithe requesComplain</span><span class="ch">\"</span><span class="st">},</span><span class="ch">\"</span><span class="st">maxValues</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:515105,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">Supplier#000515105</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">zzyvSACyGWpp5gCaZbUL7lKRUnhe7m6p�</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:24,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">34-999-802-1817</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:9999.95,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">zzle. regular foxes are ironic p�</span><span class="ch">\"</span><span class="st">},</span><span class="ch">\"</span><span class="st">nullCount</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:0}}"</span><span class="fu">,</span></span>
+<span id="cb3-24"><a href=""></a>        <span class="dt">"stats"</span><span class="fu">:</span> <span class="st">"{</span><span class="ch">\"</span><span class="st">numRecords</span><span class="ch">\"</span><span class="st">:257111,</span><span class="ch">\"</span><span class="st">minValues</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:257995,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">Supplier#000257995</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st"> t2HGWJzQQcWUyx</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">10-100-154-1322</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:-999.96,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st"> Customer  blithe requesComplain</span><span class="ch">\"</span><span class="st">},</span><span class="ch">\"</span><span class="st">maxValues</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:515105,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">Supplier#000515105</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">zzyvSACyGWpp5gCaZbUL7lKRUnhe7m6p�</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:24,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">34-999-802-1817</span><span class="ch">\"</span><span class="st">,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:9999.95,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:</span><span class="ch">\"</span><span class="st">zzle. regular foxes are ironic p�</span><span class="ch">\"</span><span class="st">},</span><span class="ch">\"</span><span class="st">nullCount</span><span class="ch">\"</span><span class="st">:{</span><span class="ch">\"</span><span class="st">s_suppkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_name</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_address</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_nationkey</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_phone</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_acctbal</span><span class="ch">\"</span><span class="st">:0,</span><span class="ch">\"</span><span class="st">s_comment</span><span class="ch">\"</span><span class="st">:0}}"</span><span class="fu">,</span></span>
 <span id="cb3-25"><a href=""></a>        <span class="dt">"tags"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb3-26"><a href=""></a>            <span class="dt">"INSERTION_TIME"</span><span class="fu">:</span> <span class="st">"1709133407000001"</span><span class="fu">,</span></span>
 <span id="cb3-27"><a href=""></a>            <span class="dt">"MIN_INSERTION_TIME"</span><span class="fu">:</span> <span class="st">"1709133407000001"</span><span class="fu">,</span></span>
 <span id="cb3-28"><a href=""></a>            <span class="dt">"MAX_INSERTION_TIME"</span><span class="fu">:</span> <span class="st">"1709133407000001"</span><span class="fu">,</span></span>
 <span id="cb3-29"><a href=""></a>            <span class="dt">"OPTIMIZE_TARGET_SIZE"</span><span class="fu">:</span> <span class="st">"268435456"</span></span>
-<span id="cb3-30"><a href=""></a>        <span class="fu">}</span></span>
-<span id="cb3-31"><a href=""></a>    <span class="fu">}</span></span>
+<span id="cb3-30"><a href=""></a> <span class="fu">}</span></span>
+<span id="cb3-31"><a href=""></a> <span class="fu">}</span></span>
 <span id="cb3-32"><a href=""></a><span class="fu">}</span></span></code></pre></div>
 </div>
 </div>
@@ -1156,10 +1156,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb4-8"><a href=""></a>            <span class="dt">"mode"</span><span class="fu">:</span> <span class="st">"Append"</span><span class="fu">,</span></span>
 <span id="cb4-9"><a href=""></a>            <span class="dt">"statsOnLoad"</span><span class="fu">:</span> <span class="kw">false</span><span class="fu">,</span></span>
 <span id="cb4-10"><a href=""></a>            <span class="dt">"partitionBy"</span><span class="fu">:</span> <span class="st">"[]"</span></span>
-<span id="cb4-11"><a href=""></a>        <span class="fu">},</span></span>
+<span id="cb4-11"><a href=""></a> <span class="fu">},</span></span>
 <span id="cb4-12"><a href=""></a>        <span class="dt">"notebook"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb4-13"><a href=""></a>            <span class="dt">"notebookId"</span><span class="fu">:</span> <span class="st">"4471242088384584"</span></span>
-<span id="cb4-14"><a href=""></a>        <span class="fu">},</span></span>
+<span id="cb4-14"><a href=""></a> <span class="fu">},</span></span>
 <span id="cb4-15"><a href=""></a>        <span class="dt">"clusterId"</span><span class="fu">:</span> <span class="st">"0112-095737-cgwksnoz"</span><span class="fu">,</span></span>
 <span id="cb4-16"><a href=""></a>        <span class="dt">"readVersion"</span><span class="fu">:</span> <span class="dv">8</span><span class="fu">,</span></span>
 <span id="cb4-17"><a href=""></a>        <span class="dt">"isolationLevel"</span><span class="fu">:</span> <span class="st">"WriteSerializable"</span><span class="fu">,</span></span>
@@ -1168,13 +1168,13 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb4-20"><a href=""></a>            <span class="dt">"numFiles"</span><span class="fu">:</span> <span class="st">"1"</span><span class="fu">,</span></span>
 <span id="cb4-21"><a href=""></a>            <span class="dt">"numOutputRows"</span><span class="fu">:</span> <span class="st">"1"</span><span class="fu">,</span></span>
 <span id="cb4-22"><a href=""></a>            <span class="dt">"numOutputBytes"</span><span class="fu">:</span> <span class="st">"2675"</span></span>
-<span id="cb4-23"><a href=""></a>        <span class="fu">},</span></span>
+<span id="cb4-23"><a href=""></a> <span class="fu">},</span></span>
 <span id="cb4-24"><a href=""></a>        <span class="dt">"tags"</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb4-25"><a href=""></a>            <span class="dt">"restoresDeletedRows"</span><span class="fu">:</span> <span class="st">"false"</span></span>
-<span id="cb4-26"><a href=""></a>        <span class="fu">},</span></span>
+<span id="cb4-26"><a href=""></a> <span class="fu">},</span></span>
 <span id="cb4-27"><a href=""></a>        <span class="dt">"engineInfo"</span><span class="fu">:</span> <span class="st">"Databricks-Runtime/13.3.x-scala2.12"</span><span class="fu">,</span></span>
 <span id="cb4-28"><a href=""></a>        <span class="dt">"txnId"</span><span class="fu">:</span> <span class="st">"45786330-12ee-4e73-85ff-38cdd2caffcf"</span></span>
-<span id="cb4-29"><a href=""></a>    <span class="fu">}</span></span>
+<span id="cb4-29"><a href=""></a> <span class="fu">}</span></span>
 <span id="cb4-30"><a href=""></a><span class="fu">}</span></span></code></pre></div>
 </div><div class="column" style="width:50%;">
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource json number-lines"><code class="sourceCode json"><span id="cb5-1"><a href=""></a><span class="fu">{</span></span>
@@ -1190,8 +1190,8 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb5-11"><a href=""></a>            <span class="dt">"MIN_INSERTION_TIME"</span><span class="fu">:</span> <span class="st">"1709134799000000"</span><span class="fu">,</span></span>
 <span id="cb5-12"><a href=""></a>            <span class="dt">"MAX_INSERTION_TIME"</span><span class="fu">:</span> <span class="st">"1709134799000000"</span><span class="fu">,</span></span>
 <span id="cb5-13"><a href=""></a>            <span class="dt">"OPTIMIZE_TARGET_SIZE"</span><span class="fu">:</span> <span class="st">"268435456"</span></span>
-<span id="cb5-14"><a href=""></a>        <span class="fu">}</span></span>
-<span id="cb5-15"><a href=""></a>    <span class="fu">}</span></span>
+<span id="cb5-14"><a href=""></a> <span class="fu">}</span></span>
+<span id="cb5-15"><a href=""></a> <span class="fu">}</span></span>
 <span id="cb5-16"><a href=""></a><span class="fu">}</span></span></code></pre></div>
 </div>
 </div>
@@ -1248,9 +1248,9 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <h1>Delta Lake</h1>
 <p><strong>Time Travel</strong></p>
 <ul>
-<li>Every table is the result of the sum total of all of the commits recorded in the Delta Lake transaction log.</li>
+<li>Every table is the sum of all commits recorded in the transaction log.</li>
 <li>The log provides a step-by-step instruction guide, detailing how to get from the table’s original state to its current state.</li>
-<li>Recreate the state of a table at any point in time by starting with an original table, and processing only commits made before that point.</li>
+<li>Recreate a table at any point in time by starting with the original version and processing only commits before that version.</li>
 </ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource sql number-lines"><code class="sourceCode sql"><span id="cb6-1"><a href=""></a><span class="kw">select</span> <span class="op">*</span> <span class="kw">from</span> suppliers; <span class="co">-- read the last version of the table</span></span>
 <span id="cb6-2"><a href=""></a><span class="kw">delete</span> <span class="kw">from</span> suppliers; <span class="co">-- delete all data from the table!</span></span>
@@ -1258,7 +1258,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <span id="cb6-4"><a href=""></a>restore <span class="kw">table</span> suppliers <span class="kw">to</span> version <span class="kw">as</span> <span class="kw">of</span> <span class="dv">3</span>; <span class="co">-- restore to a specific version</span></span></code></pre></div>
 <p><strong>Data Lineage and Debugging</strong></p>
 <ul>
-<li>The transaction log offers users a verifiable data lineage that is useful for governance, audit, and compliance purposes.</li>
+<li>The transaction log offers users a verifiable data lineage useful for governance, audit, and compliance purposes.</li>
 <li>It can also be used to trace the origin of an inadvertent change or a bug in a pipeline back to the exact action that caused it.</li>
 </ul>
 <div class="sourceCode" id="cb7"><pre class="sourceCode numberSource sql number-lines"><code class="sourceCode sql"><span id="cb7-1"><a href=""></a><span class="kw">delete</span> <span class="kw">from</span> suppliers; <span class="co">-- delete is important for GDPR</span></span>
@@ -1331,10 +1331,10 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb9-2"><a href=""></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">20000</span>:</span>
 <span id="cb9-3"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">10</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb9-4"><a href=""></a>        spark.sql(<span class="st">"select sum(quantity) from lineitem"</span>)  <span class="co"># Read the whole fact</span></span>
-<span id="cb9-5"><a href=""></a>    spark.sql(<span class="st">"insert (500K tuples) into lineitem"</span>)  <span class="co"># Append new tuples</span></span>
+<span id="cb9-4"><a href=""></a> spark.sql(<span class="st">"select sum(quantity) from lineitem"</span>)  <span class="co"># Read the whole fact</span></span>
+<span id="cb9-5"><a href=""></a> spark.sql(<span class="st">"insert (500K tuples) into lineitem"</span>)  <span class="co"># Append new tuples</span></span>
 <span id="cb9-6"><a href=""></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>: OPTIMIZE</span>
-<span id="cb9-7"><a href=""></a>    i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
+<span id="cb9-7"><a href=""></a> i <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div>
 
 <img data-src="imgs/deltalake4.png" class="r-stretch quarto-figure-center"><p class="caption">Scalability</p></section>
 
