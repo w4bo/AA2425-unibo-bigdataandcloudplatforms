@@ -390,6 +390,24 @@ A two-tier architecture is highly complex for users
 - *Limited support for advanced analytics*: businesses want to ask predictive questions using their warehousing data
   - E.g., "Which customers should I offer discounts to?" 
   - E.g., process large datasets using complex non-SQL code
+- It could require *two teams of users*: data scientists and BI
+
+# Data Lakehouse
+
+:::: {.columns}
+::: {.column width=50%}
+
+![2022](imgs/hypecycle-dm-2022.png)
+
+:::
+::: {.column width=50%}
+
+![2024](imgs/hypecycle-dm-2024.png)
+
+:::
+::::
+
+The market is pushing for the adoption of Lakehouse as a standard *de facto*
 
 # Dataset Search for Data Discovery, Augmentation, and Explanation
 
@@ -461,6 +479,26 @@ Whenever a user modifies a table (such as an INSERT, UPDATE, or DELETE), Delta L
 - *Set transaction*: Records that a structured streaming job has committed a micro-batch with the given ID.
 - *Change protocol*: enables new features by switching the Delta Lake transaction log to the newest software protocol.
 - *Commit info*: Contains information around the commit, which operation was made, from where, and when.
+
+# Delta Lake
+
+```sql
+CREATE TABLE suppliers(id INT, name STRING, age INT)
+    TBLPROPERTIES ('foo'='bar')
+    COMMENT 'this is a comment'
+    LOCATION 's3://...';
+```
+
+You own your data: we are decoupling the data from the database engine!
+
+Delta tables are stored in S3 (simple files in a data lake), they can be read using different computes:
+
+- Databricks, EMR, etc.
+- Otherwise you are locked in with the vendor (e.g., Oracle database).
+
+... and languages
+
+- Python, SQL, etc.
 
 # Delta Lake
 
@@ -670,10 +708,22 @@ Imagine that we’ve created commits up to `000007.json` and that Spark has cach
 - The log provides a step-by-step instruction guide, detailing how to get from the table’s original state to its current state.
 - Recreate the state of a table at any point in time by starting with an original table, and processing only commits made before that point. 
 
+```sql
+select * from suppliers; -- read the last version of the table
+delete from suppliers; -- delete all data from the table!
+select * from suppliers version as of 3; -- read from a specific version of the table
+restore table suppliers to version as of 3; -- restore to a specific version
+```
+
 **Data Lineage and Debugging**
 
 - The transaction log offers users a verifiable data lineage that is useful for governance, audit, and compliance purposes. 
 - It can also be used to trace the origin of an inadvertent change or a bug in a pipeline back to the exact action that caused it.
+
+```sql
+delete from suppliers; -- delete is important for GDPR
+-- what about data in the log?
+```
 
 # Delta Lake
 
