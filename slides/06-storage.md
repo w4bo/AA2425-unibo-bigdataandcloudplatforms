@@ -786,10 +786,25 @@ Check the scalability with respect to the length of the log
 i = 0
 while i < 20000:
     if i % 10 == 0:
- spark.sql("select sum(quantity) from lineitem")  # Read the whole fact
- spark.sql("insert (500K tuples) into lineitem")  # Append new tuples
-    if i % 100 == 0: OPTIMIZE
- i += 1
+        spark.sql("select sum(quantity) from lineitem")  # Read the whole fact
+    spark.sql("insert (500K tuples) into lineitem")  # Append new tuples
+    i += 1
+```
+
+![Scalability](imgs/deltalake8.png)
+
+# Delta Lake
+
+Check the scalability with respect to the length of the log
+
+```python
+i = 0
+while i < 20000:
+    if i % 10 == 0:
+        spark.sql("select sum(quantity) from lineitem")  # Read the whole fact
+    spark.sql("insert (500K tuples) into lineitem")  # Append new tuples
+    if i % 100 == 0: OPTIMIZE  # Optimize
+    i += 1
 ```
 
 ![Scalability](imgs/deltalake4.png)
