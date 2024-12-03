@@ -1197,16 +1197,17 @@ Examples
 :::: {.columns}
 ::: {.column width=60%}
 
-*Different databases are designed to solve *differen*t problems*
+*Different databases are designed to solve different problems*
 
-- *Using a single DBMS to handle everything ...*
+Using a single DBMS to handle everything...
+
 - Operational data
 - Temporary session information
 - Graph traversing
 - OLAP analyses
 - ...
 
-*... usually lead to inefficient solutions*
+... usually lead to inefficient solutions
 
 - Each activity has its own requirements (availability, consistency, fault tolerance, etc.)
 
