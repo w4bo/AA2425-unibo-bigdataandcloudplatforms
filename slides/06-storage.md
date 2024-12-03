@@ -302,7 +302,7 @@ Use folders to organize data inside areas into a logical structure
   - Logically group multiple pipelines together.
 - *Pipeline name*
   - Each data pipeline should have a name that reflects its purpose. For example
-    * A pipeline that takes data from the LA, applies common processing steps and saves data into SA
+    * A pipeline that takes data from the LA, applies common processing steps, and saves data into SA
     * You will also have one for archiving data into AA
 - *Data source name*
   - The ingestion layer will assign a name to each data source you bring into the platform
@@ -359,7 +359,7 @@ Combine the key benefits of data lakes and data warehouses
   - *Schema on write* is defined as creating a schema for data before writing into the database
 - Several challenges
   - DWH typically couples compute and storage into an on-premises appliance
-    - This forced enterprises to provision and pay for the peak of user load and data under management, very costly
+    - This forced enterprises to provision and pay for the peak of user load and data under management, which is very costly
   - More and more datasets were completely unstructured, which DWHs could not store and query at all
 
 # Data Lakehouse [@armbrust2021lakehouse]
@@ -438,7 +438,7 @@ Metadata alone is insufficient to achieve good performance, challenges:
 - Most *data lakes (cloud object stores) are merely key-value stores*, with no cross-key consistency
   - *Multi-object updates are not atomic*, there is no isolation between queries
     - If a query updates multiple objects in a table, readers will see partial updates as the query updates each object individually
-- In *data lakes* is possible to implement other optimizations that leave the data files unchanged
+- In *data lakes* it is possible to implement other optimizations that leave the data files unchanged
   - For large tables with millions of objects, *metadata operations are expensive*
   - The latency of cloud object stores is so much higher that these data-skipping checks can take longer than the actual query
 
@@ -482,27 +482,27 @@ Whenever a user modifies a table (such as an INSERT, UPDATE, or DELETE), Delta L
 
 # Delta Lake
 
+*You own your data*: we are decoupling the data from database engines!
+
 ```sql
 CREATE TABLE suppliers(id INT, name STRING, age INT)
-    TBLPROPERTIES ('foo'='bar')
-    COMMENT 'this is a comment'
+ TBLPROPERTIES ('foo'='bar')
+ COMMENT 'this is a comment'
     LOCATION 's3://...';
 ```
 
-You own your data: we are decoupling the data from the database engine!
-
-Delta tables are stored in S3 (simple files in a data lake), they can be read using different computes:
+Delta tables are stored in S3 (simple files in a data lake), and they can be read using *different computes*:
 
 - Databricks, EMR, etc.
-- Otherwise you are locked in with the vendor (e.g., Oracle database).
+- Otherwise you are locked in with the vendor (e.g., Oracle).
 
-... and languages
+... and *languages*
 
 - Python, SQL, etc.
 
 # Delta Lake
 
-Create a table of `suppliers`, content of `00000000000000000000.json`
+Create a table of `suppliers`, the content of `00000000000000000000.json`
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -520,10 +520,10 @@ Create a table of `suppliers`, content of `00000000000000000000.json`
             "isManaged": "false",
             "properties": "{}",
             "statsOnLoad": false
-        },
+ },
         "notebook": {
             "notebookId": "68312033830310"
-        },
+ },
         "clusterId": "0112-095737-cgwksnoz",
         "isolationLevel": "WriteSerializable",
         "isBlindAppend": true,
@@ -531,13 +531,13 @@ Create a table of `suppliers`, content of `00000000000000000000.json`
             "numFiles": "4",
             "numOutputRows": "1000000",
             "numOutputBytes": "79811576"
-        },
+ },
         "tags": {
             "restoresDeletedRows": "false"
-        },
+ },
         "engineInfo": "Databricks-Runtime/13.3.x-scala2.12",
         "txnId": "afc094e5-7096-40cb-b4f7-33e98c5d3a4b"
-    }
+ }
 }
 ```
 
@@ -552,14 +552,14 @@ Create a table of `suppliers`, content of `00000000000000000000.json`
         "size": 20588082,
         "modificationTime": 1709133407000,
         "dataChange": true,
-        "stats": "{\"numRecords\":257994,\"minValues\":{\"s_suppkey\":1,\"s_name\":\"Supplier#000000001\",\"s_address\":\"  , Jd6qNPDAgz\",\"s_nationkey\":0,\"s_phone\":\"10-100-166-6237\",\"s_acctbal\":-999.94,\"s_comment\":\" Customer  blithely regular pint\"},\"maxValues\":{\"s_suppkey\":257994,\"s_name\":\"Supplier#000257994\",\"s_address\":\"zzyv9d9xGUF QcjHQG8gDjuLo pLBxBZ�\",\"s_nationkey\":24,\"s_phone\":\"34-999-987-5257\",\"s_acctbal\":9999.93,\"s_comment\":\"zzle. sometimes bold pinto beans�\"},\"nullCount\":{\"s_suppkey\":0,\"s_name\":0,\"s_address\":0,\"s_nationkey\":0,\"s_phone\":0,\"s_acctbal\":0,\"s_comment\":0}}",
+        "stats": "{\"numRecords\":257994,\"minValues\":{\"s_suppkey\":1,\"s_name\":\"Supplier#000000001\",\"s_address\":\" , Jd6qNPDAgz\",\"s_nationkey\":0,\"s_phone\":\"10-100-166-6237\",\"s_acctbal\":-999.94,\"s_comment\":\" Customer  blithely regular pint\"},\"maxValues\":{\"s_suppkey\":257994,\"s_name\":\"Supplier#000257994\",\"s_address\":\"zzyv9d9xGUF QcjHQG8gDjuLo pLBxBZ�\",\"s_nationkey\":24,\"s_phone\":\"34-999-987-5257\",\"s_acctbal\":9999.93,\"s_comment\":\"zzle. sometimes bold pinto beans�\"},\"nullCount\":{\"s_suppkey\":0,\"s_name\":0,\"s_address\":0,\"s_nationkey\":0,\"s_phone\":0,\"s_acctbal\":0,\"s_comment\":0}}",
         "tags": {
             "INSERTION_TIME": "1709133407000000",
             "MIN_INSERTION_TIME": "1709133407000000",
             "MAX_INSERTION_TIME": "1709133407000000",
             "OPTIMIZE_TARGET_SIZE": "268435456"
-        }
-    }
+ }
+ }
 }
 {
     "add": {
@@ -568,14 +568,14 @@ Create a table of `suppliers`, content of `00000000000000000000.json`
         "size": 20516343,
         "modificationTime": 1709133408000,
         "dataChange": true,
-        "stats": "{\"numRecords\":257111,\"minValues\":{\"s_suppkey\":257995,\"s_name\":\"Supplier#000257995\",\"s_address\":\"   t2HGWJzQQcWUyx\",\"s_nationkey\":0,\"s_phone\":\"10-100-154-1322\",\"s_acctbal\":-999.96,\"s_comment\":\" Customer  blithe requesComplain\"},\"maxValues\":{\"s_suppkey\":515105,\"s_name\":\"Supplier#000515105\",\"s_address\":\"zzyvSACyGWpp5gCaZbUL7lKRUnhe7m6p�\",\"s_nationkey\":24,\"s_phone\":\"34-999-802-1817\",\"s_acctbal\":9999.95,\"s_comment\":\"zzle. regular foxes are ironic p�\"},\"nullCount\":{\"s_suppkey\":0,\"s_name\":0,\"s_address\":0,\"s_nationkey\":0,\"s_phone\":0,\"s_acctbal\":0,\"s_comment\":0}}",
+        "stats": "{\"numRecords\":257111,\"minValues\":{\"s_suppkey\":257995,\"s_name\":\"Supplier#000257995\",\"s_address\":\" t2HGWJzQQcWUyx\",\"s_nationkey\":0,\"s_phone\":\"10-100-154-1322\",\"s_acctbal\":-999.96,\"s_comment\":\" Customer  blithe requesComplain\"},\"maxValues\":{\"s_suppkey\":515105,\"s_name\":\"Supplier#000515105\",\"s_address\":\"zzyvSACyGWpp5gCaZbUL7lKRUnhe7m6p�\",\"s_nationkey\":24,\"s_phone\":\"34-999-802-1817\",\"s_acctbal\":9999.95,\"s_comment\":\"zzle. regular foxes are ironic p�\"},\"nullCount\":{\"s_suppkey\":0,\"s_name\":0,\"s_address\":0,\"s_nationkey\":0,\"s_phone\":0,\"s_acctbal\":0,\"s_comment\":0}}",
         "tags": {
             "INSERTION_TIME": "1709133407000001",
             "MIN_INSERTION_TIME": "1709133407000001",
             "MAX_INSERTION_TIME": "1709133407000001",
             "OPTIMIZE_TARGET_SIZE": "268435456"
-        }
-    }
+ }
+ }
 }
 ```
 :::
@@ -599,10 +599,10 @@ Add a new `supplier`, content of `00000000000000000009.json`
             "mode": "Append",
             "statsOnLoad": false,
             "partitionBy": "[]"
-        },
+ },
         "notebook": {
             "notebookId": "4471242088384584"
-        },
+ },
         "clusterId": "0112-095737-cgwksnoz",
         "readVersion": 8,
         "isolationLevel": "WriteSerializable",
@@ -611,13 +611,13 @@ Add a new `supplier`, content of `00000000000000000009.json`
             "numFiles": "1",
             "numOutputRows": "1",
             "numOutputBytes": "2675"
-        },
+ },
         "tags": {
             "restoresDeletedRows": "false"
-        },
+ },
         "engineInfo": "Databricks-Runtime/13.3.x-scala2.12",
         "txnId": "45786330-12ee-4e73-85ff-38cdd2caffcf"
-    }
+ }
 }
 ```
 
@@ -638,8 +638,8 @@ Add a new `supplier`, content of `00000000000000000009.json`
             "MIN_INSERTION_TIME": "1709134799000000",
             "MAX_INSERTION_TIME": "1709134799000000",
             "OPTIMIZE_TARGET_SIZE": "268435456"
-        }
-    }
+ }
+ }
 }
 ```
 
@@ -704,9 +704,9 @@ Imagine that we’ve created commits up to `000007.json` and that Spark has cach
 
 **Time Travel**
 
-- Every table is the result of the sum total of all of the commits recorded in the Delta Lake transaction log.
+- Every table is the sum of all commits recorded in the transaction log.
 - The log provides a step-by-step instruction guide, detailing how to get from the table’s original state to its current state.
-- Recreate the state of a table at any point in time by starting with an original table, and processing only commits made before that point. 
+- Recreate a table at any point in time by starting with the original version and processing only commits before that version. 
 
 ```sql
 select * from suppliers; -- read the last version of the table
@@ -717,7 +717,7 @@ restore table suppliers to version as of 3; -- restore to a specific version
 
 **Data Lineage and Debugging**
 
-- The transaction log offers users a verifiable data lineage that is useful for governance, audit, and compliance purposes. 
+- The transaction log offers users a verifiable data lineage useful for governance, audit, and compliance purposes. 
 - It can also be used to trace the origin of an inadvertent change or a bug in a pipeline back to the exact action that caused it.
 
 ```sql
@@ -786,10 +786,10 @@ Check the scalability with respect to the length of the log
 i = 0
 while i < 20000:
     if i % 10 == 0:
-        spark.sql("select sum(quantity) from lineitem")  # Read the whole fact
-    spark.sql("insert (500K tuples) into lineitem")  # Append new tuples
+ spark.sql("select sum(quantity) from lineitem")  # Read the whole fact
+ spark.sql("insert (500K tuples) into lineitem")  # Append new tuples
     if i % 100 == 0: OPTIMIZE
-    i += 1
+ i += 1
 ```
 
 ![Scalability](imgs/deltalake4.png)
