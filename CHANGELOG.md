@@ -1,3 +1,9 @@
+## [1.0.41](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.40...1.0.41) (2024-12-03)
+
+### Bug Fixes
+
+* lakehouse ([14de08e](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/14de08ef9d36d037b6d6b3d13b3e39e7615f5454))
+
 ## [1.0.40](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.39...1.0.40) (2024-12-03)
 
 ### Bug Fixes
