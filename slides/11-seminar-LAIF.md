@@ -17,6 +17,7 @@
     - No manual provisioning
     - Faster scalability: everything is parametrized. Changing parameters is easy
     - Reproducibility (e.g., deploy an architecture hundreds of times)
+    - Based on cloud formation
 - Containers (standard for managing applications)
 - Fast APIs
 
