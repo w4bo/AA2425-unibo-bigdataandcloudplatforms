@@ -1,3 +1,19 @@
+## [1.0.39](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.38...1.0.39) (2024-12-03)
+
+### Dependency updates
+
+* **deps:** update dependency matplotlib to v3.9.3 ([#35](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/issues/35)) ([d58c07c](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/d58c07c27617b1a933d03e9c65410a845f1f5e7f))
+* **deps:** update dependency pptx2md to v2 ([#33](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/issues/33)) ([f05b24f](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/f05b24feea1ac7e21d4f2e243acf45eddc111bfa))
+* **deps:** update dependency pydot to v3.0.3 ([#36](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/issues/36)) ([c585b34](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/c585b34c6a481d6f4a67cac4a7e07af44d12022a))
+
+### Bug Fixes
+
+* lakehouse ([879e469](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/879e4690d5992a6ba2d0eeae38b918b4ec447df7))
+
+### Build and continuous integration
+
+* **deps:** update jamesives/github-pages-deploy-action action to v4.7.1 ([#34](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/issues/34)) ([8fe10ec](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/8fe10ec14b6a1daeec1be568b49b9f42d33511c1))
+
 ## [1.0.38](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.37...1.0.38) (2024-11-18)
 
 ### Bug Fixes
