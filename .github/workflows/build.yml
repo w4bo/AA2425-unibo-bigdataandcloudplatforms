@@ -5,21 +5,16 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12' 
-      # - name: Running the notebooks
-      #   run: |
-      #     cd slides 
-      #     pip install -r requirements.txt
-      #     chmod +x generate.sh
-      #     ./generate.sh
+      - name: Running the notebooks (if any)
+        run: |
+          cd slides
+          chmod +x *.sh
+          docker compose up build
       - name: Generate the slides
         run: |
           cd slides 
-          cp build.sh.example build.sh
-          chmod +x build.sh
-          docker compose up build-quarto
+          cp publish.sh.example publish.sh
+          docker compose up publish
       - name: Deploy
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
         uses: JamesIves/github-pages-deploy-action@v4.7.2
@@ -32,7 +27,6 @@ jobs:
       - name: Export pdfs
         run: |
           cd slides 
-          chmod +x export2pdf.sh
           ./export2pdf.sh
       - name: Install Node
         uses: actions/setup-node@v4.1.0
