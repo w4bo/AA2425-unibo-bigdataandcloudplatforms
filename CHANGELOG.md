@@ -1,3 +1,9 @@
+## [1.0.45](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.44...1.0.45) (2025-12-02)
+
+### Bug Fixes
+
+* styling ([3fa9b7c](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/3fa9b7c04ec6b8ab4930c2f05d1e74b359e2e118))
+
 ## [1.0.44](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.43...1.0.44) (2025-12-01)
 
 ### Dependency updates
