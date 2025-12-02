@@ -128,32 +128,32 @@ Two sides of the same coin, and your profile is a perfect? fit
 :::: {.columns}
 ::: {.column width=25%}
 
-![Designing Cloud Data Platforms](imgs/slides0.png)
+![Designing Cloud Data Platforms](img/slides0.png)
 
 :::
 ::: {.column width=25%}
 
-![Cloud Computing for Science and Engineering](imgs/slides2.jpg)
+![Cloud Computing for Science and Engineering](img/slides2.jpg)
 
 :::
 ::: {.column width=25%}
 
-![Amazon Web Services in Action](imgs/slides5.png)
+![Amazon Web Services in Action](img/slides5.png)
 
 :::
 ::: {.column width=25%}
 
-![Programming AWS Lambda](imgs/slides1.jpg)
+![Programming AWS Lambda](img/slides1.jpg)
 
 :::
 ::: {.column width=50%}
 
-![Coursera](imgs/slides3.png)
+![Coursera](img/slides3.png)
 
 :::
 ::: {.column width=50%}
 
-![Twitch](imgs/slides4.png)
+![Twitch](img/slides4.png)
 
 :::
 ::::
