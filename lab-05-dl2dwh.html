@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="lab-05-dl2dwh_files/libs/quarto-html/tabby.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="lab-05-dl2dwh_files/libs/quarto-html/tabby.min.js"></script>
 <script src="lab-05-dl2dwh_files/libs/quarto-html/popper.min.js"></script>
 <script src="lab-05-dl2dwh_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="lab-05-dl2dwh_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lab-05-dl2dwh_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="lab-05-dl2dwh_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="lab-05-dl2dwh_files/libs/quarto-html/quarto-syntax-highlighting-cdaacfc258cb6f151192107f105ac881.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.12">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>From data lake to data warehouse</title>
@@ -28,8 +28,9 @@
       vertical-align: middle;
     }
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -40,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -93,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="lab-05-dl2dwh_files/libs/revealjs/dist/theme/quarto-6391498a111a1f00b0d941bda0c7e264.css">
+  <link rel="stylesheet" href="lab-05-dl2dwh_files/libs/revealjs/dist/theme/quarto-b3aa9dda08c8fde6dffd4aadb76df7d0.css">
   <link href="lab-05-dl2dwh_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="lab-05-dl2dwh_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="lab-05-dl2dwh_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -185,7 +186,7 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
   
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
@@ -431,7 +432,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -448,7 +449,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>0</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -460,7 +461,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>1</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -472,7 +473,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>2</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -484,7 +485,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>3</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -496,7 +497,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0.0</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>4</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -508,7 +509,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -520,7 +521,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29059</td>
+<th data-quarto-table-cell-role="th">29059</th>
 <td>29059</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -532,7 +533,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>0.0</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">29060</td>
+<th data-quarto-table-cell-role="th">29060</th>
 <td>29060</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -544,7 +545,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29061</td>
+<th data-quarto-table-cell-role="th">29061</th>
 <td>29061</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -556,7 +557,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">29062</td>
+<th data-quarto-table-cell-role="th">29062</th>
 <td>29062</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -568,7 +569,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29063</td>
+<th data-quarto-table-cell-role="th">29063</th>
 <td>29063</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -620,7 +621,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -636,7 +637,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">Unnamed: 0</td>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
 <td>29064.0</td>
 <td>1.453150e+04</td>
 <td>8390.198448</td>
@@ -647,7 +648,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>2.906300e+04</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">yy</td>
+<th data-quarto-table-cell-role="th">yy</th>
 <td>28512.0</td>
 <td>-4.240741e+01</td>
 <td>16.099585</td>
@@ -658,7 +659,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>-2.000000e+01</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">xx</td>
+<th data-quarto-table-cell-role="th">xx</th>
 <td>28512.0</td>
 <td>3.875000e+01</td>
 <td>29.660046</td>
@@ -669,7 +670,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>8.000000e+01</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">value</td>
+<th data-quarto-table-cell-role="th">value</th>
 <td>29064.0</td>
 <td>-1.821906e+02</td>
 <td>506.803601</td>
@@ -680,7 +681,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>3.641000e+03</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">timestamp</td>
+<th data-quarto-table-cell-role="th">timestamp</th>
 <td>29064.0</td>
 <td>1.627720e+09</td>
 <td>757387.611829</td>
@@ -691,7 +692,7 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 <td>1.628985e+09</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">zz</td>
+<th data-quarto-table-cell-role="th">zz</th>
 <td>14256.0</td>
 <td>0.000000e+00</td>
 <td>0.000000</td>
@@ -781,7 +782,7 @@ memory usage: 2.0+ MB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -797,7 +798,7 @@ memory usage: 2.0+ MB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>0</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -808,7 +809,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628951453</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>1</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -819,7 +820,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628950550</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>2</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -830,7 +831,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628947848</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>3</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -841,7 +842,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628948747</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>4</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -852,7 +853,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628657108</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -863,7 +864,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29059</td>
+<th data-quarto-table-cell-role="th">29059</th>
 <td>29059</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -874,7 +875,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627102804</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">29060</td>
+<th data-quarto-table-cell-role="th">29060</th>
 <td>29060</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -885,7 +886,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627101007</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29061</td>
+<th data-quarto-table-cell-role="th">29061</th>
 <td>29061</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -896,7 +897,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627101905</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">29062</td>
+<th data-quarto-table-cell-role="th">29062</th>
 <td>29062</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -907,7 +908,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627101007</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29063</td>
+<th data-quarto-table-cell-role="th">29063</th>
 <td>29063</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -954,7 +955,7 @@ memory usage: 2.0+ MB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -979,7 +980,7 @@ memory usage: 2.0+ MB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">BATTERY_TENS</td>
+<th data-quarto-table-cell-role="th">BATTERY_TENS</th>
 <td>399</td>
 <td>1</td>
 <td>0</td>
@@ -989,7 +990,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>391</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">DRIPPER</td>
+<th data-quarto-table-cell-role="th">DRIPPER</th>
 <td>153</td>
 <td>1</td>
 <td>0</td>
@@ -999,7 +1000,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>153</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">GRND_WATER_G</td>
+<th data-quarto-table-cell-role="th">GRND_WATER_G</th>
 <td>28512</td>
 <td>1</td>
 <td>3</td>
@@ -1042,7 +1043,7 @@ memory usage: 2.0+ MB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1058,7 +1059,7 @@ memory usage: 2.0+ MB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>0</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -1069,7 +1070,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628951453</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>1</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -1080,7 +1081,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628950550</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>2</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -1091,7 +1092,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628947848</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>3</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -1102,7 +1103,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628948747</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>4</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -1113,7 +1114,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628657108</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -1124,7 +1125,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29059</td>
+<th data-quarto-table-cell-role="th">29059</th>
 <td>29059</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -1135,7 +1136,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627102804</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">29060</td>
+<th data-quarto-table-cell-role="th">29060</th>
 <td>29060</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -1146,7 +1147,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627101007</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29061</td>
+<th data-quarto-table-cell-role="th">29061</th>
 <td>29061</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -1157,7 +1158,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627101905</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">29062</td>
+<th data-quarto-table-cell-role="th">29062</th>
 <td>29062</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -1168,7 +1169,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627101007</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29063</td>
+<th data-quarto-table-cell-role="th">29063</th>
 <td>29063</td>
 <td>T1 basso</td>
 <td>GRND_WATER_G</td>
@@ -1213,7 +1214,7 @@ memory usage: 2.0+ MB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1228,7 +1229,7 @@ memory usage: 2.0+ MB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>0</td>
 <td>T1 basso</td>
 <td>-20.0</td>
@@ -1238,7 +1239,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628951453</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>1</td>
 <td>T1 basso</td>
 <td>-20.0</td>
@@ -1248,7 +1249,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628950550</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>2</td>
 <td>T1 basso</td>
 <td>-20.0</td>
@@ -1258,7 +1259,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628947848</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>3</td>
 <td>T1 basso</td>
 <td>-20.0</td>
@@ -1268,7 +1269,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628948747</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>4</td>
 <td>T1 basso</td>
 <td>-20.0</td>
@@ -1278,7 +1279,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1628657108</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -1288,7 +1289,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29059</td>
+<th data-quarto-table-cell-role="th">29059</th>
 <td>29059</td>
 <td>T1 basso</td>
 <td>-60.0</td>
@@ -1298,7 +1299,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627102804</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">29060</td>
+<th data-quarto-table-cell-role="th">29060</th>
 <td>29060</td>
 <td>T1 basso</td>
 <td>-60.0</td>
@@ -1308,7 +1309,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627101007</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29061</td>
+<th data-quarto-table-cell-role="th">29061</th>
 <td>29061</td>
 <td>T1 basso</td>
 <td>-60.0</td>
@@ -1318,7 +1319,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627101905</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">29062</td>
+<th data-quarto-table-cell-role="th">29062</th>
 <td>29062</td>
 <td>T1 basso</td>
 <td>-60.0</td>
@@ -1328,7 +1329,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>1627101007</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">29063</td>
+<th data-quarto-table-cell-role="th">29063</th>
 <td>29063</td>
 <td>T1 basso</td>
 <td>-60.0</td>
@@ -1458,7 +1459,7 @@ memory usage: 2.0+ MB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1479,7 +1480,7 @@ memory usage: 2.0+ MB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>2021-07-15 00:00:00</td>
 <td>-21.041212</td>
 <td>-21.041212</td>
@@ -1495,7 +1496,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>-96.347607</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>2021-07-15 01:00:00</td>
 <td>-21.041212</td>
 <td>-21.041212</td>
@@ -1511,7 +1512,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>-95.634768</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>2021-07-15 02:00:00</td>
 <td>-21.041212</td>
 <td>-21.041212</td>
@@ -1527,7 +1528,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>-95.028808</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>2021-07-15 03:00:00</td>
 <td>-21.041212</td>
 <td>-21.041212</td>
@@ -1543,7 +1544,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>-94.616890</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>2021-07-15 04:00:00</td>
 <td>-21.041212</td>
 <td>-21.041212</td>
@@ -1559,7 +1560,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>-93.876178</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -1575,7 +1576,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">739</td>
+<th data-quarto-table-cell-role="th">739</th>
 <td>2021-08-14 19:00:00</td>
 <td>-20.753568</td>
 <td>-22.191694</td>
@@ -1591,7 +1592,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>-470.650216</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">740</td>
+<th data-quarto-table-cell-role="th">740</th>
 <td>2021-08-14 20:00:00</td>
 <td>-20.753568</td>
 <td>-21.975989</td>
@@ -1607,7 +1608,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>-467.938392</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">741</td>
+<th data-quarto-table-cell-role="th">741</th>
 <td>2021-08-14 21:00:00</td>
 <td>-20.753568</td>
 <td>-21.904088</td>
@@ -1623,7 +1624,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>-465.339106</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">742</td>
+<th data-quarto-table-cell-role="th">742</th>
 <td>2021-08-14 22:00:00</td>
 <td>-20.753568</td>
 <td>-21.904088</td>
@@ -1639,7 +1640,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>-463.250007</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">743</td>
+<th data-quarto-table-cell-role="th">743</th>
 <td>2021-08-14 23:00:00</td>
 <td>-20.753568</td>
 <td>-21.904088</td>
@@ -1789,7 +1790,7 @@ memory usage: 2.0+ MB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -1807,7 +1808,7 @@ memory usage: 2.0+ MB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>T1 basso</td>
 <td>2021-07-15 00:00:00</td>
 <td>0.0</td>
@@ -1820,7 +1821,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>(0.0, -60.0)</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>T1 basso</td>
 <td>2021-07-15 00:00:00</td>
 <td>0.0</td>
@@ -1833,7 +1834,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>(0.0, -40.0)</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>T1 basso</td>
 <td>2021-07-15 00:00:00</td>
 <td>0.0</td>
@@ -1846,7 +1847,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>(0.0, -20.0)</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>T1 basso</td>
 <td>2021-07-15 00:00:00</td>
 <td>25.0</td>
@@ -1859,7 +1860,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>(25.0, -60.0)</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>T1 basso</td>
 <td>2021-07-15 00:00:00</td>
 <td>25.0</td>
@@ -1872,7 +1873,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>(25.0, -40.0)</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
@@ -1885,7 +1886,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8751</td>
+<th data-quarto-table-cell-role="th">8751</th>
 <td>T1 basso</td>
 <td>2021-08-14 23:00:00</td>
 <td>50.0</td>
@@ -1898,7 +1899,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>(50.0, -40.0)</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">8752</td>
+<th data-quarto-table-cell-role="th">8752</th>
 <td>T1 basso</td>
 <td>2021-08-14 23:00:00</td>
 <td>50.0</td>
@@ -1911,7 +1912,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>(50.0, -20.0)</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8753</td>
+<th data-quarto-table-cell-role="th">8753</th>
 <td>T1 basso</td>
 <td>2021-08-14 23:00:00</td>
 <td>80.0</td>
@@ -1924,7 +1925,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>(80.0, -60.0)</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">8754</td>
+<th data-quarto-table-cell-role="th">8754</th>
 <td>T1 basso</td>
 <td>2021-08-14 23:00:00</td>
 <td>80.0</td>
@@ -1937,7 +1938,7 @@ memory usage: 2.0+ MB</code></pre>
 <td>(80.0, -40.0)</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8755</td>
+<th data-quarto-table-cell-role="th">8755</th>
 <td>T1 basso</td>
 <td>2021-08-14 23:00:00</td>
 <td>80.0</td>
@@ -1997,7 +1998,7 @@ memory usage: 2.0+ MB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -2009,77 +2010,77 @@ memory usage: 2.0+ MB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>2021-07-15 00:00:00</td>
 <td>2021-07-15</td>
 <td>2021-07</td>
 <td>2021</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">12</td>
+<th data-quarto-table-cell-role="th">12</th>
 <td>2021-07-15 01:00:00</td>
 <td>2021-07-15</td>
 <td>2021-07</td>
 <td>2021</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">24</td>
+<th data-quarto-table-cell-role="th">24</th>
 <td>2021-07-15 02:00:00</td>
 <td>2021-07-15</td>
 <td>2021-07</td>
 <td>2021</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">36</td>
+<th data-quarto-table-cell-role="th">36</th>
 <td>2021-07-15 03:00:00</td>
 <td>2021-07-15</td>
 <td>2021-07</td>
 <td>2021</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">48</td>
+<th data-quarto-table-cell-role="th">48</th>
 <td>2021-07-15 04:00:00</td>
 <td>2021-07-15</td>
 <td>2021-07</td>
 <td>2021</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8696</td>
+<th data-quarto-table-cell-role="th">8696</th>
 <td>2021-08-14 19:00:00</td>
 <td>2021-08-14</td>
 <td>2021-08</td>
 <td>2021</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">8708</td>
+<th data-quarto-table-cell-role="th">8708</th>
 <td>2021-08-14 20:00:00</td>
 <td>2021-08-14</td>
 <td>2021-08</td>
 <td>2021</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8720</td>
+<th data-quarto-table-cell-role="th">8720</th>
 <td>2021-08-14 21:00:00</td>
 <td>2021-08-14</td>
 <td>2021-08</td>
 <td>2021</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">8732</td>
+<th data-quarto-table-cell-role="th">8732</th>
 <td>2021-08-14 22:00:00</td>
 <td>2021-08-14</td>
 <td>2021-08</td>
 <td>2021</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8744</td>
+<th data-quarto-table-cell-role="th">8744</th>
 <td>2021-08-14 23:00:00</td>
 <td>2021-08-14</td>
 <td>2021-08</td>
@@ -2118,7 +2119,7 @@ memory usage: 2.0+ MB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -2130,84 +2131,84 @@ memory usage: 2.0+ MB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>(0.0, -60.0)</td>
 <td>0.0</td>
 <td>-60.0</td>
 <td>T1 basso</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>(0.0, -40.0)</td>
 <td>0.0</td>
 <td>-40.0</td>
 <td>T1 basso</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>(0.0, -20.0)</td>
 <td>0.0</td>
 <td>-20.0</td>
 <td>T1 basso</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>(25.0, -60.0)</td>
 <td>25.0</td>
 <td>-60.0</td>
 <td>T1 basso</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>(25.0, -40.0)</td>
 <td>25.0</td>
 <td>-40.0</td>
 <td>T1 basso</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
+<th data-quarto-table-cell-role="th">5</th>
 <td>(25.0, -20.0)</td>
 <td>25.0</td>
 <td>-20.0</td>
 <td>T1 basso</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
+<th data-quarto-table-cell-role="th">6</th>
 <td>(50.0, -60.0)</td>
 <td>50.0</td>
 <td>-60.0</td>
 <td>T1 basso</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
+<th data-quarto-table-cell-role="th">7</th>
 <td>(50.0, -40.0)</td>
 <td>50.0</td>
 <td>-40.0</td>
 <td>T1 basso</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
+<th data-quarto-table-cell-role="th">8</th>
 <td>(50.0, -20.0)</td>
 <td>50.0</td>
 <td>-20.0</td>
 <td>T1 basso</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
+<th data-quarto-table-cell-role="th">9</th>
 <td>(80.0, -60.0)</td>
 <td>80.0</td>
 <td>-60.0</td>
 <td>T1 basso</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">10</td>
+<th data-quarto-table-cell-role="th">10</th>
 <td>(80.0, -40.0)</td>
 <td>80.0</td>
 <td>-40.0</td>
 <td>T1 basso</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">11</td>
+<th data-quarto-table-cell-role="th">11</th>
 <td>(80.0, -20.0)</td>
 <td>80.0</td>
 <td>-20.0</td>
@@ -2245,7 +2246,7 @@ memory usage: 2.0+ MB</code></pre>
     }
 </style>
 
-<table class="dataframe caption-top" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top" data-border="1">
 <thead>
 <tr class="header" style="text-align: right;">
 <th data-quarto-table-cell-role="th"></th>
@@ -2256,67 +2257,67 @@ memory usage: 2.0+ MB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
+<th data-quarto-table-cell-role="th">0</th>
 <td>(0.0, -60.0)</td>
 <td>2021-07-15 00:00:00</td>
 <td>-27.366967</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
+<th data-quarto-table-cell-role="th">1</th>
 <td>(0.0, -40.0)</td>
 <td>2021-07-15 00:00:00</td>
 <td>-21.041212</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
+<th data-quarto-table-cell-role="th">2</th>
 <td>(0.0, -20.0)</td>
 <td>2021-07-15 00:00:00</td>
 <td>-21.041212</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
+<th data-quarto-table-cell-role="th">3</th>
 <td>(25.0, -60.0)</td>
 <td>2021-07-15 00:00:00</td>
 <td>-193.593787</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
+<th data-quarto-table-cell-role="th">4</th>
 <td>(25.0, -40.0)</td>
 <td>2021-07-15 00:00:00</td>
 <td>-23.102383</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
+<th data-quarto-table-cell-role="th">...</th>
 <td>...</td>
 <td>...</td>
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8751</td>
+<th data-quarto-table-cell-role="th">8751</th>
 <td>(50.0, -40.0)</td>
 <td>2021-08-14 23:00:00</td>
 <td>-840.353649</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">8752</td>
+<th data-quarto-table-cell-role="th">8752</th>
 <td>(50.0, -20.0)</td>
 <td>2021-08-14 23:00:00</td>
 <td>-129.913714</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8753</td>
+<th data-quarto-table-cell-role="th">8753</th>
 <td>(80.0, -60.0)</td>
 <td>2021-08-14 23:00:00</td>
 <td>-462.190096</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">8754</td>
+<th data-quarto-table-cell-role="th">8754</th>
 <td>(80.0, -40.0)</td>
 <td>2021-08-14 23:00:00</td>
 <td>-791.964873</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">8755</td>
+<th data-quarto-table-cell-role="th">8755</th>
 <td>(80.0, -20.0)</td>
 <td>2021-08-14 23:00:00</td>
 <td>-965.569411</td>
@@ -2669,7 +2670,7 @@ memory usage: 2.0+ MB</code></pre>
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -2696,129 +2697,111 @@ memory usage: 2.0+ MB</code></pre>
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
             }
           }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
           }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
           }
-        } else {
-          return undefined;
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
         }
-      };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
-            });
-            return popup.innerHTML;
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
           });
         }
-      }
-    });
-    </script>
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
     
 
 </body></html>
