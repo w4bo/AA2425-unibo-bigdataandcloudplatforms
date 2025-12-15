@@ -1,3 +1,9 @@
+## [1.0.46](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.45...1.0.46) (2025-12-02)
+
+### Bug Fixes
+
+* gitignore, imgs to img, and deleted unused images ([6ee5dd0](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/commit/6ee5dd011cb506ff5d511e84132f1cdea2956cfb))
+
 ## [1.0.45](https://github.com/w4bo/AA2425-unibo-bigdataandcloudplatforms/compare/1.0.44...1.0.45) (2025-12-02)
 
 ### Bug Fixes
