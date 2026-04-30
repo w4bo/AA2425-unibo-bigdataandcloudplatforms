@@ -2,7 +2,7 @@ pandas==3.0.2
 scikit-learn==1.8.0
 matplotlib==3.10.9
 seaborn==0.13.2
-notebook==7.5.5
+notebook==7.5.6
 jupyter==1.1.1
 paretoset==1.2.5
 flaml[automl]==2.6.0
