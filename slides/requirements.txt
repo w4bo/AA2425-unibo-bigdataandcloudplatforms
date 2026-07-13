@@ -11,6 +11,6 @@ openpyxl==3.1.5
 pptx2md==2.0.6
 scipy==1.18.0
 awswrangler==3.17.0
-prov[dot]==2.4.0
+prov[dot]==2.5.0
 pydot==4.0.1
 traitlets==5.15.1
