@@ -5,8 +5,8 @@
 <script src="03-nosql_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="03-nosql_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="03-nosql_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="03-nosql_files/libs/quarto-html/quarto-syntax-highlighting-dfa48a90d809c806c7ea2d5aecd9fc66.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.29">
+<link href="03-nosql_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Matteo Francia   DISI — University of Bologna   m.francia@unibo.it">
   <title>Big Data and Cloud Platforms (Module 2)</title>
@@ -19,10 +19,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -201,7 +204,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it 
+Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </div>
 </div>
 </div>
@@ -393,11 +396,11 @@ Matteo Francia <br> DISI — University of Bologna <br> m.francia@unibo.it
 </tbody>
 </table>
 </div><div class="column" style="width:50%;">
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource json number-lines"><code class="sourceCode json"><span id="cb1-1"><a href=""></a><span class="ot">[</span></span>
-<span id="cb1-2"><a href=""></a>  <span class="fu">{</span> <span class="dt">"Product"</span><span class="fu">:</span> <span class="st">"P1"</span><span class="fu">,</span> <span class="dt">"Name"</span><span class="fu">:</span> <span class="st">"Beer"</span><span class="fu">,</span> <span class="dt">"Price"</span><span class="fu">:</span> <span class="dv">6</span><span class="fu">,</span> <span class="dt">"Quantity"</span><span class="fu">:</span> <span class="st">"0.4L"</span><span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb1-3"><a href=""></a>  <span class="fu">{</span> <span class="dt">"Product"</span><span class="fu">:</span> <span class="st">"P2"</span><span class="fu">,</span> <span class="dt">"Name"</span><span class="fu">:</span> <span class="st">"Milk"</span><span class="fu">,</span> <span class="dt">"Price"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span> <span class="dt">"Expiration"</span><span class="fu">:</span> <span class="st">"2024-11-30"</span><span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb1-4"><a href=""></a>  <span class="fu">{</span> <span class="dt">"Product"</span><span class="fu">:</span> <span class="st">"P3"</span><span class="fu">,</span> <span class="dt">"Name"</span><span class="fu">:</span> <span class="st">"Pizza"</span><span class="fu">,</span> <span class="dt">"Price"</span><span class="fu">:</span> <span class="dv">6</span><span class="fu">,</span> <span class="dt">"Ingredients"</span><span class="fu">:</span> <span class="ot">[</span><span class="er">...</span><span class="ot">]</span><span class="fu">}</span><span class="ot">,</span></span>
-<span id="cb1-5"><a href=""></a><span class="ot">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource json number-lines"><code class="sourceCode json"><span id="cb1-1"><a href="" aria-label="1"></a><span class="ot">[</span></span>
+<span id="cb1-2"><a href="" aria-label="2"></a>  <span class="fu">{</span> <span class="dt">"Product"</span><span class="fu">:</span> <span class="st">"P1"</span><span class="fu">,</span> <span class="dt">"Name"</span><span class="fu">:</span> <span class="st">"Beer"</span><span class="fu">,</span> <span class="dt">"Price"</span><span class="fu">:</span> <span class="dv">6</span><span class="fu">,</span> <span class="dt">"Quantity"</span><span class="fu">:</span> <span class="st">"0.4L"</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-3"><a href="" aria-label="3"></a>  <span class="fu">{</span> <span class="dt">"Product"</span><span class="fu">:</span> <span class="st">"P2"</span><span class="fu">,</span> <span class="dt">"Name"</span><span class="fu">:</span> <span class="st">"Milk"</span><span class="fu">,</span> <span class="dt">"Price"</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span> <span class="dt">"Expiration"</span><span class="fu">:</span> <span class="st">"2024-11-30"</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-4"><a href="" aria-label="4"></a>  <span class="fu">{</span> <span class="dt">"Product"</span><span class="fu">:</span> <span class="st">"P3"</span><span class="fu">,</span> <span class="dt">"Name"</span><span class="fu">:</span> <span class="st">"Pizza"</span><span class="fu">,</span> <span class="dt">"Price"</span><span class="fu">:</span> <span class="dv">6</span><span class="fu">,</span> <span class="dt">"Ingredients"</span><span class="fu">:</span> <span class="ot">[</span><span class="er">...</span><span class="ot">]</span><span class="fu">}</span><span class="ot">,</span></span>
+<span id="cb1-5"><a href="" aria-label="5"></a><span class="ot">]</span></span></code></pre></div>
 </div></div>
 </section>
 
